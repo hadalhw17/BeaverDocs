@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_vulkan_utils_8hpp" kind="file" language="C++">
+    <compoundname>VulkanUtils.hpp</compoundname>
+    <includes local="yes">RavenFormats.h</includes>
+    <includes refid="_common_shaders_8hpp" local="yes">CommonShaders.hpp</includes>
+    <includedby refid="_pipeline_profiler_8hpp" local="yes">/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/PipelineProfiler.hpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/DeviceLayer/VulkanUtils.hpp</label>
+        <link refid="_vulkan_utils_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>CommonRenderer.hpp</label>
+        <link refid="_common_renderer_8hpp_source"/>
+      </node>
+      <node id="3">
+        <label>CommonShaders.hpp</label>
+        <link refid="_common_shaders_8hpp_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>RavenFormats.h</label>
+      </node>
+      <node id="5">
+        <label>Handle.hpp</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/DeviceLayer/VulkanUtils.hpp</label>
+        <link refid="_vulkan_utils_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/PipelineProfiler.hpp</label>
+        <link refid="_pipeline_profiler_8hpp_source"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespace_raven">Raven</innernamespace>
+    <innernamespace refid="namespace_raven_1_1_renderer">Raven::Renderer</innernamespace>
+    <innernamespace refid="namespace_raven_1_1_renderer_1_1_vk">Raven::Renderer::Vk</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_vulkan_utils_8hpp_1a85a23631965b57ebf6e3e7fad1a15888" prot="public" static="no">
+        <name>VK_CHECK</name>
+        <param><defname>expr</defname></param>
+        <initializer>	do {                                                                       \
+		VkResult res_u_lt = expr;                                              \
+		RavenAssert(res_u_lt == VK_SUCCESS, #expr &quot; expression failed&quot;);       \
+		if (res_u_lt != VK_SUCCESS)                                            \
+			RavenLogError(&quot;Reason: {}&quot;,                                        \
+						  Raven::Renderer::Vk::VkResultToString(res_u_lt));    \
+		if (res_u_lt == VK_ERROR_DEVICE_LOST) {                                \
+			Sleep(3000);                                                       \
+			exit(1);                                                           \
+		}                                                                      \
+	} while (0);</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/DeviceLayer/VulkanUtils.hpp" line="26" column="9" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/DeviceLayer/VulkanUtils.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;RavenFormats.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;CommonShaders.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Raven::Renderer::Vk<sp/>{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>GetTransitionFlags(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>EAttachmentState<sp/>eTrans,<sp/>VkImageLayout&amp;<sp/>layout,</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>VkAccessFlags2&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>access,</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>VkPipelineStageFlagBits2&amp;<sp/>stage);</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal">VkBufferUsageFlags<sp/><sp/><sp/><sp/>Convert(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>EBufferType<sp/>eType);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">VkShaderStageFlags<sp/><sp/><sp/><sp/>Convert(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>EShaderStage<sp/>eStage);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">VkShaderStageFlagBits<sp/>Convert(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>EShaderType<sp/>eStage);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>VkResultToString(VkResult<sp/>res);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">VkImageMemoryBarrier2<sp/>BuildImageBarrier(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>EAttachmentState<sp/><sp/><sp/>src,</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>EAttachmentState<sp/><sp/><sp/>dst,</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>VkImageAspectFlags<sp/>aspect);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">VkImageLayout<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Convert(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>EAttachmentState<sp/>eState);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">EAttachmentState<sp/><sp/><sp/><sp/><sp/><sp/>Convert(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>VkImageLayout<sp/>eLayout);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">VkFormat<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Convert(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>STextureFormat<sp/>format);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">STextureFormat<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Convert(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>VkFormat<sp/>format);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">VkImageType<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Convert(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ETextureDimension<sp/>type);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Raven::Renderer::Vk</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VK_CHECK(expr)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="27"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>do<sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="28"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>VkResult<sp/>res_u_lt<sp/>=<sp/>expr;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="29"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>RavenAssert(res_u_lt<sp/>==<sp/>VK_SUCCESS,<sp/>#expr<sp/>&quot;<sp/>expression<sp/>failed&quot;</highlight><highlight class="normal">);<sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(res_u_lt<sp/>!=<sp/>VK_SUCCESS)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>RavenLogError(&quot;Reason:<sp/>{}&quot;,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Raven::Renderer::Vk::VkResultToString(res_u_lt));<sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(res_u_lt<sp/>==<sp/>VK_ERROR_DEVICE_LOST)<sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Sleep(3000);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(1);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>while<sp/>(0);</highlight></codeline>
+    </programlisting>
+    <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/DeviceLayer/VulkanUtils.hpp"/>
+  </compounddef>
+</doxygen>

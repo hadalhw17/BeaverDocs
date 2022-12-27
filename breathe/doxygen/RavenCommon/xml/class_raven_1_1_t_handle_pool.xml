@@ -1,0 +1,605 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_raven_1_1_t_handle_pool" kind="class" language="C++" prot="public">
+    <compoundname>Raven::THandlePool</compoundname>
+    <innerclass refid="struct_raven_1_1_t_handle_pool_1_1iterator" prot="public">Raven::THandlePool::iterator</innerclass>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+      <param>
+        <type>typename TagT</type>
+        <defval>T</defval>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="class_raven_1_1_t_handle_pool_1a02ac9160a31f8672702268cc437d41f3" prot="private" static="no">
+        <type>T</type>
+        <definition>using Raven::THandlePool&lt; T, TagT &gt;::ResourceT =  T</definition>
+        <argsstring></argsstring>
+        <name>ResourceT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" line="10" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="class_raven_1_1_t_handle_pool_1a1a86189740c1b8bb0ae9f8061f3a030b" prot="private" static="no">
+        <type>ResourceT *</type>
+        <definition>using Raven::THandlePool&lt; T, TagT &gt;::MemoryT =  ResourceT*</definition>
+        <argsstring></argsstring>
+        <name>MemoryT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" line="11" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="class_raven_1_1_t_handle_pool_1ab0702c6f9f4ad3c421eff97147399493" prot="private" static="no">
+        <type><ref refid="struct_raven_1_1_t_handle" kindref="compound">THandle</ref>&lt; TagT &gt;</type>
+        <definition>using Raven::THandlePool&lt; T, TagT &gt;::HandleT =  THandle&lt;TagT&gt;</definition>
+        <argsstring></argsstring>
+        <name>HandleT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" line="12" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="class_raven_1_1_t_handle_pool_1a85e6705eefffe7fe2319a423b6e9ea00" prot="private" static="no">
+        <type>typename HandleT::IdT</type>
+        <definition>using Raven::THandlePool&lt; T, TagT &gt;::IdT =  typename HandleT::IdT</definition>
+        <argsstring></argsstring>
+        <name>IdT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" line="13" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="class_raven_1_1_t_handle_pool_1acc3496571072ec00cf41d871df1742f1" prot="private" static="no">
+        <type>typename std::vector&lt; ResourceT &gt;::size_type</type>
+        <definition>using Raven::THandlePool&lt; T, TagT &gt;::size_type =  typename std::vector&lt;ResourceT&gt;::size_type</definition>
+        <argsstring></argsstring>
+        <name>size_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" line="15" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="class_raven_1_1_t_handle_pool_1aa9ab72f21cb14e172c97464aa4f11e26" prot="private" static="no">
+        <templateparamlist>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type>typename std::enable_if&lt; std::is_same_v&lt; U, ResourceT &gt;||std::is_same_v&lt; U, TagT &gt;, T * &gt;::type</type>
+        <definition>using Raven::THandlePool&lt; T, TagT &gt;::GetT =  typename std::enable_if&lt;std::is_same_v&lt;U, ResourceT&gt; || std::is_same_v&lt;U, TagT&gt;,T*&gt;::type</definition>
+        <argsstring></argsstring>
+        <name>GetT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" line="22" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="class_raven_1_1_t_handle_pool_1a28805e0f13aa75cc42d460e23ac67052" prot="public" static="no">
+        <type><ref refid="struct_raven_1_1_t_handle_pool_1_1iterator" kindref="compound">iterator</ref></type>
+        <definition>using Raven::THandlePool&lt; T, TagT &gt;::const_iterator =  iterator</definition>
+        <argsstring></argsstring>
+        <name>const_iterator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" line="57" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_raven_1_1_t_handle_pool_1a4ad3905d28bd4ce61384a0b142736e15" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr static int</type>
+        <definition>constexpr static int Raven::THandlePool&lt; T, TagT &gt;::UnitialisedPattern</definition>
+        <argsstring></argsstring>
+        <name>UnitialisedPattern</name>
+        <initializer>= 0xbaadf00d</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" line="17" column="22" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_raven_1_1_t_handle_pool_1a723a898cb67e12b382381016cdec9f64" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr static int</type>
+        <definition>constexpr static int Raven::THandlePool&lt; T, TagT &gt;::FreedPattern</definition>
+        <argsstring></argsstring>
+        <name>FreedPattern</name>
+        <initializer>= 0xdeadbeef</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" line="18" column="22" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_raven_1_1_t_handle_pool_1a06c98a0863c6fda0d4b87db0b53af2db" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr static int</type>
+        <definition>constexpr static int Raven::THandlePool&lt; T, TagT &gt;::LastPattern</definition>
+        <argsstring></argsstring>
+        <name>LastPattern</name>
+        <initializer>= 0xdeaddead</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" line="19" column="22" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_raven_1_1_t_handle_pool_1a4281a48dff7547fa06de918f8bc8643b" prot="private" static="no" mutable="no">
+        <type>std::list&lt; IdT &gt;</type>
+        <definition>std::list&lt;IdT&gt; Raven::THandlePool&lt; T, TagT &gt;::m_freeList</definition>
+        <argsstring></argsstring>
+        <name>m_freeList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" line="184" column="13" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" bodystart="184" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_raven_1_1_t_handle_pool_1a0675562f65f727cba6219c4ab8c6ecb3" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; IdT &gt;</type>
+        <definition>std::vector&lt;IdT&gt; Raven::THandlePool&lt; T, TagT &gt;::m_generations</definition>
+        <argsstring></argsstring>
+        <name>m_generations</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" line="185" column="13" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" bodystart="185" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_raven_1_1_t_handle_pool_1a00abe1c8886637f9a958cb5ab48cf24f" prot="private" static="no" mutable="no">
+        <type>MemoryT</type>
+        <definition>MemoryT Raven::THandlePool&lt; T, TagT &gt;::m_pData</definition>
+        <argsstring></argsstring>
+        <name>m_pData</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" line="186" column="18" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_raven_1_1_t_handle_pool_1ac671caa8a2b35a21fcc991f958be8267" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Raven::THandlePool&lt; T, TagT &gt;::THandlePool</definition>
+        <argsstring>()=default</argsstring>
+        <name>THandlePool</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" line="60" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_t_handle_pool_1a11264310b6096e6549e84f48958f4772" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Raven::THandlePool&lt; T, TagT &gt;::~THandlePool</definition>
+        <argsstring>()=default</argsstring>
+        <name>~THandlePool</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" line="61" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_t_handle_pool_1a3a98088e6191442bccf0f6bfc76a1f5f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="struct_raven_1_1_t_handle" kindref="compound">HandleT</ref></type>
+        <definition>HandleT Raven::THandlePool&lt; T, TagT &gt;::emplace</definition>
+        <argsstring>(Args &amp;&amp;...args)</argsstring>
+        <name>emplace</name>
+        <param>
+          <type>Args &amp;&amp;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" line="64" column="10" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" bodystart="64" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_t_handle_pool_1a54d5ad46cb5374ae48cb23e225ab4636" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Raven::THandlePool&lt; T, TagT &gt;::IsValid</definition>
+        <argsstring>(HandleT handle) const noexcept</argsstring>
+        <name>IsValid</name>
+        <param>
+          <type><ref refid="struct_raven_1_1_t_handle" kindref="compound">HandleT</ref></type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" line="82" column="14" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" bodystart="82" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_t_handle_pool_1a2fada0c5451ec72194a4f5347a3389a0" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Raven::THandlePool&lt; T, TagT &gt;::empty</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>empty</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" line="89" column="14" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" bodystart="89" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_t_handle_pool_1a48feebeb70b9bfef67e41e06f0bcd214" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>size_type</type>
+        <definition>size_type Raven::THandlePool&lt; T, TagT &gt;::size</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" line="90" column="19" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" bodystart="90" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_t_handle_pool_1a9e45e42a607794e3bfbbe9de08d8e93b" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>size_type</type>
+        <definition>size_type Raven::THandlePool&lt; T, TagT &gt;::capacity</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>capacity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" line="91" column="19" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" bodystart="91" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_t_handle_pool_1a1d1663357d7fd5cf3aa3ac38195c59be" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type>GetT&lt; U &gt;</type>
+        <definition>GetT&lt;U&gt; Raven::THandlePool&lt; T, TagT &gt;::assure</definition>
+        <argsstring>(THandle&lt; U &gt; handle) noexcept</argsstring>
+        <name>assure</name>
+        <param>
+          <type><ref refid="struct_raven_1_1_t_handle" kindref="compound">THandle</ref>&lt; U &gt;</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" line="94" column="25" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" bodystart="94" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_t_handle_pool_1a1af2ebcce715e88992358af72b494b99" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type>const GetT&lt; U &gt;</type>
+        <definition>const GetT&lt;U&gt; Raven::THandlePool&lt; T, TagT &gt;::assure</definition>
+        <argsstring>(THandle&lt; U &gt; handle) const noexcept</argsstring>
+        <name>assure</name>
+        <param>
+          <type><ref refid="struct_raven_1_1_t_handle" kindref="compound">THandle</ref>&lt; U &gt;</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" line="95" column="31" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" bodystart="95" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_t_handle_pool_1a005a484f904e88bc01a6b6638254f802" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type>GetT&lt; U &gt;</type>
+        <definition>GetT&lt;U&gt; Raven::THandlePool&lt; T, TagT &gt;::get</definition>
+        <argsstring>(THandle&lt; U &gt; handle) noexcept</argsstring>
+        <name>get</name>
+        <param>
+          <type><ref refid="struct_raven_1_1_t_handle" kindref="compound">THandle</ref>&lt; U &gt;</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" line="97" column="25" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" bodystart="97" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_t_handle_pool_1a8e834092c52b0b3b3ae5e9ae6a412e4d" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type>const GetT&lt; U &gt;</type>
+        <definition>const GetT&lt;U&gt; Raven::THandlePool&lt; T, TagT &gt;::get</definition>
+        <argsstring>(THandle&lt; U &gt; handle) const noexcept</argsstring>
+        <name>get</name>
+        <param>
+          <type><ref refid="struct_raven_1_1_t_handle" kindref="compound">THandle</ref>&lt; U &gt;</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" line="98" column="31" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" bodystart="98" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_t_handle_pool_1aa303de366d6ffde6df6f1531ae62a8a9" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Raven::THandlePool&lt; T, TagT &gt;::release</definition>
+        <argsstring>(HandleT handle) noexcept</argsstring>
+        <name>release</name>
+        <param>
+          <type><ref refid="struct_raven_1_1_t_handle" kindref="compound">HandleT</ref></type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" line="100" column="6" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" bodystart="100" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_t_handle_pool_1a66367cd53d5ae4164adf4c149de1de91" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Raven::THandlePool&lt; T, TagT &gt;::clear</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>clear</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" line="110" column="6" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" bodystart="110" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_t_handle_pool_1a5b518bf76126387c854dbf09ecf47851" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="struct_raven_1_1_t_handle_pool_1_1iterator" kindref="compound">iterator</ref></type>
+        <definition>iterator Raven::THandlePool&lt; T, TagT &gt;::begin</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>begin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" line="129" column="11" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" bodystart="129" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_t_handle_pool_1ab6f1575f7b2c20f431525223193e1a89" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="struct_raven_1_1_t_handle_pool_1_1iterator" kindref="compound">iterator</ref></type>
+        <definition>iterator Raven::THandlePool&lt; T, TagT &gt;::end</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>end</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" line="130" column="11" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" bodystart="130" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_t_handle_pool_1afe743642867ef434383280d6e1233332" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="struct_raven_1_1_t_handle_pool_1_1iterator" kindref="compound">const_iterator</ref></type>
+        <definition>const_iterator Raven::THandlePool&lt; T, TagT &gt;::begin</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>begin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" line="132" column="17" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" bodystart="132" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_t_handle_pool_1afd760ed7645f1313201a71ce730ee906" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="struct_raven_1_1_t_handle_pool_1_1iterator" kindref="compound">const_iterator</ref></type>
+        <definition>const_iterator Raven::THandlePool&lt; T, TagT &gt;::end</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>end</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" line="133" column="17" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" bodystart="133" bodyend="133"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_raven_1_1_t_handle_pool_1a735de521b46a3bc10fc95a72f11ec82f" prot="private" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Raven::THandlePool&lt; T, TagT &gt;::grow</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>grow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" line="137" column="6" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" bodystart="137" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_t_handle_pool_1a850a9dd9e6123233a085c42f046a3564" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void Raven::THandlePool&lt; T, TagT &gt;::SetBitPattern</definition>
+        <argsstring>(HandleT handle, const U pattern)</argsstring>
+        <name>SetBitPattern</name>
+        <param>
+          <type><ref refid="struct_raven_1_1_t_handle" kindref="compound">HandleT</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>const U</type>
+          <declname>pattern</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" line="162" column="6" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" bodystart="162" bodyend="166"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_t_handle_pool_1adfb90c967a6c7cb0a9c363b7d4ec094a" prot="private" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename U</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool Raven::THandlePool&lt; T, TagT &gt;::CheckBitPattern</definition>
+        <argsstring>(HandleT handle, U pattern) const noexcept</argsstring>
+        <name>CheckBitPattern</name>
+        <param>
+          <type><ref refid="struct_raven_1_1_t_handle" kindref="compound">HandleT</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>U</type>
+          <declname>pattern</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" line="169" column="6" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" bodystart="169" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_t_handle_pool_1a317ae5aca65671e55b463a8d0d73c27d" prot="private" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Raven::THandlePool&lt; T, TagT &gt;::HasInvalidationPatterns</definition>
+        <argsstring>(HandleT handle) const noexcept</argsstring>
+        <name>HasInvalidationPatterns</name>
+        <param>
+          <type><ref refid="struct_raven_1_1_t_handle" kindref="compound">HandleT</ref></type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" line="176" column="14" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" bodystart="176" bodyend="181"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" line="8" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/HandlePool.hpp" bodystart="9" bodyend="187"/>
+    <listofallmembers>
+      <member refid="class_raven_1_1_t_handle_pool_1a1d1663357d7fd5cf3aa3ac38195c59be" prot="public" virt="non-virtual"><scope>Raven::THandlePool</scope><name>assure</name></member>
+      <member refid="class_raven_1_1_t_handle_pool_1a1af2ebcce715e88992358af72b494b99" prot="public" virt="non-virtual"><scope>Raven::THandlePool</scope><name>assure</name></member>
+      <member refid="class_raven_1_1_t_handle_pool_1a5b518bf76126387c854dbf09ecf47851" prot="public" virt="non-virtual"><scope>Raven::THandlePool</scope><name>begin</name></member>
+      <member refid="class_raven_1_1_t_handle_pool_1afe743642867ef434383280d6e1233332" prot="public" virt="non-virtual"><scope>Raven::THandlePool</scope><name>begin</name></member>
+      <member refid="class_raven_1_1_t_handle_pool_1a9e45e42a607794e3bfbbe9de08d8e93b" prot="public" virt="non-virtual"><scope>Raven::THandlePool</scope><name>capacity</name></member>
+      <member refid="class_raven_1_1_t_handle_pool_1adfb90c967a6c7cb0a9c363b7d4ec094a" prot="private" virt="non-virtual"><scope>Raven::THandlePool</scope><name>CheckBitPattern</name></member>
+      <member refid="class_raven_1_1_t_handle_pool_1a66367cd53d5ae4164adf4c149de1de91" prot="public" virt="non-virtual"><scope>Raven::THandlePool</scope><name>clear</name></member>
+      <member refid="class_raven_1_1_t_handle_pool_1a28805e0f13aa75cc42d460e23ac67052" prot="public" virt="non-virtual"><scope>Raven::THandlePool</scope><name>const_iterator</name></member>
+      <member refid="class_raven_1_1_t_handle_pool_1a3a98088e6191442bccf0f6bfc76a1f5f" prot="public" virt="non-virtual"><scope>Raven::THandlePool</scope><name>emplace</name></member>
+      <member refid="class_raven_1_1_t_handle_pool_1a2fada0c5451ec72194a4f5347a3389a0" prot="public" virt="non-virtual"><scope>Raven::THandlePool</scope><name>empty</name></member>
+      <member refid="class_raven_1_1_t_handle_pool_1ab6f1575f7b2c20f431525223193e1a89" prot="public" virt="non-virtual"><scope>Raven::THandlePool</scope><name>end</name></member>
+      <member refid="class_raven_1_1_t_handle_pool_1afd760ed7645f1313201a71ce730ee906" prot="public" virt="non-virtual"><scope>Raven::THandlePool</scope><name>end</name></member>
+      <member refid="class_raven_1_1_t_handle_pool_1a723a898cb67e12b382381016cdec9f64" prot="private" virt="non-virtual"><scope>Raven::THandlePool</scope><name>FreedPattern</name></member>
+      <member refid="class_raven_1_1_t_handle_pool_1a005a484f904e88bc01a6b6638254f802" prot="public" virt="non-virtual"><scope>Raven::THandlePool</scope><name>get</name></member>
+      <member refid="class_raven_1_1_t_handle_pool_1a8e834092c52b0b3b3ae5e9ae6a412e4d" prot="public" virt="non-virtual"><scope>Raven::THandlePool</scope><name>get</name></member>
+      <member refid="class_raven_1_1_t_handle_pool_1aa9ab72f21cb14e172c97464aa4f11e26" prot="private" virt="non-virtual"><scope>Raven::THandlePool</scope><name>GetT</name></member>
+      <member refid="class_raven_1_1_t_handle_pool_1a735de521b46a3bc10fc95a72f11ec82f" prot="private" virt="non-virtual"><scope>Raven::THandlePool</scope><name>grow</name></member>
+      <member refid="class_raven_1_1_t_handle_pool_1ab0702c6f9f4ad3c421eff97147399493" prot="private" virt="non-virtual"><scope>Raven::THandlePool</scope><name>HandleT</name></member>
+      <member refid="class_raven_1_1_t_handle_pool_1a317ae5aca65671e55b463a8d0d73c27d" prot="private" virt="non-virtual"><scope>Raven::THandlePool</scope><name>HasInvalidationPatterns</name></member>
+      <member refid="class_raven_1_1_t_handle_pool_1a85e6705eefffe7fe2319a423b6e9ea00" prot="private" virt="non-virtual"><scope>Raven::THandlePool</scope><name>IdT</name></member>
+      <member refid="class_raven_1_1_t_handle_pool_1a54d5ad46cb5374ae48cb23e225ab4636" prot="public" virt="non-virtual"><scope>Raven::THandlePool</scope><name>IsValid</name></member>
+      <member refid="class_raven_1_1_t_handle_pool_1a06c98a0863c6fda0d4b87db0b53af2db" prot="private" virt="non-virtual"><scope>Raven::THandlePool</scope><name>LastPattern</name></member>
+      <member refid="class_raven_1_1_t_handle_pool_1a4281a48dff7547fa06de918f8bc8643b" prot="private" virt="non-virtual"><scope>Raven::THandlePool</scope><name>m_freeList</name></member>
+      <member refid="class_raven_1_1_t_handle_pool_1a0675562f65f727cba6219c4ab8c6ecb3" prot="private" virt="non-virtual"><scope>Raven::THandlePool</scope><name>m_generations</name></member>
+      <member refid="class_raven_1_1_t_handle_pool_1a00abe1c8886637f9a958cb5ab48cf24f" prot="private" virt="non-virtual"><scope>Raven::THandlePool</scope><name>m_pData</name></member>
+      <member refid="class_raven_1_1_t_handle_pool_1a1a86189740c1b8bb0ae9f8061f3a030b" prot="private" virt="non-virtual"><scope>Raven::THandlePool</scope><name>MemoryT</name></member>
+      <member refid="class_raven_1_1_t_handle_pool_1aa303de366d6ffde6df6f1531ae62a8a9" prot="public" virt="non-virtual"><scope>Raven::THandlePool</scope><name>release</name></member>
+      <member refid="class_raven_1_1_t_handle_pool_1a02ac9160a31f8672702268cc437d41f3" prot="private" virt="non-virtual"><scope>Raven::THandlePool</scope><name>ResourceT</name></member>
+      <member refid="class_raven_1_1_t_handle_pool_1a850a9dd9e6123233a085c42f046a3564" prot="private" virt="non-virtual"><scope>Raven::THandlePool</scope><name>SetBitPattern</name></member>
+      <member refid="class_raven_1_1_t_handle_pool_1a48feebeb70b9bfef67e41e06f0bcd214" prot="public" virt="non-virtual"><scope>Raven::THandlePool</scope><name>size</name></member>
+      <member refid="class_raven_1_1_t_handle_pool_1acc3496571072ec00cf41d871df1742f1" prot="private" virt="non-virtual"><scope>Raven::THandlePool</scope><name>size_type</name></member>
+      <member refid="class_raven_1_1_t_handle_pool_1ac671caa8a2b35a21fcc991f958be8267" prot="public" virt="non-virtual"><scope>Raven::THandlePool</scope><name>THandlePool</name></member>
+      <member refid="class_raven_1_1_t_handle_pool_1a4ad3905d28bd4ce61384a0b142736e15" prot="private" virt="non-virtual"><scope>Raven::THandlePool</scope><name>UnitialisedPattern</name></member>
+      <member refid="class_raven_1_1_t_handle_pool_1a11264310b6096e6549e84f48958f4772" prot="public" virt="non-virtual"><scope>Raven::THandlePool</scope><name>~THandlePool</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

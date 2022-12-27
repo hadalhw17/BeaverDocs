@@ -1,0 +1,259 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_raven_1_1_renderer_1_1_device_1_1_c_heap" kind="class" language="C++" prot="public">
+    <compoundname>Raven::Renderer::Device::CHeap</compoundname>
+      <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1aeab89fba1186200c9fbd7a2c262866fc" prot="private" static="no">
+        <type>std::vector&lt; <ref refid="struct_raven_1_1_renderer_1_1_s_memory_range" kindref="compound">SMemoryRange</ref> &gt;</type>
+        <definition>using Raven::Renderer::Device::CHeap::MemoryRanges =  std::vector&lt;SMemoryRange&gt;</definition>
+        <argsstring></argsstring>
+        <name>MemoryRanges</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/DeviceLayer/Memory.hpp" line="26" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/DeviceLayer/Memory.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1a8e765f24c320c4231258c22fc4e5250c" prot="public" static="no">
+        <type><ref refid="struct_raven_1_1_renderer_1_1_s_device_memory_allocation" kindref="compound">SDeviceMemoryAllocation</ref></type>
+        <definition>using Raven::Renderer::Device::CHeap::AllocationHandleT =  SDeviceMemoryAllocation</definition>
+        <argsstring></argsstring>
+        <name>AllocationHandleT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/DeviceLayer/Memory.hpp" line="28" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/DeviceLayer/Memory.hpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1a175504362a3ab2be312e8656ea3a4348" prot="private" static="no" mutable="no">
+        <type>CDevice &amp;</type>
+        <definition>CDevice&amp; Raven::Renderer::Device::CHeap::m_device</definition>
+        <argsstring></argsstring>
+        <name>m_device</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/DeviceLayer/Memory.hpp" line="43" column="71" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/DeviceLayer/Memory.hpp" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1a5368c805b45ef63adf82b6f510ab0ba1" prot="private" static="no" mutable="yes">
+        <type>std::recursive_mutex</type>
+        <definition>std::recursive_mutex Raven::Renderer::Device::CHeap::m_creationLock</definition>
+        <argsstring></argsstring>
+        <name>m_creationLock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/DeviceLayer/Memory.hpp" line="45" column="72" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/DeviceLayer/Memory.hpp" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1a8cd122a7e4f24a7c961fd2afefbdb871" prot="private" static="no" mutable="no">
+        <type>std::array&lt; std::vector&lt; Detail::SMemoryPool &gt;, EMemoryHeapType::eHeapType_Count &gt;</type>
+        <definition>std::array&lt;std::vector&lt;Detail::SMemoryPool&gt;, EMemoryHeapType::eHeapType_Count&gt; Raven::Renderer::Device::CHeap::m_memoryHeap</definition>
+        <argsstring></argsstring>
+        <name>m_memoryHeap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/DeviceLayer/Memory.hpp" line="48" column="12" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/DeviceLayer/Memory.hpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1a751b1424adf686041f67f42364b4cabe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Raven::Renderer::Device::CHeap::CHeap</definition>
+        <argsstring>(CDevice &amp;device)</argsstring>
+        <name>CHeap</name>
+        <param>
+          <type>CDevice &amp;</type>
+          <declname>device</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/DeviceLayer/Memory.hpp" line="29" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1a1c40e54d63811ecb17faf5fbf3e1ff98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Raven::Renderer::Device::CHeap::~CHeap</definition>
+        <argsstring>()</argsstring>
+        <name>~CHeap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/DeviceLayer/Memory.hpp" line="30" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1ae2dfa96af98b5ba322101fa5c06c5b39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_raven_1_1_renderer_1_1_s_device_memory_allocation" kindref="compound">AllocationHandleT</ref></type>
+        <definition>AllocationHandleT Raven::Renderer::Device::CHeap::Allocate</definition>
+        <argsstring>(const VkMemoryRequirements &amp;memoryRequirements, const EMemoryHeapType &amp;eHeapType)</argsstring>
+        <name>Allocate</name>
+        <param>
+          <type>const VkMemoryRequirements &amp;</type>
+          <declname>memoryRequirements</declname>
+        </param>
+        <param>
+          <type>const EMemoryHeapType &amp;</type>
+          <declname>eHeapType</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/DeviceLayer/Memory.hpp" line="32" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1ae2e0c1fb0d19dce6484fbc1a1011d4f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Raven::Renderer::Device::CHeap::Free</definition>
+        <argsstring>(AllocationHandleT &amp;allocation)</argsstring>
+        <name>Free</name>
+        <param>
+          <type><ref refid="struct_raven_1_1_renderer_1_1_s_device_memory_allocation" kindref="compound">AllocationHandleT</ref> &amp;</type>
+          <declname>allocation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/DeviceLayer/Memory.hpp" line="33" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1a4beaf875f501da8f2c545ad0494397df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8 *</type>
+        <definition>uint8* Raven::Renderer::Device::CHeap::GetMappedMemory</definition>
+        <argsstring>(const AllocationHandleT &amp;allocation)</argsstring>
+        <name>GetMappedMemory</name>
+        <param>
+          <type>const <ref refid="struct_raven_1_1_renderer_1_1_s_device_memory_allocation" kindref="compound">AllocationHandleT</ref> &amp;</type>
+          <declname>allocation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/DeviceLayer/Memory.hpp" line="35" column="7"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1ae6ecf2a9efad7a7a6fa95170705cde44" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_raven_1_1_renderer_1_1_s_device_memory_allocation" kindref="compound">AllocationHandleT</ref></type>
+        <definition>AllocationHandleT Raven::Renderer::Device::CHeap::GetOrCreateFittngRange</definition>
+        <argsstring>(const VkMemoryRequirements &amp;memoryRequirements, const EMemoryHeapType &amp;eHeapType)</argsstring>
+        <name>GetOrCreateFittngRange</name>
+        <param>
+          <type>const VkMemoryRequirements &amp;</type>
+          <declname>memoryRequirements</declname>
+        </param>
+        <param>
+          <type>const EMemoryHeapType &amp;</type>
+          <declname>eHeapType</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/DeviceLayer/Memory.hpp" line="37" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1af4220c9fe7e4ee7a41924d0d105efad4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Raven::Renderer::Device::CHeap::ReleaseRange</definition>
+        <argsstring>(AllocationHandleT range)</argsstring>
+        <name>ReleaseRange</name>
+        <param>
+          <type><ref refid="struct_raven_1_1_renderer_1_1_s_device_memory_allocation" kindref="compound">AllocationHandleT</ref></type>
+          <declname>range</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/DeviceLayer/Memory.hpp" line="38" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1a573379024c16ffd20b2f31ef2fe7cbf7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Detail::SMemoryPool *</type>
+        <definition>Detail::SMemoryPool* Raven::Renderer::Device::CHeap::FindMemoryPool</definition>
+        <argsstring>(const AllocationHandleT &amp;allocation)</argsstring>
+        <name>FindMemoryPool</name>
+        <param>
+          <type>const <ref refid="struct_raven_1_1_renderer_1_1_s_device_memory_allocation" kindref="compound">AllocationHandleT</ref> &amp;</type>
+          <declname>allocation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/DeviceLayer/Memory.hpp" line="39" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1aa10cf2fc345583adebfc82c506208b0a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Raven::Renderer::Device::CHeap::ReleaseMemoryPool</definition>
+        <argsstring>(const AllocationHandleT &amp;allocation)</argsstring>
+        <name>ReleaseMemoryPool</name>
+        <param>
+          <type>const <ref refid="struct_raven_1_1_renderer_1_1_s_device_memory_allocation" kindref="compound">AllocationHandleT</ref> &amp;</type>
+          <declname>allocation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/DeviceLayer/Memory.hpp" line="40" column="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/DeviceLayer/Memory.hpp" line="24" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/DeviceLayer/Memory.hpp" bodystart="25" bodyend="49"/>
+    <listofallmembers>
+      <member refid="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1ae2dfa96af98b5ba322101fa5c06c5b39" prot="public" virt="non-virtual"><scope>Raven::Renderer::Device::CHeap</scope><name>Allocate</name></member>
+      <member refid="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1a8e765f24c320c4231258c22fc4e5250c" prot="public" virt="non-virtual"><scope>Raven::Renderer::Device::CHeap</scope><name>AllocationHandleT</name></member>
+      <member refid="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1a751b1424adf686041f67f42364b4cabe" prot="public" virt="non-virtual"><scope>Raven::Renderer::Device::CHeap</scope><name>CHeap</name></member>
+      <member refid="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1a573379024c16ffd20b2f31ef2fe7cbf7" prot="private" virt="non-virtual"><scope>Raven::Renderer::Device::CHeap</scope><name>FindMemoryPool</name></member>
+      <member refid="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1ae2e0c1fb0d19dce6484fbc1a1011d4f8" prot="public" virt="non-virtual"><scope>Raven::Renderer::Device::CHeap</scope><name>Free</name></member>
+      <member refid="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1a4beaf875f501da8f2c545ad0494397df" prot="public" virt="non-virtual"><scope>Raven::Renderer::Device::CHeap</scope><name>GetMappedMemory</name></member>
+      <member refid="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1ae6ecf2a9efad7a7a6fa95170705cde44" prot="private" virt="non-virtual"><scope>Raven::Renderer::Device::CHeap</scope><name>GetOrCreateFittngRange</name></member>
+      <member refid="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1a5368c805b45ef63adf82b6f510ab0ba1" prot="private" virt="non-virtual"><scope>Raven::Renderer::Device::CHeap</scope><name>m_creationLock</name></member>
+      <member refid="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1a175504362a3ab2be312e8656ea3a4348" prot="private" virt="non-virtual"><scope>Raven::Renderer::Device::CHeap</scope><name>m_device</name></member>
+      <member refid="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1a8cd122a7e4f24a7c961fd2afefbdb871" prot="private" virt="non-virtual"><scope>Raven::Renderer::Device::CHeap</scope><name>m_memoryHeap</name></member>
+      <member refid="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1aeab89fba1186200c9fbd7a2c262866fc" prot="private" virt="non-virtual"><scope>Raven::Renderer::Device::CHeap</scope><name>MemoryRanges</name></member>
+      <member refid="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1aa10cf2fc345583adebfc82c506208b0a" prot="private" virt="non-virtual"><scope>Raven::Renderer::Device::CHeap</scope><name>ReleaseMemoryPool</name></member>
+      <member refid="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1af4220c9fe7e4ee7a41924d0d105efad4" prot="private" virt="non-virtual"><scope>Raven::Renderer::Device::CHeap</scope><name>ReleaseRange</name></member>
+      <member refid="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1a1c40e54d63811ecb17faf5fbf3e1ff98" prot="public" virt="non-virtual"><scope>Raven::Renderer::Device::CHeap</scope><name>~CHeap</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

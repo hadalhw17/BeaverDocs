@@ -1,0 +1,305 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_raven_1_1_profiling_1_1_c_profiler" kind="class" language="C++" prot="public">
+    <compoundname>Raven::Profiling::CProfiler</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_raven_1_1_profiling_1_1_c_profiler_1ac7e37265f1040a7ff85b39515349e6a2" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_raven_1_1_profiling_1_1_c_profiling_session" kindref="compound">CProfilingSession</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;CProfilingSession&gt; Raven::Profiling::CProfiler::m_pCurrentSession</definition>
+        <argsstring></argsstring>
+        <name>m_pCurrentSession</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Profiling.hpp" line="51" column="17" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Profiling.hpp" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_raven_1_1_profiling_1_1_c_profiler_1a3d649bb7778a9be4b70983a0fe3b6885" prot="private" static="no" mutable="no">
+        <type>std::ofstream</type>
+        <definition>std::ofstream Raven::Profiling::CProfiler::m_outputStream</definition>
+        <argsstring></argsstring>
+        <name>m_outputStream</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Profiling.hpp" line="52" column="36" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Profiling.hpp" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_raven_1_1_profiling_1_1_c_profiler_1aa4a222dbeab277912a1996c266b77b07" prot="private" static="no" mutable="no">
+        <type>uint64</type>
+        <definition>uint64 Raven::Profiling::CProfiler::m_count</definition>
+        <argsstring></argsstring>
+        <name>m_count</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Profiling.hpp" line="53" column="36" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Profiling.hpp" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_raven_1_1_profiling_1_1_c_profiler_1ac05ef7be59e20b967ec4c22266d3228d" prot="private" static="no" mutable="no">
+        <type>std::thread</type>
+        <definition>std::thread Raven::Profiling::CProfiler::m_fileIOThread</definition>
+        <argsstring></argsstring>
+        <name>m_fileIOThread</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Profiling.hpp" line="55" column="36" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Profiling.hpp" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_raven_1_1_profiling_1_1_c_profiler_1a59d5e7d4838b754190100cd6bb8acca0" prot="private" static="no" mutable="no">
+        <type>std::array&lt; <ref refid="struct_raven_1_1_profiling_1_1_s_profiling_result" kindref="compound">SProfilingResult</ref>, 512 &gt;</type>
+        <definition>std::array&lt;SProfilingResult, 512&gt; Raven::Profiling::CProfiler::m_markerBuffer</definition>
+        <argsstring></argsstring>
+        <name>m_markerBuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Profiling.hpp" line="56" column="13" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Profiling.hpp" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_raven_1_1_profiling_1_1_c_profiler_1a3973cb6a608897691c71de547a7c5658" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; size_t &gt;</type>
+        <definition>std::atomic&lt;size_t&gt; Raven::Profiling::CProfiler::m_writeIdx</definition>
+        <argsstring></argsstring>
+        <name>m_writeIdx</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Profiling.hpp" line="57" column="28" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Profiling.hpp" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_raven_1_1_profiling_1_1_c_profiler_1a263e41731e68cf9b9e7772303e235ae9" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; size_t &gt;</type>
+        <definition>std::atomic&lt;size_t&gt; Raven::Profiling::CProfiler::m_readIdx</definition>
+        <argsstring></argsstring>
+        <name>m_readIdx</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Profiling.hpp" line="58" column="28" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Profiling.hpp" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_raven_1_1_profiling_1_1_c_profiler_1a53dba24895856b86882c98867ccfcfff" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; Raven::Profiling::CProfiler::m_bRun</definition>
+        <argsstring></argsstring>
+        <name>m_bRun</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Profiling.hpp" line="60" column="30" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Profiling.hpp" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_raven_1_1_profiling_1_1_c_profiler_1a4947c0e20d6c48fd6e5bda90b9583690" prot="private" static="yes" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_raven_1_1_profiling_1_1_c_profiler" kindref="compound">CProfiler</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;CProfiler&gt; Raven::Profiling::CProfiler::s_pProfiler</definition>
+        <argsstring></argsstring>
+        <name>s_pProfiler</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Profiling.hpp" line="63" column="24" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Profiling.hpp" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_raven_1_1_profiling_1_1_c_profiler_1a2dd16de1c7cfc292b5d6366d67f27ec5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Raven::Profiling::CProfiler::CProfiler</definition>
+        <argsstring>()=default</argsstring>
+        <name>CProfiler</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Profiling.hpp" line="38" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_profiling_1_1_c_profiler_1a0aafe54b7b6a473ba399719b6ccc5dc7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Raven::Profiling::CProfiler::~CProfiler</definition>
+        <argsstring>()=default</argsstring>
+        <name>~CProfiler</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Profiling.hpp" line="39" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_profiling_1_1_c_profiler_1aaa5ba185b6c572086b015e3bf5f870ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Raven::Profiling::CProfiler::AddMarker</definition>
+        <argsstring>(const SProfilingResult &amp;res)</argsstring>
+        <name>AddMarker</name>
+        <param>
+          <type>const <ref refid="struct_raven_1_1_profiling_1_1_s_profiling_result" kindref="compound">SProfilingResult</ref> &amp;</type>
+          <declname>res</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Profiling.hpp" line="42" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_profiling_1_1_c_profiler_1af758c657c84d5fcb8291fbdf9a5a87e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Raven::Profiling::CProfiler::Flush</definition>
+        <argsstring>()</argsstring>
+        <name>Flush</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Profiling.hpp" line="43" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_profiling_1_1_c_profiler_1a5e60f37f1fb80f4842cb7c27d8f3c7dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Raven::Profiling::CProfiler::BeginSession</definition>
+        <argsstring>(const char *pName)</argsstring>
+        <name>BeginSession</name>
+        <param>
+          <type>const char *</type>
+          <declname>pName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Profiling.hpp" line="44" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_profiling_1_1_c_profiler_1a0ef61a7de54c2df8e0559cb64f271f6e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Raven::Profiling::CProfiler::EndSession</definition>
+        <argsstring>()</argsstring>
+        <name>EndSession</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Profiling.hpp" line="45" column="6"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_raven_1_1_profiling_1_1_c_profiler_1ae6e8befcee48bcd81d99ba070ec9ca87" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_raven_1_1_profiling_1_1_c_profiler" kindref="compound">CProfiler</ref> &amp;</type>
+        <definition>static CProfiler&amp; Raven::Profiling::CProfiler::Get</definition>
+        <argsstring>()</argsstring>
+        <name>Get</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Profiling.hpp" line="41" column="18" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Profiling.hpp" bodystart="41" bodyend="41"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_raven_1_1_profiling_1_1_c_profiler_1a9aee7863742e3a46eb2092595df85db3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Raven::Profiling::CProfiler::WriteHeader</definition>
+        <argsstring>()</argsstring>
+        <name>WriteHeader</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Profiling.hpp" line="47" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_profiling_1_1_c_profiler_1af20fc902b105d7a3d781aed976bd1492" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Raven::Profiling::CProfiler::WriteFooter</definition>
+        <argsstring>()</argsstring>
+        <name>WriteFooter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Profiling.hpp" line="48" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_profiling_1_1_c_profiler_1a9137f229d107731a664c6bc555f75720" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Raven::Profiling::CProfiler::WriteMarker</definition>
+        <argsstring>(const SProfilingResult &amp;res)</argsstring>
+        <name>WriteMarker</name>
+        <param>
+          <type>const <ref refid="struct_raven_1_1_profiling_1_1_s_profiling_result" kindref="compound">SProfilingResult</ref> &amp;</type>
+          <declname>res</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Profiling.hpp" line="49" column="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Profiling.hpp" line="35" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Profiling.hpp" bodystart="36" bodyend="64"/>
+    <listofallmembers>
+      <member refid="class_raven_1_1_profiling_1_1_c_profiler_1aaa5ba185b6c572086b015e3bf5f870ce" prot="public" virt="non-virtual"><scope>Raven::Profiling::CProfiler</scope><name>AddMarker</name></member>
+      <member refid="class_raven_1_1_profiling_1_1_c_profiler_1a5e60f37f1fb80f4842cb7c27d8f3c7dd" prot="public" virt="non-virtual"><scope>Raven::Profiling::CProfiler</scope><name>BeginSession</name></member>
+      <member refid="class_raven_1_1_profiling_1_1_c_profiler_1a2dd16de1c7cfc292b5d6366d67f27ec5" prot="public" virt="non-virtual"><scope>Raven::Profiling::CProfiler</scope><name>CProfiler</name></member>
+      <member refid="class_raven_1_1_profiling_1_1_c_profiler_1a0ef61a7de54c2df8e0559cb64f271f6e" prot="public" virt="non-virtual"><scope>Raven::Profiling::CProfiler</scope><name>EndSession</name></member>
+      <member refid="class_raven_1_1_profiling_1_1_c_profiler_1af758c657c84d5fcb8291fbdf9a5a87e0" prot="public" virt="non-virtual"><scope>Raven::Profiling::CProfiler</scope><name>Flush</name></member>
+      <member refid="class_raven_1_1_profiling_1_1_c_profiler_1ae6e8befcee48bcd81d99ba070ec9ca87" prot="public" virt="non-virtual"><scope>Raven::Profiling::CProfiler</scope><name>Get</name></member>
+      <member refid="class_raven_1_1_profiling_1_1_c_profiler_1a53dba24895856b86882c98867ccfcfff" prot="private" virt="non-virtual"><scope>Raven::Profiling::CProfiler</scope><name>m_bRun</name></member>
+      <member refid="class_raven_1_1_profiling_1_1_c_profiler_1aa4a222dbeab277912a1996c266b77b07" prot="private" virt="non-virtual"><scope>Raven::Profiling::CProfiler</scope><name>m_count</name></member>
+      <member refid="class_raven_1_1_profiling_1_1_c_profiler_1ac05ef7be59e20b967ec4c22266d3228d" prot="private" virt="non-virtual"><scope>Raven::Profiling::CProfiler</scope><name>m_fileIOThread</name></member>
+      <member refid="class_raven_1_1_profiling_1_1_c_profiler_1a59d5e7d4838b754190100cd6bb8acca0" prot="private" virt="non-virtual"><scope>Raven::Profiling::CProfiler</scope><name>m_markerBuffer</name></member>
+      <member refid="class_raven_1_1_profiling_1_1_c_profiler_1a3d649bb7778a9be4b70983a0fe3b6885" prot="private" virt="non-virtual"><scope>Raven::Profiling::CProfiler</scope><name>m_outputStream</name></member>
+      <member refid="class_raven_1_1_profiling_1_1_c_profiler_1ac7e37265f1040a7ff85b39515349e6a2" prot="private" virt="non-virtual"><scope>Raven::Profiling::CProfiler</scope><name>m_pCurrentSession</name></member>
+      <member refid="class_raven_1_1_profiling_1_1_c_profiler_1a263e41731e68cf9b9e7772303e235ae9" prot="private" virt="non-virtual"><scope>Raven::Profiling::CProfiler</scope><name>m_readIdx</name></member>
+      <member refid="class_raven_1_1_profiling_1_1_c_profiler_1a3973cb6a608897691c71de547a7c5658" prot="private" virt="non-virtual"><scope>Raven::Profiling::CProfiler</scope><name>m_writeIdx</name></member>
+      <member refid="class_raven_1_1_profiling_1_1_c_profiler_1a4947c0e20d6c48fd6e5bda90b9583690" prot="private" virt="non-virtual"><scope>Raven::Profiling::CProfiler</scope><name>s_pProfiler</name></member>
+      <member refid="class_raven_1_1_profiling_1_1_c_profiler_1af20fc902b105d7a3d781aed976bd1492" prot="private" virt="non-virtual"><scope>Raven::Profiling::CProfiler</scope><name>WriteFooter</name></member>
+      <member refid="class_raven_1_1_profiling_1_1_c_profiler_1a9aee7863742e3a46eb2092595df85db3" prot="private" virt="non-virtual"><scope>Raven::Profiling::CProfiler</scope><name>WriteHeader</name></member>
+      <member refid="class_raven_1_1_profiling_1_1_c_profiler_1a9137f229d107731a664c6bc555f75720" prot="private" virt="non-virtual"><scope>Raven::Profiling::CProfiler</scope><name>WriteMarker</name></member>
+      <member refid="class_raven_1_1_profiling_1_1_c_profiler_1a0aafe54b7b6a473ba399719b6ccc5dc7" prot="public" virt="non-virtual"><scope>Raven::Profiling::CProfiler</scope><name>~CProfiler</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

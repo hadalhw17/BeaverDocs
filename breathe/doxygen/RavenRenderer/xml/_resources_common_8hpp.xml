@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_resources_common_8hpp" kind="file" language="C++">
+    <compoundname>ResourcesCommon.hpp</compoundname>
+    <includedby refid="_memory_8hpp" local="yes">/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/DeviceLayer/Memory.hpp</includedby>
+    <includedby refid="_graphics_resource_8hpp" local="yes">/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/DeviceLayer/GraphicsResource.hpp</includedby>
+    <invincdepgraph>
+      <node id="4">
+        <label>/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/DeviceLayer/DeviceBuffer.hpp</label>
+        <link refid="_device_buffer_8hpp_source"/>
+      </node>
+      <node id="1">
+        <label>/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/ResourcesCommon.hpp</label>
+        <link refid="_resources_common_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/DeviceLayer/GraphicsResource.hpp</label>
+        <link refid="_graphics_resource_8hpp_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/DeviceLayer/Memory.hpp</label>
+        <link refid="_memory_8hpp_source"/>
+      </node>
+      <node id="5">
+        <label>/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/DeviceLayer/DeviceTexture.hpp</label>
+        <link refid="_device_texture_8hpp_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_raven_1_1_renderer_1_1_s_memory_range" prot="public">Raven::Renderer::SMemoryRange</innerclass>
+    <innerclass refid="struct_raven_1_1_renderer_1_1_s_memory_range_1_1_s_cmp" prot="public">Raven::Renderer::SMemoryRange::SCmp</innerclass>
+    <innerclass refid="struct_raven_1_1_renderer_1_1_s_device_memory_allocation" prot="public">Raven::Renderer::SDeviceMemoryAllocation</innerclass>
+    <innernamespace refid="namespace_raven">Raven</innernamespace>
+    <innernamespace refid="namespace_raven_1_1_renderer">Raven::Renderer</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Raven</highlight></codeline>
+<codeline lineno="4"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Renderer</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>EMemoryHeapType</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>eHeapType_DeviceLocal,</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>eHeapType_Shared,</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>eHeapType_Count</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Used<sp/>as<sp/>a<sp/>look-up<sp/>into<sp/>the<sp/>m_memoryHeaps<sp/>array</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="struct_raven_1_1_renderer_1_1_s_memory_range" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_raven_1_1_renderer_1_1_s_memory_range" kindref="compound">SMemoryRange</ref></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Index<sp/>into<sp/>vector</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>heapId<sp/>=<sp/>~0u;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Index<sp/>into<sp/>array</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>EMemoryHeapType<sp/>eHeapType<sp/>=<sp/>eHeapType_Count;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Memory<sp/>range<sp/>into<sp/>VkDeviceMemory</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/>start<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/>size<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="struct_raven_1_1_renderer_1_1_s_memory_range_1_1_s_cmp" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_raven_1_1_renderer_1_1_s_memory_range_1_1_s_cmp" kindref="compound">SCmp</ref></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator()<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_raven_1_1_renderer_1_1_s_memory_range" kindref="compound">SMemoryRange</ref>&amp;<sp/>lhs,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_raven_1_1_renderer_1_1_s_memory_range" kindref="compound">SMemoryRange</ref>&amp;<sp/>rhs)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="29"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>lhs.start<sp/>&lt;<sp/>rhs.start;<sp/></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>==(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_raven_1_1_renderer_1_1_s_memory_range" kindref="compound">SMemoryRange</ref>&amp;<sp/>rhs)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>memcmp(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;rhs,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="struct_raven_1_1_renderer_1_1_s_memory_range" kindref="compound">SMemoryRange</ref>))<sp/>==<sp/>0;<sp/>}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>==(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_raven_1_1_renderer_1_1_s_memory_range" kindref="compound">SMemoryRange</ref>&amp;<sp/>rhs)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>memcmp(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;rhs,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="struct_raven_1_1_renderer_1_1_s_memory_range" kindref="compound">SMemoryRange</ref>))<sp/>==<sp/>0;<sp/>}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="struct_raven_1_1_renderer_1_1_s_device_memory_allocation" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_raven_1_1_renderer_1_1_s_device_memory_allocation" kindref="compound">SDeviceMemoryAllocation</ref></highlight></codeline>
+<codeline lineno="38"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>VkDeviceMemory<sp/>m_vkMemory<sp/>=<sp/>VK_NULL_HANDLE;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_offset<sp/><sp/><sp/>=<sp/>~0ull;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="normal"><sp/>bool()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_vkMemory<sp/>!=<sp/>VK_NULL_HANDLE<sp/>&amp;&amp;<sp/>m_offset<sp/>!=<sp/>~0ull;<sp/>}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/ResourcesCommon.hpp"/>
+  </compounddef>
+</doxygen>

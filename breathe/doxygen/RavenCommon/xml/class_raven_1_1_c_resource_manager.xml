@@ -1,0 +1,457 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_raven_1_1_c_resource_manager" kind="class" language="C++" prot="public">
+    <compoundname>Raven::CResourceManager</compoundname>
+      <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="class_raven_1_1_c_resource_manager_1aee0d9ba4f563136e71df78de336cd9b6" prot="private" static="no">
+        <type><ref refid="class_raven_1_1_c_resource_cache" kindref="compound">CResourceCache</ref></type>
+        <definition>using Raven::CResourceManager::ResourceCacheT =  CResourceCache</definition>
+        <argsstring></argsstring>
+        <name>ResourceCacheT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/ResourceManager.hpp" line="65" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/ResourceManager.hpp" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_raven_1_1_c_resource_manager_1af5c32cc029ccb1c38484e6e76cb4d227" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; <ref refid="struct_raven_util_1_1_type_info" kindref="compound">RavenUtil::TypeInfo</ref>, std::unique_ptr&lt; <ref refid="class_raven_1_1_c_resource_loader" kindref="compound">CResourceLoader</ref> &gt; &gt;</type>
+        <definition>std::unordered_map&lt;RavenUtil::TypeInfo, std::unique_ptr&lt;CResourceLoader&gt; &gt; Raven::CResourceManager::m_resourceLoaders</definition>
+        <argsstring></argsstring>
+        <name>m_resourceLoaders</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/ResourceManager.hpp" line="163" column="20" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/ResourceManager.hpp" bodystart="163" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_raven_1_1_c_resource_manager_1a6846b749e7e4a06fc8bca0cbf24f835e" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; <ref refid="struct_raven_util_1_1_type_info" kindref="compound">RavenUtil::TypeInfo</ref>, <ref refid="class_raven_1_1_c_resource_cache" kindref="compound">ResourceCacheT</ref> &gt;</type>
+        <definition>std::unordered_map&lt;RavenUtil::TypeInfo, ResourceCacheT&gt; Raven::CResourceManager::m_typedResourceCache</definition>
+        <argsstring></argsstring>
+        <name>m_typedResourceCache</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/ResourceManager.hpp" line="164" column="38" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/ResourceManager.hpp" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_raven_1_1_c_resource_manager_1a2a7df1f6a4aa3ac4ce5848123a1edfaf" prot="private" static="no" mutable="no">
+        <type><ref refid="class_raven_1_1_c_resource_cache" kindref="compound">ResourceCacheT</ref></type>
+        <definition>ResourceCacheT Raven::CResourceManager::m_globalCache</definition>
+        <argsstring></argsstring>
+        <name>m_globalCache</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/ResourceManager.hpp" line="166" column="75" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/ResourceManager.hpp" bodystart="166" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_raven_1_1_c_resource_manager_1a2888cc655cccc8efa912a8e9afbe38bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Raven::CResourceManager::~CResourceManager</definition>
+        <argsstring>()</argsstring>
+        <name>~CResourceManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/ResourceManager.hpp" line="68" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_c_resource_manager_1ad0eaafd2b71a6385713efdcd70ab791e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename ResourceType</type>
+          </param>
+          <param>
+            <type>typename LoaderType</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void Raven::CResourceManager::SetLoader</definition>
+        <argsstring>(LoaderType &amp;&amp;loader)</argsstring>
+        <name>SetLoader</name>
+        <param>
+          <type>LoaderType &amp;&amp;</type>
+          <declname>loader</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/ResourceManager.hpp" line="71" column="6" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/ResourceManager.hpp" bodystart="170" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_c_resource_manager_1a5de1e6c365ad6de4acb689cf52e0433c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>ResourcePtr&lt; T &gt;</type>
+        <definition>ResourcePtr&lt;T&gt; Raven::CResourceManager::LoadResource</definition>
+        <argsstring>(const std::string &amp;path)</argsstring>
+        <name>LoadResource</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/ResourceManager.hpp" line="78" column="14" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/ResourceManager.hpp" bodystart="78" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_c_resource_manager_1a364a1145a306625fc8961e5bf0caff27" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>ResourcePtr&lt; IResource &gt;</type>
+        <definition>ResourcePtr&lt;IResource&gt; Raven::CResourceManager::LoadResourceEx</definition>
+        <argsstring>(const std::string &amp;path)</argsstring>
+        <name>LoadResourceEx</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/ResourceManager.hpp" line="93" column="14" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/ResourceManager.hpp" bodystart="93" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_c_resource_manager_1abfa6a1f1e9f23a828200e09fb3b48848" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Raven::CResourceManager::Discard</definition>
+        <argsstring>(ResourcePtr&lt; IResource &gt; pResource)</argsstring>
+        <name>Discard</name>
+        <param>
+          <type>ResourcePtr&lt; IResource &gt;</type>
+          <declname>pResource</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/ResourceManager.hpp" line="110" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_c_resource_manager_1add06c2b32f7fa361f265b1d0a0e2cd34" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Raven::CResourceManager::Discard</definition>
+        <argsstring>(const std::string &amp;path)</argsstring>
+        <name>Discard</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/ResourceManager.hpp" line="111" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_c_resource_manager_1a9cb2b8323ef9b84d751ed8b72c70dcf6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename ResourceType</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void Raven::CResourceManager::Discard</definition>
+        <argsstring>(const Utils::uuid &amp;uuid)</argsstring>
+        <name>Discard</name>
+        <param>
+          <type>const <ref refid="struct_raven_1_1_utils_1_1uuid" kindref="compound">Utils::uuid</ref> &amp;</type>
+          <declname>uuid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/ResourceManager.hpp" line="114" column="6" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/ResourceManager.hpp" bodystart="114" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_c_resource_manager_1aa8e5488ff78ce5037a0aa3ded6e8491e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename ResourceType</type>
+          </param>
+        </templateparamlist>
+        <type>ResourcePtr&lt; ResourceType &gt;</type>
+        <definition>ResourcePtr&lt;ResourceType&gt; Raven::CResourceManager::GetByUUID</definition>
+        <argsstring>(const Utils::uuid &amp;uuid)</argsstring>
+        <name>GetByUUID</name>
+        <param>
+          <type>const <ref refid="struct_raven_1_1_utils_1_1uuid" kindref="compound">Utils::uuid</ref> &amp;</type>
+          <declname>uuid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/ResourceManager.hpp" line="124" column="14" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/ResourceManager.hpp" bodystart="124" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_c_resource_manager_1a8906992b37d257be32aebeb456e08849" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename ResourceType</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void Raven::CResourceManager::PlaceResourceInCache</definition>
+        <argsstring>(ResourcePtr&lt; IResource &gt; pRes, const std::string &amp;path={})</argsstring>
+        <name>PlaceResourceInCache</name>
+        <param>
+          <type>ResourcePtr&lt; IResource &gt;</type>
+          <declname>pRes</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/ResourceManager.hpp" line="133" column="6" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/ResourceManager.hpp" bodystart="133" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_c_resource_manager_1a8af8db8928323fcb0029043bbcc21611" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::pair&lt; <ref refid="struct_raven_util_1_1_type_info" kindref="compound">RavenUtil::TypeInfo</ref>, <ref refid="class_raven_1_1_c_resource_loader" kindref="compound">CResourceLoader</ref> * &gt;</type>
+        <definition>std::pair&lt;RavenUtil::TypeInfo, CResourceLoader*&gt; Raven::CResourceManager::GetLoaderFromFormat</definition>
+        <argsstring>(const std::string &amp;path) const</argsstring>
+        <name>GetLoaderFromFormat</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/ResourceManager.hpp" line="138" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_c_resource_manager_1abe495d72152fdf1c14f72368f2c609f2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="struct_raven_util_1_1_type_info" kindref="compound">RavenUtil::TypeInfo</ref></type>
+        <definition>RavenUtil::TypeInfo Raven::CResourceManager::GetResourceTypeFromFormat</definition>
+        <argsstring>(const std::string &amp;path) const</argsstring>
+        <name>GetResourceTypeFromFormat</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/ResourceManager.hpp" line="139" column="22" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/ResourceManager.hpp" bodystart="139" bodyend="142"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_raven_1_1_c_resource_manager_1ae003346c3d5921d3cfb31d211b5272ee" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_raven_1_1_s_decoded_path" kindref="compound">SDecodedPath</ref></type>
+        <definition>static SDecodedPath Raven::CResourceManager::ResolvePath</definition>
+        <argsstring>(const std::string &amp;path)</argsstring>
+        <name>ResolvePath</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/ResourceManager.hpp" line="74" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_c_resource_manager_1a50add36dd83e590f88b4b96d96d63cc0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>static std::string Raven::CResourceManager::ForHashing</definition>
+        <argsstring>(struct App &amp;app, std::string_view path)</argsstring>
+        <name>ForHashing</name>
+        <param>
+          <type>struct App &amp;</type>
+          <declname>app</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/ResourceManager.hpp" line="75" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_c_resource_manager_1a6da3f5eb0526be5f169e6b937e66ee3c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_raven_1_1_utils_1_1uuid" kindref="compound">Utils::uuid</ref></type>
+        <definition>static Utils::uuid Raven::CResourceManager::GetOrCreateUUIDFromMeta</definition>
+        <argsstring>(const RavenUtil::TypeInfo type, const std::string &amp;path)</argsstring>
+        <name>GetOrCreateUUIDFromMeta</name>
+        <param>
+          <type>const <ref refid="struct_raven_util_1_1_type_info" kindref="compound">RavenUtil::TypeInfo</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/ResourceManager.hpp" line="130" column="21"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_raven_1_1_c_resource_manager_1a98d2b3cda97eccb86fe60ce1c35d6a33" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Raven::CResourceManager::PlaceResourceInCache</definition>
+        <argsstring>(const RavenUtil::TypeInfo &amp;info, ResourcePtr&lt; IResource &gt; pRes, const std::string &amp;path)</argsstring>
+        <name>PlaceResourceInCache</name>
+        <param>
+          <type>const <ref refid="struct_raven_util_1_1_type_info" kindref="compound">RavenUtil::TypeInfo</ref> &amp;</type>
+          <declname>info</declname>
+        </param>
+        <param>
+          <type>ResourcePtr&lt; IResource &gt;</type>
+          <declname>pRes</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/ResourceManager.hpp" line="146" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_c_resource_manager_1a474191d2fd37e9b86bb96ba518731b18" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ResourcePtr&lt; IResource &gt;</type>
+        <definition>ResourcePtr&lt;IResource&gt; Raven::CResourceManager::LoadImpl</definition>
+        <argsstring>(CResourceLoader *pLoader, const RavenUtil::TypeInfo &amp;resourceType, const std::string &amp;path)</argsstring>
+        <name>LoadImpl</name>
+        <param>
+          <type><ref refid="class_raven_1_1_c_resource_loader" kindref="compound">CResourceLoader</ref> *</type>
+          <declname>pLoader</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_raven_util_1_1_type_info" kindref="compound">RavenUtil::TypeInfo</ref> &amp;</type>
+          <declname>resourceType</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/ResourceManager.hpp" line="148" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_c_resource_manager_1acb73b1f41f5b145c0bd0e92f4304d4e1" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="class_raven_1_1_c_resource_cache" kindref="compound">ResourceCacheT</ref> &amp;</type>
+        <definition>ResourceCacheT&amp; Raven::CResourceManager::GetOrCreateResourceCache</definition>
+        <argsstring>()</argsstring>
+        <name>GetOrCreateResourceCache</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/ResourceManager.hpp" line="151" column="24" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/ResourceManager.hpp" bodystart="151" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_c_resource_manager_1ac4156009fc9d0ef0dbac475157f7be69" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>ResourcePtr&lt; IResource &gt;</type>
+        <definition>ResourcePtr&lt;IResource&gt; Raven::CResourceManager::FindInGlobalCache</definition>
+        <argsstring>(const Utils::uuid &amp;uuid) const</argsstring>
+        <name>FindInGlobalCache</name>
+        <param>
+          <type>const <ref refid="struct_raven_1_1_utils_1_1uuid" kindref="compound">Utils::uuid</ref> &amp;</type>
+          <declname>uuid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/ResourceManager.hpp" line="157" column="14" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/ResourceManager.hpp" bodystart="157" bodyend="160"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/ResourceManager.hpp" line="63" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/ResourceManager.hpp" bodystart="64" bodyend="167"/>
+    <listofallmembers>
+      <member refid="class_raven_1_1_c_resource_manager_1abfa6a1f1e9f23a828200e09fb3b48848" prot="public" virt="non-virtual"><scope>Raven::CResourceManager</scope><name>Discard</name></member>
+      <member refid="class_raven_1_1_c_resource_manager_1add06c2b32f7fa361f265b1d0a0e2cd34" prot="public" virt="non-virtual"><scope>Raven::CResourceManager</scope><name>Discard</name></member>
+      <member refid="class_raven_1_1_c_resource_manager_1a9cb2b8323ef9b84d751ed8b72c70dcf6" prot="public" virt="non-virtual"><scope>Raven::CResourceManager</scope><name>Discard</name></member>
+      <member refid="class_raven_1_1_c_resource_manager_1ac4156009fc9d0ef0dbac475157f7be69" prot="private" virt="non-virtual"><scope>Raven::CResourceManager</scope><name>FindInGlobalCache</name></member>
+      <member refid="class_raven_1_1_c_resource_manager_1a50add36dd83e590f88b4b96d96d63cc0" prot="public" virt="non-virtual"><scope>Raven::CResourceManager</scope><name>ForHashing</name></member>
+      <member refid="class_raven_1_1_c_resource_manager_1aa8e5488ff78ce5037a0aa3ded6e8491e" prot="public" virt="non-virtual"><scope>Raven::CResourceManager</scope><name>GetByUUID</name></member>
+      <member refid="class_raven_1_1_c_resource_manager_1a8af8db8928323fcb0029043bbcc21611" prot="public" virt="non-virtual"><scope>Raven::CResourceManager</scope><name>GetLoaderFromFormat</name></member>
+      <member refid="class_raven_1_1_c_resource_manager_1acb73b1f41f5b145c0bd0e92f4304d4e1" prot="private" virt="non-virtual"><scope>Raven::CResourceManager</scope><name>GetOrCreateResourceCache</name></member>
+      <member refid="class_raven_1_1_c_resource_manager_1a6da3f5eb0526be5f169e6b937e66ee3c" prot="public" virt="non-virtual"><scope>Raven::CResourceManager</scope><name>GetOrCreateUUIDFromMeta</name></member>
+      <member refid="class_raven_1_1_c_resource_manager_1abe495d72152fdf1c14f72368f2c609f2" prot="public" virt="non-virtual"><scope>Raven::CResourceManager</scope><name>GetResourceTypeFromFormat</name></member>
+      <member refid="class_raven_1_1_c_resource_manager_1a474191d2fd37e9b86bb96ba518731b18" prot="private" virt="non-virtual"><scope>Raven::CResourceManager</scope><name>LoadImpl</name></member>
+      <member refid="class_raven_1_1_c_resource_manager_1a5de1e6c365ad6de4acb689cf52e0433c" prot="public" virt="non-virtual"><scope>Raven::CResourceManager</scope><name>LoadResource</name></member>
+      <member refid="class_raven_1_1_c_resource_manager_1a364a1145a306625fc8961e5bf0caff27" prot="public" virt="non-virtual"><scope>Raven::CResourceManager</scope><name>LoadResourceEx</name></member>
+      <member refid="class_raven_1_1_c_resource_manager_1a2a7df1f6a4aa3ac4ce5848123a1edfaf" prot="private" virt="non-virtual"><scope>Raven::CResourceManager</scope><name>m_globalCache</name></member>
+      <member refid="class_raven_1_1_c_resource_manager_1af5c32cc029ccb1c38484e6e76cb4d227" prot="private" virt="non-virtual"><scope>Raven::CResourceManager</scope><name>m_resourceLoaders</name></member>
+      <member refid="class_raven_1_1_c_resource_manager_1a6846b749e7e4a06fc8bca0cbf24f835e" prot="private" virt="non-virtual"><scope>Raven::CResourceManager</scope><name>m_typedResourceCache</name></member>
+      <member refid="class_raven_1_1_c_resource_manager_1a8906992b37d257be32aebeb456e08849" prot="public" virt="non-virtual"><scope>Raven::CResourceManager</scope><name>PlaceResourceInCache</name></member>
+      <member refid="class_raven_1_1_c_resource_manager_1a98d2b3cda97eccb86fe60ce1c35d6a33" prot="private" virt="non-virtual"><scope>Raven::CResourceManager</scope><name>PlaceResourceInCache</name></member>
+      <member refid="class_raven_1_1_c_resource_manager_1ae003346c3d5921d3cfb31d211b5272ee" prot="public" virt="non-virtual"><scope>Raven::CResourceManager</scope><name>ResolvePath</name></member>
+      <member refid="class_raven_1_1_c_resource_manager_1aee0d9ba4f563136e71df78de336cd9b6" prot="private" virt="non-virtual"><scope>Raven::CResourceManager</scope><name>ResourceCacheT</name></member>
+      <member refid="class_raven_1_1_c_resource_manager_1ad0eaafd2b71a6385713efdcd70ab791e" prot="public" virt="non-virtual"><scope>Raven::CResourceManager</scope><name>SetLoader</name></member>
+      <member refid="class_raven_1_1_c_resource_manager_1a2888cc655cccc8efa912a8e9afbe38bc" prot="public" virt="non-virtual"><scope>Raven::CResourceManager</scope><name>~CResourceManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
