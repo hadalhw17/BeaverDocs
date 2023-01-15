@@ -1,0 +1,442 @@
+
+	
+
+<!DOCTYPE html>
+<html class="writer-html5 dark" lang="C++" >
+<head>
+	<meta charset="utf-8">
+	<meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+		<title>File GltfDocument.cpp &mdash; Raven Engine 0.0.1 documentation</title>
+	
+	
+	
+	<link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+	<link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+	<link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+	<link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+
+	
+	
+	
+	
+
+	
+	<!--[if lt IE 9]>
+		<script src="../../../../_static/js/html5shiv.min.js"></script>
+	<![endif]-->
+	
+		
+			<script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+				<script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+				<script src="../../../../_static/jquery.js"></script>
+				<script src="../../../../_static/underscore.js"></script>
+				<script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+				<script src="../../../../_static/doctools.js"></script>
+				<script src="../../../../_static/sphinx_highlight.js"></script>
+		
+		<script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+		
+		<link rel="index" title="Index" href="../../../../genindex.html" />
+		<link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+<body class="wy-body-for-nav">
+
+
+	 
+	<div class="wy-grid-for-nav">
+		
+		<nav data-toggle="wy-nav-shift" class="wy-nav-side">
+			<div class="wy-side-scroll">
+				<div class="wy-side-nav-search">
+					
+						<div class="brand">
+							<a href="../../../../index.html">
+							
+								Raven Engine
+							
+							</a>
+						</div>
+						
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+					
+				</div>
+				
+				<div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+					
+						
+						
+							
+						
+						
+							<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../philosophy.html">Engine philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../philosophy.html#initialisation">Initialisation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../samples.html">Samples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api.html">Raven API</a></li>
+</ul>
+
+						
+					
+				</div>
+				
+			</div>
+		</nav>
+
+		<section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+			
+			<nav class="wy-nav-top" aria-label="top navigation">
+			
+				<i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+				<a href="../../../../index.html">
+					
+						Raven Engine
+					
+				</a>
+			
+			</nav>
+
+
+			<div class="wy-nav-content">
+				
+				<div class="rst-content">
+				
+					<div role="navigation" aria-label="breadcrumbs navigation">
+
+	<ul class="wy-breadcrumbs">
+		
+			
+				<li><a href="../../../../index.html">Raven Engine</a> ⁄&nbsp;</li>
+				
+				<li><a href="">File GltfDocument.cpp</a></li>
+			
+		
+		
+			<li class="wy-breadcrumbs-aside">
+			
+				<a href="https://github.com/hadalhw17/RavenEngine" class="fa fa-github-alt"></a>
+			
+			</li>
+		
+	</ul>
+
+</div>
+					<div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+					 <div itemprop="articleBody">
+						
+  <section id="file-gltfdocument-cpp">
+<h1>File GltfDocument.cpp<a class="headerlink" href="#file-gltfdocument-cpp" title="Permalink to this heading">¶</a></h1>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-defines">Defines</p>
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.STBI_MSC_SECURE_CRT">
+<span class="target" id="d2/d9d/GltfDocument_8cpp_1a066d7810c38721d932038acfad638d0e"></span><span class="sig-name descname"><span class="n"><span class="pre">STBI_MSC_SECURE_CRT</span></span></span><a class="headerlink" href="#c.STBI_MSC_SECURE_CRT" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.STB_IMAGE_IMPLEMENTATION">
+<span class="target" id="d2/d9d/GltfDocument_8cpp_1a18372412ad2fc3ce1e3240b3cf0efe78"></span><span class="sig-name descname"><span class="n"><span class="pre">STB_IMAGE_IMPLEMENTATION</span></span></span><a class="headerlink" href="#c.STB_IMAGE_IMPLEMENTATION" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.STB_IMAGE_WRITE_IMPLEMENTATION">
+<span class="target" id="d2/d9d/GltfDocument_8cpp_1aefe397a94e8feddc652f92ef40ce9597"></span><span class="sig-name descname"><span class="n"><span class="pre">STB_IMAGE_WRITE_IMPLEMENTATION</span></span></span><a class="headerlink" href="#c.STB_IMAGE_WRITE_IMPLEMENTATION" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.RAVEN_PLATFORM_LITTLE_ENDIAN">
+<span class="target" id="d2/d9d/GltfDocument_8cpp_1a7d81b3d611054691ae405eebae1257b7"></span><span class="sig-name descname"><span class="n"><span class="pre">RAVEN_PLATFORM_LITTLE_ENDIAN</span></span></span><a class="headerlink" href="#c.RAVEN_PLATFORM_LITTLE_ENDIAN" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp">
+<span class="target" id="d2/d9d/GltfDocument_8cpp_1aebc365479147d910c18ca18c52ed1d3f"></span><span class="sig-name descname"><span class="pre">Value</span> <span class="pre">(&quot;SCALAR&quot;,</span> <span class="pre">EParamType::Scalar)</span></span></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp">
+<span class="target" id="d2/d9d/GltfDocument_8cpp_1a0411b8eb3f8fc4c675143cd715aa1025"></span><span class="sig-name descname"><span class="pre">Value</span> <span class="pre">(&quot;VEC2&quot;,</span> <span class="pre">EParamType::Vec2)</span></span></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp">
+<span class="target" id="d2/d9d/GltfDocument_8cpp_1a9138996a8d3422d3f9cb4defefb9ba62"></span><span class="sig-name descname"><span class="pre">Value</span> <span class="pre">(&quot;VEC3&quot;,</span> <span class="pre">EParamType::Vec3)</span></span></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp">
+<span class="target" id="d2/d9d/GltfDocument_8cpp_1af3faf7765a1402c1921470a404399b1e"></span><span class="sig-name descname"><span class="pre">Value</span> <span class="pre">(&quot;VEC4&quot;,</span> <span class="pre">EParamType::Vec4)</span></span></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp">
+<span class="target" id="d2/d9d/GltfDocument_8cpp_1aada36bb9352a46a2dc745192f5f44785"></span><span class="sig-name descname"><span class="pre">Value</span> <span class="pre">(&quot;MAT2&quot;,</span> <span class="pre">EParamType::Mat2)</span></span></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp">
+<span class="target" id="d2/d9d/GltfDocument_8cpp_1a5d961e414ea075d6af085f2fae19ba3f"></span><span class="sig-name descname"><span class="pre">Value</span> <span class="pre">(&quot;MAT3&quot;,</span> <span class="pre">EParamType::Mat3)</span></span></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp">
+<span class="target" id="d2/d9d/GltfDocument_8cpp_1af2ec9d92f60c45b10052b0e12c4b6172"></span><span class="sig-name descname"><span class="pre">Value</span> <span class="pre">(&quot;MAT4&quot;,</span> <span class="pre">EParamType::Mat4))</span></span></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp">
+<span class="target" id="d2/d9d/GltfDocument_8cpp_1a8293e5fec078bed30034738703f2e944"></span><span class="sig-name descname"><span class="pre">Value</span> <span class="pre">(&quot;ELEMENT_ARRAY_BUFFER&quot;,</span> <span class="pre">EViewTarget::ElementArrayBuffer))</span></span></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp">
+<span class="target" id="d2/d9d/GltfDocument_8cpp_1a75dfe7d1b8e9992e1679f384f5ad245b"></span><span class="sig-name descname"><span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SAsset</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SAsset</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SBufferView</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SBufferView</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SAccessor</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SAccessor</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SScene</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SScene</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SNode</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SNode</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SBuffer</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SBuffer</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SPrimitive</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SPrimitive</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SMesh</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SMesh</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SImage</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SImage</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SSampler</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SSampler</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">STexture</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;STexture</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">STextureInfo</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;STextureInfo</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SNormalTextureInfo</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SNormalTextureInfo</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SOcclusionTextureInfo</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SOcclusionTextureInfo</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SPBRMetallicRoughness</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SPBRMetallicRoughness</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SMaterial</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SMaterial</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SAnimation::SChannel::SAnimationChannelTarget</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SAnimation</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SAnimation::SChannel</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SAnimation</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SAnimation::SSampler</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SAnimation</span> <span class="pre">TypeRegistry::Enum&lt;</span> <span class="pre">IAnimation::SSampler::EInterpolationMode</span> <span class="pre">&gt;</span> <span class="pre">(&quot;InterpolationMode&quot;)(Value(&quot;STEP&quot;</span></span></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp">
+<span class="target" id="d2/d9d/GltfDocument_8cpp_1a9bbbf0c2c6028e1593209e64fe7724fd"></span><span class="sig-name descname"><span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SAsset</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SAsset</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SBufferView</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SBufferView</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SAccessor</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SAccessor</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SScene</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SScene</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SNode</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SNode</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SBuffer</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SBuffer</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SPrimitive</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SPrimitive</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SMesh</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SMesh</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SImage</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SImage</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SSampler</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SSampler</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">STexture</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;STexture</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">STextureInfo</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;STextureInfo</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SNormalTextureInfo</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SNormalTextureInfo</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SOcclusionTextureInfo</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SOcclusionTextureInfo</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SPBRMetallicRoughness</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SPBRMetallicRoughness</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SMaterial</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SMaterial</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SAnimation::SChannel::SAnimationChannelTarget</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SAnimation</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SAnimation::SChannel</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SAnimation</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SAnimation::SSampler</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SAnimation</span> <span class="pre">Value</span> <span class="pre">(&quot;LINEAR&quot;,</span> <span class="pre">IAnimation::SSampler::EInterpolationMode::Linear)</span></span></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp">
+<span class="target" id="d2/d9d/GltfDocument_8cpp_1a7105635448b76a894f32f314056b5681"></span><span class="sig-name descname"><span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SAsset</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SAsset</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SBufferView</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SBufferView</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SAccessor</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SAccessor</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SScene</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SScene</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SNode</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SNode</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SBuffer</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SBuffer</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SPrimitive</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SPrimitive</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SMesh</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SMesh</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SImage</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SImage</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SSampler</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SSampler</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">STexture</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;STexture</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">STextureInfo</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;STextureInfo</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SNormalTextureInfo</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SNormalTextureInfo</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SOcclusionTextureInfo</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SOcclusionTextureInfo</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SPBRMetallicRoughness</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SPBRMetallicRoughness</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SMaterial</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SMaterial</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SAnimation::SChannel::SAnimationChannelTarget</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SAnimation</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SAnimation::SChannel</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SAnimation</span> <span class="pre">TypeRegistry::Class_&lt;</span> <span class="pre">SAnimation::SSampler</span> <span class="pre">&gt;()</span> <span class="pre">.Property(&amp;SAnimation</span> <span class="pre">Value</span> <span class="pre">(&quot;CUBIC&quot;,</span> <span class="pre">IAnimation::SSampler::EInterpolationMode::Cubic))</span></span></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-variables">Variables</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp">
+<span class="target" id="d2/d9d/GltfDocument_8cpp_1a08ef6781fd70619b3d4592937da22e48"></span><span class="sig-name descname"><span class="pre">RAVEN_REFLECTION_BLOCK</span>&#160; <span class="pre">{using</span> <span class="pre">namespace</span> <span class="pre">Raven::Meta</span></span></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv45Raven">
+<span id="_CPPv35Raven"></span><span id="_CPPv25Raven"></span><span id="Raven"></span><span class="target" id="d4/dfa/namespaceRaven"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Raven</span></span></span><br /></dt>
+<dd><dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven4GLTFE">
+<span id="_CPPv3N5Raven4GLTFE"></span><span id="_CPPv2N5Raven4GLTFE"></span><span id="Raven::GLTF"></span><span class="target" id="d0/dcf/namespaceRaven_1_1GLTF"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GLTF</span></span></span><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven4GLTF13FromAsciiFileEPKcb">
+<span id="_CPPv3N5Raven4GLTF13FromAsciiFileEPKcb"></span><span id="_CPPv2N5Raven4GLTF13FromAsciiFileEPKcb"></span><span id="Raven::GLTF::FromAsciiFile__cCP.b"></span><span class="target" id="d2/d9d/GltfDocument_8cpp_1ae3cee7d6b3acf3ed4a13e7f3a140e183"></span><a class="reference internal" href="../../dd/d7c/GltfDocument_8hpp.html#_CPPv4N5Raven4GLTF9SDocumentE" title="Raven::GLTF::SDocument"><span class="n"><span class="pre">SDocument</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FromAsciiFile</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">pPath</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">bDescOnly</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven4GLTF13FromAsciiFileEPKcb" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven4GLTF12HasBinHeaderENSt4spanI5uint8EE">
+<span id="_CPPv3N5Raven4GLTF12HasBinHeaderENSt4spanI5uint8EE"></span><span id="_CPPv2N5Raven4GLTF12HasBinHeaderENSt4spanI5uint8EE"></span><span id="Raven::GLTF::HasBinHeader__std::span:uint8:"></span><span class="target" id="d2/d9d/GltfDocument_8cpp_1a769ebb493246d6a8afb7ed8a13fcba59"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">HasBinHeader</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../../d0/d29/Timestep_8hpp.html#_CPPv4St" title="std"><span class="n"><span class="pre">std</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">span</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../../db/d60/RavenMath_8h.html#_CPPv45uint8" title="uint8"><span class="n"><span class="pre">uint8</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">data</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven4GLTF12HasBinHeaderENSt4spanI5uint8EE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven4GLTF16FromBinaryMemoryENSt4spanI5uint8EER10SParseInfo">
+<span id="_CPPv3N5Raven4GLTF16FromBinaryMemoryENSt4spanI5uint8EER10SParseInfo"></span><span id="_CPPv2N5Raven4GLTF16FromBinaryMemoryENSt4spanI5uint8EER10SParseInfo"></span><span id="Raven::GLTF::FromBinaryMemory__std::span:uint8:.SParseInfoR"></span><span class="target" id="d2/d9d/GltfDocument_8cpp_1ad226db5a0e860bedda44d4d69976fbbb"></span><a class="reference internal" href="../../dd/d7c/GltfDocument_8hpp.html#_CPPv4N5Raven4GLTF9SDocumentE" title="Raven::GLTF::SDocument"><span class="n"><span class="pre">SDocument</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FromBinaryMemory</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../../d0/d29/Timestep_8hpp.html#_CPPv4St" title="std"><span class="n"><span class="pre">std</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">span</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../../db/d60/RavenMath_8h.html#_CPPv45uint8" title="uint8"><span class="n"><span class="pre">uint8</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">data</span></span>, <a class="reference internal" href="../../dd/d7c/GltfDocument_8hpp.html#_CPPv4N5Raven4GLTF10SParseInfoE" title="Raven::GLTF::SParseInfo"><span class="n"><span class="pre">SParseInfo</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">info</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven4GLTF16FromBinaryMemoryENSt4spanI5uint8EER10SParseInfo" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven4GLTF14FromBinaryFileEPKcb">
+<span id="_CPPv3N5Raven4GLTF14FromBinaryFileEPKcb"></span><span id="_CPPv2N5Raven4GLTF14FromBinaryFileEPKcb"></span><span id="Raven::GLTF::FromBinaryFile__cCP.b"></span><span class="target" id="d2/d9d/GltfDocument_8cpp_1a4981e9dc0b0f23796b6d6d4527407e81"></span><a class="reference internal" href="../../dd/d7c/GltfDocument_8hpp.html#_CPPv4N5Raven4GLTF9SDocumentE" title="Raven::GLTF::SDocument"><span class="n"><span class="pre">SDocument</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FromBinaryFile</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">pPath</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">bDescOnly</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven4GLTF14FromBinaryFileEPKcb" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven4GLTF9FromAsciiEPKcR10SParseInfo">
+<span id="_CPPv3N5Raven4GLTF9FromAsciiEPKcR10SParseInfo"></span><span id="_CPPv2N5Raven4GLTF9FromAsciiEPKcR10SParseInfo"></span><span id="Raven::GLTF::FromAscii__cCP.SParseInfoR"></span><span class="target" id="d2/d9d/GltfDocument_8cpp_1a2636c54942a8f1d992681dd48288e6e4"></span><a class="reference internal" href="../../dd/d7c/GltfDocument_8hpp.html#_CPPv4N5Raven4GLTF9SDocumentE" title="Raven::GLTF::SDocument"><span class="n"><span class="pre">SDocument</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FromAscii</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">pData</span></span>, <a class="reference internal" href="../../dd/d7c/GltfDocument_8hpp.html#_CPPv4N5Raven4GLTF10SParseInfoE" title="Raven::GLTF::SParseInfo"><span class="n"><span class="pre">SParseInfo</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">info</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven4GLTF9FromAsciiEPKcR10SParseInfo" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven4GLTF11ToAsciiFileER9SDocumentPKc">
+<span id="_CPPv3N5Raven4GLTF11ToAsciiFileER9SDocumentPKc"></span><span id="_CPPv2N5Raven4GLTF11ToAsciiFileER9SDocumentPKc"></span><span id="Raven::GLTF::ToAsciiFile__SDocumentR.cCP"></span><span class="target" id="d2/d9d/GltfDocument_8cpp_1a629af37f427fc1af7f1120c1ae8d027f"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ToAsciiFile</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../../dd/d7c/GltfDocument_8hpp.html#_CPPv4N5Raven4GLTF9SDocumentE" title="Raven::GLTF::SDocument"><span class="n"><span class="pre">SDocument</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">doc</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">pPath</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven4GLTF11ToAsciiFileER9SDocumentPKc" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-variables">Variables</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven4GLTF13BinHeaderSizeE">
+<span id="_CPPv3N5Raven4GLTF13BinHeaderSizeE"></span><span id="_CPPv2N5Raven4GLTF13BinHeaderSizeE"></span><span id="Raven::GLTF::BinHeaderSize__uint32"></span><span class="target" id="d2/d9d/GltfDocument_8cpp_1aef460494a5a1503102dfedc48348ca03"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="../../db/d60/RavenMath_8h.html#_CPPv46uint32" title="uint32"><span class="n"><span class="pre">uint32</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">BinHeaderSize</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">20</span></span><a class="headerlink" href="#_CPPv4N5Raven4GLTF13BinHeaderSizeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven4GLTF6DetailE">
+<span id="_CPPv3N5Raven4GLTF6DetailE"></span><span id="_CPPv2N5Raven4GLTF6DetailE"></span><span id="Raven::GLTF::Detail"></span><span class="target" id="da/d76/namespaceRaven_1_1GLTF_1_1Detail"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Detail</span></span></span><a class="headerlink" href="#_CPPv4N5Raven4GLTF6DetailE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-typedefs">Typedefs</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven4GLTF6Detail14BinaryFstreamTE">
+<span id="_CPPv3N5Raven4GLTF6Detail14BinaryFstreamTE"></span><span id="_CPPv2N5Raven4GLTF6Detail14BinaryFstreamTE"></span><span class="target" id="d2/d9d/GltfDocument_8cpp_1aa8f16ff4ec39ab11761baa9327ef386c"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">BinaryFstreamT</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="../../d0/d29/Timestep_8hpp.html#_CPPv4St" title="std"><span class="n"><span class="pre">std</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">basic_fstream</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../../db/d60/RavenMath_8h.html#_CPPv45uint8" title="uint8"><span class="n"><span class="pre">uint8</span></span></a><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N5Raven4GLTF6Detail14BinaryFstreamTE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven4GLTF6Detail22BinaryFstreamIteratorTE">
+<span id="_CPPv3N5Raven4GLTF6Detail22BinaryFstreamIteratorTE"></span><span id="_CPPv2N5Raven4GLTF6Detail22BinaryFstreamIteratorTE"></span><span class="target" id="d2/d9d/GltfDocument_8cpp_1a4954b6615299fe27a71f8264f62368ee"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">BinaryFstreamIteratorT</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="../../d0/d29/Timestep_8hpp.html#_CPPv4St" title="std"><span class="n"><span class="pre">std</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">istreambuf_iterator</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../../db/d60/RavenMath_8h.html#_CPPv45uint8" title="uint8"><span class="n"><span class="pre">uint8</span></span></a><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N5Raven4GLTF6Detail22BinaryFstreamIteratorTE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven4GLTF6Detail13base64_encodeEPKhj">
+<span id="_CPPv3N5Raven4GLTF6Detail13base64_encodeEPKhj"></span><span id="_CPPv2N5Raven4GLTF6Detail13base64_encodeEPKhj"></span><span id="Raven::GLTF::Detail::base64_encode__unsigned-cCP.unsigned-i"></span><span class="target" id="d2/d9d/GltfDocument_8cpp_1a3bdfa2c963fce4b60d0979d086b8f701"></span><a class="reference internal" href="../../d0/d29/Timestep_8hpp.html#_CPPv4St" title="std"><span class="n"><span class="pre">std</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">base64_encode</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">*</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">len</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven4GLTF6Detail13base64_encodeEPKhj" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven4GLTF6Detail13base64_decodeERKNSt6stringE">
+<span id="_CPPv3N5Raven4GLTF6Detail13base64_decodeERKNSt6stringE"></span><span id="_CPPv2N5Raven4GLTF6Detail13base64_decodeERKNSt6stringE"></span><span id="Raven::GLTF::Detail::base64_decode__ssCR"></span><span class="target" id="d2/d9d/GltfDocument_8cpp_1a1c55348daa155827f9ee336389d01fc3"></span><a class="reference internal" href="../../d0/d29/Timestep_8hpp.html#_CPPv4St" title="std"><span class="n"><span class="pre">std</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">base64_decode</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../../d0/d29/Timestep_8hpp.html#_CPPv4St" title="std"><span class="n"><span class="pre">std</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">s</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven4GLTF6Detail13base64_decodeERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven4GLTF6Detail9is_base64Eh">
+<span id="_CPPv3N5Raven4GLTF6Detail9is_base64Eh"></span><span id="_CPPv2N5Raven4GLTF6Detail9is_base64Eh"></span><span id="Raven::GLTF::Detail::is_base64__unsigned-c"></span><span class="target" id="d2/d9d/GltfDocument_8cpp_1a2a9c132f9ebd7af7fc8d02e9c3a71020"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">is_base64</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven4GLTF6Detail9is_base64Eh" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven4GLTF6Detail5Swap4EPj">
+<span id="_CPPv3N5Raven4GLTF6Detail5Swap4EPj"></span><span id="_CPPv2N5Raven4GLTF6Detail5Swap4EPj"></span><span id="Raven::GLTF::Detail::Swap4__unsigned-iP"></span><span class="target" id="d2/d9d/GltfDocument_8cpp_1a7e04922a0c0087134256fbf31030e45b"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Swap4</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">val</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven4GLTF6Detail5Swap4EPj" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I_8Archiver0EN5Raven4GLTF6Detail23OnArrayElementReadProxyEbR4ArchR1T">
+<span id="_CPPv3I_8Archiver0EN5Raven4GLTF6Detail23OnArrayElementReadProxyER4ArchR1T"></span><span id="_CPPv2I_8Archiver0EN5Raven4GLTF6Detail23OnArrayElementReadProxyER4ArchR1T"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Archiver</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Arch</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="d2/d9d/GltfDocument_8cpp_1a805b389f93fef2c3cee62f7219167f1f"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">OnArrayElementReadProxy</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I_8Archiver0EN5Raven4GLTF6Detail23OnArrayElementReadProxyEbR4ArchR1T" title="Raven::GLTF::Detail::OnArrayElementReadProxy::Arch"><span class="n"><span class="pre">Arch</span></span></a><span class="p"><span class="pre">&amp;</span></span>, <a class="reference internal" href="#_CPPv4I_8Archiver0EN5Raven4GLTF6Detail23OnArrayElementReadProxyEbR4ArchR1T" title="Raven::GLTF::Detail::OnArrayElementReadProxy::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&amp;</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I_8Archiver0EN5Raven4GLTF6Detail23OnArrayElementReadProxyEbR4ArchR1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I_8Archiver00EN5Raven4GLTF6Detail14ArchiveForEachEbR4ArchRKNSt6stringERNSt6vectorI1TEE8OnReadFn">
+<span id="_CPPv3I_8Archiver00EN5Raven4GLTF6Detail14ArchiveForEachER4ArchRKNSt6stringERNSt6vectorI1TEE8OnReadFn"></span><span id="_CPPv2I_8Archiver00EN5Raven4GLTF6Detail14ArchiveForEachER4ArchRKNSt6stringERNSt6vectorI1TEE8OnReadFn"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Archiver</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Arch</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">OnReadFn</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">decltype</span></span><span class="p"><span class="pre">(</span></span><a class="reference internal" href="#_CPPv4I_8Archiver0EN5Raven4GLTF6Detail23OnArrayElementReadProxyEbR4ArchR1T" title="Raven::GLTF::Detail::OnArrayElementReadProxy"><span class="n"><span class="pre">OnArrayElementReadProxy</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I_8Archiver00EN5Raven4GLTF6Detail14ArchiveForEachEbR4ArchRKNSt6stringERNSt6vectorI1TEE8OnReadFn" title="Raven::GLTF::Detail::ArchiveForEach::Arch"><span class="n"><span class="pre">Arch</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I_8Archiver00EN5Raven4GLTF6Detail14ArchiveForEachEbR4ArchRKNSt6stringERNSt6vectorI1TEE8OnReadFn" title="Raven::GLTF::Detail::ArchiveForEach::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="d2/d9d/GltfDocument_8cpp_1af39a257e3d810525fdea81cd77f8c22f"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ArchiveForEach</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I_8Archiver00EN5Raven4GLTF6Detail14ArchiveForEachEbR4ArchRKNSt6stringERNSt6vectorI1TEE8OnReadFn" title="Raven::GLTF::Detail::ArchiveForEach::Arch"><span class="n"><span class="pre">Arch</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">arch</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="../../d0/d29/Timestep_8hpp.html#_CPPv4St" title="std"><span class="n"><span class="pre">std</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span>, <a class="reference internal" href="../../d0/d29/Timestep_8hpp.html#_CPPv4St" title="std"><span class="n"><span class="pre">std</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I_8Archiver00EN5Raven4GLTF6Detail14ArchiveForEachEbR4ArchRKNSt6stringERNSt6vectorI1TEE8OnReadFn" title="Raven::GLTF::Detail::ArchiveForEach::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">dst</span></span>, <a class="reference internal" href="#_CPPv4I_8Archiver00EN5Raven4GLTF6Detail14ArchiveForEachEbR4ArchRKNSt6stringERNSt6vectorI1TEE8OnReadFn" title="Raven::GLTF::Detail::ArchiveForEach::OnReadFn"><span class="n"><span class="pre">OnReadFn</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">onReadFn</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I_8Archiver0EN5Raven4GLTF6Detail23OnArrayElementReadProxyEbR4ArchR1T" title="Raven::GLTF::Detail::OnArrayElementReadProxy"><span class="n"><span class="pre">OnArrayElementReadProxy</span></span></a><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I_8Archiver00EN5Raven4GLTF6Detail14ArchiveForEachEbR4ArchRKNSt6stringERNSt6vectorI1TEE8OnReadFn" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I_8Archiver_NSt11enable_if_tIN4Arch8IsReaderEiEEEN5Raven4GLTF6Detail19ProcessExtensionMapEbR4ArchRKNSt6stringERNSt3mapINSt6stringEN4Meta7VariantEEE">
+<span id="_CPPv3I_8Archiver_NSt11enable_if_tIN4Arch8IsReaderEiEEEN5Raven4GLTF6Detail19ProcessExtensionMapER4ArchRKNSt6stringERNSt3mapINSt6stringEN4Meta7VariantEEE"></span><span id="_CPPv2I_8Archiver_NSt11enable_if_tIN4Arch8IsReaderEiEEEN5Raven4GLTF6Detail19ProcessExtensionMapER4ArchRKNSt6stringERNSt3mapINSt6stringEN4Meta7VariantEEE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Archiver</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Arch</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../../d0/d29/Timestep_8hpp.html#_CPPv4St" title="std"><span class="n"><span class="pre">std</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">enable_if_t</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I_8Archiver_NSt11enable_if_tIN4Arch8IsReaderEiEEEN5Raven4GLTF6Detail19ProcessExtensionMapEbR4ArchRKNSt6stringERNSt3mapINSt6stringEN4Meta7VariantEEE" title="Raven::GLTF::Detail::ProcessExtensionMap::Arch"><span class="n"><span class="pre">Arch</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">IsReader</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="d2/d9d/GltfDocument_8cpp_1affff1263f1d6eacf38ef5f9f38088917"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ProcessExtensionMap</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I_8Archiver_NSt11enable_if_tIN4Arch8IsReaderEiEEEN5Raven4GLTF6Detail19ProcessExtensionMapEbR4ArchRKNSt6stringERNSt3mapINSt6stringEN4Meta7VariantEEE" title="Raven::GLTF::Detail::ProcessExtensionMap::Arch"><span class="n"><span class="pre">Arch</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">reader</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="../../d0/d29/Timestep_8hpp.html#_CPPv4St" title="std"><span class="n"><span class="pre">std</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">propName</span></span>, <a class="reference internal" href="../../d0/d29/Timestep_8hpp.html#_CPPv4St" title="std"><span class="n"><span class="pre">std</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">map</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../../d0/d29/Timestep_8hpp.html#_CPPv4St" title="std"><span class="n"><span class="pre">std</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../../d0/d5e/Argument_8hpp.html#_CPPv4N5Raven4MetaE" title="Raven::Meta"><span class="n"><span class="pre">Meta</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="../../da/d80/Variant_8hpp.html#_CPPv4N5Raven4Meta7VariantE" title="Raven::Meta::Variant"><span class="n"><span class="pre">Variant</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">extensionMap</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I_8Archiver_NSt11enable_if_tIN4Arch8IsReaderEiEEEN5Raven4GLTF6Detail19ProcessExtensionMapEbR4ArchRKNSt6stringERNSt3mapINSt6stringEN4Meta7VariantEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven4GLTF6Detail9IsDataURIERKNSt6stringE">
+<span id="_CPPv3N5Raven4GLTF6Detail9IsDataURIERKNSt6stringE"></span><span id="_CPPv2N5Raven4GLTF6Detail9IsDataURIERKNSt6stringE"></span><span id="Raven::GLTF::Detail::IsDataURI__ssCR"></span><span class="target" id="d2/d9d/GltfDocument_8cpp_1a2fd75293a364ca8c295f21ea7f4b8faf"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">IsDataURI</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="../../d0/d29/Timestep_8hpp.html#_CPPv4St" title="std"><span class="n"><span class="pre">std</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">in</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven4GLTF6Detail9IsDataURIERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven4GLTF6Detail13DecodeDataURIEPNSt6vectorIhEERNSt6stringERKNSt6stringE6size_tb">
+<span id="_CPPv3N5Raven4GLTF6Detail13DecodeDataURIEPNSt6vectorIhEERNSt6stringERKNSt6stringE6size_tb"></span><span id="_CPPv2N5Raven4GLTF6Detail13DecodeDataURIEPNSt6vectorIhEERNSt6stringERKNSt6stringE6size_tb"></span><span id="Raven::GLTF::Detail::DecodeDataURI__std::vector:unsigned-c:P.ssR.ssCR.s.b"></span><span class="target" id="d2/d9d/GltfDocument_8cpp_1ac255d0d0c4ff47a4ba8909555a17fc7a"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">DecodeDataURI</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../../d0/d29/Timestep_8hpp.html#_CPPv4St" title="std"><span class="n"><span class="pre">std</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">out</span></span>, <a class="reference internal" href="../../d0/d29/Timestep_8hpp.html#_CPPv4St" title="std"><span class="n"><span class="pre">std</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">mime_type</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="../../d0/d29/Timestep_8hpp.html#_CPPv4St" title="std"><span class="n"><span class="pre">std</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">in</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">reqBytes</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">checkSize</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven4GLTF6Detail13DecodeDataURIEPNSt6vectorIhEERNSt6stringERKNSt6stringE6size_tb" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven4GLTF6Detail11ReadBinFileERKNSt6stringERKNSt6stringERNSt6vectorI5uint8EE">
+<span id="_CPPv3N5Raven4GLTF6Detail11ReadBinFileERKNSt6stringERKNSt6stringERNSt6vectorI5uint8EE"></span><span id="_CPPv2N5Raven4GLTF6Detail11ReadBinFileERKNSt6stringERKNSt6stringERNSt6vectorI5uint8EE"></span><span id="Raven::GLTF::Detail::ReadBinFile__ssCR.ssCR.std::vector:uint8:R"></span><span class="target" id="d2/d9d/GltfDocument_8cpp_1a9bf060d2ce5b244cba053eaa04446c3c"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ReadBinFile</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="../../d0/d29/Timestep_8hpp.html#_CPPv4St" title="std"><span class="n"><span class="pre">std</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">uri</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="../../d0/d29/Timestep_8hpp.html#_CPPv4St" title="std"><span class="n"><span class="pre">std</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">documentRootDir</span></span>, <a class="reference internal" href="../../d0/d29/Timestep_8hpp.html#_CPPv4St" title="std"><span class="n"><span class="pre">std</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../../db/d60/RavenMath_8h.html#_CPPv45uint8" title="uint8"><span class="n"><span class="pre">uint8</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">dst</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven4GLTF6Detail11ReadBinFileERKNSt6stringERKNSt6stringERNSt6vectorI5uint8EE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I_8Archiver_NSt11enable_if_tIN4Arch8IsReaderEiEEEN5Raven4GLTF6Detail13DecodeBuffersEbR4ArchR9SDocumentR10SParseInfo">
+<span id="_CPPv3I_8Archiver_NSt11enable_if_tIN4Arch8IsReaderEiEEEN5Raven4GLTF6Detail13DecodeBuffersER4ArchR9SDocumentR10SParseInfo"></span><span id="_CPPv2I_8Archiver_NSt11enable_if_tIN4Arch8IsReaderEiEEEN5Raven4GLTF6Detail13DecodeBuffersER4ArchR9SDocumentR10SParseInfo"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Archiver</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Arch</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../../d0/d29/Timestep_8hpp.html#_CPPv4St" title="std"><span class="n"><span class="pre">std</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">enable_if_t</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I_8Archiver_NSt11enable_if_tIN4Arch8IsReaderEiEEEN5Raven4GLTF6Detail13DecodeBuffersEbR4ArchR9SDocumentR10SParseInfo" title="Raven::GLTF::Detail::DecodeBuffers::Arch"><span class="n"><span class="pre">Arch</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">IsReader</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="d2/d9d/GltfDocument_8cpp_1ada3a616d5cc9611f11a325d21f650ced"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">DecodeBuffers</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I_8Archiver_NSt11enable_if_tIN4Arch8IsReaderEiEEEN5Raven4GLTF6Detail13DecodeBuffersEbR4ArchR9SDocumentR10SParseInfo" title="Raven::GLTF::Detail::DecodeBuffers::Arch"><span class="n"><span class="pre">Arch</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">arch</span></span>, <a class="reference internal" href="../../dd/d7c/GltfDocument_8hpp.html#_CPPv4N5Raven4GLTF9SDocumentE" title="Raven::GLTF::SDocument"><span class="n"><span class="pre">SDocument</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">doc</span></span>, <a class="reference internal" href="../../dd/d7c/GltfDocument_8hpp.html#_CPPv4N5Raven4GLTF10SParseInfoE" title="Raven::GLTF::SParseInfo"><span class="n"><span class="pre">SParseInfo</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">info</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I_8Archiver_NSt11enable_if_tIN4Arch8IsReaderEiEEEN5Raven4GLTF6Detail13DecodeBuffersEbR4ArchR9SDocumentR10SParseInfo" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven4GLTF6Detail10FromMemoryERK9SDocumentKiNSt4spanI5uint8EEb">
+<span id="_CPPv3N5Raven4GLTF6Detail10FromMemoryERK9SDocumentKiNSt4spanI5uint8EEb"></span><span id="_CPPv2N5Raven4GLTF6Detail10FromMemoryERK9SDocumentKiNSt4spanI5uint8EEb"></span><span id="Raven::GLTF::Detail::FromMemory__SDocumentCR.iC.std::span:uint8:.b"></span><span class="target" id="d2/d9d/GltfDocument_8cpp_1a95c0cf6f26236366f7c8b7ea333521a0"></span><a class="reference internal" href="../../db/d37/AssetSystem_8hpp.html#_CPPv4I0EN5Raven6HandleE" title="Raven::Handle"><span class="n"><span class="pre">Handle</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../../d8/dde/Image_8hpp.html#_CPPv4N5Raven6CImageE" title="Raven::CImage"><span class="n"><span class="pre">CImage</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FromMemory</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="../../dd/d7c/GltfDocument_8hpp.html#_CPPv4N5Raven4GLTF9SDocumentE" title="Raven::GLTF::SDocument"><span class="n"><span class="pre">SDocument</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">doc</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">imageIdx</span></span>, <a class="reference internal" href="../../d0/d29/Timestep_8hpp.html#_CPPv4St" title="std"><span class="n"><span class="pre">std</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">span</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../../db/d60/RavenMath_8h.html#_CPPv45uint8" title="uint8"><span class="n"><span class="pre">uint8</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">data</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">bSRGB</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven4GLTF6Detail10FromMemoryERK9SDocumentKiNSt4spanI5uint8EEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven4GLTF6Detail13ToMemory_stbiEPvPvi">
+<span id="_CPPv3N5Raven4GLTF6Detail13ToMemory_stbiEPvPvi"></span><span id="_CPPv2N5Raven4GLTF6Detail13ToMemory_stbiEPvPvi"></span><span id="Raven::GLTF::Detail::ToMemory_stbi__voidP.voidP.i"></span><span class="target" id="d2/d9d/GltfDocument_8cpp_1ac8446dd98e645f1d1bbbcfe831a170dd"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ToMemory_stbi</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">context</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">data</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">size</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven4GLTF6Detail13ToMemory_stbiEPvPvi" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven4GLTF6Detail8ToMemoryERK9SDocumentKiRNSt6vectorI5uint8EERNSt6stringE">
+<span id="_CPPv3N5Raven4GLTF6Detail8ToMemoryERK9SDocumentKiRNSt6vectorI5uint8EERNSt6stringE"></span><span id="_CPPv2N5Raven4GLTF6Detail8ToMemoryERK9SDocumentKiRNSt6vectorI5uint8EERNSt6stringE"></span><span id="Raven::GLTF::Detail::ToMemory__SDocumentCR.iC.std::vector:uint8:R.ssR"></span><span class="target" id="d2/d9d/GltfDocument_8cpp_1ae5efeba7887cf0cd3c678bd70c4e9408"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ToMemory</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="../../dd/d7c/GltfDocument_8hpp.html#_CPPv4N5Raven4GLTF9SDocumentE" title="Raven::GLTF::SDocument"><span class="n"><span class="pre">SDocument</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">doc</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">imageIdx</span></span>, <a class="reference internal" href="../../d0/d29/Timestep_8hpp.html#_CPPv4St" title="std"><span class="n"><span class="pre">std</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../../db/d60/RavenMath_8h.html#_CPPv45uint8" title="uint8"><span class="n"><span class="pre">uint8</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">data</span></span>, <a class="reference internal" href="../../d0/d29/Timestep_8hpp.html#_CPPv4St" title="std"><span class="n"><span class="pre">std</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">mime</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven4GLTF6Detail8ToMemoryERK9SDocumentKiRNSt6vectorI5uint8EERNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I_8Archiver_NSt11enable_if_tIN4Arch8IsReaderEiEEEN5Raven4GLTF6Detail12DecodeImagesEbR4ArchR9SDocumentR10SParseInfo">
+<span id="_CPPv3I_8Archiver_NSt11enable_if_tIN4Arch8IsReaderEiEEEN5Raven4GLTF6Detail12DecodeImagesER4ArchR9SDocumentR10SParseInfo"></span><span id="_CPPv2I_8Archiver_NSt11enable_if_tIN4Arch8IsReaderEiEEEN5Raven4GLTF6Detail12DecodeImagesER4ArchR9SDocumentR10SParseInfo"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Archiver</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Arch</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../../d0/d29/Timestep_8hpp.html#_CPPv4St" title="std"><span class="n"><span class="pre">std</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">enable_if_t</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I_8Archiver_NSt11enable_if_tIN4Arch8IsReaderEiEEEN5Raven4GLTF6Detail12DecodeImagesEbR4ArchR9SDocumentR10SParseInfo" title="Raven::GLTF::Detail::DecodeImages::Arch"><span class="n"><span class="pre">Arch</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">IsReader</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="d2/d9d/GltfDocument_8cpp_1adca69593b4545b9cb727dfe08b0ac065"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">DecodeImages</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I_8Archiver_NSt11enable_if_tIN4Arch8IsReaderEiEEEN5Raven4GLTF6Detail12DecodeImagesEbR4ArchR9SDocumentR10SParseInfo" title="Raven::GLTF::Detail::DecodeImages::Arch"><span class="n"><span class="pre">Arch</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">arch</span></span>, <a class="reference internal" href="../../dd/d7c/GltfDocument_8hpp.html#_CPPv4N5Raven4GLTF9SDocumentE" title="Raven::GLTF::SDocument"><span class="n"><span class="pre">SDocument</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">doc</span></span>, <a class="reference internal" href="../../dd/d7c/GltfDocument_8hpp.html#_CPPv4N5Raven4GLTF10SParseInfoE" title="Raven::GLTF::SParseInfo"><span class="n"><span class="pre">SParseInfo</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">info</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I_8Archiver_NSt11enable_if_tIN4Arch8IsReaderEiEEEN5Raven4GLTF6Detail12DecodeImagesEbR4ArchR9SDocumentR10SParseInfo" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I_8ArchiverEN5Raven4GLTF6Detail7ArchiveEbR4ArchR9SDocumentR10SParseInfo">
+<span id="_CPPv3I_8ArchiverEN5Raven4GLTF6Detail7ArchiveER4ArchR9SDocumentR10SParseInfo"></span><span id="_CPPv2I_8ArchiverEN5Raven4GLTF6Detail7ArchiveER4ArchR9SDocumentR10SParseInfo"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Archiver</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Arch</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="d2/d9d/GltfDocument_8cpp_1aca48a6f0d7e97119d57dc935fae563d4"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Archive</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I_8ArchiverEN5Raven4GLTF6Detail7ArchiveEbR4ArchR9SDocumentR10SParseInfo" title="Raven::GLTF::Detail::Archive::Arch"><span class="n"><span class="pre">Arch</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">arch</span></span>, <a class="reference internal" href="../../dd/d7c/GltfDocument_8hpp.html#_CPPv4N5Raven4GLTF9SDocumentE" title="Raven::GLTF::SDocument"><span class="n"><span class="pre">SDocument</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">doc</span></span>, <a class="reference internal" href="../../dd/d7c/GltfDocument_8hpp.html#_CPPv4N5Raven4GLTF10SParseInfoE" title="Raven::GLTF::SParseInfo"><span class="n"><span class="pre">SParseInfo</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">info</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I_8ArchiverEN5Raven4GLTF6Detail7ArchiveEbR4ArchR9SDocumentR10SParseInfo" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+					 </div>
+					 
+					</div>
+					<footer>
+  
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2022-2023, Aleksandr Slobodov
+	  <br>
+      
+      
+      
+      Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+      
+      <a href="https://github.com/revitron/revitron-sphinx-theme">theme</a>
+      
+      provided by <a href="https://github.com/revitron">Revitron</a>.
+
+    </p>
+  </div> 
+
+</footer>
+
+				</div>
+			</div>
+
+		</section>
+
+	</div>
+	
+
+	<script type="text/javascript">
+			jQuery(function () {
+					SphinxRtdTheme.Navigation.enable(true);
+			});
+	</script>
+
+	
+	
+		
+		<!-- Theme Analytics -->
+		<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-XXXXXXX-1', 'auto');
+		ga('send', 'pageview');
+		</script>
+
+		
+	 
+
+ 
+</body>	
+</html>

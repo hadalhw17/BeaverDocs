@@ -1,0 +1,392 @@
+
+	
+
+<!DOCTYPE html>
+<html class="writer-html5 dark" lang="C++" >
+<head>
+	<meta charset="utf-8">
+	<meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+		<title>File Buffer.h &mdash; Raven Engine 0.0.1 documentation</title>
+	
+	
+	
+	<link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+	<link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+	<link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+	<link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+
+	
+	
+	
+	
+
+	
+	<!--[if lt IE 9]>
+		<script src="../../../../_static/js/html5shiv.min.js"></script>
+	<![endif]-->
+	
+		
+			<script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+				<script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+				<script src="../../../../_static/jquery.js"></script>
+				<script src="../../../../_static/underscore.js"></script>
+				<script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+				<script src="../../../../_static/doctools.js"></script>
+				<script src="../../../../_static/sphinx_highlight.js"></script>
+		
+		<script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+		
+		<link rel="index" title="Index" href="../../../../genindex.html" />
+		<link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+<body class="wy-body-for-nav">
+
+
+	 
+	<div class="wy-grid-for-nav">
+		
+		<nav data-toggle="wy-nav-shift" class="wy-nav-side">
+			<div class="wy-side-scroll">
+				<div class="wy-side-nav-search">
+					
+						<div class="brand">
+							<a href="../../../../index.html">
+							
+								Raven Engine
+							
+							</a>
+						</div>
+						
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+					
+				</div>
+				
+				<div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+					
+						
+						
+							
+						
+						
+							<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../philosophy.html">Engine philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../philosophy.html#initialisation">Initialisation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../samples.html">Samples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api.html">Raven API</a></li>
+</ul>
+
+						
+					
+				</div>
+				
+			</div>
+		</nav>
+
+		<section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+			
+			<nav class="wy-nav-top" aria-label="top navigation">
+			
+				<i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+				<a href="../../../../index.html">
+					
+						Raven Engine
+					
+				</a>
+			
+			</nav>
+
+
+			<div class="wy-nav-content">
+				
+				<div class="rst-content">
+				
+					<div role="navigation" aria-label="breadcrumbs navigation">
+
+	<ul class="wy-breadcrumbs">
+		
+			
+				<li><a href="../../../../index.html">Raven Engine</a> ⁄&nbsp;</li>
+				
+				<li><a href="">File Buffer.h</a></li>
+			
+		
+		
+			<li class="wy-breadcrumbs-aside">
+			
+				<a href="https://github.com/hadalhw17/RavenEngine" class="fa fa-github-alt"></a>
+			
+			</li>
+		
+	</ul>
+
+</div>
+					<div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+					 <div itemprop="articleBody">
+						
+  <section id="file-buffer-h">
+<h1>File Buffer.h<a class="headerlink" href="#file-buffer-h" title="Permalink to this heading">¶</a></h1>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv45Raven">
+<span id="_CPPv35Raven"></span><span id="_CPPv25Raven"></span><span id="Raven"></span><span class="target" id="d4/dfa/namespaceRaven"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Raven</span></span></span><br /></dt>
+<dd><dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven8RendererE">
+<span id="_CPPv3N5Raven8RendererE"></span><span id="_CPPv2N5Raven8RendererE"></span><span id="Raven::Renderer"></span><span class="target" id="de/d35/namespaceRaven_1_1Renderer"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Renderer</span></span></span><br /></dt>
+<dd><dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN5Raven8Renderer13SBufferMapperE">
+<span id="_CPPv3I0EN5Raven8Renderer13SBufferMapperE"></span><span id="_CPPv2I0EN5Raven8Renderer13SBufferMapperE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ContentType</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="d3/dc4/structRaven_1_1Renderer_1_1SBufferMapper"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SBufferMapper</span></span></span><a class="headerlink" href="#_CPPv4I0EN5Raven8Renderer13SBufferMapperE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven8Renderer13SBufferMapper13SBufferMapperEP7CBuffer6uint64">
+<span id="_CPPv3N5Raven8Renderer13SBufferMapper13SBufferMapperEP7CBuffer6uint64"></span><span id="_CPPv2N5Raven8Renderer13SBufferMapper13SBufferMapperEP7CBuffer6uint64"></span><span id="Raven::Renderer::SBufferMapper::SBufferMapper__CBufferP.uint64"></span><span class="target" id="d3/dc4/structRaven_1_1Renderer_1_1SBufferMapper_1aab8c7f6bedc4279ce3726a7eb3304b27"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SBufferMapper</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N5Raven8Renderer7CBufferE" title="Raven::Renderer::CBuffer"><span class="n"><span class="pre">CBuffer</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">pBuffer</span></span>, <a class="reference internal" href="../../db/d60/RavenMath_8h.html#_CPPv46uint64" title="uint64"><span class="n"><span class="pre">uint64</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">offset</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven8Renderer13SBufferMapper13SBufferMapperEP7CBuffer6uint64" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven8Renderer13SBufferMapperptEv">
+<span id="_CPPv3N5Raven8Renderer13SBufferMapperptEv"></span><span id="_CPPv2N5Raven8Renderer13SBufferMapperptEv"></span><span id="Raven::Renderer::SBufferMapper::pointer-operator"></span><span class="target" id="d3/dc4/structRaven_1_1Renderer_1_1SBufferMapper_1a6c430d38c30215b9a295b99db7ccdff3"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN5Raven8Renderer13SBufferMapperE" title="Raven::Renderer::SBufferMapper::ContentType"><span class="n"><span class="pre">ContentType</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">-&gt;</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven8Renderer13SBufferMapperptEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven8Renderer13SBufferMappermlEv">
+<span id="_CPPv3N5Raven8Renderer13SBufferMappermlEv"></span><span id="_CPPv2N5Raven8Renderer13SBufferMappermlEv"></span><span id="Raven::Renderer::SBufferMapper::mul-operator"></span><span class="target" id="d3/dc4/structRaven_1_1Renderer_1_1SBufferMapper_1a5dbed0d57d36e2c7d0af1a076b78a2b0"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN5Raven8Renderer13SBufferMapperE" title="Raven::Renderer::SBufferMapper::ContentType"><span class="n"><span class="pre">ContentType</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">*</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven8Renderer13SBufferMappermlEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven8Renderer13SBufferMapper6UploadEv">
+<span id="_CPPv3N5Raven8Renderer13SBufferMapper6UploadEv"></span><span id="_CPPv2N5Raven8Renderer13SBufferMapper6UploadEv"></span><span id="Raven::Renderer::SBufferMapper::Upload"></span><span class="target" id="d3/dc4/structRaven_1_1Renderer_1_1SBufferMapper_1a6c6264b9cece89fead2d8149b98e2259"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Upload</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven8Renderer13SBufferMapper6UploadEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven8Renderer13SBufferMapper13pTargetBufferE">
+<span id="_CPPv3N5Raven8Renderer13SBufferMapper13pTargetBufferE"></span><span id="_CPPv2N5Raven8Renderer13SBufferMapper13pTargetBufferE"></span><span id="Raven::Renderer::SBufferMapper::pTargetBuffer__CBufferP"></span><span class="target" id="d3/dc4/structRaven_1_1Renderer_1_1SBufferMapper_1a09c3859e39e06a28a271e2fd55cd2804"></span><a class="reference internal" href="#_CPPv4N5Raven8Renderer7CBufferE" title="Raven::Renderer::CBuffer"><span class="n"><span class="pre">CBuffer</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">pTargetBuffer</span></span></span><a class="headerlink" href="#_CPPv4N5Raven8Renderer13SBufferMapper13pTargetBufferE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven8Renderer13SBufferMapper13bufferContentE">
+<span id="_CPPv3N5Raven8Renderer13SBufferMapper13bufferContentE"></span><span id="_CPPv2N5Raven8Renderer13SBufferMapper13bufferContentE"></span><span id="Raven::Renderer::SBufferMapper::bufferContent__ContentType"></span><span class="target" id="d3/dc4/structRaven_1_1Renderer_1_1SBufferMapper_1ae3ea3d325c6531f8c7db7eac12789509"></span><a class="reference internal" href="#_CPPv4I0EN5Raven8Renderer13SBufferMapperE" title="Raven::Renderer::SBufferMapper::ContentType"><span class="n"><span class="pre">ContentType</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bufferContent</span></span></span><a class="headerlink" href="#_CPPv4N5Raven8Renderer13SBufferMapper13bufferContentE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven8Renderer13SBufferMapper8m_offsetE">
+<span id="_CPPv3N5Raven8Renderer13SBufferMapper8m_offsetE"></span><span id="_CPPv2N5Raven8Renderer13SBufferMapper8m_offsetE"></span><span id="Raven::Renderer::SBufferMapper::m_offset__uint64"></span><span class="target" id="d3/dc4/structRaven_1_1Renderer_1_1SBufferMapper_1a42924707ef4718697a737a478960ecc4"></span><a class="reference internal" href="../../db/d60/RavenMath_8h.html#_CPPv46uint64" title="uint64"><span class="n"><span class="pre">uint64</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_offset</span></span></span><a class="headerlink" href="#_CPPv4N5Raven8Renderer13SBufferMapper8m_offsetE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven8Renderer7CBufferE">
+<span id="_CPPv3N5Raven8Renderer7CBufferE"></span><span id="_CPPv2N5Raven8Renderer7CBufferE"></span><span id="Raven::Renderer::CBuffer"></span><span class="target" id="d0/dc7/classRaven_1_1Renderer_1_1CBuffer"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CBuffer</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="../dd1/IRavenRenderer_8h.html#_CPPv410IGPUBuffer" title="IGPUBuffer"><span class="n"><span class="pre">IGPUBuffer</span></span></a><a class="headerlink" href="#_CPPv4N5Raven8Renderer7CBufferE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-types">Public Types</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven8Renderer7CBuffer13ResourceViewTE">
+<span id="_CPPv3N5Raven8Renderer7CBuffer13ResourceViewTE"></span><span id="_CPPv2N5Raven8Renderer7CBuffer13ResourceViewTE"></span><span class="target" id="d0/dc7/classRaven_1_1Renderer_1_1CBuffer_1a86a6126c2ea78b6c522f52d6bf208092"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ResourceViewT</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="../../dd/d75/Handle_8hpp.html#_CPPv4I0EN5Raven7THandleE" title="Raven::THandle"><span class="n"><span class="pre">THandle</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../../d0/d37/DescriptorSet_8h.html#_CPPv4N5Raven8Renderer10BufferViewE" title="Raven::Renderer::BufferView"><span class="n"><span class="pre">BufferView</span></span></a><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N5Raven8Renderer7CBuffer13ResourceViewTE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven8Renderer7CBufferD0Ev">
+<span id="_CPPv3N5Raven8Renderer7CBufferD0Ev"></span><span id="_CPPv2N5Raven8Renderer7CBufferD0Ev"></span><span id="Raven::Renderer::CBuffer::~CBuffer"></span><span class="target" id="d0/dc7/classRaven_1_1Renderer_1_1CBuffer_1a6c837fd84805b1906309e733099135bc"></span><span class="sig-name descname"><span class="n"><span class="pre">~CBuffer</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven8Renderer7CBufferD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5Raven8Renderer7CBuffer13GetUsageFlagsEv">
+<span id="_CPPv3NK5Raven8Renderer7CBuffer13GetUsageFlagsEv"></span><span id="_CPPv2NK5Raven8Renderer7CBuffer13GetUsageFlagsEv"></span><span id="Raven::Renderer::CBuffer::GetUsageFlagsC"></span><span class="target" id="d0/dc7/classRaven_1_1Renderer_1_1CBuffer_1a706a46df4816af0da2b51e426e1ef6c3"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="../../d6/d6b/RavenFormats_8h.html#_CPPv4N5Raven8Renderer11EBufferTypeE" title="Raven::Renderer::EBufferType"><span class="n"><span class="pre">EBufferType</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GetUsageFlags</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5Raven8Renderer7CBuffer13GetUsageFlagsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5Raven8Renderer7CBuffer17GetDeviceResourceEv">
+<span id="_CPPv3NK5Raven8Renderer7CBuffer17GetDeviceResourceEv"></span><span id="_CPPv2NK5Raven8Renderer7CBuffer17GetDeviceResourceEv"></span><span id="Raven::Renderer::CBuffer::GetDeviceResourceC"></span><span class="target" id="d0/dc7/classRaven_1_1Renderer_1_1CBuffer_1a79268606ed7dfe43d634fc83018cd904"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="../../d0/d37/DescriptorSet_8h.html#_CPPv4N5Raven8Renderer6DeviceE" title="Raven::Renderer::Device"><span class="n"><span class="pre">Device</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="../../de/deb/DeviceBuffer_8hpp.html#_CPPv4N5Raven8Renderer6Device7CBufferE" title="Raven::Renderer::Device::CBuffer"><span class="n"><span class="pre">CBuffer</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">GetDeviceResource</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5Raven8Renderer7CBuffer17GetDeviceResourceEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven8Renderer7CBuffer17GetDeviceResourceEv">
+<span id="_CPPv3N5Raven8Renderer7CBuffer17GetDeviceResourceEv"></span><span id="_CPPv2N5Raven8Renderer7CBuffer17GetDeviceResourceEv"></span><span id="Raven::Renderer::CBuffer::GetDeviceResource"></span><span class="target" id="d0/dc7/classRaven_1_1Renderer_1_1CBuffer_1a5cdfec136a816de6e823feabf4d98864"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="../../d0/d37/DescriptorSet_8h.html#_CPPv4N5Raven8Renderer6DeviceE" title="Raven::Renderer::Device"><span class="n"><span class="pre">Device</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="../../de/deb/DeviceBuffer_8hpp.html#_CPPv4N5Raven8Renderer6Device7CBufferE" title="Raven::Renderer::Device::CBuffer"><span class="n"><span class="pre">CBuffer</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">GetDeviceResource</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven8Renderer7CBuffer17GetDeviceResourceEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5Raven8Renderer7CBuffer5GetIDEv">
+<span id="_CPPv3NK5Raven8Renderer7CBuffer5GetIDEv"></span><span id="_CPPv2NK5Raven8Renderer7CBuffer5GetIDEv"></span><span id="Raven::Renderer::CBuffer::GetIDC"></span><span class="target" id="d0/dc7/classRaven_1_1Renderer_1_1CBuffer_1a3b80bb7530783208f5e787f0ec4e48e7"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="../../db/d60/RavenMath_8h.html#_CPPv46uint64" title="uint64"><span class="n"><span class="pre">uint64</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GetID</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5Raven8Renderer7CBuffer5GetIDEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven8Renderer7CBuffer6ResizeE6uint64">
+<span id="_CPPv3N5Raven8Renderer7CBuffer6ResizeE6uint64"></span><span id="_CPPv2N5Raven8Renderer7CBuffer6ResizeE6uint64"></span><span id="Raven::Renderer::CBuffer::Resize__uint64"></span><span class="target" id="d0/dc7/classRaven_1_1Renderer_1_1CBuffer_1ac0c8d805337b591b938c9e36e1b32b6a"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Resize</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../../db/d60/RavenMath_8h.html#_CPPv46uint64" title="uint64"><span class="n"><span class="pre">uint64</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">newSize</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven8Renderer7CBuffer6ResizeE6uint64" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven8Renderer7CBuffer10UploadDataEPKvK6uint64K6uint64">
+<span id="_CPPv3N5Raven8Renderer7CBuffer10UploadDataEPKvK6uint64K6uint64"></span><span id="_CPPv2N5Raven8Renderer7CBuffer10UploadDataEPKvK6uint64K6uint64"></span><span id="Raven::Renderer::CBuffer::UploadData__voidCP.uint64C.uint64C"></span><span class="target" id="d0/dc7/classRaven_1_1Renderer_1_1CBuffer_1a0a3b69a8176cb8679c65e59e4832b3f4"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">UploadData</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">data</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="../../db/d60/RavenMath_8h.html#_CPPv46uint64" title="uint64"><span class="n"><span class="pre">uint64</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">size</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="../../db/d60/RavenMath_8h.html#_CPPv46uint64" title="uint64"><span class="n"><span class="pre">uint64</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">offset</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven8Renderer7CBuffer10UploadDataEPKvK6uint64K6uint64" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven8Renderer7CBuffer18CreateDeviceBufferEv">
+<span id="_CPPv3N5Raven8Renderer7CBuffer18CreateDeviceBufferEv"></span><span id="_CPPv2N5Raven8Renderer7CBuffer18CreateDeviceBufferEv"></span><span id="Raven::Renderer::CBuffer::CreateDeviceBuffer"></span><span class="target" id="d0/dc7/classRaven_1_1Renderer_1_1CBuffer_1a85683ef452c2d4b36c34397d663826d8"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CreateDeviceBuffer</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven8Renderer7CBuffer18CreateDeviceBufferEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven8Renderer7CBuffer15GetOrCreateViewEK9EViewType6uint646uint64RK14STextureFormat">
+<span id="_CPPv3N5Raven8Renderer7CBuffer15GetOrCreateViewEK9EViewType6uint646uint64RK14STextureFormat"></span><span id="_CPPv2N5Raven8Renderer7CBuffer15GetOrCreateViewEK9EViewType6uint646uint64RK14STextureFormat"></span><span id="Raven::Renderer::CBuffer::GetOrCreateView__EViewTypeC.uint64.uint64.STextureFormatCR"></span><span class="target" id="d0/dc7/classRaven_1_1Renderer_1_1CBuffer_1a34a1a9ae4c1ab2306c36ddf878936f96"></span><a class="reference internal" href="#_CPPv4N5Raven8Renderer7CBuffer13ResourceViewTE" title="Raven::Renderer::CBuffer::ResourceViewT"><span class="n"><span class="pre">ResourceViewT</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GetOrCreateView</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="../../d6/d6b/RavenFormats_8h.html#_CPPv4N5Raven8Renderer9EViewTypeE" title="Raven::Renderer::EViewType"><span class="n"><span class="pre">EViewType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">eType</span></span>, <a class="reference internal" href="../../db/d60/RavenMath_8h.html#_CPPv46uint64" title="uint64"><span class="n"><span class="pre">uint64</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">size</span></span>, <a class="reference internal" href="../../db/d60/RavenMath_8h.html#_CPPv46uint64" title="uint64"><span class="n"><span class="pre">uint64</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">offset</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="../../de/ddb/TextureFormats_8hpp.html#_CPPv4N5Raven8Renderer14STextureFormatE" title="Raven::Renderer::STextureFormat"><span class="n"><span class="pre">STextureFormat</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">format</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven8Renderer7CBuffer15GetOrCreateViewEK9EViewType6uint646uint64RK14STextureFormat" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5Raven8Renderer7CBuffer7GetSizeEv">
+<span id="_CPPv3NK5Raven8Renderer7CBuffer7GetSizeEv"></span><span id="_CPPv2NK5Raven8Renderer7CBuffer7GetSizeEv"></span><span id="Raven::Renderer::CBuffer::GetSizeC"></span><span class="target" id="d0/dc7/classRaven_1_1Renderer_1_1CBuffer_1ab10e7e44d0ab50b769db340c96508975"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="../../db/d60/RavenMath_8h.html#_CPPv46uint64" title="uint64"><span class="n"><span class="pre">uint64</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GetSize</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4NK5Raven8Renderer7CBuffer7GetSizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven8Renderer7CBuffer24UploadDataThroughStagingEPK5uint8K6uint64K6uint64">
+<span id="_CPPv3N5Raven8Renderer7CBuffer24UploadDataThroughStagingEPK5uint8K6uint64K6uint64"></span><span id="_CPPv2N5Raven8Renderer7CBuffer24UploadDataThroughStagingEPK5uint8K6uint64K6uint64"></span><span id="Raven::Renderer::CBuffer::UploadDataThroughStaging__uint8CP.uint64C.uint64C"></span><span class="target" id="d0/dc7/classRaven_1_1Renderer_1_1CBuffer_1aed0e2324dc533c4f29ef1dfda8f1155b"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">UploadDataThroughStaging</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="../../db/d60/RavenMath_8h.html#_CPPv45uint8" title="uint8"><span class="n"><span class="pre">uint8</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">data</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="../../db/d60/RavenMath_8h.html#_CPPv46uint64" title="uint64"><span class="n"><span class="pre">uint64</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">size</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="../../db/d60/RavenMath_8h.html#_CPPv46uint64" title="uint64"><span class="n"><span class="pre">uint64</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">offset</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven8Renderer7CBuffer24UploadDataThroughStagingEPK5uint8K6uint64K6uint64" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-functions">Protected Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven8Renderer7CBuffer7CBufferEPKc8uint64_tK11EBufferType15EMemoryHeapType">
+<span id="_CPPv3N5Raven8Renderer7CBuffer7CBufferEPKc8uint64_tK11EBufferType15EMemoryHeapType"></span><span id="_CPPv2N5Raven8Renderer7CBuffer7CBufferEPKc8uint64_tK11EBufferType15EMemoryHeapType"></span><span id="Raven::Renderer::CBuffer::CBuffer__cCP.uint64_t.EBufferTypeC.EMemoryHeapType"></span><span class="target" id="d0/dc7/classRaven_1_1Renderer_1_1CBuffer_1a4ce8d152dbccb5f7472d1a49a2bb05fb"></span><span class="sig-name descname"><span class="n"><span class="pre">CBuffer</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">pName</span></span>, <span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">bufferSize</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="../../d6/d6b/RavenFormats_8h.html#_CPPv4N5Raven8Renderer11EBufferTypeE" title="Raven::Renderer::EBufferType"><span class="n"><span class="pre">EBufferType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">bufferUsage</span></span>, <a class="reference internal" href="../../de/dd5/ResourcesCommon_8hpp.html#_CPPv4N5Raven8Renderer15EMemoryHeapTypeE" title="Raven::Renderer::EMemoryHeapType"><span class="n"><span class="pre">EMemoryHeapType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">eHeapType</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven8Renderer7CBuffer7CBufferEPKc8uint64_tK11EBufferType15EMemoryHeapType" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven8Renderer7CBuffer7ReleaseEv">
+<span id="_CPPv3N5Raven8Renderer7CBuffer7ReleaseEv"></span><span id="_CPPv2N5Raven8Renderer7CBuffer7ReleaseEv"></span><span id="Raven::Renderer::CBuffer::Release"></span><span class="target" id="d0/dc7/classRaven_1_1Renderer_1_1CBuffer_1a9fbacecac2108786d0445d41a3241ca3"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Release</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven8Renderer7CBuffer7ReleaseEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5Raven8Renderer7CBuffer12SetDebugNameEPKc">
+<span id="_CPPv3NK5Raven8Renderer7CBuffer12SetDebugNameEPKc"></span><span id="_CPPv2NK5Raven8Renderer7CBuffer12SetDebugNameEPKc"></span><span id="Raven::Renderer::CBuffer::SetDebugName__cCPC"></span><span class="target" id="d0/dc7/classRaven_1_1Renderer_1_1CBuffer_1a1ec73047cec08d576745f5b3cb33f800"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SetDebugName</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">pName</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5Raven8Renderer7CBuffer12SetDebugNameEPKc" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven8Renderer7CBuffer4m_idE">
+<span id="_CPPv3N5Raven8Renderer7CBuffer4m_idE"></span><span id="_CPPv2N5Raven8Renderer7CBuffer4m_idE"></span><span id="Raven::Renderer::CBuffer::m_id__uint64"></span><span class="target" id="d0/dc7/classRaven_1_1Renderer_1_1CBuffer_1a17aeb79c2303c10de184503b3c97a948"></span><a class="reference internal" href="../../db/d60/RavenMath_8h.html#_CPPv46uint64" title="uint64"><span class="n"><span class="pre">uint64</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_id</span></span></span><a class="headerlink" href="#_CPPv4N5Raven8Renderer7CBuffer4m_idE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven8Renderer7CBuffer6m_sizeE">
+<span id="_CPPv3N5Raven8Renderer7CBuffer6m_sizeE"></span><span id="_CPPv2N5Raven8Renderer7CBuffer6m_sizeE"></span><span id="Raven::Renderer::CBuffer::m_size__uint64"></span><span class="target" id="d0/dc7/classRaven_1_1Renderer_1_1CBuffer_1ac2a97aa236cc0fd47620e9f61d30029b"></span><a class="reference internal" href="../../db/d60/RavenMath_8h.html#_CPPv46uint64" title="uint64"><span class="n"><span class="pre">uint64</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_size</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5Raven8Renderer7CBuffer6m_sizeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven8Renderer7CBuffer15m_pDeviceBufferE">
+<span id="_CPPv3N5Raven8Renderer7CBuffer15m_pDeviceBufferE"></span><span id="_CPPv2N5Raven8Renderer7CBuffer15m_pDeviceBufferE"></span><span id="Raven::Renderer::CBuffer::m_pDeviceBuffer__Device::CBufferP"></span><span class="target" id="d0/dc7/classRaven_1_1Renderer_1_1CBuffer_1a5227e219ecef09c3f345b5a8de06b7a5"></span><a class="reference internal" href="../../d0/d37/DescriptorSet_8h.html#_CPPv4N5Raven8Renderer6DeviceE" title="Raven::Renderer::Device"><span class="n"><span class="pre">Device</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="../../de/deb/DeviceBuffer_8hpp.html#_CPPv4N5Raven8Renderer6Device7CBufferE" title="Raven::Renderer::Device::CBuffer"><span class="n"><span class="pre">CBuffer</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">m_pDeviceBuffer</span></span></span><a class="headerlink" href="#_CPPv4N5Raven8Renderer7CBuffer15m_pDeviceBufferE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven8Renderer7CBuffer12m_usageFlagsE">
+<span id="_CPPv3N5Raven8Renderer7CBuffer12m_usageFlagsE"></span><span id="_CPPv2N5Raven8Renderer7CBuffer12m_usageFlagsE"></span><span id="Raven::Renderer::CBuffer::m_usageFlags__EBufferType"></span><span class="target" id="d0/dc7/classRaven_1_1Renderer_1_1CBuffer_1a47e8b4e2aeb0a7c1180c6fce5a5cffc7"></span><a class="reference internal" href="../../d6/d6b/RavenFormats_8h.html#_CPPv4N5Raven8Renderer11EBufferTypeE" title="Raven::Renderer::EBufferType"><span class="n"><span class="pre">EBufferType</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_usageFlags</span></span></span><a class="headerlink" href="#_CPPv4N5Raven8Renderer7CBuffer12m_usageFlagsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven8Renderer7CBuffer11m_eHeapTypeE">
+<span id="_CPPv3N5Raven8Renderer7CBuffer11m_eHeapTypeE"></span><span id="_CPPv2N5Raven8Renderer7CBuffer11m_eHeapTypeE"></span><span id="Raven::Renderer::CBuffer::m_eHeapType__EMemoryHeapType"></span><span class="target" id="d0/dc7/classRaven_1_1Renderer_1_1CBuffer_1ab37f1d67d8eac631c2ce7ec81c80d845"></span><a class="reference internal" href="../../de/dd5/ResourcesCommon_8hpp.html#_CPPv4N5Raven8Renderer15EMemoryHeapTypeE" title="Raven::Renderer::EMemoryHeapType"><span class="n"><span class="pre">EMemoryHeapType</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_eHeapType</span></span></span><a class="headerlink" href="#_CPPv4N5Raven8Renderer7CBuffer11m_eHeapTypeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven8Renderer7CBuffer6m_nameE">
+<span id="_CPPv3N5Raven8Renderer7CBuffer6m_nameE"></span><span id="_CPPv2N5Raven8Renderer7CBuffer6m_nameE"></span><span id="Raven::Renderer::CBuffer::m_name__ss"></span><span class="target" id="d0/dc7/classRaven_1_1Renderer_1_1CBuffer_1a82dc98bc62b3d7192b8d3fc4e1b602ef"></span><a class="reference internal" href="../../d0/d29/Timestep_8hpp.html#_CPPv4St" title="std"><span class="n"><span class="pre">std</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_name</span></span></span><a class="headerlink" href="#_CPPv4N5Raven8Renderer7CBuffer6m_nameE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-friends">Friends</p>
+<dl>
+<dt class="sig sig-object cpp">
+<em class="property"><span class="pre">friend</span> <span class="pre">class</span></em> <span class="pre">CBufferManager</span></dt>
+</dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven8Renderer6DeviceE">
+<span id="_CPPv3N5Raven8Renderer6DeviceE"></span><span id="_CPPv2N5Raven8Renderer6DeviceE"></span><span id="Raven::Renderer::Device"></span><span class="target" id="da/d00/namespaceRaven_1_1Renderer_1_1Device"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Device</span></span></span><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+					 </div>
+					 
+					</div>
+					<footer>
+  
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2022-2023, Aleksandr Slobodov
+	  <br>
+      
+      
+      
+      Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+      
+      <a href="https://github.com/revitron/revitron-sphinx-theme">theme</a>
+      
+      provided by <a href="https://github.com/revitron">Revitron</a>.
+
+    </p>
+  </div> 
+
+</footer>
+
+				</div>
+			</div>
+
+		</section>
+
+	</div>
+	
+
+	<script type="text/javascript">
+			jQuery(function () {
+					SphinxRtdTheme.Navigation.enable(true);
+			});
+	</script>
+
+	
+	
+		
+		<!-- Theme Analytics -->
+		<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-XXXXXXX-1', 'auto');
+		ga('send', 'pageview');
+		</script>
+
+		
+	 
+
+ 
+</body>	
+</html>

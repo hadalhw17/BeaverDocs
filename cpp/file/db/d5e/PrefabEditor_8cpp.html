@@ -1,0 +1,462 @@
+
+	
+
+<!DOCTYPE html>
+<html class="writer-html5 dark" lang="C++" >
+<head>
+	<meta charset="utf-8">
+	<meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+		<title>File PrefabEditor.cpp &mdash; Raven Engine 0.0.1 documentation</title>
+	
+	
+	
+	<link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+	<link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+	<link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+	<link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+
+	
+	
+	
+	
+
+	
+	<!--[if lt IE 9]>
+		<script src="../../../../_static/js/html5shiv.min.js"></script>
+	<![endif]-->
+	
+		
+			<script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+				<script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+				<script src="../../../../_static/jquery.js"></script>
+				<script src="../../../../_static/underscore.js"></script>
+				<script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+				<script src="../../../../_static/doctools.js"></script>
+				<script src="../../../../_static/sphinx_highlight.js"></script>
+		
+		<script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+		
+		<link rel="index" title="Index" href="../../../../genindex.html" />
+		<link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+<body class="wy-body-for-nav">
+
+
+	 
+	<div class="wy-grid-for-nav">
+		
+		<nav data-toggle="wy-nav-shift" class="wy-nav-side">
+			<div class="wy-side-scroll">
+				<div class="wy-side-nav-search">
+					
+						<div class="brand">
+							<a href="../../../../index.html">
+							
+								Raven Engine
+							
+							</a>
+						</div>
+						
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+					
+				</div>
+				
+				<div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+					
+						
+						
+							
+						
+						
+							<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../philosophy.html">Engine philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../philosophy.html#initialisation">Initialisation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../samples.html">Samples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api.html">Raven API</a></li>
+</ul>
+
+						
+					
+				</div>
+				
+			</div>
+		</nav>
+
+		<section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+			
+			<nav class="wy-nav-top" aria-label="top navigation">
+			
+				<i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+				<a href="../../../../index.html">
+					
+						Raven Engine
+					
+				</a>
+			
+			</nav>
+
+
+			<div class="wy-nav-content">
+				
+				<div class="rst-content">
+				
+					<div role="navigation" aria-label="breadcrumbs navigation">
+
+	<ul class="wy-breadcrumbs">
+		
+			
+				<li><a href="../../../../index.html">Raven Engine</a> ⁄&nbsp;</li>
+				
+				<li><a href="">File PrefabEditor.cpp</a></li>
+			
+		
+		
+			<li class="wy-breadcrumbs-aside">
+			
+				<a href="https://github.com/hadalhw17/RavenEngine" class="fa fa-github-alt"></a>
+			
+			</li>
+		
+	</ul>
+
+</div>
+					<div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+					 <div itemprop="articleBody">
+						
+  <section id="file-prefabeditor-cpp">
+<h1>File PrefabEditor.cpp<a class="headerlink" href="#file-prefabeditor-cpp" title="Permalink to this heading">¶</a></h1>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-defines">Defines</p>
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.IMGUI_DEFINE_MATH_OPERATORS">
+<span class="target" id="db/d5e/PrefabEditor_8cpp_1adf4d73301961430d50d7edd96f92ce38"></span><span class="sig-name descname"><span class="n"><span class="pre">IMGUI_DEFINE_MATH_OPERATORS</span></span></span><a class="headerlink" href="#c.IMGUI_DEFINE_MATH_OPERATORS" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv45Raven">
+<span id="_CPPv35Raven"></span><span id="_CPPv25Raven"></span><span id="Raven"></span><span class="target" id="d4/dfa/namespaceRaven"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Raven</span></span></span><br /></dt>
+<dd><dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven16STrackAddCommandE">
+<span id="_CPPv3N5Raven16STrackAddCommandE"></span><span id="_CPPv2N5Raven16STrackAddCommandE"></span><span id="Raven::STrackAddCommand"></span><span class="target" id="d9/d5e/structRaven_1_1STrackAddCommand"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">STrackAddCommand</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="../../d3/df3/IRavenEditor_8h.html#_CPPv414IEditorCommand" title="IEditorCommand"><span class="n"><span class="pre">IEditorCommand</span></span></a><a class="headerlink" href="#_CPPv4N5Raven16STrackAddCommandE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven16STrackAddCommand16STrackAddCommandE7CEntity">
+<span id="_CPPv3N5Raven16STrackAddCommand16STrackAddCommandE7CEntity"></span><span id="_CPPv2N5Raven16STrackAddCommand16STrackAddCommandE7CEntity"></span><span id="Raven::STrackAddCommand::STrackAddCommand__CEntity"></span><span class="target" id="d9/d5e/structRaven_1_1STrackAddCommand_1afd74bc328da26541258e3f0a5f03c92f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">STrackAddCommand</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../../de/da6/Entity_8hpp.html#_CPPv4N5Raven7CEntityE" title="Raven::CEntity"><span class="n"><span class="pre">CEntity</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">entity</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven16STrackAddCommand16STrackAddCommandE7CEntity" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven16STrackAddCommand2DoEv">
+<span id="_CPPv3N5Raven16STrackAddCommand2DoEv"></span><span id="_CPPv2N5Raven16STrackAddCommand2DoEv"></span><span id="Raven::STrackAddCommand::Do"></span><span class="target" id="d9/d5e/structRaven_1_1STrackAddCommand_1a41b0704eecf9d1f2135e92bc7bccb823"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Do</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4N5Raven16STrackAddCommand2DoEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven16STrackAddCommand4UndoEv">
+<span id="_CPPv3N5Raven16STrackAddCommand4UndoEv"></span><span id="_CPPv2N5Raven16STrackAddCommand4UndoEv"></span><span id="Raven::STrackAddCommand::Undo"></span><span class="target" id="d9/d5e/structRaven_1_1STrackAddCommand_1a0c3f93db3501f3bc290220b0224c516d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Undo</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4N5Raven16STrackAddCommand4UndoEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven16STrackAddCommand9playerEntE">
+<span id="_CPPv3N5Raven16STrackAddCommand9playerEntE"></span><span id="_CPPv2N5Raven16STrackAddCommand9playerEntE"></span><span id="Raven::STrackAddCommand::playerEnt__CEntity"></span><span class="target" id="d9/d5e/structRaven_1_1STrackAddCommand_1a36ae2592f5fe1b07aa4d89de139df0e3"></span><a class="reference internal" href="../../de/da6/Entity_8hpp.html#_CPPv4N5Raven7CEntityE" title="Raven::CEntity"><span class="n"><span class="pre">CEntity</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">playerEnt</span></span></span><a class="headerlink" href="#_CPPv4N5Raven16STrackAddCommand9playerEntE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven16STrackAddCommand10samplerIdxE">
+<span id="_CPPv3N5Raven16STrackAddCommand10samplerIdxE"></span><span id="_CPPv2N5Raven16STrackAddCommand10samplerIdxE"></span><span id="Raven::STrackAddCommand::samplerIdx__i"></span><span class="target" id="d9/d5e/structRaven_1_1STrackAddCommand_1af94e831eaa8e971c4d88ccba1d542c85"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">samplerIdx</span></span></span><a class="headerlink" href="#_CPPv4N5Raven16STrackAddCommand10samplerIdxE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven16STrackAddCommand10channelIdxE">
+<span id="_CPPv3N5Raven16STrackAddCommand10channelIdxE"></span><span id="_CPPv2N5Raven16STrackAddCommand10channelIdxE"></span><span id="Raven::STrackAddCommand::channelIdx__i"></span><span class="target" id="d9/d5e/structRaven_1_1STrackAddCommand_1a5c84b8dd6bf186b7c4aa37774f1c4da7"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">channelIdx</span></span></span><a class="headerlink" href="#_CPPv4N5Raven16STrackAddCommand10channelIdxE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6DetailE">
+<span id="_CPPv3N5Raven6DetailE"></span><span id="_CPPv2N5Raven6DetailE"></span><span id="Raven::Detail"></span><span class="target" id="d7/d38/namespaceRaven_1_1Detail"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Detail</span></span></span><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Detail16GetChannelStrideERKN16SAnimationPlayer8SChannelE">
+<span id="_CPPv3N5Raven6Detail16GetChannelStrideERKN16SAnimationPlayer8SChannelE"></span><span id="_CPPv2N5Raven6Detail16GetChannelStrideERKN16SAnimationPlayer8SChannelE"></span><span id="Raven::Detail::GetChannelStride__SAnimationPlayer::SChannelCRCE"></span><span class="target" id="db/d5e/PrefabEditor_8cpp_1a6271b25a4864af5884bf5dbc3808b9c0"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GetChannelStride</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="../../df/d4b/DefaultComponents_8hpp.html#_CPPv416SAnimationPlayer" title="SAnimationPlayer"><span class="n"><span class="pre">SAnimationPlayer</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="../../df/d4b/DefaultComponents_8hpp.html#_CPPv4N16SAnimationPlayer8SChannelE" title="SAnimationPlayer::SChannel"><span class="n"><span class="pre">SChannel</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">channel</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven6Detail16GetChannelStrideERKN16SAnimationPlayer8SChannelE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Detail14GetKeyframeIdxERKN16SAnimationPlayer8SChannelEi">
+<span id="_CPPv3N5Raven6Detail14GetKeyframeIdxERKN16SAnimationPlayer8SChannelEi"></span><span id="_CPPv2N5Raven6Detail14GetKeyframeIdxERKN16SAnimationPlayer8SChannelEi"></span><span id="Raven::Detail::GetKeyframeIdx__SAnimationPlayer::SChannelCR.iCE"></span><span class="target" id="db/d5e/PrefabEditor_8cpp_1ae1f8a33142549f8fd0499522fa9258a3"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GetKeyframeIdx</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="../../df/d4b/DefaultComponents_8hpp.html#_CPPv416SAnimationPlayer" title="SAnimationPlayer"><span class="n"><span class="pre">SAnimationPlayer</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="../../df/d4b/DefaultComponents_8hpp.html#_CPPv4N16SAnimationPlayer8SChannelE" title="SAnimationPlayer::SChannel"><span class="n"><span class="pre">SChannel</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">channel</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">keyframe</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven6Detail14GetKeyframeIdxERKN16SAnimationPlayer8SChannelEi" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Detail27InsertKeyframeToEntityTrackE7CEntityiif">
+<span id="_CPPv3N5Raven6Detail27InsertKeyframeToEntityTrackE7CEntityiif"></span><span id="_CPPv2N5Raven6Detail27InsertKeyframeToEntityTrackE7CEntityiif"></span><span id="Raven::Detail::InsertKeyframeToEntityTrack__CEntity.i.i.float"></span><span class="target" id="db/d5e/PrefabEditor_8cpp_1ac37257df9970333c01c091d4d88267aa"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">InsertKeyframeToEntityTrack</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../../de/da6/Entity_8hpp.html#_CPPv4N5Raven7CEntityE" title="Raven::CEntity"><span class="n"><span class="pre">CEntity</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">playerEnt</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">channelIdx</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">keyframeIdx</span></span>, <span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">time</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven6Detail27InsertKeyframeToEntityTrackE7CEntityiif" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Detail24DeleteKeyframeFromEntityE7CEntityii">
+<span id="_CPPv3N5Raven6Detail24DeleteKeyframeFromEntityE7CEntityii"></span><span id="_CPPv2N5Raven6Detail24DeleteKeyframeFromEntityE7CEntityii"></span><span id="Raven::Detail::DeleteKeyframeFromEntity__CEntity.i.i"></span><span class="target" id="db/d5e/PrefabEditor_8cpp_1acbad74f38cde72fc648c1428e0f87990"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">DeleteKeyframeFromEntity</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../../de/da6/Entity_8hpp.html#_CPPv4N5Raven7CEntityE" title="Raven::CEntity"><span class="n"><span class="pre">CEntity</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">playerEnt</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">channelIdx</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">dstKeyframeIdx</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven6Detail24DeleteKeyframeFromEntityE7CEntityii" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Detail19SKeyframeAddCommandE">
+<span id="_CPPv3N5Raven6Detail19SKeyframeAddCommandE"></span><span id="_CPPv2N5Raven6Detail19SKeyframeAddCommandE"></span><span id="Raven::Detail::SKeyframeAddCommand"></span><span class="target" id="de/de5/structRaven_1_1Detail_1_1SKeyframeAddCommand"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SKeyframeAddCommand</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="../../d3/df3/IRavenEditor_8h.html#_CPPv414IEditorCommand" title="IEditorCommand"><span class="n"><span class="pre">IEditorCommand</span></span></a><a class="headerlink" href="#_CPPv4N5Raven6Detail19SKeyframeAddCommandE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Detail19SKeyframeAddCommand19SKeyframeAddCommandE7CEntityKiKiKf">
+<span id="_CPPv3N5Raven6Detail19SKeyframeAddCommand19SKeyframeAddCommandE7CEntityKiKiKf"></span><span id="_CPPv2N5Raven6Detail19SKeyframeAddCommand19SKeyframeAddCommandE7CEntityKiKiKf"></span><span id="Raven::Detail::SKeyframeAddCommand::SKeyframeAddCommand__CEntity.iC.iC.floatC"></span><span class="target" id="de/de5/structRaven_1_1Detail_1_1SKeyframeAddCommand_1a39453b18c6a3d53a17844fb1c1276ec7"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SKeyframeAddCommand</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../../de/da6/Entity_8hpp.html#_CPPv4N5Raven7CEntityE" title="Raven::CEntity"><span class="n"><span class="pre">CEntity</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">entity</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">samplerId</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">idx</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven6Detail19SKeyframeAddCommand19SKeyframeAddCommandE7CEntityKiKiKf" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Detail19SKeyframeAddCommand2DoEv">
+<span id="_CPPv3N5Raven6Detail19SKeyframeAddCommand2DoEv"></span><span id="_CPPv2N5Raven6Detail19SKeyframeAddCommand2DoEv"></span><span id="Raven::Detail::SKeyframeAddCommand::Do"></span><span class="target" id="de/de5/structRaven_1_1Detail_1_1SKeyframeAddCommand_1abb09674432e0423ba05fc5c4b83a621a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Do</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4N5Raven6Detail19SKeyframeAddCommand2DoEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Detail19SKeyframeAddCommand4UndoEv">
+<span id="_CPPv3N5Raven6Detail19SKeyframeAddCommand4UndoEv"></span><span id="_CPPv2N5Raven6Detail19SKeyframeAddCommand4UndoEv"></span><span id="Raven::Detail::SKeyframeAddCommand::Undo"></span><span class="target" id="de/de5/structRaven_1_1Detail_1_1SKeyframeAddCommand_1aeb8b5baff8fe2f21c0abcc2b93fa1c98"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Undo</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4N5Raven6Detail19SKeyframeAddCommand4UndoEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Detail19SKeyframeAddCommand9playerEntE">
+<span id="_CPPv3N5Raven6Detail19SKeyframeAddCommand9playerEntE"></span><span id="_CPPv2N5Raven6Detail19SKeyframeAddCommand9playerEntE"></span><span id="Raven::Detail::SKeyframeAddCommand::playerEnt__CEntity"></span><span class="target" id="de/de5/structRaven_1_1Detail_1_1SKeyframeAddCommand_1a3d56998be97d0c43d5b3aa9b342b14eb"></span><a class="reference internal" href="../../de/da6/Entity_8hpp.html#_CPPv4N5Raven7CEntityE" title="Raven::CEntity"><span class="n"><span class="pre">CEntity</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">playerEnt</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N5Raven6Detail19SKeyframeAddCommand9playerEntE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Detail19SKeyframeAddCommand10samplerIdxE">
+<span id="_CPPv3N5Raven6Detail19SKeyframeAddCommand10samplerIdxE"></span><span id="_CPPv2N5Raven6Detail19SKeyframeAddCommand10samplerIdxE"></span><span id="Raven::Detail::SKeyframeAddCommand::samplerIdx__i"></span><span class="target" id="de/de5/structRaven_1_1Detail_1_1SKeyframeAddCommand_1a6b3ce58c97f62cf7e483651e0da05544"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">samplerIdx</span></span></span><a class="headerlink" href="#_CPPv4N5Raven6Detail19SKeyframeAddCommand10samplerIdxE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Detail19SKeyframeAddCommand11keyframeIdxE">
+<span id="_CPPv3N5Raven6Detail19SKeyframeAddCommand11keyframeIdxE"></span><span id="_CPPv2N5Raven6Detail19SKeyframeAddCommand11keyframeIdxE"></span><span id="Raven::Detail::SKeyframeAddCommand::keyframeIdx__i"></span><span class="target" id="de/de5/structRaven_1_1Detail_1_1SKeyframeAddCommand_1ad8b8622d6188eca13c1fb1ec9475b11d"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">keyframeIdx</span></span></span><a class="headerlink" href="#_CPPv4N5Raven6Detail19SKeyframeAddCommand11keyframeIdxE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Detail19SKeyframeAddCommand4timeE">
+<span id="_CPPv3N5Raven6Detail19SKeyframeAddCommand4timeE"></span><span id="_CPPv2N5Raven6Detail19SKeyframeAddCommand4timeE"></span><span id="Raven::Detail::SKeyframeAddCommand::time__float"></span><span class="target" id="de/de5/structRaven_1_1Detail_1_1SKeyframeAddCommand_1adaff66c981ff1b3e09f3f9853fd7e58a"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">time</span></span></span><a class="headerlink" href="#_CPPv4N5Raven6Detail19SKeyframeAddCommand4timeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Detail22SRemoveKeyframeCommandE">
+<span id="_CPPv3N5Raven6Detail22SRemoveKeyframeCommandE"></span><span id="_CPPv2N5Raven6Detail22SRemoveKeyframeCommandE"></span><span id="Raven::Detail::SRemoveKeyframeCommand"></span><span class="target" id="d9/d72/structRaven_1_1Detail_1_1SRemoveKeyframeCommand"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SRemoveKeyframeCommand</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="../../d3/df3/IRavenEditor_8h.html#_CPPv414IEditorCommand" title="IEditorCommand"><span class="n"><span class="pre">IEditorCommand</span></span></a><a class="headerlink" href="#_CPPv4N5Raven6Detail22SRemoveKeyframeCommandE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Detail22SRemoveKeyframeCommand22SRemoveKeyframeCommandE7CEntityKiKiKf">
+<span id="_CPPv3N5Raven6Detail22SRemoveKeyframeCommand22SRemoveKeyframeCommandE7CEntityKiKiKf"></span><span id="_CPPv2N5Raven6Detail22SRemoveKeyframeCommand22SRemoveKeyframeCommandE7CEntityKiKiKf"></span><span id="Raven::Detail::SRemoveKeyframeCommand::SRemoveKeyframeCommand__CEntity.iC.iC.floatC"></span><span class="target" id="d9/d72/structRaven_1_1Detail_1_1SRemoveKeyframeCommand_1a5f489253a6f8a7a11afcba1f45662052"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SRemoveKeyframeCommand</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../../de/da6/Entity_8hpp.html#_CPPv4N5Raven7CEntityE" title="Raven::CEntity"><span class="n"><span class="pre">CEntity</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">entity</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">samplerIdx</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">idx</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven6Detail22SRemoveKeyframeCommand22SRemoveKeyframeCommandE7CEntityKiKiKf" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Detail22SRemoveKeyframeCommand2DoEv">
+<span id="_CPPv3N5Raven6Detail22SRemoveKeyframeCommand2DoEv"></span><span id="_CPPv2N5Raven6Detail22SRemoveKeyframeCommand2DoEv"></span><span id="Raven::Detail::SRemoveKeyframeCommand::Do"></span><span class="target" id="d9/d72/structRaven_1_1Detail_1_1SRemoveKeyframeCommand_1afca25f2e45761377c41ade8281f2d440"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Do</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4N5Raven6Detail22SRemoveKeyframeCommand2DoEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Detail22SRemoveKeyframeCommand4UndoEv">
+<span id="_CPPv3N5Raven6Detail22SRemoveKeyframeCommand4UndoEv"></span><span id="_CPPv2N5Raven6Detail22SRemoveKeyframeCommand4UndoEv"></span><span id="Raven::Detail::SRemoveKeyframeCommand::Undo"></span><span class="target" id="d9/d72/structRaven_1_1Detail_1_1SRemoveKeyframeCommand_1abc5f4359a23153ff583fd43314d1d5ee"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Undo</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4N5Raven6Detail22SRemoveKeyframeCommand4UndoEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Detail22SRemoveKeyframeCommand10addCommandE">
+<span id="_CPPv3N5Raven6Detail22SRemoveKeyframeCommand10addCommandE"></span><span id="_CPPv2N5Raven6Detail22SRemoveKeyframeCommand10addCommandE"></span><span id="Raven::Detail::SRemoveKeyframeCommand::addCommand__SKeyframeAddCommand"></span><span class="target" id="d9/d72/structRaven_1_1Detail_1_1SRemoveKeyframeCommand_1a688fa34e82cc1ef3823b3ffb6b8cf22d"></span><a class="reference internal" href="#_CPPv4N5Raven6Detail19SKeyframeAddCommandE" title="Raven::Detail::SKeyframeAddCommand"><span class="n"><span class="pre">SKeyframeAddCommand</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addCommand</span></span></span><a class="headerlink" href="#_CPPv4N5Raven6Detail22SRemoveKeyframeCommand10addCommandE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Detail22SKeyframeModifyCommandE">
+<span id="_CPPv3N5Raven6Detail22SKeyframeModifyCommandE"></span><span id="_CPPv2N5Raven6Detail22SKeyframeModifyCommandE"></span><span id="Raven::Detail::SKeyframeModifyCommand"></span><span class="target" id="d1/d9b/structRaven_1_1Detail_1_1SKeyframeModifyCommand"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SKeyframeModifyCommand</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="../../d3/df3/IRavenEditor_8h.html#_CPPv414IEditorCommand" title="IEditorCommand"><span class="n"><span class="pre">IEditorCommand</span></span></a><a class="headerlink" href="#_CPPv4N5Raven6Detail22SKeyframeModifyCommandE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Detail22SKeyframeModifyCommand22SKeyframeModifyCommandE7CEntityiKi">
+<span id="_CPPv3N5Raven6Detail22SKeyframeModifyCommand22SKeyframeModifyCommandE7CEntityiKi"></span><span id="_CPPv2N5Raven6Detail22SKeyframeModifyCommand22SKeyframeModifyCommandE7CEntityiKi"></span><span id="Raven::Detail::SKeyframeModifyCommand::SKeyframeModifyCommand__CEntity.i.iC"></span><span class="target" id="d1/d9b/structRaven_1_1Detail_1_1SKeyframeModifyCommand_1ae05a4644eee7a5158d9c540fd7552a2e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SKeyframeModifyCommand</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../../de/da6/Entity_8hpp.html#_CPPv4N5Raven7CEntityE" title="Raven::CEntity"><span class="n"><span class="pre">CEntity</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">entity</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">channelId</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">idx</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven6Detail22SKeyframeModifyCommand22SKeyframeModifyCommandE7CEntityiKi" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Detail22SKeyframeModifyCommand2DoEv">
+<span id="_CPPv3N5Raven6Detail22SKeyframeModifyCommand2DoEv"></span><span id="_CPPv2N5Raven6Detail22SKeyframeModifyCommand2DoEv"></span><span id="Raven::Detail::SKeyframeModifyCommand::Do"></span><span class="target" id="d1/d9b/structRaven_1_1Detail_1_1SKeyframeModifyCommand_1a8fe5b5557d908f09ae1418d6a97b616e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Do</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4N5Raven6Detail22SKeyframeModifyCommand2DoEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Detail22SKeyframeModifyCommand4UndoEv">
+<span id="_CPPv3N5Raven6Detail22SKeyframeModifyCommand4UndoEv"></span><span id="_CPPv2N5Raven6Detail22SKeyframeModifyCommand4UndoEv"></span><span id="Raven::Detail::SKeyframeModifyCommand::Undo"></span><span class="target" id="d1/d9b/structRaven_1_1Detail_1_1SKeyframeModifyCommand_1ab108165381b34c5667f795b371ead7fd"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Undo</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4N5Raven6Detail22SKeyframeModifyCommand4UndoEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Detail22SKeyframeModifyCommand11originalValE">
+<span id="_CPPv3N5Raven6Detail22SKeyframeModifyCommand11originalValE"></span><span id="_CPPv2N5Raven6Detail22SKeyframeModifyCommand11originalValE"></span><span id="Raven::Detail::SKeyframeModifyCommand::originalVal__SAnimationPlayer::SChannel"></span><span class="target" id="d1/d9b/structRaven_1_1Detail_1_1SKeyframeModifyCommand_1a2d4b38123921d82af76919d1ec1674f5"></span><a class="reference internal" href="../../df/d4b/DefaultComponents_8hpp.html#_CPPv416SAnimationPlayer" title="SAnimationPlayer"><span class="n"><span class="pre">SAnimationPlayer</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="../../df/d4b/DefaultComponents_8hpp.html#_CPPv4N16SAnimationPlayer8SChannelE" title="SAnimationPlayer::SChannel"><span class="n"><span class="pre">SChannel</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">originalVal</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N5Raven6Detail22SKeyframeModifyCommand11originalValE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Detail22SKeyframeModifyCommand9targetValE">
+<span id="_CPPv3N5Raven6Detail22SKeyframeModifyCommand9targetValE"></span><span id="_CPPv2N5Raven6Detail22SKeyframeModifyCommand9targetValE"></span><span id="Raven::Detail::SKeyframeModifyCommand::targetVal__SAnimationPlayer::SChannel"></span><span class="target" id="d1/d9b/structRaven_1_1Detail_1_1SKeyframeModifyCommand_1a69307c2e39756f0bd43d1550107c48ed"></span><a class="reference internal" href="../../df/d4b/DefaultComponents_8hpp.html#_CPPv416SAnimationPlayer" title="SAnimationPlayer"><span class="n"><span class="pre">SAnimationPlayer</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="../../df/d4b/DefaultComponents_8hpp.html#_CPPv4N16SAnimationPlayer8SChannelE" title="SAnimationPlayer::SChannel"><span class="n"><span class="pre">SChannel</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">targetVal</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N5Raven6Detail22SKeyframeModifyCommand9targetValE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Detail22SKeyframeModifyCommand9playerEntE">
+<span id="_CPPv3N5Raven6Detail22SKeyframeModifyCommand9playerEntE"></span><span id="_CPPv2N5Raven6Detail22SKeyframeModifyCommand9playerEntE"></span><span id="Raven::Detail::SKeyframeModifyCommand::playerEnt__CEntity"></span><span class="target" id="d1/d9b/structRaven_1_1Detail_1_1SKeyframeModifyCommand_1a0743c29142fb47adb70165114097122b"></span><a class="reference internal" href="../../de/da6/Entity_8hpp.html#_CPPv4N5Raven7CEntityE" title="Raven::CEntity"><span class="n"><span class="pre">CEntity</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">playerEnt</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N5Raven6Detail22SKeyframeModifyCommand9playerEntE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Detail22SKeyframeModifyCommand10channelIdxE">
+<span id="_CPPv3N5Raven6Detail22SKeyframeModifyCommand10channelIdxE"></span><span id="_CPPv2N5Raven6Detail22SKeyframeModifyCommand10channelIdxE"></span><span id="Raven::Detail::SKeyframeModifyCommand::channelIdx__i"></span><span class="target" id="d1/d9b/structRaven_1_1Detail_1_1SKeyframeModifyCommand_1a827178a4e0c09a80a16099754e751319"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">channelIdx</span></span></span><a class="headerlink" href="#_CPPv4N5Raven6Detail22SKeyframeModifyCommand10channelIdxE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Detail22SKeyframeModifyCommand11keyframeIdxE">
+<span id="_CPPv3N5Raven6Detail22SKeyframeModifyCommand11keyframeIdxE"></span><span id="_CPPv2N5Raven6Detail22SKeyframeModifyCommand11keyframeIdxE"></span><span id="Raven::Detail::SKeyframeModifyCommand::keyframeIdx__i"></span><span class="target" id="d1/d9b/structRaven_1_1Detail_1_1SKeyframeModifyCommand_1a380e3915ca7e6240cf9552e535418415"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">keyframeIdx</span></span></span><a class="headerlink" href="#_CPPv4N5Raven6Detail22SKeyframeModifyCommand11keyframeIdxE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Detail20SKeyframeMoveCommandE">
+<span id="_CPPv3N5Raven6Detail20SKeyframeMoveCommandE"></span><span id="_CPPv2N5Raven6Detail20SKeyframeMoveCommandE"></span><span id="Raven::Detail::SKeyframeMoveCommand"></span><span class="target" id="d8/d0c/structRaven_1_1Detail_1_1SKeyframeMoveCommand"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SKeyframeMoveCommand</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="../../d3/df3/IRavenEditor_8h.html#_CPPv414IEditorCommand" title="IEditorCommand"><span class="n"><span class="pre">IEditorCommand</span></span></a><a class="headerlink" href="#_CPPv4N5Raven6Detail20SKeyframeMoveCommandE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Detail20SKeyframeMoveCommand20SKeyframeMoveCommandE7CEntityKiKiKfKf">
+<span id="_CPPv3N5Raven6Detail20SKeyframeMoveCommand20SKeyframeMoveCommandE7CEntityKiKiKfKf"></span><span id="_CPPv2N5Raven6Detail20SKeyframeMoveCommand20SKeyframeMoveCommandE7CEntityKiKiKfKf"></span><span id="Raven::Detail::SKeyframeMoveCommand::SKeyframeMoveCommand__CEntity.iC.iC.floatC.floatC"></span><span class="target" id="d8/d0c/structRaven_1_1Detail_1_1SKeyframeMoveCommand_1aa8258b97c8189a73c7f7aba992738288"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SKeyframeMoveCommand</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../../de/da6/Entity_8hpp.html#_CPPv4N5Raven7CEntityE" title="Raven::CEntity"><span class="n"><span class="pre">CEntity</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">e</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">sIdx</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">kIdx</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">oldTime</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">newTime</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven6Detail20SKeyframeMoveCommand20SKeyframeMoveCommandE7CEntityKiKiKfKf" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Detail20SKeyframeMoveCommand2DoEv">
+<span id="_CPPv3N5Raven6Detail20SKeyframeMoveCommand2DoEv"></span><span id="_CPPv2N5Raven6Detail20SKeyframeMoveCommand2DoEv"></span><span id="Raven::Detail::SKeyframeMoveCommand::Do"></span><span class="target" id="d8/d0c/structRaven_1_1Detail_1_1SKeyframeMoveCommand_1a71e9eddb9c1e78d7f39beff84cdf4e63"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Do</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4N5Raven6Detail20SKeyframeMoveCommand2DoEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Detail20SKeyframeMoveCommand4UndoEv">
+<span id="_CPPv3N5Raven6Detail20SKeyframeMoveCommand4UndoEv"></span><span id="_CPPv2N5Raven6Detail20SKeyframeMoveCommand4UndoEv"></span><span id="Raven::Detail::SKeyframeMoveCommand::Undo"></span><span class="target" id="d8/d0c/structRaven_1_1Detail_1_1SKeyframeMoveCommand_1af6ef8eaf00fd5eb856622cf309c7755d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Undo</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">final</span></span><a class="headerlink" href="#_CPPv4N5Raven6Detail20SKeyframeMoveCommand4UndoEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Detail20SKeyframeMoveCommand9playerEntE">
+<span id="_CPPv3N5Raven6Detail20SKeyframeMoveCommand9playerEntE"></span><span id="_CPPv2N5Raven6Detail20SKeyframeMoveCommand9playerEntE"></span><span id="Raven::Detail::SKeyframeMoveCommand::playerEnt__CEntity"></span><span class="target" id="d8/d0c/structRaven_1_1Detail_1_1SKeyframeMoveCommand_1a1bad80616b83dc092f3cd7d07874f5d4"></span><a class="reference internal" href="../../de/da6/Entity_8hpp.html#_CPPv4N5Raven7CEntityE" title="Raven::CEntity"><span class="n"><span class="pre">CEntity</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">playerEnt</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N5Raven6Detail20SKeyframeMoveCommand9playerEntE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Detail20SKeyframeMoveCommand10samplerIdxE">
+<span id="_CPPv3N5Raven6Detail20SKeyframeMoveCommand10samplerIdxE"></span><span id="_CPPv2N5Raven6Detail20SKeyframeMoveCommand10samplerIdxE"></span><span id="Raven::Detail::SKeyframeMoveCommand::samplerIdx__i"></span><span class="target" id="d8/d0c/structRaven_1_1Detail_1_1SKeyframeMoveCommand_1a9dbe53ec8042ef9f3adb839c0719bf63"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">samplerIdx</span></span></span><a class="headerlink" href="#_CPPv4N5Raven6Detail20SKeyframeMoveCommand10samplerIdxE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Detail20SKeyframeMoveCommand11keyframeIdxE">
+<span id="_CPPv3N5Raven6Detail20SKeyframeMoveCommand11keyframeIdxE"></span><span id="_CPPv2N5Raven6Detail20SKeyframeMoveCommand11keyframeIdxE"></span><span id="Raven::Detail::SKeyframeMoveCommand::keyframeIdx__i"></span><span class="target" id="d8/d0c/structRaven_1_1Detail_1_1SKeyframeMoveCommand_1a9b0103dde3d6778f935fc33e0f68e4f2"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">keyframeIdx</span></span></span><a class="headerlink" href="#_CPPv4N5Raven6Detail20SKeyframeMoveCommand11keyframeIdxE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Detail20SKeyframeMoveCommand6srcValE">
+<span id="_CPPv3N5Raven6Detail20SKeyframeMoveCommand6srcValE"></span><span id="_CPPv2N5Raven6Detail20SKeyframeMoveCommand6srcValE"></span><span id="Raven::Detail::SKeyframeMoveCommand::srcVal__float"></span><span class="target" id="d8/d0c/structRaven_1_1Detail_1_1SKeyframeMoveCommand_1a99e06e6dfcdcb68b41638d0d49ad3b0f"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">srcVal</span></span></span><a class="headerlink" href="#_CPPv4N5Raven6Detail20SKeyframeMoveCommand6srcValE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Detail20SKeyframeMoveCommand6dstValE">
+<span id="_CPPv3N5Raven6Detail20SKeyframeMoveCommand6dstValE"></span><span id="_CPPv2N5Raven6Detail20SKeyframeMoveCommand6dstValE"></span><span id="Raven::Detail::SKeyframeMoveCommand::dstVal__float"></span><span class="target" id="d8/d0c/structRaven_1_1Detail_1_1SKeyframeMoveCommand_1a213e59bc1b349690a8b50d0540d68526"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dstVal</span></span></span><a class="headerlink" href="#_CPPv4N5Raven6Detail20SKeyframeMoveCommand6dstValE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+					 </div>
+					 
+					</div>
+					<footer>
+  
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2022-2023, Aleksandr Slobodov
+	  <br>
+      
+      
+      
+      Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+      
+      <a href="https://github.com/revitron/revitron-sphinx-theme">theme</a>
+      
+      provided by <a href="https://github.com/revitron">Revitron</a>.
+
+    </p>
+  </div> 
+
+</footer>
+
+				</div>
+			</div>
+
+		</section>
+
+	</div>
+	
+
+	<script type="text/javascript">
+			jQuery(function () {
+					SphinxRtdTheme.Navigation.enable(true);
+			});
+	</script>
+
+	
+	
+		
+		<!-- Theme Analytics -->
+		<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-XXXXXXX-1', 'auto');
+		ga('send', 'pageview');
+		</script>
+
+		
+	 
+
+ 
+</body>	
+</html>

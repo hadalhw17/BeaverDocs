@@ -16,21 +16,29 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/Raven3DEngine/RenderSystem.hpp" line="17" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/Raven3DEngine/RenderSystem.hpp" bodystart="17" bodyend="-1"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/Raven3DEngine/RenderSystem.hpp" line="19" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/Raven3DEngine/RenderSystem.hpp" bodystart="19" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
-      <memberdef kind="function" id="_render_system_8hpp_1a5308491921ee8a919c955e358e46a1a4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="_render_system_8hpp_1ac1c96cf9f377ac7acac4dce34b48a573" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void Raven::WorldRendering::ExtractRenderInfos</definition>
-        <argsstring>(CWorld &amp;world, Query&lt; With&lt; SRenderInfo, SNameComponent &gt;&gt; query, TRenderInfos &amp;dstInfos)</argsstring>
+        <argsstring>(IRavenRenderer &amp;renderer, IRavenEngine &amp;raven, CWorld &amp;world, Query&lt; With&lt; SRenderInfo, SNameComponent, SCameraComponent &gt;&gt; query, TRenderInfos &amp;dstInfos)</argsstring>
         <name>ExtractRenderInfos</name>
+        <param>
+          <type>IRavenRenderer &amp;</type>
+          <declname>renderer</declname>
+        </param>
+        <param>
+          <type>IRavenEngine &amp;</type>
+          <declname>raven</declname>
+        </param>
         <param>
           <type>CWorld &amp;</type>
           <declname>world</declname>
         </param>
         <param>
-          <type>Query&lt; With&lt; SRenderInfo, SNameComponent &gt;&gt;</type>
+          <type>Query&lt; With&lt; SRenderInfo, SNameComponent, SCameraComponent &gt;&gt;</type>
           <declname>query</declname>
         </param>
         <param>
@@ -43,7 +51,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/Raven3DEngine/RenderSystem.hpp" line="20" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/Raven3DEngine/RenderSystem.hpp" bodystart="20" bodyend="30"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/Raven3DEngine/RenderSystem.hpp" line="22" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/Raven3DEngine/RenderSystem.hpp" bodystart="22" bodyend="48"/>
       </memberdef>
       <memberdef kind="function" id="_render_system_8hpp_1ac3b3b22188b7139a0470bacb01ca1c1e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -68,13 +76,59 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/Raven3DEngine/RenderSystem.hpp" line="32" column="13" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/Raven3DEngine/RenderSystem.hpp" bodystart="32" bodyend="59"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/Raven3DEngine/RenderSystem.hpp" line="50" column="13" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/Raven3DEngine/RenderSystem.hpp" bodystart="50" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="_render_system_8hpp_1add8efcb96be42d084c7df3b3d490b562" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Raven::WorldRendering::UpdateCameraProjection</definition>
+        <argsstring>(Query&lt; With&lt; SRenderInfo, RenderTargetT, SCameraComponent &gt;&gt; query, const Window::Windows &amp;windows, const Assets&lt; CImage &gt; &amp;images)</argsstring>
+        <name>UpdateCameraProjection</name>
+        <param>
+          <type>Query&lt; With&lt; SRenderInfo, RenderTargetT, SCameraComponent &gt;&gt;</type>
+          <declname>query</declname>
+        </param>
+        <param>
+          <type>const Window::Windows &amp;</type>
+          <declname>windows</declname>
+        </param>
+        <param>
+          <type>const Assets&lt; CImage &gt; &amp;</type>
+          <declname>images</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/Raven3DEngine/RenderSystem.hpp" line="69" column="13" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/Raven3DEngine/RenderSystem.hpp" bodystart="69" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="_render_system_8hpp_1a41616f3666038abd26c94bfe9938dbcb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Raven::WorldRendering::UpdateCameraView</definition>
+        <argsstring>(const CWorld &amp;world, Query&lt; With&lt; SRenderInfo, STransformComponent &gt;&gt; query)</argsstring>
+        <name>UpdateCameraView</name>
+        <param>
+          <type>const CWorld &amp;</type>
+          <declname>world</declname>
+        </param>
+        <param>
+          <type>Query&lt; With&lt; SRenderInfo, STransformComponent &gt;&gt;</type>
+          <declname>query</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/Raven3DEngine/RenderSystem.hpp" line="100" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/Raven3DEngine/RenderSystem.hpp" bodystart="100" bodyend="121"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/Raven3DEngine/RenderSystem.hpp" line="10" column="1"/>
+    <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/Raven3DEngine/RenderSystem.hpp" line="13" column="1"/>
   </compounddef>
 </doxygen>

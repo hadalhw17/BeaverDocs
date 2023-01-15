@@ -1,0 +1,341 @@
+
+	
+
+<!DOCTYPE html>
+<html class="writer-html5 dark" lang="C++" >
+<head>
+	<meta charset="utf-8">
+	<meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+		<title>File glfwBackend.cpp &mdash; Raven Engine 0.0.1 documentation</title>
+	
+	
+	
+	<link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+	<link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+	<link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+	<link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+
+	
+	
+	
+	
+
+	
+	<!--[if lt IE 9]>
+		<script src="../../../../_static/js/html5shiv.min.js"></script>
+	<![endif]-->
+	
+		
+			<script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+				<script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+				<script src="../../../../_static/jquery.js"></script>
+				<script src="../../../../_static/underscore.js"></script>
+				<script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+				<script src="../../../../_static/doctools.js"></script>
+				<script src="../../../../_static/sphinx_highlight.js"></script>
+		
+		<script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+		
+		<link rel="index" title="Index" href="../../../../genindex.html" />
+		<link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+<body class="wy-body-for-nav">
+
+
+	 
+	<div class="wy-grid-for-nav">
+		
+		<nav data-toggle="wy-nav-shift" class="wy-nav-side">
+			<div class="wy-side-scroll">
+				<div class="wy-side-nav-search">
+					
+						<div class="brand">
+							<a href="../../../../index.html">
+							
+								Raven Engine
+							
+							</a>
+						</div>
+						
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+					
+				</div>
+				
+				<div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+					
+						
+						
+							
+						
+						
+							<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../philosophy.html">Engine philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../philosophy.html#initialisation">Initialisation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../samples.html">Samples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api.html">Raven API</a></li>
+</ul>
+
+						
+					
+				</div>
+				
+			</div>
+		</nav>
+
+		<section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+			
+			<nav class="wy-nav-top" aria-label="top navigation">
+			
+				<i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+				<a href="../../../../index.html">
+					
+						Raven Engine
+					
+				</a>
+			
+			</nav>
+
+
+			<div class="wy-nav-content">
+				
+				<div class="rst-content">
+				
+					<div role="navigation" aria-label="breadcrumbs navigation">
+
+	<ul class="wy-breadcrumbs">
+		
+			
+				<li><a href="../../../../index.html">Raven Engine</a> ⁄&nbsp;</li>
+				
+				<li><a href="">File glfwBackend.cpp</a></li>
+			
+		
+		
+			<li class="wy-breadcrumbs-aside">
+			
+				<a href="https://github.com/hadalhw17/RavenEngine" class="fa fa-github-alt"></a>
+			
+			</li>
+		
+	</ul>
+
+</div>
+					<div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+					 <div itemprop="articleBody">
+						
+  <section id="file-glfwbackend-cpp">
+<h1>File glfwBackend.cpp<a class="headerlink" href="#file-glfwbackend-cpp" title="Permalink to this heading">¶</a></h1>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-defines">Defines</p>
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.GLFW_EXPOSE_NATIVE_WIN32">
+<span class="target" id="dd/d50/glfwBackend_8cpp_1a7226e54815f41685fdc9df544352957e"></span><span class="sig-name descname"><span class="n"><span class="pre">GLFW_EXPOSE_NATIVE_WIN32</span></span></span><a class="headerlink" href="#c.GLFW_EXPOSE_NATIVE_WIN32" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv45Raven">
+<span id="_CPPv35Raven"></span><span id="_CPPv25Raven"></span><span id="Raven"></span><span class="target" id="d4/dfa/namespaceRaven"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Raven</span></span></span><br /></dt>
+<dd><dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6WindowE">
+<span id="_CPPv3N5Raven6WindowE"></span><span id="_CPPv2N5Raven6WindowE"></span><span id="Raven::Window"></span><span class="target" id="d6/dfb/namespaceRaven_1_1Window"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Window</span></span></span><br /></dt>
+<dd><dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Window4GLFWE">
+<span id="_CPPv3N5Raven6Window4GLFWE"></span><span id="_CPPv2N5Raven6Window4GLFWE"></span><span id="Raven::Window::GLFW"></span><span class="target" id="d4/d8a/namespaceRaven_1_1Window_1_1GLFW"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GLFW</span></span></span><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Window4GLFW14DetectMonitorsER8Monitors">
+<span id="_CPPv3N5Raven6Window4GLFW14DetectMonitorsER8Monitors"></span><span id="_CPPv2N5Raven6Window4GLFW14DetectMonitorsER8Monitors"></span><span id="Raven::Window::GLFW::DetectMonitors__MonitorsR"></span><span class="target" id="dd/d50/glfwBackend_8cpp_1a6d61b8ceb909a1f60ffefa66569f0141"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">DetectMonitors</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../../d0/de3/Window_8hpp.html#_CPPv4N5Raven6Window8MonitorsE" title="Raven::Window::Monitors"><span class="n"><span class="pre">Monitors</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">m</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven6Window4GLFW14DetectMonitorsER8Monitors" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Window4GLFW13UpdateWindowsER3AppRK5StateR7WindowsR10SWindowMap">
+<span id="_CPPv3N5Raven6Window4GLFW13UpdateWindowsER3AppRK5StateR7WindowsR10SWindowMap"></span><span id="_CPPv2N5Raven6Window4GLFW13UpdateWindowsER3AppRK5StateR7WindowsR10SWindowMap"></span><span id="Raven::Window::GLFW::UpdateWindows__AppR.StateCR.WindowsR.SWindowMapR"></span><span class="target" id="dd/d50/glfwBackend_8cpp_1ae98c96ca68a446dbf7ea02934876988c"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">UpdateWindows</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../../d3/ddf/RavenApp_8hpp.html#_CPPv4N5Raven3AppE" title="Raven::App"><span class="n"><span class="pre">App</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">app</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5Raven6Window4GLFW5StateE" title="Raven::Window::GLFW::State"><span class="n"><span class="pre">State</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">state</span></span>, <a class="reference internal" href="../../d0/de3/Window_8hpp.html#_CPPv4N5Raven6Window7WindowsE" title="Raven::Window::Windows"><span class="n"><span class="pre">Windows</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">windows</span></span>, <a class="reference internal" href="../../d8/d9d/glfwBackend_8hpp.html#_CPPv4N5Raven6Window4GLFW10SWindowMapE" title="Raven::Window::GLFW::SWindowMap"><span class="n"><span class="pre">SWindowMap</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">glfwWindows</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven6Window4GLFW13UpdateWindowsER3AppRK5StateR7WindowsR10SWindowMap" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Window4GLFW14CleanUpWindowsER3AppR7WindowsR10SWindowMap">
+<span id="_CPPv3N5Raven6Window4GLFW14CleanUpWindowsER3AppR7WindowsR10SWindowMap"></span><span id="_CPPv2N5Raven6Window4GLFW14CleanUpWindowsER3AppR7WindowsR10SWindowMap"></span><span id="Raven::Window::GLFW::CleanUpWindows__AppR.WindowsR.SWindowMapR"></span><span class="target" id="dd/d50/glfwBackend_8cpp_1aa110d7eb4a842cf8c2cb2cbaf6a01725"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CleanUpWindows</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../../d3/ddf/RavenApp_8hpp.html#_CPPv4N5Raven3AppE" title="Raven::App"><span class="n"><span class="pre">App</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">app</span></span>, <a class="reference internal" href="../../d0/de3/Window_8hpp.html#_CPPv4N5Raven6Window7WindowsE" title="Raven::Window::Windows"><span class="n"><span class="pre">Windows</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">windows</span></span>, <a class="reference internal" href="../../d8/d9d/glfwBackend_8hpp.html#_CPPv4N5Raven6Window4GLFW10SWindowMapE" title="Raven::Window::GLFW::SWindowMap"><span class="n"><span class="pre">SWindowMap</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">glfwWindows</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven6Window4GLFW14CleanUpWindowsER3AppR7WindowsR10SWindowMap" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Window4GLFW9PollInputER3App">
+<span id="_CPPv3N5Raven6Window4GLFW9PollInputER3App"></span><span id="_CPPv2N5Raven6Window4GLFW9PollInputER3App"></span><span id="Raven::Window::GLFW::PollInput__AppR"></span><span class="target" id="dd/d50/glfwBackend_8cpp_1a1adf5dbff7cbc0d6b3db353c413887f4"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PollInput</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../../d3/ddf/RavenApp_8hpp.html#_CPPv4N5Raven3AppE" title="Raven::App"><span class="n"><span class="pre">App</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">app</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven6Window4GLFW9PollInputER3App" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Window4GLFW5StateE">
+<span id="_CPPv3N5Raven6Window4GLFW5StateE"></span><span id="_CPPv2N5Raven6Window4GLFW5StateE"></span><span id="Raven::Window::GLFW::State"></span><span class="target" id="da/d50/structRaven_1_1Window_1_1GLFW_1_1State"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">State</span></span></span><a class="headerlink" href="#_CPPv4N5Raven6Window4GLFW5StateE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Window4GLFW5State5StateEv">
+<span id="_CPPv3N5Raven6Window4GLFW5State5StateEv"></span><span id="_CPPv2N5Raven6Window4GLFW5State5StateEv"></span><span id="Raven::Window::GLFW::State::State"></span><span class="target" id="da/d50/structRaven_1_1Window_1_1GLFW_1_1State_1ab7afccaafa3c5ed33187e32b7fa0fe99"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">State</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven6Window4GLFW5State5StateEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Window4GLFW5StateD0Ev">
+<span id="_CPPv3N5Raven6Window4GLFW5StateD0Ev"></span><span id="_CPPv2N5Raven6Window4GLFW5StateD0Ev"></span><span id="Raven::Window::GLFW::State::~State"></span><span class="target" id="da/d50/structRaven_1_1Window_1_1GLFW_1_1State_1aacb5715d50050e82c89c43a22afe480d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~State</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven6Window4GLFW5StateD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Window4GLFW5State9m_cursorsE">
+<span id="_CPPv3N5Raven6Window4GLFW5State9m_cursorsE"></span><span id="_CPPv2N5Raven6Window4GLFW5State9m_cursorsE"></span><span class="target" id="da/d50/structRaven_1_1Window_1_1GLFW_1_1State_1a95efe8466e88064ab50333294d1c011f"></span><a class="reference internal" href="../../d0/d29/Timestep_8hpp.html#_CPPv4St" title="std"><span class="n"><span class="pre">std</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">GLFWcursor</span></span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../../d0/d6f/FixedSizeQueue_8h.html#_CPPv49RavenUtil" title="RavenUtil"><span class="n"><span class="pre">RavenUtil</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">to_underlying</span></span><span class="p"><span class="pre">(</span></span><a class="reference internal" href="../../d0/de3/Window_8hpp.html#_CPPv4N5Raven6Window11ECursorTypeE" title="Raven::Window::ECursorType"><span class="n"><span class="pre">ECursorType</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="../../d0/de3/Window_8hpp.html#_CPPv4N5Raven6Window11ECursorType5CountE" title="Raven::Window::ECursorType::Count"><span class="n"><span class="pre">Count</span></span></a><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_cursors</span></span></span><a class="headerlink" href="#_CPPv4N5Raven6Window4GLFW5State9m_cursorsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Window4GLFW5State17m_shouldTerminateE">
+<span id="_CPPv3N5Raven6Window4GLFW5State17m_shouldTerminateE"></span><span id="_CPPv2N5Raven6Window4GLFW5State17m_shouldTerminateE"></span><span id="Raven::Window::GLFW::State::m_shouldTerminate__b"></span><span class="target" id="da/d50/structRaven_1_1Window_1_1GLFW_1_1State_1aec0c3d7f3bf632f9629975e8fb65e9d0"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_shouldTerminate</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span><a class="headerlink" href="#_CPPv4N5Raven6Window4GLFW5State17m_shouldTerminateE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Window4GLFW9CallbacksE">
+<span id="_CPPv3N5Raven6Window4GLFW9CallbacksE"></span><span id="_CPPv2N5Raven6Window4GLFW9CallbacksE"></span><span id="Raven::Window::GLFW::Callbacks"></span><span class="target" id="d6/ddf/namespaceRaven_1_1Window_1_1GLFW_1_1Callbacks"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Callbacks</span></span></span><a class="headerlink" href="#_CPPv4N5Raven6Window4GLFW9CallbacksE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Window4GLFW9Callbacks8MouseBtnEP10GLFWwindowiii">
+<span id="_CPPv3N5Raven6Window4GLFW9Callbacks8MouseBtnEP10GLFWwindowiii"></span><span id="_CPPv2N5Raven6Window4GLFW9Callbacks8MouseBtnEP10GLFWwindowiii"></span><span id="Raven::Window::GLFW::Callbacks::MouseBtn__GLFWwindowP.i.i.i"></span><span class="target" id="dd/d50/glfwBackend_8cpp_1a54ec920aa1827c27229ca2228ca85f55"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MouseBtn</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">GLFWwindow</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">window</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">keyCode</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">action</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">modes</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven6Window4GLFW9Callbacks8MouseBtnEP10GLFWwindowiii" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Window4GLFW9Callbacks3KeyEP10GLFWwindowiiii">
+<span id="_CPPv3N5Raven6Window4GLFW9Callbacks3KeyEP10GLFWwindowiiii"></span><span id="_CPPv2N5Raven6Window4GLFW9Callbacks3KeyEP10GLFWwindowiiii"></span><span id="Raven::Window::GLFW::Callbacks::Key__GLFWwindowP.i.i.i.i"></span><span class="target" id="dd/d50/glfwBackend_8cpp_1a98025749944d173f04badd8d2a38fa71"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Key</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">GLFWwindow</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">window</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">keyCode</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">scanCode</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">mode</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">mods</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven6Window4GLFW9Callbacks3KeyEP10GLFWwindowiiii" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Window4GLFW9Callbacks4CharEP10GLFWwindowj">
+<span id="_CPPv3N5Raven6Window4GLFW9Callbacks4CharEP10GLFWwindowj"></span><span id="_CPPv2N5Raven6Window4GLFW9Callbacks4CharEP10GLFWwindowj"></span><span id="Raven::Window::GLFW::Callbacks::Char__GLFWwindowP.unsigned-i"></span><span class="target" id="dd/d50/glfwBackend_8cpp_1a8c309547e0d4f200296c09f7a507c284"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Char</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">GLFWwindow</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">window</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven6Window4GLFW9Callbacks4CharEP10GLFWwindowj" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Window4GLFW9Callbacks5MouseEP10GLFWwindowdd">
+<span id="_CPPv3N5Raven6Window4GLFW9Callbacks5MouseEP10GLFWwindowdd"></span><span id="_CPPv2N5Raven6Window4GLFW9Callbacks5MouseEP10GLFWwindowdd"></span><span id="Raven::Window::GLFW::Callbacks::Mouse__GLFWwindowP.double.double"></span><span class="target" id="dd/d50/glfwBackend_8cpp_1ace4effa8997b1634c0d9b0b8d2410baa"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Mouse</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">GLFWwindow</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">window</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">xpos</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">ypos</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven6Window4GLFW9Callbacks5MouseEP10GLFWwindowdd" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Window4GLFW9Callbacks12WindowResizeEP10GLFWwindowii">
+<span id="_CPPv3N5Raven6Window4GLFW9Callbacks12WindowResizeEP10GLFWwindowii"></span><span id="_CPPv2N5Raven6Window4GLFW9Callbacks12WindowResizeEP10GLFWwindowii"></span><span id="Raven::Window::GLFW::Callbacks::WindowResize__GLFWwindowP.i.i"></span><span class="target" id="dd/d50/glfwBackend_8cpp_1a44d9d8844fa84d06ba52c4d3de787885"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">WindowResize</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">GLFWwindow</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">window</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">width</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">height</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven6Window4GLFW9Callbacks12WindowResizeEP10GLFWwindowii" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Window4GLFW9Callbacks9WindowPosEP10GLFWwindowii">
+<span id="_CPPv3N5Raven6Window4GLFW9Callbacks9WindowPosEP10GLFWwindowii"></span><span id="_CPPv2N5Raven6Window4GLFW9Callbacks9WindowPosEP10GLFWwindowii"></span><span id="Raven::Window::GLFW::Callbacks::WindowPos__GLFWwindowP.i.i"></span><span class="target" id="dd/d50/glfwBackend_8cpp_1aa06b1789eda503370ecc673154680638"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">WindowPos</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">GLFWwindow</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">window</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">x</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">y</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven6Window4GLFW9Callbacks9WindowPosEP10GLFWwindowii" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Window4GLFW9Callbacks11MouseScrollEP10GLFWwindowdd">
+<span id="_CPPv3N5Raven6Window4GLFW9Callbacks11MouseScrollEP10GLFWwindowdd"></span><span id="_CPPv2N5Raven6Window4GLFW9Callbacks11MouseScrollEP10GLFWwindowdd"></span><span id="Raven::Window::GLFW::Callbacks::MouseScroll__GLFWwindowP.double.double"></span><span class="target" id="dd/d50/glfwBackend_8cpp_1a565e53adc1c6d71d19e86136e3934f40"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MouseScroll</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">GLFWwindow</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">window</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">xOffset</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">yOffset</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven6Window4GLFW9Callbacks11MouseScrollEP10GLFWwindowdd" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Window4GLFW9Callbacks8FileDropEP10GLFWwindowiPPKc">
+<span id="_CPPv3N5Raven6Window4GLFW9Callbacks8FileDropEP10GLFWwindowiPPKc"></span><span id="_CPPv2N5Raven6Window4GLFW9Callbacks8FileDropEP10GLFWwindowiPPKc"></span><span id="Raven::Window::GLFW::Callbacks::FileDrop__GLFWwindowP.i.cCPP"></span><span class="target" id="dd/d50/glfwBackend_8cpp_1a74e1c491a39df24b2382a52fb5d89aef"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FileDrop</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">GLFWwindow</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">window</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">count</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">paths</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven6Window4GLFW9Callbacks8FileDropEP10GLFWwindowiPPKc" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Window4GLFW9Callbacks13WindowFocusedEP10GLFWwindowi">
+<span id="_CPPv3N5Raven6Window4GLFW9Callbacks13WindowFocusedEP10GLFWwindowi"></span><span id="_CPPv2N5Raven6Window4GLFW9Callbacks13WindowFocusedEP10GLFWwindowi"></span><span id="Raven::Window::GLFW::Callbacks::WindowFocused__GLFWwindowP.i"></span><span class="target" id="dd/d50/glfwBackend_8cpp_1a3ca4ab67bc554bd8b9ecf940d4307eae"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">WindowFocused</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">GLFWwindow</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">pWnd</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">focused</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven6Window4GLFW9Callbacks13WindowFocusedEP10GLFWwindowi" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Window4GLFW9Callbacks13CursorEnteredEP10GLFWwindowi">
+<span id="_CPPv3N5Raven6Window4GLFW9Callbacks13CursorEnteredEP10GLFWwindowi"></span><span id="_CPPv2N5Raven6Window4GLFW9Callbacks13CursorEnteredEP10GLFWwindowi"></span><span id="Raven::Window::GLFW::Callbacks::CursorEntered__GLFWwindowP.i"></span><span class="target" id="dd/d50/glfwBackend_8cpp_1aa99fcb2649136125628ec0a167750f80"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CursorEntered</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">GLFWwindow</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">pWnd</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">entered</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven6Window4GLFW9Callbacks13CursorEnteredEP10GLFWwindowi" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven6Window4GLFW9Callbacks7InstallEP10GLFWwindow">
+<span id="_CPPv3N5Raven6Window4GLFW9Callbacks7InstallEP10GLFWwindow"></span><span id="_CPPv2N5Raven6Window4GLFW9Callbacks7InstallEP10GLFWwindow"></span><span id="Raven::Window::GLFW::Callbacks::Install__GLFWwindowP"></span><span class="target" id="dd/d50/glfwBackend_8cpp_1aa425e9522d24eca0cba5bc291cce7d10"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Install</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">GLFWwindow</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">pWnd</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven6Window4GLFW9Callbacks7InstallEP10GLFWwindow" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+					 </div>
+					 
+					</div>
+					<footer>
+  
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2022-2023, Aleksandr Slobodov
+	  <br>
+      
+      
+      
+      Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+      
+      <a href="https://github.com/revitron/revitron-sphinx-theme">theme</a>
+      
+      provided by <a href="https://github.com/revitron">Revitron</a>.
+
+    </p>
+  </div> 
+
+</footer>
+
+				</div>
+			</div>
+
+		</section>
+
+	</div>
+	
+
+	<script type="text/javascript">
+			jQuery(function () {
+					SphinxRtdTheme.Navigation.enable(true);
+			});
+	</script>
+
+	
+	
+		
+		<!-- Theme Analytics -->
+		<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-XXXXXXX-1', 'auto');
+		ga('send', 'pageview');
+		</script>
+
+		
+	 
+
+ 
+</body>	
+</html>

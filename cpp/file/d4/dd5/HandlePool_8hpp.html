@@ -1,0 +1,487 @@
+
+	
+
+<!DOCTYPE html>
+<html class="writer-html5 dark" lang="C++" >
+<head>
+	<meta charset="utf-8">
+	<meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+		<title>File HandlePool.hpp &mdash; Raven Engine 0.0.1 documentation</title>
+	
+	
+	
+	<link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+	<link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+	<link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+	<link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+
+	
+	
+	
+	
+
+	
+	<!--[if lt IE 9]>
+		<script src="../../../../_static/js/html5shiv.min.js"></script>
+	<![endif]-->
+	
+		
+			<script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+				<script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+				<script src="../../../../_static/jquery.js"></script>
+				<script src="../../../../_static/underscore.js"></script>
+				<script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+				<script src="../../../../_static/doctools.js"></script>
+				<script src="../../../../_static/sphinx_highlight.js"></script>
+		
+		<script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+		
+		<link rel="index" title="Index" href="../../../../genindex.html" />
+		<link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+<body class="wy-body-for-nav">
+
+
+	 
+	<div class="wy-grid-for-nav">
+		
+		<nav data-toggle="wy-nav-shift" class="wy-nav-side">
+			<div class="wy-side-scroll">
+				<div class="wy-side-nav-search">
+					
+						<div class="brand">
+							<a href="../../../../index.html">
+							
+								Raven Engine
+							
+							</a>
+						</div>
+						
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+					
+				</div>
+				
+				<div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+					
+						
+						
+							
+						
+						
+							<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../philosophy.html">Engine philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../philosophy.html#initialisation">Initialisation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../samples.html">Samples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api.html">Raven API</a></li>
+</ul>
+
+						
+					
+				</div>
+				
+			</div>
+		</nav>
+
+		<section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+			
+			<nav class="wy-nav-top" aria-label="top navigation">
+			
+				<i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+				<a href="../../../../index.html">
+					
+						Raven Engine
+					
+				</a>
+			
+			</nav>
+
+
+			<div class="wy-nav-content">
+				
+				<div class="rst-content">
+				
+					<div role="navigation" aria-label="breadcrumbs navigation">
+
+	<ul class="wy-breadcrumbs">
+		
+			
+				<li><a href="../../../../index.html">Raven Engine</a> ⁄&nbsp;</li>
+				
+				<li><a href="">File HandlePool.hpp</a></li>
+			
+		
+		
+			<li class="wy-breadcrumbs-aside">
+			
+				<a href="https://github.com/hadalhw17/RavenEngine" class="fa fa-github-alt"></a>
+			
+			</li>
+		
+	</ul>
+
+</div>
+					<div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+					 <div itemprop="articleBody">
+						
+  <section id="file-handlepool-hpp">
+<h1>File HandlePool.hpp<a class="headerlink" href="#file-handlepool-hpp" title="Permalink to this heading">¶</a></h1>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv45Raven">
+<span id="_CPPv35Raven"></span><span id="_CPPv25Raven"></span><span id="Raven"></span><span class="target" id="d4/dfa/namespaceRaven"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Raven</span></span></span><br /></dt>
+<dd><dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4I00EN5Raven11THandlePoolE">
+<span id="_CPPv3I00EN5Raven11THandlePoolE"></span><span id="_CPPv2I00EN5Raven11THandlePoolE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TagT</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I00EN5Raven11THandlePoolE" title="Raven::THandlePool::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="da/d5b/classRaven_1_1THandlePool"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">THandlePool</span></span></span><a class="headerlink" href="#_CPPv4I00EN5Raven11THandlePoolE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Subclassed by <a class="reference internal" href="../../d0/de3/Window_8hpp.html#d4/dad/structRaven_1_1Window_1_1Windows"><span class="std std-ref">Raven::Window::Windows</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-types">Public Types</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven11THandlePool14const_iteratorE">
+<span id="_CPPv3N5Raven11THandlePool14const_iteratorE"></span><span id="_CPPv2N5Raven11THandlePool14const_iteratorE"></span><span class="target" id="da/d5b/classRaven_1_1THandlePool_1a28805e0f13aa75cc42d460e23ac67052"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">const_iterator</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5Raven11THandlePool8iteratorE" title="Raven::THandlePool::iterator"><span class="n"><span class="pre">iterator</span></span></a><a class="headerlink" href="#_CPPv4N5Raven11THandlePool14const_iteratorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven11THandlePool11THandlePoolEv">
+<span id="_CPPv3N5Raven11THandlePool11THandlePoolEv"></span><span id="_CPPv2N5Raven11THandlePool11THandlePoolEv"></span><span id="Raven::THandlePool::THandlePool"></span><span class="target" id="da/d5b/classRaven_1_1THandlePool_1ac671caa8a2b35a21fcc991f958be8267"></span><span class="sig-name descname"><span class="n"><span class="pre">THandlePool</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5Raven11THandlePool11THandlePoolEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven11THandlePoolD0Ev">
+<span id="_CPPv3N5Raven11THandlePoolD0Ev"></span><span id="_CPPv2N5Raven11THandlePoolD0Ev"></span><span id="Raven::THandlePool::~THandlePool"></span><span class="target" id="da/d5b/classRaven_1_1THandlePool_1a11264310b6096e6549e84f48958f4772"></span><span class="sig-name descname"><span class="n"><span class="pre">~THandlePool</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N5Raven11THandlePoolD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4IDpEN5Raven11THandlePool7emplaceE7HandleTDpRR4Args">
+<span id="_CPPv3IDpEN5Raven11THandlePool7emplaceEDpRR4Args"></span><span id="_CPPv2IDpEN5Raven11THandlePool7emplaceEDpRR4Args"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="sig-name descname"><span class="n"><span class="pre">Args</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="da/d5b/classRaven_1_1THandlePool_1a3a98088e6191442bccf0f6bfc76a1f5f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5Raven11THandlePool7HandleTE" title="Raven::THandlePool::HandleT"><span class="n"><span class="pre">HandleT</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">emplace</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4IDpEN5Raven11THandlePool7emplaceE7HandleTDpRR4Args" title="Raven::THandlePool::emplace::Args"><span class="n"><span class="pre">Args</span></span></a><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">...</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">args</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4IDpEN5Raven11THandlePool7emplaceE7HandleTDpRR4Args" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5Raven11THandlePool7IsValidE7HandleT">
+<span id="_CPPv3NK5Raven11THandlePool7IsValidE7HandleT"></span><span id="_CPPv2NK5Raven11THandlePool7IsValidE7HandleT"></span><span id="Raven::THandlePool::IsValid__HandleTC"></span><span class="target" id="da/d5b/classRaven_1_1THandlePool_1a54d5ad46cb5374ae48cb23e225ab4636"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">IsValid</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N5Raven11THandlePool7HandleTE" title="Raven::THandlePool::HandleT"><span class="n"><span class="pre">HandleT</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">handle</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK5Raven11THandlePool7IsValidE7HandleT" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5Raven11THandlePool5emptyEv">
+<span id="_CPPv3NK5Raven11THandlePool5emptyEv"></span><span id="_CPPv2NK5Raven11THandlePool5emptyEv"></span><span id="Raven::THandlePool::emptyC"></span><span class="target" id="da/d5b/classRaven_1_1THandlePool_1a2fada0c5451ec72194a4f5347a3389a0"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">empty</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK5Raven11THandlePool5emptyEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5Raven11THandlePool4sizeEv">
+<span id="_CPPv3NK5Raven11THandlePool4sizeEv"></span><span id="_CPPv2NK5Raven11THandlePool4sizeEv"></span><span id="Raven::THandlePool::sizeC"></span><span class="target" id="da/d5b/classRaven_1_1THandlePool_1a48feebeb70b9bfef67e41e06f0bcd214"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5Raven11THandlePool9size_typeE" title="Raven::THandlePool::size_type"><span class="n"><span class="pre">size_type</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">size</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK5Raven11THandlePool4sizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5Raven11THandlePool8capacityEv">
+<span id="_CPPv3NK5Raven11THandlePool8capacityEv"></span><span id="_CPPv2NK5Raven11THandlePool8capacityEv"></span><span id="Raven::THandlePool::capacityC"></span><span class="target" id="da/d5b/classRaven_1_1THandlePool_1a9e45e42a607794e3bfbbe9de08d8e93b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5Raven11THandlePool9size_typeE" title="Raven::THandlePool::size_type"><span class="n"><span class="pre">size_type</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">capacity</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK5Raven11THandlePool8capacityEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN5Raven11THandlePool6assureE4GetTI1UE7THandleI1UE">
+<span id="_CPPv3I0EN5Raven11THandlePool6assureE7THandleI1UE"></span><span id="_CPPv2I0EN5Raven11THandlePool6assureE7THandleI1UE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">U</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="da/d5b/classRaven_1_1THandlePool_1a1d1663357d7fd5cf3aa3ac38195c59be"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN5Raven11THandlePool4GetTE" title="Raven::THandlePool::GetT"><span class="n"><span class="pre">GetT</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN5Raven11THandlePool6assureE4GetTI1UE7THandleI1UE" title="Raven::THandlePool::assure::U"><span class="n"><span class="pre">U</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">assure</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../../dd/d75/Handle_8hpp.html#_CPPv4I0EN5Raven7THandleE" title="Raven::THandle"><span class="n"><span class="pre">THandle</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN5Raven11THandlePool6assureE4GetTI1UE7THandleI1UE" title="Raven::THandlePool::assure::U"><span class="n"><span class="pre">U</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">handle</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4I0EN5Raven11THandlePool6assureE4GetTI1UE7THandleI1UE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0ENK5Raven11THandlePool6assureEK4GetTI1UE7THandleI1UE">
+<span id="_CPPv3I0ENK5Raven11THandlePool6assureE7THandleI1UE"></span><span id="_CPPv2I0ENK5Raven11THandlePool6assureE7THandleI1UE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">U</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="da/d5b/classRaven_1_1THandlePool_1a1af2ebcce715e88992358af72b494b99"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN5Raven11THandlePool4GetTE" title="Raven::THandlePool::GetT"><span class="n"><span class="pre">GetT</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0ENK5Raven11THandlePool6assureEK4GetTI1UE7THandleI1UE" title="Raven::THandlePool::assure::U"><span class="n"><span class="pre">U</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">assure</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../../dd/d75/Handle_8hpp.html#_CPPv4I0EN5Raven7THandleE" title="Raven::THandle"><span class="n"><span class="pre">THandle</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0ENK5Raven11THandlePool6assureEK4GetTI1UE7THandleI1UE" title="Raven::THandlePool::assure::U"><span class="n"><span class="pre">U</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">handle</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4I0ENK5Raven11THandlePool6assureEK4GetTI1UE7THandleI1UE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN5Raven11THandlePool3getE4GetTI1UE7THandleI1UE">
+<span id="_CPPv3I0EN5Raven11THandlePool3getE7THandleI1UE"></span><span id="_CPPv2I0EN5Raven11THandlePool3getE7THandleI1UE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">U</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="da/d5b/classRaven_1_1THandlePool_1a005a484f904e88bc01a6b6638254f802"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN5Raven11THandlePool4GetTE" title="Raven::THandlePool::GetT"><span class="n"><span class="pre">GetT</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN5Raven11THandlePool3getE4GetTI1UE7THandleI1UE" title="Raven::THandlePool::get::U"><span class="n"><span class="pre">U</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../../dd/d75/Handle_8hpp.html#_CPPv4I0EN5Raven7THandleE" title="Raven::THandle"><span class="n"><span class="pre">THandle</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN5Raven11THandlePool3getE4GetTI1UE7THandleI1UE" title="Raven::THandlePool::get::U"><span class="n"><span class="pre">U</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">handle</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4I0EN5Raven11THandlePool3getE4GetTI1UE7THandleI1UE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0ENK5Raven11THandlePool3getEK4GetTI1UE7THandleI1UE">
+<span id="_CPPv3I0ENK5Raven11THandlePool3getE7THandleI1UE"></span><span id="_CPPv2I0ENK5Raven11THandlePool3getE7THandleI1UE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">U</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="da/d5b/classRaven_1_1THandlePool_1a8e834092c52b0b3b3ae5e9ae6a412e4d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN5Raven11THandlePool4GetTE" title="Raven::THandlePool::GetT"><span class="n"><span class="pre">GetT</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0ENK5Raven11THandlePool3getEK4GetTI1UE7THandleI1UE" title="Raven::THandlePool::get::U"><span class="n"><span class="pre">U</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../../dd/d75/Handle_8hpp.html#_CPPv4I0EN5Raven7THandleE" title="Raven::THandle"><span class="n"><span class="pre">THandle</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0ENK5Raven11THandlePool3getEK4GetTI1UE7THandleI1UE" title="Raven::THandlePool::get::U"><span class="n"><span class="pre">U</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">handle</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4I0ENK5Raven11THandlePool3getEK4GetTI1UE7THandleI1UE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven11THandlePool7releaseE7HandleT">
+<span id="_CPPv3N5Raven11THandlePool7releaseE7HandleT"></span><span id="_CPPv2N5Raven11THandlePool7releaseE7HandleT"></span><span id="Raven::THandlePool::release__HandleT"></span><span class="target" id="da/d5b/classRaven_1_1THandlePool_1aa303de366d6ffde6df6f1531ae62a8a9"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">release</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N5Raven11THandlePool7HandleTE" title="Raven::THandlePool::HandleT"><span class="n"><span class="pre">HandleT</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">handle</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N5Raven11THandlePool7releaseE7HandleT" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven11THandlePool5clearEv">
+<span id="_CPPv3N5Raven11THandlePool5clearEv"></span><span id="_CPPv2N5Raven11THandlePool5clearEv"></span><span id="Raven::THandlePool::clear"></span><span class="target" id="da/d5b/classRaven_1_1THandlePool_1a66367cd53d5ae4164adf4c149de1de91"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clear</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N5Raven11THandlePool5clearEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven11THandlePool5beginEv">
+<span id="_CPPv3N5Raven11THandlePool5beginEv"></span><span id="_CPPv2N5Raven11THandlePool5beginEv"></span><span id="Raven::THandlePool::begin"></span><span class="target" id="da/d5b/classRaven_1_1THandlePool_1a5b518bf76126387c854dbf09ecf47851"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5Raven11THandlePool8iteratorE" title="Raven::THandlePool::iterator"><span class="n"><span class="pre">iterator</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">begin</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N5Raven11THandlePool5beginEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven11THandlePool3endEv">
+<span id="_CPPv3N5Raven11THandlePool3endEv"></span><span id="_CPPv2N5Raven11THandlePool3endEv"></span><span id="Raven::THandlePool::end"></span><span class="target" id="da/d5b/classRaven_1_1THandlePool_1ab6f1575f7b2c20f431525223193e1a89"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5Raven11THandlePool8iteratorE" title="Raven::THandlePool::iterator"><span class="n"><span class="pre">iterator</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">end</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N5Raven11THandlePool3endEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5Raven11THandlePool5beginEv">
+<span id="_CPPv3NK5Raven11THandlePool5beginEv"></span><span id="_CPPv2NK5Raven11THandlePool5beginEv"></span><span id="Raven::THandlePool::beginC"></span><span class="target" id="da/d5b/classRaven_1_1THandlePool_1afe743642867ef434383280d6e1233332"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5Raven11THandlePool14const_iteratorE" title="Raven::THandlePool::const_iterator"><span class="n"><span class="pre">const_iterator</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">begin</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK5Raven11THandlePool5beginEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5Raven11THandlePool3endEv">
+<span id="_CPPv3NK5Raven11THandlePool3endEv"></span><span id="_CPPv2NK5Raven11THandlePool3endEv"></span><span id="Raven::THandlePool::endC"></span><span class="target" id="da/d5b/classRaven_1_1THandlePool_1afd760ed7645f1313201a71ce730ee906"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5Raven11THandlePool14const_iteratorE" title="Raven::THandlePool::const_iterator"><span class="n"><span class="pre">const_iterator</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">end</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK5Raven11THandlePool3endEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-types">Private Types</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven11THandlePool9ResourceTE">
+<span id="_CPPv3N5Raven11THandlePool9ResourceTE"></span><span id="_CPPv2N5Raven11THandlePool9ResourceTE"></span><span class="target" id="da/d5b/classRaven_1_1THandlePool_1a02ac9160a31f8672702268cc437d41f3"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ResourceT</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I00EN5Raven11THandlePoolE" title="Raven::THandlePool::T"><span class="n"><span class="pre">T</span></span></a><a class="headerlink" href="#_CPPv4N5Raven11THandlePool9ResourceTE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven11THandlePool7MemoryTE">
+<span id="_CPPv3N5Raven11THandlePool7MemoryTE"></span><span id="_CPPv2N5Raven11THandlePool7MemoryTE"></span><span class="target" id="da/d5b/classRaven_1_1THandlePool_1a1a86189740c1b8bb0ae9f8061f3a030b"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MemoryT</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5Raven11THandlePool9ResourceTE" title="Raven::THandlePool::ResourceT"><span class="n"><span class="pre">ResourceT</span></span></a><span class="p"><span class="pre">*</span></span><a class="headerlink" href="#_CPPv4N5Raven11THandlePool7MemoryTE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven11THandlePool7HandleTE">
+<span id="_CPPv3N5Raven11THandlePool7HandleTE"></span><span id="_CPPv2N5Raven11THandlePool7HandleTE"></span><span class="target" id="da/d5b/classRaven_1_1THandlePool_1ab0702c6f9f4ad3c421eff97147399493"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">HandleT</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="../../dd/d75/Handle_8hpp.html#_CPPv4I0EN5Raven7THandleE" title="Raven::THandle"><span class="n"><span class="pre">THandle</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I00EN5Raven11THandlePoolE" title="Raven::THandlePool::TagT"><span class="n"><span class="pre">TagT</span></span></a><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N5Raven11THandlePool7HandleTE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven11THandlePool3IdTE">
+<span id="_CPPv3N5Raven11THandlePool3IdTE"></span><span id="_CPPv2N5Raven11THandlePool3IdTE"></span><span class="target" id="da/d5b/classRaven_1_1THandlePool_1a85e6705eefffe7fe2319a423b6e9ea00"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">IdT</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5Raven11THandlePool7HandleTE" title="Raven::THandlePool::HandleT"><span class="n"><span class="pre">HandleT</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">IdT</span></span><a class="headerlink" href="#_CPPv4N5Raven11THandlePool3IdTE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven11THandlePool9size_typeE">
+<span id="_CPPv3N5Raven11THandlePool9size_typeE"></span><span id="_CPPv2N5Raven11THandlePool9size_typeE"></span><span class="target" id="da/d5b/classRaven_1_1THandlePool_1acc3496571072ec00cf41d871df1742f1"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">size_type</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><a class="reference internal" href="../../d0/d29/Timestep_8hpp.html#_CPPv4St" title="std"><span class="n"><span class="pre">std</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N5Raven11THandlePool9ResourceTE" title="Raven::THandlePool::ResourceT"><span class="n"><span class="pre">ResourceT</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_type</span></span><a class="headerlink" href="#_CPPv4N5Raven11THandlePool9size_typeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN5Raven11THandlePool4GetTE">
+<span id="_CPPv3I0EN5Raven11THandlePool4GetTE"></span><span id="_CPPv2I0EN5Raven11THandlePool4GetTE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">U</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="da/d5b/classRaven_1_1THandlePool_1aa9ab72f21cb14e172c97464aa4f11e26"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GetT</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><a class="reference internal" href="../../d0/d29/Timestep_8hpp.html#_CPPv4St" title="std"><span class="n"><span class="pre">std</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">enable_if</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../../d0/d29/Timestep_8hpp.html#_CPPv4St" title="std"><span class="n"><span class="pre">std</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">is_same_v</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN5Raven11THandlePool4GetTE" title="Raven::THandlePool::GetT::U"><span class="n"><span class="pre">U</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5Raven11THandlePool9ResourceTE" title="Raven::THandlePool::ResourceT"><span class="n"><span class="pre">ResourceT</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="o"><span class="pre">||</span></span><span class="w"> </span><a class="reference internal" href="../../d0/d29/Timestep_8hpp.html#_CPPv4St" title="std"><span class="n"><span class="pre">std</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">is_same_v</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN5Raven11THandlePool4GetTE" title="Raven::THandlePool::GetT::U"><span class="n"><span class="pre">U</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I00EN5Raven11THandlePoolE" title="Raven::THandlePool::TagT"><span class="n"><span class="pre">TagT</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I00EN5Raven11THandlePoolE" title="Raven::THandlePool::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">type</span></span><a class="headerlink" href="#_CPPv4I0EN5Raven11THandlePool4GetTE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-functions">Private Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven11THandlePool4growEv">
+<span id="_CPPv3N5Raven11THandlePool4growEv"></span><span id="_CPPv2N5Raven11THandlePool4growEv"></span><span id="Raven::THandlePool::grow"></span><span class="target" id="da/d5b/classRaven_1_1THandlePool_1a735de521b46a3bc10fc95a72f11ec82f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">grow</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N5Raven11THandlePool4growEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN5Raven11THandlePool13SetBitPatternEv7HandleTK1U">
+<span id="_CPPv3I0EN5Raven11THandlePool13SetBitPatternE7HandleTK1U"></span><span id="_CPPv2I0EN5Raven11THandlePool13SetBitPatternE7HandleTK1U"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">U</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="da/d5b/classRaven_1_1THandlePool_1a850a9dd9e6123233a085c42f046a3564"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SetBitPattern</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N5Raven11THandlePool7HandleTE" title="Raven::THandlePool::HandleT"><span class="n"><span class="pre">HandleT</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">handle</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN5Raven11THandlePool13SetBitPatternEv7HandleTK1U" title="Raven::THandlePool::SetBitPattern::U"><span class="n"><span class="pre">U</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">pattern</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN5Raven11THandlePool13SetBitPatternEv7HandleTK1U" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0ENK5Raven11THandlePool15CheckBitPatternEb7HandleT1U">
+<span id="_CPPv3I0ENK5Raven11THandlePool15CheckBitPatternE7HandleT1U"></span><span id="_CPPv2I0ENK5Raven11THandlePool15CheckBitPatternE7HandleT1U"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">U</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="da/d5b/classRaven_1_1THandlePool_1adfb90c967a6c7cb0a9c363b7d4ec094a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CheckBitPattern</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N5Raven11THandlePool7HandleTE" title="Raven::THandlePool::HandleT"><span class="n"><span class="pre">HandleT</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">handle</span></span>, <a class="reference internal" href="#_CPPv4I0ENK5Raven11THandlePool15CheckBitPatternEb7HandleT1U" title="Raven::THandlePool::CheckBitPattern::U"><span class="n"><span class="pre">U</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">pattern</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4I0ENK5Raven11THandlePool15CheckBitPatternEb7HandleT1U" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5Raven11THandlePool23HasInvalidationPatternsE7HandleT">
+<span id="_CPPv3NK5Raven11THandlePool23HasInvalidationPatternsE7HandleT"></span><span id="_CPPv2NK5Raven11THandlePool23HasInvalidationPatternsE7HandleT"></span><span id="Raven::THandlePool::HasInvalidationPatterns__HandleTC"></span><span class="target" id="da/d5b/classRaven_1_1THandlePool_1a317ae5aca65671e55b463a8d0d73c27d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">HasInvalidationPatterns</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N5Raven11THandlePool7HandleTE" title="Raven::THandlePool::HandleT"><span class="n"><span class="pre">HandleT</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">handle</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK5Raven11THandlePool23HasInvalidationPatternsE7HandleT" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven11THandlePool10m_freeListE">
+<span id="_CPPv3N5Raven11THandlePool10m_freeListE"></span><span id="_CPPv2N5Raven11THandlePool10m_freeListE"></span><span id="Raven::THandlePool::m_freeList__std::list:IdT:"></span><span class="target" id="da/d5b/classRaven_1_1THandlePool_1a4281a48dff7547fa06de918f8bc8643b"></span><a class="reference internal" href="../../d0/d29/Timestep_8hpp.html#_CPPv4St" title="std"><span class="n"><span class="pre">std</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">list</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N5Raven11THandlePool3IdTE" title="Raven::THandlePool::IdT"><span class="n"><span class="pre">IdT</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_freeList</span></span></span><a class="headerlink" href="#_CPPv4N5Raven11THandlePool10m_freeListE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven11THandlePool13m_generationsE">
+<span id="_CPPv3N5Raven11THandlePool13m_generationsE"></span><span id="_CPPv2N5Raven11THandlePool13m_generationsE"></span><span id="Raven::THandlePool::m_generations__std::vector:IdT:"></span><span class="target" id="da/d5b/classRaven_1_1THandlePool_1a0675562f65f727cba6219c4ab8c6ecb3"></span><a class="reference internal" href="../../d0/d29/Timestep_8hpp.html#_CPPv4St" title="std"><span class="n"><span class="pre">std</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N5Raven11THandlePool3IdTE" title="Raven::THandlePool::IdT"><span class="n"><span class="pre">IdT</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_generations</span></span></span><a class="headerlink" href="#_CPPv4N5Raven11THandlePool13m_generationsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven11THandlePool7m_pDataE">
+<span id="_CPPv3N5Raven11THandlePool7m_pDataE"></span><span id="_CPPv2N5Raven11THandlePool7m_pDataE"></span><span id="Raven::THandlePool::m_pData__MemoryT"></span><span class="target" id="da/d5b/classRaven_1_1THandlePool_1a00abe1c8886637f9a958cb5ab48cf24f"></span><a class="reference internal" href="#_CPPv4N5Raven11THandlePool7MemoryTE" title="Raven::THandlePool::MemoryT"><span class="n"><span class="pre">MemoryT</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_pData</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">nullptr</span></span><a class="headerlink" href="#_CPPv4N5Raven11THandlePool7m_pDataE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-static-attributes">Private Static Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven11THandlePool18UnitialisedPatternE">
+<span id="_CPPv3N5Raven11THandlePool18UnitialisedPatternE"></span><span id="_CPPv2N5Raven11THandlePool18UnitialisedPatternE"></span><span id="Raven::THandlePool::UnitialisedPattern__i"></span><span class="target" id="da/d5b/classRaven_1_1THandlePool_1a4ad3905d28bd4ce61384a0b142736e15"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">UnitialisedPattern</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0xbaadf00d</span></span><a class="headerlink" href="#_CPPv4N5Raven11THandlePool18UnitialisedPatternE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven11THandlePool12FreedPatternE">
+<span id="_CPPv3N5Raven11THandlePool12FreedPatternE"></span><span id="_CPPv2N5Raven11THandlePool12FreedPatternE"></span><span id="Raven::THandlePool::FreedPattern__i"></span><span class="target" id="da/d5b/classRaven_1_1THandlePool_1a723a898cb67e12b382381016cdec9f64"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FreedPattern</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0xdeadbeef</span></span><a class="headerlink" href="#_CPPv4N5Raven11THandlePool12FreedPatternE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven11THandlePool11LastPatternE">
+<span id="_CPPv3N5Raven11THandlePool11LastPatternE"></span><span id="_CPPv2N5Raven11THandlePool11LastPatternE"></span><span id="Raven::THandlePool::LastPattern__i"></span><span class="target" id="da/d5b/classRaven_1_1THandlePool_1a06c98a0863c6fda0d4b87db0b53af2db"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LastPattern</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0xdeaddead</span></span><a class="headerlink" href="#_CPPv4N5Raven11THandlePool11LastPatternE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven11THandlePool8iteratorE">
+<span id="_CPPv3N5Raven11THandlePool8iteratorE"></span><span id="_CPPv2N5Raven11THandlePool8iteratorE"></span><span id="Raven::THandlePool::iterator"></span><span class="target" id="da/d30/structRaven_1_1THandlePool_1_1iterator"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">iterator</span></span></span><a class="headerlink" href="#_CPPv4N5Raven11THandlePool8iteratorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-types">Public Types</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven11THandlePool8iterator17iterator_categoryE">
+<span id="_CPPv3N5Raven11THandlePool8iterator17iterator_categoryE"></span><span id="_CPPv2N5Raven11THandlePool8iterator17iterator_categoryE"></span><span class="target" id="da/d30/structRaven_1_1THandlePool_1_1iterator_1aef861d902b161ac861f3cdb0b631de2d"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">iterator_category</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="../../d0/d29/Timestep_8hpp.html#_CPPv4St" title="std"><span class="n"><span class="pre">std</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">forward_iterator_tag</span></span><a class="headerlink" href="#_CPPv4N5Raven11THandlePool8iterator17iterator_categoryE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven11THandlePool8iterator15difference_typeE">
+<span id="_CPPv3N5Raven11THandlePool8iterator15difference_typeE"></span><span id="_CPPv2N5Raven11THandlePool8iterator15difference_typeE"></span><span class="target" id="da/d30/structRaven_1_1THandlePool_1_1iterator_1aa31cc0110a1adbd8bdfdf0a036c42018"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">difference_type</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="../../d0/d29/Timestep_8hpp.html#_CPPv4St" title="std"><span class="n"><span class="pre">std</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ptrdiff_t</span></span><a class="headerlink" href="#_CPPv4N5Raven11THandlePool8iterator15difference_typeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven11THandlePool8iterator10value_typeE">
+<span id="_CPPv3N5Raven11THandlePool8iterator10value_typeE"></span><span id="_CPPv2N5Raven11THandlePool8iterator10value_typeE"></span><span class="target" id="da/d30/structRaven_1_1THandlePool_1_1iterator_1a910efb2c609fa52d90dba5006d55a778"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">value_type</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I00EN5Raven11THandlePoolE" title="Raven::THandlePool::T"><span class="n"><span class="pre">T</span></span></a><a class="headerlink" href="#_CPPv4N5Raven11THandlePool8iterator10value_typeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven11THandlePool8iterator7pointerE">
+<span id="_CPPv3N5Raven11THandlePool8iterator7pointerE"></span><span id="_CPPv2N5Raven11THandlePool8iterator7pointerE"></span><span class="target" id="da/d30/structRaven_1_1THandlePool_1_1iterator_1aa8dd66e7e0e1af9328e9291f6dbdf8e3"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pointer</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I00EN5Raven11THandlePoolE" title="Raven::THandlePool::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">*</span></span><a class="headerlink" href="#_CPPv4N5Raven11THandlePool8iterator7pointerE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven11THandlePool8iterator9referenceE">
+<span id="_CPPv3N5Raven11THandlePool8iterator9referenceE"></span><span id="_CPPv2N5Raven11THandlePool8iterator9referenceE"></span><span class="target" id="da/d30/structRaven_1_1THandlePool_1_1iterator_1a1406821fa1333d3a9128fa4473b8ef7a"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reference</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I00EN5Raven11THandlePoolE" title="Raven::THandlePool::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&amp;</span></span><a class="headerlink" href="#_CPPv4N5Raven11THandlePool8iterator9referenceE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven11THandlePool8iterator8iteratorE7pointerPK11THandlePool">
+<span id="_CPPv3N5Raven11THandlePool8iterator8iteratorE7pointerPK11THandlePool"></span><span id="_CPPv2N5Raven11THandlePool8iterator8iteratorE7pointerPK11THandlePool"></span><span id="Raven::THandlePool::iterator::iterator__pointer.THandlePoolCP"></span><span class="target" id="da/d30/structRaven_1_1THandlePool_1_1iterator_1a37ddad119cf1f817cd818a2f88b541d3"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">iterator</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N5Raven11THandlePool8iterator7pointerE" title="Raven::THandlePool::iterator::pointer"><span class="n"><span class="pre">pointer</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">ptr</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I00EN5Raven11THandlePoolE" title="Raven::THandlePool"><span class="n"><span class="pre">THandlePool</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">pool</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven11THandlePool8iterator8iteratorE7pointerPK11THandlePool" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5Raven11THandlePool8iteratormlEv">
+<span id="_CPPv3NK5Raven11THandlePool8iteratormlEv"></span><span id="_CPPv2NK5Raven11THandlePool8iteratormlEv"></span><span id="Raven::THandlePool::iterator::mul-operatorC"></span><span class="target" id="da/d30/structRaven_1_1THandlePool_1_1iterator_1a21cce458281951c0854960425ec1d5db"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5Raven11THandlePool8iterator9referenceE" title="Raven::THandlePool::iterator::reference"><span class="n"><span class="pre">reference</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">*</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5Raven11THandlePool8iteratormlEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven11THandlePool8iteratorptEv">
+<span id="_CPPv3N5Raven11THandlePool8iteratorptEv"></span><span id="_CPPv2N5Raven11THandlePool8iteratorptEv"></span><span id="Raven::THandlePool::iterator::pointer-operator"></span><span class="target" id="da/d30/structRaven_1_1THandlePool_1_1iterator_1ad62cf3f04ae922942481f016734a70da"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5Raven11THandlePool8iterator7pointerE" title="Raven::THandlePool::iterator::pointer"><span class="n"><span class="pre">pointer</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">-&gt;</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven11THandlePool8iteratorptEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven11THandlePool8iteratorppEv">
+<span id="_CPPv3N5Raven11THandlePool8iteratorppEv"></span><span id="_CPPv2N5Raven11THandlePool8iteratorppEv"></span><span id="Raven::THandlePool::iterator::inc-operator"></span><span class="target" id="da/d30/structRaven_1_1THandlePool_1_1iterator_1ade6a64b68abda2fda3e0d59fac0e53dc"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5Raven11THandlePool8iteratorE" title="Raven::THandlePool::iterator"><span class="n"><span class="pre">iterator</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">++</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven11THandlePool8iteratorppEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven11THandlePool8iteratorppEi">
+<span id="_CPPv3N5Raven11THandlePool8iteratorppEi"></span><span id="_CPPv2N5Raven11THandlePool8iteratorppEi"></span><span id="Raven::THandlePool::iterator::inc-operator__i"></span><span class="target" id="da/d30/structRaven_1_1THandlePool_1_1iterator_1a3a9e56d297378664a2d587f842877dfb"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5Raven11THandlePool8iteratorE" title="Raven::THandlePool::iterator"><span class="n"><span class="pre">iterator</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">++</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven11THandlePool8iteratorppEi" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven11THandlePool8iterator5m_ptrE">
+<span id="_CPPv3N5Raven11THandlePool8iterator5m_ptrE"></span><span id="_CPPv2N5Raven11THandlePool8iterator5m_ptrE"></span><span id="Raven::THandlePool::iterator::m_ptr__pointer"></span><span class="target" id="da/d30/structRaven_1_1THandlePool_1_1iterator_1a81ee6bdc824916f2facad1b91300f3d9"></span><a class="reference internal" href="#_CPPv4N5Raven11THandlePool8iterator7pointerE" title="Raven::THandlePool::iterator::pointer"><span class="n"><span class="pre">pointer</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m_ptr</span></span></span><a class="headerlink" href="#_CPPv4N5Raven11THandlePool8iterator5m_ptrE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven11THandlePool8iterator6m_poolE">
+<span id="_CPPv3N5Raven11THandlePool8iterator6m_poolE"></span><span id="_CPPv2N5Raven11THandlePool8iterator6m_poolE"></span><span id="Raven::THandlePool::iterator::m_pool__THandlePoolCP"></span><span class="target" id="da/d30/structRaven_1_1THandlePool_1_1iterator_1add65226cc808d58186b8c3eaf6a2bd43"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I00EN5Raven11THandlePoolE" title="Raven::THandlePool"><span class="n"><span class="pre">THandlePool</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">m_pool</span></span></span><a class="headerlink" href="#_CPPv4N5Raven11THandlePool8iterator6m_poolE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-friends">Friends</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven11THandlePool8iteratoreqERK8iteratorRK8iterator">
+<span id="_CPPv3N5Raven11THandlePool8iteratoreqERK8iteratorRK8iterator"></span><span id="_CPPv2N5Raven11THandlePool8iteratoreqERK8iteratorRK8iterator"></span><span id="Raven::THandlePool::iterator::eq-operator__iteratorCR.iteratorCR"></span><span class="target" id="da/d30/structRaven_1_1THandlePool_1_1iterator_1a81d10d7799462c7ca5e7cf19119ca356"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">friend</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">==</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5Raven11THandlePool8iteratorE" title="Raven::THandlePool::iterator"><span class="n"><span class="pre">iterator</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">a</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5Raven11THandlePool8iteratorE" title="Raven::THandlePool::iterator"><span class="n"><span class="pre">iterator</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">b</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven11THandlePool8iteratoreqERK8iteratorRK8iterator" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven11THandlePool8iteratorneERK8iteratorRK8iterator">
+<span id="_CPPv3N5Raven11THandlePool8iteratorneERK8iteratorRK8iterator"></span><span id="_CPPv2N5Raven11THandlePool8iteratorneERK8iteratorRK8iterator"></span><span id="Raven::THandlePool::iterator::neq-operator__iteratorCR.iteratorCR"></span><span class="target" id="da/d30/structRaven_1_1THandlePool_1_1iterator_1a55a8ee0e80dad1a7da9d751c25bc0386"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">friend</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">!=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5Raven11THandlePool8iteratorE" title="Raven::THandlePool::iterator"><span class="n"><span class="pre">iterator</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">a</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5Raven11THandlePool8iteratorE" title="Raven::THandlePool::iterator"><span class="n"><span class="pre">iterator</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">b</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven11THandlePool8iteratorneERK8iteratorRK8iterator" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+					 </div>
+					 
+					</div>
+					<footer>
+  
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2022-2023, Aleksandr Slobodov
+	  <br>
+      
+      
+      
+      Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+      
+      <a href="https://github.com/revitron/revitron-sphinx-theme">theme</a>
+      
+      provided by <a href="https://github.com/revitron">Revitron</a>.
+
+    </p>
+  </div> 
+
+</footer>
+
+				</div>
+			</div>
+
+		</section>
+
+	</div>
+	
+
+	<script type="text/javascript">
+			jQuery(function () {
+					SphinxRtdTheme.Navigation.enable(true);
+			});
+	</script>
+
+	
+	
+		
+		<!-- Theme Analytics -->
+		<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-XXXXXXX-1', 'auto');
+		ga('send', 'pageview');
+		</script>
+
+		
+	 
+
+ 
+</body>	
+</html>
