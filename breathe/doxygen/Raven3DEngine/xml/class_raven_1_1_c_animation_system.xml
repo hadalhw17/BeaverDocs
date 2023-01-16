@@ -2,124 +2,36 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="class_raven_1_1_c_animation_system" kind="class" language="C++" prot="public">
     <compoundname>Raven::CAnimationSystem</compoundname>
-      <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="class_raven_1_1_c_animation_system_1a648f27b1029848c1db8a1d6e7f018b76" prot="private" static="no" mutable="no">
-        <type>CWorld *</type>
-        <definition>CWorld* Raven::CAnimationSystem::m_pWorld</definition>
-        <argsstring></argsstring>
-        <name>m_pWorld</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/Raven3DEngine/AnimationSystem.hpp" line="21" column="37" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/Raven3DEngine/AnimationSystem.hpp" bodystart="21" bodyend="-1"/>
-      </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-func">
-      <memberdef kind="function" id="class_raven_1_1_c_animation_system_1aadfa32750842746315ab53d1a88922f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type></type>
-        <definition>Raven::CAnimationSystem::CAnimationSystem</definition>
-        <argsstring>(CWorld *pWorld)</argsstring>
-        <name>CAnimationSystem</name>
-        <param>
-          <type>CWorld *</type>
-          <declname>pWorld</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/Raven3DEngine/AnimationSystem.hpp" line="11" column="1"/>
-      </memberdef>
-      <memberdef kind="function" id="class_raven_1_1_c_animation_system_1a9dd771655647ae01f71cf367228a0637" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type></type>
-        <definition>Raven::CAnimationSystem::~CAnimationSystem</definition>
-        <argsstring>()</argsstring>
-        <name>~CAnimationSystem</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/Raven3DEngine/AnimationSystem.hpp" line="12" column="1"/>
-      </memberdef>
-      <memberdef kind="function" id="class_raven_1_1_c_animation_system_1a1c6788a7e8ffb1733e2a120b986059ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_raven_1_1_c_animation_system_1a2c18a265190b80890f05c6b56a352a1c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void Raven::CAnimationSystem::ConstructAnimation</definition>
-        <argsstring>(entt::registry &amp;reg, entt::entity entity)</argsstring>
-        <name>ConstructAnimation</name>
-        <param>
-          <type>entt::registry &amp;</type>
-          <declname>reg</declname>
-        </param>
-        <param>
-          <type>entt::entity</type>
-          <declname>entity</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/Raven3DEngine/AnimationSystem.hpp" line="14" column="6"/>
-      </memberdef>
-      <memberdef kind="function" id="class_raven_1_1_c_animation_system_1abd670dd42f965fb488919c4990e376aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void Raven::CAnimationSystem::ConstructAnimPlayer</definition>
-        <argsstring>(entt::registry &amp;reg, entt::entity entity)</argsstring>
-        <name>ConstructAnimPlayer</name>
-        <param>
-          <type>entt::registry &amp;</type>
-          <declname>reg</declname>
-        </param>
-        <param>
-          <type>entt::entity</type>
-          <declname>entity</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/Raven3DEngine/AnimationSystem.hpp" line="15" column="6"/>
-      </memberdef>
-      <memberdef kind="function" id="class_raven_1_1_c_animation_system_1aef4ac3cb88209d35b7b16c5573a7e60e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void Raven::CAnimationSystem::RunAnimationUpdate</definition>
-        <argsstring>(const CTimestep deltaTime)</argsstring>
+        <definition>static void Raven::CAnimationSystem::RunAnimationUpdate</definition>
+        <argsstring>(const CTimestep deltaTime, const Query&lt; With&lt; SAnimationPlayer, STransformComponent &gt;&gt; &amp;players)</argsstring>
         <name>RunAnimationUpdate</name>
         <param>
           <type>const CTimestep</type>
           <declname>deltaTime</declname>
         </param>
+        <param>
+          <type>const Query&lt; With&lt; SAnimationPlayer, STransformComponent &gt;&gt; &amp;</type>
+          <declname>players</declname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/Raven3DEngine/AnimationSystem.hpp" line="17" column="6"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/Raven3DEngine/AnimationSystem.hpp" line="13" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/Raven3DEngine/AnimationSystem.hpp" line="8" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/Raven3DEngine/AnimationSystem.hpp" bodystart="9" bodyend="22"/>
+    <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/Raven3DEngine/AnimationSystem.hpp" line="9" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/Raven3DEngine/AnimationSystem.hpp" bodystart="10" bodyend="15"/>
     <listofallmembers>
-      <member refid="class_raven_1_1_c_animation_system_1aadfa32750842746315ab53d1a88922f4" prot="public" virt="non-virtual"><scope>Raven::CAnimationSystem</scope><name>CAnimationSystem</name></member>
-      <member refid="class_raven_1_1_c_animation_system_1a1c6788a7e8ffb1733e2a120b986059ac" prot="public" virt="non-virtual"><scope>Raven::CAnimationSystem</scope><name>ConstructAnimation</name></member>
-      <member refid="class_raven_1_1_c_animation_system_1abd670dd42f965fb488919c4990e376aa" prot="public" virt="non-virtual"><scope>Raven::CAnimationSystem</scope><name>ConstructAnimPlayer</name></member>
-      <member refid="class_raven_1_1_c_animation_system_1a648f27b1029848c1db8a1d6e7f018b76" prot="private" virt="non-virtual"><scope>Raven::CAnimationSystem</scope><name>m_pWorld</name></member>
-      <member refid="class_raven_1_1_c_animation_system_1aef4ac3cb88209d35b7b16c5573a7e60e" prot="public" virt="non-virtual"><scope>Raven::CAnimationSystem</scope><name>RunAnimationUpdate</name></member>
-      <member refid="class_raven_1_1_c_animation_system_1a9dd771655647ae01f71cf367228a0637" prot="public" virt="non-virtual"><scope>Raven::CAnimationSystem</scope><name>~CAnimationSystem</name></member>
+      <member refid="class_raven_1_1_c_animation_system_1a2c18a265190b80890f05c6b56a352a1c" prot="public" virt="non-virtual"><scope>Raven::CAnimationSystem</scope><name>RunAnimationUpdate</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>
