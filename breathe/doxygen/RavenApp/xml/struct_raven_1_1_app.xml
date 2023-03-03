@@ -3,20 +3,11 @@
   <compounddef id="struct_raven_1_1_app" kind="struct" language="C++" prot="public">
     <compoundname>Raven::App</compoundname>
     <includes refid="_raven_app_8hpp" local="no">RavenApp.hpp</includes>
+    <innerclass refid="struct_raven_1_1_app_1_1_created_resource" prot="private">Raven::App::CreatedResource</innerclass>
+    <innerclass refid="struct_raven_1_1_app_1_1_created_resource_3_01std_1_1shared__ptr_3_01_t_01_4_01_4" prot="private">Raven::App::CreatedResource&lt; std::shared_ptr&lt; T &gt; &gt;</innerclass>
+    <innerclass refid="struct_raven_1_1_app_1_1_created_resource_3_01_t_01_5_01_4" prot="private">Raven::App::CreatedResource&lt; T * &gt;</innerclass>
+    <innerclass refid="struct_raven_1_1_app_1_1_i_created_resource" prot="private">Raven::App::ICreatedResource</innerclass>
       <sectiondef kind="public-attrib">
-      <memberdef kind="variable" id="struct_raven_1_1_app_1a40b72b849a2cb10696cd537d69beace9" prot="public" static="no" mutable="no">
-        <type><ref refid="class_raven_1_1_c_schedule" kindref="compound">CSchedule</ref> *</type>
-        <definition>CSchedule* Raven::App::pSchedule</definition>
-        <argsstring></argsstring>
-        <name>pSchedule</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="466" column="11" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="466" bodyend="-1"/>
-      </memberdef>
       <memberdef kind="variable" id="struct_raven_1_1_app_1abfcb1bc28ab743db98fcccea66058358" prot="public" static="no" mutable="no">
         <type>std::vector&lt; <ref refid="struct_raven_1_1_sub_app" kindref="compound">SubApp</ref> &gt;</type>
         <definition>std::vector&lt;SubApp&gt; Raven::App::subApps</definition>
@@ -28,20 +19,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="467" column="13" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="467" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="struct_raven_1_1_app_1a9fdac92d3beeb16d2ed61a6790888481" prot="public" static="no" mutable="no">
-        <type>std::unordered_map&lt; uint64_t, Meta::Variant &gt;</type>
-        <definition>std::unordered_map&lt;uint64_t, Meta::Variant&gt; Raven::App::m_resources</definition>
-        <argsstring></argsstring>
-        <name>m_resources</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="468" column="20" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="468" bodyend="-1"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="472" column="13" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="472" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_raven_1_1_app_1a640e296bf1fe973ac22141bf4b960c05" prot="public" static="no" mutable="no">
         <type>bool</type>
@@ -56,7 +34,48 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="470" column="6" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="470" bodyend="-1"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="474" column="6" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="474" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="struct_raven_1_1_app_1a3570ef5dd78f2eb05e9f9d874c86893f" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; uint64_t, std::unique_ptr&lt; ICreatedResource &gt; &gt;</type>
+        <definition>std::unordered_map&lt;uint64_t, std::unique_ptr&lt;ICreatedResource&gt; &gt; Raven::App::m_resources</definition>
+        <argsstring></argsstring>
+        <name>m_resources</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="521" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="521" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_raven_1_1_app_1a40f78b4adefc9095e632962d60444ebf" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; uint64 &gt;</type>
+        <definition>std::vector&lt;uint64&gt; Raven::App::m_resourceReleaseOrder</definition>
+        <argsstring></argsstring>
+        <name>m_resourceReleaseOrder</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="522" column="13" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="522" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_raven_1_1_app_1a98d7fb2ceea2c480006c46ede8c6ecb0" prot="private" static="no" mutable="no">
+        <type><ref refid="class_raven_1_1_c_schedule" kindref="compound">CSchedule</ref> *</type>
+        <definition>CSchedule* Raven::App::m_pSchedule</definition>
+        <argsstring></argsstring>
+        <name>m_pSchedule</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="523" column="20" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="523" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -75,7 +94,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="284" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="284" bodyend="291"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="285" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="285" bodyend="292"/>
       </memberdef>
       <memberdef kind="function" id="struct_raven_1_1_app_1a23194d32923e497aa0038c8931f8de0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -88,7 +107,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="292" column="1"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="293" column="1"/>
       </memberdef>
       <memberdef kind="function" id="struct_raven_1_1_app_1a16a35c33dcbff88670a3cbc3c569ece2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -102,7 +121,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="306" column="6"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="307" column="6"/>
       </memberdef>
       <memberdef kind="function" id="struct_raven_1_1_app_1a390234b2b2e7700fb689ebbc37ca2eb2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -116,7 +135,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="308" column="6"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="309" column="6"/>
       </memberdef>
       <memberdef kind="function" id="struct_raven_1_1_app_1ad74cdfaa2bddbbfd58f4c0fa55465d75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -138,7 +157,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="311" column="5" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="662" bodyend="670"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="312" column="5" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="710" bodyend="718"/>
       </memberdef>
       <memberdef kind="function" id="struct_raven_1_1_app_1a0358b242168e0e71825f81b7b8b06c9c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -159,20 +178,23 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="317" column="3" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="317" bodyend="322"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="318" column="3" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="318" bodyend="323"/>
       </memberdef>
-      <memberdef kind="function" id="struct_raven_1_1_app_1aa973e04a3f61cd059eda0bab754e6d3c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="struct_raven_1_1_app_1aaadf1b10b2d9cd7ad6bbd164c81f1f92" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T</type>
           </param>
+          <param>
+            <type>typename U</type>
+          </param>
         </templateparamlist>
         <type><ref refid="struct_raven_1_1_app" kindref="compound">App</ref> &amp;</type>
         <definition>App&amp; Raven::App::InsertResource</definition>
-        <argsstring>(T &amp;resource)</argsstring>
+        <argsstring>(U &amp;&amp;resource)</argsstring>
         <name>InsertResource</name>
         <param>
-          <type>T &amp;</type>
+          <type>U &amp;&amp;</type>
           <declname>resource</declname>
         </param>
         <briefdescription>
@@ -184,28 +206,37 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="329" column="5" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="329" bodyend="335"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="330" column="5" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="330" bodyend="338"/>
       </memberdef>
-      <memberdef kind="function" id="struct_raven_1_1_app_1a08225d3d6df218135c428b1ac63529ab" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="struct_raven_1_1_app_1aeddc5ac5cc965ba9f805bfc8f0118ba2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T</type>
           </param>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
         </templateparamlist>
         <type><ref refid="struct_raven_1_1_app" kindref="compound">App</ref> &amp;</type>
         <definition>App&amp; Raven::App::CreateResource</definition>
-        <argsstring>()</argsstring>
+        <argsstring>(Args &amp;&amp;... args)</argsstring>
         <name>CreateResource</name>
+        <param>
+          <type>Args &amp;&amp;...</type>
+          <declname>args</declname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Constructs the resource of type T in an app instance. Inserts previously constructed instance of the resource without claiming its ownership Does nothing if resource of type T already exists <simplesect kind="return"><para>instance of an app into which the resource was inserted </para>
+<para>Constructs the resource of type T with specified arguments in an app instance. Does nothing if resource of type T already exists <simplesect kind="return"><para>instance of an app into which the resource was inserted </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="342" column="5" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="342" bodyend="348"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="344" column="5" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="344" bodyend="352"/>
       </memberdef>
       <memberdef kind="function" id="struct_raven_1_1_app_1a59d66576ed1145e197856d57e01bd98c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -226,7 +257,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="354" column="5" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="354" bodyend="360"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="358" column="5" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="358" bodyend="366"/>
       </memberdef>
       <memberdef kind="function" id="struct_raven_1_1_app_1a26ec63882be2fb7401d7119dbe3f70c3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -272,7 +303,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="368" column="5" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="368" bodyend="371"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="374" column="5" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="374" bodyend="377"/>
       </memberdef>
       <memberdef kind="function" id="struct_raven_1_1_app_1a89d19ef6c2fd97a52daae0bfc3e0b57d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="struct_raven_1_1_app" kindref="compound">App</ref> &amp;</type>
@@ -299,7 +330,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="375" column="5" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="375" bodyend="379"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="381" column="5" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="381" bodyend="385"/>
       </memberdef>
       <memberdef kind="function" id="struct_raven_1_1_app_1a765a05d45584b606a6e131e5d33209d9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="struct_raven_1_1_app" kindref="compound">App</ref> &amp;</type>
@@ -338,7 +369,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="384" column="5" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="384" bodyend="388"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="390" column="5" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="390" bodyend="394"/>
       </memberdef>
       <memberdef kind="function" id="struct_raven_1_1_app_1a7860dc5f89ff4fd5f05e38c131d311b3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="struct_raven_1_1_app" kindref="compound">App</ref> &amp;</type>
@@ -377,7 +408,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="393" column="5" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="393" bodyend="397"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="399" column="5" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="399" bodyend="403"/>
       </memberdef>
       <memberdef kind="function" id="struct_raven_1_1_app_1a6365e791dd29bdc0688a4ff39e6d6bb1" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -411,7 +442,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="403" column="15" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="403" bodyend="407"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="409" column="15" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="409" bodyend="413"/>
       </memberdef>
       <memberdef kind="function" id="struct_raven_1_1_app_1a0b4917d6c84c8efa0e4aeb6482ce58ed" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -432,7 +463,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="412" column="15" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="412" bodyend="417"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="418" column="15" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="418" bodyend="423"/>
       </memberdef>
       <memberdef kind="function" id="struct_raven_1_1_app_1a0a83674ad6dff1e2473defc2328ea20e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -453,7 +484,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="421" column="5" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="421" bodyend="425"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="427" column="5" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="427" bodyend="431"/>
       </memberdef>
       <memberdef kind="function" id="struct_raven_1_1_app_1af952a9816c911f376a43ac0b8d22a0ff" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -477,7 +508,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="433" column="5" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="433" bodyend="441"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="439" column="5" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="439" bodyend="447"/>
       </memberdef>
       <memberdef kind="function" id="struct_raven_1_1_app_1a4f47909d07eb271948e73f57f16a93d7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -496,7 +527,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="445" column="5" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="445" bodyend="448"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="451" column="5" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="451" bodyend="454"/>
       </memberdef>
       <memberdef kind="function" id="struct_raven_1_1_app_1a936dbd3fb45e0b6e6babe0473302f2d5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -515,7 +546,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="452" column="5" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="452" bodyend="456"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="458" column="5" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="458" bodyend="462"/>
       </memberdef>
       <memberdef kind="function" id="struct_raven_1_1_app_1af7ecb3f58fa2cd485664f3364c79261a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -534,7 +565,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="461" column="5" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="461" bodyend="464"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="467" column="5" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="467" bodyend="470"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -550,7 +581,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="295" column="12" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="295" bodyend="298"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="296" column="12" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="296" bodyend="299"/>
       </memberdef>
       <memberdef kind="function" id="struct_raven_1_1_app_1a2c874c76257c56c642d0981c31e4d886" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="struct_raven_1_1_app" kindref="compound">App</ref></type>
@@ -564,7 +595,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="301" column="12"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="302" column="12"/>
       </memberdef>
       <memberdef kind="function" id="struct_raven_1_1_app_1aa82434edaf1fe7997f4e8f0f4cdb2be6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="struct_raven_1_1_app" kindref="compound">App</ref></type>
@@ -578,7 +609,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="303" column="12"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="304" column="12"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -593,7 +624,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="473" column="1"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="477" column="1"/>
       </memberdef>
       <memberdef kind="function" id="struct_raven_1_1_app_1a074c783e0aae8b7ecaba62444cbe4366" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -609,7 +640,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="474" column="1"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="478" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -617,20 +648,7 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <collaborationgraph>
-      <node id="1">
-        <label>Raven::App</label>
-        <link refid="struct_raven_1_1_app"/>
-        <childnode refid="2" relation="usage">
-          <edgelabel>pSchedule</edgelabel>
-        </childnode>
-      </node>
-      <node id="2">
-        <label>Raven::CSchedule</label>
-        <link refid="class_raven_1_1_c_schedule"/>
-      </node>
-    </collaborationgraph>
-    <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="282" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="283" bodyend="476"/>
+    <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="282" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="283" bodyend="524"/>
     <listofallmembers>
       <member refid="struct_raven_1_1_app_1af952a9816c911f376a43ac0b8d22a0ff" prot="public" virt="non-virtual"><scope>Raven::App</scope><name>AddAsset</name></member>
       <member refid="struct_raven_1_1_app_1a4f47909d07eb271948e73f57f16a93d7" prot="public" virt="non-virtual"><scope>Raven::App</scope><name>AddComponent</name></member>
@@ -646,13 +664,14 @@
       <member refid="struct_raven_1_1_app_1ad165ed72adaf71909f1d7da092277e6e" prot="public" virt="non-virtual"><scope>Raven::App</scope><name>App</name></member>
       <member refid="struct_raven_1_1_app_1a6f3f6e95aac2a2c9c475c8272b6c8020" prot="private" virt="non-virtual"><scope>Raven::App</scope><name>App</name></member>
       <member refid="struct_raven_1_1_app_1a074c783e0aae8b7ecaba62444cbe4366" prot="private" virt="non-virtual"><scope>Raven::App</scope><name>App</name></member>
-      <member refid="struct_raven_1_1_app_1a08225d3d6df218135c428b1ac63529ab" prot="public" virt="non-virtual"><scope>Raven::App</scope><name>CreateResource</name></member>
+      <member refid="struct_raven_1_1_app_1aeddc5ac5cc965ba9f805bfc8f0118ba2" prot="public" virt="non-virtual"><scope>Raven::App</scope><name>CreateResource</name></member>
       <member refid="struct_raven_1_1_app_1a2c874c76257c56c642d0981c31e4d886" prot="public" virt="non-virtual"><scope>Raven::App</scope><name>Default</name></member>
       <member refid="struct_raven_1_1_app_1aa8de4ddaefe182c8dd1d4ab89ae49816" prot="public" virt="non-virtual"><scope>Raven::App</scope><name>Get</name></member>
       <member refid="struct_raven_1_1_app_1a0358b242168e0e71825f81b7b8b06c9c" prot="public" virt="non-virtual"><scope>Raven::App</scope><name>GetResource</name></member>
-      <member refid="struct_raven_1_1_app_1aa973e04a3f61cd059eda0bab754e6d3c" prot="public" virt="non-virtual"><scope>Raven::App</scope><name>InsertResource</name></member>
-      <member refid="struct_raven_1_1_app_1a9fdac92d3beeb16d2ed61a6790888481" prot="public" virt="non-virtual"><scope>Raven::App</scope><name>m_resources</name></member>
-      <member refid="struct_raven_1_1_app_1a40b72b849a2cb10696cd537d69beace9" prot="public" virt="non-virtual"><scope>Raven::App</scope><name>pSchedule</name></member>
+      <member refid="struct_raven_1_1_app_1aaadf1b10b2d9cd7ad6bbd164c81f1f92" prot="public" virt="non-virtual"><scope>Raven::App</scope><name>InsertResource</name></member>
+      <member refid="struct_raven_1_1_app_1a98d7fb2ceea2c480006c46ede8c6ecb0" prot="private" virt="non-virtual"><scope>Raven::App</scope><name>m_pSchedule</name></member>
+      <member refid="struct_raven_1_1_app_1a40f78b4adefc9095e632962d60444ebf" prot="private" virt="non-virtual"><scope>Raven::App</scope><name>m_resourceReleaseOrder</name></member>
+      <member refid="struct_raven_1_1_app_1a3570ef5dd78f2eb05e9f9d874c86893f" prot="private" virt="non-virtual"><scope>Raven::App</scope><name>m_resources</name></member>
       <member refid="struct_raven_1_1_app_1aa82434edaf1fe7997f4e8f0f4cdb2be6" prot="public" virt="non-virtual"><scope>Raven::App</scope><name>Raw</name></member>
       <member refid="struct_raven_1_1_app_1a0a83674ad6dff1e2473defc2328ea20e" prot="public" virt="non-virtual"><scope>Raven::App</scope><name>RegisterEvent</name></member>
       <member refid="struct_raven_1_1_app_1a59d66576ed1145e197856d57e01bd98c" prot="public" virt="non-virtual"><scope>Raven::App</scope><name>RemoveResource</name></member>
