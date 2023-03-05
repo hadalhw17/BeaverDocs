@@ -18,6 +18,7 @@
     <innerclass refid="class_raven_1_1_c_project" prot="public">Raven::CProject</innerclass>
     <innerclass refid="class_raven_1_1_c_prefab" prot="public">Raven::CPrefab</innerclass>
     <innerclass refid="class_raven_1_1_c_prefab_loader" prot="public">Raven::CPrefabLoader</innerclass>
+    <innerclass refid="struct_raven_1_1_prefab_plugin" prot="public">Raven::PrefabPlugin</innerclass>
     <innerclass refid="class_raven_1_1_c_asset_browser" prot="public">Raven::CAssetBrowser</innerclass>
     <innerclass refid="class_raven_1_1_c_resource_import_panel" prot="public">Raven::CResourceImportPanel</innerclass>
     <innerclass refid="struct_raven_1_1_s_component_modified_command" prot="public">Raven::SComponentModifiedCommand</innerclass>
@@ -27,6 +28,7 @@
     <innerclass refid="struct_raven_1_1_editor_console_plugin" prot="public">Raven::EditorConsolePlugin</innerclass>
     <innerclass refid="class_raven_1_1_c_console" prot="public">Raven::CConsole</innerclass>
     <innerclass refid="struct_raven_1_1_s_general_editing_commands" prot="public">Raven::SGeneralEditingCommands</innerclass>
+    <innerclass refid="struct_raven_1_1_s_file_editing_commands" prot="public">Raven::SFileEditingCommands</innerclass>
     <innerclass refid="struct_raven_1_1_editor_viewport_plugin" prot="public">Raven::EditorViewportPlugin</innerclass>
     <innerclass refid="class_raven_1_1_c_editor_viewport_consumer" prot="public">Raven::CEditorViewportConsumer</innerclass>
     <innerclass refid="struct_raven_1_1_s_level_editor_popup" prot="public">Raven::SLevelEditorPopup</innerclass>
@@ -53,7 +55,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenEditor/LevelEditor.hpp" line="42" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenEditor/LevelEditor.hpp" bodystart="42" bodyend="-1"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenEditor/LevelEditor.hpp" line="43" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenEditor/LevelEditor.hpp" bodystart="43" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_editor_viewport_consumer_8hpp_1a35473ebd5e4c6328bf7356adbe37869c" prot="public" static="no">
         <type>std::vector&lt; class <ref refid="class_raven_1_1_c_editor_viewport_consumer" kindref="compound">CEditorViewportConsumer</ref> * &gt;</type>
@@ -157,7 +159,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenEditor/Core/UICommand.hpp" line="63" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenEditor/Core/UICommand.hpp" bodystart="63" bodyend="-1"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenEditor/Core/UICommand.hpp" line="69" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenEditor/Core/UICommand.hpp" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_u_i_command_8hpp_1a8a03ee89dd0a437a2a9b085c9be224d6" prot="public" static="no">
+        <type>std::shared_ptr&lt; <ref refid="class_raven_1_1_c_u_i_command_list" kindref="compound">CUICommandList</ref> &gt;</type>
+        <definition>using Raven::CUICommandListPtr = typedef std::shared_ptr&lt;CUICommandList&gt;</definition>
+        <argsstring></argsstring>
+        <name>CUICommandListPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenEditor/Core/UICommand.hpp" line="157" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenEditor/Core/UICommand.hpp" bodystart="157" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="var">
@@ -180,14 +195,14 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
-      <memberdef kind="function" id="_component_property_editor_8hpp_1a977ce0f91fa2a2c3e5e3eb2fa0667543" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="_component_property_editor_8hpp_1a7cd6c67d8ed8215fc5892f47763dd557" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename UIFun</type>
           </param>
         </templateparamlist>
-        <type>void</type>
-        <definition>void Raven::DrawComponent</definition>
+        <type>bool</type>
+        <definition>bool Raven::DrawComponent</definition>
         <argsstring>(CEntity ent, const IComponentBind &amp;bind, UIFun function)</argsstring>
         <name>DrawComponent</name>
         <param>
@@ -208,9 +223,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenEditor/Panels/ComponentPropertyEditor.hpp" line="96" column="6" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenEditor/Panels/ComponentPropertyEditor.hpp" bodystart="96" bodyend="126"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenEditor/Panels/ComponentPropertyEditor.hpp" line="96" column="6" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenEditor/Panels/ComponentPropertyEditor.hpp" bodystart="96" bodyend="128"/>
       </memberdef>
-      <memberdef kind="function" id="_component_property_editor_8hpp_1acc3a89ba5d646a3a63b10e3a1f14334e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="_component_property_editor_8hpp_1a3755a18f853f1235c8b3f72a488ad0d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename ComponentType</type>
@@ -231,8 +246,8 @@
             <type>typename UIFun</type>
           </param>
         </templateparamlist>
-        <type>void</type>
-        <definition>void Raven::DrawComponent</definition>
+        <type>bool</type>
+        <definition>bool Raven::DrawComponent</definition>
         <argsstring>(const std::string &amp;name, CEntity ent, UIFun function)</argsstring>
         <name>DrawComponent</name>
         <param>
@@ -253,7 +268,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenEditor/Panels/ComponentPropertyEditor.hpp" line="129" column="6" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenEditor/Panels/ComponentPropertyEditor.hpp" bodystart="129" bodyend="160"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenEditor/Panels/ComponentPropertyEditor.hpp" line="131" column="6" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenEditor/Panels/ComponentPropertyEditor.hpp" bodystart="131" bodyend="164"/>
       </memberdef>
       <memberdef kind="function" id="_component_property_editor_8hpp_1a4ad7a6d587fcb62432bf8857313c0ca6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -280,7 +295,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenEditor/Panels/ComponentPropertyEditor.hpp" line="163" column="6" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenEditor/Panels/ComponentPropertyEditor.hpp" bodystart="163" bodyend="182"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenEditor/Panels/ComponentPropertyEditor.hpp" line="167" column="6" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenEditor/Panels/ComponentPropertyEditor.hpp" bodystart="167" bodyend="186"/>
       </memberdef>
       <memberdef kind="function" id="_component_property_editor_8hpp_1a3143e0ebb4246d2ba80024c38fd4420f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -312,7 +327,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenEditor/Panels/ComponentPropertyEditor.hpp" line="185" column="6" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenEditor/Panels/ComponentPropertyEditor.hpp" bodystart="185" bodyend="196"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenEditor/Panels/ComponentPropertyEditor.hpp" line="189" column="6" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenEditor/Panels/ComponentPropertyEditor.hpp" bodystart="189" bodyend="200"/>
       </memberdef>
       <memberdef kind="function" id="_component_property_editor_8hpp_1a5b0215354cdc2ef8b5fc1961a0d03d26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -351,11 +366,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenEditor/Panels/ComponentPropertyEditor.hpp" line="199" column="6" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenEditor/Panels/ComponentPropertyEditor.hpp" bodystart="199" bodyend="215"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenEditor/Panels/ComponentPropertyEditor.hpp" line="203" column="6" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenEditor/Panels/ComponentPropertyEditor.hpp" bodystart="203" bodyend="219"/>
       </memberdef>
-      <memberdef kind="function" id="_component_property_editor_8hpp_1a6cc6cf246673776f879837ba1e1c5aeb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void Raven::EntityPropertyPannel</definition>
+      <memberdef kind="function" id="_component_property_editor_8hpp_1a8b08dded51be0ba1fa8ef7841117b123" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Raven::EntityPropertyPannel</definition>
         <argsstring>(SSelectionContext &amp;ctx, const CEntity camEntity)</argsstring>
         <name>EntityPropertyPannel</name>
         <param>
@@ -372,7 +387,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenEditor/Panels/ComponentPropertyEditor.hpp" line="218" column="13" declfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenEditor/Panels/ComponentPropertyEditor.hpp" declline="218" declcolumn="13"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenEditor/Panels/ComponentPropertyEditor.hpp" line="222" column="13" declfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenEditor/Panels/ComponentPropertyEditor.hpp" declline="222" declcolumn="13"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
