@@ -2,6 +2,49 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="namespace_raven_1_1_detail" kind="namespace" language="C++">
     <compoundname>Raven::Detail</compoundname>
+    <innerclass refid="struct_raven_1_1_detail_1_1_t_component_event" prot="public">Raven::Detail::TComponentEvent</innerclass>
+    <innerclass refid="struct_raven_1_1_detail_1_1_t_signal_fn" prot="public">Raven::Detail::TSignalFn</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_components_8hpp_1aaefde3f1c5e9f070233414ad3ed9b508" prot="public" static="no" strong="no">
+        <type></type>
+        <name>EComponentEvent</name>
+        <enumvalue id="_components_8hpp_1aaefde3f1c5e9f070233414ad3ed9b508a02b3034468843b6519d36b3d1e054f00" prot="public">
+          <name>Init</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_components_8hpp_1aaefde3f1c5e9f070233414ad3ed9b508a4f1d09ee477daf62abc8c009fb5dd911" prot="public">
+          <name>Update</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_components_8hpp_1aaefde3f1c5e9f070233414ad3ed9b508a0bc65850ae18abc22a9f16c691e063d9" prot="public">
+          <name>Remove</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_components_8hpp_1aaefde3f1c5e9f070233414ad3ed9b508aa18defe436d242d0a0df5b87b8d93f47" prot="public">
+          <name>Count</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenWorld/Components.hpp" line="17" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenWorld/Components.hpp" bodystart="17" bodyend="23"/>
+      </memberdef>
+      </sectiondef>
       <sectiondef kind="var">
       <memberdef kind="variable" id="_components_8hpp_1af7f2233791bbb1891c96844537ded9d6" prot="public" static="no" mutable="no">
         <templateparamlist>
@@ -14,21 +57,75 @@
         <argsstring></argsstring>
         <name>IsTagComponent</name>
         <initializer>= requires(<ref refid="class_raven_1_1_c_world" kindref="compound">CWorld</ref>&amp; w) {
-		{ w.GetComponent&lt;T&gt;(<ref refid="class_raven_1_1_t_entity" kindref="compound">TEntity</ref>{}) } -&gt; std::same_as&lt;void&gt;;
-	}</initializer>
+	{ w.GetComponent&lt;T&gt;(<ref refid="class_raven_1_1_t_entity" kindref="compound">TEntity</ref>{}) } -&gt; std::same_as&lt;void&gt;;
+}</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenWorld/Components.hpp" line="7" column="9" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenWorld/Components.hpp" bodystart="7" bodyend="-1"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenWorld/Components.hpp" line="13" column="9" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenWorld/Components.hpp" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_components_8hpp_1a8fcd546481fc76da9df260e23f33d7bf" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>static void Raven::Detail::DispatchComponentEvents</definition>
+        <argsstring>(CWorld &amp;world, Query&lt; With&lt; TComponentEvent&lt; T &gt;&gt;&gt; events)</argsstring>
+        <name>DispatchComponentEvents</name>
+        <param>
+          <type><ref refid="class_raven_1_1_c_world" kindref="compound">CWorld</ref> &amp;</type>
+          <declname>world</declname>
+        </param>
+        <param>
+          <type><ref refid="class_raven_1_1_t_query" kindref="compound">Query</ref>&lt; With&lt; <ref refid="struct_raven_1_1_detail_1_1_t_component_event" kindref="compound">TComponentEvent</ref>&lt; T &gt;&gt;&gt;</type>
+          <declname>events</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenWorld/Components.hpp" line="30" column="13" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenWorld/Components.hpp" bodystart="30" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="_components_8hpp_1afa20911ef137c09224997fdee561e8d0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>static void Raven::Detail::CleanUpComponentEvents</definition>
+        <argsstring>(CWorld &amp;world, Query&lt; With&lt; T &gt;&gt; events)</argsstring>
+        <name>CleanUpComponentEvents</name>
+        <param>
+          <type><ref refid="class_raven_1_1_c_world" kindref="compound">CWorld</ref> &amp;</type>
+          <declname>world</declname>
+        </param>
+        <param>
+          <type><ref refid="class_raven_1_1_t_query" kindref="compound">Query</ref>&lt; With&lt; T &gt;&gt;</type>
+          <declname>events</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenWorld/Components.hpp" line="50" column="13" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenWorld/Components.hpp" bodystart="50" bodyend="53"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenWorld/Components.hpp" line="5" column="1"/>
+    <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenWorld/Components.hpp" line="11" column="1"/>
   </compounddef>
 </doxygen>
