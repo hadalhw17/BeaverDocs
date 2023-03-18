@@ -6,6 +6,7 @@
     <innerclass refid="struct_raven_1_1_renderer_1_1_render_output_plugin" prot="public">Raven::Renderer::RenderOutputPlugin</innerclass>
     <innerclass refid="struct_raven_1_1_renderer_1_1_s_shader_define_map" prot="public">Raven::Renderer::SShaderDefineMap</innerclass>
     <innerclass refid="struct_raven_1_1_renderer_1_1_s_technique_desc" prot="public">Raven::Renderer::STechniqueDesc</innerclass>
+    <innerclass refid="struct_raven_1_1_renderer_1_1_s_blend_state_info" prot="public">Raven::Renderer::SBlendStateInfo</innerclass>
     <innerclass refid="struct_raven_1_1_renderer_1_1_s_pipeline_desc" prot="public">Raven::Renderer::SPipelineDesc</innerclass>
     <innerclass refid="struct_raven_1_1_renderer_1_1_s_compute_pipeline_desc" prot="public">Raven::Renderer::SComputePipelineDesc</innerclass>
     <innerclass refid="struct_raven_1_1_renderer_1_1_s_raytracing_pipeline_desc" prot="public">Raven::Renderer::SRaytracingPipelineDesc</innerclass>
@@ -597,6 +598,274 @@
         </inbodydescription>
         <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" line="68" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" bodystart="69" bodyend="107"/>
       </memberdef>
+      <memberdef kind="enum" id="_common_shaders_8hpp_1a39ccc09c13b0d6dc8146c725dabedd91" prot="public" static="no" strong="yes">
+        <type>uint8</type>
+        <name>EBlendOp</name>
+        <enumvalue id="_common_shaders_8hpp_1a39ccc09c13b0d6dc8146c725dabedd91aec211f7c20af43e742bf2570c3cb84f9" prot="public">
+          <name>Add</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1a39ccc09c13b0d6dc8146c725dabedd91a1d9baf077ee87921f57a8fe42d510b65" prot="public">
+          <name>Subtract</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1a39ccc09c13b0d6dc8146c725dabedd91a78d811e98514cd165dda532286610fd2" prot="public">
+          <name>Min</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1a39ccc09c13b0d6dc8146c725dabedd91a6a061313d22e51e0f25b7cd4dc065233" prot="public">
+          <name>Max</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1a39ccc09c13b0d6dc8146c725dabedd91abd5458190996e76988cb2f27a820c685" prot="public">
+          <name>ReverseSubtract</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1a39ccc09c13b0d6dc8146c725dabedd91ae93f994f01c537c4e2f7d8528c3eb5e9" prot="public">
+          <name>Count</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" line="131" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" bodystart="131" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="enum" id="_common_shaders_8hpp_1a9eb19d5f11aadb19b2033b93c4b8642d" prot="public" static="no" strong="yes">
+        <type>uint8</type>
+        <name>EBlendFactor</name>
+        <enumvalue id="_common_shaders_8hpp_1a9eb19d5f11aadb19b2033b93c4b8642dad7ed4ee1df437474d005188535f74875" prot="public">
+          <name>Zero</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1a9eb19d5f11aadb19b2033b93c4b8642da06c2cea18679d64399783748fa367bdd" prot="public">
+          <name>One</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1a9eb19d5f11aadb19b2033b93c4b8642daaff0d4516d1ec9e7926d7cae0a1bba16" prot="public">
+          <name>SrcColour</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1a9eb19d5f11aadb19b2033b93c4b8642da8293d261d02bc168a1807df1b8ba5ea9" prot="public">
+          <name>InvSrcColour</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1a9eb19d5f11aadb19b2033b93c4b8642dae78f8d62007ebbcf346d470514ba4d29" prot="public">
+          <name>DstColour</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1a9eb19d5f11aadb19b2033b93c4b8642da636566506954ad61223448aa3115240b" prot="public">
+          <name>InvDstColour</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1a9eb19d5f11aadb19b2033b93c4b8642dad5c7b7f0102df3f7305c43f73fc3a498" prot="public">
+          <name>SrcAlpha</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1a9eb19d5f11aadb19b2033b93c4b8642da4b81be2afa057a480a0ea6b0d755be52" prot="public">
+          <name>InvSrcAlpha</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1a9eb19d5f11aadb19b2033b93c4b8642daf72dbe2436b38a39e5927ed644e6818b" prot="public">
+          <name>DstAlpha</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1a9eb19d5f11aadb19b2033b93c4b8642dac5e087fd74e80176c791ef4d6b0cf3af" prot="public">
+          <name>InvDstAlpha</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1a9eb19d5f11aadb19b2033b93c4b8642da8bc4cd5c43afece45304aeb5e9834048" prot="public">
+          <name>ConstFactor</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1a9eb19d5f11aadb19b2033b93c4b8642da0ce652565873670f518c23d27f4d0505" prot="public">
+          <name>InvConstFactor</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1a9eb19d5f11aadb19b2033b93c4b8642daa69d96453c025ed62b3276e892e59e39" prot="public">
+          <name>Src1Alpha</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1a9eb19d5f11aadb19b2033b93c4b8642daf63dc69de0e6fa0fae60eaace5f4979c" prot="public">
+          <name>InvSrc1Alpha</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1a9eb19d5f11aadb19b2033b93c4b8642dafe07d61c42c878547f624ccbf7d1eaa1" prot="public">
+          <name>Src1Colour</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1a9eb19d5f11aadb19b2033b93c4b8642dab3037b44f5950e979bab44f4bc40e22d" prot="public">
+          <name>InvSrc1Colour</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1a9eb19d5f11aadb19b2033b93c4b8642dae93f994f01c537c4e2f7d8528c3eb5e9" prot="public">
+          <name>Count</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" line="141" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" bodystart="141" bodyend="160"/>
+      </memberdef>
+      <memberdef kind="enum" id="_common_shaders_8hpp_1a9c190476cde40dcc4abc8252be578976" prot="public" static="no" strong="yes">
+        <type>uint8</type>
+        <name>EWriteMask</name>
+        <enumvalue id="_common_shaders_8hpp_1a9c190476cde40dcc4abc8252be578976aee38e4d5dd68c4e440825018d549cb47" prot="public">
+          <name>Red</name>
+          <initializer>= 0x01</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1a9c190476cde40dcc4abc8252be578976ad382816a3cbeed082c9e216e7392eed1" prot="public">
+          <name>Green</name>
+          <initializer>= 0x02</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1a9c190476cde40dcc4abc8252be578976a9594eec95be70e7b1710f730fdda33d9" prot="public">
+          <name>Blue</name>
+          <initializer>= 0x04</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1a9c190476cde40dcc4abc8252be578976a6132295fcf5570fb8b0a944ef322a598" prot="public">
+          <name>Alpha</name>
+          <initializer>= 0x08</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1a9c190476cde40dcc4abc8252be578976aea3495a278957dc58165e48a8945469f" prot="public">
+          <name>RGBA</name>
+          <initializer>= Red | Green | Blue | Alpha</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1a9c190476cde40dcc4abc8252be578976a889574aebacda6bfd3e534e2b49b8028" prot="public">
+          <name>RGB</name>
+          <initializer>= Red | Green | Blue</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1a9c190476cde40dcc4abc8252be578976abac953e88f6d79514b0b6fc42eb6f3b7" prot="public">
+          <name>RG</name>
+          <initializer>= Red | Green</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1a9c190476cde40dcc4abc8252be578976a79cba1185463850dedba31f172f1dc5b" prot="public">
+          <name>GB</name>
+          <initializer>= Green | Blue</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1a9c190476cde40dcc4abc8252be578976a5fc810cf62601df84b7923b9964c53e6" prot="public">
+          <name>BA</name>
+          <initializer>= Blue | Alpha</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" line="162" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" bodystart="162" bodyend="173"/>
+      </memberdef>
       <memberdef kind="enum" id="_common_shaders_8hpp_1ab4a7fc4f5ac0489eb495590b3e8f148b" prot="public" static="no" strong="yes">
         <type>uint8_t</type>
         <name>ESetGroup</name>
@@ -653,7 +922,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" line="294" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" bodystart="295" bodyend="303"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" line="364" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" bodystart="365" bodyend="373"/>
       </memberdef>
       <memberdef kind="enum" id="_common_renderer_8hpp_1abb492e438c7bf4a8fa595075fb316772" prot="public" static="no" strong="yes">
         <type>uint8</type>
@@ -1123,6 +1392,22 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
+      <memberdef kind="function" id="_common_shaders_8hpp_1ab0170a80b1ff81db2b8020695cdc218a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Raven::Renderer::RAVEN_ENUM_OPERATORS</definition>
+        <argsstring>(EWriteMask)</argsstring>
+        <name>RAVEN_ENUM_OPERATORS</name>
+        <param>
+          <type>EWriteMask</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" line="174" column="1" declfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" declline="174" declcolumn="1"/>
+      </memberdef>
       <memberdef kind="function" id="_bind_group_meta_8hpp_1a1d2e6425710cbc8fa55ce55336c78a62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
@@ -1188,7 +1473,7 @@
           <declname>technique</declname>
         </param>
         <param>
-          <type>struct SBlendStateInfo *</type>
+          <type>struct <ref refid="struct_raven_1_1_renderer_1_1_s_blend_state_info" kindref="compound">SBlendStateInfo</ref> *</type>
           <declname>pBlendState</declname>
           <defval>nullptr</defval>
         </param>
@@ -1263,7 +1548,7 @@
           <declname>technique</declname>
         </param>
         <param>
-          <type>struct SBlendStateInfo *</type>
+          <type>struct <ref refid="struct_raven_1_1_renderer_1_1_s_blend_state_info" kindref="compound">SBlendStateInfo</ref> *</type>
           <declname>pBlendState</declname>
           <defval>nullptr</defval>
         </param>

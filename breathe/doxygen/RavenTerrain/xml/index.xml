@@ -5,7 +5,6 @@
     <member refid="class_raven_1_1_c_terrain_1add71e65bbfd7117882fd0fecb308117d" kind="variable"><name>m_terrainSize</name></member>
     <member refid="class_raven_1_1_c_terrain_1aaa1ecd4cd976e0e6e49611068082c367" kind="variable"><name>m_gridResolution</name></member>
     <member refid="class_raven_1_1_c_terrain_1a9b9bdff7e82e078f6a1fe6861d76b467" kind="variable"><name>m_hBaseMesh</name></member>
-    <member refid="class_raven_1_1_c_terrain_1a87080a60d22b85e0cd25a540b1c2bb16" kind="variable"><name>m_terrainMaterial</name></member>
     <member refid="class_raven_1_1_c_terrain_1a3d814c20769ad13111057a191e0d8a96" kind="variable"><name>m_Heightmap</name></member>
     <member refid="class_raven_1_1_c_terrain_1a3b101ba21caf772c7456585080ae2abe" kind="variable"><name>m_hStoneTex</name></member>
     <member refid="class_raven_1_1_c_terrain_1a0c39d63ffb4e70ff7a92560db56c8dfb" kind="variable"><name>m_hGrassTex</name></member>
@@ -26,6 +25,7 @@
     <member refid="class_raven_1_1_c_terrain_1a4b1318f59bba359ef53ddf70e3db5b48" kind="function"><name>ReadHeightValue</name></member>
     <member refid="class_raven_1_1_c_terrain_1ac55e28f0f1a120de24f465fb30f608f2" kind="function"><name>WriteHeightValue</name></member>
     <member refid="class_raven_1_1_c_terrain_1af4581de58ddb84a0f8e3104d6e1b910e" kind="function"><name>AddHeightValue</name></member>
+    <member refid="class_raven_1_1_c_terrain_1aaee3d4e5e1a1c2768be12b33aa3c4f98" kind="function"><name>AddLayerValue</name></member>
     <member refid="class_raven_1_1_c_terrain_1a3841176d896ff844447b97518bb6e5e5" kind="function"><name>GetMaxAltitude</name></member>
     <member refid="class_raven_1_1_c_terrain_1a1d834d125b919d9ad22e244db3e14698" kind="function"><name>GetStoneTex</name></member>
     <member refid="class_raven_1_1_c_terrain_1a715a7a27bf2c1b9a23adda64f00db0f7" kind="function"><name>GetGrassTex</name></member>
@@ -48,6 +48,7 @@
     <member refid="struct_raven_1_1_s_noise_params_1aeccc20158ab50770cebbe02daafed23b" kind="function"><name>operator!=</name></member>
   </compound>
   <compound refid="struct_raven_1_1_terrain_editor" kind="struct"><name>Raven::TerrainEditor</name>
+    <member refid="struct_raven_1_1_terrain_editor_1a246e2a3dfcab7cb6701c6b2032f26fc4" kind="variable"><name>ModifiedLayer</name></member>
     <member refid="struct_raven_1_1_terrain_editor_1abe1fa2bcb8cafbdcf3bad71fc5eb3504" kind="variable"><name>CursorWorldPos</name></member>
     <member refid="struct_raven_1_1_terrain_editor_1aac2fafaaedeffe84271616cb83eacc14" kind="variable"><name>CursorWorldDir</name></member>
     <member refid="struct_raven_1_1_terrain_editor_1a3eda985055e45980041ba91c5eed2f22" kind="variable"><name>BrushSize</name></member>
@@ -61,23 +62,39 @@
     <member refid="struct_raven_1_1_terrain_editor_plugin_1a103a93772e24067db7aeb992b8f5fe4a" kind="function"><name>Build</name></member>
   </compound>
   <compound refid="struct_raven_1_1_terrain_layer" kind="struct"><name>Raven::TerrainLayer</name>
-    <member refid="struct_raven_1_1_terrain_layer_1ad41d487b168d8e8f207221fce8148d27" kind="variable"><name>Weightmap</name></member>
-    <member refid="struct_raven_1_1_terrain_layer_1ae27481898312091d50e4468ab398239d" kind="variable"><name>Texture</name></member>
-    <member refid="struct_raven_1_1_terrain_layer_1ac6f9c99df416895bda396b320a97287e" kind="variable"><name>CachedMaterial</name></member>
+    <member refid="struct_raven_1_1_terrain_layer_1ae86956659dff7fe24f203101db5fed38" kind="variable"><name>Material</name></member>
+    <member refid="struct_raven_1_1_terrain_layer_1a1f8ba419ac9175e0121972cc0d05e312" kind="variable"><name>CachedMaterial</name></member>
+  </compound>
+  <compound refid="struct_raven_1_1_terrain_layer_material" kind="struct"><name>Raven::TerrainLayerMaterial</name>
+    <member refid="struct_raven_1_1_terrain_layer_material_1a9741d346087aa3715587bf8b145f2f63" kind="variable"><name>AlbedoTex</name></member>
+    <member refid="struct_raven_1_1_terrain_layer_material_1a6cb90b30c89d3528c8f03369b9dc9a72" kind="variable"><name>NormalsTex</name></member>
+    <member refid="struct_raven_1_1_terrain_layer_material_1a5f01f1c3c75f227a7b90dcabc5742ebc" kind="variable"><name>MetalRoughnessTex</name></member>
+    <member refid="struct_raven_1_1_terrain_layer_material_1a02e9ac73c0f250bd888fbdf453cc2a86" kind="variable"><name>DisplacementTex</name></member>
+    <member refid="struct_raven_1_1_terrain_layer_material_1ad73c3363cb5956b68f9f0898412b356f" kind="variable"><name>HeightmapTex</name></member>
+    <member refid="struct_raven_1_1_terrain_layer_material_1a064616193f54dff88a2df4a29ed624bd" kind="variable"><name>LayerMaskTex</name></member>
+    <member refid="struct_raven_1_1_terrain_layer_material_1af2d861c0977489e17ccfe593a4755d7f" kind="variable"><name>Metalness</name></member>
+    <member refid="struct_raven_1_1_terrain_layer_material_1ad1b25234c49134bb0084c34b75c666fe" kind="variable"><name>Rougness</name></member>
+    <member refid="struct_raven_1_1_terrain_layer_material_1ae9a2b48d0686af04f5dc752c99841c27" kind="variable"><name>UVScale</name></member>
+    <member refid="struct_raven_1_1_terrain_layer_material_1a9a8e897dd0cfe0f7fc6f74c5da8a9c4f" kind="variable"><name>MaxAltitude</name></member>
+    <member refid="struct_raven_1_1_terrain_layer_material_1ac6e674e271dba14070e92db8851c9614" kind="variable"><name>TerrainSize</name></member>
+    <member refid="struct_raven_1_1_terrain_layer_material_1a71de2fea26467d475aab44e02484145b" kind="variable"><name>IsDoubleSided</name></member>
+    <member refid="struct_raven_1_1_terrain_layer_material_1a803d2602f6ad21a59183fdba9a47ccf0" kind="variable"><name>IsGPUDriven</name></member>
+    <member refid="struct_raven_1_1_terrain_layer_material_1a27b836325ce465db4041e147b0b6f010" kind="variable"><name>CastsShadow</name></member>
+  </compound>
+  <compound refid="struct_raven_1_1_terrain_plugin" kind="struct"><name>Raven::TerrainPlugin</name>
+    <member refid="struct_raven_1_1_terrain_plugin_1afb876994285add48785134d40eb20df5" kind="function"><name>Build</name></member>
   </compound>
   <compound refid="namespace_raven" kind="namespace"><name>Raven</name>
-    <member refid="_noise_8hpp_1a9e9d0ffda184ba2a14bcdeb1c4f7a3c9" kind="function"><name>permute</name></member>
-    <member refid="_noise_8hpp_1a6b81a9ccdd6907e243142d997df3ea17" kind="function"><name>fade</name></member>
-    <member refid="_noise_8hpp_1a13e84af44a96beb81776482e201666f1" kind="function"><name>fade</name></member>
-    <member refid="_noise_8hpp_1aa26415be5362edee0492fc6de2deb279" kind="function"><name>perlinNoise</name></member>
-    <member refid="_noise_8hpp_1a624c97c58b949c3d835e4597b90fa042" kind="function"><name>hash1</name></member>
-    <member refid="_noise_8hpp_1a8d014b9ab28e1f262f80e35d9784b8fa" kind="function"><name>noised</name></member>
-    <member refid="_noise_8hpp_1a05db93a3ebb3dae3a9b83660dff675be" kind="function"><name>FBM</name></member>
-    <member refid="_noise_8hpp_1ac73b769405c258ed68fbd0d0bc81a9fd" kind="function"><name>hybridMultifractal</name></member>
-    <member refid="_noise_8hpp_1a48fa7d5a1eb7844410cb84f8c06e22c9" kind="function"><name>terrainNoise</name></member>
-    <member refid="_noise_8hpp_1add83da7ea28e068bed31369da04aeb1c" kind="function"><name>FBMHeight</name></member>
+    <member refid="_noise_8hpp_1a7810904dd217d7729a921728ec25a998" kind="function"><name>PerlinNoise</name></member>
+    <member refid="_noise_8hpp_1a8fa7d27cc3456f71d768886656a6f8b9" kind="function"><name>Noised</name></member>
+    <member refid="_noise_8hpp_1aac05ef647d6e07480df792c0c530d8b9" kind="function"><name>FBM</name></member>
+    <member refid="_noise_8hpp_1a37bf853e4f466f14348ba869476dc472" kind="function"><name>HybridMultifractal</name></member>
+    <member refid="_noise_8hpp_1a63ece2387d4a2c83bce9e7a2f9bf985f" kind="function"><name>TerrainNoise</name></member>
+    <member refid="_noise_8hpp_1aeb4f74d7f04a65c999e2e2ec8b40a8e2" kind="function"><name>FBMHeight</name></member>
   </compound>
   <compound refid="_noise_8hpp" kind="file"><name>Noise.hpp</name>
+  </compound>
+  <compound refid="_plugin_8hpp" kind="file"><name>Plugin.hpp</name>
   </compound>
   <compound refid="_terrain_8hpp" kind="file"><name>Terrain.hpp</name>
   </compound>
