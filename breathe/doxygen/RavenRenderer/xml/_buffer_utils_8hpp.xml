@@ -19,10 +19,10 @@
 <codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator" kindref="compound">CBufferBumpAllocator</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator" kindref="compound">CBufferBumpAllocator</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator" kindref="compound">CBufferBumpAllocator</ref>&amp;<sp/>operator=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator" kindref="compound">CBufferBumpAllocator</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight></codeline>
-<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator" kindref="compound">CBufferBumpAllocator</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32<sp/>ringCount<sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator" kindref="compound">CBufferBumpAllocator</ref>(EMemoryHeapType<sp/>eHeap,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32<sp/>ringCount<sp/>=<sp/>1,</highlight></codeline>
 <codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32<sp/>pageSize<sp/>=<sp/>4<sp/>*<sp/>1024<sp/>*<sp/>1024)</highlight></codeline>
 <codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>m_pages{std::max(ringCount,<sp/>1u)},<sp/>m_pageSize{pageSize},<sp/>m_offset{0},</highlight></codeline>
-<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_currentFrame{0}<sp/>{}</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_currentFrame{0},<sp/>m_eHeapType{eHeap}<sp/>{}</highlight></codeline>
 <codeline lineno="14"><highlight class="normal"></highlight></codeline>
 <codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator" kindref="compound">CBufferBumpAllocator</ref>(<ref refid="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator" kindref="compound">CBufferBumpAllocator</ref>&amp;&amp;<sp/>rhs)</highlight></codeline>
 <codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>m_pages{std::move(rhs.m_pages)},</highlight></codeline>
@@ -65,8 +65,9 @@
 <codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64<sp/>m_pageSize<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64<sp/>m_offset<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32<sp/>m_currentFrame<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="56"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="57"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Raven::Renderer</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>EMemoryHeapType<sp/>m_eHeapType<sp/>=<sp/>EMemoryHeapType::eHeapType_Count;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Raven::Renderer</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp"/>
   </compounddef>

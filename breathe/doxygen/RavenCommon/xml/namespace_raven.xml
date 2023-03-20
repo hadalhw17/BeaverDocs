@@ -1598,10 +1598,10 @@
 	{
 		{ t.StartObject() } -&gt; std::convertible_to&lt;T&amp;&gt;;
 		{ t.EndObject() } -&gt; std::same_as&lt;T&amp;&gt;;
-	} &amp;&amp; requires(T&amp; t, const char* c)
+	} &amp;&amp; requires(T&amp; t, const std::string_view c)
 	{
 		{ t.Member(c)} -&gt; std::same_as&lt;T&amp;&gt;;
-	} &amp;&amp; requires(const T&amp; t, const char* c)
+	} &amp;&amp; requires(const T&amp; t, const std::string_view c)
 	{
 		{ t.HasMember(c)} -&gt; std::same_as&lt;bool&gt;;
 	}</initializer>
