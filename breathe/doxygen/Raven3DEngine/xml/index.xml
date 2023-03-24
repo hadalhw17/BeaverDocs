@@ -81,8 +81,9 @@
     <member refid="class_raven_1_1_physics_1_1_c_physical_world_1acce1535bc71c3ee5ae19c834e1188839" kind="function"><name>Tick</name></member>
     <member refid="class_raven_1_1_physics_1_1_c_physical_world_1a9abbca16151e349cbb2ff8aeb515cf01" kind="function"><name>Simulate</name></member>
     <member refid="class_raven_1_1_physics_1_1_c_physical_world_1ada6ad458b7b9120246fc23be27e42894" kind="function"><name>DrawDebugVisualisers</name></member>
+    <member refid="class_raven_1_1_physics_1_1_c_physical_world_1a2ff5e80dcf9fdb4c1bf40ba58a97c2c3" kind="function"><name>CreateHeighfields</name></member>
     <member refid="class_raven_1_1_physics_1_1_c_physical_world_1aaea72624359a5d9281a4fe508fd9ae52" kind="function"><name>CreateBoxColliders</name></member>
-    <member refid="class_raven_1_1_physics_1_1_c_physical_world_1adfafdab2908c63752a1e6d6c43a1c8cf" kind="function"><name>CreateTriangleMeshColliders</name></member>
+    <member refid="class_raven_1_1_physics_1_1_c_physical_world_1ae10d870d8c78bfa4399552828a2fc6b7" kind="function"><name>CreateTriangleMeshColliders</name></member>
     <member refid="class_raven_1_1_physics_1_1_c_physical_world_1a5f1b57c9a2924a83f7bf539e1c0bfd0d" kind="function"><name>CreateRigidBodyComponents</name></member>
     <member refid="class_raven_1_1_physics_1_1_c_physical_world_1ab4ace7f841e05e68bb2103a0ae67e552" kind="function"><name>Create</name></member>
     <member refid="class_raven_1_1_physics_1_1_c_physical_world_1a8b26d8000959cd4ec5878084a17b5b01" kind="function"><name>WaitOnSimulation</name></member>
@@ -110,6 +111,11 @@
   <compound refid="class_raven_1_1_c_voxel_object" kind="class"><name>Raven::CVoxelObject</name>
     <member refid="class_raven_1_1_c_voxel_object_1ad72882fa2672fd09dd0dc21401c1ff7a" kind="variable"><name>m_dataHandles</name></member>
   </compound>
+  <compound refid="struct_raven_1_1_physics_1_1_height_field" kind="struct"><name>Raven::Physics::HeightField</name>
+    <member refid="struct_raven_1_1_physics_1_1_height_field_1aba4d8625a2514398777859ae61f97caa" kind="variable"><name>Heightmap</name></member>
+    <member refid="struct_raven_1_1_physics_1_1_height_field_1a60be74ed1993a126e73fdef52b771281" kind="variable"><name>pPhysxHeightField</name></member>
+    <member refid="struct_raven_1_1_physics_1_1_height_field_1a6ad96c8063ed4fe99d80e06bb30cc7a1" kind="function"><name>HeightField</name></member>
+  </compound>
   <compound refid="struct_raven_1_1_physics_1_1_phys_x_1_1_instance" kind="struct"><name>Raven::Physics::PhysX::Instance</name>
     <member refid="struct_raven_1_1_physics_1_1_phys_x_1_1_instance_1afdb28f8a3b31d17c038362bc7ea82b66" kind="variable"><name>DefaultAllocatorCallback</name></member>
     <member refid="struct_raven_1_1_physics_1_1_phys_x_1_1_instance_1a71d62f5a91528eb87eb2aa820f7f2df3" kind="variable"><name>ToleranceScale</name></member>
@@ -121,6 +127,7 @@
     <member refid="struct_raven_1_1_physics_1_1_phys_x_1_1_instance_1a69eff03a7c3c09338b3b54953b32d8fb" kind="variable"><name>Pvd</name></member>
     <member refid="struct_raven_1_1_physics_1_1_phys_x_1_1_instance_1afd9cd7dd26c54b46e2dfb344e28fca85" kind="variable"><name>ErrorCallback</name></member>
     <member refid="struct_raven_1_1_physics_1_1_phys_x_1_1_instance_1a5062b4b57b4c3b11360fd87e58eb3af2" kind="variable"><name>MeshCache</name></member>
+    <member refid="struct_raven_1_1_physics_1_1_phys_x_1_1_instance_1a7bdf0bedb0ad6c4f2d45b0e7b94c781f" kind="variable"><name>HeightFieldCache</name></member>
     <member refid="struct_raven_1_1_physics_1_1_phys_x_1_1_instance_1aa94748dee718fe1610d2cc8efe6cdf81" kind="function"><name>~Instance</name></member>
     <member refid="struct_raven_1_1_physics_1_1_phys_x_1_1_instance_1ac157c892fae9b637855dfe55b5015023" kind="function"><name>Initialise</name></member>
   </compound>
@@ -269,12 +276,14 @@
     <member refid="_phys_x_utils_8hpp_1a2d502f8aef4b0027559e9061460d9870" kind="function"><name>ToPhysx</name></member>
     <member refid="_phys_x_utils_8hpp_1a65414525d4f2edd854eb30975d6797cc" kind="function"><name>ToPhysx</name></member>
     <member refid="_phys_x_utils_8hpp_1a42e5e50ba83a86126690c1026b2f34a4" kind="function"><name>ToPhysxTransform</name></member>
-    <member refid="_phys_x_utils_8hpp_1a15b79a8e7a96ea1a2a865a7fecaf749c" kind="function"><name>ToPhysxTransform</name></member>
+    <member refid="_phys_x_utils_8hpp_1ab14de948808624915f67d532eec23609" kind="function"><name>ToPhysx</name></member>
     <member refid="_phys_x_utils_8hpp_1aec73e67b2901ddfe27b83e61303bd6db" kind="function"><name>FromPhysx</name></member>
     <member refid="_phys_x_utils_8hpp_1a24d39d742db6b0e026041dbcad468042" kind="function"><name>FromPhysx</name></member>
     <member refid="_phys_x_utils_8hpp_1aeb982bace99c7ece45d975847623cedb" kind="function"><name>FromPhysx</name></member>
     <member refid="_phys_x_utils_8hpp_1a1c6d68022444d985c23e38cb8ed3c527" kind="function"><name>FromPhysx</name></member>
-    <member refid="_phys_x_utils_8hpp_1af342e3f0114131b238c781fbc1f5d343" kind="function"><name>FromPhysxTransform</name></member>
+    <member refid="_phys_x_utils_8hpp_1a084c9e1317845a4499bb1ba0b6221af8" kind="function"><name>FromPhysx</name></member>
+    <member refid="_phys_x_utils_8hpp_1a5b6214be4333500d2ed222c5bb528b59" kind="function"><name>FromPhysx</name></member>
+    <member refid="_phys_x_utils_8hpp_1ae27209af7f590c7db90ce57b6664a537" kind="function"><name>FromPhysxTransform</name></member>
   </compound>
   <compound refid="namespace_raven_1_1_voxel" kind="namespace"><name>Raven::Voxel</name>
     <member refid="_brick_8hpp_1aa6e4ef7da50c28b5789a43101adafd22" kind="typedef"><name>BrickT</name></member>
