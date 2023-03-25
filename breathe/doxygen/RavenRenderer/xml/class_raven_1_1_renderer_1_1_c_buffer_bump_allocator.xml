@@ -2,19 +2,33 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator" kind="class" language="C++" prot="public">
     <compoundname>Raven::Renderer::CBufferBumpAllocator</compoundname>
+    <innerclass refid="struct_raven_1_1_renderer_1_1_c_buffer_bump_allocator_1_1_s_page_list" prot="private">Raven::Renderer::CBufferBumpAllocator::SPageList</innerclass>
       <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator_1a330e8f7f13adb438caa07d2e825ae93d" prot="private" static="no" mutable="no">
-        <type>std::vector&lt; std::list&lt; CBuffer * &gt; &gt;</type>
-        <definition>std::vector&lt;std::list&lt;CBuffer*&gt; &gt; Raven::Renderer::CBufferBumpAllocator::m_pages</definition>
+      <memberdef kind="variable" id="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator_1a18adb1493c1cb57bed955ae384208cf4" prot="private" static="no" mutable="no">
+        <type>SPageList</type>
+        <definition>SPageList Raven::Renderer::CBufferBumpAllocator::m_currentPage</definition>
         <argsstring></argsstring>
-        <name>m_pages</name>
+        <name>m_currentPage</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" line="50" column="13" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" bodystart="50" bodyend="-1"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" line="51" column="24" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator_1a3408c6b2a845957dbb4b3ed5195bb18c" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; SPageList &gt;</type>
+        <definition>std::vector&lt;SPageList&gt; Raven::Renderer::CBufferBumpAllocator::m_pagesInUse</definition>
+        <argsstring></argsstring>
+        <name>m_pagesInUse</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" line="52" column="13" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" bodystart="52" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator_1a947b99924852e4adba53b7ba55ff2795" prot="private" static="no" mutable="no">
         <type>std::list&lt; CBuffer * &gt;</type>
@@ -27,7 +41,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" line="51" column="11" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" bodystart="51" bodyend="-1"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" line="53" column="14" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" bodystart="53" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator_1a8ee03508fd80d15a820f433a91b71774" prot="private" static="no" mutable="no">
         <type>uint64</type>
@@ -41,7 +55,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" line="53" column="8" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" bodystart="53" bodyend="-1"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" line="55" column="17" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" bodystart="55" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator_1ac8112df51a6cc1a74fc7a375dfa9001a" prot="private" static="no" mutable="no">
         <type>uint64</type>
@@ -55,21 +69,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" line="54" column="8" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" bodystart="54" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator_1a341afd3cf82abfd9acf7908379de23f4" prot="private" static="no" mutable="no">
-        <type>uint32</type>
-        <definition>uint32 Raven::Renderer::CBufferBumpAllocator::m_currentFrame</definition>
-        <argsstring></argsstring>
-        <name>m_currentFrame</name>
-        <initializer>= 0</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" line="55" column="8" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" bodystart="55" bodyend="-1"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" line="56" column="17" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" bodystart="56" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator_1abb666ea8d28deaea470609236a1c8789" prot="private" static="no" mutable="no">
         <type>EMemoryHeapType</type>
@@ -83,7 +83,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" line="56" column="17" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" bodystart="56" bodyend="-1"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" line="57" column="17" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator_1a6e35df38c48625c73bb6b26e964a2cf6" prot="private" static="no" mutable="no">
+        <type>EBufferType</type>
+        <definition>EBufferType Raven::Renderer::CBufferBumpAllocator::m_eType</definition>
+        <argsstring></argsstring>
+        <name>m_eType</name>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" line="58" column="17" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" bodystart="58" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -101,7 +115,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" line="7" column="1"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" line="10" column="1"/>
       </memberdef>
       <memberdef kind="function" id="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator_1a5ce5c0be9bf8c02ce7cf7e975fb39d29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator" kindref="compound">CBufferBumpAllocator</ref> &amp;</type>
@@ -117,21 +131,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" line="8" column="22"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" line="11" column="22"/>
       </memberdef>
-      <memberdef kind="function" id="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator_1aa179cb270e6563f51f757f5f3d8310b8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator_1a294009b4e4e352940a2e498728b0b7ea" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>Raven::Renderer::CBufferBumpAllocator::CBufferBumpAllocator</definition>
-        <argsstring>(EMemoryHeapType eHeap, const uint32 ringCount=1, const uint32 pageSize=4 *1024 *1024)</argsstring>
+        <argsstring>(EMemoryHeapType eHeap, EBufferType eType, const uint32 pageSize=4 *1024 *1024)</argsstring>
         <name>CBufferBumpAllocator</name>
         <param>
           <type>EMemoryHeapType</type>
           <declname>eHeap</declname>
         </param>
         <param>
-          <type>const uint32</type>
-          <declname>ringCount</declname>
-          <defval>1</defval>
+          <type>EBufferType</type>
+          <declname>eType</declname>
         </param>
         <param>
           <type>const uint32</type>
@@ -144,7 +157,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" line="10" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" bodystart="10" bodyend="13"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" line="13" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" bodystart="13" bodyend="15"/>
       </memberdef>
       <memberdef kind="function" id="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator_1ad8004796fb1e0d8ca7c8d7650d1cfd85" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -161,7 +174,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" line="15" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" bodystart="15" bodyend="18"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" line="17" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" bodystart="17" bodyend="20"/>
       </memberdef>
       <memberdef kind="function" id="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator_1a8e92bacf50a93748c429f20cabca624e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator" kindref="compound">CBufferBumpAllocator</ref> &amp;</type>
@@ -178,7 +191,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" line="20" column="22" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" bodystart="20" bodyend="29"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" line="22" column="22" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" bodystart="22" bodyend="30"/>
       </memberdef>
       <memberdef kind="function" id="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator_1acee4b651a2fe7715fd37722c78bebbe5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -191,20 +204,24 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" line="31" column="1"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" line="32" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator_1a1f373d65b6789be2b2eb397bbdcc14fb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator_1a7809840e90f13fe8d353beac56792200" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void Raven::Renderer::CBufferBumpAllocator::BeginFrame</definition>
-        <argsstring>()</argsstring>
+        <argsstring>(CCommandList *pCmd)</argsstring>
         <name>BeginFrame</name>
+        <param>
+          <type>CCommandList *</type>
+          <declname>pCmd</declname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" line="33" column="6" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" bodystart="33" bodyend="44"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" line="34" column="6"/>
       </memberdef>
       <memberdef kind="function" id="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator_1acf018bbbfc570b42eeb47f18ad862aa3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::pair&lt; CBuffer *, uint64 &gt;</type>
@@ -231,25 +248,26 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" line="47" column="1"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" line="37" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" line="5" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" bodystart="5" bodyend="57"/>
+    <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" line="8" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BufferUtils.hpp" bodystart="8" bodyend="59"/>
     <listofallmembers>
       <member refid="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator_1acf018bbbfc570b42eeb47f18ad862aa3" prot="public" virt="non-virtual"><scope>Raven::Renderer::CBufferBumpAllocator</scope><name>Allocate</name></member>
-      <member refid="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator_1a1f373d65b6789be2b2eb397bbdcc14fb" prot="public" virt="non-virtual"><scope>Raven::Renderer::CBufferBumpAllocator</scope><name>BeginFrame</name></member>
+      <member refid="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator_1a7809840e90f13fe8d353beac56792200" prot="public" virt="non-virtual"><scope>Raven::Renderer::CBufferBumpAllocator</scope><name>BeginFrame</name></member>
       <member refid="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator_1a468cdc71ddbea2cfd85a376ffa9a705d" prot="public" virt="non-virtual"><scope>Raven::Renderer::CBufferBumpAllocator</scope><name>CBufferBumpAllocator</name></member>
-      <member refid="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator_1aa179cb270e6563f51f757f5f3d8310b8" prot="public" virt="non-virtual"><scope>Raven::Renderer::CBufferBumpAllocator</scope><name>CBufferBumpAllocator</name></member>
+      <member refid="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator_1a294009b4e4e352940a2e498728b0b7ea" prot="public" virt="non-virtual"><scope>Raven::Renderer::CBufferBumpAllocator</scope><name>CBufferBumpAllocator</name></member>
       <member refid="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator_1ad8004796fb1e0d8ca7c8d7650d1cfd85" prot="public" virt="non-virtual"><scope>Raven::Renderer::CBufferBumpAllocator</scope><name>CBufferBumpAllocator</name></member>
-      <member refid="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator_1a341afd3cf82abfd9acf7908379de23f4" prot="private" virt="non-virtual"><scope>Raven::Renderer::CBufferBumpAllocator</scope><name>m_currentFrame</name></member>
+      <member refid="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator_1a18adb1493c1cb57bed955ae384208cf4" prot="private" virt="non-virtual"><scope>Raven::Renderer::CBufferBumpAllocator</scope><name>m_currentPage</name></member>
       <member refid="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator_1abb666ea8d28deaea470609236a1c8789" prot="private" virt="non-virtual"><scope>Raven::Renderer::CBufferBumpAllocator</scope><name>m_eHeapType</name></member>
+      <member refid="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator_1a6e35df38c48625c73bb6b26e964a2cf6" prot="private" virt="non-virtual"><scope>Raven::Renderer::CBufferBumpAllocator</scope><name>m_eType</name></member>
       <member refid="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator_1a947b99924852e4adba53b7ba55ff2795" prot="private" virt="non-virtual"><scope>Raven::Renderer::CBufferBumpAllocator</scope><name>m_freeList</name></member>
       <member refid="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator_1ac8112df51a6cc1a74fc7a375dfa9001a" prot="private" virt="non-virtual"><scope>Raven::Renderer::CBufferBumpAllocator</scope><name>m_offset</name></member>
-      <member refid="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator_1a330e8f7f13adb438caa07d2e825ae93d" prot="private" virt="non-virtual"><scope>Raven::Renderer::CBufferBumpAllocator</scope><name>m_pages</name></member>
+      <member refid="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator_1a3408c6b2a845957dbb4b3ed5195bb18c" prot="private" virt="non-virtual"><scope>Raven::Renderer::CBufferBumpAllocator</scope><name>m_pagesInUse</name></member>
       <member refid="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator_1a8ee03508fd80d15a820f433a91b71774" prot="private" virt="non-virtual"><scope>Raven::Renderer::CBufferBumpAllocator</scope><name>m_pageSize</name></member>
       <member refid="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator_1a5ce5c0be9bf8c02ce7cf7e975fb39d29" prot="public" virt="non-virtual"><scope>Raven::Renderer::CBufferBumpAllocator</scope><name>operator=</name></member>
       <member refid="class_raven_1_1_renderer_1_1_c_buffer_bump_allocator_1a8e92bacf50a93748c429f20cabca624e" prot="public" virt="non-virtual"><scope>Raven::Renderer::CBufferBumpAllocator</scope><name>operator=</name></member>
