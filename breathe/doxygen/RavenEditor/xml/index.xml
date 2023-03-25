@@ -182,7 +182,6 @@
     <member refid="class_raven_1_1_c_level_editor_1a0d37f0794e1c184426a70320013299d2" kind="variable"><name>m_pFocusedViewport</name></member>
     <member refid="class_raven_1_1_c_level_editor_1acda28577bbac655b7fc86500cba0d7d4" kind="variable"><name>m_pEventManager</name></member>
     <member refid="class_raven_1_1_c_level_editor_1a5700d2ff7444f39959509a4af4e11708" kind="variable"><name>m_pTag</name></member>
-    <member refid="class_raven_1_1_c_level_editor_1a092baf971131c07ba8d4e670fb7a2ef3" kind="variable"><name>m_selectionContext</name></member>
     <member refid="class_raven_1_1_c_level_editor_1a52930c73d2bc727ccec5cb4aa2cffe0c" kind="variable"><name>m_allowKeyboardInput</name></member>
     <member refid="class_raven_1_1_c_level_editor_1aea12b25064a0f947ef8aacd3764cee54" kind="variable"><name>m_allowMouseInput</name></member>
     <member refid="class_raven_1_1_c_level_editor_1a57c3b5d0f289905faeedaa98276b7bd2" kind="variable"><name>m_wasLevelModified</name></member>
@@ -194,6 +193,8 @@
     <member refid="class_raven_1_1_c_level_editor_1adb5808c23703628dbd3d10fc3c886eed" kind="function"><name>EditLevel</name></member>
     <member refid="class_raven_1_1_c_level_editor_1a4dc15992fb8d2044df041a8154ba99b9" kind="function"><name>UnloadLevel</name></member>
     <member refid="class_raven_1_1_c_level_editor_1a1de848ffd5bd5b13aabaf621c2f27e53" kind="function"><name>GetSelectedEntity</name></member>
+    <member refid="class_raven_1_1_c_level_editor_1af6c744be8664d66e42fac90057bf1a7c" kind="function"><name>ForEachSelectedEntity</name></member>
+    <member refid="class_raven_1_1_c_level_editor_1a472aa495971cd36dabf5e8c31189fa2d" kind="function"><name>ClearSelection</name></member>
     <member refid="class_raven_1_1_c_level_editor_1afb4fb6c8f5600449e427b49bbfdfbc3c" kind="function"><name>SelectEntity</name></member>
     <member refid="class_raven_1_1_c_level_editor_1aaf2f78945b67dc8f9c1eb50461221a62" kind="function"><name>DeleteEntity</name></member>
     <member refid="class_raven_1_1_c_level_editor_1a3956c3a13cd3646fddd4155f221f546b" kind="function"><name>GetCurrentLevel</name></member>
@@ -228,6 +229,7 @@
     <member refid="class_raven_1_1_c_level_editor_1a3c4fcd00ef6d3cf29e2ff34de19f4b52" kind="function"><name>ToggleSimulate</name></member>
     <member refid="class_raven_1_1_c_level_editor_1a77f25a633ca9602b0ef35deebcc9c149" kind="function"><name>ProcessCameraInput</name></member>
     <member refid="class_raven_1_1_c_level_editor_1aef128592f702fa5ce91332d3f4e26239" kind="function"><name>ShowEditorTools</name></member>
+    <member refid="class_raven_1_1_c_level_editor_1a3cd7c7c7540a19759f9860cf987ea2c2" kind="function"><name>GetWorld</name></member>
     <member refid="class_raven_1_1_c_level_editor_1aa195a4f5547eca7c3a84b9b784b95c4f" kind="function"><name>ToggleSimulateSystem</name></member>
   </compound>
   <compound refid="class_raven_1_1_detail_1_1_c_log_sink" kind="class"><name>Raven::Detail::CLogSink</name>
@@ -484,6 +486,10 @@
     <member refid="struct_raven_1_1_s_editor_viewport_event_1aa1cde6ed29f6473bdf0698265531ae7f" kind="variable"><name>pViewport</name></member>
     <member refid="struct_raven_1_1_s_editor_viewport_event_1a1fabdbae005e375cdfa70233d7a25ec1" kind="function"><name>SEditorViewportEvent</name></member>
   </compound>
+  <compound refid="struct_raven_1_1_selected_entity" kind="struct"><name>Raven::SelectedEntity</name>
+    <member refid="struct_raven_1_1_selected_entity_1ad9a92c4f2ba537138ca491287f08641d" kind="variable"><name>pEditor</name></member>
+    <member refid="struct_raven_1_1_selected_entity_1acd0563de953f5145b93a0e0b967a5ebd" kind="variable"><name>currentTransformOperation</name></member>
+  </compound>
   <compound refid="struct_raven_1_1_s_file_editing_commands" kind="struct"><name>Raven::SFileEditingCommands</name>
     <member refid="struct_raven_1_1_s_file_editing_commands_1acd0e2c13b81fd291a13a0056b45f712a" kind="variable"><name>New</name></member>
     <member refid="struct_raven_1_1_s_file_editing_commands_1af3bafedcbf58f2da2c85ffef5843ac21" kind="variable"><name>Save</name></member>
@@ -558,11 +564,6 @@
     <member refid="struct_raven_1_1_c_asset_browser_1_1_s_selection_1a5eaa00101f151666164a170377efad6d" kind="function"><name>Clear</name></member>
     <member refid="struct_raven_1_1_c_asset_browser_1_1_s_selection_1af2a008f98a7ff39975f9ed52ca839572" kind="function"><name>IsFinalised</name></member>
   </compound>
-  <compound refid="struct_raven_1_1_s_selection_context" kind="struct"><name>Raven::SSelectionContext</name>
-    <member refid="struct_raven_1_1_s_selection_context_1a3a24d04058c2d9fc7ca5407069e15d96" kind="variable"><name>pEditor</name></member>
-    <member refid="struct_raven_1_1_s_selection_context_1ae18422269271cbfe3005338218f6be20" kind="variable"><name>entity</name></member>
-    <member refid="struct_raven_1_1_s_selection_context_1aab09a2a47b6fcdfd252cb29b6b91d3e9" kind="variable"><name>currentTransformOperation</name></member>
-  </compound>
   <compound refid="struct_raven_1_1_c_editor_tool_factory_1_1_s_tool_description" kind="struct"><name>Raven::CEditorToolFactory::SToolDescription</name>
     <member refid="struct_raven_1_1_c_editor_tool_factory_1_1_s_tool_description_1a1b2050058598d030b50d7360ac62af54" kind="variable"><name>Type</name></member>
     <member refid="struct_raven_1_1_c_editor_tool_factory_1_1_s_tool_description_1af1448378974c5146f21dfcbed18fc09e" kind="variable"><name>Name</name></member>
@@ -625,7 +626,7 @@
     <member refid="_component_property_editor_8hpp_1a4ad7a6d587fcb62432bf8857313c0ca6" kind="function"><name>DefaultAddFn</name></member>
     <member refid="_component_property_editor_8hpp_1a3143e0ebb4246d2ba80024c38fd4420f" kind="function"><name>AddComponent</name></member>
     <member refid="_component_property_editor_8hpp_1a5b0215354cdc2ef8b5fc1961a0d03d26" kind="function"><name>AddComponent</name></member>
-    <member refid="_component_property_editor_8hpp_1a8b08dded51be0ba1fa8ef7841117b123" kind="function"><name>EntityPropertyPannel</name></member>
+    <member refid="_component_property_editor_8hpp_1a72403ba8480d1a43a77d1b668c674e0c" kind="function"><name>EntityPropertyPannel</name></member>
   </compound>
   <compound refid="namespace_raven_1_1_asset_browser" kind="namespace"><name>Raven::AssetBrowser</name>
   </compound>
