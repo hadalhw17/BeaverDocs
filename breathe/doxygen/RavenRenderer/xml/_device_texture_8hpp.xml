@@ -6,14 +6,14 @@
     <includes refid="_graphics_resource_8hpp" local="yes">GraphicsResource.hpp</includes>
     <includes refid="_image_view_8hpp" local="yes">DeviceLayer/ImageView.hpp</includes>
     <incdepgraph>
-      <node id="5">
+      <node id="8">
         <label>DeviceLayer/VulkanUtils.hpp</label>
         <link refid="_vulkan_utils_8hpp_source"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
         <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
         </childnode>
       </node>
       <node id="3">
@@ -22,18 +22,18 @@
         <childnode refid="4" relation="include">
         </childnode>
       </node>
-      <node id="7">
+      <node id="10">
         <label>CommonRenderer.hpp</label>
         <link refid="_common_renderer_8hpp_source"/>
       </node>
-      <node id="6">
+      <node id="9">
         <label>CommonShaders.hpp</label>
         <link refid="_common_shaders_8hpp_source"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="7" relation="include">
+        <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="8" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
       </node>
       <node id="2">
@@ -42,16 +42,14 @@
       <node id="4">
         <label>ResourcesCommon.hpp</label>
         <link refid="_resources_common_8hpp_source"/>
-        <childnode refid="5" relation="include">
+      </node>
+      <node id="7">
+        <label>DeviceLayer/Sampler.hpp</label>
+        <link refid="_sampler_8hpp_source"/>
+        <childnode refid="8" relation="include">
         </childnode>
       </node>
       <node id="11">
-        <label>DeviceLayer/Sampler.hpp</label>
-        <link refid="_sampler_8hpp_source"/>
-        <childnode refid="5" relation="include">
-        </childnode>
-      </node>
-      <node id="9">
         <label>vulkan/vulkan.h</label>
       </node>
       <node id="13">
@@ -68,15 +66,15 @@
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="10" relation="include">
+        <childnode refid="5" relation="include">
         </childnode>
       </node>
-      <node id="10">
+      <node id="5">
         <label>DeviceLayer/ImageView.hpp</label>
         <link refid="_image_view_8hpp_source"/>
-        <childnode refid="8" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="11" relation="include">
+        <childnode refid="7" relation="include">
         </childnode>
         <childnode refid="12" relation="include">
         </childnode>
@@ -85,7 +83,7 @@
         <childnode refid="13" relation="include">
         </childnode>
       </node>
-      <node id="8">
+      <node id="6">
         <label>Handle.hpp</label>
       </node>
     </incdepgraph>
@@ -138,7 +136,7 @@
 <codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>VkMemoryRequirements<sp/>GetMemoryRequirements()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_memoryRequirements;<sp/>}</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>VkImageCreateInfo<sp/>GetCreateInfo()</highlight><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_createInfo;<sp/>}</highlight></codeline>
 <codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetDebugName(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>pName)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>BindMemory(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_raven_1_1_renderer_1_1_s_device_memory_allocation" kindref="compound">SDeviceMemoryAllocation</ref>&amp;<sp/>range)<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>BindMemory(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_raven_1_1_renderer_1_1_s_device_memory_allocation" kindref="compound">SDeviceMemoryAllocation</ref><sp/>range)<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ImageBarrier(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>CCommandList*<sp/>pCommandList);</highlight></codeline>
 <codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>HasPendingBarriers()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_oldLayout<sp/>!=<sp/>m_newLayout<sp/>&amp;&amp;<sp/>m_newLayout<sp/>!=<sp/>EAttachmentState::Undefined;<sp/>}</highlight></codeline>
 <codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>RequestTransition(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>EAttachmentState<sp/>layout);</highlight></codeline>
