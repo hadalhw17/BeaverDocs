@@ -31,6 +31,10 @@
     <member refid="struct_raven_1_1_meta_1_1_aligned_storage_1ad2d96c45eda02f864c31f970e5db2a98" kind="typedef"><name>Type</name></member>
     <member refid="struct_raven_1_1_meta_1_1_aligned_storage_1a2c3898a7f99c01ca444c9a9a943fab5e" kind="variable"><name>bFits</name></member>
   </compound>
+  <compound refid="struct_raven_1_1_allocation_functions" kind="struct"><name>Raven::AllocationFunctions</name>
+    <member refid="struct_raven_1_1_allocation_functions_1a2930961aec78d3aa34309c6a94e3fa60" kind="variable"><name>Malloc</name></member>
+    <member refid="struct_raven_1_1_allocation_functions_1af92b311b72d40a29d926e5aff36889ee" kind="variable"><name>Free</name></member>
+  </compound>
   <compound refid="class_raven_1_1_meta_1_1_argument" kind="class"><name>Raven::Meta::Argument</name>
     <member refid="class_raven_1_1_meta_1_1_argument_1a1baaa392121ed9941bffe92109c3d50f" kind="typedef"><name>ArgValueT</name></member>
     <member refid="class_raven_1_1_meta_1_1_argument_1ae6433c8aa457be92f4b2182ccf33313c" kind="typedef"><name>ArgRValueT</name></member>
@@ -2264,9 +2268,13 @@
     <member refid="class_raven_1_1_meta_1_1_type_registry_1a051287c33cccc6641908f6e455560410" kind="variable"><name>m_propertyList</name></member>
     <member refid="class_raven_1_1_meta_1_1_type_registry_1accc75db052196b6fcae45e5fbd77443b" kind="variable"><name>m_enumList</name></member>
     <member refid="class_raven_1_1_meta_1_1_type_registry_1a5ec6b9fc86ac83ec6864ef58d9e591f5" kind="variable"><name>m_typeNameLookup</name></member>
+    <member refid="class_raven_1_1_meta_1_1_type_registry_1a34e4ffda5307014bc75d19317e74ad99" kind="variable"><name>m_linkedRegistries</name></member>
     <member refid="class_raven_1_1_meta_1_1_type_registry_1a601c78a60b8ee9ca577121a25ff28dc4" kind="friend"><name>Bind</name></member>
+    <member refid="class_raven_1_1_meta_1_1_type_registry_1ab53bd2745278f852d507d68ec1e14c62" kind="variable"><name>s_Instance</name></member>
     <member refid="class_raven_1_1_meta_1_1_type_registry_1a66f451b8e5e2b08ecb283014fcdb9760" kind="function"><name>Enum</name></member>
     <member refid="class_raven_1_1_meta_1_1_type_registry_1abc06b5a4cd4391bcc5c9244c0b2f7e26" kind="function"><name>Get</name></member>
+    <member refid="class_raven_1_1_meta_1_1_type_registry_1adae2cfce5282ff6e6373f5cd1d712aaf" kind="function"><name>Set</name></member>
+    <member refid="class_raven_1_1_meta_1_1_type_registry_1a80f187f24c81009bb14c298e6c961530" kind="function"><name>LinkRegistry</name></member>
     <member refid="class_raven_1_1_meta_1_1_type_registry_1aa673efc4a649c178f1772b4a94187003" kind="function"><name>GetTypeByName</name></member>
     <member refid="class_raven_1_1_meta_1_1_type_registry_1ab5a9649eefa29ca99e89f78e6e1d069f" kind="function"><name>RegisterTypeData</name></member>
     <member refid="class_raven_1_1_meta_1_1_type_registry_1a8191b9233393dbe57d22456b7d0d58a2" kind="function"><name>RegisterProperty</name></member>
@@ -2540,7 +2548,7 @@
   </compound>
   <compound refid="namespace_private" kind="namespace"><name>Private</name>
   </compound>
-  <compound refid="namespace_private_1_1_0d42" kind="namespace"><name>Private::@42</name>
+  <compound refid="namespace_private_1_1_0d44" kind="namespace"><name>Private::@44</name>
   </compound>
   <compound refid="namespace_raven" kind="namespace"><name>Raven</name>
     <member refid="_c_var_8hpp_1a4890376d8b730a075f803127d4e79aa7" kind="enum"><name>ECVarFlags</name></member>
@@ -2706,6 +2714,8 @@
     <member refid="_asset_system_8hpp_1ad17ae31294ab8cba2112c3074ceaf8fba6adf97f83acf6453d4a6a4b1070f3754" kind="enumvalue"><name>None</name></member>
     <member refid="_asset_system_8hpp_1ad17ae31294ab8cba2112c3074ceaf8fbac43e0fd449c758dab8f891d8e19eb1a9" kind="enumvalue"><name>Strong</name></member>
     <member refid="_asset_system_8hpp_1ad17ae31294ab8cba2112c3074ceaf8fba7324e3727807d95037eb19d304fd91ec" kind="enumvalue"><name>Weak</name></member>
+    <member refid="_allocation_functions_8hpp_1a7adeb5a8bca9c9d3b666f8b5e4b5de0d" kind="typedef"><name>MallocFn</name></member>
+    <member refid="_allocation_functions_8hpp_1a780b0683d56efde82d50c032ca3995d0" kind="typedef"><name>FreeFn</name></member>
     <member refid="_timestep_8hpp_1a30174152c126bca89cea488117505189" kind="typedef"><name>CTimestep</name></member>
     <member refid="_string_hash_8hpp_1ab2c83f8db251510676b6e2ca06c761f7" kind="typedef"><name>HashedString</name></member>
     <member refid="_string_hash_8hpp_1ab816705aeabc6d3b6bb2b1d3d22150f5" kind="typedef"><name>HashedWString</name></member>
@@ -2979,9 +2989,15 @@
   </compound>
   <compound refid="namespacestd_1_1std" kind="namespace"><name>std::std</name>
   </compound>
+  <compound refid="_allocation_functions_8hpp" kind="file"><name>AllocationFunctions.hpp</name>
+  </compound>
   <compound refid="_camera_controller_8hpp" kind="file"><name>CameraController.hpp</name>
   </compound>
   <compound refid="_c_var_8hpp" kind="file"><name>CVar.hpp</name>
+  </compound>
+  <compound refid="_dll_main_8hpp" kind="file"><name>DllMain.hpp</name>
+    <member refid="_dll_main_8hpp_1afbd949624f80a760e3d49b71e74926ab" kind="function"><name>_CRT_INIT</name></member>
+    <member refid="_dll_main_8hpp_1a8f4deecdf22373c29aa02c8c4adf031b" kind="function"><name>PluginMain</name></member>
   </compound>
   <compound refid="_event_base_8hpp" kind="file"><name>EventBase.hpp</name>
   </compound>
