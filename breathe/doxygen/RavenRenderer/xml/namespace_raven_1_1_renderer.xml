@@ -18,7 +18,13 @@
     <innerclass refid="struct_raven_1_1_renderer_1_1_s_resource_layout_desc" prot="public">Raven::Renderer::SResourceLayoutDesc</innerclass>
     <innerclass refid="struct_raven_1_1_renderer_1_1_extraction_label" prot="public">Raven::Renderer::ExtractionLabel</innerclass>
     <innerclass refid="class_raven_1_1_renderer_1_1_c_binding_meta" prot="public">Raven::Renderer::CBindingMeta</innerclass>
+    <innerclass refid="struct_raven_1_1_renderer_1_1_s_sampler_description" prot="public">Raven::Renderer::SSamplerDescription</innerclass>
+    <innerclass refid="class_raven_1_1_renderer_1_1_t_block_allocator" prot="public">Raven::Renderer::TBlockAllocator</innerclass>
     <innerclass refid="class_raven_1_1_renderer_1_1_c_bindless_set_container" prot="public">Raven::Renderer::CBindlessSetContainer</innerclass>
+    <innerclass refid="class_raven_1_1_renderer_1_1_c_f_g_memory_pool" prot="public">Raven::Renderer::CFGMemoryPool</innerclass>
+    <innerclass refid="class_raven_1_1_renderer_1_1_c_f_g_allocator" prot="public">Raven::Renderer::CFGAllocator</innerclass>
+    <innerclass refid="class_raven_1_1_renderer_1_1_t_f_g_objects" prot="public">Raven::Renderer::TFGObjects</innerclass>
+    <innerclass refid="class_raven_1_1_renderer_1_1_t_f_g_handle" prot="public">Raven::Renderer::TFGHandle</innerclass>
     <innerclass refid="struct_raven_1_1_renderer_1_1_s_image_description" prot="public">Raven::Renderer::SImageDescription</innerclass>
     <innerclass refid="class_raven_1_1_renderer_1_1_c_frame_graph_resource" prot="public">Raven::Renderer::CFrameGraphResource</innerclass>
     <innerclass refid="class_raven_1_1_renderer_1_1_c_frame_graph_image" prot="public">Raven::Renderer::CFrameGraphImage</innerclass>
@@ -28,9 +34,9 @@
     <innerclass refid="struct_raven_1_1_renderer_1_1_s_accessed_texture_resource" prot="public">Raven::Renderer::SAccessedTextureResource</innerclass>
     <innerclass refid="struct_raven_1_1_renderer_1_1_s_accessed_buffer_resource" prot="public">Raven::Renderer::SAccessedBufferResource</innerclass>
     <innerclass refid="class_raven_1_1_renderer_1_1_c_f_g_node" prot="public">Raven::Renderer::CFGNode</innerclass>
+    <innerclass refid="class_raven_1_1_renderer_1_1_t_f_g_lambda_node" prot="public">Raven::Renderer::TFGLambdaNode</innerclass>
     <innerclass refid="struct_raven_1_1_renderer_1_1_s_resource_create_info" prot="public">Raven::Renderer::SResourceCreateInfo</innerclass>
     <innerclass refid="class_raven_1_1_renderer_1_1_c_frame_graph" prot="public">Raven::Renderer::CFrameGraph</innerclass>
-    <innerclass refid="struct_raven_1_1_renderer_1_1_s_memory_range" prot="public">Raven::Renderer::SMemoryRange</innerclass>
     <innerclass refid="struct_raven_1_1_renderer_1_1_s_device_memory_allocation" prot="public">Raven::Renderer::SDeviceMemoryAllocation</innerclass>
     <innerclass refid="class_raven_1_1_renderer_1_1_c_g_p_u_scene" prot="public">Raven::Renderer::CGPUScene</innerclass>
     <innerclass refid="struct_raven_1_1_renderer_1_1_s_draw_batch" prot="public">Raven::Renderer::SDrawBatch</innerclass>
@@ -224,7 +230,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" line="19" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" bodystart="20" bodyend="41"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" line="18" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" bodystart="18" bodyend="39"/>
       </memberdef>
       <memberdef kind="enum" id="_common_shaders_8hpp_1ac7e42ffade07430289d76c7b74a33803" prot="public" static="no" strong="yes">
         <type>uint16</type>
@@ -363,7 +369,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" line="44" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" bodystart="45" bodyend="63"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" line="42" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" bodystart="42" bodyend="60"/>
       </memberdef>
       <memberdef kind="enum" id="_common_shaders_8hpp_1a5957277b38973797984f0fcea3a30e5d" prot="public" static="no" strong="yes">
         <type>uint32</type>
@@ -586,7 +592,8 @@
         </enumvalue>
         <enumvalue id="_common_shaders_8hpp_1a5957277b38973797984f0fcea3a30e5dadf254f1981d1ea601fdcc66aac6cdd01" prot="public">
           <name>NoReplaceBindings</name>
-          <initializer>= Bit64&lt;26&gt;()</initializer>
+          <initializer>=
+		Bit64&lt;26&gt;()</initializer>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
@@ -598,7 +605,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" line="68" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" bodystart="69" bodyend="107"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" line="64" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" bodystart="64" bodyend="103"/>
       </memberdef>
       <memberdef kind="enum" id="_common_shaders_8hpp_1a39ccc09c13b0d6dc8146c725dabedd91" prot="public" static="no" strong="yes">
         <type>uint8</type>
@@ -652,7 +659,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" line="131" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" bodystart="131" bodyend="139"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" line="138" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" bodystart="138" bodyend="146"/>
       </memberdef>
       <memberdef kind="enum" id="_common_shaders_8hpp_1a9eb19d5f11aadb19b2033b93c4b8642d" prot="public" static="no" strong="yes">
         <type>uint8</type>
@@ -783,7 +790,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" line="141" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" bodystart="141" bodyend="160"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" line="148" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" bodystart="148" bodyend="167"/>
       </memberdef>
       <memberdef kind="enum" id="_common_shaders_8hpp_1a9c190476cde40dcc4abc8252be578976" prot="public" static="no" strong="yes">
         <type>uint8</type>
@@ -866,52 +873,41 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" line="162" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" bodystart="162" bodyend="173"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" line="169" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" bodystart="169" bodyend="180"/>
       </memberdef>
-      <memberdef kind="enum" id="_common_shaders_8hpp_1ab4a7fc4f5ac0489eb495590b3e8f148b" prot="public" static="no" strong="yes">
-        <type>uint8_t</type>
-        <name>ESetGroup</name>
-        <enumvalue id="_common_shaders_8hpp_1ab4a7fc4f5ac0489eb495590b3e8f148ba5ef92060fac1dbcb0cc28d0c32b63ee3" prot="public">
-          <name>BindlessTextures</name>
+      <memberdef kind="enum" id="_common_shaders_8hpp_1afe2e45b5b40a63ee4fcf3f6fef8dcf9c" prot="public" static="no" strong="yes">
+        <type>uint8</type>
+        <name>EBindingType</name>
+        <enumvalue id="_common_shaders_8hpp_1afe2e45b5b40a63ee4fcf3f6fef8dcf9ca9b0bffda4bcb312168c0d6537cb04b4d" prot="public">
+          <name>RenderTarget</name>
           <initializer>= 0</initializer>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="_common_shaders_8hpp_1ab4a7fc4f5ac0489eb495590b3e8f148ba03925dad7a79931c2b8f296ad177a24c" prot="public">
-          <name>BindlessGeometry</name>
-          <initializer>= 1</initializer>
+        <enumvalue id="_common_shaders_8hpp_1afe2e45b5b40a63ee4fcf3f6fef8dcf9ca4944d1175161720e44d8636eabc87d06" prot="public">
+          <name>DepthTarget</name>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="_common_shaders_8hpp_1ab4a7fc4f5ac0489eb495590b3e8f148babf6658d342b5ed2356b60892bfe4fae9" prot="public">
-          <name>PerView</name>
-          <initializer>= 2</initializer>
+        <enumvalue id="_common_shaders_8hpp_1afe2e45b5b40a63ee4fcf3f6fef8dcf9ca4ff313558b22c62a981845a543dd9c0c" prot="public">
+          <name>ShaderRead</name>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="_common_shaders_8hpp_1ab4a7fc4f5ac0489eb495590b3e8f148ba2c8c0039e59cb3b3ed15c1b24f9e1c32" prot="public">
-          <name>PerPass</name>
-          <initializer>= 3</initializer>
+        <enumvalue id="_common_shaders_8hpp_1afe2e45b5b40a63ee4fcf3f6fef8dcf9ca11c4aac157309541bd3fc4735e727683" prot="public">
+          <name>UnorderedAccess</name>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="_common_shaders_8hpp_1ab4a7fc4f5ac0489eb495590b3e8f148ba5e4dbb87ca2e4302b2d3f3eea407fdbd" prot="public">
-          <name>PerDraw</name>
-          <initializer>= 4</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="_common_shaders_8hpp_1ab4a7fc4f5ac0489eb495590b3e8f148bae93f994f01c537c4e2f7d8528c3eb5e9" prot="public">
+        <enumvalue id="_common_shaders_8hpp_1afe2e45b5b40a63ee4fcf3f6fef8dcf9cae93f994f01c537c4e2f7d8528c3eb5e9" prot="public">
           <name>Count</name>
           <briefdescription>
           </briefdescription>
@@ -924,7 +920,65 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" line="364" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" bodystart="365" bodyend="373"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" line="340" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" bodystart="340" bodyend="347"/>
+      </memberdef>
+      <memberdef kind="enum" id="_common_shaders_8hpp_1af59dc8a73fb0b234e206364e570e2e1d" prot="public" static="no" strong="yes">
+        <type>uint8</type>
+        <name>ESetGroup</name>
+        <enumvalue id="_common_shaders_8hpp_1af59dc8a73fb0b234e206364e570e2e1da5ef92060fac1dbcb0cc28d0c32b63ee3" prot="public">
+          <name>BindlessTextures</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1af59dc8a73fb0b234e206364e570e2e1da03925dad7a79931c2b8f296ad177a24c" prot="public">
+          <name>BindlessGeometry</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1af59dc8a73fb0b234e206364e570e2e1dabf6658d342b5ed2356b60892bfe4fae9" prot="public">
+          <name>PerView</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1af59dc8a73fb0b234e206364e570e2e1da2c8c0039e59cb3b3ed15c1b24f9e1c32" prot="public">
+          <name>PerPass</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1af59dc8a73fb0b234e206364e570e2e1da5e4dbb87ca2e4302b2d3f3eea407fdbd" prot="public">
+          <name>PerDraw</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1af59dc8a73fb0b234e206364e570e2e1dae93f994f01c537c4e2f7d8528c3eb5e9" prot="public">
+          <name>Count</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" line="390" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" bodystart="390" bodyend="398"/>
       </memberdef>
       <memberdef kind="enum" id="_common_renderer_8hpp_1abb492e438c7bf4a8fa595075fb316772" prot="public" static="no" strong="yes">
         <type>uint8</type>
@@ -975,7 +1029,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" line="7" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" bodystart="7" bodyend="13"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" line="12" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" bodystart="12" bodyend="18"/>
       </memberdef>
       <memberdef kind="enum" id="_common_renderer_8hpp_1a04d25ca7b4546c96bf81390f5e0e6736" prot="public" static="no" strong="yes">
         <type>uint8</type>
@@ -1058,7 +1112,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" line="16" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" bodystart="16" bodyend="28"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" line="21" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" bodystart="21" bodyend="33"/>
       </memberdef>
       <memberdef kind="enum" id="_common_renderer_8hpp_1a0ff005510ce23d44ddb766ddd5692ab8" prot="public" static="no" strong="yes">
         <type>uint32</type>
@@ -1101,7 +1155,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" line="31" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" bodystart="31" bodyend="37"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" line="36" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" bodystart="36" bodyend="42"/>
       </memberdef>
       <memberdef kind="enum" id="_common_renderer_8hpp_1a567e469874922728ae8bd8ffde555a74" prot="public" static="no" strong="yes">
         <type>uint8</type>
@@ -1183,7 +1237,331 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" line="40" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" bodystart="40" bodyend="55"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" line="45" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" bodystart="45" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="enum" id="_common_renderer_8hpp_1aa5809b214e6c3d2be8b2d09e799fc455" prot="public" static="no" strong="yes">
+        <type>uint8</type>
+        <name>ESamplerFilter</name>
+        <enumvalue id="_common_renderer_8hpp_1aa5809b214e6c3d2be8b2d09e799fc455a2a3cd5946cfd317eb99c3d32e35e2d4c" prot="public">
+          <name>Point</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_renderer_8hpp_1aa5809b214e6c3d2be8b2d09e799fc455a32a843da6ea40ab3b17a3421ccdf671b" prot="public">
+          <name>Linear</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_renderer_8hpp_1aa5809b214e6c3d2be8b2d09e799fc455aec6b5414eb175379ff9efc9b3eef5814" prot="public">
+          <name>Cubic</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_renderer_8hpp_1aa5809b214e6c3d2be8b2d09e799fc455ae93f994f01c537c4e2f7d8528c3eb5e9" prot="public">
+          <name>Count</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" line="64" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" bodystart="64" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="enum" id="_common_renderer_8hpp_1afc5d879b10741227ea4010ba2f8ed56c" prot="public" static="no" strong="yes">
+        <type>uint8</type>
+        <name>ESamplerAddressMode</name>
+        <enumvalue id="_common_renderer_8hpp_1afc5d879b10741227ea4010ba2f8ed56ca7020426cfb0a204051be4b3053d2acc8" prot="public">
+          <name>Repeat</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_renderer_8hpp_1afc5d879b10741227ea4010ba2f8ed56ca12ce4a5977988214a6b098b8cb0bf695" prot="public">
+          <name>MirroredRepeat</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_renderer_8hpp_1afc5d879b10741227ea4010ba2f8ed56ca74556551231333c36debc3d373261134" prot="public">
+          <name>ClampToEdge</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_renderer_8hpp_1afc5d879b10741227ea4010ba2f8ed56cafb07f88f6f11cc5ab9c951290716f147" prot="public">
+          <name>ClampToBorder</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_renderer_8hpp_1afc5d879b10741227ea4010ba2f8ed56ca01f488e80fc32761aecfbeb3d1c8f26b" prot="public">
+          <name>MirrorClampToEdge</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_renderer_8hpp_1afc5d879b10741227ea4010ba2f8ed56cae93f994f01c537c4e2f7d8528c3eb5e9" prot="public">
+          <name>Count</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" line="72" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" bodystart="72" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="enum" id="_common_renderer_8hpp_1a7db4b386d2aebe9ea3caa7918cb1673b" prot="public" static="no" strong="yes">
+        <type>uint8</type>
+        <name>ESamplerCompareMode</name>
+        <enumvalue id="_common_renderer_8hpp_1a7db4b386d2aebe9ea3caa7918cb1673bab9f5c797ebbf55adccdd8539a65a0241" prot="public">
+          <name>Disabled</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_renderer_8hpp_1a7db4b386d2aebe9ea3caa7918cb1673ba6e7b34fa59e1bd229b207892956dc41c" prot="public">
+          <name>Never</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_renderer_8hpp_1a7db4b386d2aebe9ea3caa7918cb1673ba1cfdf0e8d0c87a228c1f40d9bee7888b" prot="public">
+          <name>Less</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_renderer_8hpp_1a7db4b386d2aebe9ea3caa7918cb1673baf5f286e73bda105e538310b3190f75c5" prot="public">
+          <name>Equal</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_renderer_8hpp_1a7db4b386d2aebe9ea3caa7918cb1673ba19bb0af2c3c530538cb41aff7f235b96" prot="public">
+          <name>NotEqual</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_renderer_8hpp_1a7db4b386d2aebe9ea3caa7918cb1673bad3e6fdac55bb7b0edd7834c968ba1f38" prot="public">
+          <name>LessEqual</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_renderer_8hpp_1a7db4b386d2aebe9ea3caa7918cb1673ba8768a6821cd735aea4f5b0df88c1fc6a" prot="public">
+          <name>Greater</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_renderer_8hpp_1a7db4b386d2aebe9ea3caa7918cb1673ba758b05d899def79c9eb864ad4f96be1f" prot="public">
+          <name>GreaterEqual</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_renderer_8hpp_1a7db4b386d2aebe9ea3caa7918cb1673ba68eec46437c384d8dad18d5464ebc35c" prot="public">
+          <name>Always</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_renderer_8hpp_1a7db4b386d2aebe9ea3caa7918cb1673bae93f994f01c537c4e2f7d8528c3eb5e9" prot="public">
+          <name>Count</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" line="82" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" bodystart="82" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="enum" id="_common_renderer_8hpp_1a2746e88a998b50d8e8cd9734231ceda3" prot="public" static="no" strong="yes">
+        <type>uint8</type>
+        <name>ESamplerType</name>
+        <enumvalue id="_common_renderer_8hpp_1a2746e88a998b50d8e8cd9734231ceda3a7a1920d61156abc05a60135aefe8bc67" prot="public">
+          <name>Default</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_renderer_8hpp_1a2746e88a998b50d8e8cd9734231ceda3af8ff3c8538ddd0c871a84537ace0ee8d" prot="public">
+          <name>LinearRepeat</name>
+          <initializer>= Default</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_renderer_8hpp_1a2746e88a998b50d8e8cd9734231ceda3a2e92d240f40767795eac995066ac291e" prot="public">
+          <name>LinearClampEdge</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_renderer_8hpp_1a2746e88a998b50d8e8cd9734231ceda3a9a7068b60e1438bd6e00db54553e436b" prot="public">
+          <name>LinearClampBorder</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_renderer_8hpp_1a2746e88a998b50d8e8cd9734231ceda3a9546d258b53d8ac88f1a9380ea204b62" prot="public">
+          <name>PointRepeat</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_renderer_8hpp_1a2746e88a998b50d8e8cd9734231ceda3a055739d3d609c52b857c7c0be46e748c" prot="public">
+          <name>PointClamp</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_renderer_8hpp_1a2746e88a998b50d8e8cd9734231ceda3a1868516d06918124893ee6b34bbc20e9" prot="public">
+          <name>TriLinearRepeat</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_renderer_8hpp_1a2746e88a998b50d8e8cd9734231ceda3aea6dd774e97df771dd31d73ac5920989" prot="public">
+          <name>TriLinearClamp</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_renderer_8hpp_1a2746e88a998b50d8e8cd9734231ceda3a77d1048c670f69ecb586965b6e720eb7" prot="public">
+          <name>ComparisonSampler</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_renderer_8hpp_1a2746e88a998b50d8e8cd9734231ceda3ae93f994f01c537c4e2f7d8528c3eb5e9" prot="public">
+          <name>Count</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" line="96" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" bodystart="96" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="enum" id="_common_renderer_8hpp_1a5a30fba036c2364809de0823e5ab8eaa" prot="public" static="no" strong="yes">
+        <type>uint8</type>
+        <name>ESamplerBorderColour</name>
+        <enumvalue id="_common_renderer_8hpp_1a5a30fba036c2364809de0823e5ab8eaaa2c192e68b11165439f906f5c874f741a" prot="public">
+          <name>FloatBlackTransparent</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_renderer_8hpp_1a5a30fba036c2364809de0823e5ab8eaaaa457d8cb3b5c8dd73a8f715013b73bda" prot="public">
+          <name>IntBlackTransparent</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_renderer_8hpp_1a5a30fba036c2364809de0823e5ab8eaaa7e5693065bd635ca41e2f94c67101f8e" prot="public">
+          <name>FloatBlackOpaque</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_renderer_8hpp_1a5a30fba036c2364809de0823e5ab8eaaade11518beb3709bc84fcb712545c9ce0" prot="public">
+          <name>IntBlackOpaque</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_renderer_8hpp_1a5a30fba036c2364809de0823e5ab8eaaadac271a77c84b31a113cba7df27fa40b" prot="public">
+          <name>FloatWhiteOpaque</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_renderer_8hpp_1a5a30fba036c2364809de0823e5ab8eaaabcfc2735fdde87c3761539ce4d2ff82b" prot="public">
+          <name>IntWhiteOpaque</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_renderer_8hpp_1a5a30fba036c2364809de0823e5ab8eaaae93f994f01c537c4e2f7d8528c3eb5e9" prot="public">
+          <name>Count</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" line="110" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" bodystart="110" bodyend="118"/>
       </memberdef>
       <memberdef kind="enum" id="_frame_graph_defs_8hpp_1af9d5106e2365e81e54a07cca91d0167b" prot="public" static="no" strong="yes">
         <type></type>
@@ -1216,7 +1594,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/FrameGraphDefs.hpp" line="7" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/FrameGraphDefs.hpp" bodystart="8" bodyend="12"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/FrameGraphDefs.hpp" line="31" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/FrameGraphDefs.hpp" bodystart="31" bodyend="31"/>
       </memberdef>
       <memberdef kind="enum" id="_resources_common_8hpp_1a7cd636c79ec95542b48e5ab7f4d6e5ba" prot="public" static="no" strong="no">
         <type>uint8</type>
@@ -1407,20 +1785,116 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" line="17" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" bodystart="17" bodyend="-1"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" line="16" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" bodystart="16" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="_frame_graph_8hpp_1a85058b561440d18c1f19ae6c3631fe03" prot="public" static="no">
-        <type><ref refid="struct_raven_1_1_t_handle" kindref="compound">THandle</ref>&lt; <ref refid="class_raven_1_1_renderer_1_1_c_f_g_node" kindref="compound">CFGNode</ref> &gt;</type>
-        <definition>using Raven::Renderer::HRenderPass = typedef THandle&lt;CFGNode&gt;</definition>
+      <memberdef kind="typedef" id="_frame_graph_defs_8hpp_1ad6e52c359b59737a9c8183c64be346e2" prot="public" static="no">
+        <type>uint16</type>
+        <definition>using Raven::Renderer::TFGId = typedef uint16</definition>
         <argsstring></argsstring>
-        <name>HRenderPass</name>
+        <name>TFGId</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/FrameGraph.hpp" line="20" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/FrameGraph.hpp" bodystart="20" bodyend="-1"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/FrameGraphDefs.hpp" line="7" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/FrameGraphDefs.hpp" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_frame_graph_defs_8hpp_1ae740a04510320f8da30aac86ef81c336" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="class_raven_1_1_renderer_1_1_t_f_g_handle" kindref="compound">TFGHandle</ref>&lt; T, TFGId &gt;</type>
+        <definition>using Raven::Renderer::TFGHandleBase = typedef TFGHandle&lt;T, TFGId&gt;</definition>
+        <argsstring></argsstring>
+        <name>TFGHandleBase</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/FrameGraphDefs.hpp" line="20" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/FrameGraphDefs.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_frame_graph_defs_8hpp_1a601b78a5bda13047ecf2a5151b3e1248" prot="public" static="no">
+        <type><ref refid="class_raven_1_1_renderer_1_1_t_f_g_objects" kindref="compound">TFGObjects</ref>&lt; <ref refid="class_raven_1_1_renderer_1_1_c_f_g_node" kindref="compound">CFGNode</ref>, TFGId &gt;</type>
+        <definition>using Raven::Renderer::TFGNodes = typedef TFGObjects&lt;CFGNode, TFGId&gt;</definition>
+        <argsstring></argsstring>
+        <name>TFGNodes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/FrameGraphDefs.hpp" line="22" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/FrameGraphDefs.hpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_frame_graph_defs_8hpp_1a6d610d71acfee8fb07cc0c3ff19582a2" prot="public" static="no">
+        <type><ref refid="class_raven_1_1_renderer_1_1_t_f_g_handle" kindref="compound">TFGHandleBase</ref>&lt; <ref refid="class_raven_1_1_renderer_1_1_c_f_g_node" kindref="compound">CFGNode</ref> &gt;</type>
+        <definition>using Raven::Renderer::HFGNode = typedef TFGHandleBase&lt;CFGNode&gt;</definition>
+        <argsstring></argsstring>
+        <name>HFGNode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/FrameGraphDefs.hpp" line="23" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/FrameGraphDefs.hpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_frame_graph_defs_8hpp_1ab603887df620be3606d6b7004ebd94d9" prot="public" static="no">
+        <type><ref refid="class_raven_1_1_renderer_1_1_t_f_g_objects" kindref="compound">TFGObjects</ref>&lt; <ref refid="class_raven_1_1_renderer_1_1_c_frame_graph_image" kindref="compound">CFrameGraphImage</ref>, TFGId &gt;</type>
+        <definition>using Raven::Renderer::TFGImages = typedef TFGObjects&lt;CFrameGraphImage, TFGId&gt;</definition>
+        <argsstring></argsstring>
+        <name>TFGImages</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/FrameGraphDefs.hpp" line="25" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/FrameGraphDefs.hpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_frame_graph_defs_8hpp_1a085cfbb80aae80d077b3a56764bb6b33" prot="public" static="no">
+        <type><ref refid="class_raven_1_1_renderer_1_1_t_f_g_handle" kindref="compound">TFGHandleBase</ref>&lt; <ref refid="class_raven_1_1_renderer_1_1_c_frame_graph_image" kindref="compound">CFrameGraphImage</ref> &gt;</type>
+        <definition>using Raven::Renderer::HFGImage = typedef TFGHandleBase&lt;CFrameGraphImage&gt;</definition>
+        <argsstring></argsstring>
+        <name>HFGImage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/FrameGraphDefs.hpp" line="26" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/FrameGraphDefs.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_frame_graph_defs_8hpp_1a12f7289bf79e889668a9afc4e5569955" prot="public" static="no">
+        <type><ref refid="class_raven_1_1_renderer_1_1_t_f_g_objects" kindref="compound">TFGObjects</ref>&lt; <ref refid="class_raven_1_1_renderer_1_1_c_frame_graph_buffer" kindref="compound">CFrameGraphBuffer</ref>, TFGId &gt;</type>
+        <definition>using Raven::Renderer::TFGBuffers = typedef TFGObjects&lt;CFrameGraphBuffer, TFGId&gt;</definition>
+        <argsstring></argsstring>
+        <name>TFGBuffers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/FrameGraphDefs.hpp" line="28" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/FrameGraphDefs.hpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_frame_graph_defs_8hpp_1a8fcb2b92bbc7a14cef39b96a3f94ee07" prot="public" static="no">
+        <type><ref refid="class_raven_1_1_renderer_1_1_t_f_g_handle" kindref="compound">TFGHandleBase</ref>&lt; <ref refid="class_raven_1_1_renderer_1_1_c_frame_graph_buffer" kindref="compound">CFrameGraphBuffer</ref> &gt;</type>
+        <definition>using Raven::Renderer::HFGBuffer = typedef TFGHandleBase&lt;CFrameGraphBuffer&gt;</definition>
+        <argsstring></argsstring>
+        <name>HFGBuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/FrameGraphDefs.hpp" line="29" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/FrameGraphDefs.hpp" bodystart="29" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_render_list_8hpp_1a027a7859fb782c3464e00554fa3a9949" prot="public" static="no">
         <type><ref refid="struct_raven_1_1_renderer_1_1_s_g_p_u_draw_data" kindref="compound">SGPUDrawData</ref></type>
@@ -1475,7 +1949,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" line="5" column="25" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" bodystart="5" bodyend="-1"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" line="10" column="25" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" bodystart="10" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -1493,7 +1967,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" line="174" column="1" declfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" declline="174" declcolumn="1"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" line="181" column="1" declfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonShaders.hpp" declline="181" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="_bind_group_meta_8hpp_1a1d2e6425710cbc8fa55ce55336c78a62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1531,7 +2005,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/BindGroupMeta.hpp" line="83" column="6" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/BindGroupMeta.hpp" bodystart="83" bodyend="88"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/BindGroupMeta.hpp" line="84" column="6" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/BindGroupMeta.hpp" bodystart="84" bodyend="89"/>
       </memberdef>
       <memberdef kind="function" id="_bind_group_meta_8hpp_1ac0eb8fea7e11cc5baa4e3326b40f46be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1570,7 +2044,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/BindGroupMeta.hpp" line="91" column="6" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/BindGroupMeta.hpp" bodystart="91" bodyend="97"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/BindGroupMeta.hpp" line="92" column="6" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/BindGroupMeta.hpp" bodystart="92" bodyend="98"/>
       </memberdef>
       <memberdef kind="function" id="_bind_group_meta_8hpp_1a9af033870eb5658e06c3696966e5e9c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1607,7 +2081,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/BindGroupMeta.hpp" line="99" column="6" declfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/BindGroupMeta.hpp" declline="99" declcolumn="6"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/BindGroupMeta.hpp" line="100" column="6" declfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/BindGroupMeta.hpp" declline="100" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="_bind_group_meta_8hpp_1ac4fec5913f5efe153ba671985285c4b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1645,7 +2119,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/BindGroupMeta.hpp" line="104" column="6" declfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/BindGroupMeta.hpp" declline="104" declcolumn="6"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/BindGroupMeta.hpp" line="105" column="6" declfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/BindGroupMeta.hpp" declline="105" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="_common_renderer_8hpp_1a129b710ee3001a470a5974e6c4eb2892" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -1661,7 +2135,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" line="14" column="1" declfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" declline="14" declcolumn="1"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" line="19" column="1" declfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" declline="19" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="_common_renderer_8hpp_1a60b4a5ae85fb4b7e0dc13ad3db59c6ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -1677,7 +2151,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" line="29" column="1" declfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" declline="29" declcolumn="1"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" line="34" column="1" declfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" declline="34" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="_common_renderer_8hpp_1a56c082f158f28aed8d5b325bfd997e0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -1693,7 +2167,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" line="38" column="1" declfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" declline="38" declcolumn="1"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" line="43" column="1" declfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" declline="43" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="_common_renderer_8hpp_1a10f5518fe98145fb03937f98f222a19e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -1709,7 +2183,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" line="56" column="1" declfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" declline="56" declcolumn="1"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" line="61" column="1" declfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/CommonRenderer.hpp" declline="61" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="_g_p_u_pipeline_defs_8hpp_1aa6ef552419d47cee02ad7c317e01df58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>

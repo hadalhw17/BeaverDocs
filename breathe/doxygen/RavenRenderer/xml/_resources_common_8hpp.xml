@@ -41,8 +41,6 @@
         <link refid="_device_texture_8hpp_source"/>
       </node>
     </invincdepgraph>
-    <innerclass refid="struct_raven_1_1_renderer_1_1_s_memory_range" prot="public">Raven::Renderer::SMemoryRange</innerclass>
-    <innerclass refid="struct_raven_1_1_renderer_1_1_s_memory_range_1_1_s_cmp" prot="public">Raven::Renderer::SMemoryRange::SCmp</innerclass>
     <innerclass refid="struct_raven_1_1_renderer_1_1_s_device_memory_allocation" prot="public">Raven::Renderer::SDeviceMemoryAllocation</innerclass>
     <innernamespace refid="namespace_raven">Raven</innernamespace>
     <innernamespace refid="namespace_raven_1_1_renderer">Raven::Renderer</innernamespace>
@@ -62,38 +60,16 @@
 <codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>eHeapType_Count</highlight></codeline>
 <codeline lineno="10"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Used<sp/>as<sp/>a<sp/>look-up<sp/>into<sp/>the<sp/>m_memoryHeaps<sp/>array</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="13" refid="struct_raven_1_1_renderer_1_1_s_memory_range" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_raven_1_1_renderer_1_1_s_memory_range" kindref="compound">SMemoryRange</ref></highlight></codeline>
-<codeline lineno="14"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Index<sp/>into<sp/>vector</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>heapId<sp/>=<sp/>~0u;</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Index<sp/>into<sp/>array</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>EMemoryHeapType<sp/>eHeapType<sp/>=<sp/>eHeapType_Count;</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Memory<sp/>range<sp/>into<sp/>VkDeviceMemory</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/>start<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/>size<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight></codeline>
-<codeline lineno="23" refid="struct_raven_1_1_renderer_1_1_s_memory_range_1_1_s_cmp" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_raven_1_1_renderer_1_1_s_memory_range_1_1_s_cmp" kindref="compound">SCmp</ref></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator()<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_raven_1_1_renderer_1_1_s_memory_range" kindref="compound">SMemoryRange</ref>&amp;<sp/>lhs,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_raven_1_1_renderer_1_1_s_memory_range" kindref="compound">SMemoryRange</ref>&amp;<sp/>rhs)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="26"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>lhs.start<sp/>&lt;<sp/>rhs.start;<sp/></highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>==(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_raven_1_1_renderer_1_1_s_memory_range" kindref="compound">SMemoryRange</ref>&amp;<sp/>rhs)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>memcmp(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;rhs,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="struct_raven_1_1_renderer_1_1_s_memory_range" kindref="compound">SMemoryRange</ref>))<sp/>==<sp/>0;<sp/>}</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator<sp/>==(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_raven_1_1_renderer_1_1_s_memory_range" kindref="compound">SMemoryRange</ref>&amp;<sp/>rhs)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>memcmp(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;rhs,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="struct_raven_1_1_renderer_1_1_s_memory_range" kindref="compound">SMemoryRange</ref>))<sp/>==<sp/>0;<sp/>}</highlight></codeline>
-<codeline lineno="32"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"></highlight></codeline>
-<codeline lineno="34" refid="struct_raven_1_1_renderer_1_1_s_device_memory_allocation" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_raven_1_1_renderer_1_1_s_device_memory_allocation" kindref="compound">SDeviceMemoryAllocation</ref><sp/>{</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32<sp/>Offset<sp/>=<sp/>~0u;</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16<sp/>Pool<sp/><sp/><sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>EMemoryHeapType<sp/>Heap<sp/>=<sp/>EMemoryHeapType::eHeapType_Count;</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8<sp/>Padding<sp/>=<sp/>0xFF;<sp/></highlight><highlight class="comment">//<sp/>0<sp/>-<sp/>buffer,<sp/>1<sp/>-<sp/>texture</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="normal"><sp/>bool()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Heap<sp/>!=<sp/>EMemoryHeapType::eHeapType_Count<sp/>&amp;&amp;<sp/>Offset<sp/>!=<sp/>~0u;<sp/>}</highlight></codeline>
-<codeline lineno="40"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="41"><highlight class="normal">static_assert(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="struct_raven_1_1_renderer_1_1_s_device_memory_allocation" kindref="compound">SDeviceMemoryAllocation</ref>)<sp/>==<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(uint64),<sp/></highlight><highlight class="stringliteral">&quot;Memory<sp/>allocation<sp/>doesn&apos;t<sp/>fit<sp/>into<sp/>64<sp/>bits!&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight></codeline>
-<codeline lineno="43"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="12" refid="struct_raven_1_1_renderer_1_1_s_device_memory_allocation" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_raven_1_1_renderer_1_1_s_device_memory_allocation" kindref="compound">SDeviceMemoryAllocation</ref><sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32<sp/>Offset<sp/>=<sp/>~0u;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16<sp/>Pool<sp/><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>EMemoryHeapType<sp/>Heap<sp/>=<sp/>EMemoryHeapType::eHeapType_Count;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8<sp/>Padding<sp/>=<sp/>0xFF;<sp/></highlight><highlight class="comment">//<sp/>0<sp/>-<sp/>buffer,<sp/>1<sp/>-<sp/>texture</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="normal"><sp/>bool()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Heap<sp/>!=<sp/>EMemoryHeapType::eHeapType_Count<sp/>&amp;&amp;<sp/>Offset<sp/>!=<sp/>~0u;<sp/>}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">static_assert(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="struct_raven_1_1_renderer_1_1_s_device_memory_allocation" kindref="compound">SDeviceMemoryAllocation</ref>)<sp/>==<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(uint64),<sp/></highlight><highlight class="stringliteral">&quot;Memory<sp/>allocation<sp/>doesn&apos;t<sp/>fit<sp/>into<sp/>64<sp/>bits!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/ResourcesCommon.hpp"/>
   </compounddef>
