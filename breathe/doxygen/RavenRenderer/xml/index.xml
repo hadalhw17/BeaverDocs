@@ -101,6 +101,7 @@
     <member refid="class_raven_1_1_renderer_1_1_c_depth_stage_1abd44709b3ca3af36d10b30571fa184d4" kind="function"><name>Init</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_depth_stage_1a0df26a33d90b116dfc5e8377caa853f2" kind="function"><name>ExecuteDepthDownscale</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_depth_stage_1a0729d1462890252aff058e2e389067ab" kind="function"><name>ExecuteDepthLinearisation</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_depth_stage_1aaa8e55205a010691c14e3542040e3a3c" kind="function"><name>Execute</name></member>
   </compound>
   <compound refid="class_raven_1_1_renderer_1_1_device_1_1_c_device_compute_p_s_o" kind="class"><name>Raven::Renderer::Device::CDeviceComputePSO</name>
     <member refid="class_raven_1_1_renderer_1_1_device_1_1_c_device_compute_p_s_o_1a666c38f3588b7e79dc4d644cf2127820" kind="function"><name>CDeviceComputePSO</name></member>
@@ -452,14 +453,24 @@
     <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_stage_1a66c3df8f3dc39fe9a9684ecf72b3235c" kind="variable"><name>m_pGraphicsPipeline</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_stage_1a090bf63bf2cdb4dbd8fe7cfc3af3884c" kind="variable"><name>m_pipelineResources</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_stage_1aa630562da54b4e163774b62e321ee53e" kind="variable"><name>m_scheduler</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_stage_1a3f778561ed545b70526f7335ff025c4b" kind="variable"><name>m_label</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_stage_1ac98db4a29b819bf4dc1559cad9b38366" kind="variable"><name>m_before</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_stage_1af1fb2265bbf0eed9e2ffd8f1b1dc48e0" kind="variable"><name>m_after</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_stage_1aed765185eea7908989719a2f73b1ab04" kind="function"><name>CGraphicsPipelineStage</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_stage_1a2a991491ab52b876b1da5bb57b5b046f" kind="function"><name>~CGraphicsPipelineStage</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_stage_1a8b18fc2eba7e4dae76221e1bafe6f767" kind="function"><name>Init</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_stage_1a8c5f2b1ef247b8435ae76bc9aa0248be" kind="function"><name>Update</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_stage_1a788e1e56798dc6ae8f5bf0fb77f284e5" kind="function"><name>Release</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_stage_1a2aa94e8ab447ab0db3114bde344631ac" kind="function"><name>Resize</name></member>
-    <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_stage_1ad0c91bcd0fc704c039432949e3df7fd7" kind="function"><name>UpdateConfig</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_stage_1a6b4a978d4096c71ed1930dd914dcf787" kind="function"><name>IsActive</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_stage_1a4f39f4fda983a4a743f5500d5fab1f24" kind="function"><name>Execute</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_stage_1a59f65132b75df3b0e2c0143832d4682a" kind="function"><name>Label</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_stage_1ac056fbf6c0a102b4b030c4ee79c1f275" kind="function"><name>Before</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_stage_1a89e40a099420b2b6286955dcc4216772" kind="function"><name>After</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_stage_1acd7cae842726891c5dbe9493c56cffc9" kind="function"><name>Labels</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_stage_1a100be301dc0fd5d6a99053e0e065c91f" kind="function"><name>Before</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_stage_1a43a72b7710ac5a6e046abd219c3b38ad" kind="function"><name>After</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_stage_1af294fd8496b0ba37bf8f425fd10ce15a" kind="function"><name>Name</name></member>
   </compound>
   <compound refid="class_raven_1_1_renderer_1_1_c_graphics_resource" kind="class"><name>Raven::Renderer::CGraphicsResource</name>
     <member refid="class_raven_1_1_renderer_1_1_c_graphics_resource_1aebeecae3b61112801f5d55ee37337034" kind="variable"><name>m_size</name></member>
@@ -667,23 +678,28 @@
     <member refid="class_raven_1_1_renderer_1_1_c_shadow_mask_stage_1aa16fd847342f079aa0a1c32af0bdc2be" kind="function"><name>Execute</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_shadow_mask_stage_1a3ec556f36b1885faa792309360072763" kind="function"><name>IsActive</name></member>
   </compound>
+  <compound refid="class_raven_1_1_renderer_1_1_c_sky_generation" kind="class"><name>Raven::Renderer::CSkyGeneration</name>
+    <member refid="class_raven_1_1_renderer_1_1_c_sky_generation_1a56e5d668953ee6a6b04211d6a288de89" kind="variable"><name>m_hasGeneratedTransmittance</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_sky_generation_1a40f2afe5fcd571eae5f337532f0818d3" kind="function"><name>CSkyGeneration</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_sky_generation_1afd4659cdfc46a9d8a6ff66d330e84a8e" kind="function"><name>IsActive</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_sky_generation_1a7bfd1a0d0fb6658f167154b3263fb1aa" kind="function"><name>Execute</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_sky_generation_1a0c83730a7cbbe5f15354cfd12b7a7cb7" kind="function"><name>GetTransmittanceLUT</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_sky_generation_1a26d32febecb26054160d459918892cf1" kind="function"><name>HasGeneratedTransmittance</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_sky_generation_1a2a1963905f3b1dbb3f297da026e93aa3" kind="function"><name>Update</name></member>
+  </compound>
   <compound refid="class_raven_1_1_renderer_1_1_c_sky_stage" kind="class"><name>Raven::Renderer::CSkyStage</name>
     <member refid="class_raven_1_1_renderer_1_1_c_sky_stage_1a6067562527e1c9b97fca236f651aa909" kind="variable"><name>NMToM</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_sky_stage_1ac16f644959702883fa9b23d3ed050e3f" kind="variable"><name>KMToM</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_sky_stage_1aa9040e43fedc095e44cbd04972332e7c" kind="variable"><name>MToKM</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_sky_stage_1a38d7aa835e55da3bde25a1d2b8282ba5" kind="variable"><name>m_pSkyBuffer</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_sky_stage_1a9076acbc11d20cd8ef7049f309ac55ef" kind="variable"><name>m_pSkyTexture</name></member>
-    <member refid="class_raven_1_1_renderer_1_1_c_sky_stage_1aa449ed72dc5a1a637b8fa3fad31e89a3" kind="variable"><name>m_hasGeneratedTransmittance</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_sky_stage_1a4364f46ad496915121b518059a789106" kind="function"><name>CSkyStage</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_sky_stage_1ae26175fb14315a086c18504126d4ee07" kind="function"><name>~CSkyStage</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_sky_stage_1a9b82c952021db748659fb91896109b64" kind="function"><name>Init</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_sky_stage_1a80b969157c3a0ac788f34d6b7b249978" kind="function"><name>Update</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_sky_stage_1af09b5e43536f729f00c3611f3521cd06" kind="function"><name>IsActive</name></member>
-    <member refid="class_raven_1_1_renderer_1_1_c_sky_stage_1a2665f2778a0393cb8d7de16279992eb6" kind="function"><name>ExecuteComposition</name></member>
-    <member refid="class_raven_1_1_renderer_1_1_c_sky_stage_1a930048c4568471b5839ea6d0e9252e00" kind="function"><name>ExecuteLUTGeneration</name></member>
-    <member refid="class_raven_1_1_renderer_1_1_c_sky_stage_1a594a2bd3abc1000303ba142c8218a3f4" kind="function"><name>ExecuteTransmittanceLUTGeneration</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_sky_stage_1a865bc48228afc4e375908d1d036c1c2b" kind="function"><name>Execute</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_sky_stage_1a036373f2e5d6815ae858dcebadfd145b" kind="function"><name>GetAtmosphereConstantBuffer</name></member>
-    <member refid="class_raven_1_1_renderer_1_1_c_sky_stage_1a3da34c17e388d986d03d88e179607132" kind="function"><name>HasGeneratedTransmittance</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_sky_stage_1a2c4b7d2ff980343b160f6b50dbcdad4f" kind="function"><name>GetTransmittanceLUT</name></member>
   </compound>
   <compound refid="class_raven_1_1_renderer_1_1_c_sort_pass" kind="class"><name>Raven::Renderer::CSortPass</name>
@@ -759,6 +775,9 @@
   </compound>
   <compound refid="structstd_1_1hash_3_01_raven_1_1_renderer_1_1_s_raytracing_pipeline_desc_01_4" kind="struct"><name>std::hash&lt; Raven::Renderer::SRaytracingPipelineDesc &gt;</name>
     <member refid="structstd_1_1hash_3_01_raven_1_1_renderer_1_1_s_raytracing_pipeline_desc_01_4_1a6772c27e9771d6d7d275010ab875f8d1" kind="function"><name>operator()</name></member>
+  </compound>
+  <compound refid="structstd_1_1hash_3_01_raven_1_1_renderer_1_1_t_stage_label_01_4" kind="struct"><name>std::hash&lt; Raven::Renderer::TStageLabel &gt;</name>
+    <member refid="structstd_1_1hash_3_01_raven_1_1_renderer_1_1_t_stage_label_01_4_1a5632637887dd6ca8ebea4dc13601efd3" kind="function"><name>operator()</name></member>
   </compound>
   <compound refid="struct_raven_1_1_renderer_1_1_c_f_g_allocator_1_1_i_allocation" kind="struct"><name>Raven::Renderer::CFGAllocator::IAllocation</name>
     <member refid="struct_raven_1_1_renderer_1_1_c_f_g_allocator_1_1_i_allocation_1a4f9ee200beb09473bc4123a3a88b22cf" kind="function"><name>IAllocation</name></member>
@@ -1432,6 +1451,12 @@
   </compound>
   <compound refid="struct_raven_1_1_t_handle" kind="struct"><name>Raven::THandle</name>
   </compound>
+  <compound refid="class_raven_1_1_renderer_1_1_t_stage_label" kind="class"><name>Raven::Renderer::TStageLabel</name>
+    <member refid="class_raven_1_1_renderer_1_1_t_stage_label_1a1138b2de2ac2a2ebf0feb7cc0aaaa71a" kind="variable"><name>TypeHash</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_t_stage_label_1afedfc81b32477f4284f0d3654b02bc88" kind="friend"><name>std::hash&lt; TStageLabel &gt;</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_t_stage_label_1a5dcbcfe4918c0796ef3cf0a5f26d9d25" kind="friend"><name>operator&lt;=&gt;</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_t_stage_label_1ad7cbd633b22145ecff64e455de699632" kind="function"><name>For</name></member>
+  </compound>
   <compound refid="namespace_raven" kind="namespace"><name>Raven</name>
     <member refid="_render_output_8hpp_1ad1b15e816247c1e9e6123eaeb3445b27" kind="typedef"><name>RenderTargetT</name></member>
   </compound>
@@ -1794,12 +1819,6 @@
     <member refid="_extensions_8hpp_1aa8ed4bb95b89af460676781dc7202bf3" kind="define"><name>VULKAN_KHR_DEBUG_UTILS</name></member>
     <member refid="_extensions_8hpp_1affb7b639d8112258749d193ead177914" kind="define"><name>VULKAN_DEBUG_CALLBACK</name></member>
   </compound>
-  <compound refid="_frame_graph_8hpp" kind="file"><name>FrameGraph.hpp</name>
-  </compound>
-  <compound refid="_frame_graph_defs_8hpp" kind="file"><name>FrameGraphDefs.hpp</name>
-  </compound>
-  <compound refid="_frame_graph_utils_8hpp" kind="file"><name>FrameGraphUtils.hpp</name>
-  </compound>
   <compound refid="_g_p_u_crash_handler_8hpp" kind="file"><name>GPUCrashHandler.hpp</name>
   </compound>
   <compound refid="_g_p_u_pipeline_defs_8hpp" kind="file"><name>GPUPipelineDefs.hpp</name>
@@ -1845,6 +1864,14 @@
   </compound>
   <compound refid="_reflection_8hpp" kind="file"><name>Reflection.hpp</name>
   </compound>
+  <compound refid="_frame_graph_8hpp" kind="file"><name>FrameGraph.hpp</name>
+  </compound>
+  <compound refid="_frame_graph_defs_8hpp" kind="file"><name>FrameGraphDefs.hpp</name>
+  </compound>
+  <compound refid="_frame_graph_utils_8hpp" kind="file"><name>FrameGraphUtils.hpp</name>
+  </compound>
+  <compound refid="_graphics_pipeline_defs_8hpp" kind="file"><name>GraphicsPipelineDefs.hpp</name>
+  </compound>
   <compound refid="_render_output_8hpp" kind="file"><name>RenderOutput.hpp</name>
   </compound>
   <compound refid="dir_69fb99aa183099380500f1625fd94c29" kind="dir"><name>/home/runner/work/RavenEngine/RavenEngine/Raven/Code</name>
@@ -1854,6 +1881,8 @@
   <compound refid="dir_faeaad9ac6beaa73774d9a0fedeb7361" kind="dir"><name>/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/GraphicsPipeline</name>
   </compound>
   <compound refid="dir_85b621d2263cc03bd29aed5e6b46c411" kind="dir"><name>/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private</name>
+  </compound>
+  <compound refid="dir_c3b45c3cd6a17dbb88953c97fdc63d0a" kind="dir"><name>/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Public</name>
   </compound>
   <compound refid="dir_ac24d37c307f366705d643cf9c27a233" kind="dir"><name>/home/runner/work/RavenEngine/RavenEngine/Raven</name>
   </compound>
