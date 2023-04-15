@@ -1,26 +1,9 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
-  <compounddef id="class_raven_1_1_renderer_1_1_c_h_u_d_pass" kind="class" language="C++" prot="public">
+  <compounddef id="class_raven_1_1_renderer_1_1_c_h_u_d_pass" kind="class" language="C++" prot="public" final="yes">
     <compoundname>Raven::Renderer::CHUDPass</compoundname>
     <basecompoundref refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_stage" prot="public" virt="non-virtual">Raven::Renderer::CGraphicsPipelineStage</basecompoundref>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="class_raven_1_1_renderer_1_1_c_h_u_d_pass_1a73720db5323f057db90f80e94109d61f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type></type>
-        <definition>Raven::Renderer::CHUDPass::CHUDPass</definition>
-        <argsstring>(CGraphicsPipeline *pGraphicsPipeline)</argsstring>
-        <name>CHUDPass</name>
-        <param>
-          <type>CGraphicsPipeline *</type>
-          <declname>pGraphicsPipeline</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/GraphicsPipeline/ForwardPass.hpp" line="23" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/GraphicsPipeline/ForwardPass.hpp" bodystart="23" bodyend="25"/>
-      </memberdef>
       <memberdef kind="function" id="class_raven_1_1_renderer_1_1_c_h_u_d_pass_1ac4edfe0d62ab4020e800ef56d2579cdc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>Raven::Renderer::CHUDPass::~CHUDPass</definition>
@@ -32,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/GraphicsPipeline/ForwardPass.hpp" line="27" column="1"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/GraphicsPipeline/ForwardPass.hpp" line="18" column="1"/>
       </memberdef>
       <memberdef kind="function" id="class_raven_1_1_renderer_1_1_c_h_u_d_pass_1ad830842dd6f9b78667e211f608955aa8" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -46,7 +29,24 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/GraphicsPipeline/ForwardPass.hpp" line="29" column="6"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/GraphicsPipeline/ForwardPass.hpp" line="19" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_renderer_1_1_c_h_u_d_pass_1aed765185eea7908989719a2f73b1ab04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Raven::Renderer::CGraphicsPipelineStage::CGraphicsPipelineStage</definition>
+        <argsstring>(CGraphicsPipeline *pGraphicsPipeline)</argsstring>
+        <name>CGraphicsPipelineStage</name>
+        <param>
+          <type><ref refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline" kindref="compound">CGraphicsPipeline</ref> *</type>
+          <declname>pGraphicsPipeline</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/GraphicsPipeline/ForwardPass.hpp" line="17" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -71,10 +71,23 @@
       </node>
     </inheritancegraph>
     <collaborationgraph>
+      <node id="5">
+        <label>Raven::Renderer::CRenderPassScheduler</label>
+        <link refid="class_raven_1_1_renderer_1_1_c_render_pass_scheduler"/>
+      </node>
       <node id="2">
         <label>Raven::Renderer::CGraphicsPipelineStage</label>
         <link refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_stage"/>
         <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>m_pipelineResources</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>m_scheduler</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>m_pGraphicsPipeline</edgelabel>
         </childnode>
       </node>
       <node id="3">
@@ -86,15 +99,23 @@
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="6">
+        <label>Raven::Renderer::CGraphicsPipeline</label>
+        <link refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline"/>
+      </node>
+      <node id="4">
+        <label>Raven::Renderer::SGraphicsPipelineResources</label>
+        <link refid="struct_raven_1_1_renderer_1_1_s_graphics_pipeline_resources"/>
+      </node>
     </collaborationgraph>
-    <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/GraphicsPipeline/ForwardPass.hpp" line="21" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/GraphicsPipeline/ForwardPass.hpp" bodystart="21" bodyend="30"/>
+    <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/GraphicsPipeline/ForwardPass.hpp" line="15" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/GraphicsPipeline/ForwardPass.hpp" bodystart="15" bodyend="20"/>
     <listofallmembers>
       <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_stage_1a89e40a099420b2b6286955dcc4216772" prot="public" virt="non-virtual"><scope>Raven::Renderer::CHUDPass</scope><name>After</name></member>
       <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_stage_1a43a72b7710ac5a6e046abd219c3b38ad" prot="public" virt="non-virtual"><scope>Raven::Renderer::CHUDPass</scope><name>After</name></member>
       <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_stage_1ac056fbf6c0a102b4b030c4ee79c1f275" prot="public" virt="non-virtual"><scope>Raven::Renderer::CHUDPass</scope><name>Before</name></member>
       <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_stage_1a100be301dc0fd5d6a99053e0e065c91f" prot="public" virt="non-virtual"><scope>Raven::Renderer::CHUDPass</scope><name>Before</name></member>
-      <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_stage_1aed765185eea7908989719a2f73b1ab04" prot="public" virt="non-virtual"><scope>Raven::Renderer::CHUDPass</scope><name>CGraphicsPipelineStage</name></member>
-      <member refid="class_raven_1_1_renderer_1_1_c_h_u_d_pass_1a73720db5323f057db90f80e94109d61f" prot="public" virt="non-virtual"><scope>Raven::Renderer::CHUDPass</scope><name>CHUDPass</name></member>
+      <member refid="class_raven_1_1_renderer_1_1_c_h_u_d_pass_1aed765185eea7908989719a2f73b1ab04" prot="public" virt="non-virtual"><scope>Raven::Renderer::CHUDPass</scope><name>CGraphicsPipelineStage</name></member>
+      <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_stage_1aed765185eea7908989719a2f73b1ab04" prot="public" virt="non-virtual" ambiguityscope="Raven::Renderer::CGraphicsPipelineStage::"><scope>Raven::Renderer::CHUDPass</scope><name>CGraphicsPipelineStage</name></member>
       <member refid="class_raven_1_1_renderer_1_1_c_h_u_d_pass_1ad830842dd6f9b78667e211f608955aa8" prot="public" virt="virtual"><scope>Raven::Renderer::CHUDPass</scope><name>Execute</name></member>
       <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_stage_1a8b18fc2eba7e4dae76221e1bafe6f767" prot="public" virt="virtual"><scope>Raven::Renderer::CHUDPass</scope><name>Init</name></member>
       <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_stage_1a6b4a978d4096c71ed1930dd914dcf787" prot="public" virt="virtual"><scope>Raven::Renderer::CHUDPass</scope><name>IsActive</name></member>
