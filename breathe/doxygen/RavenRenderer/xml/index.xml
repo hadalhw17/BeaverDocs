@@ -365,6 +365,7 @@
     <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1a3e2f78151be31969536d227c567c4241" kind="function"><name>FindBuffer</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1a829fab4d6b7ae0b5152dab6d1de5577d" kind="function"><name>GetBufferResource</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1a04b6139c7df89075c9d71d8691cf2257" kind="function"><name>GetImageHistory</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1ac47b49a03401d3004de3a4b76df1aaca" kind="function"><name>BufferViewToName</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1a3a09bf5746998fc64d13e5938da5ae7e" kind="function"><name>CreateDeviceBuffers</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1a749ce129b2f8588ddfaebdb99c7a52ec" kind="function"><name>CreateDeviceTextures</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1a379c61187d4a9869427aad270ce24c56" kind="function"><name>GetOutputCount</name></member>
@@ -430,6 +431,7 @@
     <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_resource_1a66297be17783c2feff058c5e231c120c" kind="function"><name>GetFlags</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_resource_1a0ec9f7be493fc7014a94bd7c9c84a905" kind="function"><name>SetFlags</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_resource_1ad0d42156049c09202e89ffb0f8a1180a" kind="function"><name>GetSelf</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_resource_1a0951635c09003fd744bd2d88ee4a46ec" kind="function"><name>BufferViewToName</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_resource_1ac09d134bcb723a74ddbe4c4a4d25787f" kind="function"><name>SetSelf</name></member>
   </compound>
   <compound refid="class_c_g_p_u_allocator" kind="class"><name>CGPUAllocator</name>
@@ -589,6 +591,7 @@
     <member refid="class_raven_1_1_renderer_1_1_c_indirect_draw_list_1a5f95f3b1bbb225bcc2c81752d7424b28" kind="variable"><name>m_cullJobsBuffer</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_indirect_draw_list_1a4bceb01409ee2d8e39e14515ad3741c4" kind="variable"><name>m_countersBuffer</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_indirect_draw_list_1aba174449fbe669ce31efececebb0efbf" kind="variable"><name>m_visibleItemsBuffer</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_indirect_draw_list_1a7e9696e8deb426d04370ee2a1a09d806" kind="variable"><name>m_indirectArgsBuffer</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_indirect_draw_list_1abce43f1947a5e1a81e8c8fb390111208" kind="variable"><name>m_cullJobStorage</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_indirect_draw_list_1ae884daf5b59ce83bc823653a7ae19489" kind="variable"><name>m_counterStorage</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_indirect_draw_list_1a1c5dcf4062012d9f6301019f43e8cdcd" kind="variable"><name>m_itemBatches</name></member>
@@ -608,6 +611,7 @@
     <member refid="class_raven_1_1_renderer_1_1_c_indirect_draw_list_1a59f1969aa05983c98887bbec70522868" kind="function"><name>GetCullJobBuffer</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_indirect_draw_list_1a455c41a951141cef522b2aea384319c4" kind="function"><name>GetCountersBuffer</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_indirect_draw_list_1a27502651490b353a8f37fff3d6cd124b" kind="function"><name>GetVisibleItemsName</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_indirect_draw_list_1a32fb886c2621e2258af6e516df0ec440" kind="function"><name>GetIndirectArgsBuffer</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_indirect_draw_list_1a8098da7b09cd67ce19cd2dbd72a53613" kind="function"><name>GetCullJobs</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_indirect_draw_list_1ad2827ae55d2f177f4245a7c6bf509bae" kind="function"><name>GetCounters</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_indirect_draw_list_1ad4442614b22875149e824c2e50fee0d3" kind="function"><name>GenerateBufferNames</name></member>
@@ -831,6 +835,9 @@
   </compound>
   <compound refid="struct_raven_1_1_renderer_1_1_extraction_label" kind="struct"><name>Raven::Renderer::ExtractionLabel</name>
     <member refid="struct_raven_1_1_renderer_1_1_extraction_label_1ab91c8db9ae46bddc16a3aac906f2567d" kind="function"><name>For</name></member>
+  </compound>
+  <compound refid="struct_raven_1_1_renderer_1_1_g_p_u_sorting" kind="struct"><name>Raven::Renderer::GPUSorting</name>
+    <member refid="struct_raven_1_1_renderer_1_1_g_p_u_sorting_1ace11741f6edfd4bcd335243bf56e6209" kind="function"><name>Bitonic</name></member>
   </compound>
   <compound refid="struct_raven_1_1_renderer_1_1_execution_utils_1_1_graphics" kind="struct"><name>Raven::Renderer::ExecutionUtils::Graphics</name>
     <member refid="struct_raven_1_1_renderer_1_1_execution_utils_1_1_graphics_1aba858f93a3ec0366208670f9ad4e1b6a" kind="function"><name>FullScreenPass</name></member>
@@ -2039,6 +2046,8 @@
   <compound refid="_graphics_pipeline_stage_8hpp" kind="file"><name>GraphicsPipelineStage.hpp</name>
   </compound>
   <compound refid="_render_pass_scheduler_8hpp" kind="file"><name>RenderPassScheduler.hpp</name>
+  </compound>
+  <compound refid="_utility_passes_8hpp" kind="file"><name>UtilityPasses.hpp</name>
   </compound>
   <compound refid="_render_output_8hpp" kind="file"><name>RenderOutput.hpp</name>
   </compound>
