@@ -14,6 +14,7 @@
     <derivedcompoundref refid="class_raven_1_1_renderer_1_1_c_list_upload_pass" prot="public" virt="non-virtual">Raven::Renderer::CListUploadPass</derivedcompoundref>
     <derivedcompoundref refid="class_raven_1_1_renderer_1_1_c_post_effects_pass" prot="public" virt="non-virtual">Raven::Renderer::CPostEffectsPass</derivedcompoundref>
     <derivedcompoundref refid="class_raven_1_1_renderer_1_1_c_raytracing_stage" prot="public" virt="non-virtual">Raven::Renderer::CRaytracingStage</derivedcompoundref>
+    <derivedcompoundref refid="class_raven_1_1_renderer_1_1_c_restir_g_i_stage" prot="public" virt="non-virtual">Raven::Renderer::CRestirGIStage</derivedcompoundref>
     <derivedcompoundref refid="class_raven_1_1_renderer_1_1_c_shadow_map_pass" prot="public" virt="non-virtual">Raven::Renderer::CShadowMapPass</derivedcompoundref>
     <derivedcompoundref refid="class_raven_1_1_renderer_1_1_c_shadow_mask_stage" prot="public" virt="non-virtual">Raven::Renderer::CShadowMaskStage</derivedcompoundref>
     <derivedcompoundref refid="class_raven_1_1_renderer_1_1_c_sky_generation" prot="public" virt="non-virtual">Raven::Renderer::CSkyGeneration</derivedcompoundref>
@@ -183,6 +184,7 @@
         <name>Resize</name>
         <reimplementedby refid="class_raven_1_1_renderer_1_1_c_fog_stage_1a17828d694c1f4af30f5b7b03904285c2">Resize</reimplementedby>
         <reimplementedby refid="class_raven_1_1_renderer_1_1_c_raytracing_stage_1ab1bb9be33abc5ab23f4ff7bb3ed8bf61">Resize</reimplementedby>
+        <reimplementedby refid="class_raven_1_1_renderer_1_1_c_restir_g_i_stage_1a1ddfcd1af21521309955c37f27877f0e">Resize</reimplementedby>
         <param>
           <type>int</type>
         </param>
@@ -235,7 +237,8 @@
         <reimplementedby refid="class_raven_1_1_renderer_1_1_c_h_u_d_pass_1ad830842dd6f9b78667e211f608955aa8">Execute</reimplementedby>
         <reimplementedby refid="class_raven_1_1_renderer_1_1_c_lighting_stage_1aed8bb4e5bbc6b746f39bee2b79a847ca">Execute</reimplementedby>
         <reimplementedby refid="class_raven_1_1_renderer_1_1_c_post_effects_pass_1af1c9092c86a0d176758f075ed4a88cf5">Execute</reimplementedby>
-        <reimplementedby refid="class_raven_1_1_renderer_1_1_c_raytracing_stage_1a07f6b47426579558e167555d220cb511">Execute</reimplementedby>
+        <reimplementedby refid="class_raven_1_1_renderer_1_1_c_raytracing_stage_1a51abd07bb9bf23039a110bcb8681b69f">Execute</reimplementedby>
+        <reimplementedby refid="class_raven_1_1_renderer_1_1_c_restir_g_i_stage_1a9892729913251bfb5c0c207c5d8c1151">Execute</reimplementedby>
         <reimplementedby refid="class_raven_1_1_renderer_1_1_c_shadow_map_pass_1a491d220c9c4587b1baf7804fae953252">Execute</reimplementedby>
         <reimplementedby refid="class_raven_1_1_renderer_1_1_c_shadow_mask_stage_1a8eba8fce838a836304417f781d9740d8">Execute</reimplementedby>
         <reimplementedby refid="class_raven_1_1_renderer_1_1_c_terrain_gen_pass_1af612e06740733e7476e829f078441459">Execute</reimplementedby>
@@ -388,7 +391,7 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="15">
+      <node id="16">
         <label>Raven::Renderer::CShadowMaskStage</label>
         <link refid="class_raven_1_1_renderer_1_1_c_shadow_mask_stage"/>
         <childnode refid="1" relation="public-inheritance">
@@ -397,6 +400,12 @@
       <node id="10">
         <label>Raven::Renderer::CLightingStage</label>
         <link refid="class_raven_1_1_renderer_1_1_c_lighting_stage"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>Raven::Renderer::CRestirGIStage</label>
+        <link refid="class_raven_1_1_renderer_1_1_c_restir_g_i_stage"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
@@ -412,7 +421,7 @@
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="18">
+      <node id="19">
         <label>Raven::Renderer::CSortPass</label>
         <link refid="class_raven_1_1_renderer_1_1_c_sort_pass"/>
         <childnode refid="1" relation="public-inheritance">
@@ -433,7 +442,7 @@
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="14">
+      <node id="15">
         <label>Raven::Renderer::CShadowMapPass</label>
         <link refid="class_raven_1_1_renderer_1_1_c_shadow_map_pass"/>
         <childnode refid="1" relation="public-inheritance">
@@ -469,19 +478,19 @@
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="17">
+      <node id="18">
         <label>Raven::Renderer::CSkyStage</label>
         <link refid="class_raven_1_1_renderer_1_1_c_sky_stage"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="19">
+      <node id="20">
         <label>Raven::Renderer::CTerrainGenPass</label>
         <link refid="class_raven_1_1_renderer_1_1_c_terrain_gen_pass"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="16">
+      <node id="17">
         <label>Raven::Renderer::CSkyGeneration</label>
         <link refid="class_raven_1_1_renderer_1_1_c_sky_generation"/>
         <childnode refid="1" relation="public-inheritance">
