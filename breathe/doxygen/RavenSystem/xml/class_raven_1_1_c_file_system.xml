@@ -4,31 +4,18 @@
     <compoundname>Raven::CFileSystem</compoundname>
     <basecompoundref prot="public" virt="non-virtual">IFileSystem</basecompoundref>
       <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="class_raven_1_1_c_file_system_1a3bb567c34a19d4acb27adebdb5c02d60" prot="private" static="no" mutable="no">
-        <type>std::unordered_map&lt; std::string, uint64 &gt;</type>
-        <definition>std::unordered_map&lt;std::string, uint64&gt; Raven::CFileSystem::m_fileCache</definition>
+      <memberdef kind="variable" id="class_raven_1_1_c_file_system_1a67d4e288a84b59c523d2433a44beb4c2" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; HashedString, std::string &gt;</type>
+        <definition>std::unordered_map&lt;HashedString, std::string&gt; Raven::CFileSystem::m_aliases</definition>
         <argsstring></argsstring>
-        <name>m_fileCache</name>
+        <name>m_aliases</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenSystem/FileSystem.hpp" line="20" column="25" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenSystem/FileSystem.hpp" bodystart="20" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_raven_1_1_c_file_system_1ad2af87ce6b84113b525430b522779657" prot="private" static="no" mutable="no">
-        <type>std::array&lt; std::string, RavenUtil::to_underlying(EDefaultPath::Count)&gt;</type>
-        <definition>std::array&lt;std::string, RavenUtil::to_underlying(EDefaultPath::Count)&gt; Raven::CFileSystem::m_defaultPaths</definition>
-        <argsstring></argsstring>
-        <name>m_defaultPaths</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenSystem/FileSystem.hpp" line="21" column="12" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenSystem/FileSystem.hpp" bodystart="21" bodyend="-1"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenSystem/FileSystem.hpp" line="18" column="45" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenSystem/FileSystem.hpp" bodystart="18" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -45,61 +32,6 @@
         </inbodydescription>
         <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenSystem/FileSystem.hpp" line="9" column="6"/>
       </memberdef>
-      <memberdef kind="function" id="class_raven_1_1_c_file_system_1ad16bc4eb1ec162867a813aa6ef6c67f5" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="non-virtual">
-        <type>uint64</type>
-        <definition>uint64 Raven::CFileSystem::CheckPath</definition>
-        <argsstring>(const char *pPath) final</argsstring>
-        <name>CheckPath</name>
-        <param>
-          <type>const char *</type>
-          <declname>pPath</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenSystem/FileSystem.hpp" line="11" column="8"/>
-      </memberdef>
-      <memberdef kind="function" id="class_raven_1_1_c_file_system_1a20fd37a9571545c6508acb5d788832a8" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>void Raven::CFileSystem::RegisterPath</definition>
-        <argsstring>(const char *pPath, uint32_t id) final</argsstring>
-        <name>RegisterPath</name>
-        <param>
-          <type>const char *</type>
-          <declname>pPath</declname>
-        </param>
-        <param>
-          <type>uint32_t</type>
-          <declname>id</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenSystem/FileSystem.hpp" line="12" column="6"/>
-      </memberdef>
-      <memberdef kind="function" id="class_raven_1_1_c_file_system_1a55a582965e25816c8fde0ab7c16bee17" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="non-virtual">
-        <type>std::string_view</type>
-        <definition>std::string_view Raven::CFileSystem::GetDefaultPath</definition>
-        <argsstring>(const EDefaultPath ePath) const final</argsstring>
-        <name>GetDefaultPath</name>
-        <param>
-          <type>const EDefaultPath</type>
-          <declname>ePath</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenSystem/FileSystem.hpp" line="13" column="18"/>
-      </memberdef>
       <memberdef kind="function" id="class_raven_1_1_c_file_system_1a7f2fa1617b7065e163d3c109ef943c72" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="non-virtual">
         <type>std::string</type>
         <definition>std::string Raven::CFileSystem::ToEnginePath</definition>
@@ -115,7 +47,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenSystem/FileSystem.hpp" line="14" column="14"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenSystem/FileSystem.hpp" line="11" column="14"/>
       </memberdef>
       <memberdef kind="function" id="class_raven_1_1_c_file_system_1a077fb655c7fbc8e807aa66cb4516e174" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="non-virtual">
         <type>std::string</type>
@@ -132,20 +64,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenSystem/FileSystem.hpp" line="15" column="14"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenSystem/FileSystem.hpp" line="12" column="14"/>
       </memberdef>
-      <memberdef kind="function" id="class_raven_1_1_c_file_system_1ad7bbf1881c70e2bc2656074ff62d344b" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>void Raven::CFileSystem::RegisterDefaultPath</definition>
-        <argsstring>(const char *pPath, const EDefaultPath ePath) final</argsstring>
-        <name>RegisterDefaultPath</name>
+      <memberdef kind="function" id="class_raven_1_1_c_file_system_1a1821c3edf9f88340795f678081798ff9" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="non-virtual">
+        <type>std::string_view</type>
+        <definition>std::string_view Raven::CFileSystem::ResolveAlias</definition>
+        <argsstring>(std::string_view alias) const final</argsstring>
+        <name>ResolveAlias</name>
         <param>
-          <type>const char *</type>
-          <declname>pPath</declname>
-        </param>
-        <param>
-          <type>const EDefaultPath</type>
-          <declname>ePath</declname>
+          <type>std::string_view</type>
+          <declname>alias</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -153,7 +81,28 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenSystem/FileSystem.hpp" line="16" column="6"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenSystem/FileSystem.hpp" line="13" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_c_file_system_1a270335b27bf9b2efca366542ba6a1305" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Raven::CFileSystem::RegisterAlias</definition>
+        <argsstring>(std::string_view alias, std::string_view path) final</argsstring>
+        <name>RegisterAlias</name>
+        <param>
+          <type>std::string_view</type>
+          <declname>alias</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenSystem/FileSystem.hpp" line="14" column="6"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -168,7 +117,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenSystem/FileSystem.hpp" line="18" column="13"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenSystem/FileSystem.hpp" line="16" column="13"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -197,17 +146,14 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenSystem/FileSystem.hpp" line="6" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenSystem/FileSystem.hpp" bodystart="7" bodyend="22"/>
+    <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenSystem/FileSystem.hpp" line="6" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenSystem/FileSystem.hpp" bodystart="7" bodyend="19"/>
     <listofallmembers>
       <member refid="class_raven_1_1_c_file_system_1a077fb655c7fbc8e807aa66cb4516e174" prot="public" virt="non-virtual"><scope>Raven::CFileSystem</scope><name>AdjustPath</name></member>
-      <member refid="class_raven_1_1_c_file_system_1ad16bc4eb1ec162867a813aa6ef6c67f5" prot="public" virt="non-virtual"><scope>Raven::CFileSystem</scope><name>CheckPath</name></member>
       <member refid="class_raven_1_1_c_file_system_1a0aca9c54a0c59e1bca4e384f1ba74ac1" prot="private" virt="non-virtual"><scope>Raven::CFileSystem</scope><name>FindRootDirectory</name></member>
-      <member refid="class_raven_1_1_c_file_system_1a55a582965e25816c8fde0ab7c16bee17" prot="public" virt="non-virtual"><scope>Raven::CFileSystem</scope><name>GetDefaultPath</name></member>
       <member refid="class_raven_1_1_c_file_system_1a39057945dc9fc6333f0a83979a4dc7b0" prot="public" virt="non-virtual"><scope>Raven::CFileSystem</scope><name>Init</name></member>
-      <member refid="class_raven_1_1_c_file_system_1ad2af87ce6b84113b525430b522779657" prot="private" virt="non-virtual"><scope>Raven::CFileSystem</scope><name>m_defaultPaths</name></member>
-      <member refid="class_raven_1_1_c_file_system_1a3bb567c34a19d4acb27adebdb5c02d60" prot="private" virt="non-virtual"><scope>Raven::CFileSystem</scope><name>m_fileCache</name></member>
-      <member refid="class_raven_1_1_c_file_system_1ad7bbf1881c70e2bc2656074ff62d344b" prot="public" virt="non-virtual"><scope>Raven::CFileSystem</scope><name>RegisterDefaultPath</name></member>
-      <member refid="class_raven_1_1_c_file_system_1a20fd37a9571545c6508acb5d788832a8" prot="public" virt="non-virtual"><scope>Raven::CFileSystem</scope><name>RegisterPath</name></member>
+      <member refid="class_raven_1_1_c_file_system_1a67d4e288a84b59c523d2433a44beb4c2" prot="private" virt="non-virtual"><scope>Raven::CFileSystem</scope><name>m_aliases</name></member>
+      <member refid="class_raven_1_1_c_file_system_1a270335b27bf9b2efca366542ba6a1305" prot="public" virt="non-virtual"><scope>Raven::CFileSystem</scope><name>RegisterAlias</name></member>
+      <member refid="class_raven_1_1_c_file_system_1a1821c3edf9f88340795f678081798ff9" prot="public" virt="non-virtual"><scope>Raven::CFileSystem</scope><name>ResolveAlias</name></member>
       <member refid="class_raven_1_1_c_file_system_1a7f2fa1617b7065e163d3c109ef943c72" prot="public" virt="non-virtual"><scope>Raven::CFileSystem</scope><name>ToEnginePath</name></member>
     </listofallmembers>
   </compounddef>

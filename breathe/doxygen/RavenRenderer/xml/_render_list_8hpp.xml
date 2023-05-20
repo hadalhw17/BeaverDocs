@@ -13,7 +13,7 @@
         <link refid="_render_list_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="15" relation="include">
+        <childnode refid="16" relation="include">
         </childnode>
       </node>
       <node id="6">
@@ -33,7 +33,7 @@
         <childnode refid="9" relation="include">
         </childnode>
       </node>
-      <node id="14">
+      <node id="15">
         <label>Hash.h</label>
       </node>
       <node id="2">
@@ -53,6 +53,8 @@
         </childnode>
         <childnode refid="14" relation="include">
         </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
       </node>
       <node id="3">
         <label>RavenFormats.h</label>
@@ -63,7 +65,7 @@
       <node id="13">
         <label>vector</label>
       </node>
-      <node id="15">
+      <node id="16">
         <label>IRavenRenderer.h</label>
       </node>
       <node id="5">
@@ -71,6 +73,9 @@
       </node>
       <node id="12">
         <label>set</label>
+      </node>
+      <node id="14">
+        <label>span</label>
       </node>
       <node id="10">
         <label>Handle.hpp</label>
@@ -140,12 +145,12 @@
 <codeline lineno="42"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="43"><highlight class="normal"></highlight></codeline>
 <codeline lineno="44" refid="struct_raven_1_1_renderer_1_1_s_draw_batch" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_raven_1_1_renderer_1_1_s_draw_batch" kindref="compound">SDrawBatch</ref><sp/>{</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_raven_1_1_renderer_1_1_s_pipeline_desc" kindref="compound">SPipelineDesc</ref><sp/>m_pipelineDesc;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_raven_1_1_renderer_1_1_s_graphics_p_s_o_desc" kindref="compound">SGraphicsPSODesc</ref><sp/>m_pipelineDesc;</highlight></codeline>
 <codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_raven_1_1_renderer_1_1_s_render_item" kindref="compound">SRenderItem</ref>*<sp/><sp/>m_itemList<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="47"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"></highlight></codeline>
 <codeline lineno="49" refid="struct_raven_1_1_renderer_1_1_s_indirect_draw_batch" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_raven_1_1_renderer_1_1_s_indirect_draw_batch" kindref="compound">SIndirectDrawBatch</ref><sp/>{</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_raven_1_1_renderer_1_1_s_pipeline_desc" kindref="compound">SPipelineDesc</ref><sp/>m_pipelineDesc;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_raven_1_1_renderer_1_1_s_graphics_p_s_o_desc" kindref="compound">SGraphicsPSODesc</ref><sp/>m_pipelineDesc;</highlight></codeline>
 <codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Indces<sp/>of<sp/>GPU<sp/>scene<sp/>nodes<sp/>to<sp/>be<sp/>rendered<sp/>in<sp/>this<sp/>list</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;uint32&gt;<sp/>m_nodeIdx;<sp/></highlight></codeline>
 <codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32<sp/>m_count;</highlight></codeline>
@@ -188,7 +193,7 @@
 <codeline lineno="92"><highlight class="normal"></highlight></codeline>
 <codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetSortingOptions(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ERenderListSortingOptions<sp/>eOptions)<sp/>{<sp/>m_eSortingOptions<sp/>=<sp/>eOptions;<sp/>}</highlight></codeline>
 <codeline lineno="94"><highlight class="normal"></highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>AddItem(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SPipelineDesc&amp;<sp/>psoDesc,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SGPUDrawData&amp;<sp/>drawData,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32<sp/>nodeIdx);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>AddItem(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SGraphicsPSODesc&amp;<sp/>psoDesc,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SGPUDrawData&amp;<sp/>drawData,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32<sp/>nodeIdx);</highlight></codeline>
 <codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>FinaliseList(CBufferBumpAllocator*<sp/>pAllocator,<sp/>CCommandList*<sp/>pCmd);</highlight></codeline>
 <codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Clear();</highlight></codeline>
 <codeline lineno="98"><highlight class="normal"></highlight></codeline>
