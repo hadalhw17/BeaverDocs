@@ -566,16 +566,16 @@
     <member refid="class_raven_1_1_c_file_watcher_1a1c270a123910550058f70dae810d7ebca35e0c8c0b180c95d4e122e55ed62cc64" kind="enumvalue"><name>Modified</name></member>
     <member refid="class_raven_1_1_c_file_watcher_1a1c270a123910550058f70dae810d7ebcae93f994f01c537c4e2f7d8528c3eb5e9" kind="enumvalue"><name>Count</name></member>
     <member refid="class_raven_1_1_c_file_watcher_1ab7f35338d95b8ac8c05a20bce21e4b83" kind="typedef"><name>TimestepT</name></member>
-    <member refid="class_raven_1_1_c_file_watcher_1aeb868662c64276d8e86598bbcf290f58" kind="typedef"><name>CallbackT</name></member>
+    <member refid="class_raven_1_1_c_file_watcher_1ab0632fcdb5688d056e0d1ee4bbdd0a7e" kind="typedef"><name>CallbackT</name></member>
     <member refid="class_raven_1_1_c_file_watcher_1ab43c97fe132324e2208fb2c636c3a347" kind="variable"><name>m_path</name></member>
-    <member refid="class_raven_1_1_c_file_watcher_1aabf5f377c15109d12d7235a2f7d38719" kind="variable"><name>m_bRunning</name></member>
     <member refid="class_raven_1_1_c_file_watcher_1af620256c615cae7081e46541cdddf83a" kind="variable"><name>m_paths</name></member>
+    <member refid="class_raven_1_1_c_file_watcher_1a76f6f00d55cbbf2d816c14cee0da9e8d" kind="function"><name>CFileWatcher</name></member>
     <member refid="class_raven_1_1_c_file_watcher_1ab418b6ea83b3c443c74be0af41da8ec4" kind="function"><name>CFileWatcher</name></member>
-    <member refid="class_raven_1_1_c_file_watcher_1a3df48933e8e74e791a142fda20cd0225" kind="function"><name>~CFileWatcher</name></member>
-    <member refid="class_raven_1_1_c_file_watcher_1a47307b541ab37b1f08bcce3766d34e9c" kind="function"><name>Init</name></member>
-    <member refid="class_raven_1_1_c_file_watcher_1ab80a949411d45304aaf08476021cde36" kind="function"><name>Watch</name></member>
-    <member refid="class_raven_1_1_c_file_watcher_1a5b82b3a6d07a54234181e537c26d1972" kind="function"><name>Stop</name></member>
+    <member refid="class_raven_1_1_c_file_watcher_1a998712d886dca3daee3726bade338212" kind="function"><name>~CFileWatcher</name></member>
+    <member refid="class_raven_1_1_c_file_watcher_1aad1610adb27ced9aa046e22e1c9b6289" kind="function"><name>WatchOnce</name></member>
     <member refid="class_raven_1_1_c_file_watcher_1a6e7f0d5e612a11e0735a595d1bfad3e1" kind="function"><name>GetPath</name></member>
+    <member refid="class_raven_1_1_c_file_watcher_1a345912631c6fff1f42b6ee9da86e7c04" kind="function"><name>SetPath</name></member>
+    <member refid="class_raven_1_1_c_file_watcher_1a92cc285b084602f44b39d0259b45f2cc" kind="function"><name>WatchImpl</name></member>
   </compound>
   <compound refid="class_raven_1_1_event_1_1_c_function_handler" kind="class"><name>Raven::Event::CFunctionHandler</name>
     <member refid="class_raven_1_1_event_1_1_c_function_handler_1a90817b07cbff564e427edcd21a42cfda" kind="function"><name>Execute</name></member>
@@ -815,34 +815,67 @@
     <member refid="class_raven_1_1_c_resource_meta_file_1a07e43d6bd8b36f97ee8a9a39505766dd" kind="function"><name>ResourceHasMeta</name></member>
     <member refid="class_raven_1_1_c_resource_meta_file_1a773d61024b8891dee74c40d266a371f0" kind="function"><name>MakePath</name></member>
   </compound>
-  <compound refid="class_raven_1_1_c_single_producer_multi_consumer_queue" kind="class"><name>Raven::CSingleProducerMultiConsumerQueue</name>
-    <member refid="class_raven_1_1_c_single_producer_multi_consumer_queue_1a48224014f39d0066c47c95410320fffc" kind="variable"><name>m_queue</name></member>
-    <member refid="class_raven_1_1_c_single_producer_multi_consumer_queue_1acbfe1763ce5201de62e0daec4caee24a" kind="variable"><name>m_mutex</name></member>
-    <member refid="class_raven_1_1_c_single_producer_multi_consumer_queue_1ae030b5dd2e078baff393086f05dca8b5" kind="function"><name>empty</name></member>
-    <member refid="class_raven_1_1_c_single_producer_multi_consumer_queue_1a34c8046749ea017a25ec4e7ca7cec7b1" kind="function"><name>push</name></member>
-    <member refid="class_raven_1_1_c_single_producer_multi_consumer_queue_1a83a434fe8626a96d401dbe1fcfd80154" kind="function"><name>next</name></member>
-    <member refid="class_raven_1_1_c_single_producer_multi_consumer_queue_1a16fac62cdf3722ad9829e46b9986231f" kind="function"><name>clear</name></member>
-    <member refid="class_raven_1_1_c_single_producer_multi_consumer_queue_1a771bde2ef5da7654f08cea7c21df5ac6" kind="function"><name>emplace</name></member>
+  <compound refid="class_raven_1_1_m_t_1_1_c_r_w_spin_lock" kind="class"><name>Raven::MT::CRWSpinLock</name>
+    <member refid="class_raven_1_1_m_t_1_1_c_r_w_spin_lock_1a64025f4f3f5820fd47af408524c5adac" kind="enum"><name>@0</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_r_w_spin_lock_1a64025f4f3f5820fd47af408524c5adacac907ba45fc6d128df8e328f9ff9a3c65" kind="enumvalue"><name>Reader</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_r_w_spin_lock_1a64025f4f3f5820fd47af408524c5adaca74ac58f67e9ded78c86054d45926f1e6" kind="enumvalue"><name>Writer</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_r_w_spin_lock_1a6d4d667968fa1fc313a00328df194f34" kind="variable"><name>counter</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_r_w_spin_lock_1a13f197b16be92f5d87305b29309176ef" kind="function"><name>CRWSpinLock</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_r_w_spin_lock_1a47f6c60a39a0a2bcd6ee4d5a0c23e7db" kind="function"><name>~CRWSpinLock</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_r_w_spin_lock_1a726d7e851f3768d71c2298bae78a774d" kind="function"><name>LockRead</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_r_w_spin_lock_1ab814197c4f8f369b1ed1a4aa2e53d7de" kind="function"><name>UnlockRead</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_r_w_spin_lock_1abac446d8bb1ce26e0b4bee20f89aa8cc" kind="function"><name>LockWrite</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_r_w_spin_lock_1ae4630a1a5e25a3a5fda46d89e946703c" kind="function"><name>UnlockWrite</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_r_w_spin_lock_1a8927b6c13550b1cd445eb64392648c00" kind="function"><name>PromoteReaderToWriter</name></member>
   </compound>
-  <compound refid="class_raven_1_1_c_thread_pool" kind="class"><name>Raven::CThreadPool</name>
-    <member refid="class_raven_1_1_c_thread_pool_1a5a2df8914fea8e0a0511d9eaa62bfcbd" kind="typedef"><name>WorkT</name></member>
-    <member refid="class_raven_1_1_c_thread_pool_1ac8328daa6fdd96bcd2d6508ea03296e2" kind="typedef"><name>WorkQueue</name></member>
-    <member refid="class_raven_1_1_c_thread_pool_1a272b1085cbe0e7ca083b9f4d9ab43ac6" kind="variable"><name>m_workQueue</name></member>
-    <member refid="class_raven_1_1_c_thread_pool_1a330a5c3d398fde797e30a70bbf6158b9" kind="variable"><name>m_wakeCondition</name></member>
-    <member refid="class_raven_1_1_c_thread_pool_1a13cac4f2156d15592757f612773ebc2a" kind="variable"><name>m_wakeMutex</name></member>
-    <member refid="class_raven_1_1_c_thread_pool_1a284fd0b7e2e36e383d9adba373eec41e" kind="variable"><name>m_currentLabel</name></member>
-    <member refid="class_raven_1_1_c_thread_pool_1a435b7c9ef5f1719d8c9bb069bacd5d3f" kind="variable"><name>m_finishedLabel</name></member>
-    <member refid="class_raven_1_1_c_thread_pool_1a2af7356898a3128367eeb8addfdde8d6" kind="variable"><name>m_bForceStop</name></member>
-    <member refid="class_raven_1_1_c_thread_pool_1a424febcfb15de034476853a618dc2f97" kind="function"><name>CThreadPool</name></member>
-    <member refid="class_raven_1_1_c_thread_pool_1a0144588206daf10aa758e10fde3a30e0" kind="function"><name>~CThreadPool</name></member>
-    <member refid="class_raven_1_1_c_thread_pool_1a9bf38f44d7a18870f5421a92cb9a7393" kind="function"><name>ForceStop</name></member>
-    <member refid="class_raven_1_1_c_thread_pool_1a739adaa7282f7c16711547f25cc2d33f" kind="function"><name>Wait</name></member>
-    <member refid="class_raven_1_1_c_thread_pool_1a3a3ddb690e80d75a38a85c6a6d2beab9" kind="function"><name>AddWork</name></member>
-    <member refid="class_raven_1_1_c_thread_pool_1a57ebdc7025311e6e5550664dde2fb384" kind="function"><name>IsBusy</name></member>
-    <member refid="class_raven_1_1_c_thread_pool_1a6fa16bd26fc9fdb92003566c9e35f8a1" kind="function"><name>Dispatch</name></member>
-    <member refid="class_raven_1_1_c_thread_pool_1a1f7f94d275363da9e42da7e273c1148e" kind="function"><name>Poll</name></member>
-    <member refid="class_raven_1_1_c_thread_pool_1ae08a2ce60a55c22deea053009f90e4c2" kind="function"><name>ThreadLoop</name></member>
-    <member refid="class_raven_1_1_c_thread_pool_1a2f71b35de7b6e8fb3b4d668a86f82802" kind="function"><name>ProcessNextWork</name></member>
+  <compound refid="class_raven_1_1_m_t_1_1_c_single_producer_multi_consumer_queue" kind="class"><name>Raven::MT::CSingleProducerMultiConsumerQueue</name>
+    <member refid="class_raven_1_1_m_t_1_1_c_single_producer_multi_consumer_queue_1a9ff33cf5abe341c6259fd23f87fff2c9" kind="variable"><name>m_queue</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_single_producer_multi_consumer_queue_1a2d1cbe3b06e048a0993410295f7a1249" kind="variable"><name>m_mutex</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_single_producer_multi_consumer_queue_1a7e4a0564c7307bf794b3dc6fd8c0b7c1" kind="function"><name>empty</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_single_producer_multi_consumer_queue_1a00260b94a682c692726dbdff4de67a92" kind="function"><name>push</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_single_producer_multi_consumer_queue_1aa68673d07025fa520a159d7fb7bb6515" kind="function"><name>next</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_single_producer_multi_consumer_queue_1a48a0c8dc238e19b6340c3a79c6221b9d" kind="function"><name>clear</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_single_producer_multi_consumer_queue_1a5bfe0879053f4f4de300be56ce828a1e" kind="function"><name>emplace</name></member>
+  </compound>
+  <compound refid="class_raven_1_1_m_t_1_1_c_thread" kind="class"><name>Raven::MT::CThread</name>
+    <member refid="class_raven_1_1_m_t_1_1_c_thread_1a42edd46cc308676c78102aa08b82d788" kind="typedef"><name>Id</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_thread_1a14d3c909015ffab4d2bb16f024c5b974" kind="variable"><name>m_wakeCondition</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_thread_1a6773977e776e3938df4d4aeff74a7a65" kind="variable"><name>m_id</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_thread_1a2daf8686751e247323fbb0facd6ab693" kind="variable"><name>m_wakeMutex</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_thread_1a128fbc21a70efaa40c313bc54729da1c" kind="variable"><name>m_shouldRun</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_thread_1ad3fbfe9764496fa047f1458188457811" kind="variable"><name>m_queuedCount</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_thread_1a1d697a88f1061acef22a74575577a98f" kind="variable"><name>m_finishedCount</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_thread_1a0cb6d41aa8271cd7a964ff4beb2d90cd" kind="function"><name>CThread</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_thread_1a4bbde3f66932e39a2b4148af87c68c30" kind="function"><name>CThread</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_thread_1ae4ec2ad2cd22d4ee4fb3d6655c651054" kind="function"><name>~CThread</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_thread_1a9751de944674a9382ac556272cce22db" kind="function"><name>SignalFlush</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_thread_1a31414e046c980885899259ed80f86ac2" kind="function"><name>WaitCompletion</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_thread_1a269b6963b830ebcdec3d22b1854890f9" kind="function"><name>IsBusy</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_thread_1af7bca091231bdd9fd63fef4f3468650c" kind="function"><name>GetId</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_thread_1a993a1ec924bb802c80a722e02d401798" kind="function"><name>Stop</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_thread_1a86342dbb990118c4d1382caa08ff3caf" kind="function"><name>Join</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_thread_1a7e7366d9553922bbe5b163ac688f0d59" kind="function"><name>SetName</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_thread_1a7eef147d821eab820c6d84cefdd65b9c" kind="function"><name>WaitFlushCond</name></member>
+  </compound>
+  <compound refid="class_raven_1_1_m_t_1_1_c_thread_pool" kind="class"><name>Raven::MT::CThreadPool</name>
+    <member refid="class_raven_1_1_m_t_1_1_c_thread_pool_1a472aac902ab1974e6e69c4b081e7bfb4" kind="typedef"><name>WorkT</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_thread_pool_1a29a394a3e90311348283b747944e29fa" kind="typedef"><name>WorkQueue</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_thread_pool_1a626a9061ee5a289fadead129a7720023" kind="variable"><name>m_workQueue</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_thread_pool_1aca41d63d39a223df3efd18998c753fd7" kind="variable"><name>m_wakeCondition</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_thread_pool_1aa0d4c9a1e67a44db213a62bfb4a32b55" kind="variable"><name>m_wakeMutex</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_thread_pool_1a75e74199fac9d3afa462aee130919fa3" kind="variable"><name>m_currentLabel</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_thread_pool_1a0725c53a8535d2279c6c366d3d29ce13" kind="variable"><name>m_finishedLabel</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_thread_pool_1ae6e410be80e98d3195b5d06163306d9c" kind="variable"><name>m_bForceStop</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_thread_pool_1a4b01a3cf1fcaacb40f7e488187236321" kind="function"><name>CThreadPool</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_thread_pool_1a95572be9ec9b269c99c856bdc0ef970d" kind="function"><name>~CThreadPool</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_thread_pool_1a6b2fd7ed16ed5ca5ea3991767759f327" kind="function"><name>ForceStop</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_thread_pool_1a4dad3b94d1c880a33b8e60d30379dbda" kind="function"><name>Wait</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_thread_pool_1a5341aee68ba490061baeaa19d5ca67ff" kind="function"><name>AddWork</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_thread_pool_1a30199e4fbc06b98128aa23241a0a2853" kind="function"><name>IsBusy</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_thread_pool_1aebfead0dee58192c9bb3c25da8969490" kind="function"><name>Dispatch</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_thread_pool_1a906594bdc1e2db6563c9914b614d2491" kind="function"><name>Poll</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_thread_pool_1ac0d0b8302028835e414e48f060b5efa2" kind="function"><name>ThreadLoop</name></member>
+    <member refid="class_raven_1_1_m_t_1_1_c_thread_pool_1a3a81f8af817c3bdca04085709471daea" kind="function"><name>ProcessNextWork</name></member>
   </compound>
   <compound refid="struct_raven_1_1_meta_1_1_decay_except_array" kind="struct"><name>Raven::Meta::DecayExceptArray</name>
     <member refid="struct_raven_1_1_meta_1_1_decay_except_array_1a59f8707e60c955fc69b9b6491e294b17" kind="typedef"><name>Tp</name></member>
@@ -1470,10 +1503,6 @@
     <member refid="struct_raven_1_1_g_l_t_f_1_1_s_buffer_view_1a9592ccd2a6ccc86fbc12c6a92f6403af" kind="variable"><name>buffer</name></member>
     <member refid="struct_raven_1_1_g_l_t_f_1_1_s_buffer_view_1a2378e3f464d93dba7651380cb12e694a" kind="variable"><name>target</name></member>
   </compound>
-  <compound refid="struct_raven_1_1_c_file_watcher_1_1_s_callback_info" kind="struct"><name>Raven::CFileWatcher::SCallbackInfo</name>
-    <member refid="struct_raven_1_1_c_file_watcher_1_1_s_callback_info_1a172122416e6cc914d3b4589c46fe1cb9" kind="variable"><name>path</name></member>
-    <member refid="struct_raven_1_1_c_file_watcher_1_1_s_callback_info_1a5febabd4fb5ac4542702987c990832fa" kind="variable"><name>e</name></member>
-  </compound>
   <compound refid="struct_raven_1_1_g_l_t_f_1_1_s_animation_1_1_s_channel" kind="struct"><name>Raven::GLTF::SAnimation::SChannel</name>
     <member refid="struct_raven_1_1_g_l_t_f_1_1_s_animation_1_1_s_channel_1a398ae081564f773a2e60246171c5f20a" kind="variable"><name>sampler</name></member>
     <member refid="struct_raven_1_1_g_l_t_f_1_1_s_animation_1_1_s_channel_1a3483ce1613bcc45813f49af54dffa2af" kind="variable"><name>target</name></member>
@@ -1486,9 +1515,9 @@
     <member refid="struct_raven_1_1_s_decoded_path_1aabd900f507af222fc2528aa8e3bb1cc8" kind="variable"><name>m_absolutePath</name></member>
     <member refid="struct_raven_1_1_s_decoded_path_1aba2b4944a642ebe47524eebbf7cc1cc2" kind="variable"><name>m_subresourcePath</name></member>
   </compound>
-  <compound refid="struct_raven_1_1_s_dispatch_args" kind="struct"><name>Raven::SDispatchArgs</name>
-    <member refid="struct_raven_1_1_s_dispatch_args_1a1862916e12d242a63becdaf1ef4cda06" kind="variable"><name>jobIndex</name></member>
-    <member refid="struct_raven_1_1_s_dispatch_args_1ac3dd1e1edce6d424e33232e49e73dc14" kind="variable"><name>groupIndex</name></member>
+  <compound refid="struct_raven_1_1_m_t_1_1_s_dispatch_args" kind="struct"><name>Raven::MT::SDispatchArgs</name>
+    <member refid="struct_raven_1_1_m_t_1_1_s_dispatch_args_1a18ad2dcfaba44596911c72abebd04ea9" kind="variable"><name>jobIndex</name></member>
+    <member refid="struct_raven_1_1_m_t_1_1_s_dispatch_args_1ac9e5b52d77d118969c2c1e8f0c76cec1" kind="variable"><name>groupIndex</name></member>
   </compound>
   <compound refid="struct_raven_1_1_g_l_t_f_1_1_s_document" kind="struct"><name>Raven::GLTF::SDocument</name>
     <member refid="struct_raven_1_1_g_l_t_f_1_1_s_document_1a1436367245a15d15392fdc38a458008f" kind="variable"><name>asset</name></member>
@@ -1804,6 +1833,15 @@
     <member refid="struct_raven_1_1_event_1_1_system_1_1_s_window_resize_1af40834874a3e0b750d0db3fbf03293b6" kind="variable"><name>newWidth</name></member>
     <member refid="struct_raven_1_1_event_1_1_system_1_1_s_window_resize_1ad66db812197be3d64f59d8fb48d3b2ea" kind="variable"><name>newHeight</name></member>
     <member refid="struct_raven_1_1_event_1_1_system_1_1_s_window_resize_1a399cf652039b4b7e935a4c2b91b16a37" kind="function"><name>GetName</name></member>
+  </compound>
+  <compound refid="struct_raven_1_1_m_t_1_1_task_state" kind="struct"><name>Raven::MT::TaskState</name>
+    <member refid="struct_raven_1_1_m_t_1_1_task_state_1a483aff140c339164639c137f2e4b6c24" kind="variable"><name>JobsLeft</name></member>
+    <member refid="struct_raven_1_1_m_t_1_1_task_state_1a009716c2e3203c5b728c9981c503274e" kind="function"><name>TaskState</name></member>
+    <member refid="struct_raven_1_1_m_t_1_1_task_state_1aa9059e66e920a7c58c91b4286e084c1c" kind="function"><name>~TaskState</name></member>
+    <member refid="struct_raven_1_1_m_t_1_1_task_state_1aa997451f33625c7edb9ca3eb19e896b2" kind="function"><name>Wait</name></member>
+    <member refid="struct_raven_1_1_m_t_1_1_task_state_1aeb9a7109d7438c9c1bf17f06df57dd27" kind="function"><name>Signal</name></member>
+    <member refid="struct_raven_1_1_m_t_1_1_task_state_1ac87930feee75a0a1f1650d4148838bcb" kind="function"><name>AddJobs</name></member>
+    <member refid="struct_raven_1_1_m_t_1_1_task_state_1a7abe6c4a2db9dd674b8ab53966fbc5b7" kind="function"><name>IsDone</name></member>
   </compound>
   <compound refid="class_raven_1_1_t_auto_c_var" kind="class"><name>Raven::TAutoCVar</name>
     <member refid="class_raven_1_1_t_auto_c_var_1aa7146683a7d1eef98fd3f0f860604a76" kind="variable"><name>m_index</name></member>
@@ -2261,9 +2299,9 @@
     <member refid="struct_raven_util_1_1_type_info_1a6070aceeebecaea68510dcd75a71a6bd" kind="variable"><name>m_typeHash</name></member>
     <member refid="struct_raven_util_1_1_type_info_1a23b4a4cbe62155230cc422370a82bb9f" kind="variable"><name>m_typeSize</name></member>
     <member refid="struct_raven_util_1_1_type_info_1a099a7bd4a7206224a233c92d581542e8" kind="function"><name>TypeInfo</name></member>
-    <member refid="struct_raven_util_1_1_type_info_1a888a88b7933c7f5b1bd11b97f782e7a4" kind="function"><name>GetName</name></member>
-    <member refid="struct_raven_util_1_1_type_info_1ad23005da0578157beaf833521b96fd6f" kind="function"><name>GetSize</name></member>
-    <member refid="struct_raven_util_1_1_type_info_1aa62bbb18210d953ceb242b93d3a9b077" kind="function"><name>GetHash</name></member>
+    <member refid="struct_raven_util_1_1_type_info_1a4a796a41992f3b5d9f25b004f09b1691" kind="function"><name>GetName</name></member>
+    <member refid="struct_raven_util_1_1_type_info_1a258a2cf87fc3ae0b0927c247d44bf3e7" kind="function"><name>GetSize</name></member>
+    <member refid="struct_raven_util_1_1_type_info_1acc824910d63f5d393a82ba8504618cfd" kind="function"><name>GetHash</name></member>
     <member refid="struct_raven_util_1_1_type_info_1a433176ddcc887882c0b3ccb52841b17e" kind="function"><name>operator==</name></member>
     <member refid="struct_raven_util_1_1_type_info_1ac9778bbb9b2c2fd26fa036c934d8e141" kind="function"><name>operator&gt;</name></member>
     <member refid="struct_raven_util_1_1_type_info_1a5f84adbd4b8f9b84015724062abed5d5" kind="function"><name>operator&lt;</name></member>
@@ -2961,6 +2999,8 @@
     <member refid="_type_desc_8hpp_1aff4f33bbc4c2828664ae98c187b7b18b" kind="typedef"><name>CreateWrapperFn</name></member>
     <member refid="_type_desc_8hpp_1a706710b9c9f4001d614ff995b2597e98" kind="typedef"><name>CreateVariantFn</name></member>
   </compound>
+  <compound refid="namespace_raven_1_1_m_t" kind="namespace"><name>Raven::MT</name>
+  </compound>
   <compound refid="namespace_raven_1_1_path_utils" kind="namespace"><name>Raven::PathUtils</name>
     <member refid="_path_utils_8hpp_1a0f20382b511748686bf64220ae7c3bce" kind="function"><name>GetExtension</name></member>
   </compound>
@@ -3209,6 +3249,12 @@
   </compound>
   <compound refid="_texture_formats_8hpp" kind="file"><name>TextureFormats.hpp</name>
   </compound>
+  <compound refid="_r_w_lock_8hpp" kind="file"><name>RWLock.hpp</name>
+  </compound>
+  <compound refid="_thread_8hpp" kind="file"><name>Thread.hpp</name>
+  </compound>
+  <compound refid="_thread_pool_8hpp" kind="file"><name>ThreadPool.hpp</name>
+  </compound>
   <compound refid="_timestep_8hpp" kind="file"><name>Timestep.hpp</name>
   </compound>
   <compound refid="_utils_8hpp" kind="file"><name>Utils.hpp</name>
@@ -3237,8 +3283,6 @@
     <member refid="_str_macros_8hpp_1ab290dab360aef72051ab34f0773d675d" kind="define"><name>CONCAT_HELPER</name></member>
     <member refid="_str_macros_8hpp_1a48e16e57169813404daf034bb50d5d4b" kind="define"><name>CONCAT</name></member>
   </compound>
-  <compound refid="_thread_pool_8hpp" kind="file"><name>ThreadPool.hpp</name>
-  </compound>
   <compound refid="uuid_8hpp" kind="file"><name>uuid.hpp</name>
   </compound>
   <compound refid="dir_69fb99aa183099380500f1625fd94c29" kind="dir"><name>/home/runner/work/RavenEngine/RavenEngine/Raven/Code</name>
@@ -3254,6 +3298,8 @@
   <compound refid="dir_ac24d37c307f366705d643cf9c27a233" kind="dir"><name>/home/runner/work/RavenEngine/RavenEngine/Raven</name>
   </compound>
   <compound refid="dir_8760fe820aef5062bc857ba73b0bd42e" kind="dir"><name>/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon</name>
+  </compound>
+  <compound refid="dir_86ce1bb0375f95118821463c889c4f2e" kind="dir"><name>/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Threading</name>
   </compound>
   <compound refid="dir_5bc6dca2b0e863293cf5d723014ded14" kind="dir"><name>/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Utils</name>
   </compound>

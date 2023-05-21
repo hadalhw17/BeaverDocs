@@ -1,0 +1,311 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_raven_1_1_m_t_1_1_c_thread_pool" kind="class" language="C++" prot="public">
+    <compoundname>Raven::MT::CThreadPool</compoundname>
+      <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="class_raven_1_1_m_t_1_1_c_thread_pool_1a472aac902ab1974e6e69c4b081e7bfb4" prot="private" static="no">
+        <type><ref refid="class_raven_1_1_c_lambda_wrapper" kindref="compound">CLambdaWrapper</ref></type>
+        <definition>using Raven::MT::CThreadPool::WorkT =  CLambdaWrapper</definition>
+        <argsstring></argsstring>
+        <name>WorkT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Threading/ThreadPool.hpp" line="72" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Threading/ThreadPool.hpp" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="class_raven_1_1_m_t_1_1_c_thread_pool_1a29a394a3e90311348283b747944e29fa" prot="private" static="no">
+        <type><ref refid="class_raven_1_1_m_t_1_1_c_single_producer_multi_consumer_queue" kindref="compound">CSingleProducerMultiConsumerQueue</ref>&lt; <ref refid="class_raven_1_1_c_lambda_wrapper" kindref="compound">CLambdaWrapper</ref> &gt;</type>
+        <definition>using Raven::MT::CThreadPool::WorkQueue =  CSingleProducerMultiConsumerQueue&lt;CLambdaWrapper&gt;</definition>
+        <argsstring></argsstring>
+        <name>WorkQueue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Threading/ThreadPool.hpp" line="73" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Threading/ThreadPool.hpp" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_raven_1_1_m_t_1_1_c_thread_pool_1a626a9061ee5a289fadead129a7720023" prot="private" static="no" mutable="no">
+        <type><ref refid="class_raven_1_1_m_t_1_1_c_single_producer_multi_consumer_queue" kindref="compound">WorkQueue</ref></type>
+        <definition>WorkQueue Raven::MT::CThreadPool::m_workQueue</definition>
+        <argsstring></argsstring>
+        <name>m_workQueue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Threading/ThreadPool.hpp" line="108" column="25" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Threading/ThreadPool.hpp" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_raven_1_1_m_t_1_1_c_thread_pool_1aca41d63d39a223df3efd18998c753fd7" prot="private" static="no" mutable="no">
+        <type>std::condition_variable</type>
+        <definition>std::condition_variable Raven::MT::CThreadPool::m_wakeCondition</definition>
+        <argsstring></argsstring>
+        <name>m_wakeCondition</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Threading/ThreadPool.hpp" line="110" column="25" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Threading/ThreadPool.hpp" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_raven_1_1_m_t_1_1_c_thread_pool_1aa0d4c9a1e67a44db213a62bfb4a32b55" prot="private" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex Raven::MT::CThreadPool::m_wakeMutex</definition>
+        <argsstring></argsstring>
+        <name>m_wakeMutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Threading/ThreadPool.hpp" line="111" column="25" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Threading/ThreadPool.hpp" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_raven_1_1_m_t_1_1_c_thread_pool_1a75e74199fac9d3afa462aee130919fa3" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64 &gt;</type>
+        <definition>std::atomic&lt;uint64&gt; Raven::MT::CThreadPool::m_currentLabel</definition>
+        <argsstring></argsstring>
+        <name>m_currentLabel</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Threading/ThreadPool.hpp" line="113" column="17" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Threading/ThreadPool.hpp" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_raven_1_1_m_t_1_1_c_thread_pool_1a0725c53a8535d2279c6c366d3d29ce13" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64 &gt;</type>
+        <definition>std::atomic&lt;uint64&gt; Raven::MT::CThreadPool::m_finishedLabel</definition>
+        <argsstring></argsstring>
+        <name>m_finishedLabel</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Threading/ThreadPool.hpp" line="114" column="17" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Threading/ThreadPool.hpp" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_raven_1_1_m_t_1_1_c_thread_pool_1ae6e410be80e98d3195b5d06163306d9c" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; Raven::MT::CThreadPool::m_bForceStop</definition>
+        <argsstring></argsstring>
+        <name>m_bForceStop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Threading/ThreadPool.hpp" line="116" column="19" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Threading/ThreadPool.hpp" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_raven_1_1_m_t_1_1_c_thread_pool_1a4b01a3cf1fcaacb40f7e488187236321" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Raven::MT::CThreadPool::CThreadPool</definition>
+        <argsstring>(uint32 numThreads=~0u)</argsstring>
+        <name>CThreadPool</name>
+        <param>
+          <type>uint32</type>
+          <declname>numThreads</declname>
+          <defval>~0u</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Threading/ThreadPool.hpp" line="76" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_m_t_1_1_c_thread_pool_1a95572be9ec9b269c99c856bdc0ef970d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Raven::MT::CThreadPool::~CThreadPool</definition>
+        <argsstring>()</argsstring>
+        <name>~CThreadPool</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Threading/ThreadPool.hpp" line="77" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_m_t_1_1_c_thread_pool_1a6b2fd7ed16ed5ca5ea3991767759f327" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Raven::MT::CThreadPool::ForceStop</definition>
+        <argsstring>()</argsstring>
+        <name>ForceStop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Threading/ThreadPool.hpp" line="78" column="28"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_m_t_1_1_c_thread_pool_1a4dad3b94d1c880a33b8e60d30379dbda" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Raven::MT::CThreadPool::Wait</definition>
+        <argsstring>()</argsstring>
+        <name>Wait</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Threading/ThreadPool.hpp" line="79" column="28"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_m_t_1_1_c_thread_pool_1a5341aee68ba490061baeaa19d5ca67ff" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>uint64</type>
+        <definition>uint64 Raven::MT::CThreadPool::AddWork</definition>
+        <argsstring>(T &amp;&amp;w, TaskState *pState=nullptr)</argsstring>
+        <name>AddWork</name>
+        <param>
+          <type>T &amp;&amp;</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_raven_1_1_m_t_1_1_task_state" kindref="compound">TaskState</ref> *</type>
+          <declname>pState</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Threading/ThreadPool.hpp" line="81" column="20" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Threading/ThreadPool.hpp" bodystart="81" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_m_t_1_1_c_thread_pool_1a30199e4fbc06b98128aa23241a0a2853" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Raven::MT::CThreadPool::IsBusy</definition>
+        <argsstring>() const</argsstring>
+        <name>IsBusy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Threading/ThreadPool.hpp" line="96" column="6" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Threading/ThreadPool.hpp" bodystart="96" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_m_t_1_1_c_thread_pool_1aebfead0dee58192c9bb3c25da8969490" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint64</type>
+        <definition>uint64 Raven::MT::CThreadPool::Dispatch</definition>
+        <argsstring>(uint32 jobCount, uint32 groupSize, std::function&lt; void(SDispatchArgs)&gt; job, TaskState *pState=nullptr)</argsstring>
+        <name>Dispatch</name>
+        <param>
+          <type>uint32</type>
+          <declname>jobCount</declname>
+        </param>
+        <param>
+          <type>uint32</type>
+          <declname>groupSize</declname>
+        </param>
+        <param>
+          <type>std::function&lt; void(<ref refid="struct_raven_1_1_m_t_1_1_s_dispatch_args" kindref="compound">SDispatchArgs</ref>)&gt;</type>
+          <declname>job</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_raven_1_1_m_t_1_1_task_state" kindref="compound">TaskState</ref> *</type>
+          <declname>pState</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Threading/ThreadPool.hpp" line="98" column="8"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_raven_1_1_m_t_1_1_c_thread_pool_1a906594bdc1e2db6563c9914b614d2491" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Raven::MT::CThreadPool::Poll</definition>
+        <argsstring>()</argsstring>
+        <name>Poll</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Threading/ThreadPool.hpp" line="103" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_m_t_1_1_c_thread_pool_1ac0d0b8302028835e414e48f060b5efa2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Raven::MT::CThreadPool::ThreadLoop</definition>
+        <argsstring>()</argsstring>
+        <name>ThreadLoop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Threading/ThreadPool.hpp" line="104" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_m_t_1_1_c_thread_pool_1a3a81f8af817c3bdca04085709471daea" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Raven::MT::CThreadPool::ProcessNextWork</definition>
+        <argsstring>()</argsstring>
+        <name>ProcessNextWork</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Threading/ThreadPool.hpp" line="105" column="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Threading/ThreadPool.hpp" line="71" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/Threading/ThreadPool.hpp" bodystart="71" bodyend="117"/>
+    <listofallmembers>
+      <member refid="class_raven_1_1_m_t_1_1_c_thread_pool_1a5341aee68ba490061baeaa19d5ca67ff" prot="public" virt="non-virtual"><scope>Raven::MT::CThreadPool</scope><name>AddWork</name></member>
+      <member refid="class_raven_1_1_m_t_1_1_c_thread_pool_1a4b01a3cf1fcaacb40f7e488187236321" prot="public" virt="non-virtual"><scope>Raven::MT::CThreadPool</scope><name>CThreadPool</name></member>
+      <member refid="class_raven_1_1_m_t_1_1_c_thread_pool_1aebfead0dee58192c9bb3c25da8969490" prot="public" virt="non-virtual"><scope>Raven::MT::CThreadPool</scope><name>Dispatch</name></member>
+      <member refid="class_raven_1_1_m_t_1_1_c_thread_pool_1a6b2fd7ed16ed5ca5ea3991767759f327" prot="public" virt="non-virtual"><scope>Raven::MT::CThreadPool</scope><name>ForceStop</name></member>
+      <member refid="class_raven_1_1_m_t_1_1_c_thread_pool_1a30199e4fbc06b98128aa23241a0a2853" prot="public" virt="non-virtual"><scope>Raven::MT::CThreadPool</scope><name>IsBusy</name></member>
+      <member refid="class_raven_1_1_m_t_1_1_c_thread_pool_1ae6e410be80e98d3195b5d06163306d9c" prot="private" virt="non-virtual"><scope>Raven::MT::CThreadPool</scope><name>m_bForceStop</name></member>
+      <member refid="class_raven_1_1_m_t_1_1_c_thread_pool_1a75e74199fac9d3afa462aee130919fa3" prot="private" virt="non-virtual"><scope>Raven::MT::CThreadPool</scope><name>m_currentLabel</name></member>
+      <member refid="class_raven_1_1_m_t_1_1_c_thread_pool_1a0725c53a8535d2279c6c366d3d29ce13" prot="private" virt="non-virtual"><scope>Raven::MT::CThreadPool</scope><name>m_finishedLabel</name></member>
+      <member refid="class_raven_1_1_m_t_1_1_c_thread_pool_1aca41d63d39a223df3efd18998c753fd7" prot="private" virt="non-virtual"><scope>Raven::MT::CThreadPool</scope><name>m_wakeCondition</name></member>
+      <member refid="class_raven_1_1_m_t_1_1_c_thread_pool_1aa0d4c9a1e67a44db213a62bfb4a32b55" prot="private" virt="non-virtual"><scope>Raven::MT::CThreadPool</scope><name>m_wakeMutex</name></member>
+      <member refid="class_raven_1_1_m_t_1_1_c_thread_pool_1a626a9061ee5a289fadead129a7720023" prot="private" virt="non-virtual"><scope>Raven::MT::CThreadPool</scope><name>m_workQueue</name></member>
+      <member refid="class_raven_1_1_m_t_1_1_c_thread_pool_1a906594bdc1e2db6563c9914b614d2491" prot="private" virt="non-virtual"><scope>Raven::MT::CThreadPool</scope><name>Poll</name></member>
+      <member refid="class_raven_1_1_m_t_1_1_c_thread_pool_1a3a81f8af817c3bdca04085709471daea" prot="private" virt="non-virtual"><scope>Raven::MT::CThreadPool</scope><name>ProcessNextWork</name></member>
+      <member refid="class_raven_1_1_m_t_1_1_c_thread_pool_1ac0d0b8302028835e414e48f060b5efa2" prot="private" virt="non-virtual"><scope>Raven::MT::CThreadPool</scope><name>ThreadLoop</name></member>
+      <member refid="class_raven_1_1_m_t_1_1_c_thread_pool_1a4dad3b94d1c880a33b8e60d30379dbda" prot="public" virt="non-virtual"><scope>Raven::MT::CThreadPool</scope><name>Wait</name></member>
+      <member refid="class_raven_1_1_m_t_1_1_c_thread_pool_1a29a394a3e90311348283b747944e29fa" prot="private" virt="non-virtual"><scope>Raven::MT::CThreadPool</scope><name>WorkQueue</name></member>
+      <member refid="class_raven_1_1_m_t_1_1_c_thread_pool_1a472aac902ab1974e6e69c4b081e7bfb4" prot="private" virt="non-virtual"><scope>Raven::MT::CThreadPool</scope><name>WorkT</name></member>
+      <member refid="class_raven_1_1_m_t_1_1_c_thread_pool_1a95572be9ec9b269c99c856bdc0ef970d" prot="public" virt="non-virtual"><scope>Raven::MT::CThreadPool</scope><name>~CThreadPool</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
