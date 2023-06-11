@@ -52,14 +52,14 @@
     <innerclass refid="struct_raven_1_1_detail_1_1_t_are_tuple_args_world_3_01_t_checked_helper_3_01std_1_1tuple_3_01_t_8_8_8_01_4_01_4_01_4" prot="public">Raven::Detail::TAreTupleArgsWorld&lt; TCheckedHelper&lt; std::tuple&lt; T... &gt; &gt; &gt;</innerclass>
     <innerclass refid="struct_raven_1_1_detail_1_1_t_system_function" prot="public">Raven::Detail::TSystemFunction</innerclass>
       <sectiondef kind="typedef">
-      <memberdef kind="typedef" id="_raven_app_8hpp_1a1b4db4c849eeef9fe1a6365f92949915" prot="public" static="no">
+      <memberdef kind="typedef" id="_raven_app_8hpp_1ac41c11ee5e89429bd852bd4b7c72036d" prot="public" static="no">
         <templateparamlist>
           <param>
             <type>typename T</type>
           </param>
         </templateparamlist>
-        <type>typename std::remove_pointer_t&lt; std::remove_cvref_t&lt; T &gt; &gt;</type>
-        <definition>using Raven::Detail::SysArgDecayT = typedef typename std::remove_pointer_t&lt;std::remove_cvref_t&lt;T&gt; &gt;</definition>
+        <type>typename std::remove_pointer_t&lt; std::remove_reference_t&lt; T &gt; &gt;</type>
+        <definition>using Raven::Detail::SysArgDecayT = typedef typename std::remove_pointer_t&lt;std::remove_reference_t&lt;T&gt; &gt;</definition>
         <argsstring></argsstring>
         <name>SysArgDecayT</name>
         <briefdescription>
@@ -87,14 +87,14 @@
         <argsstring></argsstring>
         <name>IsWorldArgument</name>
         <initializer>=
-		IsWorldQuery&lt;Ty&gt; || std::is_same_v&lt;Ty, Raven::CWorld&gt;</initializer>
+		IsWorldQuery&lt;Ty&gt; || std::is_convertible_v&lt;Ty, Raven::CWorld&gt;</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="821" column="9" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="821" bodyend="-1"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="827" column="9" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="827" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="_raven_app_8hpp_1a2eee162b04f4ffd1d2d1e0421bb6220b" prot="public" static="no" mutable="no">
         <templateparamlist>
@@ -115,7 +115,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="825" column="9" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="825" bodyend="-1"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="831" column="9" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="831" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="_raven_app_8hpp_1a4317fa45339a2e167596d2fd80732ce6" prot="public" static="no" mutable="no">
         <templateparamlist>
@@ -139,7 +139,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="839" column="9" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="839" bodyend="-1"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="845" column="9" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="845" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="_label_8hpp_1a64bc69b6357c2e348745bfe3bde9daef" prot="public" static="no" mutable="no">
         <templateparamlist>
@@ -259,7 +259,51 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="843" column="24" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="843" bodyend="845"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="849" column="24" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="849" bodyend="851"/>
+      </memberdef>
+      <memberdef kind="function" id="_raven_app_8hpp_1af59471a21844b2388fdcf2e248d12e2a" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>constexpr static bool</type>
+        <definition>constexpr static bool Raven::Detail::IsValid</definition>
+        <argsstring>(const Events&lt; T &gt; &amp;item) noexcept</argsstring>
+        <name>IsValid</name>
+        <param>
+          <type>const Events&lt; T &gt; &amp;</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="854" column="24" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="854" bodyend="856"/>
+      </memberdef>
+      <memberdef kind="function" id="_raven_app_8hpp_1a5278c0c4bff17af4d98ec49fc7a8032e" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>constexpr static bool</type>
+        <definition>constexpr static bool Raven::Detail::IsValid</definition>
+        <argsstring>(Events&lt; T &gt; &amp;item) noexcept</argsstring>
+        <name>IsValid</name>
+        <param>
+          <type>Events&lt; T &gt; &amp;</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="859" column="24" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="859" bodyend="861"/>
       </memberdef>
       <memberdef kind="function" id="_raven_app_8hpp_1a69262a72fb28ebd4c2a45c468c687430" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -283,7 +327,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="867" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="867" bodyend="869"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="883" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="883" bodyend="885"/>
       </memberdef>
       <memberdef kind="function" id="_raven_app_8hpp_1a9f535b9eb0230b39ef592bc77bb54dfc" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -313,7 +357,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="872" column="6" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="872" bodyend="878"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="888" column="6" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="888" bodyend="894"/>
       </memberdef>
       <memberdef kind="function" id="_raven_app_8hpp_1a2190960bfe00c3ce95f7b86dd95395b0" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -346,7 +390,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="882" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="882" bodyend="885"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="898" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="898" bodyend="901"/>
       </memberdef>
       <memberdef kind="function" id="_raven_app_8hpp_1aa60a709f7401a737f25fa935f0ac5f06" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -378,7 +422,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="903" column="6" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="903" bodyend="906"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="919" column="6" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="919" bodyend="922"/>
       </memberdef>
       <memberdef kind="function" id="_raven_app_8hpp_1a315c4e95fb339c1544963310216b8904" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -409,7 +453,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="909" column="13" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="909" bodyend="913"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="925" column="13" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="925" bodyend="929"/>
       </memberdef>
       <memberdef kind="function" id="_raven_app_8hpp_1ad9045fdc53941f3380c07507cccbf505" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -443,7 +487,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="916" column="13" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="916" bodyend="919"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="932" column="13" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="932" bodyend="935"/>
       </memberdef>
       <memberdef kind="function" id="_raven_app_8hpp_1aed0a624f6aa57c9c96242a88d640214c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -470,7 +514,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="922" column="13" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="922" bodyend="927"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="938" column="13" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="938" bodyend="943"/>
       </memberdef>
       <memberdef kind="function" id="_raven_app_8hpp_1a83552d5d12183a560425fd3dcd3e1623" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -501,7 +545,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="930" column="10" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="930" bodyend="932"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" line="946" column="10" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenApp/RavenApp.hpp" bodystart="946" bodyend="948"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
