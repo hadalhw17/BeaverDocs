@@ -18,13 +18,7 @@
       <node id="11">
         <label>Meta/TypeInfo.hpp</label>
         <link refid="_type_info_8hpp_source"/>
-        <childnode refid="10" relation="include">
-        </childnode>
         <childnode refid="12" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="13" relation="include">
         </childnode>
       </node>
       <node id="18">
@@ -45,6 +39,12 @@
       <node id="10">
         <label>Hash.h</label>
       </node>
+      <node id="12">
+        <label>Utils/StringHash.hpp</label>
+        <link refid="_string_hash_8hpp_source"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
       <node id="7">
         <label>Utils/DenseStorage.hpp</label>
         <link refid="_dense_storage_8hpp_source"/>
@@ -55,11 +55,8 @@
         <label>Utils/StrMacros.hpp</label>
         <link refid="_str_macros_8hpp_source"/>
       </node>
-      <node id="12">
-        <label>string_view</label>
-      </node>
       <node id="13">
-        <label>bitset</label>
+        <label>string_view</label>
       </node>
       <node id="9">
         <label>vector</label>
@@ -225,7 +222,7 @@
 <codeline lineno="37"><highlight class="normal"></highlight></codeline>
 <codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
 <codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>constexpr<sp/><ref refid="struct_raven_1_1_asset_id" kindref="compound">AssetId</ref><sp/>Create(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>AssetIndexT<sp/>idx)<sp/>{</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{<ref refid="struct_raven_util_1_1_type_hash" kindref="compound">RavenUtil::TypeHash&lt;T&gt;::value</ref>(),<sp/>idx};</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{<ref refid="struct_raven_1_1_type_hash" kindref="compound">TypeHash&lt;T&gt;::value</ref>(),<sp/>idx};</highlight></codeline>
 <codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="42"><highlight class="normal"></highlight></codeline>
 <codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>constexpr<sp/>RavenUtil::Hash<sp/>Hash(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_raven_1_1_asset_id" kindref="compound">AssetId</ref>&amp;<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
@@ -462,7 +459,7 @@
 <codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="struct_raven_1_1_asset_id" kindref="compound">EntityT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Index()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_index;<sp/>}</highlight></codeline>
 <codeline lineno="275"><highlight class="normal"></highlight></codeline>
 <codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;<sp/>HDL_NODISCARD<sp/><ref refid="struct_raven_1_1_handle" kindref="compound">Handle&lt;T&gt;</ref><sp/>Typed()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>noexcept<sp/>{</highlight></codeline>
-<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>h<sp/>=<sp/><ref refid="struct_raven_util_1_1_type_hash" kindref="compound">RavenUtil::TypeHash&lt;T&gt;::value</ref>();</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>h<sp/>=<sp/><ref refid="struct_raven_1_1_type_hash" kindref="compound">TypeHash&lt;T&gt;::value</ref>();</highlight></codeline>
 <codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(h<sp/>!=<sp/>m_index.m_typeHash)</highlight></codeline>
 <codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{};</highlight></codeline>
 <codeline lineno="280"><highlight class="normal"></highlight></codeline>
@@ -776,7 +773,7 @@
 <codeline lineno="588"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="589"><highlight class="normal"></highlight></codeline>
 <codeline lineno="590"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>Contains(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_raven_1_1_handle_untyped" kindref="compound">HandleUntyped</ref>&amp;<sp/>h)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="591"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(h.m_index.m_typeHash<sp/>==<sp/><ref refid="struct_raven_util_1_1_type_hash" kindref="compound">RavenUtil::TypeHash&lt;T&gt;::value</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="591"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(h.m_index.m_typeHash<sp/>==<sp/><ref refid="struct_raven_1_1_type_hash" kindref="compound">TypeHash&lt;T&gt;::value</ref>())<sp/>{</highlight></codeline>
 <codeline lineno="592"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>BaseT::contains(h.m_index.m_index);</highlight></codeline>
 <codeline lineno="593"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="594"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
@@ -904,7 +901,7 @@
 <codeline lineno="716"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_raven_1_1_i_asset_i_o" kindref="compound">IAssetIO</ref>*<sp/>GetAssetIO()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_pAssetIO.get();<sp/>}</highlight></codeline>
 <codeline lineno="717"><highlight class="normal"></highlight></codeline>
 <codeline lineno="718"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>RegisterAssetType(<ref refid="class_raven_1_1_assets" kindref="compound">Assets&lt;T&gt;</ref>&amp;<sp/>assets)<sp/>{</highlight></codeline>
-<codeline lineno="719"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_lifetimeIO[<ref refid="struct_raven_util_1_1_type_hash" kindref="compound">TypeHash&lt;T&gt;::value</ref>()]<sp/>=<sp/>assets.GetLifetimeInterface();</highlight></codeline>
+<codeline lineno="719"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_lifetimeIO[TypeHash&lt;T&gt;::value()]<sp/>=<sp/>assets.GetLifetimeInterface();</highlight></codeline>
 <codeline lineno="720"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>assets.m_pSendFn<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>[&amp;](<ref refid="struct_raven_1_1_s_asset_ref_counter_1_1_event" kindref="compound">SAssetRefCounter::Event</ref><sp/>e)<sp/>{</highlight></codeline>
 <codeline lineno="721"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_refCounter.Send(e);</highlight></codeline>
 <codeline lineno="722"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
@@ -916,7 +913,7 @@
 <codeline lineno="728"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetAssetPath(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_raven_1_1_handle_untyped" kindref="compound">HandleUntyped</ref>&amp;<sp/>hAsset,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string_view<sp/>path);</highlight></codeline>
 <codeline lineno="729"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="struct_raven_1_1_i_asset_loader" kindref="compound">IAssetLoader</ref>*<sp/>GetLoader(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string_view<sp/>extension);</highlight></codeline>
 <codeline lineno="730"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="struct_raven_1_1_i_asset_loader" kindref="compound">IAssetLoader</ref>*<sp/>GetLoaderForAssetType(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_raven_1_1_meta_1_1_type" kindref="compound">Meta::Type</ref>&amp;<sp/>assetType);</highlight></codeline>
-<codeline lineno="731"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="struct_raven_util_1_1_type_info" kindref="compound">RavenUtil::TypeInfo</ref><sp/>GetAssetType(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string_view<sp/>extension)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="731"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="struct_raven_1_1_type_info" kindref="compound">Raven::TypeInfo</ref><sp/>GetAssetType(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string_view<sp/>extension)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="732"><highlight class="normal"></highlight></codeline>
 <codeline lineno="733"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>AssetT<sp/>=<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T::AssetT&gt;</highlight></codeline>
 <codeline lineno="734"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>RegisterLoader()<sp/>{</highlight></codeline>
@@ -939,7 +936,7 @@
 <codeline lineno="751"><highlight class="normal"></highlight></codeline>
 <codeline lineno="752"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bNeedsInsert)<sp/>{</highlight></codeline>
 <codeline lineno="753"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_loaders.emplace_back(std::move(pLoader));</highlight></codeline>
-<codeline lineno="754"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_loaderResourceTypeAssoc.emplace_back(RavenUtil::TypeId&lt;AssetT&gt;());</highlight></codeline>
+<codeline lineno="754"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_loaderResourceTypeAssoc.emplace_back(TypeId&lt;AssetT&gt;());</highlight></codeline>
 <codeline lineno="755"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="756"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="757"><highlight class="normal"></highlight></codeline>
@@ -958,13 +955,13 @@
 <codeline lineno="770"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_lifetimeIO;</highlight></codeline>
 <codeline lineno="771"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_raven_1_1_s_asset_ref_counter" kindref="compound">SAssetRefCounter</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_refCounter;</highlight></codeline>
 <codeline lineno="772"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::unique_ptr&lt;IAssetLoader&gt;&gt;<sp/>m_loaders;</highlight></codeline>
-<codeline lineno="773"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;RavenUtil::TypeInfo&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_loaderResourceTypeAssoc;<sp/></highlight><highlight class="comment">//<sp/>Optional</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="773"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;Raven::TypeInfo&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_loaderResourceTypeAssoc;<sp/></highlight><highlight class="comment">//<sp/>Optional</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="774"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;HashedString,<sp/>uint32&gt;<sp/><sp/><sp/>m_loaderRemap;</highlight></codeline>
 <codeline lineno="775"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;IAssetIO&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_pAssetIO;</highlight></codeline>
 <codeline lineno="776"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;typename<sp/>HashedString::HashT,<sp/>SAssetSourceInfo&gt;</highlight></codeline>
 <codeline lineno="777"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_assetSourceInfos;</highlight></codeline>
 <codeline lineno="778"><highlight class="normal"></highlight></codeline>
-<codeline lineno="779"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;<sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="struct_raven_util_1_1_type_hash" kindref="compound">TypeHash</ref><sp/>=<sp/><ref refid="struct_raven_util_1_1_type_hash" kindref="compound">RavenUtil::TypeHash&lt;T&gt;</ref>;</highlight></codeline>
+<codeline lineno="779"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;<sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>TypeHash<sp/>=<sp/>TypeHash&lt;T&gt;;</highlight></codeline>
 <codeline lineno="780"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="781"><highlight class="normal"></highlight></codeline>
 <codeline lineno="782"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Detail<sp/>{</highlight></codeline>
