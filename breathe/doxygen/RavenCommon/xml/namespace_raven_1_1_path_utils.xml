@@ -2,7 +2,106 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="namespace_raven_1_1_path_utils" kind="namespace" language="C++">
     <compoundname>Raven::PathUtils</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_path_utils_8hpp_1aa2766f9dc49093778317fa185444e660" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>constexpr auto</type>
+        <definition>constexpr auto Raven::PathUtils::PathSeparators</definition>
+        <argsstring></argsstring>
+        <name>PathSeparators</name>
+        <initializer>= &quot;/\\&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/PathUtils.hpp" line="5" column="23" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/PathUtils.hpp" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_path_utils_8hpp_1a2481e3afd8523541f6c99b537a7ce740" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>constexpr auto</type>
+        <definition>constexpr auto Raven::PathUtils::ExtDelimiters</definition>
+        <argsstring></argsstring>
+        <name>ExtDelimiters</name>
+        <initializer>= &apos;.&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/PathUtils.hpp" line="6" column="23" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/PathUtils.hpp" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
       <sectiondef kind="func">
+      <memberdef kind="function" id="_path_utils_8hpp_1a053de2d2c82ac0cedcb62d4c104c4f11" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>constexpr std::string_view</type>
+        <definition>constexpr std::string_view Raven::PathUtils::GetParentPath</definition>
+        <argsstring>(const std::string_view path)</argsstring>
+        <name>GetParentPath</name>
+        <param>
+          <type>const std::string_view</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Extract parent path from path <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to file </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Parent path or empty string if no parent path </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/PathUtils.hpp" line="12" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/PathUtils.hpp" bodystart="12" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="_path_utils_8hpp_1aedbf933a527ddadd9286db83d51124a7" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>constexpr std::string_view</type>
+        <definition>constexpr std::string_view Raven::PathUtils::GetFileName</definition>
+        <argsstring>(const std::string_view path, const bool withExt=true)</argsstring>
+        <name>GetFileName</name>
+        <param>
+          <type>const std::string_view</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>withExt</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Extract file name from path <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to file </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>withExt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, extension will be included </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/PathUtils.hpp" line="23" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/PathUtils.hpp" bodystart="23" bodyend="30"/>
+      </memberdef>
       <memberdef kind="function" id="_path_utils_8hpp_1a0f20382b511748686bf64220ae7c3bce" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>constexpr std::string_view</type>
         <definition>constexpr std::string_view Raven::PathUtils::GetExtension</definition>
@@ -13,13 +112,22 @@
           <declname>path</declname>
         </param>
         <briefdescription>
-<para>Extract extension from a path and remove all decorators. </para>
         </briefdescription>
         <detaileddescription>
+<para>Extract extension from a path and remove all decorators <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to file </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/PathUtils.hpp" line="8" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/PathUtils.hpp" bodystart="8" bodyend="16"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/PathUtils.hpp" line="35" column="1" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenCommon/IO/PathUtils.hpp" bodystart="35" bodyend="43"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
