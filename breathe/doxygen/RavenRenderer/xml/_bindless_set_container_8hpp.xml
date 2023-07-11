@@ -2,18 +2,14 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="_bindless_set_container_8hpp" kind="file" language="C++">
     <compoundname>BindlessSetContainer.hpp</compoundname>
-    <includes local="no">Utils/StringHash.hpp</includes>
     <includes local="yes">ResourceSet.h</includes>
     <includes local="yes">Texture.h</includes>
     <includes local="yes">Buffer.h</includes>
     <incdepgraph>
       <node id="2">
-        <label>Utils/StringHash.hpp</label>
-      </node>
-      <node id="3">
         <label>ResourceSet.h</label>
       </node>
-      <node id="5">
+      <node id="4">
         <label>Buffer.h</label>
       </node>
       <node id="1">
@@ -25,10 +21,8 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
       </node>
-      <node id="4">
+      <node id="3">
         <label>Texture.h</label>
       </node>
     </incdepgraph>
@@ -42,122 +36,120 @@
     <programlisting>
 <codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Utils/StringHash.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;ResourceSet.h&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Texture.h&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Buffer.h&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Raven::Renderer</highlight></codeline>
-<codeline lineno="10"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>ResourceType&gt;</highlight></codeline>
-<codeline lineno="13" refid="class_raven_1_1_renderer_1_1_c_bindless_set_container" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_raven_1_1_renderer_1_1_c_bindless_set_container" kindref="compound">CBindlessSetContainer</ref><sp/>{</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>set_id_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>uint32;</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>res_id_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>uint64;</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>resource_t<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>ResourceType;</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>resource_ptr_t<sp/><sp/>=<sp/>ResourceType*;</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_texture<sp/>=<sp/>std::is_same_v&lt;ResourceType,<sp/>CTexture&gt;;</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>resource_view_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>Detail::HandleOrViewDecayT&lt;typename<sp/>ResourceType::ResourceViewT&gt;;</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_raven_1_1_renderer_1_1_c_bindless_set_container" kindref="compound">CBindlessSetContainer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>EBindGroup<sp/>set,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32<sp/>binding)</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>m_binding{binding}<sp/>{</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_pBindlessTextureSet<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>std::make_shared&lt;SResourceSet&gt;();</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_pBindlessTextureSet-&gt;m_slot<sp/>=<sp/>RavenUtil::to_underlying(set);</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;SResourceSet&gt;&amp;<sp/>GetBindlessSet()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_pBindlessTextureSet;<sp/>}</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/>std::shared_ptr&lt;SResourceSet&gt;<sp/>GetBindlessSet()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_pBindlessTextureSet;<sp/>}</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/>uint32<sp/>RegisterResource(resource_view_t<sp/>resourceView,<sp/>EBindingType<sp/>eBindingType);</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>UnregisterResource(resource_view_t<sp/>resourceView);</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/>set_id_t<sp/>SetResourceAt(resource_view_t<sp/>view,<sp/>set_id_t<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>EBindingType<sp/>eBindingType)<sp/>{</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>constexpr<sp/>(is_texture)<sp/>{</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_pBindlessTextureSet-&gt;SetTexture(m_binding,<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>eBindingType,<sp/>view,<sp/>EShaderStage::All);</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_pBindlessTextureSet-&gt;SetBuffer(m_binding,<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>eBindingType,<sp/>view,<sp/>EShaderStage::All);</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>id;</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"></highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>res_id_t<sp/>HashResource(resource_view_t<sp/>view)<sp/>noexcept<sp/>{</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>constexpr(Detail::TIsHandle&lt;resource_view_t&gt;::Value)</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::hash&lt;resource_view_t&gt;()(view);</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>view-&gt;GetID();</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Non<sp/>mutable<sp/>bind<sp/>point<sp/>of<sp/>the<sp/>set</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Has<sp/>to<sp/>be<sp/>set<sp/>at<sp/>construction<sp/>time</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32<sp/>m_binding;</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;SResourceSet&gt;<sp/>m_pBindlessTextureSet;</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Bidirectional<sp/>lookup<sp/>for<sp/>texture<sp/>id<sp/>to<sp/>bindless<sp/>set<sp/>array<sp/>index</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>std::map&lt;res_id_t,<sp/>set_id_t&gt;<sp/>m_textureIdToBindlessIndex;</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>std::map&lt;set_id_t,<sp/>res_id_t&gt;<sp/>m_bindlessIndexToTextureId;</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;set_id_t&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_freedSlots;</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>std::mutex<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_lock;</highlight></codeline>
-<codeline lineno="56"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"></highlight></codeline>
-<codeline lineno="58"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>ResourceType&gt;</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>uint32<sp/><ref refid="class_raven_1_1_renderer_1_1_c_bindless_set_container" kindref="compound">CBindlessSetContainer&lt;ResourceType&gt;::RegisterResource</ref>(resource_view_t<sp/>resourceView,<sp/>EBindingType<sp/>eBindingType)</highlight></codeline>
-<codeline lineno="60"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>std::lock_guard<sp/>lock{m_lock};</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>res_id_t<sp/>resId<sp/>=<sp/>HashResource(resourceView);</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>m_textureIdToBindlessIndex.find(resId);</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>In<sp/>case<sp/>when<sp/>if<sp/>we<sp/>found<sp/>that<sp/>resource<sp/>in<sp/>the<sp/>buffer,<sp/>we<sp/>skip<sp/>the<sp/>index<sp/>searching<sp/>routine</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>But<sp/>still<sp/>want<sp/>to<sp/>refresh<sp/>the<sp/>view<sp/>at<sp/>an<sp/>existing<sp/>id</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>SetTexture/SetBuffer<sp/>with<sp/>specified<sp/>array<sp/>index<sp/>will<sp/>do<sp/>that</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it<sp/>!=<sp/>std::end(m_textureIdToBindlessIndex))</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>RavenAssert(!!resourceView,<sp/></highlight><highlight class="stringliteral">&quot;Invalid<sp/>resource<sp/>view!&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>SetResourceAt(resourceView,<sp/>it-&gt;second,<sp/>eBindingType);</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"></highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Now<sp/>see<sp/>if<sp/>we<sp/>have<sp/>any<sp/>gaps<sp/>in<sp/>the<sp/>bindless<sp/>buffer<sp/>that<sp/>we<sp/>could<sp/>use<sp/>for<sp/>this<sp/>resource</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>set_id_t<sp/>setId<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">set_id_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(m_bindlessIndexToTextureId.size());</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!m_freedSlots.empty())</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>setId<sp/>=<sp/>m_freedSlots.back();</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_freedSlots.pop_back();</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"></highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>RavenAssert(!!resourceView,<sp/></highlight><highlight class="stringliteral">&quot;Invalid<sp/>resource<sp/>view!&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>setId<sp/>=<sp/>SetResourceAt(resourceView,<sp/>setId,<sp/>eBindingType);</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>RavenAssert(setId<sp/>!=<sp/>SBindPoint::InvalidArrayId,<sp/></highlight><highlight class="stringliteral">&quot;Something<sp/>went<sp/>wrong!&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>m_textureIdToBindlessIndex[resId]<sp/>=<sp/>setId;</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>m_bindlessIndexToTextureId[setId]<sp/>=<sp/>resId;</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>RavenAssert(m_textureIdToBindlessIndex.size()<sp/>==<sp/>m_bindlessIndexToTextureId.size(),<sp/></highlight><highlight class="stringliteral">&quot;This<sp/>should<sp/>not<sp/>happen!&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>RavenAssert(m_textureIdToBindlessIndex.size()<sp/>==<sp/>m_pBindlessTextureSet-&gt;m_shaderBindings.size(),<sp/></highlight><highlight class="stringliteral">&quot;This<sp/>should<sp/>not<sp/>happen!&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="88"><highlight class="normal"></highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>setId;</highlight></codeline>
-<codeline lineno="90"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"></highlight></codeline>
-<codeline lineno="92"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>ResourceType&gt;</highlight></codeline>
-<codeline lineno="93"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CBindlessSetContainer&lt;ResourceType&gt;::UnregisterResource(resource_view_t<sp/>resourceView)</highlight></codeline>
-<codeline lineno="94"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>std::lock_guard<sp/>lock{m_lock};</highlight></codeline>
-<codeline lineno="96"><highlight class="normal"></highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(m_textureIdToBindlessIndex.empty())</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"></highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>res_id_t<sp/>resId<sp/>=<sp/>HashResource(resourceView);</highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>m_textureIdToBindlessIndex.find(resId);</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>have<sp/>never<sp/>registered<sp/>this<sp/>resource</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(it<sp/>==<sp/>std::end(m_textureIdToBindlessIndex))</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>set_id_t<sp/>arrayId<sp/>=<sp/>it-&gt;second;</highlight></codeline>
-<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>bindingIt<sp/>=<sp/>std::find_if(std::begin(m_pBindlessTextureSet-&gt;m_shaderBindings),<sp/>std::end(m_pBindlessTextureSet-&gt;m_shaderBindings),<sp/>[&amp;](</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::pair&lt;SBindPoint,<sp/>SSetBinding&gt;&amp;<sp/>lhs)<sp/>{<sp/>return<sp/>lhs.first.arrayIndex<sp/>==<sp/>arrayId<sp/>&amp;&amp;<sp/>lhs.first.slot<sp/>==<sp/>m_binding;<sp/>});</highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>RavenAssert(bindingIt<sp/>!=<sp/>std::end(m_pBindlessTextureSet-&gt;m_shaderBindings),<sp/></highlight><highlight class="stringliteral">&quot;Could<sp/>not<sp/>find<sp/>resource<sp/>in<sp/>the<sp/>bindless<sp/>set.<sp/>Something<sp/>went<sp/>wrong!&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>m_pBindlessTextureSet-&gt;RemoveBinding(bindingIt);</highlight></codeline>
-<codeline lineno="109"><highlight class="normal"></highlight></codeline>
-<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>m_freedSlots.push_back(arrayId);</highlight></codeline>
-<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>m_pBindlessTextureSet-&gt;m_dirtyState<sp/>|=<sp/>EDirtyState::eDirty_Resource;</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"></highlight></codeline>
-<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Release<sp/>the<sp/>slot</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>m_textureIdToBindlessIndex.erase(resId);</highlight></codeline>
-<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>m_bindlessIndexToTextureId.erase(arrayId);</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;ResourceSet.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Texture.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Buffer.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Raven::Renderer</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>ResourceType&gt;</highlight></codeline>
+<codeline lineno="11" refid="class_raven_1_1_renderer_1_1_c_bindless_set_container" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_raven_1_1_renderer_1_1_c_bindless_set_container" kindref="compound">CBindlessSetContainer</ref><sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>set_id_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>uint32;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>res_id_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>uint64;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>resource_t<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>ResourceType;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>resource_ptr_t<sp/><sp/>=<sp/>ResourceType*;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_texture<sp/>=<sp/>std::is_same_v&lt;ResourceType,<sp/>CTexture&gt;;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>resource_view_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>Detail::HandleOrViewDecayT&lt;typename<sp/>ResourceType::ResourceViewT&gt;;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_raven_1_1_renderer_1_1_c_bindless_set_container" kindref="compound">CBindlessSetContainer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>EBindGroup<sp/>set,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32<sp/>binding)</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>m_binding{binding}<sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_pBindlessTextureSet<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>std::make_shared&lt;SResourceSet&gt;();</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_pBindlessTextureSet-&gt;m_slot<sp/>=<sp/>RavenUtil::to_underlying(set);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;SResourceSet&gt;&amp;<sp/>GetBindlessSet()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_pBindlessTextureSet;<sp/>}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/>std::shared_ptr&lt;SResourceSet&gt;<sp/>GetBindlessSet()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_pBindlessTextureSet;<sp/>}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/>uint32<sp/>RegisterResource(resource_view_t<sp/>resourceView,<sp/>EBindingType<sp/>eBindingType);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>UnregisterResource(resource_view_t<sp/>resourceView);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/>set_id_t<sp/>SetResourceAt(resource_view_t<sp/>view,<sp/>set_id_t<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>EBindingType<sp/>eBindingType)<sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>constexpr<sp/>(is_texture)<sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_pBindlessTextureSet-&gt;SetTexture(m_binding,<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>eBindingType,<sp/>view,<sp/>EShaderStage::All);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_pBindlessTextureSet-&gt;SetBuffer(m_binding,<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>eBindingType,<sp/>view,<sp/>EShaderStage::All);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>id;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>res_id_t<sp/>HashResource(resource_view_t<sp/>view)<sp/>noexcept<sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>constexpr(Detail::TIsHandle&lt;resource_view_t&gt;::Value)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::hash&lt;resource_view_t&gt;()(view);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>view-&gt;GetID();</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Non<sp/>mutable<sp/>bind<sp/>point<sp/>of<sp/>the<sp/>set</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Has<sp/>to<sp/>be<sp/>set<sp/>at<sp/>construction<sp/>time</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32<sp/>m_binding;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;SResourceSet&gt;<sp/>m_pBindlessTextureSet;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Bidirectional<sp/>lookup<sp/>for<sp/>texture<sp/>id<sp/>to<sp/>bindless<sp/>set<sp/>array<sp/>index</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>std::map&lt;res_id_t,<sp/>set_id_t&gt;<sp/>m_textureIdToBindlessIndex;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>std::map&lt;set_id_t,<sp/>res_id_t&gt;<sp/>m_bindlessIndexToTextureId;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;set_id_t&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_freedSlots;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>std::mutex<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_lock;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>ResourceType&gt;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>uint32<sp/><ref refid="class_raven_1_1_renderer_1_1_c_bindless_set_container" kindref="compound">CBindlessSetContainer&lt;ResourceType&gt;::RegisterResource</ref>(resource_view_t<sp/>resourceView,<sp/>EBindingType<sp/>eBindingType)</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>std::lock_guard<sp/>lock{m_lock};</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>res_id_t<sp/>resId<sp/>=<sp/>HashResource(resourceView);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>m_textureIdToBindlessIndex.find(resId);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>In<sp/>case<sp/>when<sp/>if<sp/>we<sp/>found<sp/>that<sp/>resource<sp/>in<sp/>the<sp/>buffer,<sp/>we<sp/>skip<sp/>the<sp/>index<sp/>searching<sp/>routine</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>But<sp/>still<sp/>want<sp/>to<sp/>refresh<sp/>the<sp/>view<sp/>at<sp/>an<sp/>existing<sp/>id</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>SetTexture/SetBuffer<sp/>with<sp/>specified<sp/>array<sp/>index<sp/>will<sp/>do<sp/>that</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it<sp/>!=<sp/>std::end(m_textureIdToBindlessIndex))</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>RavenAssert(!!resourceView,<sp/></highlight><highlight class="stringliteral">&quot;Invalid<sp/>resource<sp/>view!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>SetResourceAt(resourceView,<sp/>it-&gt;second,<sp/>eBindingType);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Now<sp/>see<sp/>if<sp/>we<sp/>have<sp/>any<sp/>gaps<sp/>in<sp/>the<sp/>bindless<sp/>buffer<sp/>that<sp/>we<sp/>could<sp/>use<sp/>for<sp/>this<sp/>resource</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>set_id_t<sp/>setId<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">set_id_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(m_bindlessIndexToTextureId.size());</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!m_freedSlots.empty())</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>setId<sp/>=<sp/>m_freedSlots.back();</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_freedSlots.pop_back();</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>RavenAssert(!!resourceView,<sp/></highlight><highlight class="stringliteral">&quot;Invalid<sp/>resource<sp/>view!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>setId<sp/>=<sp/>SetResourceAt(resourceView,<sp/>setId,<sp/>eBindingType);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>RavenAssert(setId<sp/>!=<sp/>SBindPoint::InvalidArrayId,<sp/></highlight><highlight class="stringliteral">&quot;Something<sp/>went<sp/>wrong!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>m_textureIdToBindlessIndex[resId]<sp/>=<sp/>setId;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>m_bindlessIndexToTextureId[setId]<sp/>=<sp/>resId;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>RavenAssert(m_textureIdToBindlessIndex.size()<sp/>==<sp/>m_bindlessIndexToTextureId.size(),<sp/></highlight><highlight class="stringliteral">&quot;This<sp/>should<sp/>not<sp/>happen!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>RavenAssert(m_textureIdToBindlessIndex.size()<sp/>==<sp/>m_pBindlessTextureSet-&gt;m_shaderBindings.size(),<sp/></highlight><highlight class="stringliteral">&quot;This<sp/>should<sp/>not<sp/>happen!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>setId;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>ResourceType&gt;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CBindlessSetContainer&lt;ResourceType&gt;::UnregisterResource(resource_view_t<sp/>resourceView)</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>std::lock_guard<sp/>lock{m_lock};</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(m_textureIdToBindlessIndex.empty())</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>res_id_t<sp/>resId<sp/>=<sp/>HashResource(resourceView);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>m_textureIdToBindlessIndex.find(resId);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>have<sp/>never<sp/>registered<sp/>this<sp/>resource</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(it<sp/>==<sp/>std::end(m_textureIdToBindlessIndex))</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>set_id_t<sp/>arrayId<sp/>=<sp/>it-&gt;second;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>bindingIt<sp/>=<sp/>std::find_if(std::begin(m_pBindlessTextureSet-&gt;m_shaderBindings),<sp/>std::end(m_pBindlessTextureSet-&gt;m_shaderBindings),<sp/>[&amp;](</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::pair&lt;SBindPoint,<sp/>SSetBinding&gt;&amp;<sp/>lhs)<sp/>{<sp/>return<sp/>lhs.first.arrayIndex<sp/>==<sp/>arrayId<sp/>&amp;&amp;<sp/>lhs.first.slot<sp/>==<sp/>m_binding;<sp/>});</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>RavenAssert(bindingIt<sp/>!=<sp/>std::end(m_pBindlessTextureSet-&gt;m_shaderBindings),<sp/></highlight><highlight class="stringliteral">&quot;Could<sp/>not<sp/>find<sp/>resource<sp/>in<sp/>the<sp/>bindless<sp/>set.<sp/>Something<sp/>went<sp/>wrong!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>m_pBindlessTextureSet-&gt;RemoveBinding(bindingIt);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>m_freedSlots.push_back(arrayId);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>m_pBindlessTextureSet-&gt;m_dirtyState<sp/>|=<sp/>EDirtyState::eDirty_Resource;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Release<sp/>the<sp/>slot</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>m_textureIdToBindlessIndex.erase(resId);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>m_bindlessIndexToTextureId.erase(arrayId);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
 <codeline lineno="116"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"></highlight></codeline>
-<codeline lineno="118"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/BindlessSetContainer.hpp"/>
   </compounddef>
