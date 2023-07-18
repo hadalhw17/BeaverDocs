@@ -3,7 +3,7 @@
   <compounddef id="_buffer_view_8hpp" kind="file" language="C++">
     <compoundname>BufferView.hpp</compoundname>
     <includes refid="_vulkan_utils_8hpp" local="yes">VulkanUtils.hpp</includes>
-    <includes local="no">Handle.hpp</includes>
+    <includes local="no">HandlePool.hpp</includes>
     <includes refid="_raven_formats_8hpp" local="yes">RavenFormats.hpp</includes>
     <includes refid="_binding_invalidation_callback_8hpp" local="yes">BindingInvalidationCallback.hpp</includes>
     <incdepgraph>
@@ -30,18 +30,23 @@
         </childnode>
         <childnode refid="19" relation="include">
         </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
       </node>
       <node id="1">
         <label>/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/DeviceLayer/BufferView.hpp</label>
         <link refid="_buffer_view_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="12" relation="include">
+        <childnode refid="21" relation="include">
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="20" relation="include">
+        <childnode refid="22" relation="include">
         </childnode>
+      </node>
+      <node id="19">
+        <label>vulkan/vk_platform.h</label>
       </node>
       <node id="9">
         <label>RavenCommon/BaseTypes.hpp</label>
@@ -69,16 +74,19 @@
       <node id="15">
         <label>vector</label>
       </node>
-      <node id="19">
-        <label>vulkan/vulkan.h</label>
-      </node>
       <node id="16">
         <label>array</label>
       </node>
       <node id="8">
         <label>Platform/CompilerSettings.hpp</label>
       </node>
+      <node id="21">
+        <label>HandlePool.hpp</label>
+      </node>
       <node id="20">
+        <label>vulkan/vulkan_core.h</label>
+      </node>
+      <node id="22">
         <label>BindingInvalidationCallback.hpp</label>
         <link refid="_binding_invalidation_callback_8hpp_source"/>
       </node>
@@ -133,7 +141,7 @@
 <codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;VulkanUtils.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Handle.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;HandlePool.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;RavenFormats.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;BindingInvalidationCallback.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
@@ -193,26 +201,24 @@
 <codeline lineno="61"><highlight class="normal"></highlight></codeline>
 <codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>THandle&lt;BufferView&gt;<sp/>UnorderedAccessView(Renderer::CBuffer<sp/>*<sp/>pBuffer,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>STextureFormat&amp;<sp/>format,<sp/>uint64<sp/>size,<sp/>uint64<sp/>offset<sp/>=<sp/>0);</highlight></codeline>
 <codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>THandle&lt;BufferView&gt;<sp/>ShaderReadView(Renderer::CBuffer*<sp/>pBuffer,<sp/>uint64<sp/>size,<sp/>uint64<sp/>offset<sp/>=<sp/>0);</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
 <codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>~SBufferView();</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>THandle&lt;BufferView&gt;<sp/>CreateBufferView(Renderer::CBuffer*<sp/>pBuffer,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SKey&amp;<sp/>key);</highlight></codeline>
 <codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>VkBufferView<sp/>vkView<sp/>=<sp/>VK_NULL_HANDLE;</highlight></codeline>
 <codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>No<sp/>ownership<sp/>of<sp/>the<sp/>buffer</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>VkBuffer<sp/>vkBuffer<sp/>=<sp/>VK_NULL_HANDLE;</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"></highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">THandlePool&lt;SBufferView,<sp/>BufferView&gt;;</highlight></codeline>
-<codeline lineno="73"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"></highlight></codeline>
-<codeline lineno="75"><highlight class="normal">static_assert(</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(SBufferView::SKey)<sp/>==<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(SBufferView::SKey::bufferId)<sp/>+</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(SBufferView::SKey::offset)<sp/>+</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(SBufferView::SKey::size)<sp/>+</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(SBufferView::SKey::format)<sp/>+</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(SBufferView::SKey::padding0),</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;SBufferView::SKey<sp/>contains<sp/>untracked<sp/>padding!<sp/>Memcmp<sp/>won&apos;t<sp/>work<sp/>well!&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="82"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="83"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal">static_assert(</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(SBufferView::SKey)<sp/>==<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(SBufferView::SKey::bufferId)<sp/>+</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(SBufferView::SKey::offset)<sp/>+</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(SBufferView::SKey::size)<sp/>+</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(SBufferView::SKey::format)<sp/>+</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(SBufferView::SKey::padding0),</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;SBufferView::SKey<sp/>contains<sp/>untracked<sp/>padding!<sp/>Memcmp<sp/>won&apos;t<sp/>work<sp/>well!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/DeviceLayer/BufferView.hpp"/>
   </compounddef>

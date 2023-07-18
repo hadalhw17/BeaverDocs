@@ -419,7 +419,7 @@
 <codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TraitsT::Entity(TraitsT::Reserved);</highlight></codeline>
 <codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="237"><highlight class="normal"></highlight></codeline>
-<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AsStrong()<sp/>{<sp/>HandleLifetime::AsStrong(m_index);<sp/>}</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AsStrong()<sp/>{<sp/>HandleLifetime::AsStrong(Index());<sp/>}</highlight></codeline>
 <codeline lineno="239"><highlight class="normal"></highlight></codeline>
 <codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AsWeak()<sp/>{<sp/>HandleLifetime::AsWeak();<sp/>}</highlight></codeline>
 <codeline lineno="241"><highlight class="normal"></highlight></codeline>
@@ -532,7 +532,7 @@
 <codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="350"><highlight class="normal"></highlight></codeline>
-<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AsStrong()<sp/>{<sp/>HandleLifetime::AsStrong(m_index);<sp/>}</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AsStrong()<sp/>{<sp/>HandleLifetime::AsStrong(Index());<sp/>}</highlight></codeline>
 <codeline lineno="352"><highlight class="normal"></highlight></codeline>
 <codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AsWeak()<sp/>{<sp/>HandleLifetime::AsWeak();<sp/>}</highlight></codeline>
 <codeline lineno="354"><highlight class="normal"></highlight></codeline>
@@ -710,7 +710,7 @@
 <codeline lineno="526"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hIdx<sp/>=<sp/>GenerateIdx();</highlight></codeline>
 <codeline lineno="527"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hRes<sp/>=<sp/>HandleIdT::template<sp/>Create&lt;T&gt;(hIdx);</highlight></codeline>
 <codeline lineno="528"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[maybe_unused]]<sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>res<sp/><sp/>=<sp/>BaseT::emplace(hIdx,<sp/>val);</highlight></codeline>
-<codeline lineno="529"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_lifetimeEvents.emplace_back(AssetLifetimeEvent::Op::Created,<sp/>hRes);</highlight></codeline>
+<codeline lineno="529"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_lifetimeEvents.emplace_back(<ref refid="struct_raven_1_1_asset_lifetime_event" kindref="compound">AssetLifetimeEvent</ref>{AssetLifetimeEvent::Op::Created,<sp/>hRes});</highlight></codeline>
 <codeline lineno="530"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>constexpr(requires<sp/>(T<sp/>v)<sp/>{v.SetSelf(<ref refid="struct_raven_1_1_handle" kindref="compound">HandleT</ref>{});})<sp/>{</highlight></codeline>
 <codeline lineno="531"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res.SetSelf(HandleT::Weak(hIdx,<sp/>m_pSendFn));</highlight></codeline>
 <codeline lineno="532"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -719,13 +719,13 @@
 <codeline lineno="535"><highlight class="normal"></highlight></codeline>
 <codeline lineno="536"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Remove(<ref refid="struct_raven_1_1_handle" kindref="compound">HandleT</ref>&amp;<sp/>h)<sp/>{</highlight></codeline>
 <codeline lineno="537"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>h.m_type<sp/>=<sp/>{};</highlight></codeline>
-<codeline lineno="538"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_lifetimeEvents.emplace_back(AssetLifetimeEvent::Op::Released,</highlight></codeline>
-<codeline lineno="539"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HandleIdT::template<sp/>Create&lt;T&gt;(h.m_index));</highlight></codeline>
+<codeline lineno="538"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_lifetimeEvents.emplace_back(<ref refid="struct_raven_1_1_asset_lifetime_event" kindref="compound">AssetLifetimeEvent</ref>{AssetLifetimeEvent::Op::Released,</highlight></codeline>
+<codeline lineno="539"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HandleIdT::template<sp/>Create&lt;T&gt;(h.m_index)});</highlight></codeline>
 <codeline lineno="540"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="541"><highlight class="normal"></highlight></codeline>
 <codeline lineno="542"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Remove(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>EntityT<sp/>ent)<sp/>{</highlight></codeline>
-<codeline lineno="543"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_lifetimeEvents.emplace_back(AssetLifetimeEvent::Op::Released,</highlight></codeline>
-<codeline lineno="544"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HandleIdT::template<sp/>Create&lt;T&gt;(ent));</highlight></codeline>
+<codeline lineno="543"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_lifetimeEvents.emplace_back(<ref refid="struct_raven_1_1_asset_lifetime_event" kindref="compound">AssetLifetimeEvent</ref>{AssetLifetimeEvent::Op::Released,</highlight></codeline>
+<codeline lineno="544"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HandleIdT::template<sp/>Create&lt;T&gt;(ent)});</highlight></codeline>
 <codeline lineno="545"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="546"><highlight class="normal"></highlight></codeline>
 <codeline lineno="547"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>BaseT::const_iterator<sp/>begin()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>noexcept<sp/>{</highlight></codeline>
@@ -740,8 +740,8 @@
 <codeline lineno="556"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!Contains(h))</highlight></codeline>
 <codeline lineno="557"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="558"><highlight class="normal"></highlight></codeline>
-<codeline lineno="559"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_tempAssetEventQueue.emplace_back(h.ToWeak(),</highlight></codeline>
-<codeline lineno="560"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_raven_1_1_asset_event" kindref="compound">AssetEvent&lt;T&gt;::Op::Modified</ref>);</highlight></codeline>
+<codeline lineno="559"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_tempAssetEventQueue.emplace_back(<ref refid="struct_raven_1_1_asset_event" kindref="compound">AssetEvent&lt;T&gt;</ref>(h.ToWeak(),</highlight></codeline>
+<codeline lineno="560"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_raven_1_1_asset_event" kindref="compound">AssetEvent&lt;T&gt;::Op::Modified</ref>));</highlight></codeline>
 <codeline lineno="561"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>&amp;BaseT::get(h.m_index);</highlight></codeline>
 <codeline lineno="562"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="563"><highlight class="normal"></highlight></codeline>
@@ -785,7 +785,7 @@
 <codeline lineno="601"><highlight class="normal"></highlight></codeline>
 <codeline lineno="602"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Size()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>BaseT::size();<sp/>}</highlight></codeline>
 <codeline lineno="603"><highlight class="normal"></highlight></codeline>
-<codeline lineno="604"><highlight class="normal"><sp/><sp/><sp/><sp/>SAssetRefCounter::SendFnT<sp/>m_pSendFn;</highlight></codeline>
+<codeline lineno="604"><highlight class="normal"><sp/><sp/><sp/><sp/>SAssetRefCounter::SendFnT<sp/>m_pSendFn{};</highlight></codeline>
 <codeline lineno="605"><highlight class="normal"></highlight></codeline>
 <codeline lineno="606"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="607"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;AssetLifetimeEvent&gt;<sp/>m_lifetimeEvents;</highlight></codeline>
