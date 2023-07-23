@@ -68,7 +68,7 @@
     <member refid="class_raven_1_1_renderer_1_1_c_f_g_node_1a2f6cca7d184e1401deb599481e7bc43aad8494c79e47d49df723212375e00c304" kind="enumvalue"><name>Compute</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_f_g_node_1a2f6cca7d184e1401deb599481e7bc43aa0283b4de5e5ee97d163767c70fbb0d3f" kind="enumvalue"><name>RayTracing</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_f_g_node_1a2f6cca7d184e1401deb599481e7bc43aa2b5a1a99c921fcce93221115aef193d4" kind="enumvalue"><name>Transfer</name></member>
-    <member refid="class_raven_1_1_renderer_1_1_c_f_g_node_1aa84a91455b30b88b8476c733ba6c50e5" kind="variable"><name>m_frameGraph</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_f_g_node_1a6eec117a4f9f972069e545cea6d0dc1e" kind="variable"><name>m_frameGraph</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_f_g_node_1aad83210e00fe616a4a6246bbd408d1ae" kind="variable"><name>m_inputImages</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_f_g_node_1a473e46f8d7bad490f888e63e32523702" kind="variable"><name>m_outputStorageImages</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_f_g_node_1aa56cb97b33fd26379d41c5e56547cd9e" kind="variable"><name>m_outputImages</name></member>
@@ -138,6 +138,7 @@
     <member refid="class_raven_1_1_renderer_1_1_c_f_g_node_1ab42eb5d0674b4c216fb0c64f1613d45a" kind="function"><name>AddOutputBarrier</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_f_g_node_1ae20ef2ffdd0e22bd3d41d660189d8286" kind="function"><name>AddFakeBarrier</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_f_g_node_1ad3f2abe76a166e5ea4fe1050d3671038" kind="function"><name>Execute</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_f_g_node_1a3c3aa62556c068be6e88acd648fe997d" kind="function"><name>SetParentGraph</name></member>
   </compound>
   <compound refid="class_raven_1_1_renderer_1_1_c_frame_graph" kind="class"><name>Raven::Renderer::CFrameGraph</name>
     <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1a2f2b5b939c9b4c07e4026669e9759e09" kind="variable"><name>CFGNode</name></member>
@@ -151,8 +152,10 @@
     <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1a8686b5979e3b6bc3f20414ac22bb9f17" kind="variable"><name>m_historyFrameIdx</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1a0aa216e55e58861e98bbc977722dcbf6" kind="variable"><name>m_historyImages</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1a3a43f6f270514179937defa256e07c14" kind="variable"><name>m_createdBuffers</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1ad690dcf9221160f43449556dbaff4d9a" kind="variable"><name>m_inputImages</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1a789d529e3e1debba243bf728cca36a23" kind="variable"><name>m_outputImages</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1a548f7520f047b6882a0a43bb2c8a6290" kind="friend"><name>CRenderPassScheduler</name></member>
-    <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1a24eba8c9657284c8b74ce3a16d4d013a" kind="function"><name>CFrameGraph</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1a5362d97599b165493f4f37ec30769a3d" kind="function"><name>CFrameGraph</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1a6c575337d91b6f3394edf45c20aaa7a4" kind="function"><name>~CFrameGraph</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1a70b926d1fd46c19b10f5dec01e4144fb" kind="function"><name>GetAttachmentsForPass</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1a0847db59707e7e7675a75519f4a5d340" kind="function"><name>GetPassDepth</name></member>
@@ -162,16 +165,24 @@
     <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1ab8e6479d9c1d1736061b3d53934e6b84" kind="function"><name>GetImageDimensions</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1a3f1567854c10f6e8ec586753257faea9" kind="function"><name>RegisterExternalImage</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1a5c919a5308d676e251abcba977fc51c7" kind="function"><name>CreateImage</name></member>
-    <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1ad79c05ca319bb0de0120ec9151499b4b" kind="function"><name>FindImageHandle</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1a81a6287a5f1801bf18751591ccbae65f" kind="function"><name>FindImageHandle</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1a4a36d385fc13bb70d1a3e3017a46c307" kind="function"><name>BeginFrame</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1a0b64726f6f7598c4c16867ec07a32b6a" kind="function"><name>Allocator</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1a9a326a23c74b08348b49ba812f8614e8" kind="function"><name>GetRelativeResolution</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1a74540704637d01829017294acd21fa89" kind="function"><name>FindImage</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1aa702cc2b5a2430efabfd53d29a716682" kind="function"><name>GetImageResource</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1a1a647f77713cfd0cf649bf7d8fb20b8e" kind="function"><name>GetImageResource</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1a3e2f78151be31969536d227c567c4241" kind="function"><name>FindBuffer</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1a829fab4d6b7ae0b5152dab6d1de5577d" kind="function"><name>GetBufferResource</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1a04b6139c7df89075c9d71d8691cf2257" kind="function"><name>GetImageHistory</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1ac54dabb5b1064fa3dc952f747e981840" kind="function"><name>GetInputImages</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1ae89ab35822ff4c36059929ff4ccb8eba" kind="function"><name>GetOutputImages</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1a61e69036e8c03acd1261ef29f15a7f47" kind="function"><name>GetNodes</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1a0e8f4e76a7e5098e0116ae211637c71e" kind="function"><name>AddInputImage</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1abaa0644ba98ed657895b8e497cd61891" kind="function"><name>AddOutputImage</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1afcc60384ef576c90b59b94b33469c4b2" kind="function"><name>AddSubgraph</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1ac47b49a03401d3004de3a4b76df1aaca" kind="function"><name>BufferViewToName</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1a5b3fabdde681275ede987235fea55f85" kind="function"><name>Execute</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1a3a09bf5746998fc64d13e5938da5ae7e" kind="function"><name>CreateDeviceBuffers</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1a749ce129b2f8588ddfaebdb99c7a52ec" kind="function"><name>CreateDeviceTextures</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_frame_graph_1a379c61187d4a9869427aad270ce24c56" kind="function"><name>GetOutputCount</name></member>
@@ -248,8 +259,10 @@
     <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_1aa53266badfb395ba5a5b0015a889f430" kind="variable"><name>m_pExecCache</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_1a03cc8323961abd54339176ebbb769f42" kind="variable"><name>m_execOrder</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_1ad6053873a37d3d64a92bce661bd4152c" kind="variable"><name>m_needsReevaluation</name></member>
-    <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_1ad301b233e02d7b7d511d7aff15b88177" kind="function"><name>CGraphicsPipeline</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_1a26df6dde48cd9633b13ff4825b465a48" kind="function"><name>CGraphicsPipeline</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_1a5b4f164068610a8695d4bc7e5eee1b4f" kind="function"><name>~CGraphicsPipeline</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_1a3689e24e845e281ccc2f95058ee1dbfb" kind="function"><name>Prepare</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_1a1125af9af259663d3e1cd726dd344eb2" kind="function"><name>Record</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_1a66558fe380f841c36698383a16aa6eec" kind="function"><name>Execute</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_1a91b5cc9e3c10212e26b6bbf882c06ea9" kind="function"><name>Resize</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_1ac0fd5beb5a5e11abdd24ba6f8b161e9d" kind="function"><name>GetCurrentRenderResolution</name></member>
@@ -264,6 +277,9 @@
     <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_1a87fbe26cec3c3246fbc51cf3b969d452" kind="function"><name>RegisterStage</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_1ae4b429e7f39dc35aa3e75e42d055e394" kind="function"><name>IsStageActive</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_1aca30d43b16e4af88096f41bd1458e5d8" kind="function"><name>PassScheduler</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_1a47c422bc264e00ae7f3041a2d43bd84e" kind="function"><name>FrameGraph</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_1a99359217a4ed12c3a08c14a4677a5763" kind="function"><name>FrameGraph</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_1a92b8a572d194898745a18dfebbe93c0d" kind="function"><name>GetLabel</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_1aec07d7b4ee38b629d144ef7f05426410" kind="function"><name>QueuePathTracing</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_graphics_pipeline_1ae256cbb691fe129e46f8166de1aac280" kind="function"><name>QueueRasterisation</name></member>
   </compound>
@@ -298,6 +314,7 @@
     <member refid="class_raven_1_1_renderer_1_1_c_material_1ad98fc8459f0554a231a887184bfa99c7" kind="variable"><name>m_name</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_material_1a7e15c6342c7fe5c7f3bfb161ce6f8770" kind="variable"><name>m_shaderItem</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_material_1aec673896a4b8b3746d8b282779822e8c" kind="variable"><name>m_shadowShaderItem</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_material_1adf3035f01a04187e084aa3f1cb766de6" kind="variable"><name>m_renderTargetTextures</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_material_1a0166d6f31f370c1232ebccff6a2b2302" kind="variable"><name>m_pMaterialBuffer</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_material_1a53f0e62507e19b9712734446f5ac99e3" kind="function"><name>CMaterial</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_material_1aeda0b82a6580d4b4fdaebdef2c613eb9" kind="function"><name>~CMaterial</name></member>
@@ -306,6 +323,7 @@
     <member refid="class_raven_1_1_renderer_1_1_c_material_1ab2560efdebe63169b111c03604a8982c" kind="function"><name>Update</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_material_1af2c1cc8750ba9fa872b62d4b8148bee3" kind="function"><name>Update</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_material_1a91ae19bca020f3c5a7e38b46cd0be611" kind="function"><name>GetName</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_material_1a83d878e8d7c2e325d303818e7c8f7082" kind="function"><name>GetRenderTargetTextures</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_material_1a145a07f771f6f4712002d54906f29b30" kind="function"><name>CompileShaderItem</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_material_1a29123dd327f1fd6dc77f9af5540264e5" kind="function"><name>CreateMaterialCB</name></member>
   </compound>
@@ -351,12 +369,11 @@
     <member refid="class_raven_1_1_renderer_1_1_c_render_pass_scheduler_1accc789f7507722a900d08b1f87a0482e" kind="variable"><name>m_eState</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_render_pass_scheduler_1afdb0913b02ea559643d211b8d567cd67" kind="variable"><name>m_pScheduledPasses</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_render_pass_scheduler_1a4a0d28a1e6ab47942e68d16374f5df98" kind="variable"><name>m_pFrameGraph</name></member>
-    <member refid="class_raven_1_1_renderer_1_1_c_render_pass_scheduler_1ac9c389198e54eb3e35674dbb531d1d07" kind="variable"><name>m_constantsAllocator</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_render_pass_scheduler_1a8d1a0572d7ecacdfd3141f5f20774961" kind="variable"><name>m_ownerPipeline</name></member>
-    <member refid="class_raven_1_1_renderer_1_1_c_render_pass_scheduler_1ab5bcf510c6a2c6aac4d4885a8696a2ef" kind="function"><name>CRenderPassScheduler</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_render_pass_scheduler_1ad615c39565522ae41d777eb302ac85c6" kind="function"><name>CRenderPassScheduler</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_render_pass_scheduler_1ad5789059d1c17835216255537f99fbfc" kind="function"><name>~CRenderPassScheduler</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_render_pass_scheduler_1a464f37e6d4bf3207293702cf425f3a5d" kind="function"><name>AddRenderPassNode</name></member>
-    <member refid="class_raven_1_1_renderer_1_1_c_render_pass_scheduler_1ab48ab3417227a78e9bcc53ed450354a8" kind="function"><name>BeginRecording</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_render_pass_scheduler_1a3adc0b68c5b317ea5cf99f06604bff66" kind="function"><name>BeginRecording</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_render_pass_scheduler_1a39f8e0277536a6a4f32a31fbd9a78c92" kind="function"><name>EndRecording</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_render_pass_scheduler_1af5730db80042785aa437f8a84dbe5d50" kind="function"><name>IsIdle</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_render_pass_scheduler_1a4aee25dbf0a0a9fa6b15d11b2e01c40c" kind="function"><name>IsRecording</name></member>
@@ -418,6 +435,9 @@
   </compound>
   <compound refid="structstd_1_1hash_3_01_raven_1_1_renderer_1_1_s_raytracing_p_s_o_desc_01_4" kind="struct"><name>std::hash&lt; Raven::Renderer::SRaytracingPSODesc &gt;</name>
     <member refid="structstd_1_1hash_3_01_raven_1_1_renderer_1_1_s_raytracing_p_s_o_desc_01_4_1ac1db619c458fba0316a8c03989e62787" kind="function"><name>operator()</name></member>
+  </compound>
+  <compound refid="structstd_1_1hash_3_01_raven_1_1_renderer_1_1_t_f_g_handle_3_01_t_00_01_id_t_01_4_01_4" kind="struct"><name>std::hash&lt; Raven::Renderer::TFGHandle&lt; T, IdT &gt; &gt;</name>
+    <member refid="structstd_1_1hash_3_01_raven_1_1_renderer_1_1_t_f_g_handle_3_01_t_00_01_id_t_01_4_01_4_1acba7ada2d0572adb0722be44ea003842" kind="function"><name>operator()</name></member>
   </compound>
   <compound refid="structstd_1_1hash_3_01_raven_1_1_renderer_1_1_t_stage_label_01_4" kind="struct"><name>std::hash&lt; Raven::Renderer::TStageLabel &gt;</name>
     <member refid="structstd_1_1hash_3_01_raven_1_1_renderer_1_1_t_stage_label_01_4_1a5632637887dd6ca8ebea4dc13601efd3" kind="function"><name>operator()</name></member>
@@ -766,6 +786,7 @@
     <member refid="class_raven_1_1_renderer_1_1_t_f_g_handle_1a56dc62285a84e0cff5c3ed871871cd0b" kind="variable"><name>MaxValue</name></member>
     <member refid="class_raven_1_1_renderer_1_1_t_f_g_handle_1a93f820cc2140f105a7464bf2d49ee9e3" kind="friend"><name>TFGObjects&lt; T, Id &gt;</name></member>
     <member refid="class_raven_1_1_renderer_1_1_t_f_g_handle_1a07cca5a5c6524d3c8cde5b44241aea64" kind="friend"><name>TFGNull&lt; Id &gt;</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_t_f_g_handle_1a866ad59b4fd982c13427c71e9d591563" kind="friend"><name>std::hash&lt; TFGHandle&lt; T, Id &gt; &gt;</name></member>
     <member refid="class_raven_1_1_renderer_1_1_t_f_g_handle_1a5e3fcc3a3f142b4cda7f01e89c073e8a" kind="variable"><name>Idx</name></member>
     <member refid="class_raven_1_1_renderer_1_1_t_f_g_handle_1abbf85e0705ceb7fff717ca9ec1967588" kind="function"><name>TFGHandle</name></member>
     <member refid="class_raven_1_1_renderer_1_1_t_f_g_handle_1a94e0990bc8a74d8187b5ef2e6e742267" kind="function"><name>operator==</name></member>
