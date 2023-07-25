@@ -95,24 +95,33 @@
 <codeline lineno="60"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
 <codeline lineno="61"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CEditorToolFactory::RegisterTool(App&amp;<sp/>app,std::string_view<sp/>name,</highlight></codeline>
 <codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string_view<sp/>description,<sp/>std::string_view<sp/>thumbnail)<sp/>{</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>app.AddComponent&lt;T&gt;();</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>t<sp/>=<sp/>Meta::Type::Get&lt;T&gt;();</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>m_tools.emplace_back(SToolDescription{</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.Type<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>t,</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.Name<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>std::string{name},</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.Description<sp/>=<sp/>std::string{description},</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.Thumbnail<sp/><sp/><sp/>=<sp/>thumbnail.empty()<sp/>?<sp/>Handle&lt;CImage&gt;{}<sp/>:<sp/>app.GetResource&lt;SAssetManager&gt;()-&gt;Load(app,<sp/>thumbnail).OnSuccess().Typed&lt;CImage&gt;(),</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.BuildToolFn<sp/>=<sp/>BuildFnT::Make([](App&amp;<sp/>app,<sp/>CEditorViewportConsumer*<sp/>pConsumer,<sp/>CEntity&amp;<sp/>ent)<sp/>{</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>tool<sp/>=<sp/>ent.AddComponent&lt;T&gt;(pConsumer);</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ent.AddComponent&lt;Tags::NoSerialise&gt;();</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ent.AddComponent&lt;STransformComponent&gt;();</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tool.Build(app,<sp/>ent);</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ent.AddComponent&lt;CEditorToolController*&gt;(&amp;tool);</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>})});</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"></highlight></codeline>
-<codeline lineno="78"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"></highlight></codeline>
-<codeline lineno="80"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Raven</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>app.AddStartupSystem([&amp;app,<sp/>&amp;dst<sp/>=<sp/>m_tools,<sp/>t<sp/>=<sp/>Meta::Type::Get&lt;T&gt;(),</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>n<sp/><sp/><sp/><sp/><sp/>=<sp/>std::string{name},</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>desc<sp/><sp/>=<sp/>std::string{description},</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>thumb<sp/>=<sp/>std::string{thumbnail}]<sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dst.emplace_back(SToolDescription{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.Type<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>t,</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.Name<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>std::move(n),</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.Description<sp/>=<sp/>std::move(desc),</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.Thumbnail<sp/><sp/><sp/>=<sp/>thumb.empty()<sp/>?<sp/>Handle&lt;CImage&gt;{}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>app.GetResource&lt;SAssetManager&gt;()</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-&gt;Load(app,<sp/>thumb)</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.OnSuccess()</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.Typed&lt;CImage&gt;(),</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.BuildToolFn<sp/>=<sp/>BuildFnT::Make(</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[](App&amp;<sp/>app,<sp/>CEditorViewportConsumer*<sp/>pConsumer,</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CEntity&amp;<sp/>ent)<sp/>{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>tool<sp/>=<sp/>ent.AddComponent&lt;T&gt;(pConsumer);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ent.AddComponent&lt;Tags::NoSerialise&gt;();</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ent.AddComponent&lt;STransformComponent&gt;();</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tool.Build(app,<sp/>ent);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ent.AddComponent&lt;CEditorToolController*&gt;(&amp;tool);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>})});</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>}).AddComponent&lt;T&gt;();</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Raven</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/Editor/Public/RavenEditor/EditorToolController.hpp"/>
   </compounddef>
