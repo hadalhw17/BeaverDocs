@@ -47,158 +47,161 @@
 <codeline lineno="2"><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;RavenMath.h&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Raven</highlight></codeline>
-<codeline lineno="6"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Voxel</highlight></codeline>
-<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>BrickT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>uint8;</highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight></codeline>
-<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Indexing<sp/>rule:<sp/>1<sp/>2<sp/>3<sp/>2<sp/>4<sp/>3</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/>std::array&lt;float3,<sp/>4&gt;<sp/>FrontFace<sp/>=<sp/></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{-0.5f,<sp/>-0.5f,<sp/>-0.5f},</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{-0.5f,<sp/><sp/>0.5f,<sp/>-0.5f},</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{<sp/>0.5f,<sp/>-0.5f,<sp/>-0.5f},</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{<sp/>0.5f,<sp/><sp/>0.5f,<sp/>-0.5f},</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/>std::array&lt;float3,<sp/>4&gt;<sp/>BackFace<sp/>=<sp/></highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{<sp/>0.5f,<sp/>-0.5f,<sp/><sp/>0.5f},</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{<sp/>0.5f,<sp/><sp/>0.5f,<sp/><sp/>0.5f},</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{-0.5f,<sp/>-0.5f,<sp/><sp/>0.5f},</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{-0.5f,<sp/><sp/>0.5f,<sp/><sp/>0.5f},</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/>std::array&lt;float3,<sp/>4&gt;<sp/>RightFace<sp/>=<sp/></highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{<sp/>0.5f,<sp/>-0.5f,<sp/>-0.5f},</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{<sp/>0.5f,<sp/><sp/>0.5f,<sp/>-0.5f},</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{<sp/>0.5f,<sp/>-0.5f,<sp/><sp/>0.5f},</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{<sp/>0.5f,<sp/><sp/>0.5f,<sp/><sp/>0.5f},</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"></highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/>std::array&lt;float3,<sp/>4&gt;<sp/>LeftFace<sp/>=<sp/></highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{-0.5f,<sp/>-0.5f,<sp/><sp/>0.5f},</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{-0.5f,<sp/><sp/>0.5f,<sp/><sp/>0.5f},</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{-0.5f,<sp/>-0.5f,<sp/>-0.5f},</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{-0.5f,<sp/><sp/>0.5f,<sp/>-0.5f},</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"></highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/>std::array&lt;float3,<sp/>4&gt;<sp/>TopFace<sp/>=<sp/></highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{-0.5f,<sp/>-0.5f,<sp/><sp/>0.5f},</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{-0.5f,<sp/>-0.5f,<sp/>-0.5f},</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{<sp/>0.5f,<sp/>-0.5f,<sp/><sp/>0.5f},</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{<sp/>0.5f,<sp/>-0.5f,<sp/>-0.5f},</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Raven<sp/>{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Voxel<sp/>{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>BrickT<sp/>=<sp/>uint8;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Indexing<sp/>rule:<sp/>1<sp/>2<sp/>3<sp/>2<sp/>4<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/>std::array&lt;float3,<sp/>4&gt;<sp/>FrontFace<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{-0.5f,<sp/>-0.5f,<sp/>-0.5f},</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{-0.5f,<sp/>0.5f,<sp/>-0.5f},</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{0.5f,<sp/>-0.5f,<sp/>-0.5f},</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{0.5f,<sp/>0.5f,<sp/>-0.5f},</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/>std::array&lt;float3,<sp/>4&gt;<sp/>BackFace<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{0.5f,<sp/>-0.5f,<sp/>0.5f},</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{0.5f,<sp/>0.5f,<sp/>0.5f},</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{-0.5f,<sp/>-0.5f,<sp/>0.5f},</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{-0.5f,<sp/>0.5f,<sp/>0.5f},</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/>std::array&lt;float3,<sp/>4&gt;<sp/>RightFace<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{0.5f,<sp/>-0.5f,<sp/>-0.5f},</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{0.5f,<sp/>0.5f,<sp/>-0.5f},</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{0.5f,<sp/>-0.5f,<sp/>0.5f},</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{0.5f,<sp/>0.5f,<sp/>0.5f},</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/>std::array&lt;float3,<sp/>4&gt;<sp/>LeftFace<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{-0.5f,<sp/>-0.5f,<sp/>0.5f},</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{-0.5f,<sp/>0.5f,<sp/>0.5f},</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{-0.5f,<sp/>-0.5f,<sp/>-0.5f},</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{-0.5f,<sp/>0.5f,<sp/>-0.5f},</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/>std::array&lt;float3,<sp/>4&gt;<sp/>TopFace<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{-0.5f,<sp/>-0.5f,<sp/>0.5f},</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{-0.5f,<sp/>-0.5f,<sp/>-0.5f},</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{0.5f,<sp/>-0.5f,<sp/>0.5f},</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{0.5f,<sp/>-0.5f,<sp/>-0.5f},</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/>std::array&lt;float3,<sp/>4&gt;<sp/>BottomFace<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{-0.5f,<sp/>0.5f,<sp/>-0.5f},</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{-0.5f,<sp/>0.5f,<sp/>0.5f},</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{0.5f,<sp/>0.5f,<sp/>-0.5f},</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{0.5f,<sp/>0.5f,<sp/>0.5f},</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
 <codeline lineno="51"><highlight class="normal"></highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/>std::array&lt;float3,<sp/>4&gt;<sp/>BottomFace<sp/>=<sp/></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{-0.5f,<sp/><sp/>0.5f,<sp/>-0.5f},</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{-0.5f,<sp/><sp/>0.5f,<sp/><sp/>0.5f},</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{<sp/>0.5f,<sp/><sp/>0.5f,<sp/>-0.5f},</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3{<sp/>0.5f,<sp/><sp/>0.5f,<sp/><sp/>0.5f},</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"></highlight></codeline>
-<codeline lineno="60" refid="struct_raven_1_1_voxel_1_1_vox_colour_r_g_b_a" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_raven_1_1_voxel_1_1_vox_colour_r_g_b_a" kindref="compound">VoxColourRGBA</ref></highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/><ref refid="struct_raven_1_1_voxel_1_1_vox_colour_r_g_b_a" kindref="compound">VoxColourRGBA</ref>(uint32<sp/>c)<sp/>:<sp/>col<sp/>{c}<sp/>{}</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">union</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32<sp/>col;</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>r,<sp/>g,<sp/>b,<sp/>a;</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"></highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>https://github.com/ephtracy/voxel-model/blob/master/MagicaVoxel-file-format-vox.txt</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>std::array&lt;VoxColourRGBA,<sp/>256&gt;<sp/>s_DefaultPalette<sp/>=</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00000000,<sp/>0xffffffff,<sp/>0xffccffff,<sp/>0xff99ffff,<sp/>0xff66ffff,<sp/>0xff33ffff,<sp/>0xff00ffff,<sp/>0xffffccff,<sp/>0xffccccff,<sp/>0xff99ccff,<sp/>0xff66ccff,<sp/>0xff33ccff,<sp/>0xff00ccff,<sp/>0xffff99ff,<sp/>0xffcc99ff,<sp/>0xff9999ff,</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff6699ff,<sp/>0xff3399ff,<sp/>0xff0099ff,<sp/>0xffff66ff,<sp/>0xffcc66ff,<sp/>0xff9966ff,<sp/>0xff6666ff,<sp/>0xff3366ff,<sp/>0xff0066ff,<sp/>0xffff33ff,<sp/>0xffcc33ff,<sp/>0xff9933ff,<sp/>0xff6633ff,<sp/>0xff3333ff,<sp/>0xff0033ff,<sp/>0xffff00ff,</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xffcc00ff,<sp/>0xff9900ff,<sp/>0xff6600ff,<sp/>0xff3300ff,<sp/>0xff0000ff,<sp/>0xffffffcc,<sp/>0xffccffcc,<sp/>0xff99ffcc,<sp/>0xff66ffcc,<sp/>0xff33ffcc,<sp/>0xff00ffcc,<sp/>0xffffcccc,<sp/>0xffcccccc,<sp/>0xff99cccc,<sp/>0xff66cccc,<sp/>0xff33cccc,</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff00cccc,<sp/>0xffff99cc,<sp/>0xffcc99cc,<sp/>0xff9999cc,<sp/>0xff6699cc,<sp/>0xff3399cc,<sp/>0xff0099cc,<sp/>0xffff66cc,<sp/>0xffcc66cc,<sp/>0xff9966cc,<sp/>0xff6666cc,<sp/>0xff3366cc,<sp/>0xff0066cc,<sp/>0xffff33cc,<sp/>0xffcc33cc,<sp/>0xff9933cc,</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff6633cc,<sp/>0xff3333cc,<sp/>0xff0033cc,<sp/>0xffff00cc,<sp/>0xffcc00cc,<sp/>0xff9900cc,<sp/>0xff6600cc,<sp/>0xff3300cc,<sp/>0xff0000cc,<sp/>0xffffff99,<sp/>0xffccff99,<sp/>0xff99ff99,<sp/>0xff66ff99,<sp/>0xff33ff99,<sp/>0xff00ff99,<sp/>0xffffcc99,</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xffcccc99,<sp/>0xff99cc99,<sp/>0xff66cc99,<sp/>0xff33cc99,<sp/>0xff00cc99,<sp/>0xffff9999,<sp/>0xffcc9999,<sp/>0xff999999,<sp/>0xff669999,<sp/>0xff339999,<sp/>0xff009999,<sp/>0xffff6699,<sp/>0xffcc6699,<sp/>0xff996699,<sp/>0xff666699,<sp/>0xff336699,</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff006699,<sp/>0xffff3399,<sp/>0xffcc3399,<sp/>0xff993399,<sp/>0xff663399,<sp/>0xff333399,<sp/>0xff003399,<sp/>0xffff0099,<sp/>0xffcc0099,<sp/>0xff990099,<sp/>0xff660099,<sp/>0xff330099,<sp/>0xff000099,<sp/>0xffffff66,<sp/>0xffccff66,<sp/>0xff99ff66,</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff66ff66,<sp/>0xff33ff66,<sp/>0xff00ff66,<sp/>0xffffcc66,<sp/>0xffcccc66,<sp/>0xff99cc66,<sp/>0xff66cc66,<sp/>0xff33cc66,<sp/>0xff00cc66,<sp/>0xffff9966,<sp/>0xffcc9966,<sp/>0xff999966,<sp/>0xff669966,<sp/>0xff339966,<sp/>0xff009966,<sp/>0xffff6666,</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xffcc6666,<sp/>0xff996666,<sp/>0xff666666,<sp/>0xff336666,<sp/>0xff006666,<sp/>0xffff3366,<sp/>0xffcc3366,<sp/>0xff993366,<sp/>0xff663366,<sp/>0xff333366,<sp/>0xff003366,<sp/>0xffff0066,<sp/>0xffcc0066,<sp/>0xff990066,<sp/>0xff660066,<sp/>0xff330066,</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff000066,<sp/>0xffffff33,<sp/>0xffccff33,<sp/>0xff99ff33,<sp/>0xff66ff33,<sp/>0xff33ff33,<sp/>0xff00ff33,<sp/>0xffffcc33,<sp/>0xffcccc33,<sp/>0xff99cc33,<sp/>0xff66cc33,<sp/>0xff33cc33,<sp/>0xff00cc33,<sp/>0xffff9933,<sp/>0xffcc9933,<sp/>0xff999933,</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff669933,<sp/>0xff339933,<sp/>0xff009933,<sp/>0xffff6633,<sp/>0xffcc6633,<sp/>0xff996633,<sp/>0xff666633,<sp/>0xff336633,<sp/>0xff006633,<sp/>0xffff3333,<sp/>0xffcc3333,<sp/>0xff993333,<sp/>0xff663333,<sp/>0xff333333,<sp/>0xff003333,<sp/>0xffff0033,</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xffcc0033,<sp/>0xff990033,<sp/>0xff660033,<sp/>0xff330033,<sp/>0xff000033,<sp/>0xffffff00,<sp/>0xffccff00,<sp/>0xff99ff00,<sp/>0xff66ff00,<sp/>0xff33ff00,<sp/>0xff00ff00,<sp/>0xffffcc00,<sp/>0xffcccc00,<sp/>0xff99cc00,<sp/>0xff66cc00,<sp/>0xff33cc00,</highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff00cc00,<sp/>0xffff9900,<sp/>0xffcc9900,<sp/>0xff999900,<sp/>0xff669900,<sp/>0xff339900,<sp/>0xff009900,<sp/>0xffff6600,<sp/>0xffcc6600,<sp/>0xff996600,<sp/>0xff666600,<sp/>0xff336600,<sp/>0xff006600,<sp/>0xffff3300,<sp/>0xffcc3300,<sp/>0xff993300,</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff663300,<sp/>0xff333300,<sp/>0xff003300,<sp/>0xffff0000,<sp/>0xffcc0000,<sp/>0xff990000,<sp/>0xff660000,<sp/>0xff330000,<sp/>0xff0000ee,<sp/>0xff0000dd,<sp/>0xff0000bb,<sp/>0xff0000aa,<sp/>0xff000088,<sp/>0xff000077,<sp/>0xff000055,<sp/>0xff000044,</highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff000022,<sp/>0xff000011,<sp/>0xff00ee00,<sp/>0xff00dd00,<sp/>0xff00bb00,<sp/>0xff00aa00,<sp/>0xff008800,<sp/>0xff007700,<sp/>0xff005500,<sp/>0xff004400,<sp/>0xff002200,<sp/>0xff001100,<sp/>0xffee0000,<sp/>0xffdd0000,<sp/>0xffbb0000,<sp/>0xffaa0000,</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff880000,<sp/>0xff770000,<sp/>0xff550000,<sp/>0xff440000,<sp/>0xff220000,<sp/>0xff110000,<sp/>0xffeeeeee,<sp/>0xffdddddd,<sp/>0xffbbbbbb,<sp/>0xffaaaaaa,<sp/>0xff888888,<sp/>0xff777777,<sp/>0xff555555,<sp/>0xff444444,<sp/>0xff222222,<sp/>0xff111111</highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="93"><highlight class="normal"></highlight></codeline>
-<codeline lineno="94"><highlight class="normal"></highlight></codeline>
-<codeline lineno="95" refid="struct_raven_1_1_voxel_1_1_s_chunk" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_raven_1_1_voxel_1_1_s_chunk" kindref="compound">SChunk</ref></highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>VoxelStorageT<sp/>=<sp/>std::vector&lt;BrickT&gt;;</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"></highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_raven_1_1_voxel_1_1_s_chunk" kindref="compound">SChunk</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint3<sp/>dims)</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>data<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<sp/>dims.x<sp/>*<sp/>dims.y<sp/>*<sp/>dims.z,<sp/>0)</highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/>position<sp/><sp/><sp/>{<sp/>0.f<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/>dimensions<sp/>{<sp/>dims<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/>sideSize<sp/><sp/><sp/>{<sp/>1.f<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{}</highlight></codeline>
-<codeline lineno="105"><highlight class="normal"></highlight></codeline>
-<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_raven_1_1_voxel_1_1_s_chunk" kindref="compound">SChunk</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint3<sp/>dims,<sp/>BrickT<sp/>defaultBrickType,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>float3<sp/>pos,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>size)</highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>data<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<sp/>dims.x<sp/>*<sp/>dims.y<sp/>*<sp/>dims.z,<sp/>defaultBrickType<sp/>)</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/>position<sp/><sp/><sp/>{<sp/>pos<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/>dimensions<sp/>{<sp/>dims<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/>sideSize<sp/><sp/><sp/>{<sp/>size<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{}</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"></highlight></codeline>
-<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/>uint32<sp/>GetBrickIndex(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint3<sp/>p)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="114"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(glm::all(glm::lessThan(p,<sp/>dimensions)))</highlight></codeline>
-<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>p.z<sp/>*<sp/>dimensions.x<sp/>*<sp/>dimensions.y<sp/>+<sp/>p.y<sp/>*<sp/>dimensions.x<sp/>+<sp/>p.x;</highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="52" refid="struct_raven_1_1_voxel_1_1_vox_colour_r_g_b_a" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_raven_1_1_voxel_1_1_vox_colour_r_g_b_a" kindref="compound">VoxColourRGBA</ref><sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/><ref refid="struct_raven_1_1_voxel_1_1_vox_colour_r_g_b_a" kindref="compound">VoxColourRGBA</ref>(uint32<sp/>c)<sp/>:<sp/>col{c}<sp/>{}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">union<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32<sp/>col;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>r,<sp/>g,<sp/>b,<sp/>a;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>https://github.com/ephtracy/voxel-model/blob/master/MagicaVoxel-file-format-vox.txt</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>std::array&lt;VoxColourRGBA,<sp/>256&gt;<sp/>s_DefaultPalette<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00000000,<sp/>0xffffffff,<sp/>0xffccffff,<sp/>0xff99ffff,<sp/>0xff66ffff,<sp/>0xff33ffff,</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff00ffff,<sp/>0xffffccff,<sp/>0xffccccff,<sp/>0xff99ccff,<sp/>0xff66ccff,<sp/>0xff33ccff,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff00ccff,<sp/>0xffff99ff,<sp/>0xffcc99ff,<sp/>0xff9999ff,<sp/>0xff6699ff,<sp/>0xff3399ff,</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff0099ff,<sp/>0xffff66ff,<sp/>0xffcc66ff,<sp/>0xff9966ff,<sp/>0xff6666ff,<sp/>0xff3366ff,</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff0066ff,<sp/>0xffff33ff,<sp/>0xffcc33ff,<sp/>0xff9933ff,<sp/>0xff6633ff,<sp/>0xff3333ff,</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff0033ff,<sp/>0xffff00ff,<sp/>0xffcc00ff,<sp/>0xff9900ff,<sp/>0xff6600ff,<sp/>0xff3300ff,</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff0000ff,<sp/>0xffffffcc,<sp/>0xffccffcc,<sp/>0xff99ffcc,<sp/>0xff66ffcc,<sp/>0xff33ffcc,</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff00ffcc,<sp/>0xffffcccc,<sp/>0xffcccccc,<sp/>0xff99cccc,<sp/>0xff66cccc,<sp/>0xff33cccc,</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff00cccc,<sp/>0xffff99cc,<sp/>0xffcc99cc,<sp/>0xff9999cc,<sp/>0xff6699cc,<sp/>0xff3399cc,</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff0099cc,<sp/>0xffff66cc,<sp/>0xffcc66cc,<sp/>0xff9966cc,<sp/>0xff6666cc,<sp/>0xff3366cc,</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff0066cc,<sp/>0xffff33cc,<sp/>0xffcc33cc,<sp/>0xff9933cc,<sp/>0xff6633cc,<sp/>0xff3333cc,</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff0033cc,<sp/>0xffff00cc,<sp/>0xffcc00cc,<sp/>0xff9900cc,<sp/>0xff6600cc,<sp/>0xff3300cc,</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff0000cc,<sp/>0xffffff99,<sp/>0xffccff99,<sp/>0xff99ff99,<sp/>0xff66ff99,<sp/>0xff33ff99,</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff00ff99,<sp/>0xffffcc99,<sp/>0xffcccc99,<sp/>0xff99cc99,<sp/>0xff66cc99,<sp/>0xff33cc99,</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff00cc99,<sp/>0xffff9999,<sp/>0xffcc9999,<sp/>0xff999999,<sp/>0xff669999,<sp/>0xff339999,</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff009999,<sp/>0xffff6699,<sp/>0xffcc6699,<sp/>0xff996699,<sp/>0xff666699,<sp/>0xff336699,</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff006699,<sp/>0xffff3399,<sp/>0xffcc3399,<sp/>0xff993399,<sp/>0xff663399,<sp/>0xff333399,</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff003399,<sp/>0xffff0099,<sp/>0xffcc0099,<sp/>0xff990099,<sp/>0xff660099,<sp/>0xff330099,</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff000099,<sp/>0xffffff66,<sp/>0xffccff66,<sp/>0xff99ff66,<sp/>0xff66ff66,<sp/>0xff33ff66,</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff00ff66,<sp/>0xffffcc66,<sp/>0xffcccc66,<sp/>0xff99cc66,<sp/>0xff66cc66,<sp/>0xff33cc66,</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff00cc66,<sp/>0xffff9966,<sp/>0xffcc9966,<sp/>0xff999966,<sp/>0xff669966,<sp/>0xff339966,</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff009966,<sp/>0xffff6666,<sp/>0xffcc6666,<sp/>0xff996666,<sp/>0xff666666,<sp/>0xff336666,</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff006666,<sp/>0xffff3366,<sp/>0xffcc3366,<sp/>0xff993366,<sp/>0xff663366,<sp/>0xff333366,</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff003366,<sp/>0xffff0066,<sp/>0xffcc0066,<sp/>0xff990066,<sp/>0xff660066,<sp/>0xff330066,</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff000066,<sp/>0xffffff33,<sp/>0xffccff33,<sp/>0xff99ff33,<sp/>0xff66ff33,<sp/>0xff33ff33,</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff00ff33,<sp/>0xffffcc33,<sp/>0xffcccc33,<sp/>0xff99cc33,<sp/>0xff66cc33,<sp/>0xff33cc33,</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff00cc33,<sp/>0xffff9933,<sp/>0xffcc9933,<sp/>0xff999933,<sp/>0xff669933,<sp/>0xff339933,</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff009933,<sp/>0xffff6633,<sp/>0xffcc6633,<sp/>0xff996633,<sp/>0xff666633,<sp/>0xff336633,</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff006633,<sp/>0xffff3333,<sp/>0xffcc3333,<sp/>0xff993333,<sp/>0xff663333,<sp/>0xff333333,</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff003333,<sp/>0xffff0033,<sp/>0xffcc0033,<sp/>0xff990033,<sp/>0xff660033,<sp/>0xff330033,</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff000033,<sp/>0xffffff00,<sp/>0xffccff00,<sp/>0xff99ff00,<sp/>0xff66ff00,<sp/>0xff33ff00,</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff00ff00,<sp/>0xffffcc00,<sp/>0xffcccc00,<sp/>0xff99cc00,<sp/>0xff66cc00,<sp/>0xff33cc00,</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff00cc00,<sp/>0xffff9900,<sp/>0xffcc9900,<sp/>0xff999900,<sp/>0xff669900,<sp/>0xff339900,</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff009900,<sp/>0xffff6600,<sp/>0xffcc6600,<sp/>0xff996600,<sp/>0xff666600,<sp/>0xff336600,</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff006600,<sp/>0xffff3300,<sp/>0xffcc3300,<sp/>0xff993300,<sp/>0xff663300,<sp/>0xff333300,</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff003300,<sp/>0xffff0000,<sp/>0xffcc0000,<sp/>0xff990000,<sp/>0xff660000,<sp/>0xff330000,</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff0000ee,<sp/>0xff0000dd,<sp/>0xff0000bb,<sp/>0xff0000aa,<sp/>0xff000088,<sp/>0xff000077,</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff000055,<sp/>0xff000044,<sp/>0xff000022,<sp/>0xff000011,<sp/>0xff00ee00,<sp/>0xff00dd00,</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff00bb00,<sp/>0xff00aa00,<sp/>0xff008800,<sp/>0xff007700,<sp/>0xff005500,<sp/>0xff004400,</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff002200,<sp/>0xff001100,<sp/>0xffee0000,<sp/>0xffdd0000,<sp/>0xffbb0000,<sp/>0xffaa0000,</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff880000,<sp/>0xff770000,<sp/>0xff550000,<sp/>0xff440000,<sp/>0xff220000,<sp/>0xff110000,</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xffeeeeee,<sp/>0xffdddddd,<sp/>0xffbbbbbb,<sp/>0xffaaaaaa,<sp/>0xff888888,<sp/>0xff777777,</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xff555555,<sp/>0xff444444,<sp/>0xff222222,<sp/>0xff111111};</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="struct_raven_1_1_voxel_1_1_s_chunk" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_raven_1_1_voxel_1_1_s_chunk" kindref="compound">SChunk</ref><sp/>{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>VoxelStorageT<sp/>=<sp/>std::vector&lt;BrickT&gt;;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_raven_1_1_voxel_1_1_s_chunk" kindref="compound">SChunk</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint3<sp/>dims)</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>data(dims.x<sp/>*<sp/>dims.y<sp/>*<sp/>dims.z,<sp/>0),<sp/>position{0.f},</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dimensions{dims},<sp/>sideSize{1.f}<sp/>{}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_raven_1_1_voxel_1_1_s_chunk" kindref="compound">SChunk</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint3<sp/>dims,<sp/>BrickT<sp/>defaultBrickType,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>float3<sp/>pos,</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>size)</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>data(dims.x<sp/>*<sp/>dims.y<sp/>*<sp/>dims.z,<sp/>defaultBrickType),<sp/>position{pos},</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dimensions{dims},<sp/>sideSize{size}<sp/>{}</highlight></codeline>
 <codeline lineno="119"><highlight class="normal"></highlight></codeline>
-<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="122"><highlight class="normal"></highlight></codeline>
-<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/>int3<sp/>IndexTo3DIndex(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32<sp/>idx)</highlight></codeline>
-<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(idx<sp/>&lt;<sp/>dimensions.x<sp/>*<sp/>dimensions.y<sp/>*<sp/>dimensions.z)</highlight></codeline>
-<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>int3{idx<sp/>%<sp/>dimensions.x,<sp/>(idx<sp/>/<sp/>dimensions.x)<sp/>%<sp/>dimensions.y,<sp/>idx<sp/>/<sp/>(dimensions.x<sp/>*<sp/>dimensions.y)<sp/>};</highlight></codeline>
-<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>int3{0};</highlight></codeline>
-<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="129"><highlight class="normal"></highlight></codeline>
-<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/>BrickT<sp/>GetBrickType(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint3<sp/>p)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="131"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>data[GetBrickIndex(p)];</highlight></codeline>
-<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="134"><highlight class="normal"></highlight></codeline>
-<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetBrickType(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint3<sp/>p,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BrickT<sp/>t)</highlight></codeline>
-<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data[GetBrickIndex(p)]<sp/>=<sp/>t;</highlight></codeline>
-<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="139"><highlight class="normal"></highlight></codeline>
-<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3<sp/>GetBrickPosition(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint3<sp/>p)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="141"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(glm::all(glm::lessThan(p,<sp/>dimensions)))</highlight></codeline>
-<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(float3(p))<sp/>+<sp/>position;</highlight></codeline>
-<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>float3{<sp/>0.f<sp/>};</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/>uint32<sp/>GetBrickIndex(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint3<sp/>p)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(glm::all(glm::lessThan(p,<sp/>dimensions)))<sp/>{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>p.z<sp/>*<sp/>dimensions.x<sp/>*<sp/>dimensions.y<sp/>+<sp/>p.y<sp/>*<sp/>dimensions.x<sp/>+</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p.x;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/>int3<sp/>IndexTo3DIndex(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32<sp/>idx)<sp/>{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(idx<sp/>&lt;<sp/>dimensions.x<sp/>*<sp/>dimensions.y<sp/>*<sp/>dimensions.z)</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>int3{idx<sp/>%<sp/>dimensions.x,</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(idx<sp/>/<sp/>dimensions.x)<sp/>%<sp/>dimensions.y,</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>idx<sp/>/<sp/>(dimensions.x<sp/>*<sp/>dimensions.y)};</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>int3{0};</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/>BrickT<sp/>GetBrickType(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint3<sp/>p)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>data[GetBrickIndex(p)];</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetBrickType(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint3<sp/>p,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BrickT<sp/>t)<sp/>{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data[GetBrickIndex(p)]<sp/>=<sp/>t;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3<sp/>GetBrickPosition(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint3<sp/>p)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(glm::all(glm::lessThan(p,<sp/>dimensions)))<sp/>{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(float3(p))<sp/>+<sp/>position;</highlight></codeline>
 <codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="149"><highlight class="normal"></highlight></codeline>
-<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>VoxelStorageT<sp/>data;</highlight></codeline>
-<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>position;</highlight></codeline>
-<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint3<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dimensions;</highlight></codeline>
-<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sideSize;</highlight></codeline>
-<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="156"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>float3{0.f};</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>VoxelStorageT<sp/>data;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>float3<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>position;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint3<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dimensions;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sideSize;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="158"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Voxel</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Raven</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/Raven3DEngine/Voxel/Brick.hpp"/>
   </compounddef>
