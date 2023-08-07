@@ -1,0 +1,662 @@
+
+	
+
+<!DOCTYPE html>
+<html class="writer-html5 dark" lang="C++" >
+<head>
+	<meta charset="utf-8">
+	<meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+		<title>Systems &mdash; Raven Engine 0.0.1 documentation</title>
+	
+	
+	
+	<link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+	<link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+	<link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+	<link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+	
+	
+	
+	
+
+	
+	<!--[if lt IE 9]>
+		<script src="_static/js/html5shiv.min.js"></script>
+	<![endif]-->
+	
+		
+			<script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+				<script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+				<script src="_static/doctools.js"></script>
+				<script src="_static/sphinx_highlight.js"></script>
+		
+		<script type="text/javascript" src="_static/js/theme.js"></script>
+
+		
+		<link rel="index" title="Index" href="genindex.html" />
+		<link rel="search" title="Search" href="search.html" /> 
+</head>
+<body class="wy-body-for-nav">
+
+
+	 
+	<div class="wy-grid-for-nav">
+		
+		<nav data-toggle="wy-nav-shift" class="wy-nav-side">
+			<div class="wy-side-scroll">
+				<div class="wy-side-nav-search">
+					
+						<div class="brand">
+							<a href="index.html">
+							
+								Raven Engine
+							
+							</a>
+						</div>
+						
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+					
+				</div>
+				
+				<div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+					
+						
+						
+							
+						
+						
+							<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="philosophy.html">Engine philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples.html">Samples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Raven API</a></li>
+</ul>
+
+						
+					
+				</div>
+				
+			</div>
+		</nav>
+
+		<section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+			
+			<nav class="wy-nav-top" aria-label="top navigation">
+			
+				<i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+				<a href="index.html">
+					
+						Raven Engine
+					
+				</a>
+			
+			</nav>
+
+
+			<div class="wy-nav-content">
+				
+				<div class="rst-content">
+				
+					<div role="navigation" aria-label="breadcrumbs navigation">
+
+	<ul class="wy-breadcrumbs">
+		
+			
+				<li><a href="index.html">Raven Engine</a> ⁄&nbsp;</li>
+				
+				<li><a href="">Systems</a></li>
+			
+		
+		
+			<li class="wy-breadcrumbs-aside">
+			
+				<a href="https://github.com/hadalhw17/RavenEngine" class="fa fa-github-alt"></a>
+			
+			</li>
+		
+	</ul>
+
+</div>
+					<div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+					 <div itemprop="articleBody">
+						
+  <section id="systems">
+<h1>Systems<a class="headerlink" href="#systems" title="Permalink to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>Systems are the core unit of the engine that is responsible for invoking engine logic. All of the systems are organised in a schedule, which itself is split into stages.
+Stages run sequentially in the order that is specified during app building stage.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><a class="reference internal" href="#stage">Stage</a>.</p></li>
+<li><p><a class="reference internal" href="#system">System</a>.</p></li>
+<li><p><a class="reference internal" href="#condition">Condition</a>.</p></li>
+<li><p><a class="reference internal" href="#threading">Threading</a>.</p></li>
+</ol>
+</div></blockquote>
+<section id="stage">
+<h2>Stage<a class="headerlink" href="#stage" title="Permalink to this heading">¶</a></h2>
+<p>To simiplify logic organisation of the app, it is possible to split logic onto stages which will be independent from each other. Meaning that they do not share any state or could run in parallel.
+Stages can be added to the app using <a class="reference internal" href="cpp/file/d3/ddf/RavenApp_8hpp.html#_CPPv4N5Raven3App8AddStageEPKc11EStageFlags" title="Raven::App::AddStage"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Raven::App::AddStage()</span></code></a> to just add a stage, <a class="reference internal" href="cpp/file/d3/ddf/RavenApp_8hpp.html#_CPPv4N5Raven3App14AddStageBeforeEPKcPKc11EStageFlags" title="Raven::App::AddStageBefore"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Raven::App::AddStageBefore()</span></code></a> or <a class="reference internal" href="cpp/file/d3/ddf/RavenApp_8hpp.html#_CPPv4N5Raven3App13AddStageAfterEPKcPKc11EStageFlags" title="Raven::App::AddStageAfter"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Raven::App::AddStageAfter()</span></code></a>
+to add a stage at a specific position relative to some other stage.
+Aa menitoned, Raven is fully build using this workflow, so it exposes a set of stages for core engine modules and general components.
+It is totally normal to add new stages and move component updates there.</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven13DefaultStagesE">
+<span id="_CPPv3N5Raven13DefaultStagesE"></span><span id="_CPPv2N5Raven13DefaultStagesE"></span><span id="Raven::DefaultStages"></span><span class="target" id="d0/d00/namespaceRaven_1_1DefaultStages"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">DefaultStages</span></span></span><br /></dt>
+<dd><p>A set of labels for stages that are needed for the engine to function correctly Added to the app when default app is constructed using <a class="reference internal" href="cpp/file/d3/ddf/RavenApp_8hpp.html#df/d00/structRaven_1_1App_1abc1aea204e34133a1c846d4685e7dacb"><span class="std std-ref">Raven::App::Default</span></a>. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-variables">Variables</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven13DefaultStages5FIRSTE">
+<span id="_CPPv3N5Raven13DefaultStages5FIRSTE"></span><span id="_CPPv2N5Raven13DefaultStages5FIRSTE"></span><span id="Raven::DefaultStages::FIRST__cCP"></span><span class="target" id="d0/d00/namespaceRaven_1_1DefaultStages_1a9515a01c5d0fcdb08bb989d464f71263"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">FIRST</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;first&quot;</span></span><br /></dt>
+<dd><p>First executed stage, used for event handling. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven13DefaultStages10PRE_UPDATEE">
+<span id="_CPPv3N5Raven13DefaultStages10PRE_UPDATEE"></span><span id="_CPPv2N5Raven13DefaultStages10PRE_UPDATEE"></span><span id="Raven::DefaultStages::PRE_UPDATE__cCP"></span><span class="target" id="d0/d00/namespaceRaven_1_1DefaultStages_1a5e531be40397521201c739991e5dfef0"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PRE_UPDATE</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;pre_update&quot;</span></span><br /></dt>
+<dd><p>Update engine before components. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven13DefaultStages6UPDATEE">
+<span id="_CPPv3N5Raven13DefaultStages6UPDATEE"></span><span id="_CPPv2N5Raven13DefaultStages6UPDATEE"></span><span id="Raven::DefaultStages::UPDATE__cCP"></span><span class="target" id="d0/d00/namespaceRaven_1_1DefaultStages_1a8b24dd5cfffd833c3fc3ded48f256c9c"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">UPDATE</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;update&quot;</span></span><br /></dt>
+<dd><p>Core component update. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven13DefaultStages11POST_UPDATEE">
+<span id="_CPPv3N5Raven13DefaultStages11POST_UPDATEE"></span><span id="_CPPv2N5Raven13DefaultStages11POST_UPDATEE"></span><span id="Raven::DefaultStages::POST_UPDATE__cCP"></span><span class="target" id="d0/d00/namespaceRaven_1_1DefaultStages_1a0fc53f13da07b3a7153c3cb782201086"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">POST_UPDATE</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;post_update&quot;</span></span><br /></dt>
+<dd><p>Update engine after components. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven13DefaultStages4LASTE">
+<span id="_CPPv3N5Raven13DefaultStages4LASTE"></span><span id="_CPPv2N5Raven13DefaultStages4LASTE"></span><span id="Raven::DefaultStages::LAST__cCP"></span><span class="target" id="d0/d00/namespaceRaven_1_1DefaultStages_1a3bf0bbd36d4034a0009717fce8bcffc3"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">LAST</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;last&quot;</span></span><br /></dt>
+<dd><p>End of frame clean up. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<p>Additionally renderer is using its own set of stages:</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven8Renderer6StagesE">
+<span id="_CPPv3N5Raven8Renderer6StagesE"></span><span id="_CPPv2N5Raven8Renderer6StagesE"></span><span id="Raven::Renderer::Stages"></span><span class="target" id="df/d62/namespaceRaven_1_1Renderer_1_1Stages"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Stages</span></span></span><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-variables">Variables</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven8Renderer6Stages7EXTRACTE">
+<span id="_CPPv3N5Raven8Renderer6Stages7EXTRACTE"></span><span id="_CPPv2N5Raven8Renderer6Stages7EXTRACTE"></span><span id="Raven::Renderer::Stages::EXTRACT__cCP"></span><span class="target" id="d9/dd1/IRavenRenderer_8h_1a66af760638b50ecc54628b7c6ebfa8e3"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">EXTRACT</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;Renderer::Extract&quot;</span></span><br /></dt>
+<dd><p>Process modified app resources, copy components that need to be rendered. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven8Renderer6Stages7PREPAREE">
+<span id="_CPPv3N5Raven8Renderer6Stages7PREPAREE"></span><span id="_CPPv2N5Raven8Renderer6Stages7PREPAREE"></span><span id="Raven::Renderer::Stages::PREPARE__cCP"></span><span class="target" id="d9/dd1/IRavenRenderer_8h_1ab0c1d53d5388ed0f9c814cae8ec8feaf"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">PREPARE</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;Renderer::Prepare&quot;</span></span><br /></dt>
+<dd><p>Prepare extracted resources and components. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven8Renderer6Stages6RECORDE">
+<span id="_CPPv3N5Raven8Renderer6Stages6RECORDE"></span><span id="_CPPv2N5Raven8Renderer6Stages6RECORDE"></span><span id="Raven::Renderer::Stages::RECORD__cCP"></span><span class="target" id="d9/dd1/IRavenRenderer_8h_1ad0fff6f15caadb6c8a498d52dd6a1054"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">RECORD</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;Renderer::Record&quot;</span></span><br /></dt>
+<dd><p>Build frame graphcs and record them to command lists Present. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+<section id="system">
+<h2>System<a class="headerlink" href="#system" title="Permalink to this heading">¶</a></h2>
+<p>Systems directly map to functions in c++ and can be added to stage along with system dependencies to other stages. To add a system to the app, it is possible to call <code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">App::AddSystem()</span></code>
+with the stage name and function pointer that needs to be executed. Note that also lambdas can be passed. To specify order dependencies between systems, <a class="reference internal" href="cpp/file/d3/ddf/RavenApp_8hpp.html#_CPPv4N5Raven10SystemDescE" title="Raven::SystemDesc"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Raven::SystemDesc</span></code></a>
+should be passed to <a class="reference internal" href="cpp/file/d3/ddf/RavenApp_8hpp.html#_CPPv4N5Raven10SystemDescE" title="Raven::SystemDesc"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Raven::SystemDesc</span></code></a> with function labels of dependent systems passed into <a class="reference internal" href="cpp/file/d3/ddf/RavenApp_8hpp.html#_CPPv4N5Raven10SystemDesc6BeforeEK6LabelT" title="Raven::SystemDesc::Before"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Raven::SystemDesc::Before()</span></code></a> to execute this system before specified systems
+and <a class="reference internal" href="cpp/file/d3/ddf/RavenApp_8hpp.html#_CPPv4N5Raven10SystemDesc5AfterEK6LabelT" title="Raven::SystemDesc::After"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Raven::SystemDesc::After()</span></code></a> to execute after specified systems.
+For example:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// In the stage &quot;Update&quot;, execute &quot;Count&quot; before &quot;Print&quot;</span>
+<span class="hll"><span class="n">app</span><span class="p">.</span><span class="n">AddSystem</span><span class="p">(</span><span class="s">&quot;Update&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">SystemDesc</span><span class="p">{</span><span class="o">&amp;</span><span class="n">Count</span><span class="p">}.</span><span class="n">Before</span><span class="p">(</span><span class="n">AsLabel</span><span class="p">(</span><span class="o">&amp;</span><span class="n">Print</span><span class="p">)));</span>
+</span>
+<span class="c1">// Alternatively same logic could be expressed in reverse</span>
+<span class="c1">// In the stage &quot;Update&quot;, execute &quot;Print&quot; after &quot;Count&quot;</span>
+<span class="hll"><span class="n">app</span><span class="p">.</span><span class="n">AddSystem</span><span class="p">(</span><span class="s">&quot;Update&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">SystemDesc</span><span class="p">{</span><span class="o">&amp;</span><span class="n">Print</span><span class="p">}.</span><span class="n">After</span><span class="p">(</span><span class="n">AsLabel</span><span class="p">(</span><span class="o">&amp;</span><span class="n">Count</span><span class="p">)));</span>
+</span></pre></div>
+</div>
+<p>For all registered systems, scheduler also acts as an argument provider, which is able to figure out the scope of execution: app or simulation, fetch all required resources from their owner,
+whcich are resoures or components respectively for app and simulation scope.</p>
+</section>
+<section id="condition">
+<h2>Condition<a class="headerlink" href="#condition" title="Permalink to this heading">¶</a></h2>
+<p>Due to the fact that engine schedule is mainly statically build ruring startup poses a limitation on how dynamic the engine could be. To overcome this limit and schedule <strong>all</strong> functions
+in advance during the build scope, but then conditionally execute them when needed, <a class="reference internal" href="cpp/file/d3/ddf/RavenApp_8hpp.html#_CPPv4N5Raven13ConditionDescE" title="Raven::ConditionDesc"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Raven::ConditionDesc</span></code></a>.
+A condition is a regular system that is returning <a class="reference internal" href="cpp/file/d3/ddf/RavenApp_8hpp.html#_CPPv4N5Raven10EShouldRunE" title="Raven::EShouldRun"><code class="xref cpp cpp-enum docutils literal notranslate"><span class="pre">Raven::EShouldRun</span></code></a> enum.</p>
+<dl class="cpp enum-class">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven10EShouldRunE">
+<span id="_CPPv3N5Raven10EShouldRunE"></span><span id="_CPPv2N5Raven10EShouldRunE"></span><span class="target" id="d3/ddf/RavenApp_8hpp_1ab35b33b32e5f964287a8e46ba9bfff75"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><a class="reference internal" href="components.html#_CPPv45Raven" title="Raven"><span class="n"><span class="pre">Raven</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">EShouldRun</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="cpp/file/dd/d07/BaseTypes_8hpp.html#_CPPv45uint8" title="uint8"><span class="n"><span class="pre">uint8</span></span></a><br /></dt>
+<dd><p>Return type for a function that will be treated as <a class="reference internal" href="#d7/dfc/structRaven_1_1ConditionDesc"><span class="std std-ref">ConditionDesc</span></a>. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven10EShouldRun2NoE">
+<span id="_CPPv3N5Raven10EShouldRun2NoE"></span><span id="_CPPv2N5Raven10EShouldRun2NoE"></span><span class="target" id="d3/ddf/RavenApp_8hpp_1ab35b33b32e5f964287a8e46ba9bfff75abafd7322c6e97d25b6299b5d6fe8920b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">No</span></span></span><br /></dt>
+<dd><p>Do not run this frame. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven10EShouldRun3YesE">
+<span id="_CPPv3N5Raven10EShouldRun3YesE"></span><span id="_CPPv2N5Raven10EShouldRun3YesE"></span><span class="target" id="d3/ddf/RavenApp_8hpp_1ab35b33b32e5f964287a8e46ba9bfff75a93cba07454f06a4a960172bbd6e2a435"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Yes</span></span></span><br /></dt>
+<dd><p>Run this frame once. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven10EShouldRun15NoAndCheckAgainE">
+<span id="_CPPv3N5Raven10EShouldRun15NoAndCheckAgainE"></span><span id="_CPPv2N5Raven10EShouldRun15NoAndCheckAgainE"></span><span class="target" id="d3/ddf/RavenApp_8hpp_1ab35b33b32e5f964287a8e46ba9bfff75a759dedf523c94d16edac448ad8312c86"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">NoAndCheckAgain</span></span></span><br /></dt>
+<dd><p>Do not run the system, but evaluate the condition at the end of the stage and rerun if positive result is returned. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven10EShouldRun16YesAndCheckAgainE">
+<span id="_CPPv3N5Raven10EShouldRun16YesAndCheckAgainE"></span><span id="_CPPv2N5Raven10EShouldRun16YesAndCheckAgainE"></span><span class="target" id="d3/ddf/RavenApp_8hpp_1ab35b33b32e5f964287a8e46ba9bfff75aec96d08411d0d17ed10c0dd8ce9a07c5"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">YesAndCheckAgain</span></span></span><br /></dt>
+<dd><p>Run the system and test again at the end ofthe stage and rerun if positive result is returned. </p>
+</dd></dl>
+
+</dd></dl>
+
+<p>All systems that are returning <a class="reference internal" href="cpp/file/d3/ddf/RavenApp_8hpp.html#_CPPv4N5Raven10EShouldRunE" title="Raven::EShouldRun"><code class="xref cpp cpp-enum docutils literal notranslate"><span class="pre">Raven::EShouldRun</span></code></a> are automatically converted to
+conditons and could be referenced by other systems. It is possible to execute the system several times per stage using <strong>EShouldRun::&lt;Yes/No&gt;AndCheckAgain</strong> values. The stage will run
+utill all systes are done executing and not returning any <em>AndCheckAgain</em> conditions.
+As mentioned previously, conditions are basically regular systems, so they should be registered same way as regular systems and then referenced in <a class="reference internal" href="cpp/file/d3/ddf/RavenApp_8hpp.html#_CPPv4I0EN5Raven10SystemDesc13WithConditionER10SystemDescRK5CondT" title="Raven::SystemDesc::WithCondition"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Raven::SystemDesc::WithCondition()</span></code></a>.</p>
+<p>For example:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// Counter resurce</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">Counter</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="p">};</span>
+<span class="n">app</span><span class="p">.</span><span class="n">CreateResource</span><span class="o">&lt;</span><span class="n">Counter</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="c1">// Register the condition to the &quot;Update&quot; stage and name it &quot;Cond&quot;</span>
+<span class="c1">// Which would only be satisfied on even frames</span>
+<span class="n">app</span><span class="p">.</span><span class="n">AddSystem</span><span class="p">(</span><span class="s">&quot;Update&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">SystemDesc</span><span class="p">{[](</span><span class="n">Counter</span><span class="o">&amp;</span><span class="w"> </span><span class="n">cnd</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">EShouldRun</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">cnd</span><span class="p">.</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">EShouldRun</span><span class="o">::</span><span class="n">Yes</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">EShouldRun</span><span class="o">::</span><span class="n">No</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}}.</span><span class="n">Label</span><span class="p">(</span><span class="s">&quot;IsEven&quot;</span><span class="p">));</span>
+
+<span class="c1">// In the stage &quot;Update&quot;, execute &quot;Print&quot; every other frame</span>
+<span class="n">app</span><span class="p">.</span><span class="n">AddSystem</span><span class="p">(</span><span class="s">&quot;Update&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">SystemDesc</span><span class="p">{</span><span class="o">&amp;</span><span class="n">Print</span><span class="p">}</span>
+<span class="hll"><span class="w">    </span><span class="p">.</span><span class="n">WithCondition</span><span class="p">(</span><span class="n">AsLabel</span><span class="p">(</span><span class="s">&quot;IsEven&quot;</span><span class="p">)));</span>
+</span></pre></div>
+</div>
+</section>
+<section id="threading">
+<h2>Threading<a class="headerlink" href="#threading" title="Permalink to this heading">¶</a></h2>
+<p>The main reason for such design is scalability and potential for threading. Now that all functions and their inputs are all exposed,
+it is possible to figure out all dependencies and schedule everything as jobs respecting initially specified order and avoiding systems that could race on resources at the same time.
+Threading is controlled by <a class="reference internal" href="cpp/file/d3/ddf/RavenApp_8hpp.html#_CPPv4N5Raven11EStageFlagsE" title="Raven::EStageFlags"><code class="xref cpp cpp-enum docutils literal notranslate"><span class="pre">Raven::EStageFlags</span></code></a> which could be passed to stage registration. Threading is done using engine's job system <a class="reference internal" href="cpp/file/d5/d91/ThreadPool_8hpp.html#_CPPv4N5Raven2MT11CThreadPoolE" title="Raven::MT::CThreadPool"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Raven::MT::CThreadPool</span></code></a>.</p>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven9CScheduleE">
+<span id="_CPPv3N5Raven9CScheduleE"></span><span id="_CPPv2N5Raven9CScheduleE"></span><span id="Raven::CSchedule"></span><span class="target" id="d8/db6/classRaven_1_1CSchedule"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CSchedule</span></span></span><br /></dt>
+<dd><p>Scheduler of the <a class="reference internal" href="cpp/file/d3/ddf/RavenApp_8hpp.html#df/d00/structRaven_1_1App"><span class="std std-ref">App</span></a>. </p>
+<p>Subclassed by <a class="reference internal" href="cpp/file/d3/ddf/RavenApp_8hpp.html#df/de5/classRaven_1_1CStartupSchdule"><span class="std std-ref">Raven::CStartupSchdule</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven9CSchedule8AddStageEPKc11EStageFlags">
+<span id="_CPPv3N5Raven9CSchedule8AddStageEPKc11EStageFlags"></span><span id="_CPPv2N5Raven9CSchedule8AddStageEPKc11EStageFlags"></span><span id="Raven::CSchedule::AddStage__cCP.EStageFlags"></span><span class="target" id="d8/db6/classRaven_1_1CSchedule_1a5836eef7dec9c4a105fe84784246b85b"></span><a class="reference internal" href="cpp/file/dd/dc2/Stage_8hpp.html#_CPPv4N5Raven9CSchedule5StageE" title="Raven::CSchedule::Stage"><span class="n"><span class="pre">Stage</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">AddStage</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">name</span></span>, <a class="reference internal" href="cpp/file/d3/ddf/RavenApp_8hpp.html#_CPPv4N5Raven11EStageFlagsE" title="Raven::EStageFlags"><span class="n"><span class="pre">EStageFlags</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">eFlags</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Add new stage to the app. </p>
+<p>Adds a stage if it wasn't found, otherwise does nothing </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> -- stage name </p></li>
+<li><p><strong>eFlags</strong> -- flags that the stage will be construcyted with </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>added or discovered stage </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven9CSchedule13AddStageAfterEPKcPKc11EStageFlags">
+<span id="_CPPv3N5Raven9CSchedule13AddStageAfterEPKcPKc11EStageFlags"></span><span id="_CPPv2N5Raven9CSchedule13AddStageAfterEPKcPKc11EStageFlags"></span><span id="Raven::CSchedule::AddStageAfter__cCP.cCP.EStageFlags"></span><span class="target" id="d8/db6/classRaven_1_1CSchedule_1a3711ff3e8a91df9b6d69edc7e524fbc0"></span><a class="reference internal" href="cpp/file/dd/dc2/Stage_8hpp.html#_CPPv4N5Raven9CSchedule5StageE" title="Raven::CSchedule::Stage"><span class="n"><span class="pre">Stage</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">AddStageAfter</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">name</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">pAfterName</span></span>, <a class="reference internal" href="cpp/file/d3/ddf/RavenApp_8hpp.html#_CPPv4N5Raven11EStageFlagsE" title="Raven::EStageFlags"><span class="n"><span class="pre">EStageFlags</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">eFlags</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Add new stage to the app after specified stage. </p>
+<p>Adds a stage after specified place if it wasn't found, otherwise does nothing </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> -- stage name </p></li>
+<li><p><strong>pAfterName</strong> -- stage name after which new stage will be added </p></li>
+<li><p><strong>eFlags</strong> -- flags that the stage will be construcyted with </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>added or discovered stage </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven9CSchedule14AddStageBeforeEPKcPKc11EStageFlags">
+<span id="_CPPv3N5Raven9CSchedule14AddStageBeforeEPKcPKc11EStageFlags"></span><span id="_CPPv2N5Raven9CSchedule14AddStageBeforeEPKcPKc11EStageFlags"></span><span id="Raven::CSchedule::AddStageBefore__cCP.cCP.EStageFlags"></span><span class="target" id="d8/db6/classRaven_1_1CSchedule_1a0013c38cbbba7656fe616a947419ea9f"></span><a class="reference internal" href="cpp/file/dd/dc2/Stage_8hpp.html#_CPPv4N5Raven9CSchedule5StageE" title="Raven::CSchedule::Stage"><span class="n"><span class="pre">Stage</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">AddStageBefore</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">name</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">pBeforeName</span></span>, <a class="reference internal" href="cpp/file/d3/ddf/RavenApp_8hpp.html#_CPPv4N5Raven11EStageFlagsE" title="Raven::EStageFlags"><span class="n"><span class="pre">EStageFlags</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">eFlags</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Add new stage to the app before specified stage. </p>
+<p>Adds a stage before specified place if it wasn't found, otherwise does nothing </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> -- stage name </p></li>
+<li><p><strong>pBeforeName</strong> -- stage name before which new stage will be added </p></li>
+<li><p><strong>eFlags</strong> -- flags that the stage will be construcyted with </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>added or discovered stage </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven9CSchedule8GetStageEPKc">
+<span id="_CPPv3N5Raven9CSchedule8GetStageEPKc"></span><span id="_CPPv2N5Raven9CSchedule8GetStageEPKc"></span><span id="Raven::CSchedule::GetStage__cCP"></span><span class="target" id="d8/db6/classRaven_1_1CSchedule_1ac53550c0d3506e68257baa2c2b29e903"></span><a class="reference internal" href="cpp/file/dd/dc2/Stage_8hpp.html#_CPPv4N5Raven9CSchedule5StageE" title="Raven::CSchedule::Stage"><span class="n"><span class="pre">Stage</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">GetStage</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Returns a stage of specified name. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> -- names of the stage to be found </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>found stage or nullptr if it doesn't exist </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven9CSchedule16AddSystemToStageEPKcRR10SystemDesc">
+<span id="_CPPv3N5Raven9CSchedule16AddSystemToStageEPKcRR10SystemDesc"></span><span id="_CPPv2N5Raven9CSchedule16AddSystemToStageEPKcRR10SystemDesc"></span><span id="Raven::CSchedule::AddSystemToStage__cCP.SystemDescRR"></span><span class="target" id="d8/db6/classRaven_1_1CSchedule_1ab2cde265e8682cc904043b0cceb06a86"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AddSystemToStage</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">stageName</span></span>, <a class="reference internal" href="cpp/file/d3/ddf/RavenApp_8hpp.html#_CPPv4N5Raven10SystemDescE" title="Raven::SystemDesc"><span class="n"><span class="pre">SystemDesc</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">desc</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Adds a system to specified stage. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>stageName</strong> -- name of a stage to which system will be added </p></li>
+<li><p><strong>desc</strong> -- stage description </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven9CSchedule3RunER3App">
+<span id="_CPPv3N5Raven9CSchedule3RunER3App"></span><span id="_CPPv2N5Raven9CSchedule3RunER3App"></span><span id="Raven::CSchedule::Run__AppR"></span><span class="target" id="d8/db6/classRaven_1_1CSchedule_1a78136b096f5412e99e629f746a9e579b"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Run</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="cpp/file/d3/ddf/RavenApp_8hpp.html#_CPPv4N5Raven3AppE" title="Raven::App"><span class="n"><span class="pre">App</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">app</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Invoke the schedule. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>app</strong> -- application from which resources are extracted </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven9CSchedule21RemoveSystemFromStageEPKcK12TSystemLabel">
+<span id="_CPPv3N5Raven9CSchedule21RemoveSystemFromStageEPKcK12TSystemLabel"></span><span id="_CPPv2N5Raven9CSchedule21RemoveSystemFromStageEPKcK12TSystemLabel"></span><span id="Raven::CSchedule::RemoveSystemFromStage__cCP.TSystemLabelC"></span><span class="target" id="d8/db6/classRaven_1_1CSchedule_1afeac6665a173d5054be43a36352ca5b0"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RemoveSystemFromStage</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">stageName</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="cpp/file/da/d44/Label_8hpp.html#_CPPv4N5Raven12TSystemLabelE" title="Raven::TSystemLabel"><span class="n"><span class="pre">TSystemLabel</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">sys</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Delete a system from stage if it exists. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>stageName</strong> -- name of the stage from which the system should be removed </p></li>
+<li><p><strong>sys</strong> -- system label to remove from the stage </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven9CSchedule5StageE">
+<span id="_CPPv3N5Raven9CSchedule5StageE"></span><span id="_CPPv2N5Raven9CSchedule5StageE"></span><span id="Raven::CSchedule::Stage"></span><span class="target" id="d7/dea/structRaven_1_1CSchedule_1_1Stage"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Stage</span></span></span><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven10SystemDescE">
+<span id="_CPPv3N5Raven10SystemDescE"></span><span id="_CPPv2N5Raven10SystemDescE"></span><span id="Raven::SystemDesc"></span><span class="target" id="d1/d16/structRaven_1_1SystemDesc"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SystemDesc</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="components.html#_CPPv45Raven" title="Raven"><span class="n"><span class="pre">Raven</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="cpp/file/de/d00/DependencyGraph_8hpp.html#_CPPv4I0EN5Raven10IGraphNodeE" title="Raven::IGraphNode"><span class="n"><span class="pre">IGraphNode</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="cpp/file/da/d44/Label_8hpp.html#_CPPv4N5Raven12TSystemLabelE" title="Raven::TSystemLabel"><span class="n"><span class="pre">TSystemLabel</span></span></a><span class="p"><span class="pre">&gt;</span></span><br /></dt>
+<dd><p>Description for application scheduleable function. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I_13ConditionalFnEN5Raven10SystemDesc10SystemDescERR1T">
+<span id="_CPPv3I_13ConditionalFnEN5Raven10SystemDesc10SystemDescERR1T"></span><span id="_CPPv2I_13ConditionalFnEN5Raven10SystemDesc10SystemDescERR1T"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">ConditionalFn</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="d1/d16/structRaven_1_1SystemDesc_1a2a222112902a316696f0da3edb1ba4a6"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SystemDesc</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="cpp/file/d3/ddf/RavenApp_8hpp.html#_CPPv4I_13ConditionalFnEN5Raven10SystemDesc10SystemDescERR1T" title="Raven::SystemDesc::SystemDesc::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fn</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><br /></dt>
+<dd><p>Constructor that takes a conditional invokable. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>fn</strong> -- system function returning EShouldRun </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I_N6Detail9InvokableEEN5Raven10SystemDesc10SystemDescERR1T">
+<span id="_CPPv3I_N6Detail9InvokableEEN5Raven10SystemDesc10SystemDescERR1T"></span><span id="_CPPv2I_N6Detail9InvokableEEN5Raven10SystemDesc10SystemDescERR1T"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="cpp/file/d0/db1/FunctionTraits_8hpp.html#_CPPv4N5Raven6DetailE" title="Raven::Detail"><span class="n"><span class="pre">Detail</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Invokable</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="d1/d16/structRaven_1_1SystemDesc_1aac65e2d45273e128c423b9159c2824ea"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SystemDesc</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="cpp/file/d3/ddf/RavenApp_8hpp.html#_CPPv4I_N6Detail9InvokableEEN5Raven10SystemDesc10SystemDescERR1T" title="Raven::SystemDesc::SystemDesc::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fn</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><br /></dt>
+<dd><p>Constructor that takes an invokable. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>fn</strong> -- system function </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven10SystemDesc10SystemDescERR13ConditionDesc">
+<span id="_CPPv3N5Raven10SystemDesc10SystemDescERR13ConditionDesc"></span><span id="_CPPv2N5Raven10SystemDesc10SystemDescERR13ConditionDesc"></span><span id="Raven::SystemDesc::SystemDesc__ConditionDescRR"></span><span class="target" id="d1/d16/structRaven_1_1SystemDesc_1aeee04c0baef646572aea77101be5a165"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SystemDesc</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="cpp/file/d3/ddf/RavenApp_8hpp.html#_CPPv4N5Raven13ConditionDescE" title="Raven::ConditionDesc"><span class="n"><span class="pre">ConditionDesc</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">cond</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Move construct from <a class="reference internal" href="#d7/dfc/structRaven_1_1ConditionDesc"><span class="std std-ref">ConditionDesc</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven10SystemDesc10SystemDescERK13ConditionDesc">
+<span id="_CPPv3N5Raven10SystemDesc10SystemDescERK13ConditionDesc"></span><span id="_CPPv2N5Raven10SystemDesc10SystemDescERK13ConditionDesc"></span><span id="Raven::SystemDesc::SystemDesc__ConditionDescCR"></span><span class="target" id="d1/d16/structRaven_1_1SystemDesc_1a6754e6141e8a2c22afc59644de090191"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SystemDesc</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="cpp/file/d3/ddf/RavenApp_8hpp.html#_CPPv4N5Raven13ConditionDescE" title="Raven::ConditionDesc"><span class="n"><span class="pre">ConditionDesc</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">cond</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Copy construct from <a class="reference internal" href="#d7/dfc/structRaven_1_1ConditionDesc"><span class="std std-ref">ConditionDesc</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven10SystemDesc3RunER3App">
+<span id="_CPPv3N5Raven10SystemDesc3RunER3App"></span><span id="_CPPv2N5Raven10SystemDesc3RunER3App"></span><span id="Raven::SystemDesc::Run__AppR"></span><span class="target" id="d1/d16/structRaven_1_1SystemDesc_1a97362fa2cd5eecea2f0b4a2003cfb000"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="cpp/file/d3/ddf/RavenApp_8hpp.html#_CPPv4N5Raven10EShouldRunE" title="Raven::EShouldRun"><span class="n"><span class="pre">EShouldRun</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Run</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="cpp/file/d3/ddf/RavenApp_8hpp.html#_CPPv4N5Raven3AppE" title="Raven::App"><span class="n"><span class="pre">App</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">app</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Execute the system function. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>app</strong> -- the application from which system is executed </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven10SystemDesc5LabelE6LabelT">
+<span id="_CPPv3N5Raven10SystemDesc5LabelE6LabelT"></span><span id="_CPPv2N5Raven10SystemDesc5LabelE6LabelT"></span><span id="Raven::SystemDesc::Label__LabelTCE"></span><span class="target" id="d1/d16/structRaven_1_1SystemDesc_1ae473d976623ac21d43cfa4957d5906e9"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="cpp/file/d3/ddf/RavenApp_8hpp.html#_CPPv4N5Raven10SystemDescE" title="Raven::SystemDesc"><span class="n"><span class="pre">SystemDesc</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">Label</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">LabelT</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Set a system label. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> -- label </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven10SystemDesc6BeforeEK6LabelT">
+<span id="_CPPv3N5Raven10SystemDesc6BeforeEK6LabelT"></span><span id="_CPPv2N5Raven10SystemDesc6BeforeEK6LabelT"></span><span id="Raven::SystemDesc::Before__LabelTCCE"></span><span class="target" id="d1/d16/structRaven_1_1SystemDesc_1adf0aeeeab1f0db2f4cf5d1ebd464008b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="cpp/file/d3/ddf/RavenApp_8hpp.html#_CPPv4N5Raven10SystemDescE" title="Raven::SystemDesc"><span class="n"><span class="pre">SystemDesc</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">Before</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">LabelT</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">next</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Adds a reference to a system before which this system is executed. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>next</strong> -- label of the system </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven10SystemDesc5AfterEK6LabelT">
+<span id="_CPPv3N5Raven10SystemDesc5AfterEK6LabelT"></span><span id="_CPPv2N5Raven10SystemDesc5AfterEK6LabelT"></span><span id="Raven::SystemDesc::After__LabelTCCE"></span><span class="target" id="d1/d16/structRaven_1_1SystemDesc_1ac8396e17a999ff3b24dd535a19dcdbd0"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="cpp/file/d3/ddf/RavenApp_8hpp.html#_CPPv4N5Raven10SystemDescE" title="Raven::SystemDesc"><span class="n"><span class="pre">SystemDesc</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">After</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">LabelT</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">prev</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Adds a reference to a system after which this system is executed. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>prev</strong> -- label of the system </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN5Raven10SystemDesc13WithConditionER10SystemDescRK5CondT">
+<span id="_CPPv3I0EN5Raven10SystemDesc13WithConditionERK5CondT"></span><span id="_CPPv2I0EN5Raven10SystemDesc13WithConditionERK5CondT"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CondT</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="d1/d16/structRaven_1_1SystemDesc_1a62a1c2d605c42e6856242d59670f752f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="cpp/file/d3/ddf/RavenApp_8hpp.html#_CPPv4N5Raven10SystemDescE" title="Raven::SystemDesc"><span class="n"><span class="pre">SystemDesc</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">WithCondition</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="cpp/file/d3/ddf/RavenApp_8hpp.html#_CPPv4I0EN5Raven10SystemDesc13WithConditionER10SystemDescRK5CondT" title="Raven::SystemDesc::WithCondition::CondT"><span class="n"><span class="pre">CondT</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">cond</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Adds a reference to a condition Conditions are executed before all systems. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cond</strong> -- label or description of the condition </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN5Raven10SystemDesc13WithConditionER10SystemDescRR5CondT">
+<span id="_CPPv3I0EN5Raven10SystemDesc13WithConditionERR5CondT"></span><span id="_CPPv2I0EN5Raven10SystemDesc13WithConditionERR5CondT"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CondT</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="d1/d16/structRaven_1_1SystemDesc_1a3cb15d38e354cdeea8ba1191dc3c3670"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="cpp/file/d3/ddf/RavenApp_8hpp.html#_CPPv4N5Raven10SystemDescE" title="Raven::SystemDesc"><span class="n"><span class="pre">SystemDesc</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">WithCondition</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="cpp/file/d3/ddf/RavenApp_8hpp.html#_CPPv4I0EN5Raven10SystemDesc13WithConditionER10SystemDescRR5CondT" title="Raven::SystemDesc::WithCondition::CondT"><span class="n"><span class="pre">CondT</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">cond</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Adds a reference to a condition Conditions are executed before all systems. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cond</strong> -- label or description of the condition </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5Raven10SystemDesc11IsConditionEv">
+<span id="_CPPv3NK5Raven10SystemDesc11IsConditionEv"></span><span id="_CPPv2NK5Raven10SystemDesc11IsConditionEv"></span><span id="Raven::SystemDesc::IsConditionCCE"></span><span class="target" id="d1/d16/structRaven_1_1SystemDesc_1a6e02eb0101bc72e66b261113ee5bdd65"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">IsCondition</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Tells weather this system is a condition system. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>weather this system is condition </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven10SystemDesc12RunConditionEv">
+<span id="_CPPv3N5Raven10SystemDesc12RunConditionEv"></span><span id="_CPPv2N5Raven10SystemDesc12RunConditionEv"></span><span id="Raven::SystemDesc::RunConditionCE"></span><span class="target" id="d1/d16/structRaven_1_1SystemDesc_1ad62e295a389afab1f2802202946c51e0"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="cpp/file/d3/ddf/RavenApp_8hpp.html#_CPPv4N5Raven10SystemDesc10ConditionTE" title="Raven::SystemDesc::ConditionT"><span class="n"><span class="pre">ConditionT</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">RunCondition</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Get the run condition. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>either label or a description of a condition </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven10SystemDesc17RunConditionLabelEv">
+<span id="_CPPv3N5Raven10SystemDesc17RunConditionLabelEv"></span><span id="_CPPv2N5Raven10SystemDesc17RunConditionLabelEv"></span><span id="Raven::SystemDesc::RunConditionLabelCE"></span><span class="target" id="d1/d16/structRaven_1_1SystemDesc_1aeaa3b798e46b41356d9e016a084f89f0"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="n"><span class="pre">LabelT</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RunConditionLabel</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Get the run condition label. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>label of a condition </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven10SystemDesc5FlagsEK12ESystemFlags">
+<span id="_CPPv3N5Raven10SystemDesc5FlagsEK12ESystemFlags"></span><span id="_CPPv2N5Raven10SystemDesc5FlagsEK12ESystemFlags"></span><span id="Raven::SystemDesc::Flags__ESystemFlagsCCE"></span><span class="target" id="d1/d16/structRaven_1_1SystemDesc_1a5c64ceeba692fd26ca4a5f50aab97b09"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="cpp/file/d3/ddf/RavenApp_8hpp.html#_CPPv4N5Raven10SystemDescE" title="Raven::SystemDesc"><span class="n"><span class="pre">SystemDesc</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">Flags</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="cpp/file/d3/ddf/RavenApp_8hpp.html#_CPPv4N5Raven12ESystemFlagsE" title="Raven::ESystemFlags"><span class="n"><span class="pre">ESystemFlags</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">flags</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Set system execution flags. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>flags</strong> -- to set </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5Raven10SystemDesc5FlagsEv">
+<span id="_CPPv3NK5Raven10SystemDesc5FlagsEv"></span><span id="_CPPv2NK5Raven10SystemDesc5FlagsEv"></span><span id="Raven::SystemDesc::FlagsC"></span><span class="target" id="d1/d16/structRaven_1_1SystemDesc_1aefa82a1d680d95532da6807eb16c66ea"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="cpp/file/d3/ddf/RavenApp_8hpp.html#_CPPv4N5Raven12ESystemFlagsE" title="Raven::ESystemFlags"><span class="n"><span class="pre">ESystemFlags</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Flags</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get system execution flags. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>execution flags </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven10SystemDesc14ResourceAccessE">
+<span id="_CPPv3N5Raven10SystemDesc14ResourceAccessE"></span><span id="_CPPv2N5Raven10SystemDesc14ResourceAccessE"></span><span id="Raven::SystemDesc::ResourceAccess"></span><span class="target" id="d1/df9/structRaven_1_1SystemDesc_1_1ResourceAccess"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ResourceAccess</span></span></span><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven13ConditionDescE">
+<span id="_CPPv3N5Raven13ConditionDescE"></span><span id="_CPPv2N5Raven13ConditionDescE"></span><span id="Raven::ConditionDesc"></span><span class="target" id="d7/dfc/structRaven_1_1ConditionDesc"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ConditionDesc</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="components.html#_CPPv45Raven" title="Raven"><span class="n"><span class="pre">Raven</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="cpp/file/de/d00/DependencyGraph_8hpp.html#_CPPv4I0EN5Raven10IGraphNodeE" title="Raven::IGraphNode"><span class="n"><span class="pre">IGraphNode</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="cpp/file/da/d44/Label_8hpp.html#_CPPv4N5Raven12TSystemLabelE" title="Raven::TSystemLabel"><span class="n"><span class="pre">TSystemLabel</span></span></a><span class="p"><span class="pre">&gt;</span></span><br /></dt>
+<dd><p>Description for a condition under which system is executed. </p>
+</dd></dl>
+
+</section>
+</section>
+
+
+					 </div>
+					 
+					</div>
+					<footer>
+  
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2022-2023, Aleksandr Slobodov
+	  <br>
+      
+      
+      
+      Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+      
+      <a href="https://github.com/revitron/revitron-sphinx-theme">theme</a>
+      
+      provided by <a href="https://github.com/revitron">Revitron</a>.
+
+    </p>
+  </div> 
+
+</footer>
+
+				</div>
+			</div>
+
+		</section>
+
+	</div>
+	
+
+	<script type="text/javascript">
+			jQuery(function () {
+					SphinxRtdTheme.Navigation.enable(true);
+			});
+	</script>
+
+	
+	
+		
+		<!-- Theme Analytics -->
+		<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-XXXXXXX-1', 'auto');
+		ga('send', 'pageview');
+		</script>
+
+		
+	 
+
+ 
+</body>	
+</html>

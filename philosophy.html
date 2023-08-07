@@ -82,6 +82,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Engine philosophy</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#reflection-scope">Reflection scope</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#build-scope">Build scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#startup-scope">Startup scope</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#scheduled-scope">Scheduled scope</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#initialisation">Initialisation</a></li>
 </ul>
@@ -143,10 +144,21 @@
 <h1>Engine philosophy<a class="headerlink" href="#engine-philosophy" title="Permalink to this heading">¶</a></h1>
 <div class="toctree-wrapper compound">
 </div>
+<p>As was mentioned previously, the engine is heavily ECS oriented.
+Its main goal is to provide a comfortable C++ development environment for game development.
+The engine exposes a flexible rendering pipeline with a set of premade effects, such as bloom and volumetric lighting,
+high performant clustered forward and deferred lighting pipelines.</p>
 <dl class="simple">
-<dt>The engine has 3 main execution scopes:</dt><dd><ol class="arabic simple">
+<dt>To be able to work with Raven, it is important to be familiar with its core concepts:</dt><dd><ol class="arabic simple">
+<li><p><a class="reference internal" href="resources.html"><span class="doc">Resources</span></a> - a per app storage to egister objects of arbitrary types.</p></li>
+<li><p><a class="reference internal" href="components.html"><span class="doc">Components</span></a> - a per simulation (level) set of objects of arbitrary types which could be associated with an entity.</p></li>
+<li><p><a class="reference internal" href="systems.html"><span class="doc">Systems</span></a> - a main way to execute logic on resources and components.</p></li>
+</ol>
+</dd>
+<dt>The engine has 4 main execution scopes:</dt><dd><ol class="arabic simple">
 <li><p><a class="reference internal" href="#reflection-scope">Reflection scope</a>.</p></li>
 <li><p><a class="reference internal" href="#build-scope">Build scope</a>.</p></li>
+<li><p><a class="reference internal" href="#startup-scope">Startup scope</a>.</p></li>
 <li><p><a class="reference internal" href="#scheduled-scope">Scheduled scope</a>.</p></li>
 </ol>
 </dd>
@@ -163,7 +175,17 @@
 <ul class="simple">
 <li><p>Where <a class="reference internal" href="cpp/file/d3/ddf/RavenApp_8hpp.html#_CPPv4N5Raven3AppE" title="Raven::App"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Raven::App</span></code></a> <a class="reference internal" href="#initialisation">initialisation</a> is happening</p></li>
 <li><p>Runs once inside <em>main</em></p></li>
+<li><p>Should be used to create resources, add plugins and schedule systems</p></li>
 </ul>
+</section>
+<section id="startup-scope">
+<h2>Startup scope<a class="headerlink" href="#startup-scope" title="Permalink to this heading">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>Happens once after <a class="reference internal" href="#build-scope">Build Scope</a> and is responsible for performing complicated engine/game startup logic.</p></li>
+<li><p>Is a schedule which can be constructed during <a class="reference internal" href="#build-scope">Build Scope</a></p></li>
+</ul>
+</div></blockquote>
 </section>
 <section id="scheduled-scope">
 <h2>Scheduled scope<a class="headerlink" href="#scheduled-scope" title="Permalink to this heading">¶</a></h2>
@@ -181,8 +203,10 @@
 </section>
 <section id="initialisation">
 <h2>Initialisation<a class="headerlink" href="#initialisation" title="Permalink to this heading">¶</a></h2>
-<p>Code engine <a class="reference internal" href="#initialisation">initialisation</a> is happening inside of the <a class="reference internal" href="#build-scope">Build Scope</a>, where all plugins are added to the main application.
-A plugin must satisfy <code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Raven::Plugin</span></code> concept.</p>
+<p>Core engine <a class="reference internal" href="#initialisation">initialisation</a> is happening inside of the <a class="reference internal" href="#build-scope">Build Scope</a>, where all plugins are added to the main application.
+A plugin must satisfy <code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Raven::Plugin</span></code> concept. Inside the <a class="reference internal" href="#build-scope">Build Scope</a> it is also possible to set up runtime startup logic,
+Which could be dependent on some resources being created or some other piece of code previously executed.
+Startup system could be scheduled to the app with <a class="reference internal" href="cpp/file/d3/ddf/RavenApp_8hpp.html#_CPPv4I0EN5Raven3App16AddStartupSystemER3AppRR1T" title="Raven::App::AddStartupSystem"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Raven::App::AddStartupSystem()</span></code></a>.</p>
 </section>
 </section>
 

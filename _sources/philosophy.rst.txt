@@ -3,12 +3,22 @@ Engine philosophy
 .. toctree::
    :maxdepth: 2
 
-   Initialisation
 
-The engine has 3 main execution scopes:
+As was mentioned previously, the engine is heavily ECS oriented.
+Its main goal is to provide a comfortable C++ development environment for game development.
+The engine exposes a flexible rendering pipeline with a set of premade effects, such as bloom and volumetric lighting,
+high performant clustered forward and deferred lighting pipelines.
+
+To be able to work with Raven, it is important to be familiar with its core concepts:
+   1. :doc:`Resources<resources>` - a per app storage to egister objects of arbitrary types.
+   2. :doc:`Components<components>` - a per simulation (level) set of objects of arbitrary types which could be associated with an entity.
+   3. :doc:`Systems<systems>` - a main way to execute logic on resources and components.
+
+The engine has 4 main execution scopes:
    1. `Reflection scope`_.
    2. `Build scope`_.
-   3. `Scheduled scope`_.
+   3. `Startup scope`_.
+   4. `Scheduled scope`_.
 
 Reflection scope
 ~~~~~~~~~~~~~~~~
@@ -19,6 +29,13 @@ Build scope
 ~~~~~~~~~~~
 - Where :cpp:class:`Raven::App` initialisation_ is happening
 - Runs once inside *main*
+- Should be used to create resources, add plugins and schedule systems
+
+Startup scope
+~~~~~~~~~~~~~~~
+ - Happens once after `Build Scope`_ and is responsible for performing complicated engine/game startup logic.
+ - Is a schedule which can be constructed during `Build Scope`_
+  
 
 Scheduled scope
 ~~~~~~~~~~~~~~~
@@ -31,5 +48,10 @@ Scheduled scope
 Initialisation
 ~~~~~~~~~~~~~~
 
-Code engine initialisation_ is happening inside of the `Build Scope`_, where all plugins are added to the main application.
-A plugin must satisfy :cpp:class:`Raven::Plugin` concept.
+Core engine initialisation_ is happening inside of the `Build Scope`_, where all plugins are added to the main application.
+A plugin must satisfy :cpp:class:`Raven::Plugin` concept. Inside the `Build Scope`_ it is also possible to set up runtime startup logic,
+Which could be dependent on some resources being created or some other piece of code previously executed.
+Startup system could be scheduled to the app with :cpp:func:`Raven::App::AddStartupSystem`.
+
+
+

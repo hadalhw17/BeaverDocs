@@ -1,0 +1,96 @@
+
+Systems
+=================
+.. toctree::
+   :maxdepth: 2
+   :caption: Systems
+
+Systems are the core unit of the engine that is responsible for invoking engine logic. All of the systems are organised in a schedule, which itself is split into stages.
+Stages run sequentially in the order that is specified during app building stage.
+
+    1. `Stage`_.
+    2. `System`_.
+    3. `Condition`_.
+    4. `Threading`_.
+
+Stage
+~~~~~
+To simiplify logic organisation of the app, it is possible to split logic onto stages which will be independent from each other. Meaning that they do not share any state or could run in parallel.
+Stages can be added to the app using :cpp:func:`Raven::App::AddStage` to just add a stage, :cpp:func:`Raven::App::AddStageBefore` or :cpp:func:`Raven::App::AddStageAfter`
+to add a stage at a specific position relative to some other stage.
+Aa menitoned, Raven is fully build using this workflow, so it exposes a set of stages for core engine modules and general components.
+It is totally normal to add new stages and move component updates there.
+
+.. doxygennamespace:: Raven::DefaultStages
+
+Additionally renderer is using its own set of stages:
+
+.. doxygennamespace:: Raven::Renderer::Stages
+
+System
+~~~~~~
+Systems directly map to functions in c++ and can be added to stage along with system dependencies to other stages. To add a system to the app, it is possible to call :cpp:func:`App::AddSystem`
+with the stage name and function pointer that needs to be executed. Note that also lambdas can be passed. To specify order dependencies between systems, :cpp:class:`Raven::SystemDesc`
+should be passed to :cpp:class:`Raven::SystemDesc` with function labels of dependent systems passed into :cpp:func:`Raven::SystemDesc::Before` to execute this system before specified systems
+and :cpp:func:`Raven::SystemDesc::After` to execute after specified systems.
+For example:
+
+.. code-block:: c++
+    :emphasize-lines: 2,6
+
+    // In the stage "Update", execute "Count" before "Print"
+    app.AddSystem("Update", SystemDesc{&Count}.Before(AsLabel(&Print)));
+
+    // Alternatively same logic could be expressed in reverse
+    // In the stage "Update", execute "Print" after "Count"
+    app.AddSystem("Update", SystemDesc{&Print}.After(AsLabel(&Count)));
+
+For all registered systems, scheduler also acts as an argument provider, which is able to figure out the scope of execution: app or simulation, fetch all required resources from their owner,
+whcich are resoures or components respectively for app and simulation scope.
+
+Condition
+~~~~~~~~~
+Due to the fact that engine schedule is mainly statically build ruring startup poses a limitation on how dynamic the engine could be. To overcome this limit and schedule **all** functions
+in advance during the build scope, but then conditionally execute them when needed, :cpp:class:`Raven::ConditionDesc`.
+A condition is a regular system that is returning :cpp:enum:`Raven::EShouldRun` enum.
+
+.. doxygenenum:: Raven::EShouldRun
+
+All systems that are returning :cpp:enum:`Raven::EShouldRun` are automatically converted to
+conditons and could be referenced by other systems. It is possible to execute the system several times per stage using **EShouldRun::<Yes/No>AndCheckAgain** values. The stage will run
+utill all systes are done executing and not returning any *AndCheckAgain* conditions.
+As mentioned previously, conditions are basically regular systems, so they should be registered same way as regular systems and then referenced in :cpp:func:`Raven::SystemDesc::WithCondition`.
+
+For example:
+
+.. code-block:: c++
+    :emphasize-lines: 12
+
+    // Counter resurce
+    struct Counter { int i = 0; };
+    app.CreateResource<Counter>();
+    // Register the condition to the "Update" stage and name it "Cond"
+    // Which would only be satisfied on even frames
+    app.AddSystem("Update", SystemDesc{[](Counter& cnd) -> EShouldRun {
+        return (cnd.i++) % 2 == 0 ? EShouldRun::Yes : EShouldRun::No;
+        }}.Label("IsEven"));
+
+    // In the stage "Update", execute "Print" every other frame
+    app.AddSystem("Update", SystemDesc{&Print}
+        .WithCondition(AsLabel("IsEven")));
+        
+
+Threading
+~~~~~~~~~
+The main reason for such design is scalability and potential for threading. Now that all functions and their inputs are all exposed,
+it is possible to figure out all dependencies and schedule everything as jobs respecting initially specified order and avoiding systems that could race on resources at the same time.
+Threading is controlled by :cpp:enum:`Raven::EStageFlags` which could be passed to stage registration. Threading is done using engine's job system :cpp:class:`Raven::MT::CThreadPool`.
+
+.. doxygenclass:: Raven::CSchedule
+    :members:
+
+.. doxygenstruct:: Raven::SystemDesc
+    :members:
+
+.. doxygenstruct:: Raven::ConditionDesc
+    :members:
