@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/DeviceLayer/Memory.hpp" line="44" column="37" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/DeviceLayer/Memory.hpp" bodystart="44" bodyend="-1"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/DeviceLayer/Memory.hpp" line="45" column="37" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/DeviceLayer/Memory.hpp" bodystart="45" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1a5368c805b45ef63adf82b6f510ab0ba1" prot="private" static="no" mutable="yes">
         <type>std::recursive_mutex</type>
@@ -42,7 +42,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/DeviceLayer/Memory.hpp" line="46" column="38" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/DeviceLayer/Memory.hpp" bodystart="46" bodyend="-1"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/DeviceLayer/Memory.hpp" line="47" column="38" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/DeviceLayer/Memory.hpp" bodystart="47" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1a92a224cea7974bdda50800fc2ad72142" prot="private" static="no" mutable="no">
         <type>std::array&lt; std::vector&lt; Detail::SMemoryPool &gt;, RavenUtil::to_underlying(EMemoryHeapType::Count)&gt;</type>
@@ -55,18 +55,52 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/DeviceLayer/Memory.hpp" line="51" column="13" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/DeviceLayer/Memory.hpp" bodystart="51" bodyend="-1"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/DeviceLayer/Memory.hpp" line="52" column="13" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/DeviceLayer/Memory.hpp" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1a7d798be61d39727422e8f1508870b769" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t Raven::Renderer::Device::CHeap::m_poolSize</definition>
+        <argsstring></argsstring>
+        <name>m_poolSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/DeviceLayer/Memory.hpp" line="53" column="16" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/DeviceLayer/Memory.hpp" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1a01772c347367f914a0e6cafe37f8e4c5" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Raven::Renderer::Device::CHeap::m_shouldReleaseImmediately</definition>
+        <argsstring></argsstring>
+        <name>m_shouldReleaseImmediately</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/DeviceLayer/Memory.hpp" line="54" column="14" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/DeviceLayer/Memory.hpp" bodystart="54" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1a751b1424adf686041f67f42364b4cabe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1a8bf38cf47f3fe19526b01c9a0ffef498" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>Raven::Renderer::Device::CHeap::CHeap</definition>
-        <argsstring>(CDevice &amp;device)</argsstring>
+        <argsstring>(CDevice &amp;device, const size_t poolSize, bool immediateRelease)</argsstring>
         <name>CHeap</name>
         <param>
           <type>CDevice &amp;</type>
           <declname>device</declname>
+        </param>
+        <param>
+          <type>const size_t</type>
+          <declname>poolSize</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>immediateRelease</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -161,6 +195,19 @@
         </inbodydescription>
         <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/DeviceLayer/Memory.hpp" line="32" column="15"/>
       </memberdef>
+      <memberdef kind="function" id="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1ab59b3e1b3b41bc25c876dfd3e8131a94" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Raven::Renderer::Device::CHeap::ReleaseUnusedMemory</definition>
+        <argsstring>()</argsstring>
+        <name>ReleaseUnusedMemory</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/DeviceLayer/Memory.hpp" line="33" column="14"/>
+      </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
       <memberdef kind="function" id="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1ae6ecf2a9efad7a7a6fa95170705cde44" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -182,7 +229,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/DeviceLayer/Memory.hpp" line="36" column="9"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/DeviceLayer/Memory.hpp" line="37" column="9"/>
       </memberdef>
       <memberdef kind="function" id="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1af4220c9fe7e4ee7a41924d0d105efad4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -199,7 +246,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/DeviceLayer/Memory.hpp" line="38" column="14"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/DeviceLayer/Memory.hpp" line="39" column="14"/>
       </memberdef>
       <memberdef kind="function" id="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1a573379024c16ffd20b2f31ef2fe7cbf7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Detail::SMemoryPool *</type>
@@ -216,15 +263,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/DeviceLayer/Memory.hpp" line="40" column="14"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/DeviceLayer/Memory.hpp" line="41" column="14"/>
       </memberdef>
-      <memberdef kind="function" id="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1aa10cf2fc345583adebfc82c506208b0a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1ac6ae75794e4aabb29238233e5e4184d9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void Raven::Renderer::Device::CHeap::ReleaseMemoryPool</definition>
-        <argsstring>(const AllocationHandleT &amp;allocation)</argsstring>
+        <argsstring>(Detail::SMemoryPool &amp;allocation)</argsstring>
         <name>ReleaseMemoryPool</name>
         <param>
-          <type>const <ref refid="struct_raven_1_1_renderer_1_1_s_device_memory_allocation" kindref="compound">AllocationHandleT</ref> &amp;</type>
+          <type>Detail::SMemoryPool &amp;</type>
           <declname>allocation</declname>
         </param>
         <briefdescription>
@@ -233,18 +280,18 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/DeviceLayer/Memory.hpp" line="41" column="14"/>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/DeviceLayer/Memory.hpp" line="42" column="14"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/DeviceLayer/Memory.hpp" line="19" column="5" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/DeviceLayer/Memory.hpp" bodystart="19" bodyend="52"/>
+    <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/DeviceLayer/Memory.hpp" line="19" column="5" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/RavenRenderer/Private/DeviceLayer/Memory.hpp" bodystart="19" bodyend="55"/>
     <listofallmembers>
       <member refid="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1ae2dfa96af98b5ba322101fa5c06c5b39" prot="public" virt="non-virtual"><scope>Raven::Renderer::Device::CHeap</scope><name>Allocate</name></member>
       <member refid="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1a8e765f24c320c4231258c22fc4e5250c" prot="public" virt="non-virtual"><scope>Raven::Renderer::Device::CHeap</scope><name>AllocationHandleT</name></member>
-      <member refid="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1a751b1424adf686041f67f42364b4cabe" prot="public" virt="non-virtual"><scope>Raven::Renderer::Device::CHeap</scope><name>CHeap</name></member>
+      <member refid="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1a8bf38cf47f3fe19526b01c9a0ffef498" prot="public" virt="non-virtual"><scope>Raven::Renderer::Device::CHeap</scope><name>CHeap</name></member>
       <member refid="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1a3d8273702271b7a4f3a3acc31a21005c" prot="public" virt="non-virtual"><scope>Raven::Renderer::Device::CHeap</scope><name>DecodeHandle</name></member>
       <member refid="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1a573379024c16ffd20b2f31ef2fe7cbf7" prot="private" virt="non-virtual"><scope>Raven::Renderer::Device::CHeap</scope><name>FindMemoryPool</name></member>
       <member refid="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1ae2e0c1fb0d19dce6484fbc1a1011d4f8" prot="public" virt="non-virtual"><scope>Raven::Renderer::Device::CHeap</scope><name>Free</name></member>
@@ -253,8 +300,11 @@
       <member refid="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1a5368c805b45ef63adf82b6f510ab0ba1" prot="private" virt="non-virtual"><scope>Raven::Renderer::Device::CHeap</scope><name>m_creationLock</name></member>
       <member refid="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1a175504362a3ab2be312e8656ea3a4348" prot="private" virt="non-virtual"><scope>Raven::Renderer::Device::CHeap</scope><name>m_device</name></member>
       <member refid="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1a92a224cea7974bdda50800fc2ad72142" prot="private" virt="non-virtual"><scope>Raven::Renderer::Device::CHeap</scope><name>m_memoryHeap</name></member>
-      <member refid="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1aa10cf2fc345583adebfc82c506208b0a" prot="private" virt="non-virtual"><scope>Raven::Renderer::Device::CHeap</scope><name>ReleaseMemoryPool</name></member>
+      <member refid="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1a7d798be61d39727422e8f1508870b769" prot="private" virt="non-virtual"><scope>Raven::Renderer::Device::CHeap</scope><name>m_poolSize</name></member>
+      <member refid="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1a01772c347367f914a0e6cafe37f8e4c5" prot="private" virt="non-virtual"><scope>Raven::Renderer::Device::CHeap</scope><name>m_shouldReleaseImmediately</name></member>
+      <member refid="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1ac6ae75794e4aabb29238233e5e4184d9" prot="private" virt="non-virtual"><scope>Raven::Renderer::Device::CHeap</scope><name>ReleaseMemoryPool</name></member>
       <member refid="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1af4220c9fe7e4ee7a41924d0d105efad4" prot="private" virt="non-virtual"><scope>Raven::Renderer::Device::CHeap</scope><name>ReleaseRange</name></member>
+      <member refid="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1ab59b3e1b3b41bc25c876dfd3e8131a94" prot="public" virt="non-virtual"><scope>Raven::Renderer::Device::CHeap</scope><name>ReleaseUnusedMemory</name></member>
       <member refid="class_raven_1_1_renderer_1_1_device_1_1_c_heap_1a1c40e54d63811ecb17faf5fbf3e1ff98" prot="public" virt="non-virtual"><scope>Raven::Renderer::Device::CHeap</scope><name>~CHeap</name></member>
     </listofallmembers>
   </compounddef>
