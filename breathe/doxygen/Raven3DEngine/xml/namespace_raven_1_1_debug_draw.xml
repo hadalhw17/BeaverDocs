@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespace_raven_1_1_debug_draw" kind="namespace" language="C++">
+    <compoundname>Raven::DebugDraw</compoundname>
+    <innerclass refid="struct_raven_1_1_debug_draw_1_1_t_cond_lbl" prot="public">Raven::DebugDraw::TCondLbl</innerclass>
+    <innerclass refid="struct_raven_1_1_debug_draw_1_1_config" prot="public">Raven::DebugDraw::Config</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespace_raven_1_1_debug_draw_1a5b2a3c9f52b58b9d708e943207ddd14f" prot="public" static="no" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto Raven::DebugDraw::CondFor</definition>
+        <argsstring></argsstring>
+        <name>CondFor</name>
+        <initializer>= Config::RunCondition&lt;T&gt;()</initializer>
+        <briefdescription>
+<para>Run Condition for the app scheduler. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Raven::ConditionDesc which can be used with Raven::SystemDesc </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/Raven3DEngine/DebugDrawing.hpp" line="96" column="18" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/Raven3DEngine/DebugDrawing.hpp" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespace_raven_1_1_debug_draw_1a553f200fbfcf973be03dabb49b8176c5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename TSys</type>
+          </param>
+        </templateparamlist>
+        <type>Raven::SystemDesc</type>
+        <definition>Raven::SystemDesc Raven::DebugDraw::SystemDesc</definition>
+        <argsstring>(TSys &amp;&amp;sys)</argsstring>
+        <name>SystemDesc</name>
+        <param>
+          <type>TSys &amp;&amp;</type>
+          <declname>sys</declname>
+        </param>
+        <briefdescription>
+<para>Helper for creating debug draw systems. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sys</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The system to run with debug draw condition. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Raven::SystemDesc which can be used with Raven::App::AddSystem </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/Raven3DEngine/DebugDrawing.hpp" line="102" column="26" bodyfile="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/Raven3DEngine/DebugDrawing.hpp" bodystart="102" bodyend="104"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Component debug drawing API. A condition based API which allows registering a condition per component type To conditionally run debug systems in the Raven::CSchedule. Registered conditions are visualised in the editor as a checkbox. Advised to use in conjunction with Raven::Gizmos to draw debug primitives. By default, engine provides draw systems for SMeshComponent, SPointLightComponent and SSpotLightComponent. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>embed:rst Usage:
+*  =====
+*  .. code-block:: c++
+*      :emphasize-lines: 3, 5
+* 
+*      app
+*          .AddSystem(SystemDesc(DrawSomeComp)
+*          .WithCondition(Raven::DebugDraw::CondFor&lt;T&gt;));
+*           // Alternatively
+*          .AddSystem(Raven::DebugDraw::SystemDesc&lt;T&gt;(DrawSomeComp));
+*  </verbatim> </para>
+    </detaileddescription>
+    <location file="/home/runner/work/RavenEngine/RavenEngine/Raven/Code/Raven3DEngine/DebugDrawing.hpp" line="5" column="1"/>
+  </compounddef>
+</doxygen>

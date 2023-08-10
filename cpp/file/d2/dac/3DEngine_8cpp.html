@@ -152,11 +152,6 @@
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N5Raven20RecordToFrameContextER3AppP6CWorldP13IFrameContext">
-<span id="_CPPv3N5Raven20RecordToFrameContextER3AppP6CWorldP13IFrameContext"></span><span id="_CPPv2N5Raven20RecordToFrameContextER3AppP6CWorldP13IFrameContext"></span><span id="Raven::RecordToFrameContext__AppR.CWorldP.IFrameContextP"></span><span class="target" id="d2/dac/3DEngine_8cpp_1a5c7dff7fa34f2c299f1762cecfeaabcd"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RecordToFrameContext</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../../d3/ddf/RavenApp_8hpp.html#_CPPv4N5Raven3AppE" title="Raven::App"><span class="n"><span class="pre">App</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">app</span></span>, <a class="reference internal" href="../../d0/dbb/World_8hpp.html#_CPPv4N5Raven6CWorldE" title="Raven::CWorld"><span class="n"><span class="pre">CWorld</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">pWorld</span></span>, <a class="reference internal" href="../../d9/dd1/IRavenRenderer_8h.html#_CPPv413IFrameContext" title="IFrameContext"><span class="n"><span class="pre">IFrameContext</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">context</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven20RecordToFrameContextER3AppP6CWorldP13IFrameContext" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5Raven18PrepareSunFrustumsER11SRenderInfo">
 <span id="_CPPv3N5Raven18PrepareSunFrustumsER11SRenderInfo"></span><span id="_CPPv2N5Raven18PrepareSunFrustumsER11SRenderInfo"></span><span id="Raven::PrepareSunFrustums__SRenderInfoR"></span><span class="target" id="d2/dac/3DEngine_8cpp_1a8fa2caa79bbdc6e07d8df8ebc6f13531"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PrepareSunFrustums</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../../da/dc5/IRaven3DEngine_8h.html#_CPPv411SRenderInfo" title="SRenderInfo"><span class="n"><span class="pre">SRenderInfo</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">renderInfo</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Raven18PrepareSunFrustumsER11SRenderInfo" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
@@ -191,6 +186,24 @@
 <dd></dd></dl>
 
 </div>
+</dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N5Raven9DebugDrawE">
+<span id="_CPPv3N5Raven9DebugDrawE"></span><span id="_CPPv2N5Raven9DebugDrawE"></span><span id="Raven::DebugDraw"></span><span class="target" id="d4/d96/namespaceRaven_1_1DebugDraw"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">DebugDraw</span></span></span><a class="headerlink" href="#_CPPv4N5Raven9DebugDrawE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Component debug drawing API. </p>
+<p>A condition based API which allows registering a condition per component type To conditionally run debug systems in the <a class="reference internal" href="../../../../systems.html#d8/db6/classRaven_1_1CSchedule"><span class="std std-ref">Raven::CSchedule</span></a>. Registered conditions are visualised in the editor as a checkbox. Advised to use in conjunction with Raven::Gizmos to draw debug primitives. By default, engine provides draw systems for SMeshComponent, SPointLightComponent and SSpotLightComponent.</p>
+<p><dl>
+<dt>Usage:</dt><dd><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">app</span>
+<span class="w">    </span><span class="p">.</span><span class="n">AddSystem</span><span class="p">(</span><span class="n">SystemDesc</span><span class="p">(</span><span class="n">DrawSomeComp</span><span class="p">)</span>
+<span class="hll"><span class="w">    </span><span class="p">.</span><span class="n">WithCondition</span><span class="p">(</span><span class="n">Raven</span><span class="o">::</span><span class="n">DebugDraw</span><span class="o">::</span><span class="n">CondFor</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">));</span>
+</span><span class="w">     </span><span class="c1">// Alternatively</span>
+<span class="hll"><span class="w">    </span><span class="p">.</span><span class="n">AddSystem</span><span class="p">(</span><span class="n">Raven</span><span class="o">::</span><span class="n">DebugDraw</span><span class="o">::</span><span class="n">SystemDesc</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">DrawSomeComp</span><span class="p">));</span>
+</span></pre></div>
+</div>
+</dd>
+</dl>
+</p>
 </dd></dl>
 
 </dd></dl>
