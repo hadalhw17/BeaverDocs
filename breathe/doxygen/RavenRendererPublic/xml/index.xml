@@ -10,6 +10,8 @@
     <member refid="struct_raven_1_1_renderer_1_1_s_blend_state_info_1_1_attachment_1af88e3fa15b7047c6a8ee9818075834c7" kind="variable"><name>dstAlphaBlendFactor</name></member>
     <member refid="struct_raven_1_1_renderer_1_1_s_blend_state_info_1_1_attachment_1a80e171f34a8d06a50d69ce8bcce61c8f" kind="variable"><name>alphaBlendOp</name></member>
   </compound>
+  <compound refid="struct_raven_1_1_basic_stream_slice" kind="struct"><name>Raven::BasicStreamSlice</name>
+  </compound>
   <compound refid="struct_raven_1_1_renderer_1_1_detail_1_1_t_material_traits_1_1_blend_state" kind="struct"><name>Raven::Renderer::Detail::TMaterialTraits::BlendState</name>
     <member refid="struct_raven_1_1_renderer_1_1_detail_1_1_t_material_traits_1_1_blend_state_1a09c0cd02beb63ecde5fac78cb387ebc2" kind="function"><name>Get</name></member>
   </compound>
@@ -346,6 +348,7 @@
     <member refid="class_raven_1_1_renderer_1_1_c_render_mesh_1a742f226dafc00ac8a5a2dfd59e7b10e8" kind="variable"><name>m_rendPrimitives</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_render_mesh_1a6d8caefc6d6145fe5b6536094bd181a5" kind="variable"><name>m_pGPUMeshData</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_render_mesh_1aee2dd7bb950bdd1b6f2bffe2498d3da5" kind="variable"><name>m_bindlessMeshId</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_render_mesh_1ae122070338aa7e88f69e2267a165d1f7" kind="variable"><name>m_topology</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_render_mesh_1a2dcb1e5dfa9a3ae5d53e7213920c48b4" kind="function"><name>CRenderMesh</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_render_mesh_1a55efcf4451476fc1efafbe245d88a4bd" kind="function"><name>~CRenderMesh</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_render_mesh_1a5f17ddf14f6e95cea2bed1f6216a0761" kind="function"><name>AllocateStream</name></member>
@@ -359,6 +362,8 @@
     <member refid="class_raven_1_1_renderer_1_1_c_render_mesh_1a3349edbf79c9c92adbc5bbaf117eb350" kind="function"><name>GetRenderPrimitives</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_render_mesh_1a380aac18ca95f2d7601d0687103f723d" kind="function"><name>GetBindlessMeshId</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_render_mesh_1a9b7769d0c61b2d3f853219b5a4005606" kind="function"><name>GetName</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_render_mesh_1aff1b661daf300169dfb0ce0a93d77009" kind="function"><name>GetTopology</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_render_mesh_1a9d7f7929aa662c13164d45cb51ce668a" kind="function"><name>SetTopology</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_render_mesh_1ad395cb73a63bdbf672085d272c245a9b" kind="function"><name>UploadGeometry</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_render_mesh_1a4d07f97b23f5b36d82d74fdabd389607" kind="function"><name>UploadGeometry</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_render_mesh_1af48ed0c03524a40593409273809fc26b" kind="function"><name>BuildBlas</name></member>
@@ -685,12 +690,12 @@
     <member refid="struct_raven_1_1_renderer_1_1_s_render_target_1a560ad58281db24dcdd09777241555037" kind="variable"><name>RenderTarget</name></member>
   </compound>
   <compound refid="struct_raven_1_1_renderer_1_1_s_rend_primitive" kind="struct"><name>Raven::Renderer::SRendPrimitive</name>
-    <member refid="struct_raven_1_1_renderer_1_1_s_rend_primitive_1aee1aed0b2726a923a88be9c598dd94cd" kind="variable"><name>indexFrom</name></member>
-    <member refid="struct_raven_1_1_renderer_1_1_s_rend_primitive_1a0ea3d56a4ee2d46064cc41b3ad2ac4e5" kind="variable"><name>indexCount</name></member>
-    <member refid="struct_raven_1_1_renderer_1_1_s_rend_primitive_1a9c5e75d2162987cf42246d5b57724f17" kind="variable"><name>vertexCount</name></member>
-    <member refid="struct_raven_1_1_renderer_1_1_s_rend_primitive_1a7b81d306abb17eefddd6da1978104983" kind="variable"><name>instanceCount</name></member>
-    <member refid="struct_raven_1_1_renderer_1_1_s_rend_primitive_1a3e99b2cc3fddcee32a683b32c93eccfe" kind="variable"><name>vertexOffset</name></member>
-    <member refid="struct_raven_1_1_renderer_1_1_s_rend_primitive_1a42b2b7c37c33d558be3515b00ff7acc6" kind="variable"><name>m_accelerationStructureAddress</name></member>
+    <member refid="struct_raven_1_1_renderer_1_1_s_rend_primitive_1acba49453f21e8be5fdcc5b003617860d" kind="variable"><name>MaterialId</name></member>
+    <member refid="struct_raven_1_1_renderer_1_1_s_rend_primitive_1af4810f2dc0184b2a0072208eea9ffdbb" kind="variable"><name>AccelStruct</name></member>
+    <member refid="struct_raven_1_1_renderer_1_1_s_rend_primitive_1aca719e17bc38b5e8dcffd61382313a11" kind="variable"><name>IndexOffset</name></member>
+    <member refid="struct_raven_1_1_renderer_1_1_s_rend_primitive_1a54b9e5b0ab00af3992468adf1738a327" kind="variable"><name>IndexCount</name></member>
+    <member refid="struct_raven_1_1_renderer_1_1_s_rend_primitive_1a8e34fd73abc18bed88106331061a5a16" kind="variable"><name>VertexOffset</name></member>
+    <member refid="struct_raven_1_1_renderer_1_1_s_rend_primitive_1a57f662159f3002b4c860d75b03874854" kind="variable"><name>VertexCount</name></member>
   </compound>
   <compound refid="struct_raven_1_1_renderer_1_1_s_resource_create_info" kind="struct"><name>Raven::Renderer::SResourceCreateInfo</name>
     <member refid="struct_raven_1_1_renderer_1_1_s_resource_create_info_1a32e7814ef65d728b5b7b4ac30b6b59c9" kind="variable"><name>width</name></member>
@@ -795,6 +800,9 @@
     <member refid="struct_raven_1_1_renderer_1_1_c_f_g_allocator_1_1_t_allocation_1a9a5305788d83cfdefcc2e7b94ad58151" kind="variable"><name>Elem</name></member>
     <member refid="struct_raven_1_1_renderer_1_1_c_f_g_allocator_1_1_t_allocation_1aee390a690f199145af857f2357e26d2f" kind="function"><name>TAllocation</name></member>
   </compound>
+  <compound refid="struct_raven_1_1_t_component_render_system_3_01_handle_3_01_t_mat_01_4_01_4" kind="struct"><name>Raven::TComponentRenderSystem&lt; Handle&lt; TMat &gt; &gt;</name>
+    <member refid="struct_raven_1_1_t_component_render_system_3_01_handle_3_01_t_mat_01_4_01_4_1a284ff45aef6ad4cc56eee8693979c7dc" kind="function"><name>Draw</name></member>
+  </compound>
   <compound refid="class_raven_1_1_renderer_1_1_t_f_g_handle" kind="class"><name>Raven::Renderer::TFGHandle</name>
     <member refid="class_raven_1_1_renderer_1_1_t_f_g_handle_1a3b5d1e6f54e15fb07356b67d0971fe49" kind="typedef"><name>IdT</name></member>
     <member refid="class_raven_1_1_renderer_1_1_t_f_g_handle_1a56dc62285a84e0cff5c3ed871871cd0b" kind="variable"><name>MaxValue</name></member>
@@ -855,6 +863,9 @@
   </compound>
   <compound refid="namespace_raven" kind="namespace"><name>Raven</name>
     <member refid="_render_output_8hpp_1ad1b15e816247c1e9e6123eaeb3445b27" kind="typedef"><name>RenderTargetT</name></member>
+    <member refid="_render_mesh_8hpp_1a773c4533725e3c880b01849927bfde0a" kind="typedef"><name>SStreamSlice</name></member>
+  </compound>
+  <compound refid="namespace_raven_1_1_animation" kind="namespace"><name>Raven::Animation</name>
   </compound>
   <compound refid="namespace_raven_1_1_renderer" kind="namespace"><name>Raven::Renderer</name>
     <member refid="_common_renderer_8hpp_1abb492e438c7bf4a8fa595075fb316772" kind="enum"><name>EPushConstants</name></member>
@@ -1147,6 +1158,7 @@
     <member refid="_render_pass_scheduler_8hpp_1a0d999bb21b64831cdfe43f7a3d97af6b" kind="function"><name>DrawList</name></member>
     <member refid="_material_8hpp_1a94486d272d07ff6536a4569cbb721237" kind="function"><name>ComputeMaterialMetaPropertiesFromTypeInfo</name></member>
     <member refid="_material_8hpp_1a7257b4b8f2ae0e13ccf2310b26658c7b" kind="function"><name>GetMaterialMetaProperties</name></member>
+    <member refid="_material_8hpp_1a6c94d9055e5d3a7692b24293fc7ef737" kind="function"><name>MeshMaterialSystem</name></member>
   </compound>
   <compound refid="namespace_raven_1_1_renderer_1_1_device" kind="namespace"><name>Raven::Renderer::Device</name>
   </compound>
