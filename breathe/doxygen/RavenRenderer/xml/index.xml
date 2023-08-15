@@ -988,6 +988,7 @@
     <member refid="class_raven_1_1_renderer_1_1_c_vk_command_buffer_1a752f8508744d6a54daeb21579886dd16a8428552d86c0d262a542a528af490afa" kind="enumvalue"><name>Started</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_vk_command_buffer_1a752f8508744d6a54daeb21579886dd16a0157fbb99be9622bdaa6e544270c0622" kind="enumvalue"><name>Ended</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_vk_command_buffer_1a752f8508744d6a54daeb21579886dd16a5c835c22429f25992b4371691ecde1a4" kind="enumvalue"><name>Submitted</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_vk_command_buffer_1ad9eb6f4c81f4277ced44223ac481da56" kind="variable"><name>m_signalSemaphores</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_vk_command_buffer_1aa826a835c8e432686e4ac9415068333a" kind="variable"><name>m_waitSemaphores</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_vk_command_buffer_1a7d931586f7c8a04d6000a94ffaae1b60" kind="variable"><name>m_waitStages</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_vk_command_buffer_1a9ae1703f6c61ccb65a87ca3308660f2f" kind="variable"><name>m_buffer</name></member>
@@ -1008,6 +1009,7 @@
     <member refid="class_raven_1_1_renderer_1_1_c_vk_command_buffer_1a94448f0dd8bc4bb9f2fcb85cfcced95e" kind="function"><name>GetFenceValue</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_vk_command_buffer_1a775b8d5a1a4f9d983e91445c580c0190" kind="function"><name>TestFenceValue</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_vk_command_buffer_1a6980122b8145f272f9b930c4a2f7f3e3" kind="function"><name>AddWaitSemaphore</name></member>
+    <member refid="class_raven_1_1_renderer_1_1_c_vk_command_buffer_1af285f1c401e3e637374d0c939255bdec" kind="function"><name>AddSignalSemaphore</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_vk_command_buffer_1aef5702a412a1eca1f7b91880eaa8ee8b" kind="function"><name>ClearSemaphoreData</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_vk_command_buffer_1ab6e093b9992e500a0c086e2acf7d9261" kind="function"><name>SyncFences</name></member>
     <member refid="class_raven_1_1_renderer_1_1_c_vk_command_buffer_1a11c16356a55d773b0c2d495e07fb67eb" kind="function"><name>AllocateBuffer</name></member>
@@ -1024,7 +1026,6 @@
   <compound refid="struct_raven_1_1_renderer_1_1_window_1_1_extracted" kind="struct"><name>Raven::Renderer::Window::Extracted</name>
     <member refid="struct_raven_1_1_renderer_1_1_window_1_1_extracted_1a5e496f7910b3527863507c36d249a451" kind="variable"><name>m_surface</name></member>
     <member refid="struct_raven_1_1_renderer_1_1_window_1_1_extracted_1a2bf8031c413fa7ad3eef32ae4064aa82" kind="variable"><name>m_pSwapchain</name></member>
-    <member refid="struct_raven_1_1_renderer_1_1_window_1_1_extracted_1ab28f9a1bdab695b55bddfecac343ce5d" kind="variable"><name>m_pCmd</name></member>
     <member refid="struct_raven_1_1_renderer_1_1_window_1_1_extracted_1a03de6b228e95527b75bc8b0552232886" kind="function"><name>~Extracted</name></member>
   </compound>
   <compound refid="struct_raven_1_1_renderer_1_1_window_1_1_extracted_windows" kind="struct"><name>Raven::Renderer::Window::ExtractedWindows</name>
@@ -1180,15 +1181,13 @@
   <compound refid="struct_raven_1_1_renderer_1_1_s_accessed_resource" kind="struct"><name>Raven::Renderer::SAccessedResource</name>
     <member refid="struct_raven_1_1_renderer_1_1_s_accessed_resource_1a0130b3b9cb955ca4279b80f8b1ccb7f8" kind="variable"><name>slotIdx</name></member>
     <member refid="struct_raven_1_1_renderer_1_1_s_accessed_resource_1a03de57da9961dab5d429e06d43899f3d" kind="variable"><name>arrayIdx</name></member>
-    <member refid="struct_raven_1_1_renderer_1_1_s_accessed_resource_1ac4e077b41233c3ff5a26d49355114ec4" kind="variable"><name>eState</name></member>
-    <member refid="struct_raven_1_1_renderer_1_1_s_accessed_resource_1a75e35fb1b90cd8884bfbbad05700ef38" kind="variable"><name>eView</name></member>
     <member refid="struct_raven_1_1_renderer_1_1_s_accessed_resource_1a1ac7c3088323d46e975dad3722d90b86" kind="variable"><name>eAccessedStages</name></member>
   </compound>
   <compound refid="struct_raven_1_1_renderer_1_1_s_accessed_texture_resource" kind="struct"><name>Raven::Renderer::SAccessedTextureResource</name>
     <member refid="struct_raven_1_1_renderer_1_1_s_accessed_texture_resource_1ae0d9d9ab8e38fe894b8b183691630d83" kind="variable"><name>pImage</name></member>
-    <member refid="struct_raven_1_1_renderer_1_1_s_accessed_texture_resource_1ab4e87b8cb93ecb11bb5c5a923765e9b2" kind="variable"><name>eSampler</name></member>
     <member refid="struct_raven_1_1_renderer_1_1_s_accessed_texture_resource_1ae1c0067a53f79c02ec166db04a201554" kind="variable"><name>mipLevel</name></member>
     <member refid="struct_raven_1_1_renderer_1_1_s_accessed_texture_resource_1a3a88bf22e9f17974f884da0bdf8f3ebc" kind="variable"><name>arrayLayer</name></member>
+    <member refid="struct_raven_1_1_renderer_1_1_s_accessed_texture_resource_1ab4e87b8cb93ecb11bb5c5a923765e9b2" kind="variable"><name>eSampler</name></member>
     <member refid="struct_raven_1_1_renderer_1_1_s_accessed_texture_resource_1aadedfac64bf2ce3bf249b43f1cacde5f" kind="function"><name>Invalid</name></member>
   </compound>
   <compound refid="struct_raven_1_1_renderer_1_1_c_binding_meta_1_1_s_binding_info" kind="struct"><name>Raven::Renderer::CBindingMeta::SBindingInfo</name>
@@ -1642,7 +1641,7 @@
     <member refid="struct_raven_1_1_s_render_info_1a59905700176c21fe9f2dbabb4da4bc52" kind="variable"><name>frameId</name></member>
     <member refid="struct_raven_1_1_s_render_info_1a2a9fb0fbf012dca29f5d88bc7c223805" kind="variable"><name>eRenderMode</name></member>
     <member refid="struct_raven_1_1_s_render_info_1a188a97e5238fa930ee72d31cb39753d9" kind="variable"><name>m_worldProperties</name></member>
-    <member refid="struct_raven_1_1_s_render_info_1a154cfbb7cf264db8af8f00d47499148a" kind="function"><name>Default</name></member>
+    <member refid="struct_raven_1_1_s_render_info_1a897598583326947e1ce5e0fe11c85a07" kind="function"><name>Default</name></member>
   </compound>
   <compound refid="struct_raven_1_1_renderer_1_1_s_render_item" kind="struct"><name>Raven::Renderer::SRenderItem</name>
     <member refid="struct_raven_1_1_renderer_1_1_s_render_item_1aa21fd8a3a7499ff91a1ed0d1d5fa0218" kind="variable"><name>m_pipelineDesc</name></member>
@@ -1912,6 +1911,7 @@
     <member refid="_render_output_8hpp_1ac2658b2431c88f17a5a2bca1c910e25cab2875c3df3ea61206a536bec693e61ac" kind="enumvalue"><name>DefaultLit</name></member>
     <member refid="_render_output_8hpp_1ac2658b2431c88f17a5a2bca1c910e25ca33e42d0f3b166a4c405127e4412fbef2" kind="enumvalue"><name>Wireframe</name></member>
     <member refid="_render_output_8hpp_1ac2658b2431c88f17a5a2bca1c910e25ca951e478cd76629f146e042c53c01449c" kind="enumvalue"><name>PathTracing</name></member>
+    <member refid="_render_output_8hpp_1ac2658b2431c88f17a5a2bca1c910e25cace2c8aed9c2fa0cfbed56cbda4d8bf07" kind="enumvalue"><name>Empty</name></member>
     <member refid="_render_output_8hpp_1ac2658b2431c88f17a5a2bca1c910e25cae93f994f01c537c4e2f7d8528c3eb5e9" kind="enumvalue"><name>Count</name></member>
     <member refid="_render_output_8hpp_1a414a12cee7d77e7836a613f2bd2bcda5" kind="typedef"><name>TRenderTarget</name></member>
     <member refid="_render_output_8hpp_1a03695bc8f6df51acbffd1ae58e56d70e" kind="typedef"><name>TViewport</name></member>
