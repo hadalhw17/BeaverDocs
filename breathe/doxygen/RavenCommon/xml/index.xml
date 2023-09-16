@@ -764,6 +764,10 @@
     <member refid="class_raven_1_1_m_t_1_1_c_thread_pool_1aadb4f969f37b4717aab95e13b50b41c9" kind="function"><name>Dispatch</name></member>
     <member refid="class_raven_1_1_m_t_1_1_c_thread_pool_1a394ec4ed011c4e7a6da7a6448a9f9051" kind="function"><name>PushWork</name></member>
   </compound>
+  <compound refid="class_raven_1_1_c_time" kind="class"><name>Raven::CTime</name>
+    <member refid="class_raven_1_1_c_time_1a1b5270dd52e174ee02b1eb017650082a" kind="function"><name>~CTime</name></member>
+    <member refid="class_raven_1_1_c_time_1af832427f2ef20239c9652ddcef6d97b6" kind="function"><name>Advance</name></member>
+  </compound>
   <compound refid="struct_raven_1_1_meta_1_1_decay_except_array" kind="struct"><name>Raven::Meta::DecayExceptArray</name>
     <member refid="struct_raven_1_1_meta_1_1_decay_except_array_1a59f8707e60c955fc69b9b6491e294b17" kind="typedef"><name>Tp</name></member>
     <member refid="struct_raven_1_1_meta_1_1_decay_except_array_1ab0baed99d20693843d1ec4ba4f03ef38" kind="typedef"><name>Type</name></member>
@@ -960,6 +964,9 @@
   </compound>
   <compound refid="structstd_1_1hash_3_01_raven_1_1_asset_id_01_4" kind="struct"><name>std::hash&lt; Raven::AssetId &gt;</name>
     <member refid="structstd_1_1hash_3_01_raven_1_1_asset_id_01_4_1a68fc86a1144004d832e9e91706839afe" kind="function"><name>operator()</name></member>
+  </compound>
+  <compound refid="structstd_1_1hash_3_01_raven_1_1_c_time_01_4" kind="struct"><name>std::hash&lt; Raven::CTime &gt;</name>
+    <member refid="structstd_1_1hash_3_01_raven_1_1_c_time_01_4_1a3dff4ab13ac49f1d3220d6d45d180526" kind="function"><name>operator()</name></member>
   </compound>
   <compound refid="structstd_1_1hash_3_01_raven_1_1_handle_3_01_t_01_4_01_4" kind="struct"><name>std::hash&lt; Raven::Handle&lt; T &gt; &gt;</name>
     <member refid="structstd_1_1hash_3_01_raven_1_1_handle_3_01_t_01_4_01_4_1a9a610880747d96c93936ee4cc78d3441" kind="typedef"><name>BaseT</name></member>
@@ -1993,8 +2000,8 @@
     <member refid="class_raven_1_1_t_timestep_1a410ef8995e2935c0563c7aba0783e27f" kind="function"><name>TTimestep</name></member>
     <member refid="class_raven_1_1_t_timestep_1ad9a992e6928310abe8a9ea208845e254" kind="function"><name>TTimestep</name></member>
     <member refid="class_raven_1_1_t_timestep_1aaef11e52b5a14f608646fda8356d8c49" kind="function"><name>~TTimestep</name></member>
-    <member refid="class_raven_1_1_t_timestep_1a273de865874c6622b60b7824817188a6" kind="function"><name>GetSeconds</name></member>
-    <member refid="class_raven_1_1_t_timestep_1aa933e3324fd619d5d51df950d96d8e4b" kind="function"><name>GetMilliseconds</name></member>
+    <member refid="class_raven_1_1_t_timestep_1a1689c6fa262f7b88a842e12e4f674ce5" kind="function"><name>GetSeconds</name></member>
+    <member refid="class_raven_1_1_t_timestep_1a348b9043f9a6e3b70e19ff24c618aaa5" kind="function"><name>GetMilliseconds</name></member>
     <member refid="class_raven_1_1_t_timestep_1af68959ee8a814a38ff961cf9120e4965" kind="function"><name>operator&lt;=&gt;</name></member>
   </compound>
   <compound refid="struct_raven_1_1_meta_1_1___aligned_3_01_len_00_01_align_00_01double_00_01false_01_4_1_1_type" kind="struct"><name>Raven::Meta::_Aligned&lt; Len, Align, double, false &gt;::Type</name>
@@ -2326,9 +2333,18 @@
   </compound>
   <compound refid="namespace_private" kind="namespace"><name>Private</name>
   </compound>
-  <compound refid="namespace_private_1_1_0d28" kind="namespace"><name>Private::@28</name>
+  <compound refid="namespace_private_1_1_0d32" kind="namespace"><name>Private::@32</name>
   </compound>
   <compound refid="namespace_raven" kind="namespace"><name>Raven</name>
+    <member refid="_c_var_8hpp_1af5c6ecdcec6d11f4e810e777e2191e69" kind="enum"><name>ECVarFlags</name></member>
+    <member refid="_c_var_8hpp_1af5c6ecdcec6d11f4e810e777e2191e69a6adf97f83acf6453d4a6a4b1070f3754" kind="enumvalue"><name>None</name></member>
+    <member refid="_c_var_8hpp_1af5c6ecdcec6d11f4e810e777e2191e69a79ceee9f8e3c1f0cc74223e05d2448bf" kind="enumvalue"><name>Const</name></member>
+    <member refid="_c_var_8hpp_1af5c6ecdcec6d11f4e810e777e2191e69a527f7a9fd5f7e086d6f7dab86a247564" kind="enumvalue"><name>Cheat</name></member>
+    <member refid="_c_var_8hpp_1a9d53a873542a1888491c08d3c52f4087" kind="enum"><name>ECVarType</name></member>
+    <member refid="_c_var_8hpp_1a9d53a873542a1888491c08d3c52f4087a1686a6c336b71b36d77354cea19a8b52" kind="enumvalue"><name>Int</name></member>
+    <member refid="_c_var_8hpp_1a9d53a873542a1888491c08d3c52f4087a22ae0e2b89e5e3d477f988cc36d3272b" kind="enumvalue"><name>Float</name></member>
+    <member refid="_c_var_8hpp_1a9d53a873542a1888491c08d3c52f4087ac26f15e86e3de4c398a8273272aba034" kind="enumvalue"><name>Bool</name></member>
+    <member refid="_c_var_8hpp_1a9d53a873542a1888491c08d3c52f4087a27118326006d3829667a400ad23d5d98" kind="enumvalue"><name>String</name></member>
     <member refid="_key_codes_8hpp_1aa6ea1fcdfff00ae08ddcaee83ac07974" kind="enum"><name>EKey</name></member>
     <member refid="_key_codes_8hpp_1aa6ea1fcdfff00ae08ddcaee83ac07974a88183b946cc5f0e8c96b2e66e1c74a7e" kind="enumvalue"><name>Unknown</name></member>
     <member refid="_key_codes_8hpp_1aa6ea1fcdfff00ae08ddcaee83ac07974ad511f8439ecde36647437fbba67a4394" kind="enumvalue"><name>Space</name></member>
@@ -2479,40 +2495,25 @@
     <member refid="_key_codes_8hpp_1ab6b675645ff2247f4e1d29caf524a709a0610123bdd4ffc191a3ea05a847e1307" kind="enumvalue"><name>Press</name></member>
     <member refid="_key_codes_8hpp_1ab6b675645ff2247f4e1d29caf524a709a7020426cfb0a204051be4b3053d2acc8" kind="enumvalue"><name>Repeat</name></member>
     <member refid="_key_codes_8hpp_1ab6b675645ff2247f4e1d29caf524a709ae93f994f01c537c4e2f7d8528c3eb5e9" kind="enumvalue"><name>Count</name></member>
-    <member refid="_c_var_8hpp_1af5c6ecdcec6d11f4e810e777e2191e69" kind="enum"><name>ECVarFlags</name></member>
-    <member refid="_c_var_8hpp_1af5c6ecdcec6d11f4e810e777e2191e69a6adf97f83acf6453d4a6a4b1070f3754" kind="enumvalue"><name>None</name></member>
-    <member refid="_c_var_8hpp_1af5c6ecdcec6d11f4e810e777e2191e69a79ceee9f8e3c1f0cc74223e05d2448bf" kind="enumvalue"><name>Const</name></member>
-    <member refid="_c_var_8hpp_1af5c6ecdcec6d11f4e810e777e2191e69a527f7a9fd5f7e086d6f7dab86a247564" kind="enumvalue"><name>Cheat</name></member>
-    <member refid="_c_var_8hpp_1a9d53a873542a1888491c08d3c52f4087" kind="enum"><name>ECVarType</name></member>
-    <member refid="_c_var_8hpp_1a9d53a873542a1888491c08d3c52f4087a1686a6c336b71b36d77354cea19a8b52" kind="enumvalue"><name>Int</name></member>
-    <member refid="_c_var_8hpp_1a9d53a873542a1888491c08d3c52f4087a22ae0e2b89e5e3d477f988cc36d3272b" kind="enumvalue"><name>Float</name></member>
-    <member refid="_c_var_8hpp_1a9d53a873542a1888491c08d3c52f4087ac26f15e86e3de4c398a8273272aba034" kind="enumvalue"><name>Bool</name></member>
-    <member refid="_c_var_8hpp_1a9d53a873542a1888491c08d3c52f4087a27118326006d3829667a400ad23d5d98" kind="enumvalue"><name>String</name></member>
     <member refid="_asset_system_8hpp_1ad17ae31294ab8cba2112c3074ceaf8fb" kind="enum"><name>EHandleType</name></member>
     <member refid="_asset_system_8hpp_1ad17ae31294ab8cba2112c3074ceaf8fba6adf97f83acf6453d4a6a4b1070f3754" kind="enumvalue"><name>None</name></member>
     <member refid="_asset_system_8hpp_1ad17ae31294ab8cba2112c3074ceaf8fbac43e0fd449c758dab8f891d8e19eb1a9" kind="enumvalue"><name>Strong</name></member>
     <member refid="_asset_system_8hpp_1ad17ae31294ab8cba2112c3074ceaf8fba7324e3727807d95037eb19d304fd91ec" kind="enumvalue"><name>Weak</name></member>
+    <member refid="_timestep_8hpp_1a30174152c126bca89cea488117505189" kind="typedef"><name>CTimestep</name></member>
     <member refid="_allocation_functions_8hpp_1aa55b9d7db19a1132810c1e300a4f8ee1" kind="typedef"><name>MallocFn</name></member>
     <member refid="_allocation_functions_8hpp_1a780b0683d56efde82d50c032ca3995d0" kind="typedef"><name>FreeFn</name></member>
-    <member refid="_timestep_8hpp_1a30174152c126bca89cea488117505189" kind="typedef"><name>CTimestep</name></member>
-    <member refid="_asset_system_8hpp_1afbde4531318b40ad0604ff2c8cc78444" kind="typedef"><name>AssetIndexT</name></member>
-    <member refid="_asset_system_8hpp_1aebe37209a66928855bceb8925885fa53" kind="typedef"><name>HandleIdT</name></member>
-    <member refid="_asset_system_8hpp_1af5f78877637b48a0b0ded7866ba95a28" kind="typedef"><name>Assets</name></member>
-    <member refid="_type_info_8hpp_1a9d56683641c111cd1290c2f64fbfa040" kind="typedef"><name>TTypeName</name></member>
-    <member refid="_type_info_8hpp_1a106ba869d1f2b6eb9eaea4949f663052" kind="typedef"><name>TTypeHash</name></member>
     <member refid="_dynamic_library_8hpp_1a17569c0f13c7ace7dd5be7f5b9b464c4" kind="typedef"><name>ModuleHandle</name></member>
     <member refid="_string_hash_8hpp_1ab2c83f8db251510676b6e2ca06c761f7" kind="typedef"><name>HashedString</name></member>
     <member refid="_string_hash_8hpp_1ab816705aeabc6d3b6bb2b1d3d22150f5" kind="typedef"><name>HashedWString</name></member>
+    <member refid="_type_info_8hpp_1a9d56683641c111cd1290c2f64fbfa040" kind="typedef"><name>TTypeName</name></member>
+    <member refid="_type_info_8hpp_1a106ba869d1f2b6eb9eaea4949f663052" kind="typedef"><name>TTypeHash</name></member>
+    <member refid="_asset_system_8hpp_1afbde4531318b40ad0604ff2c8cc78444" kind="typedef"><name>AssetIndexT</name></member>
+    <member refid="_asset_system_8hpp_1aebe37209a66928855bceb8925885fa53" kind="typedef"><name>HandleIdT</name></member>
+    <member refid="_asset_system_8hpp_1af5f78877637b48a0b0ded7866ba95a28" kind="typedef"><name>Assets</name></member>
+    <member refid="_dependency_graph_8hpp_1a678904fc8b7735522eacc999db2199c6" kind="variable"><name>IsGraphNode</name></member>
     <member refid="_archive_8hpp_1ac3e07188bfd266f4ab1b6b12379f1d87" kind="variable"><name>HasAmpOp</name></member>
     <member refid="_archive_8hpp_1a2c19251027847763849aaa27ec9bb37b" kind="variable"><name>ContainerProperty</name></member>
     <member refid="_archive_8hpp_1a8dd72496a4f54040de345824f4e05d09" kind="variable"><name>Archiver</name></member>
-    <member refid="_dependency_graph_8hpp_1a678904fc8b7735522eacc999db2199c6" kind="variable"><name>IsGraphNode</name></member>
-    <member refid="_key_codes_8hpp_1a64f2199cb582231eb284c31cec56c849" kind="function"><name>RAVEN_ENUM_OPERATORS</name></member>
-    <member refid="_key_codes_8hpp_1a0aa1dba5ae4a8c47a4048c6a9d99eaf5" kind="function"><name>KeyToString</name></member>
-    <member refid="_key_codes_8hpp_1a7e595273f1496cba3e7034638f928e06" kind="function"><name>ModToString</name></member>
-    <member refid="_key_codes_8hpp_1a98031092f91bda767547a036885934e7" kind="function"><name>ModToString</name></member>
-    <member refid="_key_codes_8hpp_1ad8817cf8ec9dfaf58c0c822668f7b69c" kind="function"><name>KeyActionToString</name></member>
-    <member refid="_c_var_8hpp_1a0e18f0e08f4298142fd3b20f5e12cea0" kind="function"><name>RAVEN_ENUM_OPERATORS</name></member>
     <member refid="_utils_8hpp_1abf056fe41f55253ab7ee58521579b92e" kind="function"><name>ArraySize</name></member>
     <member refid="_utils_8hpp_1a4098ca32ca80d80938689cf12c5211ad" kind="function"><name>Align</name></member>
     <member refid="_utils_8hpp_1a107bbd41d680774a93b58c13f2734f05" kind="function"><name>Align</name></member>
@@ -2525,30 +2526,36 @@
     <member refid="_utils_8hpp_1ad4597c4cd1ba8d33148a348bd36c67d7" kind="function"><name>ForEachBitRange</name></member>
     <member refid="_utils_8hpp_1a9e6747a19cf74eab3a6263ea52e2ab6a" kind="function"><name>IsBitSet</name></member>
     <member refid="_utils_8hpp_1a40d015761169b2fbc8e9e40b871bc546" kind="function"><name>ZeroStruct</name></member>
-    <member refid="_archive_8hpp_1ae2713da6578edfb6bc7b28803bca69fe" kind="function"><name>operator&amp;</name></member>
-    <member refid="_type_info_8hpp_1a6ee7230552a49c7aa430234b3c2bca3d" kind="function"><name>NullType</name></member>
-    <member refid="_type_info_8hpp_1a87f845f57555b1f22dca22a5d6bf4702" kind="function"><name>TypeId</name></member>
-    <member refid="_string_hash_8hpp_1ad7635685fcc1965e763f2b6a40954333" kind="function"><name>operator&quot;&quot;_h</name></member>
-    <member refid="_string_hash_8hpp_1afb0daed564e9c5d74ff8b296815e9240" kind="function"><name>operator&quot;&quot;_h</name></member>
+    <member refid="_c_var_8hpp_1a0e18f0e08f4298142fd3b20f5e12cea0" kind="function"><name>RAVEN_ENUM_OPERATORS</name></member>
+    <member refid="_key_codes_8hpp_1a64f2199cb582231eb284c31cec56c849" kind="function"><name>RAVEN_ENUM_OPERATORS</name></member>
+    <member refid="_key_codes_8hpp_1a0aa1dba5ae4a8c47a4048c6a9d99eaf5" kind="function"><name>KeyToString</name></member>
+    <member refid="_key_codes_8hpp_1a7e595273f1496cba3e7034638f928e06" kind="function"><name>ModToString</name></member>
+    <member refid="_key_codes_8hpp_1a98031092f91bda767547a036885934e7" kind="function"><name>ModToString</name></member>
+    <member refid="_key_codes_8hpp_1ad8817cf8ec9dfaf58c0c822668f7b69c" kind="function"><name>KeyActionToString</name></member>
     <member refid="_dependency_graph_8hpp_1a8766c68fd6f3cc1ceb20bab5a1f892d4" kind="function"><name>BuildDependencyGraph</name></member>
     <member refid="_dependency_graph_8hpp_1af6bc2b65f5fca4edc005844cc0ee2323" kind="function"><name>TopologicalOrder</name></member>
+    <member refid="_string_hash_8hpp_1ad7635685fcc1965e763f2b6a40954333" kind="function"><name>operator&quot;&quot;_h</name></member>
+    <member refid="_string_hash_8hpp_1afb0daed564e9c5d74ff8b296815e9240" kind="function"><name>operator&quot;&quot;_h</name></member>
+    <member refid="_type_info_8hpp_1a6ee7230552a49c7aa430234b3c2bca3d" kind="function"><name>NullType</name></member>
+    <member refid="_type_info_8hpp_1a87f845f57555b1f22dca22a5d6bf4702" kind="function"><name>TypeId</name></member>
+    <member refid="_archive_8hpp_1ae2713da6578edfb6bc7b28803bca69fe" kind="function"><name>operator&amp;</name></member>
   </compound>
   <compound refid="namespace_raven_1_1_detail" kind="namespace"><name>Raven::Detail</name>
     <member refid="_function_traits_8hpp_1ab668a961991f04bd07eed6f3338c4e26" kind="typedef"><name>void_t</name></member>
     <member refid="_function_traits_8hpp_1a31491aa299e3c34f3da6c0160ce3afd2" kind="typedef"><name>IsFunction</name></member>
     <member refid="_function_traits_8hpp_1a0407fcb4a5c09fb16cff05d41bc9064d" kind="typedef"><name>IsVoidFunction</name></member>
-    <member refid="_function_traits_8hpp_1a62035ada01ab743982edf39bd5e47d90" kind="variable"><name>Invokable</name></member>
     <member refid="_dense_storage_8hpp_1a730f6ff5957ddffcabb0a9aa72928c88" kind="variable"><name>DefaultPageSize</name></member>
     <member refid="_dense_storage_8hpp_1aa0cd3af1a8b2a8fd41a1cdcf13f7f723" kind="variable"><name>WithReleasePolicy</name></member>
     <member refid="_dense_storage_8hpp_1a4e22f1a7b626c10e4ccfd7527880092f" kind="variable"><name>WithPageSizePolicy</name></member>
+    <member refid="_function_traits_8hpp_1a62035ada01ab743982edf39bd5e47d90" kind="variable"><name>Invokable</name></member>
+    <member refid="_dependency_graph_8hpp_1aa60046e8571615173c8580b7a0cfc52d" kind="function"><name>GetBefore</name></member>
+    <member refid="_dependency_graph_8hpp_1aca99c24695008a6ca7beb47337cf7774" kind="function"><name>GetAfter</name></member>
+    <member refid="_dependency_graph_8hpp_1afc25788207a4ffa6c6e24b7dbcb3cd38" kind="function"><name>GetLabels</name></member>
     <member refid="_type_info_8hpp_1adc2b0c48d42044fef716553a106ac2c6" kind="function"><name>TypeNameStripped</name></member>
     <member refid="_type_info_8hpp_1a2b9092c6a15a4367dbd61f11b3eda6ec" kind="function"><name>TypeName</name></member>
     <member refid="_type_info_8hpp_1aabb5a0fd9108c73a266a0fec7acdb770" kind="function"><name>TypeName</name></member>
     <member refid="_type_info_8hpp_1af2e71482126d3d48f95747cc1819b3e9" kind="function"><name>TypeHash</name></member>
     <member refid="_type_info_8hpp_1a51c9a5f43c3a0b7554206328ce70ad1d" kind="function"><name>TypeHash</name></member>
-    <member refid="_dependency_graph_8hpp_1aa60046e8571615173c8580b7a0cfc52d" kind="function"><name>GetBefore</name></member>
-    <member refid="_dependency_graph_8hpp_1aca99c24695008a6ca7beb47337cf7774" kind="function"><name>GetAfter</name></member>
-    <member refid="_dependency_graph_8hpp_1afc25788207a4ffa6c6e24b7dbcb3cd38" kind="function"><name>GetLabels</name></member>
   </compound>
   <compound refid="namespace_raven_1_1_event" kind="namespace"><name>Raven::Event</name>
   </compound>
@@ -2595,51 +2602,50 @@
     <member refid="_variant_policy_8hpp_1abf2f0362a5469389a3d89ccaa0c0099ca4cd9f3996d60790cd11c04f842ebc43c" kind="enumvalue"><name>Cast</name></member>
     <member refid="_variant_policy_8hpp_1abf2f0362a5469389a3d89ccaa0c0099cac8be2b508837fe06cf1e422b300380ac" kind="enumvalue"><name>CreateSequentialView</name></member>
     <member refid="_variant_policy_8hpp_1abf2f0362a5469389a3d89ccaa0c0099ca79bafe3c870188a2d8e615cbd6e7593d" kind="enumvalue"><name>CreateAssociativeView</name></member>
-    <member refid="_variant_data_8hpp_1a63fa0e90007ec52e91f4d53b3d987551" kind="typedef"><name>VariantBaseTypes</name></member>
-    <member refid="_variant_data_8hpp_1a18fbb367a4f737fd76fe862307d4386d" kind="typedef"><name>VariantData</name></member>
     <member refid="_type_desc_8hpp_1abd8485de03a63aa2e5fcd9c6628febcb" kind="typedef"><name>TypeTraitVal</name></member>
     <member refid="_type_desc_8hpp_1a6cf18d0a54a7cc14c8cb2a910435546f" kind="typedef"><name>TypeTraits</name></member>
     <member refid="_type_desc_8hpp_1a796d22a091122e0271dd866a070affe4" kind="typedef"><name>BinderBase</name></member>
     <member refid="_variant_8hpp_1a675e80a97e95215349154f3bc6094516" kind="typedef"><name>DecayExceptArrayT</name></member>
     <member refid="_variant_8hpp_1a382ac6c7d2fb83d040e78ce212a23649" kind="typedef"><name>DecayVariantT</name></member>
+    <member refid="_argument_8hpp_1abd7219e4ec8402bbbb67644750cdc1d5" kind="typedef"><name>IsVariant</name></member>
     <member refid="_type_8hpp_1aa8e4ef34d7806fbc21229b7e68f9fde1" kind="typedef"><name>ptr_t</name></member>
-    <member refid="_argument_extractor_8hpp_1a4c7c6e277fcf648deb999ff4ee7b0293" kind="typedef"><name>CountArgs</name></member>
-    <member refid="_variant_policy_8hpp_1a4de74698caf28e94c8e063130154a8dc" kind="typedef"><name>VariantPolicyFN</name></member>
-    <member refid="_variant_policy_8hpp_1a2ebbe45bd8e6f9098064d37ff2875a02" kind="typedef"><name>CanPlaceInVariant</name></member>
-    <member refid="_variant_policy_8hpp_1a739af689c8726ea4c46d3fcf77652b41" kind="typedef"><name>RawArrayTypeT</name></member>
-    <member refid="_variant_policy_8hpp_1aedb8decc674ae1a1889a0edb65eee8af" kind="typedef"><name>Is1DCharArray</name></member>
-    <member refid="_variant_policy_8hpp_1ad0f8d236d432cfdb39dbc98cba27cbc9" kind="typedef"><name>VariantPolicy</name></member>
     <member refid="_property_traits_8hpp_1a107d3ded0691a7f87f24e422e94b20b0" kind="typedef"><name>size_t</name></member>
     <member refid="_property_traits_8hpp_1a408b06bcef05ea532d5c61cac6d0b9ea" kind="typedef"><name>ptrdiff_t</name></member>
     <member refid="_property_traits_8hpp_1a132741bc65e660627a765c1001520c86" kind="typedef"><name>AsTypeListT</name></member>
     <member refid="_property_traits_8hpp_1aab51d1da58fdea1166d5d5910f4c92c6" kind="typedef"><name>TypeListElementT</name></member>
     <member refid="_property_traits_8hpp_1a6304c26bedb331e65b8601495756ddf8" kind="typedef"><name>MaxSizeOfList</name></member>
     <member refid="_property_traits_8hpp_1afc5641a3b0c9b146e93a645db7dcddc9" kind="typedef"><name>MaxAlignOfList</name></member>
-    <member refid="_argument_8hpp_1abd7219e4ec8402bbbb67644750cdc1d5" kind="typedef"><name>IsVariant</name></member>
+    <member refid="_variant_data_8hpp_1a63fa0e90007ec52e91f4d53b3d987551" kind="typedef"><name>VariantBaseTypes</name></member>
+    <member refid="_variant_data_8hpp_1a18fbb367a4f737fd76fe862307d4386d" kind="typedef"><name>VariantData</name></member>
+    <member refid="_variant_policy_8hpp_1a4de74698caf28e94c8e063130154a8dc" kind="typedef"><name>VariantPolicyFN</name></member>
+    <member refid="_variant_policy_8hpp_1a2ebbe45bd8e6f9098064d37ff2875a02" kind="typedef"><name>CanPlaceInVariant</name></member>
+    <member refid="_variant_policy_8hpp_1a739af689c8726ea4c46d3fcf77652b41" kind="typedef"><name>RawArrayTypeT</name></member>
+    <member refid="_variant_policy_8hpp_1aedb8decc674ae1a1889a0edb65eee8af" kind="typedef"><name>Is1DCharArray</name></member>
+    <member refid="_variant_policy_8hpp_1ad0f8d236d432cfdb39dbc98cba27cbc9" kind="typedef"><name>VariantPolicy</name></member>
+    <member refid="_argument_extractor_8hpp_1a4c7c6e277fcf648deb999ff4ee7b0293" kind="typedef"><name>CountArgs</name></member>
     <member refid="_instance_8hpp_1ac28e13043cd076dbe7d53bd3035385c5" kind="variable"><name>Instanceable</name></member>
+    <member refid="_argument_8hpp_1a3ca15add2c2df9cf9b1101ab8bc7f328" kind="variable"><name>Argumentable</name></member>
     <member refid="_property_traits_8hpp_1a49b850ed321a91816df0d3d8f74ac5d1" kind="variable"><name>IsMember</name></member>
     <member refid="_property_traits_8hpp_1ade3ef2edf3b471d0dc0266348c929c9d" kind="variable"><name>AlignmentOf_V</name></member>
-    <member refid="_argument_8hpp_1a3ca15add2c2df9cf9b1101ab8bc7f328" kind="variable"><name>Argumentable</name></member>
-    <member refid="_asset_meta_helpers_8hpp_1a3b1d282c43f6a9148245ed802a26f444" kind="function"><name>IsTypedHandle</name></member>
-    <member refid="_asset_meta_helpers_8hpp_1a025f991a4f52199e62d6b2dc263c1e3b" kind="function"><name>IsUntypedHandle</name></member>
-    <member refid="_asset_meta_helpers_8hpp_1a967f754387a4f2e11f8205e2f01ff9bb" kind="function"><name>TryConvertUntypedHandle</name></member>
     <member refid="_type_desc_8hpp_1a9073a9de20332d6cf61ba7fea8908d92" kind="function"><name>MakeTypeData</name></member>
     <member refid="_type_desc_8hpp_1a6c4d5689ae18c233a6d781078bb8b52f" kind="function"><name>MakePropertyData</name></member>
     <member refid="_type_desc_8hpp_1a633cfb1c6df7358f708d3b513dbccf33" kind="function"><name>AddProperty</name></member>
     <member refid="_type_desc_8hpp_1a4fac2008ee56fd4ec15befff48c13a6a" kind="function"><name>ExtractAttributes</name></member>
+    <member refid="_enum_8hpp_1a75d1b3a2cff1794b83810586e151b54b" kind="function"><name>Value</name></member>
     <member refid="_variant_8hpp_1a8f34656046280f5e3095f2547158acdd" kind="function"><name>unsafe_variant_cast</name></member>
     <member refid="_variant_8hpp_1affdd1f8ce135afc5b40ee436ac551afc" kind="function"><name>unsafe_variant_cast</name></member>
     <member refid="_variant_8hpp_1a61654a3f113a1f4951a41c910e86d63f" kind="function"><name>variant_cast</name></member>
     <member refid="_variant_8hpp_1abe9a55c832954f8a375bb92206bef618" kind="function"><name>variant_cast</name></member>
     <member refid="_type_8hpp_1a9073a9de20332d6cf61ba7fea8908d92" kind="function"><name>MakeTypeData</name></member>
     <member refid="_type_8hpp_1a79ad0e479d654d9a28c4df12fce57f88" kind="function"><name>OffsetOf</name></member>
-    <member refid="_enum_8hpp_1a75d1b3a2cff1794b83810586e151b54b" kind="function"><name>Value</name></member>
+    <member refid="_property_traits_8hpp_1a7a11cb228f114d9686a102a5f914a0c3" kind="function"><name>AsPointer</name></member>
     <member refid="_argument_extractor_8hpp_1a2ff5fcef518d7418ebe78a6b18926a41" kind="function"><name>ForwardToVector</name></member>
     <member refid="_argument_extractor_8hpp_1a5e36b1c047800788b254fe9cf5b6da8e" kind="function"><name>ForwardToArray</name></member>
-    <member refid="_property_traits_8hpp_1a7a11cb228f114d9686a102a5f914a0c3" kind="function"><name>AsPointer</name></member>
+    <member refid="_asset_meta_helpers_8hpp_1a3b1d282c43f6a9148245ed802a26f444" kind="function"><name>IsTypedHandle</name></member>
+    <member refid="_asset_meta_helpers_8hpp_1a025f991a4f52199e62d6b2dc263c1e3b" kind="function"><name>IsUntypedHandle</name></member>
+    <member refid="_asset_meta_helpers_8hpp_1a967f754387a4f2e11f8205e2f01ff9bb" kind="function"><name>TryConvertUntypedHandle</name></member>
   </compound>
   <compound refid="namespace_raven_1_1_meta_1_1_detail" kind="namespace"><name>Raven::Meta::Detail</name>
-    <member refid="_type_desc_8hpp_1ae974a08d7d7d289918efbc4eb53365a3" kind="typedef"><name>CreateVariantPolicyT</name></member>
     <member refid="_meta_2_utils_8hpp_1a5e0fa33ff71438496e642121f79160c7" kind="typedef"><name>RemoveAllPointersT</name></member>
     <member refid="_meta_2_utils_8hpp_1a4de33ef0c98dd1e3ff834292c15fffd1" kind="typedef"><name>RemoveAllPointersExceptOneT</name></member>
     <member refid="_meta_2_utils_8hpp_1ab2be7b47afa4cd7357f11852ef243f5c" kind="typedef"><name>IsFunctionPtr</name></member>
@@ -2647,32 +2653,26 @@
     <member refid="_meta_2_utils_8hpp_1a0c077a39e0441e9b6fd642af065b2f99" kind="typedef"><name>NormalReturnT</name></member>
     <member refid="_meta_2_utils_8hpp_1ac9926d53b12364f4468ef9cf5388ebbc" kind="typedef"><name>RawAddressofReturnType</name></member>
     <member refid="_meta_2_utils_8hpp_1a79a2a8a0d137223d3609ef437b693a5a" kind="typedef"><name>RawAddressofReturnTypeT</name></member>
+    <member refid="_type_desc_8hpp_1ae974a08d7d7d289918efbc4eb53365a3" kind="typedef"><name>CreateVariantPolicyT</name></member>
     <member refid="_iterator_binder_8hpp_1a9a044ca3b3bb33301720b149e553f618" kind="typedef"><name>IteratorData</name></member>
-    <member refid="_variant_policy_8hpp_1a7093cabf1b12a5f3f3365531c6a247ad" kind="typedef"><name>EnumCaster</name></member>
-    <member refid="_property_traits_8hpp_1a5b066662126bb3c475b54225b2151f91" kind="typedef"><name>IsSequentialContainer</name></member>
-    <member refid="_property_traits_8hpp_1af972db8a4e22c069ab1fa61233f43719" kind="typedef"><name>IsAssociativeContainer</name></member>
+    <member refid="_type_casting_8hpp_1a7fd7334820e4a52e9ded07c9493e0e59" kind="typedef"><name>AreIntegrals</name></member>
     <member refid="_wrapper_binder_8hpp_1a34cfb3cf40d87dd516a099705b54690c" kind="typedef"><name>WrapperBinderT</name></member>
     <member refid="_wrapper_binder_8hpp_1afa6024f4f9a8bdc8da2f2f2a53befb70" kind="typedef"><name>IsWrapper</name></member>
     <member refid="_wrapper_binder_8hpp_1a32621ea8272a2bd7c3b002359f8c84af" kind="typedef"><name>WrapperAddressReturnType</name></member>
-    <member refid="_type_casting_8hpp_1a7fd7334820e4a52e9ded07c9493e0e59" kind="typedef"><name>AreIntegrals</name></member>
-    <member refid="_associative_container_binder_8hpp_1ab58a982211b8bef349b3993c7833c5df" kind="function"><name>CreateVariantAssociativeView</name></member>
-    <member refid="_associative_container_binder_8hpp_1aa3a87876c2ccf65f28ed3fef57247dc6" kind="function"><name>CreateVariantAssociativeView</name></member>
+    <member refid="_property_traits_8hpp_1a5b066662126bb3c475b54225b2151f91" kind="typedef"><name>IsSequentialContainer</name></member>
+    <member refid="_property_traits_8hpp_1af972db8a4e22c069ab1fa61233f43719" kind="typedef"><name>IsAssociativeContainer</name></member>
+    <member refid="_variant_policy_8hpp_1a7093cabf1b12a5f3f3365531c6a247ad" kind="typedef"><name>EnumCaster</name></member>
+    <member refid="_meta_2_utils_8hpp_1ad077a148f215c82c32e5068c1e85e0f9" kind="function"><name>RawAddressOf</name></member>
     <member refid="_type_desc_8hpp_1ad00f26cf57e41a3ec528e1b1f4a62da8" kind="function"><name>TestTrait</name></member>
     <member refid="_type_desc_8hpp_1a17a8238dffcfda3c786c937ce20f30a9" kind="function"><name>TestTrait</name></member>
     <member refid="_type_desc_8hpp_1aa3a20390afc389bef5cec1b0af9b9769" kind="function"><name>CreateWrapper</name></member>
     <member refid="_type_desc_8hpp_1ae3c767436c63ff97fcc5925ed4da54bb" kind="function"><name>GetCreateWrapperFn</name></member>
     <member refid="_type_desc_8hpp_1afc469c4ebee5034f720e8b1d720760b6" kind="function"><name>GetCreateWrapperFn</name></member>
-    <member refid="_meta_2_utils_8hpp_1ad077a148f215c82c32e5068c1e85e0f9" kind="function"><name>RawAddressOf</name></member>
-    <member refid="_sequential_container_binder_8hpp_1abaf67defbf333518dcc21b9b72a82053" kind="function"><name>CreateVariantSequentialView</name></member>
-    <member refid="_sequential_container_binder_8hpp_1a4fbc6a78a3b0e966302bcd32db589134" kind="function"><name>CreateVariantSequentialView</name></member>
     <member refid="_variant_8hpp_1a94a05477480f5b73e83e4d1c9eb3bb44" kind="function"><name>GetVariantType</name></member>
     <member refid="_variant_8hpp_1a22bca2a81541bd5cdb32a99b7739f442" kind="function"><name>VariantEqCmp</name></member>
     <member refid="_variant_8hpp_1a0c7b193ee4ae1f00970752f86a085a80" kind="function"><name>EqCmp</name></member>
-    <member refid="_variant_policy_8hpp_1a2daba9c3e177adf81fa6242044b59abc" kind="function"><name>IsFloatingPoint</name></member>
-    <member refid="_variant_policy_8hpp_1ad2a3ebe44bc097240a0f18dda8c5ef7f" kind="function"><name>GetWrappedValue</name></member>
-    <member refid="_variant_policy_8hpp_1a2a183fc180a871bcc7912a9b173fdfef" kind="function"><name>GetWrappedValue</name></member>
-    <member refid="_wrapper_binder_8hpp_1a10ce16fe0a5c0f7fdc657661e8e9a4f6" kind="function"><name>WrappedRawAddressOf</name></member>
-    <member refid="_wrapper_binder_8hpp_1a700cea507a2677e1a611b0eb4b16bb74" kind="function"><name>WrappedRawAddressOf</name></member>
+    <member refid="_sequential_container_binder_8hpp_1abaf67defbf333518dcc21b9b72a82053" kind="function"><name>CreateVariantSequentialView</name></member>
+    <member refid="_sequential_container_binder_8hpp_1a4fbc6a78a3b0e966302bcd32db589134" kind="function"><name>CreateVariantSequentialView</name></member>
     <member refid="_type_casting_8hpp_1af83bc091b8a9d56673e5f6dca1758851" kind="function"><name>IsWrappedEnum</name></member>
     <member refid="_type_casting_8hpp_1ad5e80676006fdc1338403250d408b00a" kind="function"><name>CastTo</name></member>
     <member refid="_type_casting_8hpp_1ad2958d293b9770568709730e0cbc3471" kind="function"><name>CastTo</name></member>
@@ -2690,6 +2690,13 @@
     <member refid="_type_casting_8hpp_1a3a7fc261740ff7e6f298c531e5abb849" kind="function"><name>StringToU64</name></member>
     <member refid="_type_casting_8hpp_1ac2fd71fb766c77f07261e01f06032697" kind="function"><name>StringToF32</name></member>
     <member refid="_type_casting_8hpp_1acfeb546140f9ffd291955ae7b933a31c" kind="function"><name>StringToF64</name></member>
+    <member refid="_wrapper_binder_8hpp_1a10ce16fe0a5c0f7fdc657661e8e9a4f6" kind="function"><name>WrappedRawAddressOf</name></member>
+    <member refid="_wrapper_binder_8hpp_1a700cea507a2677e1a611b0eb4b16bb74" kind="function"><name>WrappedRawAddressOf</name></member>
+    <member refid="_variant_policy_8hpp_1a2daba9c3e177adf81fa6242044b59abc" kind="function"><name>IsFloatingPoint</name></member>
+    <member refid="_variant_policy_8hpp_1ab58a982211b8bef349b3993c7833c5df" kind="function"><name>CreateVariantAssociativeView</name></member>
+    <member refid="_variant_policy_8hpp_1ad0ec2d9e0e460997d548a9c378234db2" kind="function"><name>CreateVariantAssociativeView</name></member>
+    <member refid="_variant_policy_8hpp_1ad2a3ebe44bc097240a0f18dda8c5ef7f" kind="function"><name>GetWrappedValue</name></member>
+    <member refid="_variant_policy_8hpp_1a2a183fc180a871bcc7912a9b173fdfef" kind="function"><name>GetWrappedValue</name></member>
   </compound>
   <compound refid="namespace_raven_1_1_meta_1_1_interface" kind="namespace"><name>Raven::Meta::Interface</name>
     <member refid="_type_desc_8hpp_1ae04cd2b8373d219e5d1e66f800a19c1f" kind="typedef"><name>CreateWrapperFn</name></member>
