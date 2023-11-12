@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_resources_common_8hpp" kind="file" language="C++">
+    <compoundname>ResourcesCommon.hpp</compoundname>
+    <includedby refid="_buffer_utils_8hpp" local="yes">/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/BufferUtils.hpp</includedby>
+    <includedby refid="_device_layer_8hpp" local="yes">/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/DeviceLayer.hpp</includedby>
+    <includedby refid="_memory_8hpp" local="yes">/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/Memory.hpp</includedby>
+    <includedby refid="_graphics_resource_8hpp" local="yes">/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/GraphicsResource.hpp</includedby>
+    <invincdepgraph>
+      <node id="1">
+        <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/ResourcesCommon.hpp</label>
+        <link refid="_resources_common_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/DeviceTexture.hpp</label>
+        <link refid="_device_texture_8hpp_source"/>
+      </node>
+      <node id="3">
+        <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/DeviceLayer.hpp</label>
+        <link refid="_device_layer_8hpp_source"/>
+      </node>
+      <node id="7">
+        <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/DeviceBuffer.hpp</label>
+        <link refid="_device_buffer_8hpp_source"/>
+      </node>
+      <node id="4">
+        <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/Memory.hpp</label>
+        <link refid="_memory_8hpp_source"/>
+      </node>
+      <node id="5">
+        <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/GraphicsResource.hpp</label>
+        <link refid="_graphics_resource_8hpp_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/BufferUtils.hpp</label>
+        <link refid="_buffer_utils_8hpp_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_bvr_1_1_renderer_1_1_s_device_memory_allocation" prot="public">Bvr::Renderer::SDeviceMemoryAllocation</innerclass>
+    <innernamespace refid="namespace_bvr">Bvr</innernamespace>
+    <innernamespace refid="namespace_bvr_1_1_renderer">Bvr::Renderer</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Bvr::Renderer<sp/>{</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/>EMemoryHeapType<sp/>:<sp/>uint8<sp/>{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/>DeviceLocal,</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/>Shared,</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>Count</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="struct_bvr_1_1_renderer_1_1_s_device_memory_allocation" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_renderer_1_1_s_device_memory_allocation" kindref="compound">SDeviceMemoryAllocation</ref><sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Offset<sp/><sp/>=<sp/>~0u;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Pool<sp/><sp/><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>EMemoryHeapType<sp/>Heap<sp/><sp/><sp/><sp/>=<sp/>EMemoryHeapType::Count;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Padding<sp/>=<sp/>0xFF;<sp/></highlight><highlight class="comment">//<sp/>0<sp/>-<sp/>buffer,<sp/>1<sp/>-<sp/>texture</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="normal"><sp/>bool()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Heap<sp/>!=<sp/>EMemoryHeapType::Count<sp/>&amp;&amp;<sp/>Offset<sp/>!=<sp/>~0u;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">static_assert(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="struct_bvr_1_1_renderer_1_1_s_device_memory_allocation" kindref="compound">SDeviceMemoryAllocation</ref>)<sp/>==<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(uint64),</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Memory<sp/>allocation<sp/>doesn&apos;t<sp/>fit<sp/>into<sp/>64<sp/>bits!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Bvr::Renderer</highlight></codeline>
+    </programlisting>
+    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/ResourcesCommon.hpp"/>
+  </compounddef>
+</doxygen>

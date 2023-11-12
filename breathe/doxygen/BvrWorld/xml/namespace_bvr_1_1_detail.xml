@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespace_bvr_1_1_detail" kind="namespace" language="C++">
+    <compoundname>Bvr::Detail</compoundname>
+    <innerclass refid="struct_bvr_1_1_detail_1_1_t_component_event" prot="public">Bvr::Detail::TComponentEvent</innerclass>
+    <innerclass refid="struct_bvr_1_1_detail_1_1_t_signal_fn" prot="public">Bvr::Detail::TSignalFn</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_components_8hpp_1a141f44e6d3cce479ab0697a888cb6bd0" prot="public" static="no" strong="no">
+        <type></type>
+        <name>EComponentEvent</name>
+        <enumvalue id="_components_8hpp_1a141f44e6d3cce479ab0697a888cb6bd0a7747756cf9d9a1da8119c59ae5fd7400" prot="public">
+          <name>Init</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_components_8hpp_1a141f44e6d3cce479ab0697a888cb6bd0a210a08d97db10aecfe95772803aa5e96" prot="public">
+          <name>Update</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_components_8hpp_1a141f44e6d3cce479ab0697a888cb6bd0a346add71efdba009aabc4e60bf814a45" prot="public">
+          <name>Remove</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_components_8hpp_1a141f44e6d3cce479ab0697a888cb6bd0a208401a245ac2d64364a488a4b90fdc8" prot="public">
+          <name>Count</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/Components.hpp" line="14" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/Components.hpp" bodystart="14" bodyend="20"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_components_8hpp_1a810975eba9513d95c6777a822e78144c" prot="public" static="no" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>concept</type>
+        <definition>concept Bvr::Detail::IsTagComponent</definition>
+        <argsstring></argsstring>
+        <name>IsTagComponent</name>
+        <initializer>= requires(<ref refid="class_bvr_1_1_c_world" kindref="compound">CWorld</ref>&amp; w) {
+        { w.GetComponent&lt;T&gt;(<ref refid="class_bvr_1_1_t_entity" kindref="compound">TEntity</ref>{}) } -&gt; std::same_as&lt;void&gt;;
+    }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/Components.hpp" line="10" column="13" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/Components.hpp" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_components_8hpp_1a5cb3a6523b66b520e4e43abd04475126" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>static void Bvr::Detail::DispatchComponentEvents</definition>
+        <argsstring>(CWorld &amp;world, Query&lt; With&lt; TComponentEvent&lt; T &gt;&gt;&gt; events)</argsstring>
+        <name>DispatchComponentEvents</name>
+        <param>
+          <type><ref refid="class_bvr_1_1_c_world" kindref="compound">CWorld</ref> &amp;</type>
+          <declname>world</declname>
+        </param>
+        <param>
+          <type><ref refid="class_bvr_1_1_t_query" kindref="compound">Query</ref>&lt; With&lt; <ref refid="struct_bvr_1_1_detail_1_1_t_component_event" kindref="compound">TComponentEvent</ref>&lt; T &gt;&gt;&gt;</type>
+          <declname>events</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/Components.hpp" line="25" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/Components.hpp" bodystart="25" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="_components_8hpp_1aafae0ddcb1b6a690450cda625dcd1dba" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>static void Bvr::Detail::CleanUpComponentEvents</definition>
+        <argsstring>(CWorld &amp;world, Query&lt; With&lt; T &gt;&gt; events)</argsstring>
+        <name>CleanUpComponentEvents</name>
+        <param>
+          <type><ref refid="class_bvr_1_1_c_world" kindref="compound">CWorld</ref> &amp;</type>
+          <declname>world</declname>
+        </param>
+        <param>
+          <type><ref refid="class_bvr_1_1_t_query" kindref="compound">Query</ref>&lt; With&lt; T &gt;&gt;</type>
+          <declname>events</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/Components.hpp" line="50" column="17" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/Components.hpp" bodystart="50" bodyend="53"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/Components.hpp" line="8" column="1"/>
+  </compounddef>
+</doxygen>

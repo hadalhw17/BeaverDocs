@@ -1,0 +1,1102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_bvr_1_1_c_level_editor" kind="class" language="C++" prot="public">
+    <compoundname>Bvr::CLevelEditor</compoundname>
+    <basecompoundref refid="class_bvr_1_1_editor_u_i_1_1_c_editor_tool" prot="public" virt="non-virtual">Bvr::EditorUI::CEditorTool</basecompoundref>
+    <basecompoundref refid="class_bvr_1_1_c_editor_tool" prot="public" virt="non-virtual">Bvr::CEditorTool</basecompoundref>
+    <derivedcompoundref refid="class_bvr_1_1_c_prefab_editor" prot="public" virt="non-virtual">Bvr::CPrefabEditor</derivedcompoundref>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="class_bvr_1_1_c_level_editor_1a819951d3f918c70aa2a5cbff638c6d0d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct</type>
+        <definition>friend struct LevelEditorPlugin</definition>
+        <argsstring></argsstring>
+        <name>LevelEditorPlugin</name>
+        <param>
+          <type><ref refid="struct_bvr_1_1_level_editor_plugin" kindref="compound">LevelEditorPlugin</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="135" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_bvr_1_1_c_level_editor_1a6bcbed8e0ba0fa2e24449448cc3d0b6b" prot="protected" static="no" mutable="no">
+        <type>CUICommandListPtr</type>
+        <definition>CUICommandListPtr Bvr::CLevelEditor::ToolCommands</definition>
+        <argsstring></argsstring>
+        <name>ToolCommands</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="138" column="23" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_bvr_1_1_c_level_editor_1ac6ea37695c81bdacc68b15b18a561d57" prot="private" static="no" mutable="no">
+        <type>CEntity</type>
+        <definition>CEntity Bvr::CLevelEditor::m_entityClipboard</definition>
+        <argsstring></argsstring>
+        <name>m_entityClipboard</name>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="141" column="51" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_level_editor_1a1f1f1e74b9889fe191151c6326154359" prot="private" static="no" mutable="no">
+        <type>CEntity</type>
+        <definition>CEntity Bvr::CLevelEditor::m_activeTool</definition>
+        <argsstring></argsstring>
+        <name>m_activeTool</name>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="142" column="51" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_level_editor_1a14ea2e584f1df225b245158d896cce23" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="class_bvr_1_1_c_editor_viewport" kindref="compound">CEditorViewport</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;std::shared_ptr&lt;CEditorViewport&gt; &gt; Bvr::CLevelEditor::m_viewports</definition>
+        <argsstring></argsstring>
+        <name>m_viewports</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="143" column="17" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_level_editor_1a72759deb4da2ba38f68cf76d685b9ded" prot="private" static="no" mutable="no">
+        <type><ref refid="class_bvr_1_1_c_editor_camera_controller" kindref="compound">CEditorCameraController</ref> *</type>
+        <definition>CEditorCameraController* Bvr::CLevelEditor::m_pActiveCamera</definition>
+        <argsstring></argsstring>
+        <name>m_pActiveCamera</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="144" column="50" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_level_editor_1a5fc745cb2d99f2d95ca25b811680cf43" prot="private" static="no" mutable="no">
+        <type><ref refid="struct_bvr_1_1_s_scene_panel" kindref="compound">SScenePanel</ref> *</type>
+        <definition>SScenePanel* Bvr::CLevelEditor::m_pScenePanel</definition>
+        <argsstring></argsstring>
+        <name>m_pScenePanel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="145" column="50" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_level_editor_1a610a7d17564063884a36244da3134801" prot="private" static="no" mutable="no">
+        <type>Handle&lt; CWorld &gt;</type>
+        <definition>Handle&lt;CWorld&gt; Bvr::CLevelEditor::m_hCurrentEditingWorld</definition>
+        <argsstring></argsstring>
+        <name>m_hCurrentEditingWorld</name>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="146" column="43" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_level_editor_1ad8920dd6581ae1c7c5a47d22cbae9d41" prot="private" static="no" mutable="no">
+        <type>Handle&lt; CWorld &gt;</type>
+        <definition>Handle&lt;CWorld&gt; Bvr::CLevelEditor::m_hCurrentSimulatingWorld</definition>
+        <argsstring></argsstring>
+        <name>m_hCurrentSimulatingWorld</name>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="147" column="43" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_level_editor_1a2f3acf60b63bb69d173b0d610392b906" prot="private" static="no" mutable="no">
+        <type>CWorld *</type>
+        <definition>CWorld* Bvr::CLevelEditor::m_pCurrentEditingWorld</definition>
+        <argsstring></argsstring>
+        <name>m_pCurrentEditingWorld</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="148" column="37" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_level_editor_1aab82ccba1341f3b679a4ee28c7691f52" prot="private" static="no" mutable="no">
+        <type>CWorld *</type>
+        <definition>CWorld* Bvr::CLevelEditor::m_pCurrentSimulatingWorld</definition>
+        <argsstring></argsstring>
+        <name>m_pCurrentSimulatingWorld</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="149" column="37" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_level_editor_1a5eceadb66185b012e7098104927e8ef2" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="class_bvr_1_1_c_editor_viewport" kindref="compound">CEditorViewport</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;CEditorViewport&gt; Bvr::CLevelEditor::m_pFocusedViewport</definition>
+        <argsstring></argsstring>
+        <name>m_pFocusedViewport</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="150" column="21" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_level_editor_1a738143104d4bd3d06888f67e142795fc" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; Event::CManager &gt;</type>
+        <definition>std::unique_ptr&lt;Event::CManager&gt; Bvr::CLevelEditor::m_pEventManager</definition>
+        <argsstring></argsstring>
+        <name>m_pEventManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="151" column="21" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_level_editor_1a6c894fe022a5a8d4fdfe016110d57dfe" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Bvr::CLevelEditor::m_pTag</definition>
+        <argsstring></argsstring>
+        <name>m_pTag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="152" column="38" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_level_editor_1a31209d3edea7d1bebc3ee289e9100cb1" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Bvr::CLevelEditor::m_allowKeyboardInput</definition>
+        <argsstring></argsstring>
+        <name>m_allowKeyboardInput</name>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="153" column="38" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_level_editor_1a48262bfe2058503705d04d6deaff39a2" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Bvr::CLevelEditor::m_allowMouseInput</definition>
+        <argsstring></argsstring>
+        <name>m_allowMouseInput</name>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="154" column="38" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_level_editor_1ad009294de9670e8b0e0baf300f8869b9" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Bvr::CLevelEditor::m_wasLevelModified</definition>
+        <argsstring></argsstring>
+        <name>m_wasLevelModified</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="155" column="38" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1ae2e62a980ecc141547bb2d2b8c73b1ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Bvr::CLevelEditor::CLevelEditor</definition>
+        <argsstring>(const char *pTag)</argsstring>
+        <name>CLevelEditor</name>
+        <param>
+          <type>const char *</type>
+          <declname>pTag</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="43" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1ac3050ab0b87e56389eada75120abb7bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual Bvr::CLevelEditor::~CLevelEditor</definition>
+        <argsstring>()</argsstring>
+        <name>~CLevelEditor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="44" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1a6944b61c734669262f2a8e6a524fae4d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool Bvr::CLevelEditor::ShowImpl</definition>
+        <argsstring>() override</argsstring>
+        <name>ShowImpl</name>
+        <reimplements refid="class_bvr_1_1_editor_u_i_1_1_c_editor_tool_1a84d391f19b2c1cc64d7764e5fb76a30e">ShowImpl</reimplements>
+        <reimplementedby refid="class_bvr_1_1_c_prefab_editor_1a77de37a7251e3c089f2d9519542101aa">ShowImpl</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="46" column="33"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1abbab92fd0386539c978ffddd6de6c5d0" prot="public" static="no" const="no" explicit="no" inline="yes" final="yes" virt="virtual">
+        <type>CUICommandListPtr</type>
+        <definition>CUICommandListPtr Bvr::CLevelEditor::GetCommandList</definition>
+        <argsstring>() final</argsstring>
+        <name>GetCommandList</name>
+        <reimplements refid="class_bvr_1_1_editor_u_i_1_1_c_editor_tool_1a64d9502b637af468e33f9e8c77c5af38">GetCommandList</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="47" column="33" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" bodystart="47" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1aa8e767872b5b78f8fa5b71c6d8f56632" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CLevelEditor::LoadLevel</definition>
+        <argsstring>(const char *pPath)</argsstring>
+        <name>LoadLevel</name>
+        <param>
+          <type>const char *</type>
+          <declname>pPath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="49" column="33"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1af63bf05bae1159bbae959bbbe413ab5b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CLevelEditor::EditLevel</definition>
+        <argsstring>(Handle&lt; CWorld &gt; hWorld)</argsstring>
+        <name>EditLevel</name>
+        <param>
+          <type>Handle&lt; CWorld &gt;</type>
+          <declname>hWorld</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="50" column="33"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1aca60fc6d5b72cdddf971da7d6a1ced55" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Bvr::CLevelEditor::UnloadLevel</definition>
+        <argsstring>(const bool canCancel=false)</argsstring>
+        <name>UnloadLevel</name>
+        <param>
+          <type>const bool</type>
+          <declname>canCancel</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="52" column="33"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1afdea091c83a5a15a62ee2a1fca73c7a8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>CEntity</type>
+        <definition>CEntity Bvr::CLevelEditor::GetSelectedEntity</definition>
+        <argsstring>() const</argsstring>
+        <name>GetSelectedEntity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="53" column="33"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1ad52c84e7a18e8a05205a3441e49df000" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Fn</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void Bvr::CLevelEditor::ForEachSelectedEntity</definition>
+        <argsstring>(const Fn &amp;fn)</argsstring>
+        <name>ForEachSelectedEntity</name>
+        <param>
+          <type>const Fn &amp;</type>
+          <declname>fn</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="54" column="22" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" bodystart="54" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1a937a98dd54ad1300764a4296d812962e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CLevelEditor::ClearSelection</definition>
+        <argsstring>()</argsstring>
+        <name>ClearSelection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="64" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1a690c2f21af13cbf16fd110fd990d5d3c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CLevelEditor::SelectEntity</definition>
+        <argsstring>(CEntity ent)</argsstring>
+        <name>SelectEntity</name>
+        <param>
+          <type>CEntity</type>
+          <declname>ent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="65" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1a39a6010d538820ceca460f059fa18cc5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CLevelEditor::DeleteEntity</definition>
+        <argsstring>(CEntity ent)</argsstring>
+        <name>DeleteEntity</name>
+        <param>
+          <type>CEntity</type>
+          <declname>ent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="66" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1a50584fa8e145eeb97b190e18aeed272d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Handle&lt; CWorld &gt;</type>
+        <definition>Handle&lt;CWorld&gt; Bvr::CLevelEditor::GetCurrentLevel</definition>
+        <argsstring>()</argsstring>
+        <name>GetCurrentLevel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="68" column="12" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" bodystart="68" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1ad6eda8b6217172a80de2c2a1a88eb357" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Handle&lt; CWorld &gt;</type>
+        <definition>Handle&lt;CWorld&gt; Bvr::CLevelEditor::GetCurrentSimulation</definition>
+        <argsstring>()</argsstring>
+        <name>GetCurrentSimulation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="69" column="12" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" bodystart="69" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1a714451205f4816bfbd2c63d8efd994c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CLevelEditor::OnViewportFocused</definition>
+        <argsstring>(const SViewportFocusedEvent &amp;event)</argsstring>
+        <name>OnViewportFocused</name>
+        <param>
+          <type>const <ref refid="struct_bvr_1_1_s_viewport_focused_event" kindref="compound">SViewportFocusedEvent</ref> &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="80" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1acaa6605eb7072ebab28e0e6fb03121b2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CLevelEditor::SetAllowKeyboardInput</definition>
+        <argsstring>(const bool allow)</argsstring>
+        <name>SetAllowKeyboardInput</name>
+        <param>
+          <type>const bool</type>
+          <declname>allow</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="82" column="20" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" bodystart="82" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1aaaa5e13d64b1b80e1e3436c49e50ec27" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CLevelEditor::SetAllowMouseInput</definition>
+        <argsstring>(const bool allow)</argsstring>
+        <name>SetAllowMouseInput</name>
+        <param>
+          <type>const bool</type>
+          <declname>allow</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="85" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" bodystart="85" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1a5225c5fd313466f94efa3c3495b31290" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Bvr::CLevelEditor::GetAllowMouseInput</definition>
+        <argsstring>() const</argsstring>
+        <name>GetAllowMouseInput</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="86" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" bodystart="86" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1ac77eb4169cff6792718005919c7e902a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Bvr::CLevelEditor::GetAllowKeyboardInput</definition>
+        <argsstring>() const</argsstring>
+        <name>GetAllowKeyboardInput</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="87" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" bodystart="87" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1a3440dc358283cb34f5baed4c7aaa1583" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="class_bvr_1_1_c_editor_viewport" kindref="compound">CEditorViewport</ref> *</type>
+        <definition>const CEditorViewport* Bvr::CLevelEditor::GetFocusedViewport</definition>
+        <argsstring>() const</argsstring>
+        <name>GetFocusedViewport</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="89" column="27" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" bodystart="89" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1a385dbfd9682b07369e175a71d6b54fd5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_bvr_1_1_c_editor_viewport_consumer" kindref="compound">CEditorViewportConsumer</ref> *</type>
+        <definition>CEditorViewportConsumer* Bvr::CLevelEditor::GetActiveConsumer</definition>
+        <argsstring>()</argsstring>
+        <name>GetActiveConsumer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="92" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1a3be446199f34106cd5eebbe53568be57" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* Bvr::CLevelEditor::GetTag</definition>
+        <argsstring>()</argsstring>
+        <name>GetTag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="94" column="29" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" bodystart="94" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1ad7254d5daf733118b6a80636248d9078" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Bvr::CLevelEditor::CanRecieveInput</definition>
+        <argsstring>()</argsstring>
+        <name>CanRecieveInput</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="96" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1aac55ec61a7c47bf8c0ccf9a9edac46f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CLevelEditor::FocusOnEntity</definition>
+        <argsstring>(CEntity ent)</argsstring>
+        <name>FocusOnEntity</name>
+        <param>
+          <type>CEntity</type>
+          <declname>ent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="98" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1a7c82f69a091fcd7fb1c0cf079296db1f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_bvr_1_1_c_editor_camera_controller" kindref="compound">CEditorCameraController</ref> *</type>
+        <definition>CEditorCameraController* Bvr::CLevelEditor::GetActiveCamera</definition>
+        <argsstring>()</argsstring>
+        <name>GetActiveCamera</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="100" column="29" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" bodystart="100" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1a0beeddfb6c2ea46e55d09f5425356d25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CLevelEditor::OnDeleteSelection</definition>
+        <argsstring>()</argsstring>
+        <name>OnDeleteSelection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="102" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1aa9d597a30cf3d1af1ca4191e3e35161d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CLevelEditor::OnRenameSelection</definition>
+        <argsstring>()</argsstring>
+        <name>OnRenameSelection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="103" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1a360f104b00f59246c15ec9567f6eef9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CLevelEditor::OnDuplicateSelection</definition>
+        <argsstring>()</argsstring>
+        <name>OnDuplicateSelection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="104" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1a776e32e0ca6c0f1cab397e1a3f6c461e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CLevelEditor::OnCopySelection</definition>
+        <argsstring>()</argsstring>
+        <name>OnCopySelection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="105" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1a3e3271cef66975fd1420191bd1ea872e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CLevelEditor::OnPasteSelection</definition>
+        <argsstring>()</argsstring>
+        <name>OnPasteSelection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="106" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1a0f17532ccba8dd44f176dfc225835d0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CLevelEditor::OnSaveLevel</definition>
+        <argsstring>()</argsstring>
+        <name>OnSaveLevel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="108" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1a83ed04d9cc096477bf86865db04d6ff4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CLevelEditor::OnNewLevel</definition>
+        <argsstring>()</argsstring>
+        <name>OnNewLevel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="109" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1a27bc350afe240911438fc6971404c579" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CLevelEditor::OnOpenLevel</definition>
+        <argsstring>()</argsstring>
+        <name>OnOpenLevel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="110" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1af7a7b6cb04f503407216dd1b20ab8114" prot="public" static="no" const="yes" explicit="no" inline="yes" final="yes" virt="virtual">
+        <type>bool</type>
+        <definition>bool Bvr::CLevelEditor::HasModifiedContent</definition>
+        <argsstring>() const final</argsstring>
+        <name>HasModifiedContent</name>
+        <reimplements refid="class_bvr_1_1_editor_u_i_1_1_c_editor_tool_1a313a3203daf7a9f30996646fb6da75bf">HasModifiedContent</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="112" column="13" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" bodystart="112" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1a35f8e4c1ce7f32721040dffae1f818ec" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>CWorld *</type>
+        <definition>CWorld* Bvr::CLevelEditor::GetWorld</definition>
+        <argsstring>() const</argsstring>
+        <name>GetWorld</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="114" column="12" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" bodystart="114" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1abdcd3fe2a01b857a24107357e069329d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CLevelEditor::ToggleSimulation</definition>
+        <argsstring>(Assets&lt; CWorld &gt; &amp;worlds)</argsstring>
+        <name>ToggleSimulation</name>
+        <param>
+          <type>Assets&lt; CWorld &gt; &amp;</type>
+          <declname>worlds</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="119" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1aa42c64cf0e859599eff0d189e4ade170" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>void</type>
+        <definition>void Bvr::CLevelEditor::Build</definition>
+        <argsstring>(EditorUI::UIBuilder &amp;parent) final</argsstring>
+        <name>Build</name>
+        <reimplements refid="class_bvr_1_1_c_editor_tool_1af3503e127aeb4145e79a69597ccb8aad">Build</reimplements>
+        <param>
+          <type><ref refid="struct_bvr_1_1_editor_u_i_1_1_u_i_builder" kindref="compound">EditorUI::UIBuilder</ref> &amp;</type>
+          <declname>parent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="121" column="10"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1ae3e7f2275798fa1106627f4624dfa1e8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Bvr::CLevelEditor::OnKeyPress</definition>
+        <argsstring>(CLevelEditors &amp;editors, Events&lt; Event::System::SKeyPress &gt; &amp;)</argsstring>
+        <name>OnKeyPress</name>
+        <param>
+          <type>CLevelEditors &amp;</type>
+          <declname>editors</declname>
+        </param>
+        <param>
+          <type>Events&lt; Event::System::SKeyPress &gt; &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="71" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1a8ddafaef0fa1525e88c58915480deafc" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Bvr::CLevelEditor::OnMouseMove</definition>
+        <argsstring>(CLevelEditors &amp;editors, Events&lt; Event::System::SMouseMove &gt; &amp;)</argsstring>
+        <name>OnMouseMove</name>
+        <param>
+          <type>CLevelEditors &amp;</type>
+          <declname>editors</declname>
+        </param>
+        <param>
+          <type>Events&lt; Event::System::SMouseMove &gt; &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="73" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1a938b68378bc1a7d4576bf87cf2246b8d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Bvr::CLevelEditor::OnMousePress</definition>
+        <argsstring>(CLevelEditors &amp;editors, Events&lt; Event::System::SMouseBtnPress &gt; &amp;)</argsstring>
+        <name>OnMousePress</name>
+        <param>
+          <type>CLevelEditors &amp;</type>
+          <declname>editors</declname>
+        </param>
+        <param>
+          <type>Events&lt; Event::System::SMouseBtnPress &gt; &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="75" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1ab39a6adc30f65762120583acbd369116" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Bvr::CLevelEditor::OnMouseScroll</definition>
+        <argsstring>(CLevelEditors &amp;editors, Events&lt; Event::System::SMouseScroll &gt; &amp;)</argsstring>
+        <name>OnMouseScroll</name>
+        <param>
+          <type>CLevelEditors &amp;</type>
+          <declname>editors</declname>
+        </param>
+        <param>
+          <type>Events&lt; Event::System::SMouseScroll &gt; &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="77" column="20"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1a3077563a6ccc8afb6017686d9a6ec3f9" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CLevelEditor::SetWasLevelModified</definition>
+        <argsstring>(bool val)</argsstring>
+        <name>SetWasLevelModified</name>
+        <param>
+          <type>bool</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="124" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" bodystart="124" bodyend="124"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1a96d10d58389506e5480547c6d67a1375" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Bvr::CLevelEditor::ShowMainToolsWindow</definition>
+        <argsstring>()</argsstring>
+        <name>ShowMainToolsWindow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="127" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1a71db7adab212efd5884a6f9f840e1ace" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CLevelEditor::CreateViewport</definition>
+        <argsstring>()</argsstring>
+        <name>CreateViewport</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="128" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1a7127191249a73ed2aaf36191cdca2cde" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CLevelEditor::ToggleSimulate</definition>
+        <argsstring>()</argsstring>
+        <name>ToggleSimulate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="129" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1a7b5c16b14c034e2468c3d2d32171c5d2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CLevelEditor::ProcessCameraInput</definition>
+        <argsstring>(CEditorCameraController &amp;camera, const Event::System::SKeyPress &amp;keyEvent)</argsstring>
+        <name>ProcessCameraInput</name>
+        <param>
+          <type><ref refid="class_bvr_1_1_c_editor_camera_controller" kindref="compound">CEditorCameraController</ref> &amp;</type>
+          <declname>camera</declname>
+        </param>
+        <param>
+          <type>const Event::System::SKeyPress &amp;</type>
+          <declname>keyEvent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="131" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_level_editor_1aa3edfd38df9fd90785dc4fe34e0db5d3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CLevelEditor::ShowEditorTools</definition>
+        <argsstring>()</argsstring>
+        <name>ShowEditorTools</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="133" column="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="4">
+        <label>Bvr::CPrefabEditor</label>
+        <link refid="class_bvr_1_1_c_prefab_editor"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Bvr::CEditorTool</label>
+        <link refid="class_bvr_1_1_c_editor_tool"/>
+      </node>
+      <node id="1">
+        <label>Bvr::CLevelEditor</label>
+        <link refid="class_bvr_1_1_c_level_editor"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Bvr::EditorUI::CEditorTool</label>
+        <link refid="class_bvr_1_1_editor_u_i_1_1_c_editor_tool"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>Bvr::CEditorTool</label>
+        <link refid="class_bvr_1_1_c_editor_tool"/>
+      </node>
+      <node id="1">
+        <label>Bvr::CLevelEditor</label>
+        <link refid="class_bvr_1_1_c_level_editor"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Bvr::EditorUI::CEditorTool</label>
+        <link refid="class_bvr_1_1_editor_u_i_1_1_c_editor_tool"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" line="41" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/LevelEditor.hpp" bodystart="41" bodyend="156"/>
+    <listofallmembers>
+      <member refid="class_bvr_1_1_c_level_editor_1aa42c64cf0e859599eff0d189e4ade170" prot="public" virt="virtual"><scope>Bvr::CLevelEditor</scope><name>Build</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1ad7254d5daf733118b6a80636248d9078" prot="public" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>CanRecieveInput</name></member>
+      <member refid="class_bvr_1_1_editor_u_i_1_1_c_editor_tool_1acf1989b398ba0623892109b87699b42d" prot="public" virt="non-virtual" ambiguityscope="Bvr::"><scope>Bvr::CLevelEditor</scope><name>CEditorTool</name></member>
+      <member refid="class_bvr_1_1_c_editor_tool_1aad31b4c870020aac854d7f32b1eb30d4" prot="public" virt="non-virtual" ambiguityscope="Bvr::CEditorTool::"><scope>Bvr::CLevelEditor</scope><name>CEditorTool</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1a937a98dd54ad1300764a4296d812962e" prot="public" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>ClearSelection</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1ae2e62a980ecc141547bb2d2b8c73b1ac" prot="public" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>CLevelEditor</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1a71db7adab212efd5884a6f9f840e1ace" prot="private" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>CreateViewport</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1a39a6010d538820ceca460f059fa18cc5" prot="public" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>DeleteEntity</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1af63bf05bae1159bbae959bbbe413ab5b" prot="public" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>EditLevel</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1aac55ec61a7c47bf8c0ccf9a9edac46f0" prot="public" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>FocusOnEntity</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1ad52c84e7a18e8a05205a3441e49df000" prot="public" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>ForEachSelectedEntity</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1a7c82f69a091fcd7fb1c0cf079296db1f" prot="public" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>GetActiveCamera</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1a385dbfd9682b07369e175a71d6b54fd5" prot="public" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>GetActiveConsumer</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1ac77eb4169cff6792718005919c7e902a" prot="public" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>GetAllowKeyboardInput</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1a5225c5fd313466f94efa3c3495b31290" prot="public" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>GetAllowMouseInput</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1abbab92fd0386539c978ffddd6de6c5d0" prot="public" virt="virtual"><scope>Bvr::CLevelEditor</scope><name>GetCommandList</name></member>
+      <member refid="class_bvr_1_1_c_editor_tool_1ad773602d49792ecc13f0ff367675e474" prot="protected" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>GetContentEntity</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1a50584fa8e145eeb97b190e18aeed272d" prot="public" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>GetCurrentLevel</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1ad6eda8b6217172a80de2c2a1a88eb357" prot="public" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>GetCurrentSimulation</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1a3440dc358283cb34f5baed4c7aaa1583" prot="public" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>GetFocusedViewport</name></member>
+      <member refid="class_bvr_1_1_c_editor_tool_1af5088d82a76b18cc44728889a85b1a6f" prot="public" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>GetFooterEntity</name></member>
+      <member refid="class_bvr_1_1_editor_u_i_1_1_c_editor_tool_1afcb1be94f009f4c4bb32351379218954" prot="protected" virt="non-virtual" ambiguityscope="Bvr::"><scope>Bvr::CLevelEditor</scope><name>GetMenuBar</name></member>
+      <member refid="class_bvr_1_1_c_editor_tool_1a59d7b473dd3be5dcde6a0b0612047ad2" prot="protected" virt="non-virtual" ambiguityscope="Bvr::CEditorTool::"><scope>Bvr::CLevelEditor</scope><name>GetMenuBar</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1afdea091c83a5a15a62ee2a1fca73c7a8" prot="public" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>GetSelectedEntity</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1a3be446199f34106cd5eebbe53568be57" prot="public" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>GetTag</name></member>
+      <member refid="class_bvr_1_1_c_editor_tool_1a39213a5072ea6a6a71e0cdb262b562ca" prot="public" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>GetWindow</name></member>
+      <member refid="class_bvr_1_1_editor_u_i_1_1_c_editor_tool_1a81e768a90b1fcd37b92779b5b40601f5" prot="public" virt="virtual" ambiguityscope="Bvr::"><scope>Bvr::CLevelEditor</scope><name>GetWindowAlpha</name></member>
+      <member refid="class_bvr_1_1_c_editor_tool_1a11cea1b44e2f3b3aaf49b1067dd11d74" prot="public" virt="virtual" ambiguityscope="Bvr::CEditorTool::"><scope>Bvr::CLevelEditor</scope><name>GetWindowAlpha</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1a35f8e4c1ce7f32721040dffae1f818ec" prot="public" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>GetWorld</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1af7a7b6cb04f503407216dd1b20ab8114" prot="public" virt="virtual"><scope>Bvr::CLevelEditor</scope><name>HasModifiedContent</name></member>
+      <member refid="class_bvr_1_1_c_editor_tool_1abe07431f139d6d7264142c5476269ee3" prot="public" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>Hide</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1a819951d3f918c70aa2a5cbff638c6d0d" prot="private" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>LevelEditorPlugin</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1aa8e767872b5b78f8fa5b71c6d8f56632" prot="public" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>LoadLevel</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1a1f1f1e74b9889fe191151c6326154359" prot="private" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>m_activeTool</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1a31209d3edea7d1bebc3ee289e9100cb1" prot="private" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>m_allowKeyboardInput</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1a48262bfe2058503705d04d6deaff39a2" prot="private" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>m_allowMouseInput</name></member>
+      <member refid="class_bvr_1_1_editor_u_i_1_1_c_editor_tool_1a90ca7af4a86569fd094e6a7a58019410" prot="public" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>m_bOpened</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1ac6ea37695c81bdacc68b15b18a561d57" prot="private" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>m_entityClipboard</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1a610a7d17564063884a36244da3134801" prot="private" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>m_hCurrentEditingWorld</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1ad8920dd6581ae1c7c5a47d22cbae9d41" prot="private" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>m_hCurrentSimulatingWorld</name></member>
+      <member refid="class_bvr_1_1_editor_u_i_1_1_c_editor_tool_1a9d9556d00662f4334d6ac6c22dd855cd" prot="public" virt="non-virtual" ambiguityscope="Bvr::"><scope>Bvr::CLevelEditor</scope><name>m_name</name></member>
+      <member refid="class_bvr_1_1_c_editor_tool_1a38a814ea5f1c3a8b989dc4ff5d0773ba" prot="public" virt="non-virtual" ambiguityscope="Bvr::CEditorTool::"><scope>Bvr::CLevelEditor</scope><name>m_name</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1a72759deb4da2ba38f68cf76d685b9ded" prot="private" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>m_pActiveCamera</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1a2f3acf60b63bb69d173b0d610392b906" prot="private" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>m_pCurrentEditingWorld</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1aab82ccba1341f3b679a4ee28c7691f52" prot="private" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>m_pCurrentSimulatingWorld</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1a738143104d4bd3d06888f67e142795fc" prot="private" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>m_pEventManager</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1a5eceadb66185b012e7098104927e8ef2" prot="private" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>m_pFocusedViewport</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1a5fc745cb2d99f2d95ca25b811680cf43" prot="private" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>m_pScenePanel</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1a6c894fe022a5a8d4fdfe016110d57dfe" prot="private" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>m_pTag</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1a14ea2e584f1df225b245158d896cce23" prot="private" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>m_viewports</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1ad009294de9670e8b0e0baf300f8869b9" prot="private" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>m_wasLevelModified</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1a776e32e0ca6c0f1cab397e1a3f6c461e" prot="public" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>OnCopySelection</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1a0beeddfb6c2ea46e55d09f5425356d25" prot="public" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>OnDeleteSelection</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1a360f104b00f59246c15ec9567f6eef9d" prot="public" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>OnDuplicateSelection</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1ae3e7f2275798fa1106627f4624dfa1e8" prot="public" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>OnKeyPress</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1a8ddafaef0fa1525e88c58915480deafc" prot="public" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>OnMouseMove</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1a938b68378bc1a7d4576bf87cf2246b8d" prot="public" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>OnMousePress</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1ab39a6adc30f65762120583acbd369116" prot="public" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>OnMouseScroll</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1a83ed04d9cc096477bf86865db04d6ff4" prot="public" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>OnNewLevel</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1a27bc350afe240911438fc6971404c579" prot="public" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>OnOpenLevel</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1a3e3271cef66975fd1420191bd1ea872e" prot="public" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>OnPasteSelection</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1aa9d597a30cf3d1af1ca4191e3e35161d" prot="public" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>OnRenameSelection</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1a0f17532ccba8dd44f176dfc225835d0e" prot="public" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>OnSaveLevel</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1a714451205f4816bfbd2c63d8efd994c4" prot="public" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>OnViewportFocused</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1a7b5c16b14c034e2468c3d2d32171c5d2" prot="private" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>ProcessCameraInput</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1a690c2f21af13cbf16fd110fd990d5d3c" prot="public" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>SelectEntity</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1acaa6605eb7072ebab28e0e6fb03121b2" prot="public" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>SetAllowKeyboardInput</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1aaaa5e13d64b1b80e1e3436c49e50ec27" prot="public" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>SetAllowMouseInput</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1a3077563a6ccc8afb6017686d9a6ec3f9" prot="protected" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>SetWasLevelModified</name></member>
+      <member refid="class_bvr_1_1_c_editor_tool_1aefad3d5c15eee5ecedb937773d9f77fa" prot="public" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>SetWindow</name></member>
+      <member refid="class_bvr_1_1_editor_u_i_1_1_c_editor_tool_1abc8615a5fe8003841af8686c38b0f55a" prot="public" virt="non-virtual" ambiguityscope="Bvr::"><scope>Bvr::CLevelEditor</scope><name>Show</name></member>
+      <member refid="class_bvr_1_1_c_editor_tool_1a3b4dd8c740e9db32ff4fb3cdf660b059" prot="public" virt="non-virtual" ambiguityscope="Bvr::CEditorTool::"><scope>Bvr::CLevelEditor</scope><name>Show</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1aa3edfd38df9fd90785dc4fe34e0db5d3" prot="private" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>ShowEditorTools</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1a6944b61c734669262f2a8e6a524fae4d" prot="public" virt="virtual"><scope>Bvr::CLevelEditor</scope><name>ShowImpl</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1a96d10d58389506e5480547c6d67a1375" prot="private" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>ShowMainToolsWindow</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1a7127191249a73ed2aaf36191cdca2cde" prot="private" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>ToggleSimulate</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1abdcd3fe2a01b857a24107357e069329d" prot="public" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>ToggleSimulation</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1a6bcbed8e0ba0fa2e24449448cc3d0b6b" prot="protected" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>ToolCommands</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1aca60fc6d5b72cdddf971da7d6a1ced55" prot="public" virt="non-virtual"><scope>Bvr::CLevelEditor</scope><name>UnloadLevel</name></member>
+      <member refid="class_bvr_1_1_editor_u_i_1_1_c_editor_tool_1aa94ecdc5cd97589f2d050192d92a2e7c" prot="public" virt="virtual" ambiguityscope="Bvr::"><scope>Bvr::CLevelEditor</scope><name>~CEditorTool</name></member>
+      <member refid="class_bvr_1_1_c_editor_tool_1acbe676eaa0a47eb8b3a474bff7e88135" prot="public" virt="virtual" ambiguityscope="Bvr::CEditorTool::"><scope>Bvr::CLevelEditor</scope><name>~CEditorTool</name></member>
+      <member refid="class_bvr_1_1_c_level_editor_1ac3050ab0b87e56389eada75120abb7bd" prot="public" virt="virtual"><scope>Bvr::CLevelEditor</scope><name>~CLevelEditor</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

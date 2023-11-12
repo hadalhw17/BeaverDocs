@@ -1,0 +1,697 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_bvr_1_1_c_asset_browser" kind="class" language="C++" prot="public">
+    <compoundname>Bvr::CAssetBrowser</compoundname>
+    <basecompoundref refid="class_bvr_1_1_c_editor_tool" prot="public" virt="non-virtual">Bvr::CEditorTool</basecompoundref>
+    <innerclass refid="struct_bvr_1_1_c_asset_browser_1_1_s_directory_cache_entry" prot="private">Bvr::CAssetBrowser::SDirectoryCacheEntry</innerclass>
+    <innerclass refid="struct_bvr_1_1_c_asset_browser_1_1_s_selection" prot="private">Bvr::CAssetBrowser::SSelection</innerclass>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_bvr_1_1_c_asset_browser_1aa20aa48b041cf23e4b760de4783eff1d" prot="private" static="no" mutable="no">
+        <type>SSelection</type>
+        <definition>SSelection Bvr::CAssetBrowser::m_selection</definition>
+        <argsstring></argsstring>
+        <name>m_selection</name>
+        <initializer>= {}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" line="110" column="43" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_asset_browser_1a82f3918ee0babac16841212b7f10e7ad" prot="private" static="no" mutable="no">
+        <type>std::set&lt; std::string &gt;</type>
+        <definition>std::set&lt;std::string&gt; Bvr::CAssetBrowser::m_directories</definition>
+        <argsstring></argsstring>
+        <name>m_directories</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" line="111" column="30" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_asset_browser_1aa307866baf900189fa5d5a101fe2b44b" prot="private" static="no" mutable="no">
+        <type>std::unordered_set&lt; std::string &gt;</type>
+        <definition>std::unordered_set&lt;std::string&gt; Bvr::CAssetBrowser::m_openedDirectories</definition>
+        <argsstring></argsstring>
+        <name>m_openedDirectories</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" line="112" column="30" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_asset_browser_1a97660ea966a3f2068c3d0e3d302690be" prot="private" static="no" mutable="no">
+        <type>std::filesystem::path</type>
+        <definition>std::filesystem::path Bvr::CAssetBrowser::m_currentlyOpenedPath</definition>
+        <argsstring></argsstring>
+        <name>m_currentlyOpenedPath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" line="114" column="43" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_asset_browser_1a5fc4396787267ce28ebdcdee53a133ad" prot="private" static="no" mutable="no">
+        <type>Handle&lt; CImage &gt;</type>
+        <definition>Handle&lt;CImage&gt; Bvr::CAssetBrowser::m_pFolderIcon</definition>
+        <argsstring></argsstring>
+        <name>m_pFolderIcon</name>
+        <initializer>= {}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" line="116" column="35" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_asset_browser_1a23d3b2c27da6fc02b64d31eb58b9af26" prot="private" static="no" mutable="no">
+        <type>Handle&lt; CImage &gt;</type>
+        <definition>Handle&lt;CImage&gt; Bvr::CAssetBrowser::m_pFileIcon</definition>
+        <argsstring></argsstring>
+        <name>m_pFileIcon</name>
+        <initializer>= {}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" line="117" column="35" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_asset_browser_1ab1231f85f3626bd877b249d83c3ccec7" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Bvr::CAssetBrowser::m_bVisible</definition>
+        <argsstring></argsstring>
+        <name>m_bVisible</name>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" line="118" column="43" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_asset_browser_1afbeb8336ecc9200b6707639c0650cbfb" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; SDirectoryCacheEntry &gt;</type>
+        <definition>std::vector&lt;SDirectoryCacheEntry&gt; Bvr::CAssetBrowser::m_directoryCache</definition>
+        <argsstring></argsstring>
+        <name>m_directoryCache</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" line="120" column="21" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_asset_browser_1a15976a804cf63163c9ce3aaf02d9b0af" prot="private" static="no" mutable="no">
+        <type>const SDirectoryCacheEntry *</type>
+        <definition>const SDirectoryCacheEntry* Bvr::CAssetBrowser::m_pSelectedEntry</definition>
+        <argsstring></argsstring>
+        <name>m_pSelectedEntry</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" line="121" column="42" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_asset_browser_1a2b8c0c83b2a9fd976ac8f2486808ad4c" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; CFileWatcher &gt;</type>
+        <definition>std::unique_ptr&lt;CFileWatcher&gt; Bvr::CAssetBrowser::m_pFileWatcher</definition>
+        <argsstring></argsstring>
+        <name>m_pFileWatcher</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" line="122" column="29" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_asset_browser_1abfa42de2761e0646cbf317d68607ef36" prot="private" static="no" mutable="no">
+        <type>MT::CThread</type>
+        <definition>MT::CThread Bvr::CAssetBrowser::m_fileWatchThread</definition>
+        <argsstring></argsstring>
+        <name>m_fileWatchThread</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" line="123" column="43" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_asset_browser_1afa78f61a4f08ebd2c82d03f3debd6493" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; Bvr::CAssetBrowser::m_bResetCache</definition>
+        <argsstring></argsstring>
+        <name>m_bResetCache</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" line="124" column="37" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_asset_browser_1af7f4d52a0cc5bd21d70ebb5b38f9cebb" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Bvr::CAssetBrowser::m_shouldRebuildUI</definition>
+        <argsstring></argsstring>
+        <name>m_shouldRebuildUI</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" line="125" column="43" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_asset_browser_1a9d0bf9cb861be62938dccc2e5ed67310" prot="private" static="no" mutable="no">
+        <type><ref refid="struct_bvr_1_1_editor_u_i_1_1_u_i_builder" kindref="compound">EditorUI::UIBuilder</ref></type>
+        <definition>EditorUI::UIBuilder Bvr::CAssetBrowser::m_browserHbox</definition>
+        <argsstring></argsstring>
+        <name>m_browserHbox</name>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" line="126" column="43" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_asset_browser_1a57a5dd9461f6da065bac6ad9ea290e51" prot="private" static="no" mutable="no">
+        <type><ref refid="struct_bvr_1_1_editor_u_i_1_1_u_i_builder" kindref="compound">EditorUI::UIBuilder</ref></type>
+        <definition>EditorUI::UIBuilder Bvr::CAssetBrowser::m_filePanelUI</definition>
+        <argsstring></argsstring>
+        <name>m_filePanelUI</name>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" line="127" column="43" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_asset_browser_1acb9df07de75c1a9f11e52e795c0717d1" prot="private" static="no" mutable="no">
+        <type>CUICommandListPtr</type>
+        <definition>CUICommandListPtr Bvr::CAssetBrowser::CommandList</definition>
+        <argsstring></argsstring>
+        <name>CommandList</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" line="128" column="43" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_asset_browser_1a01b12c718638037cb740426383a7074a" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_bvr_1_1_c_resource_import_panel" kindref="compound">CResourceImportPanel</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;CResourceImportPanel&gt; Bvr::CAssetBrowser::m_pResourceImporter</definition>
+        <argsstring></argsstring>
+        <name>m_pResourceImporter</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" line="130" column="21" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_bvr_1_1_c_asset_browser_1aa73c4b2a688648b95b1bfe6326f27dd9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Bvr::CAssetBrowser::CAssetBrowser</definition>
+        <argsstring>()</argsstring>
+        <name>CAssetBrowser</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" line="55" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_asset_browser_1a25b447fba6c404111b289493de7aa739" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Bvr::CAssetBrowser::~CAssetBrowser</definition>
+        <argsstring>()</argsstring>
+        <name>~CAssetBrowser</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" line="56" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_asset_browser_1a610df0d127e22f6484635123d6865eb3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CAssetBrowser::AddWatchDirectory</definition>
+        <argsstring>(std::string_view pDir)</argsstring>
+        <name>AddWatchDirectory</name>
+        <param>
+          <type>std::string_view</type>
+          <declname>pDir</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" line="58" column="34"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_asset_browser_1a5ad49879748085e43677395f7ff797b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CAssetBrowser::RemoveWatchDirectory</definition>
+        <argsstring>(std::string_view pDir)</argsstring>
+        <name>RemoveWatchDirectory</name>
+        <param>
+          <type>std::string_view</type>
+          <declname>pDir</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" line="59" column="34"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_asset_browser_1a446e26674142e0075b7eac81d75cf08e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CAssetBrowser::Show</definition>
+        <argsstring>(App &amp;app, SAssetManager &amp;mgr)</argsstring>
+        <name>Show</name>
+        <param>
+          <type>App &amp;</type>
+          <declname>app</declname>
+        </param>
+        <param>
+          <type>SAssetManager &amp;</type>
+          <declname>mgr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" line="61" column="34"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_asset_browser_1a580cfe66ce270699496ae020d6322f4c" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>void</type>
+        <definition>void Bvr::CAssetBrowser::Build</definition>
+        <argsstring>(EditorUI::UIBuilder &amp;parent) final</argsstring>
+        <name>Build</name>
+        <reimplements refid="class_bvr_1_1_c_editor_tool_1af3503e127aeb4145e79a69597ccb8aad">Build</reimplements>
+        <param>
+          <type><ref refid="struct_bvr_1_1_editor_u_i_1_1_u_i_builder" kindref="compound">EditorUI::UIBuilder</ref> &amp;</type>
+          <declname>parent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" line="63" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_asset_browser_1ac265f72ccc877222b67c0a935a6072b1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::filesystem::path &amp;</type>
+        <definition>const std::filesystem::path&amp; Bvr::CAssetBrowser::GetCurrentPath</definition>
+        <argsstring>() const</argsstring>
+        <name>GetCurrentPath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" line="68" column="33" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" bodystart="68" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_asset_browser_1a08a13681003847adb0516762c1374f34" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CAssetBrowser::InvalidateUI</definition>
+        <argsstring>()</argsstring>
+        <name>InvalidateUI</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" line="72" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_asset_browser_1a16765707c18b19187d925352271ee1b3" prot="public" static="no" const="no" explicit="no" inline="yes" final="yes" virt="virtual">
+        <type>CUICommandListPtr</type>
+        <definition>CUICommandListPtr Bvr::CAssetBrowser::GetCommandList</definition>
+        <argsstring>() final</argsstring>
+        <name>GetCommandList</name>
+        <reimplements refid="class_bvr_1_1_c_editor_tool_1a05f041ead9d4117ea66be11562ca2534">GetCommandList</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" line="74" column="23" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" bodystart="74" bodyend="74"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_bvr_1_1_c_asset_browser_1a1879e2350c3e389c9ed865e0e56fb4f5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Bvr::CAssetBrowser::OnOSFileDropped</definition>
+        <argsstring>(CAssetBrowser &amp;self, Events&lt; Event::System::SFileDropEvent &gt; &amp;)</argsstring>
+        <name>OnOSFileDropped</name>
+        <param>
+          <type><ref refid="class_bvr_1_1_c_asset_browser" kindref="compound">CAssetBrowser</ref> &amp;</type>
+          <declname>self</declname>
+        </param>
+        <param>
+          <type>Events&lt; Event::System::SFileDropEvent &gt; &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" line="65" column="34"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_bvr_1_1_c_asset_browser_1a8bf46575439ce6db5ed45a2407496d28" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CAssetBrowser::BuildCommands</definition>
+        <argsstring>()</argsstring>
+        <name>BuildCommands</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" line="83" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_asset_browser_1a1b77afc05d0b1640b433ae64778e8d51" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Bvr::CAssetBrowser::OnClickAssetEntry</definition>
+        <argsstring>(EMouseBtn eBtn, const SDirectoryCacheEntry *pEntry)</argsstring>
+        <name>OnClickAssetEntry</name>
+        <param>
+          <type>EMouseBtn</type>
+          <declname>eBtn</declname>
+        </param>
+        <param>
+          <type>const SDirectoryCacheEntry *</type>
+          <declname>pEntry</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" line="84" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_asset_browser_1acde6596d5c019980678086d0d8079b9a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CAssetBrowser::BuildFilePanel</definition>
+        <argsstring>(EditorUI::UIBuilder &amp;parent)</argsstring>
+        <name>BuildFilePanel</name>
+        <param>
+          <type><ref refid="struct_bvr_1_1_editor_u_i_1_1_u_i_builder" kindref="compound">EditorUI::UIBuilder</ref> &amp;</type>
+          <declname>parent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" line="85" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_asset_browser_1ace5834a9f11e5d2d3583a793c65820b5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CAssetBrowser::BuildDirectoryListImpl</definition>
+        <argsstring>(EditorUI::UIBuilder &amp;parent, const std::filesystem::path &amp;p)</argsstring>
+        <name>BuildDirectoryListImpl</name>
+        <param>
+          <type><ref refid="struct_bvr_1_1_editor_u_i_1_1_u_i_builder" kindref="compound">EditorUI::UIBuilder</ref> &amp;</type>
+          <declname>parent</declname>
+        </param>
+        <param>
+          <type>const std::filesystem::path &amp;</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" line="86" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_asset_browser_1a78e4bf607626ad03d0cb2a232fdab6a7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CAssetBrowser::BuildDirectoryList</definition>
+        <argsstring>(EditorUI::UIBuilder &amp;parent)</argsstring>
+        <name>BuildDirectoryList</name>
+        <param>
+          <type><ref refid="struct_bvr_1_1_editor_u_i_1_1_u_i_builder" kindref="compound">EditorUI::UIBuilder</ref> &amp;</type>
+          <declname>parent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" line="88" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_asset_browser_1a607ed86cf4f328da053cd3b494a03a67" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CAssetBrowser::ShowFilePanel</definition>
+        <argsstring>()</argsstring>
+        <name>ShowFilePanel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" line="89" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_asset_browser_1a462c68efe35c6a062132e1acbd702f5a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CAssetBrowser::ShowDirectoryList</definition>
+        <argsstring>()</argsstring>
+        <name>ShowDirectoryList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" line="90" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_asset_browser_1a8301ce6680d8bd6dcf6ffeeb59fd4b4c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CAssetBrowser::ShowDirectoryListImpl</definition>
+        <argsstring>(const std::filesystem::path &amp;p)</argsstring>
+        <name>ShowDirectoryListImpl</name>
+        <param>
+          <type>const std::filesystem::path &amp;</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" line="91" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_asset_browser_1a52e5815b70c2002f071a5568d0af76f0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Bvr::CAssetBrowser::PanelPopup</definition>
+        <argsstring>()</argsstring>
+        <name>PanelPopup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" line="93" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_asset_browser_1a091994685d1a12d639a8fd27e0cb8190" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Bvr::CAssetBrowser::FolderPopup</definition>
+        <argsstring>()</argsstring>
+        <name>FolderPopup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" line="94" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_asset_browser_1a176b0196739ddf45b9d8e971539428d5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Bvr::CAssetBrowser::ResourcePopup</definition>
+        <argsstring>()</argsstring>
+        <name>ResourcePopup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" line="95" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_asset_browser_1a42cd0e7553777365842890aa3301f088" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Bvr::CAssetBrowser::CanBacktrackDir</definition>
+        <argsstring>(const std::filesystem::path &amp;dir) const</argsstring>
+        <name>CanBacktrackDir</name>
+        <param>
+          <type>const std::filesystem::path &amp;</type>
+          <declname>dir</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" line="98" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" bodystart="98" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_asset_browser_1a21cf5352d6e98d53d48a5132e3434759" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::filesystem::path</type>
+        <definition>std::filesystem::path Bvr::CAssetBrowser::GetParentDir</definition>
+        <argsstring>(const std::filesystem::path &amp;dir) const</argsstring>
+        <name>GetParentDir</name>
+        <param>
+          <type>const std::filesystem::path &amp;</type>
+          <declname>dir</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" line="105" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" bodystart="105" bodyend="107"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>Bvr::CAssetBrowser</label>
+        <link refid="class_bvr_1_1_c_asset_browser"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Bvr::CEditorTool</label>
+        <link refid="class_bvr_1_1_c_editor_tool"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>Bvr::CAssetBrowser</label>
+        <link refid="class_bvr_1_1_c_asset_browser"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Bvr::CEditorTool</label>
+        <link refid="class_bvr_1_1_c_editor_tool"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" line="31" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/AssetBrowser.hpp" bodystart="31" bodyend="131"/>
+    <listofallmembers>
+      <member refid="class_bvr_1_1_c_asset_browser_1a610df0d127e22f6484635123d6865eb3" prot="public" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>AddWatchDirectory</name></member>
+      <member refid="class_bvr_1_1_c_asset_browser_1a580cfe66ce270699496ae020d6322f4c" prot="public" virt="virtual"><scope>Bvr::CAssetBrowser</scope><name>Build</name></member>
+      <member refid="class_bvr_1_1_c_asset_browser_1a8bf46575439ce6db5ed45a2407496d28" prot="private" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>BuildCommands</name></member>
+      <member refid="class_bvr_1_1_c_asset_browser_1a78e4bf607626ad03d0cb2a232fdab6a7" prot="private" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>BuildDirectoryList</name></member>
+      <member refid="class_bvr_1_1_c_asset_browser_1ace5834a9f11e5d2d3583a793c65820b5" prot="private" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>BuildDirectoryListImpl</name></member>
+      <member refid="class_bvr_1_1_c_asset_browser_1acde6596d5c019980678086d0d8079b9a" prot="private" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>BuildFilePanel</name></member>
+      <member refid="class_bvr_1_1_c_asset_browser_1a42cd0e7553777365842890aa3301f088" prot="private" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>CanBacktrackDir</name></member>
+      <member refid="class_bvr_1_1_c_asset_browser_1aa73c4b2a688648b95b1bfe6326f27dd9" prot="public" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>CAssetBrowser</name></member>
+      <member refid="class_bvr_1_1_c_editor_tool_1aad31b4c870020aac854d7f32b1eb30d4" prot="public" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>CEditorTool</name></member>
+      <member refid="class_bvr_1_1_c_asset_browser_1acb9df07de75c1a9f11e52e795c0717d1" prot="private" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>CommandList</name></member>
+      <member refid="class_bvr_1_1_c_asset_browser_1a091994685d1a12d639a8fd27e0cb8190" prot="private" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>FolderPopup</name></member>
+      <member refid="class_bvr_1_1_c_asset_browser_1a16765707c18b19187d925352271ee1b3" prot="public" virt="virtual"><scope>Bvr::CAssetBrowser</scope><name>GetCommandList</name></member>
+      <member refid="class_bvr_1_1_c_editor_tool_1ad773602d49792ecc13f0ff367675e474" prot="protected" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>GetContentEntity</name></member>
+      <member refid="class_bvr_1_1_c_asset_browser_1ac265f72ccc877222b67c0a935a6072b1" prot="public" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>GetCurrentPath</name></member>
+      <member refid="class_bvr_1_1_c_editor_tool_1af5088d82a76b18cc44728889a85b1a6f" prot="public" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>GetFooterEntity</name></member>
+      <member refid="class_bvr_1_1_c_editor_tool_1a59d7b473dd3be5dcde6a0b0612047ad2" prot="protected" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>GetMenuBar</name></member>
+      <member refid="class_bvr_1_1_c_asset_browser_1a21cf5352d6e98d53d48a5132e3434759" prot="private" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>GetParentDir</name></member>
+      <member refid="class_bvr_1_1_c_editor_tool_1a39213a5072ea6a6a71e0cdb262b562ca" prot="public" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>GetWindow</name></member>
+      <member refid="class_bvr_1_1_c_editor_tool_1a11cea1b44e2f3b3aaf49b1067dd11d74" prot="public" virt="virtual"><scope>Bvr::CAssetBrowser</scope><name>GetWindowAlpha</name></member>
+      <member refid="class_bvr_1_1_c_editor_tool_1a07e4eb82551281bfca304d76b47d178c" prot="public" virt="virtual"><scope>Bvr::CAssetBrowser</scope><name>HasModifiedContent</name></member>
+      <member refid="class_bvr_1_1_c_editor_tool_1abe07431f139d6d7264142c5476269ee3" prot="public" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>Hide</name></member>
+      <member refid="class_bvr_1_1_c_asset_browser_1a08a13681003847adb0516762c1374f34" prot="public" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>InvalidateUI</name></member>
+      <member refid="class_bvr_1_1_c_asset_browser_1afa78f61a4f08ebd2c82d03f3debd6493" prot="private" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>m_bResetCache</name></member>
+      <member refid="class_bvr_1_1_c_asset_browser_1a9d0bf9cb861be62938dccc2e5ed67310" prot="private" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>m_browserHbox</name></member>
+      <member refid="class_bvr_1_1_c_asset_browser_1ab1231f85f3626bd877b249d83c3ccec7" prot="private" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>m_bVisible</name></member>
+      <member refid="class_bvr_1_1_c_asset_browser_1a97660ea966a3f2068c3d0e3d302690be" prot="private" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>m_currentlyOpenedPath</name></member>
+      <member refid="class_bvr_1_1_c_asset_browser_1a82f3918ee0babac16841212b7f10e7ad" prot="private" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>m_directories</name></member>
+      <member refid="class_bvr_1_1_c_asset_browser_1afbeb8336ecc9200b6707639c0650cbfb" prot="private" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>m_directoryCache</name></member>
+      <member refid="class_bvr_1_1_c_asset_browser_1a57a5dd9461f6da065bac6ad9ea290e51" prot="private" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>m_filePanelUI</name></member>
+      <member refid="class_bvr_1_1_c_asset_browser_1abfa42de2761e0646cbf317d68607ef36" prot="private" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>m_fileWatchThread</name></member>
+      <member refid="class_bvr_1_1_c_editor_tool_1a38a814ea5f1c3a8b989dc4ff5d0773ba" prot="public" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>m_name</name></member>
+      <member refid="class_bvr_1_1_c_asset_browser_1aa307866baf900189fa5d5a101fe2b44b" prot="private" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>m_openedDirectories</name></member>
+      <member refid="class_bvr_1_1_c_asset_browser_1a23d3b2c27da6fc02b64d31eb58b9af26" prot="private" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>m_pFileIcon</name></member>
+      <member refid="class_bvr_1_1_c_asset_browser_1a2b8c0c83b2a9fd976ac8f2486808ad4c" prot="private" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>m_pFileWatcher</name></member>
+      <member refid="class_bvr_1_1_c_asset_browser_1a5fc4396787267ce28ebdcdee53a133ad" prot="private" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>m_pFolderIcon</name></member>
+      <member refid="class_bvr_1_1_c_asset_browser_1a01b12c718638037cb740426383a7074a" prot="private" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>m_pResourceImporter</name></member>
+      <member refid="class_bvr_1_1_c_asset_browser_1a15976a804cf63163c9ce3aaf02d9b0af" prot="private" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>m_pSelectedEntry</name></member>
+      <member refid="class_bvr_1_1_c_asset_browser_1aa20aa48b041cf23e4b760de4783eff1d" prot="private" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>m_selection</name></member>
+      <member refid="class_bvr_1_1_c_asset_browser_1af7f4d52a0cc5bd21d70ebb5b38f9cebb" prot="private" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>m_shouldRebuildUI</name></member>
+      <member refid="class_bvr_1_1_c_asset_browser_1a1b77afc05d0b1640b433ae64778e8d51" prot="private" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>OnClickAssetEntry</name></member>
+      <member refid="class_bvr_1_1_c_asset_browser_1a1879e2350c3e389c9ed865e0e56fb4f5" prot="public" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>OnOSFileDropped</name></member>
+      <member refid="class_bvr_1_1_c_asset_browser_1a52e5815b70c2002f071a5568d0af76f0" prot="private" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>PanelPopup</name></member>
+      <member refid="class_bvr_1_1_c_asset_browser_1a5ad49879748085e43677395f7ff797b8" prot="public" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>RemoveWatchDirectory</name></member>
+      <member refid="class_bvr_1_1_c_asset_browser_1a176b0196739ddf45b9d8e971539428d5" prot="private" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>ResourcePopup</name></member>
+      <member refid="class_bvr_1_1_c_editor_tool_1aefad3d5c15eee5ecedb937773d9f77fa" prot="public" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>SetWindow</name></member>
+      <member refid="class_bvr_1_1_c_asset_browser_1a446e26674142e0075b7eac81d75cf08e" prot="public" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>Show</name></member>
+      <member refid="class_bvr_1_1_c_editor_tool_1a3b4dd8c740e9db32ff4fb3cdf660b059" prot="public" virt="non-virtual" ambiguityscope="Bvr::CEditorTool::"><scope>Bvr::CAssetBrowser</scope><name>Show</name></member>
+      <member refid="class_bvr_1_1_c_asset_browser_1a462c68efe35c6a062132e1acbd702f5a" prot="private" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>ShowDirectoryList</name></member>
+      <member refid="class_bvr_1_1_c_asset_browser_1a8301ce6680d8bd6dcf6ffeeb59fd4b4c" prot="private" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>ShowDirectoryListImpl</name></member>
+      <member refid="class_bvr_1_1_c_asset_browser_1a607ed86cf4f328da053cd3b494a03a67" prot="private" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>ShowFilePanel</name></member>
+      <member refid="class_bvr_1_1_c_asset_browser_1a25b447fba6c404111b289493de7aa739" prot="public" virt="non-virtual"><scope>Bvr::CAssetBrowser</scope><name>~CAssetBrowser</name></member>
+      <member refid="class_bvr_1_1_c_editor_tool_1acbe676eaa0a47eb8b3a474bff7e88135" prot="public" virt="virtual"><scope>Bvr::CAssetBrowser</scope><name>~CEditorTool</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

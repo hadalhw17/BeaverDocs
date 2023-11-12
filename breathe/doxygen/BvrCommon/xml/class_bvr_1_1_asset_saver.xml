@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_bvr_1_1_asset_saver" kind="class" language="C++" prot="public">
+    <compoundname>Bvr::AssetSaver</compoundname>
+    <includes refid="_asset_saver_8hpp" local="no">AssetSaver.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_bvr_1_1_asset_saver_1a358f14f271c12cc796dfb7a6c95bbf53" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::unique_ptr&lt; <ref refid="struct_bvr_1_1_i_asset_saver" kindref="compound">IAssetSaver</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;std::unique_ptr&lt;IAssetSaver&gt; &gt; Bvr::AssetSaver::m_savers</definition>
+        <argsstring></argsstring>
+        <name>m_savers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetSaver.hpp" line="47" column="17" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetSaver.hpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_asset_saver_1a9206976e06559a404c1ee7f1862b7364" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; <ref refid="class_bvr_1_1_t_basic_hashed_string" kindref="compound">HashedString</ref>, uint32 &gt;</type>
+        <definition>std::unordered_map&lt;HashedString, uint32&gt; Bvr::AssetSaver::m_saverRemap</definition>
+        <argsstring></argsstring>
+        <name>m_saverRemap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetSaver.hpp" line="48" column="25" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetSaver.hpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_bvr_1_1_asset_saver_1a1ef8b714d83f264576b471344909a639" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::AssetSaver::Save</definition>
+        <argsstring>(App &amp;app, const HandleUntyped &amp;hResource, std::string_view path)</argsstring>
+        <name>Save</name>
+        <param>
+          <type>App &amp;</type>
+          <declname>app</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_bvr_1_1_handle_untyped" kindref="compound">HandleUntyped</ref> &amp;</type>
+          <declname>hResource</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Save specified resource to filesystem <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>app</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>application instance in which resource was created </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hResource</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>resource to save </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dstPath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>destination path of the resource </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetSaver.hpp" line="31" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_asset_saver_1af71b7961ab990f0bae9da9021671682c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void Bvr::AssetSaver::RegisterSaver</definition>
+        <argsstring>()</argsstring>
+        <name>RegisterSaver</name>
+        <briefdescription>
+<para>Register saver of type T. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetSaver.hpp" line="34" column="22" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetSaver.hpp" bodystart="34" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_asset_saver_1a183e76aee221289d9c6b1b37d8fa70b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_bvr_1_1_i_asset_saver" kindref="compound">IAssetSaver</ref> *</type>
+        <definition>IAssetSaver* Bvr::AssetSaver::GetSaver</definition>
+        <argsstring>(std::string_view path)</argsstring>
+        <name>GetSaver</name>
+        <param>
+          <type>std::string_view</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Finds saver from resource path <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>path or extension </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Found saver or nullptr </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetSaver.hpp" line="41" column="17"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_bvr_1_1_asset_saver_1ae6764ebb2f09b5310c09938a193a7606" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::AssetSaver::RegisterSaver</definition>
+        <argsstring>(std::unique_ptr&lt; IAssetSaver &gt; &amp;&amp;saver)</argsstring>
+        <name>RegisterSaver</name>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="struct_bvr_1_1_i_asset_saver" kindref="compound">IAssetSaver</ref> &gt; &amp;&amp;</type>
+          <declname>saver</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetSaver.hpp" line="44" column="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="struct_bvr_1_1_i_asset_saver" kindref="compound">IAssetSaver</ref> manager. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetSaver.hpp" line="25" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetSaver.hpp" bodystart="25" bodyend="49"/>
+    <listofallmembers>
+      <member refid="class_bvr_1_1_asset_saver_1a183e76aee221289d9c6b1b37d8fa70b5" prot="public" virt="non-virtual"><scope>Bvr::AssetSaver</scope><name>GetSaver</name></member>
+      <member refid="class_bvr_1_1_asset_saver_1a9206976e06559a404c1ee7f1862b7364" prot="private" virt="non-virtual"><scope>Bvr::AssetSaver</scope><name>m_saverRemap</name></member>
+      <member refid="class_bvr_1_1_asset_saver_1a358f14f271c12cc796dfb7a6c95bbf53" prot="private" virt="non-virtual"><scope>Bvr::AssetSaver</scope><name>m_savers</name></member>
+      <member refid="class_bvr_1_1_asset_saver_1af71b7961ab990f0bae9da9021671682c" prot="public" virt="non-virtual"><scope>Bvr::AssetSaver</scope><name>RegisterSaver</name></member>
+      <member refid="class_bvr_1_1_asset_saver_1ae6764ebb2f09b5310c09938a193a7606" prot="private" virt="non-virtual"><scope>Bvr::AssetSaver</scope><name>RegisterSaver</name></member>
+      <member refid="class_bvr_1_1_asset_saver_1a1ef8b714d83f264576b471344909a639" prot="public" virt="non-virtual"><scope>Bvr::AssetSaver</scope><name>Save</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
