@@ -21,18 +21,18 @@
     <innerclass refid="class_bvr_1_1_renderer_1_1_c_material" prot="public">Bvr::Renderer::CMaterial</innerclass>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_material_plugin" prot="public">Bvr::Renderer::MaterialPlugin</innerclass>
     <innerclass refid="class_bvr_1_1_renderer_1_1_c_graphics_pipeline_stage" prot="public">Bvr::Renderer::CGraphicsPipelineStage</innerclass>
-    <innerclass refid="struct_bvr_1_1_renderer_1_1_s_shader_define_map" prot="public">Bvr::Renderer::SShaderDefineMap</innerclass>
-    <innerclass refid="struct_bvr_1_1_renderer_1_1_s_technique_desc" prot="public">Bvr::Renderer::STechniqueDesc</innerclass>
-    <innerclass refid="struct_bvr_1_1_renderer_1_1_s_blend_state_info" prot="public">Bvr::Renderer::SBlendStateInfo</innerclass>
-    <innerclass refid="struct_bvr_1_1_renderer_1_1_s_graphics_p_s_o_desc" prot="public">Bvr::Renderer::SGraphicsPSODesc</innerclass>
-    <innerclass refid="struct_bvr_1_1_renderer_1_1_s_compute_p_s_o_desc" prot="public">Bvr::Renderer::SComputePSODesc</innerclass>
-    <innerclass refid="struct_bvr_1_1_renderer_1_1_s_raytracing_p_s_o_desc" prot="public">Bvr::Renderer::SRaytracingPSODesc</innerclass>
-    <innerclass refid="struct_bvr_1_1_renderer_1_1_s_shader_item" prot="public">Bvr::Renderer::SShaderItem</innerclass>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_s_bind_point" prot="public">Bvr::Renderer::SBindPoint</innerclass>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_s_set_binding" prot="public">Bvr::Renderer::SSetBinding</innerclass>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_s_push_constant_range" prot="public">Bvr::Renderer::SPushConstantRange</innerclass>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_s_descriptor_set_layout" prot="public">Bvr::Renderer::SDescriptorSetLayout</innerclass>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_s_resource_layout_desc" prot="public">Bvr::Renderer::SResourceLayoutDesc</innerclass>
+    <innerclass refid="struct_bvr_1_1_renderer_1_1_s_blend_state_info" prot="public">Bvr::Renderer::SBlendStateInfo</innerclass>
+    <innerclass refid="struct_bvr_1_1_renderer_1_1_s_shader_define_map" prot="public">Bvr::Renderer::SShaderDefineMap</innerclass>
+    <innerclass refid="struct_bvr_1_1_renderer_1_1_s_technique_desc" prot="public">Bvr::Renderer::STechniqueDesc</innerclass>
+    <innerclass refid="struct_bvr_1_1_renderer_1_1_s_graphics_p_s_o_desc" prot="public">Bvr::Renderer::SGraphicsPSODesc</innerclass>
+    <innerclass refid="struct_bvr_1_1_renderer_1_1_s_compute_p_s_o_desc" prot="public">Bvr::Renderer::SComputePSODesc</innerclass>
+    <innerclass refid="struct_bvr_1_1_renderer_1_1_s_raytracing_p_s_o_desc" prot="public">Bvr::Renderer::SRaytracingPSODesc</innerclass>
+    <innerclass refid="struct_bvr_1_1_renderer_1_1_s_shader_item" prot="public">Bvr::Renderer::SShaderItem</innerclass>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_s_visitor" prot="public">Bvr::Renderer::SVisitor</innerclass>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_no_op" prot="public">Bvr::Renderer::NoOp</innerclass>
     <innerclass refid="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler" prot="public">Bvr::Renderer::CRenderPassScheduler</innerclass>
@@ -845,6 +845,118 @@
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonShaders.hpp" line="66" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonShaders.hpp" bodystart="66" bodyend="102"/>
       </memberdef>
+      <memberdef kind="enum" id="_common_shaders_8hpp_1a84515273524d6b886ed782b64bc137a9" prot="public" static="no" strong="yes">
+        <type>uint8</type>
+        <name>EBindGroup</name>
+        <enumvalue id="_common_shaders_8hpp_1a84515273524d6b886ed782b64bc137a9a5ef92060fac1dbcb0cc28d0c32b63ee3" prot="public">
+          <name>BindlessTextures</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Bindless combined texture and sampler set with variable resource count. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1a84515273524d6b886ed782b64bc137a9a471612cbe9d2b6394f095ed8a8b834a6" prot="public">
+          <name>BindlessBuffers</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>Bindless buffer set with variable resource count. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1a84515273524d6b886ed782b64bc137a9abf6658d342b5ed2356b60892bfe4fae9" prot="public">
+          <name>PerView</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+<para>Camera dependent data. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1a84515273524d6b886ed782b64bc137a9a2c8c0039e59cb3b3ed15c1b24f9e1c32" prot="public">
+          <name>PerPass</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+<para>Pass specific data. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1a84515273524d6b886ed782b64bc137a9a5e4dbb87ca2e4302b2d3f3eea407fdbd" prot="public">
+          <name>PerDraw</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+<para>Draw specific data. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1a84515273524d6b886ed782b64bc137a9ae93f994f01c537c4e2f7d8528c3eb5e9" prot="public">
+          <name>Count</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Predefined descriptor set slots. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonShaders.hpp" line="106" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonShaders.hpp" bodystart="106" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="enum" id="_common_shaders_8hpp_1ab5c6e120887d9dc940f524f09cb30b8d" prot="public" static="no" strong="yes">
+        <type>uint8</type>
+        <name>EBindingType</name>
+        <enumvalue id="_common_shaders_8hpp_1ab5c6e120887d9dc940f524f09cb30b8da9b0bffda4bcb312168c0d6537cb04b4d" prot="public">
+          <name>RenderTarget</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1ab5c6e120887d9dc940f524f09cb30b8da4944d1175161720e44d8636eabc87d06" prot="public">
+          <name>DepthTarget</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1ab5c6e120887d9dc940f524f09cb30b8da4ff313558b22c62a981845a543dd9c0c" prot="public">
+          <name>ShaderRead</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1ab5c6e120887d9dc940f524f09cb30b8da11c4aac157309541bd3fc4735e727683" prot="public">
+          <name>UnorderedAccess</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_common_shaders_8hpp_1ab5c6e120887d9dc940f524f09cb30b8dae93f994f01c537c4e2f7d8528c3eb5e9" prot="public">
+          <name>Count</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Resource view type that can be bound to a shader. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonShaders.hpp" line="122" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonShaders.hpp" bodystart="122" bodyend="129"/>
+      </memberdef>
       <memberdef kind="enum" id="_common_shaders_8hpp_1ac5dd3419f831fb348ea9d79dd5082e20" prot="public" static="no" strong="yes">
         <type>uint8</type>
         <name>EBlendOp</name>
@@ -897,7 +1009,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonShaders.hpp" line="140" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonShaders.hpp" bodystart="140" bodyend="148"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonShaders.hpp" line="306" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonShaders.hpp" bodystart="306" bodyend="314"/>
       </memberdef>
       <memberdef kind="enum" id="_common_shaders_8hpp_1ab1ddb7cfe832b09d13fa79cfe1fa3a29" prot="public" static="no" strong="yes">
         <type>uint8</type>
@@ -1028,7 +1140,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonShaders.hpp" line="150" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonShaders.hpp" bodystart="150" bodyend="169"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonShaders.hpp" line="316" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonShaders.hpp" bodystart="316" bodyend="335"/>
       </memberdef>
       <memberdef kind="enum" id="_common_shaders_8hpp_1aefdbae3a76639a365ff6152e9ea2dd49" prot="public" static="no" strong="yes">
         <type>uint8</type>
@@ -1111,118 +1223,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonShaders.hpp" line="171" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonShaders.hpp" bodystart="171" bodyend="182"/>
-      </memberdef>
-      <memberdef kind="enum" id="_common_shaders_8hpp_1ab5c6e120887d9dc940f524f09cb30b8d" prot="public" static="no" strong="yes">
-        <type>uint8</type>
-        <name>EBindingType</name>
-        <enumvalue id="_common_shaders_8hpp_1ab5c6e120887d9dc940f524f09cb30b8da9b0bffda4bcb312168c0d6537cb04b4d" prot="public">
-          <name>RenderTarget</name>
-          <initializer>= 0</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="_common_shaders_8hpp_1ab5c6e120887d9dc940f524f09cb30b8da4944d1175161720e44d8636eabc87d06" prot="public">
-          <name>DepthTarget</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="_common_shaders_8hpp_1ab5c6e120887d9dc940f524f09cb30b8da4ff313558b22c62a981845a543dd9c0c" prot="public">
-          <name>ShaderRead</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="_common_shaders_8hpp_1ab5c6e120887d9dc940f524f09cb30b8da11c4aac157309541bd3fc4735e727683" prot="public">
-          <name>UnorderedAccess</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="_common_shaders_8hpp_1ab5c6e120887d9dc940f524f09cb30b8dae93f994f01c537c4e2f7d8528c3eb5e9" prot="public">
-          <name>Count</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonShaders.hpp" line="344" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonShaders.hpp" bodystart="344" bodyend="351"/>
-      </memberdef>
-      <memberdef kind="enum" id="_common_shaders_8hpp_1a84515273524d6b886ed782b64bc137a9" prot="public" static="no" strong="yes">
-        <type>uint8</type>
-        <name>EBindGroup</name>
-        <enumvalue id="_common_shaders_8hpp_1a84515273524d6b886ed782b64bc137a9a5ef92060fac1dbcb0cc28d0c32b63ee3" prot="public">
-          <name>BindlessTextures</name>
-          <initializer>= 0</initializer>
-          <briefdescription>
-<para>Bindless combined texture and sampler set with variable resource count. </para>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="_common_shaders_8hpp_1a84515273524d6b886ed782b64bc137a9a471612cbe9d2b6394f095ed8a8b834a6" prot="public">
-          <name>BindlessBuffers</name>
-          <initializer>= 1</initializer>
-          <briefdescription>
-<para>Bindless buffer set with variable resource count. </para>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="_common_shaders_8hpp_1a84515273524d6b886ed782b64bc137a9abf6658d342b5ed2356b60892bfe4fae9" prot="public">
-          <name>PerView</name>
-          <initializer>= 2</initializer>
-          <briefdescription>
-<para>Camera dependent data. </para>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="_common_shaders_8hpp_1a84515273524d6b886ed782b64bc137a9a2c8c0039e59cb3b3ed15c1b24f9e1c32" prot="public">
-          <name>PerPass</name>
-          <initializer>= 3</initializer>
-          <briefdescription>
-<para>Pass specific data. </para>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="_common_shaders_8hpp_1a84515273524d6b886ed782b64bc137a9a5e4dbb87ca2e4302b2d3f3eea407fdbd" prot="public">
-          <name>PerDraw</name>
-          <initializer>= 4</initializer>
-          <briefdescription>
-<para>Draw specific data. </para>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="_common_shaders_8hpp_1a84515273524d6b886ed782b64bc137a9ae93f994f01c537c4e2f7d8528c3eb5e9" prot="public">
-          <name>Count</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <briefdescription>
-<para>Predefined descriptor set slots. </para>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonShaders.hpp" line="394" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonShaders.hpp" bodystart="394" bodyend="407"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonShaders.hpp" line="337" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonShaders.hpp" bodystart="337" bodyend="348"/>
       </memberdef>
       <memberdef kind="enum" id="_render_pass_scheduler_8hpp_1a490f231e067f83138550ea5fd910ce4a" prot="public" static="no" strong="no">
         <type></type>
@@ -1895,7 +1896,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/Material.hpp" line="308" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/Material.hpp" bodystart="308" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/Material.hpp" line="336" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/Material.hpp" bodystart="336" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_common_shaders_8hpp_1ae1bf7b5ca8e00ea2f9cd7b9e702b9379" prot="public" static="no">
         <type>std::vector&lt; uint32 &gt;</type>
@@ -2049,7 +2050,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonShaders.hpp" line="410" column="25" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonShaders.hpp" bodystart="410" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonShaders.hpp" line="132" column="25" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonShaders.hpp" bodystart="132" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="_common_shaders_8hpp_1a1241c2556d655f6d94e327570c6754ba" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>constexpr static uint32</type>
@@ -2064,7 +2065,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonShaders.hpp" line="413" column="25" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonShaders.hpp" bodystart="413" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonShaders.hpp" line="135" column="25" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonShaders.hpp" bodystart="135" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="_common_renderer_8hpp_1ac980437fb8ce4bcde02d18420643a70a" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>constexpr uint32</type>
@@ -2318,7 +2319,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/Material.hpp" line="310" column="6" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/Material.hpp" bodystart="310" bodyend="349"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/Material.hpp" line="338" column="6" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/Material.hpp" bodystart="338" bodyend="377"/>
       </memberdef>
       <memberdef kind="function" id="_common_shaders_8hpp_1ab1ff1d0bc1427b8743fe1a730f3bd55c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -2334,7 +2335,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonShaders.hpp" line="183" column="1" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonShaders.hpp" declline="183" declcolumn="1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonShaders.hpp" line="349" column="1" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonShaders.hpp" declline="349" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="_render_pass_scheduler_8hpp_1aff1f9d38ed746d05c13333df85680f2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
