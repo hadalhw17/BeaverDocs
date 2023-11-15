@@ -465,10 +465,13 @@
     <member refid="struct_bvr_1_1_gizmo_1_1_gizmo_drag_1acd53a1ab0aba3be7a30a29bb01dd98f4" kind="variable"><name>DeltaAngle</name></member>
     <member refid="struct_bvr_1_1_gizmo_1_1_gizmo_drag_1aa1b774a1a0531df90183c72641192174" kind="variable"><name>Rotation</name></member>
     <member refid="struct_bvr_1_1_gizmo_1_1_gizmo_drag_1a3a37494c3c3006cd395ad2d09ae98520" kind="variable"><name>@1</name></member>
+    <member refid="struct_bvr_1_1_gizmo_1_1_gizmo_drag_1aced6c6b0bf06a6a64bb2300367bce12c" kind="variable"><name>Operations</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_gizmo_1_1_gizmo_handle" kind="struct"><name>Bvr::Gizmo::GizmoHandle</name>
     <member refid="struct_bvr_1_1_gizmo_1_1_gizmo_handle_1a2f965095885521d45a68564a8f27ec17" kind="variable"><name>Axis</name></member>
     <member refid="struct_bvr_1_1_gizmo_1_1_gizmo_handle_1aa2697e1509d5b0b3b03f3aa7d9d21a27" kind="variable"><name>Mode</name></member>
+    <member refid="struct_bvr_1_1_gizmo_1_1_gizmo_handle_1a9ad19aa0d3528c83110c9847235f0634" kind="variable"><name>IsPlane</name></member>
+    <member refid="struct_bvr_1_1_gizmo_1_1_gizmo_handle_1acfe27a0ba7b0150f27b6393530831b84" kind="variable"><name>IsOrigin</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_editor_u_i_1_1_i_component_bundle" kind="struct"><name>Bvr::EditorUI::IComponentBundle</name>
     <member refid="struct_bvr_1_1_editor_u_i_1_1_i_component_bundle_1a51afeb7a4c3c645e396bdc2dd20e01f0" kind="function"><name>~IComponentBundle</name></member>
@@ -674,8 +677,12 @@
     <member refid="struct_bvr_1_1_gizmo_1_1_transform_manipulation_1ac7799722cf494afd55101d8eb2b09454" kind="variable"><name>OnScale</name></member>
     <member refid="struct_bvr_1_1_gizmo_1_1_transform_manipulation_1a1d043531d24159aa7d0afbda6cc55aba" kind="variable"><name>OnRotate</name></member>
     <member refid="struct_bvr_1_1_gizmo_1_1_transform_manipulation_1ac30331d0a6954e09859306a3d3edd121" kind="variable"><name>Flags</name></member>
+    <member refid="struct_bvr_1_1_gizmo_1_1_transform_manipulation_1a9f9ee9ebb70da76eb5ce3d758da599bc" kind="variable"><name>HoveredOperations</name></member>
+    <member refid="struct_bvr_1_1_gizmo_1_1_transform_manipulation_1abe43ce9cca2a22d73d2410cf1bfe296b" kind="variable"><name>AxisTransform</name></member>
     <member refid="struct_bvr_1_1_gizmo_1_1_transform_manipulation_1a35c33e8afe95caf004b6651aae9dda6a" kind="function"><name>IsLocalSpace</name></member>
-    <member refid="struct_bvr_1_1_gizmo_1_1_transform_manipulation_1aa3a40d2693ec63f2f6025d0d8c926b0a" kind="function"><name>SetLocalSpace</name></member>
+    <member refid="struct_bvr_1_1_gizmo_1_1_transform_manipulation_1a401f2871a687f6156815440203111958" kind="function"><name>SetIsLocalSpace</name></member>
+    <member refid="struct_bvr_1_1_gizmo_1_1_transform_manipulation_1a272464168aeb5bac5c287d49c716a85e" kind="function"><name>IsViewTransform</name></member>
+    <member refid="struct_bvr_1_1_gizmo_1_1_transform_manipulation_1ac874912569065e8f7372f5bd682ebf3f" kind="function"><name>SetIsViewTransform</name></member>
     <member refid="struct_bvr_1_1_gizmo_1_1_transform_manipulation_1a990ae5a13af513db57595eec7cf7e415" kind="function"><name>SetFlag</name></member>
     <member refid="struct_bvr_1_1_gizmo_1_1_transform_manipulation_1a9a8548896f001c35614f508372591ca7" kind="function"><name>IsFlagSet</name></member>
   </compound>
@@ -808,9 +815,24 @@
     <member refid="_gizmo_transform_manipulation_8hpp_1aed1ba64ecbaa3c1fb3e6d7b68418fde2" kind="enum"><name>EManipulationFlags</name></member>
     <member refid="_gizmo_transform_manipulation_8hpp_1aed1ba64ecbaa3c1fb3e6d7b68418fde2a6adf97f83acf6453d4a6a4b1070f3754" kind="enumvalue"><name>None</name></member>
     <member refid="_gizmo_transform_manipulation_8hpp_1aed1ba64ecbaa3c1fb3e6d7b68418fde2a188d62be42b01e68328e3997d4db4028" kind="enumvalue"><name>LocalSpace</name></member>
-    <member refid="_gizmo_transform_manipulation_8hpp_1aed1ba64ecbaa3c1fb3e6d7b68418fde2ae000361afdd220a8fcceb629eab4a06b" kind="enumvalue"><name>Snapping</name></member>
+    <member refid="_gizmo_transform_manipulation_8hpp_1aed1ba64ecbaa3c1fb3e6d7b68418fde2af5c520021d678f568bd950702be6386e" kind="enumvalue"><name>ViewTransform</name></member>
     <member refid="_gizmo_transform_manipulation_8hpp_1aed1ba64ecbaa3c1fb3e6d7b68418fde2a7a1920d61156abc05a60135aefe8bc67" kind="enumvalue"><name>Default</name></member>
+    <member refid="_gizmo_transform_manipulation_8hpp_1a971114c5d8cb24eff7c45a6d56f2d859" kind="enum"><name>EHoveredOperations</name></member>
+    <member refid="_gizmo_transform_manipulation_8hpp_1a971114c5d8cb24eff7c45a6d56f2d859a6adf97f83acf6453d4a6a4b1070f3754" kind="enumvalue"><name>None</name></member>
+    <member refid="_gizmo_transform_manipulation_8hpp_1a971114c5d8cb24eff7c45a6d56f2d859a38b0844100a915cd3c87159b391161b9" kind="enumvalue"><name>AxisX</name></member>
+    <member refid="_gizmo_transform_manipulation_8hpp_1a971114c5d8cb24eff7c45a6d56f2d859ab30a50c686982b3b209cf1234f4247cd" kind="enumvalue"><name>AxisY</name></member>
+    <member refid="_gizmo_transform_manipulation_8hpp_1a971114c5d8cb24eff7c45a6d56f2d859add1071c1aa89157c2386d3303413218f" kind="enumvalue"><name>AxisZ</name></member>
+    <member refid="_gizmo_transform_manipulation_8hpp_1a971114c5d8cb24eff7c45a6d56f2d859a6dd08874f83507e9c7b23f1a46b7fa7c" kind="enumvalue"><name>Translation</name></member>
+    <member refid="_gizmo_transform_manipulation_8hpp_1a971114c5d8cb24eff7c45a6d56f2d859af1a42bd417390fc63b030a519624607a" kind="enumvalue"><name>Rotation</name></member>
+    <member refid="_gizmo_transform_manipulation_8hpp_1a971114c5d8cb24eff7c45a6d56f2d859a85a7cd587d6142dbfc1a4de05af7b75d" kind="enumvalue"><name>Scale</name></member>
+    <member refid="_gizmo_transform_manipulation_8hpp_1a971114c5d8cb24eff7c45a6d56f2d859a752bf71fa9c1dfd3d190d407c94461f4" kind="enumvalue"><name>PlaneX</name></member>
+    <member refid="_gizmo_transform_manipulation_8hpp_1a971114c5d8cb24eff7c45a6d56f2d859a398b80e6117a85019982bc7e3be69410" kind="enumvalue"><name>PlaneY</name></member>
+    <member refid="_gizmo_transform_manipulation_8hpp_1a971114c5d8cb24eff7c45a6d56f2d859a253c66abb938d1c0f30cbd011c4ee4b2" kind="enumvalue"><name>PlaneZ</name></member>
+    <member refid="_gizmo_transform_manipulation_8hpp_1a971114c5d8cb24eff7c45a6d56f2d859add48a60ef9f399509b42c5abd1179464" kind="enumvalue"><name>AxisAll</name></member>
+    <member refid="_gizmo_transform_manipulation_8hpp_1a971114c5d8cb24eff7c45a6d56f2d859adccf0bc25e21e3c813d7d6ce241037dc" kind="enumvalue"><name>PlanesAll</name></member>
+    <member refid="_gizmo_transform_manipulation_8hpp_1a971114c5d8cb24eff7c45a6d56f2d859a33fc98fc4b831870021ee57b2d7435b1" kind="enumvalue"><name>OpsAll</name></member>
     <member refid="_gizmo_transform_manipulation_8hpp_1abfcf1250474e1230e7ef4138fc61b430" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
+    <member refid="_gizmo_transform_manipulation_8hpp_1ad45d44b82c59c9de55421833eea3e47b" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
     <member refid="_gizmo_transform_manipulation_8hpp_1a67696b126f2b11720f1f396ac3fc0a33" kind="function"><name>TraceManipulationRay</name></member>
     <member refid="_gizmo_transform_manipulation_8hpp_1a933f44f7eb59d35ce4fd9819d7892860" kind="function"><name>BuildTransformManupPlugin</name></member>
   </compound>
