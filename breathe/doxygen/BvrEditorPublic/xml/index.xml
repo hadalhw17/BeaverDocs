@@ -10,11 +10,14 @@
     <member refid="class_bvr_1_1_c_editor_tool_controller_1a5eff33e7c58bde2e22851b669a959066" kind="function"><name>GetPixelPosTranslated</name></member>
     <member refid="class_bvr_1_1_c_editor_tool_controller_1a4865bb004d469f6688bddc2d336b0ac1" kind="function"><name>Build</name></member>
     <member refid="class_bvr_1_1_c_editor_tool_controller_1a34e81144504ec4f584dfb16336dad19f" kind="function"><name>ProcessCommandBindings</name></member>
+    <member refid="class_bvr_1_1_c_editor_tool_controller_1a177746400cc65f560c380ea20a1274cc" kind="function"><name>GetViewportConsumer</name></member>
+    <member refid="class_bvr_1_1_c_editor_tool_controller_1a4445443e6b20b6e3a06a6f9e0062aec4" kind="function"><name>GetViewportConsumer</name></member>
   </compound>
   <compound refid="class_bvr_1_1_c_editor_tool_factory" kind="class"><name>Bvr::CEditorToolFactory</name>
-    <member refid="class_bvr_1_1_c_editor_tool_factory_1a02e61ab819c534303a4048119a68d436" kind="typedef"><name>BuildFnT</name></member>
+    <member refid="class_bvr_1_1_c_editor_tool_factory_1a039649f4d66fbb94bcf5fb86021e8e78" kind="typedef"><name>SToolDescription</name></member>
     <member refid="class_bvr_1_1_c_editor_tool_factory_1aec230ef451350261d2a66b163178a140" kind="variable"><name>m_tools</name></member>
     <member refid="class_bvr_1_1_c_editor_tool_factory_1ad45687a709babe9d25ceefb7fcd4da3f" kind="function"><name>RegisterTool</name></member>
+    <member refid="class_bvr_1_1_c_editor_tool_factory_1a433650f4ac2712fcb023c1574b4cb755" kind="function"><name>RegisterTool</name></member>
     <member refid="class_bvr_1_1_c_editor_tool_factory_1a51713248a5d78dcf5ff63d75c62d96c8" kind="function"><name>FindTool</name></member>
     <member refid="class_bvr_1_1_c_editor_tool_factory_1a026c0cb650b295f2e5cac70127d2a330" kind="function"><name>GetTools</name></member>
   </compound>
@@ -46,6 +49,7 @@
     <member refid="class_bvr_1_1_c_u_i_command_list_1af96c83fddfebba1f559e4d8766e53f6b" kind="variable"><name>m_actionMap</name></member>
     <member refid="class_bvr_1_1_c_u_i_command_list_1a634fc10a5298a88d38304d6055aba750" kind="function"><name>BindAction</name></member>
     <member refid="class_bvr_1_1_c_u_i_command_list_1a2b7aeab24f6259fd3e265ba4ba108985" kind="function"><name>BindAction</name></member>
+    <member refid="class_bvr_1_1_c_u_i_command_list_1a7a4979a1d5f4cd78d95bf2a665faa237" kind="function"><name>BindAction</name></member>
     <member refid="class_bvr_1_1_c_u_i_command_list_1a240df9f259c60fee56c8078131f1cd6a" kind="function"><name>BindAction</name></member>
     <member refid="class_bvr_1_1_c_u_i_command_list_1a3da161b0f55598594e302d14fbebf3b4" kind="function"><name>BindAction</name></member>
     <member refid="class_bvr_1_1_c_u_i_command_list_1a700d82592b41d810456ee2a80721bb28" kind="function"><name>GetUIAction</name></member>
@@ -109,6 +113,14 @@
   </compound>
   <compound refid="struct_bvr_1_1_editor_tool_1_1_mouse_scrolled" kind="struct"><name>Bvr::EditorTool::MouseScrolled</name>
   </compound>
+  <compound refid="struct_bvr_1_1_s_editor_tool_description" kind="struct"><name>Bvr::SEditorToolDescription</name>
+    <member refid="struct_bvr_1_1_s_editor_tool_description_1acc030b7c7fce46269af17cded0f67629" kind="typedef"><name>BuildFnT</name></member>
+    <member refid="struct_bvr_1_1_s_editor_tool_description_1a546cffd0cfabc411d7672fc929f5bd00" kind="variable"><name>Type</name></member>
+    <member refid="struct_bvr_1_1_s_editor_tool_description_1ac3a026c42fc16dec98b74b3aebfa53b7" kind="variable"><name>Name</name></member>
+    <member refid="struct_bvr_1_1_s_editor_tool_description_1a96eb98e193b8ff03a7b460b892474e02" kind="variable"><name>Description</name></member>
+    <member refid="struct_bvr_1_1_s_editor_tool_description_1aef1a31f2f6cb2ff0f8ccda7074cab145" kind="variable"><name>Thumbnail</name></member>
+    <member refid="struct_bvr_1_1_s_editor_tool_description_1adfdb48f229b3b3773fa9bc684855bba6" kind="variable"><name>BuildToolFn</name></member>
+  </compound>
   <compound refid="struct_bvr_1_1_s_file_editing_commands" kind="struct"><name>Bvr::SFileEditingCommands</name>
     <member refid="struct_bvr_1_1_s_file_editing_commands_1a436e04f94031b7e477afae6a7652961e" kind="variable"><name>New</name></member>
     <member refid="struct_bvr_1_1_s_file_editing_commands_1a2ab31efe4f5bb465a8aff976c50c3df8" kind="variable"><name>Save</name></member>
@@ -145,13 +157,6 @@
     <member refid="struct_bvr_1_1_sphere_1a14c543f98f91e8f554d35ec4b9073586" kind="variable"><name>Radius</name></member>
     <member refid="struct_bvr_1_1_sphere_1a4b193d6bef014187b47b5779ef469431" kind="variable"><name>Segments</name></member>
     <member refid="struct_bvr_1_1_sphere_1ab721cf7584ea94684b5329d6ca1a0c45" kind="function"><name>Build</name></member>
-  </compound>
-  <compound refid="struct_bvr_1_1_c_editor_tool_factory_1_1_s_tool_description" kind="struct"><name>Bvr::CEditorToolFactory::SToolDescription</name>
-    <member refid="struct_bvr_1_1_c_editor_tool_factory_1_1_s_tool_description_1a7aeb1d5e42ad2f2c47c1748ffd2541f9" kind="variable"><name>Type</name></member>
-    <member refid="struct_bvr_1_1_c_editor_tool_factory_1_1_s_tool_description_1a77c703bc557ce580ba862d4fb25dafdb" kind="variable"><name>Name</name></member>
-    <member refid="struct_bvr_1_1_c_editor_tool_factory_1_1_s_tool_description_1a3b874f17bc775315f033ba4e7a376308" kind="variable"><name>Description</name></member>
-    <member refid="struct_bvr_1_1_c_editor_tool_factory_1_1_s_tool_description_1a04f43f27146da1b04baf1b064521e4c6" kind="variable"><name>Thumbnail</name></member>
-    <member refid="struct_bvr_1_1_c_editor_tool_factory_1_1_s_tool_description_1a1231e1014999de18190202da4baa0abc" kind="variable"><name>BuildToolFn</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_s_u_i_action" kind="struct"><name>Bvr::SUIAction</name>
     <member refid="struct_bvr_1_1_s_u_i_action_1ac55c184c38b08f82dce8c9ed19bd8cc2" kind="variable"><name>m_executeAction</name></member>
