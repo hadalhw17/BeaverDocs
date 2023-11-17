@@ -246,7 +246,6 @@
     <member refid="class_bvr_1_1_c_level_editor_1af63bf05bae1159bbae959bbbe413ab5b" kind="function"><name>EditLevel</name></member>
     <member refid="class_bvr_1_1_c_level_editor_1aca60fc6d5b72cdddf971da7d6a1ced55" kind="function"><name>UnloadLevel</name></member>
     <member refid="class_bvr_1_1_c_level_editor_1afdea091c83a5a15a62ee2a1fca73c7a8" kind="function"><name>GetSelectedEntity</name></member>
-    <member refid="class_bvr_1_1_c_level_editor_1ad52c84e7a18e8a05205a3441e49df000" kind="function"><name>ForEachSelectedEntity</name></member>
     <member refid="class_bvr_1_1_c_level_editor_1a937a98dd54ad1300764a4296d812962e" kind="function"><name>ClearSelection</name></member>
     <member refid="class_bvr_1_1_c_level_editor_1a86129268fc747846b4f478f4b6e6b1fe" kind="function"><name>AddToSelection</name></member>
     <member refid="class_bvr_1_1_c_level_editor_1a1e8dacc18154e36b989b7fa7537ae366" kind="function"><name>SelectEntity</name></member>
@@ -417,6 +416,7 @@
     <member refid="class_bvr_1_1_c_selection_tool_controller_1aa063442b9d06830d7e106d088df442fa" kind="function"><name>SetScaleMode</name></member>
     <member refid="class_bvr_1_1_c_selection_tool_controller_1aedb6ad23b04ca21f4d216b70c4fa4d2d" kind="function"><name>ToggleLocalSpace</name></member>
     <member refid="class_bvr_1_1_c_selection_tool_controller_1a3fb1cc1ca1226d6de5e00ec98d57181f" kind="function"><name>ToggleSnapping</name></member>
+    <member refid="class_bvr_1_1_c_selection_tool_controller_1ab660146b8be771bb75217d77e5aa1f11" kind="function"><name>HandleClick</name></member>
     <member refid="class_bvr_1_1_c_selection_tool_controller_1ac515383f0df41de832be6f2f92966547" kind="function"><name>BindCommands</name></member>
     <member refid="class_bvr_1_1_c_selection_tool_controller_1a1a18796e6b1d8f7f6cf2c8b4bf42620f" kind="function"><name>GetGizmoEntity</name></member>
     <member refid="class_bvr_1_1_c_selection_tool_controller_1a8ed4236702055e3e99b01c4f172ed2f9" kind="function"><name>HasSpawnedGizmo</name></member>
@@ -459,6 +459,9 @@
   </compound>
   <compound refid="struct_bvr_1_1_editor_plugin" kind="struct"><name>Bvr::EditorPlugin</name>
     <member refid="struct_bvr_1_1_editor_plugin_1a37b2508a0eb217f638bca5ae46d27292" kind="function"><name>Build</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_editor_selection_plugin" kind="struct"><name>Bvr::EditorSelectionPlugin</name>
+    <member refid="struct_bvr_1_1_editor_selection_plugin_1aa4c26d4e60d3badb9e95f762491541cc" kind="function"><name>Build</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_editor_u_i_1_1_editor_style" kind="struct"><name>Bvr::EditorUI::EditorStyle</name>
     <member refid="struct_bvr_1_1_editor_u_i_1_1_editor_style_1ae669f5720ac94fdbdb6e3d4781b67249" kind="variable"><name>Font</name></member>
@@ -603,8 +606,11 @@
     <member refid="struct_bvr_1_1_s_editor_viewport_event_1a5206f7fdb7ddeac4115ad032ececde56" kind="variable"><name>pViewport</name></member>
     <member refid="struct_bvr_1_1_s_editor_viewport_event_1a10f29b01dba92290893575798d4eebb0" kind="function"><name>SEditorViewportEvent</name></member>
   </compound>
-  <compound refid="struct_bvr_1_1_selected_entity" kind="struct"><name>Bvr::SelectedEntity</name>
-    <member refid="struct_bvr_1_1_selected_entity_1ad41df7212b477d52236147a2a184d903" kind="variable"><name>pEditor</name></member>
+  <compound refid="struct_bvr_1_1_selection_1_1_selected_entity" kind="struct"><name>Bvr::Selection::SelectedEntity</name>
+    <member refid="struct_bvr_1_1_selection_1_1_selected_entity_1aee272737ae81148a35783e4666d9e958" kind="variable"><name>SelectedBy</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_selection_1_1_selection_callbacks" kind="struct"><name>Bvr::Selection::SelectionCallbacks</name>
+    <member refid="struct_bvr_1_1_selection_1_1_selection_callbacks_1aedea1d78e8d8792aef742eca4982a5e4" kind="variable"><name>OnSelected</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_selection_1_1_selection_material" kind="struct"><name>Bvr::Selection::SelectionMaterial</name>
     <member refid="struct_bvr_1_1_selection_1_1_selection_material_1a77411b8441fe8c4c17624d14917383fe" kind="variable"><name>Colour</name></member>
@@ -795,7 +801,6 @@
   <compound refid="namespace_bvr_1_1_detail" kind="namespace"><name>Bvr::Detail</name>
   </compound>
   <compound refid="namespace_bvr_1_1_editor_u_i" kind="namespace"><name>Bvr::EditorUI</name>
-    <member refid="_widget_interaction_8hpp_1acf520634fe0c9c14dd69e6e35fe895d9" kind="typedef"><name>TCursorEvent</name></member>
     <member refid="_editor_u_i_toolkit_8hpp_1a8b568f62c55d3e2f0b21e8c1b9e32fbb" kind="typedef"><name>SpatialBundle</name></member>
     <member refid="_editor_u_i_toolkit_8hpp_1af7de388ea6e45b038da333b5ae1b1839" kind="typedef"><name>DynNode</name></member>
     <member refid="_editor_u_i_toolkit_8hpp_1abae517ac8264583301bfa8f1c2082727" kind="typedef"><name>UIBundle</name></member>
@@ -808,6 +813,7 @@
     <member refid="_editor_u_i_toolkit_8hpp_1ac88e79dc8c3c6b4c5288dcb055946189" kind="typedef"><name>SliderDouble</name></member>
     <member refid="_editor_u_i_toolkit_8hpp_1aadd7c379a35f4cbc4b63e91b83f31b8a" kind="typedef"><name>SliderInt</name></member>
     <member refid="_editor_u_i_toolkit_8hpp_1a6849af312c2340b70b6bf4f188c464bf" kind="typedef"><name>SliderU32</name></member>
+    <member refid="_widget_interaction_8hpp_1acf520634fe0c9c14dd69e6e35fe895d9" kind="typedef"><name>TCursorEvent</name></member>
     <member refid="_editor_u_i_toolkit_8hpp_1ab5192294f267376d1ab6c4d8fd1c9bbb" kind="variable"><name>TextElement</name></member>
     <member refid="_editor_u_i_toolkit_8hpp_1af41068dfd4c39ca909f10b512c218e6c" kind="variable"><name>ButtonElement</name></member>
     <member refid="_editor_u_i_toolkit_8hpp_1a5b814f346cadc1f2bbcc1f96e04f0837" kind="variable"><name>PannelElement</name></member>
@@ -883,8 +889,9 @@
   <compound refid="namespace_bvr_1_1_project" kind="namespace"><name>Bvr::Project</name>
   </compound>
   <compound refid="namespace_bvr_1_1_selection" kind="namespace"><name>Bvr::Selection</name>
+    <member refid="_selection_8hpp_1a7d6bc6a93578cf069a263fa5b5f1547a" kind="typedef"><name>TOnSelected</name></member>
     <member refid="_selection_8hpp_1a5afb02ca8055d2487e8ff965acaa2d79" kind="function"><name>BuildSelectionPlugin</name></member>
-    <member refid="_selection_8hpp_1ae3895a68850278c77f30137e7d6014be" kind="function"><name>TraceFromCursor</name></member>
+    <member refid="_selection_8hpp_1a21d9f973da3438481237eb092dcb9900" kind="function"><name>TraceFromCursor</name></member>
   </compound>
   <compound refid="namespace_event" kind="namespace"><name>Event</name>
   </compound>

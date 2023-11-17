@@ -105,8 +105,8 @@
     <innerclass refid="struct_s_voxel_mesh_component" prot="public">SVoxelMeshComponent</innerclass>
     <innerclass refid="struct_point_light" prot="public">PointLight</innerclass>
     <innerclass refid="struct_spot_light" prot="public">SpotLight</innerclass>
+    <innerclass refid="struct_camera" prot="public">Camera</innerclass>
     <innerclass refid="struct_s_impulse_component" prot="public">SImpulseComponent</innerclass>
-    <innerclass refid="struct_s_camera_component" prot="public">SCameraComponent</innerclass>
     <innerclass refid="struct_s_prefab_meta_component" prot="public">SPrefabMetaComponent</innerclass>
     <innerclass refid="struct_s_tag_component" prot="public">STagComponent</innerclass>
     <innernamespace refid="namespace_bvr">Bvr</innernamespace>
@@ -142,7 +142,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/DefaultComponents.hpp" line="125" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/DefaultComponents.hpp" bodystart="127" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/DefaultComponents.hpp" line="127" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/DefaultComponents.hpp" bodystart="129" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_default_components_8hpp_1a15c7537bb88e93694e6d7e99facf0970" prot="public" static="no">
         <type>ComponentListCatT&lt; <ref refid="struct_component_list" kindref="compound">CommonComponentList</ref>, <ref refid="struct_component_list" kindref="compound">ComponentList</ref>&lt; <ref refid="struct_s_impulse_component" kindref="compound">SImpulseComponent</ref> &gt; &gt;</type>
@@ -155,7 +155,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/DefaultComponents.hpp" line="129" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/DefaultComponents.hpp" bodystart="130" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/DefaultComponents.hpp" line="131" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/DefaultComponents.hpp" bodystart="132" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_default_components_8hpp_1a915099410685fd945a7bd0e6944751e6" prot="public" static="no">
         <type>ComponentListCatT&lt; <ref refid="struct_component_list" kindref="compound">ComponentList</ref>&lt; <ref refid="struct_s_tag_component" kindref="compound">STagComponent</ref> &gt;, <ref refid="struct_component_list" kindref="compound">CommonComponentList</ref> &gt;</type>
@@ -168,7 +168,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/DefaultComponents.hpp" line="134" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/DefaultComponents.hpp" bodystart="135" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/DefaultComponents.hpp" line="136" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/DefaultComponents.hpp" bodystart="137" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -245,92 +245,91 @@
 <codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>OuterConeAngle<sp/>=<sp/>MathConstants::pi<sp/>*<sp/>0.25f;</highlight></codeline>
 <codeline lineno="71"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="72"><highlight class="normal"></highlight></codeline>
-<codeline lineno="73"><highlight class="normal"></highlight></codeline>
-<codeline lineno="74" refid="struct_s_impulse_component" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_s_impulse_component" kindref="compound">SImpulseComponent</ref><sp/>{</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>float3<sp/>force{MathConstants::UpVec};</highlight></codeline>
-<codeline lineno="76"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"></highlight></codeline>
-<codeline lineno="78" refid="struct_s_camera_component" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_s_camera_component" kindref="compound">SCameraComponent</ref><sp/>{</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="struct_s_camera_component" kindref="compound">SCameraComponent</ref><sp/>Perspective(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>yFov,</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>near<sp/>=<sp/>0.01f,</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>far<sp/><sp/>=<sp/>1024.f)<sp/>{</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="struct_s_camera_component" kindref="compound">SCameraComponent</ref>{</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.yFov<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>yFov,</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.zFar<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>far,</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.zNear<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>near,</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.eProjectionType<sp/>=<sp/>EProjectionType::Perspective,</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"></highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="struct_s_camera_component" kindref="compound">SCameraComponent</ref><sp/>Ortho(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>z,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>near<sp/>=<sp/>0.01f,</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>far<sp/>=<sp/>1024.f)<sp/>{</highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="struct_s_camera_component" kindref="compound">SCameraComponent</ref>{</highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.zFar<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>far,</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.zNear<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>near,</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.zoom<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>z,</highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.eProjectionType<sp/>=<sp/>EProjectionType::Orthographc,</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>aspectRatio<sp/><sp/><sp/><sp/><sp/>=<sp/>1.f;</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>yFov<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>64.f;</highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>zFar<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>1024.f;</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>zNear<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0.01f;</highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>zoom<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>1.f;</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>isActive<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>EProjectionType<sp/>eProjectionType<sp/>=<sp/>EProjectionType::Perspective;</highlight></codeline>
+<codeline lineno="74" refid="struct_camera" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_camera" kindref="compound">Camera</ref><sp/>{</highlight></codeline>
+<codeline lineno="76" refid="struct_camera_1a6209f538ed93634903f342b216b5b51a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="struct_camera" kindref="compound">Camera</ref><sp/><ref refid="struct_camera_1a6209f538ed93634903f342b216b5b51a" kindref="member">Perspective</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>yFov,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>near<sp/>=<sp/>0.01f,</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>far<sp/>=<sp/>1024.f)<sp/>{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="struct_camera" kindref="compound">Camera</ref>{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.YFov<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>yFov,</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.ZFar<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>far,</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.ZNear<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>near,</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.ProjectionType<sp/>=<sp/>EProjectionType::Perspective,</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="struct_camera_1a25ce10c928eea2e6b8d7bf6bdbb6488c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="struct_camera" kindref="compound">Camera</ref><sp/><ref refid="struct_camera_1a25ce10c928eea2e6b8d7bf6bdbb6488c" kindref="member">Ortho</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>xmag,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>ymag,</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>near<sp/>=<sp/>0.01f,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>far<sp/>=<sp/>1024.f)<sp/>{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="struct_camera" kindref="compound">Camera</ref>{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.ZFar<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>far,</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.ZNear<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>near,</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.XMag<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>xmag,</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.YMag<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>ymag,</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.ProjectionType<sp/>=<sp/>EProjectionType::Orthographic,</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AspectRatio<sp/><sp/><sp/><sp/>=<sp/>1.f;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>YFov<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>64.f;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ZFar<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>1024.f;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ZNear<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0.01f;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XMag<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>1.f;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>YMag<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>1.f;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IsActive<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>EProjectionType<sp/>ProjectionType<sp/>=<sp/>EProjectionType::Perspective;</highlight></codeline>
 <codeline lineno="106"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="107"><highlight class="normal"></highlight></codeline>
-<codeline lineno="108" refid="struct_s_prefab_meta_component" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_s_prefab_meta_component" kindref="compound">SPrefabMetaComponent</ref><sp/>{</highlight></codeline>
-<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_s_prefab_meta_component" kindref="compound">SPrefabMetaComponent</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_s_prefab_meta_component" kindref="compound">SPrefabMetaComponent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>path)<sp/>:<sp/>m_path{path}<sp/>{}</highlight></codeline>
+<codeline lineno="108" refid="struct_s_impulse_component" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_s_impulse_component" kindref="compound">SImpulseComponent</ref><sp/>{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>float3<sp/>force{MathConstants::UpVec};</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="111"><highlight class="normal"></highlight></codeline>
-<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>~<ref refid="struct_s_prefab_meta_component" kindref="compound">SPrefabMetaComponent</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="113"><highlight class="normal"></highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>m_path;</highlight></codeline>
-<codeline lineno="115"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="112" refid="struct_s_prefab_meta_component" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_s_prefab_meta_component" kindref="compound">SPrefabMetaComponent</ref><sp/>{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_s_prefab_meta_component" kindref="compound">SPrefabMetaComponent</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_s_prefab_meta_component" kindref="compound">SPrefabMetaComponent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>path)<sp/>:<sp/>m_path{path}<sp/>{}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>~<ref refid="struct_s_prefab_meta_component" kindref="compound">SPrefabMetaComponent</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="116"><highlight class="normal"></highlight></codeline>
-<codeline lineno="117" refid="struct_s_tag_component" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_s_tag_component" kindref="compound">STagComponent</ref><sp/>{</highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_s_tag_component" kindref="compound">STagComponent</ref>()<sp/>:<sp/>m_uuid{Bvr::Utils::uuid::Generate()}<sp/>{}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>m_path;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="119"><highlight class="normal"></highlight></codeline>
-<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_s_tag_component" kindref="compound">STagComponent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Bvr::Utils::uuid&amp;<sp/>uuid)<sp/>:<sp/>m_uuid{uuid}<sp/>{}</highlight></codeline>
-<codeline lineno="121"><highlight class="normal"></highlight></codeline>
-<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>Bvr::Utils::uuid<sp/>m_uuid;</highlight></codeline>
-<codeline lineno="123"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="124"><highlight class="normal"></highlight></codeline>
-<codeline lineno="125"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="struct_component_list" kindref="compound">CommonComponentList</ref><sp/>=</highlight></codeline>
-<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_component_list" kindref="compound">ComponentList</ref>&lt;<ref refid="struct_s_transform_component" kindref="compound">STransformComponent</ref>,<sp/><ref refid="struct_s2_d_transform_tag" kindref="compound">S2DTransformTag</ref>,<sp/><ref refid="struct_t_component" kindref="compound">SNameComponent</ref>,</highlight></codeline>
-<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_s_voxel_mesh_component" kindref="compound">SVoxelMeshComponent</ref>,<sp/><ref refid="struct_s_prefab_meta_component" kindref="compound">SPrefabMetaComponent</ref>&gt;;</highlight></codeline>
-<codeline lineno="128"><highlight class="normal"></highlight></codeline>
-<codeline lineno="129"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>DefaultCopyComponents<sp/>=</highlight></codeline>
-<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>ComponentListCatT&lt;CommonComponentList,<sp/>ComponentList&lt;SImpulseComponent&gt;&gt;;</highlight></codeline>
-<codeline lineno="131"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Make<sp/>sure<sp/>that<sp/>STagComponent<sp/>is<sp/>always<sp/>serialised<sp/>first</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="132"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Since<sp/>it<sp/>is<sp/>responsible<sp/>for<sp/>creating<sp/>entities<sp/>during<sp/>serialisation</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="133"><highlight class="normal"></highlight><highlight class="comment">//<sp/>As<sp/>well<sp/>as<sp/>their<sp/>look<sp/>up</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="134"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>DefaultSerialisedComponents<sp/>=</highlight></codeline>
-<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>ComponentListCatT&lt;ComponentList&lt;STagComponent&gt;,<sp/><ref refid="struct_component_list" kindref="compound">CommonComponentList</ref>&gt;;</highlight></codeline>
-<codeline lineno="136"><highlight class="normal"></highlight></codeline>
-<codeline lineno="137"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;IO/Archive.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="138"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Bvr<sp/>{</highlight></codeline>
-<codeline lineno="139"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;Archiver<sp/>Arch&gt;<sp/>Arch&amp;<sp/>operator&amp;(Arch&amp;<sp/>archiver,<sp/><ref refid="struct_s_tag_component" kindref="compound">STagComponent</ref>&amp;<sp/>o)<sp/>{</highlight></codeline>
-<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>archiver.StartObject();</highlight></codeline>
-<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>archiver.Member(</highlight><highlight class="stringliteral">&quot;m_uuid&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>constexpr<sp/>(archiver.IsReader)<sp/>{</highlight></codeline>
-<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>tmp;</highlight></codeline>
-<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>archiver&amp;<sp/><sp/><sp/>tmp;</highlight></codeline>
-<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>o.m_uuid<sp/>=<sp/>Utils::uuid::FromString(tmp.c_str());</highlight></codeline>
-<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>s<sp/>=<sp/>o.m_uuid.ToString();</highlight></codeline>
-<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>archiver&amp;<sp/>s;</highlight></codeline>
-<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>archiver.EndObject();</highlight></codeline>
-<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>archiver;</highlight></codeline>
-<codeline lineno="152"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="153"><highlight class="normal"></highlight></codeline>
-<codeline lineno="154"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;Archiver<sp/>Arch&gt;<sp/>Arch&amp;<sp/>operator&amp;(Arch&amp;<sp/>archiver,<sp/><ref refid="struct_s_parent_component" kindref="compound">SParentComponent</ref>&amp;<sp/>o)<sp/>{</highlight></codeline>
-<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>static_assert(TFalseType&lt;Arch&gt;::value,</highlight></codeline>
-<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;SParentComponent<sp/>should<sp/>not<sp/>be<sp/>directly<sp/>serialised&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="157"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="158"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Bvr</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120" refid="struct_s_tag_component" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_s_tag_component" kindref="compound">STagComponent</ref><sp/>{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_s_tag_component" kindref="compound">STagComponent</ref>()<sp/>:<sp/>m_uuid{Bvr::Utils::uuid::Generate()}<sp/>{}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_s_tag_component" kindref="compound">STagComponent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Bvr::Utils::uuid&amp;<sp/>uuid)<sp/>:<sp/>m_uuid{uuid}<sp/>{}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>Bvr::Utils::uuid<sp/>m_uuid;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="struct_component_list" kindref="compound">CommonComponentList</ref><sp/>=</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_component_list" kindref="compound">ComponentList</ref>&lt;<ref refid="struct_s_transform_component" kindref="compound">STransformComponent</ref>,<sp/><ref refid="struct_s2_d_transform_tag" kindref="compound">S2DTransformTag</ref>,<sp/><ref refid="struct_t_component" kindref="compound">SNameComponent</ref>,</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_s_voxel_mesh_component" kindref="compound">SVoxelMeshComponent</ref>,<sp/><ref refid="struct_s_prefab_meta_component" kindref="compound">SPrefabMetaComponent</ref>&gt;;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>DefaultCopyComponents<sp/>=</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>ComponentListCatT&lt;CommonComponentList,<sp/>ComponentList&lt;SImpulseComponent&gt;&gt;;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Make<sp/>sure<sp/>that<sp/>STagComponent<sp/>is<sp/>always<sp/>serialised<sp/>first</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Since<sp/>it<sp/>is<sp/>responsible<sp/>for<sp/>creating<sp/>entities<sp/>during<sp/>serialisation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight><highlight class="comment">//<sp/>As<sp/>well<sp/>as<sp/>their<sp/>look<sp/>up</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>DefaultSerialisedComponents<sp/>=</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>ComponentListCatT&lt;ComponentList&lt;STagComponent&gt;,<sp/><ref refid="struct_component_list" kindref="compound">CommonComponentList</ref>&gt;;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;IO/Archive.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Bvr<sp/>{</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;Archiver<sp/>Arch&gt;<sp/>Arch&amp;<sp/>operator&amp;(Arch&amp;<sp/>archiver,<sp/><ref refid="struct_s_tag_component" kindref="compound">STagComponent</ref>&amp;<sp/>o)<sp/>{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>archiver.StartObject();</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>archiver.Member(</highlight><highlight class="stringliteral">&quot;m_uuid&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>constexpr<sp/>(archiver.IsReader)<sp/>{</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>tmp;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>archiver&amp;<sp/><sp/><sp/>tmp;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>o.m_uuid<sp/>=<sp/>Utils::uuid::FromString(tmp.c_str());</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>s<sp/>=<sp/>o.m_uuid.ToString();</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>archiver&amp;<sp/>s;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>archiver.EndObject();</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>archiver;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;Archiver<sp/>Arch&gt;<sp/>Arch&amp;<sp/>operator&amp;(Arch&amp;<sp/>archiver,<sp/><ref refid="struct_s_parent_component" kindref="compound">SParentComponent</ref>&amp;<sp/>o)<sp/>{</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>static_assert(TFalseType&lt;Arch&gt;::value,</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;SParentComponent<sp/>should<sp/>not<sp/>be<sp/>directly<sp/>serialised&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="160"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Bvr</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/DefaultComponents.hpp"/>
   </compounddef>

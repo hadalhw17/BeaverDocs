@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_scene_8hpp" kind="file" language="C++">
+    <compoundname>Scene.hpp</compoundname>
+    <includes refid="_world_defs_8hpp" local="no">BvrWorld/WorldDefs.hpp</includes>
+    <includes local="no">Utils/uuid.hpp</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>BvrWorld/WorldDefs.hpp</label>
+        <link refid="_world_defs_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/Scene.hpp</label>
+        <link refid="_scene_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Utils/uuid.hpp</label>
+      </node>
+      <node id="4">
+        <label>Utils/Assert.hpp</label>
+      </node>
+      <node id="3">
+        <label>entt.hpp</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct_bvr_1_1_scene" prot="public">Bvr::Scene</innerclass>
+    <innerclass refid="struct_bvr_1_1_scene_remap" prot="public">Bvr::SceneRemap</innerclass>
+    <innerclass refid="struct_bvr_1_1_scene_id" prot="public">Bvr::SceneId</innerclass>
+    <innerclass refid="structstd_1_1hash_3_01_bvr_1_1_scene_id_01_4" prot="public">std::hash&lt; Bvr::SceneId &gt;</innerclass>
+    <innerclass refid="struct_bvr_1_1_scene_record" prot="public">Bvr::SceneRecord</innerclass>
+    <innerclass refid="struct_bvr_1_1_scene_plugin" prot="public">Bvr::ScenePlugin</innerclass>
+    <innernamespace refid="namespace_bvr">Bvr</innernamespace>
+    <innernamespace refid="namespacestd">std</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;BvrWorld/WorldDefs.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Utils/uuid.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Bvr<sp/>{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">App;</highlight></codeline>
+<codeline lineno="8" refid="struct_bvr_1_1_scene" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_scene" kindref="compound">Scene</ref><sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>Handle&lt;CWorld&gt;<sp/>World;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="struct_bvr_1_1_scene_remap" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_scene_remap" kindref="compound">SceneRemap</ref><sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Scene<sp/>entity<sp/>-&gt;<sp/>world<sp/>entity</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;TEntity,<sp/>TEntity&gt;<sp/>SceneToWorld;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="struct_bvr_1_1_scene_id" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_scene_id" kindref="compound">SceneId</ref><sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator==(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_bvr_1_1_scene_id" kindref="compound">SceneId</ref>&amp;<sp/>rhs)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Id<sp/>==<sp/>rhs.Id;<sp/>}</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/></highlight><highlight class="keyword">operator</highlight><highlight class="normal"><sp/>bool()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Id.IsValid();<sp/>}</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>Utils::uuid<sp/>Id{};</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Bvr</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">std<sp/>{</highlight></codeline>
+<codeline lineno="26" refid="structstd_1_1hash_3_01_bvr_1_1_scene_id_01_4" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;&gt;<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">hash&lt;Bvr::SceneId&gt;<sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>operator()(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_bvr_1_1_scene_id" kindref="compound">Bvr::SceneId</ref>&amp;<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::hash&lt;Bvr::Utils::uuid&gt;()(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">.Id);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>std</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Bvr<sp/>{</highlight></codeline>
+<codeline lineno="35" refid="struct_bvr_1_1_scene_record" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_scene_record" kindref="compound">SceneRecord</ref><sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_scene_id" kindref="compound">SceneId</ref><sp/>SpawnScene(Handle&lt;Scene&gt;<sp/>scene);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ReleaseScene(<ref refid="struct_bvr_1_1_scene_id" kindref="compound">SceneId</ref><sp/>scene);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::pair&lt;Handle&lt;Scene&gt;,<sp/><ref refid="struct_bvr_1_1_scene_id" kindref="compound">SceneId</ref>&gt;&gt;<sp/>ScenesToSpawn;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;SceneId&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ScenesToRelease;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;SceneId,<sp/>SceneRemap&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SceneRemaps;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="struct_bvr_1_1_scene_plugin" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_scene_plugin" kindref="compound">ScenePlugin</ref><sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Build(App&amp;<sp/>app);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Bvr</highlight></codeline>
+    </programlisting>
+    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/Scene.hpp"/>
+  </compounddef>
+</doxygen>
