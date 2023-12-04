@@ -57,8 +57,6 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
       </node>
       <node id="1">
         <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/World.hpp</label>
@@ -66,21 +64,15 @@
         <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="5">
+      <node id="4">
         <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/Components.hpp</label>
         <link refid="_components_8hpp_source"/>
-        <childnode refid="4" relation="include">
+        <childnode refid="3" relation="include">
         </childnode>
-      </node>
-      <node id="4">
-        <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/WorldArchive.hpp</label>
-        <link refid="_world_archive_8hpp_source"/>
       </node>
       <node id="3">
-        <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/DefaultComponents.hpp</label>
-        <link refid="_default_components_8hpp_source"/>
-        <childnode refid="4" relation="include">
-        </childnode>
+        <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/WorldArchive.hpp</label>
+        <link refid="_world_archive_8hpp_source"/>
       </node>
     </invincdepgraph>
     <innerclass refid="class_bvr_1_1_c_world" prot="public">Bvr::CWorld</innerclass>
@@ -197,7 +189,7 @@
 <codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>TraverseScene(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Fn&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fn,</highlight></codeline>
 <codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_bvr_1_1_t_query" kindref="compound">Bvr::Query</ref>&lt;With&lt;SHierarchyComponent&gt;&gt;&amp;<sp/>hierarchies,</highlight></codeline>
 <codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_bvr_1_1_t_query" kindref="compound">Bvr::Query</ref>&lt;With&lt;SParentComponent&gt;&gt;&amp;<sp/><sp/><sp/><sp/>parents)<sp/>{</highlight></codeline>
-<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>parentG<sp/>=<sp/>m_registry.group&lt;<ref refid="struct_s_transform_component" kindref="compound">STransformComponent</ref>&gt;(</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>parentG<sp/>=<sp/>m_registry.group&lt;TransformComponent&gt;(</highlight></codeline>
 <codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>entt::get&lt;&gt;,<sp/>entt::exclude&lt;SHierarchyComponent&gt;);</highlight></codeline>
 <codeline lineno="138"><highlight class="normal"></highlight></codeline>
 <codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>hParent<sp/>:<sp/>parentG)<sp/>{</highlight></codeline>
@@ -207,7 +199,7 @@
 <codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="144"><highlight class="normal"></highlight></codeline>
 <codeline lineno="148" refid="class_bvr_1_1_c_world_1abcbd8379daaf9102b4842e3634c55fa3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bvr_1_1_t_entity" kindref="compound">TEntity</ref><sp/><ref refid="class_bvr_1_1_c_world_1abcbd8379daaf9102b4842e3634c55fa3" kindref="member">GetLastChild</ref>(<ref refid="class_bvr_1_1_t_entity" kindref="compound">TEntity</ref><sp/>hFor)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_s_parent_component" kindref="compound">SParentComponent</ref>&amp;<sp/>parent<sp/><sp/><sp/><sp/><sp/>=<sp/>GetComponent&lt;SParentComponent&gt;(hFor);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_s_parent_component" kindref="compound">SParentComponent</ref>&amp;<sp/>parent<sp/><sp/><sp/><sp/><sp/>=<sp/>GetComponent&lt;SParentComponent&gt;(hFor);</highlight></codeline>
 <codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_bvr_1_1_t_entity" kindref="compound">TEntity</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>firstChild<sp/>=<sp/>parent.first;</highlight></codeline>
 <codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
 <codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!firstChild<sp/>||<sp/>!Has&lt;SHierarchyComponent&gt;(firstChild))</highlight></codeline>
@@ -243,11 +235,11 @@
 <codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(ent)<sp/>{</highlight></codeline>
 <codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(parents.contains(ent))<sp/>{</highlight></codeline>
 <codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(hierarchies.contains(ent))</highlight></codeline>
-<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>backtrack<sp/>=<sp/>hierarchies.get&lt;<ref refid="struct_s_hierarchy_component" kindref="compound">SHierarchyComponent</ref>&gt;(ent).next;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>backtrack<sp/>=<sp/>hierarchies.get&lt;SHierarchyComponent&gt;(ent).next;</highlight></codeline>
 <codeline lineno="190"><highlight class="normal"></highlight></codeline>
 <codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fn(ent,<sp/>parent);</highlight></codeline>
 <codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TEntity<sp/>savedParent<sp/>=<sp/>ent;</highlight></codeline>
-<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ent<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>parents.get&lt;<ref refid="struct_s_parent_component" kindref="compound">SParentComponent</ref>&gt;(ent).first;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ent<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>parents.get&lt;SParentComponent&gt;(ent).first;</highlight></codeline>
 <codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TraverseSceneImpl(savedParent,<sp/>ent,<sp/>fn,<sp/>hierarchies,<sp/>parents);</highlight></codeline>
 <codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="196"><highlight class="normal"></highlight></codeline>
@@ -258,7 +250,7 @@
 <codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fn(ent,<sp/>parent);</highlight></codeline>
 <codeline lineno="202"><highlight class="normal"></highlight></codeline>
 <codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ent<sp/>&amp;&amp;<sp/>hierarchies.contains(ent))<sp/>{</highlight></codeline>
-<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ent<sp/>=<sp/>hierarchies.get&lt;<ref refid="struct_s_hierarchy_component" kindref="compound">SHierarchyComponent</ref>&gt;(ent).next;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ent<sp/>=<sp/>hierarchies.get&lt;SHierarchyComponent&gt;(ent).next;</highlight></codeline>
 <codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(backtrack)<sp/>{</highlight></codeline>
 <codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ent<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>backtrack;</highlight></codeline>
 <codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>backtrack<sp/>=<sp/>{};</highlight></codeline>
