@@ -92,6 +92,7 @@
     <member refid="struct_bvr_1_1_asset_lifetime_event_1aa1169fc2ad56ecc4640186fb50a8c07f" kind="enum"><name>Op</name></member>
     <member refid="struct_bvr_1_1_asset_lifetime_event_1aa1169fc2ad56ecc4640186fb50a8c07fa0eceeb45861f9585dd7a97a3e36f85c6" kind="enumvalue"><name>Created</name></member>
     <member refid="struct_bvr_1_1_asset_lifetime_event_1aa1169fc2ad56ecc4640186fb50a8c07faea1e34304a5d8ffa7c9b0ed8ede4ef1a" kind="enumvalue"><name>Released</name></member>
+    <member refid="struct_bvr_1_1_asset_lifetime_event_1aa1169fc2ad56ecc4640186fb50a8c07faff0a3b7f3daef040faf89a88fdac01b7" kind="enumvalue"><name>Updated</name></member>
     <member refid="struct_bvr_1_1_asset_lifetime_event_1a1a56c43926fff9c6036034c0cf6f141e" kind="variable"><name>op</name></member>
     <member refid="struct_bvr_1_1_asset_lifetime_event_1a46bd512b99a46b8ca4dd8dce1152517a" kind="variable"><name>hRes</name></member>
   </compound>
@@ -1031,6 +1032,10 @@
     <member refid="struct_bvr_1_1_i_asset_loader_1a48cf0c15687acc59f38a50f2ef6f34bf" kind="function"><name>GetImportSettings</name></member>
     <member refid="struct_bvr_1_1_i_asset_loader_1ad03cd682463f116a97e294e4799494c2" kind="function"><name>Import</name></member>
   </compound>
+  <compound refid="struct_bvr_1_1_i_assets" kind="struct"><name>Bvr::IAssets</name>
+    <member refid="struct_bvr_1_1_i_assets_1a6cd18b31d0ca11663326bd27f40356fc" kind="function"><name>ReserveHandle</name></member>
+    <member refid="struct_bvr_1_1_i_assets_1a710e5206471dacc47ffafbe0b25f4c6f" kind="function"><name>Emplace</name></member>
+  </compound>
   <compound refid="struct_bvr_1_1_i_asset_saver" kind="struct"><name>Bvr::IAssetSaver</name>
     <member refid="struct_bvr_1_1_i_asset_saver_1ac895eddba6582b4a40e469ebffb0fb32" kind="function"><name>~IAssetSaver</name></member>
     <member refid="struct_bvr_1_1_i_asset_saver_1a6627035a3feff9f7661ef02f54849f71" kind="function"><name>Save</name></member>
@@ -1129,6 +1134,11 @@
     <member refid="struct_bvr_1_1_t_handle_pool_1_1iterator_1aa74a9388ee74fe4d306df34b2c057c71" kind="function"><name>operator++</name></member>
     <member refid="struct_bvr_1_1_t_handle_pool_1_1iterator_1a81d10d7799462c7ca5e7cf19119ca356" kind="friend"><name>operator==</name></member>
     <member refid="struct_bvr_1_1_t_handle_pool_1_1iterator_1a55a8ee0e80dad1a7da9d751c25bc0386" kind="friend"><name>operator!=</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_t_loading_result_1_1_i_value" kind="struct"><name>Bvr::TLoadingResult::IValue</name>
+    <member refid="struct_bvr_1_1_t_loading_result_1_1_i_value_1acf5c559e1ca9f7b0f4587846ef870829" kind="function"><name>~IValue</name></member>
+    <member refid="struct_bvr_1_1_t_loading_result_1_1_i_value_1a67b0135b261b486e9d84a7cb20192ad2" kind="function"><name>GetPtr</name></member>
+    <member refid="struct_bvr_1_1_t_loading_result_1_1_i_value_1a31cfd263109e4debcf0ea94946c5b0a6" kind="function"><name>GetType</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_detail_1_1make__void" kind="struct"><name>Bvr::Detail::make_void</name>
     <member refid="struct_bvr_1_1_detail_1_1make__void_1a1a010758558ba266a75374bc49c34def" kind="typedef"><name>type</name></member>
@@ -1277,6 +1287,7 @@
   <compound refid="struct_bvr_1_1_s_asset_manager" kind="struct"><name>Bvr::SAssetManager</name>
     <member refid="struct_bvr_1_1_s_asset_manager_1a2078a5d092a1dd834a2dc287bed90882" kind="typedef"><name>TypeHash</name></member>
     <member refid="struct_bvr_1_1_s_asset_manager_1a55d4055fd1322414f73a532c093bc5a7" kind="variable"><name>m_lifetimeIO</name></member>
+    <member refid="struct_bvr_1_1_s_asset_manager_1ab37b9b84074dc5881781025c3b374270" kind="variable"><name>m_storages</name></member>
     <member refid="struct_bvr_1_1_s_asset_manager_1a71af9b52b3b601780282f7de714001fe" kind="variable"><name>m_refCounter</name></member>
     <member refid="struct_bvr_1_1_s_asset_manager_1abb32bc4b78bc5177aba4571a43993302" kind="variable"><name>m_loaders</name></member>
     <member refid="struct_bvr_1_1_s_asset_manager_1aead1544429fac53e83df2c751f71e283" kind="variable"><name>m_loaderResourceTypeAssoc</name></member>
@@ -1288,6 +1299,7 @@
     <member refid="struct_bvr_1_1_s_asset_manager_1a9dff918ddf53fcd272c4a4a5d29ab631" kind="function"><name>GetAssetIO</name></member>
     <member refid="struct_bvr_1_1_s_asset_manager_1af60d996ad8caa3d6d53668114ae20911" kind="function"><name>RegisterAssetType</name></member>
     <member refid="struct_bvr_1_1_s_asset_manager_1a8145fb9b6364ba305dce3f1565c47f20" kind="function"><name>Load</name></member>
+    <member refid="struct_bvr_1_1_s_asset_manager_1aed057e83f9f994ced3a35c8bcb021d0d" kind="function"><name>LoadAsync</name></member>
     <member refid="struct_bvr_1_1_s_asset_manager_1a3c9e7d80ae6e54ae1a267fa054114509" kind="function"><name>TryFindingAssetPath</name></member>
     <member refid="struct_bvr_1_1_s_asset_manager_1ac9ca1415cdadab732605dd3e657f49c2" kind="function"><name>SetAssetPath</name></member>
     <member refid="struct_bvr_1_1_s_asset_manager_1a8d793aa997e80814a35a75696aa6d12d" kind="function"><name>GetLoader</name></member>
@@ -1299,6 +1311,7 @@
     <member refid="struct_bvr_1_1_s_asset_manager_1ae9417c68ee3bdac367a7e6663b05c224" kind="function"><name>ResolvePath</name></member>
     <member refid="struct_bvr_1_1_s_asset_manager_1a1d10d7b96632437dd1512c5afbe45012" kind="function"><name>ForHashing</name></member>
     <member refid="struct_bvr_1_1_s_asset_manager_1aa7a487e8016635b4e15c082092dcb067" kind="function"><name>PrepareExtension</name></member>
+    <member refid="struct_bvr_1_1_s_asset_manager_1a9ee965a8ff0b3c32d046bfe0055b3572" kind="function"><name>LoadImpl</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_s_asset_ref_counter" kind="struct"><name>Bvr::SAssetRefCounter</name>
     <member refid="struct_bvr_1_1_s_asset_ref_counter_1a41e498a1aeb38b948888a34629e67b30" kind="enum"><name>Op</name></member>
@@ -1537,6 +1550,8 @@
     <member refid="class_bvr_1_1_t_assets_1a15c4097b381ccda817dedcde2f3ab910" kind="function"><name>ReleaseIdx</name></member>
     <member refid="class_bvr_1_1_t_assets_1a778f1079ac2f47b03047cb1bee5462b2" kind="function"><name>TAssets</name></member>
     <member refid="class_bvr_1_1_t_assets_1a6a7957a56646c67d0a775f43bc637ec6" kind="function"><name>~TAssets</name></member>
+    <member refid="class_bvr_1_1_t_assets_1abb46c56f9d0d5674880ed633a1b0c57e" kind="function"><name>ReserveHandle</name></member>
+    <member refid="class_bvr_1_1_t_assets_1af8372c76b4e8a5f43f59d9795597d572" kind="function"><name>Emplace</name></member>
     <member refid="class_bvr_1_1_t_assets_1afb0db75f1b23f98cf51c4ff49a6d7953" kind="function"><name>Create</name></member>
     <member refid="class_bvr_1_1_t_assets_1a1de3579dd173f313f121e6299b3be70f" kind="function"><name>Create</name></member>
     <member refid="class_bvr_1_1_t_assets_1a5dd92fd52c1759a90bf228ed777df886" kind="function"><name>Remove</name></member>
@@ -1935,16 +1950,22 @@
   <compound refid="struct_bvr_1_1_t_loading_result" kind="struct"><name>Bvr::TLoadingResult</name>
     <member refid="struct_bvr_1_1_t_loading_result_1a7301f4181400399e1648e6a5d7d935ec" kind="typedef"><name>SuccessT</name></member>
     <member refid="struct_bvr_1_1_t_loading_result_1abf3ec0294a1b08e4f92adb5d13b7d7de" kind="typedef"><name>FailureT</name></member>
-    <member refid="struct_bvr_1_1_t_loading_result_1adb8b63880feca5fc41d090e823e68682" kind="variable"><name>m_res</name></member>
-    <member refid="struct_bvr_1_1_t_loading_result_1a1d81f9442dfd5d72985d921c619f3695" kind="function"><name>Success</name></member>
-    <member refid="struct_bvr_1_1_t_loading_result_1a20156420b14f4ba4b2cbdf0b8def8d0e" kind="function"><name>Failed</name></member>
+    <member refid="struct_bvr_1_1_t_loading_result_1a25eea4e29825bbaa3eb6a1933accd88b" kind="variable"><name>m_pIVal</name></member>
+    <member refid="struct_bvr_1_1_t_loading_result_1a7c22e1e8cb16e946bef5df7e2613bfe5" kind="function"><name>Success</name></member>
+    <member refid="struct_bvr_1_1_t_loading_result_1ad7e544de02d667f1afc0377de20b48e0" kind="function"><name>Failed</name></member>
     <member refid="struct_bvr_1_1_t_loading_result_1ae6e206a85ac844d420556e223f2bde9e" kind="function"><name>IsSuccess</name></member>
     <member refid="struct_bvr_1_1_t_loading_result_1a81fc277b20061006a64a30fe75ad6afd" kind="function"><name>IsFailed</name></member>
     <member refid="struct_bvr_1_1_t_loading_result_1af1ab2186ecd761463958df7c9eb5ff45" kind="function"><name>OnSuccess</name></member>
     <member refid="struct_bvr_1_1_t_loading_result_1ab078221b3eef71d7026808faa2d134ee" kind="function"><name>OnFailed</name></member>
     <member refid="struct_bvr_1_1_t_loading_result_1a60477358e167d529a4f19021fe223557" kind="function"><name>OnSuccess</name></member>
     <member refid="struct_bvr_1_1_t_loading_result_1a4a04672927c241db527601c9aa44f7c0" kind="function"><name>OnFailed</name></member>
+    <member refid="struct_bvr_1_1_t_loading_result_1a64b025797ad4ccd803d37299919bee59" kind="function"><name>GetPtr</name></member>
+    <member refid="struct_bvr_1_1_t_loading_result_1a75d6970cd1eb3b7e61b32656ab5560d9" kind="function"><name>Get</name></member>
+    <member refid="struct_bvr_1_1_t_loading_result_1a7af5a924e8be7114f2f24e6da0d6f2aa" kind="function"><name>Get</name></member>
+    <member refid="struct_bvr_1_1_t_loading_result_1a9315121a81175a4471c97b3cdd6289f4" kind="function"><name>Is</name></member>
     <member refid="struct_bvr_1_1_t_loading_result_1a27ce84aa7fbf6e6924461011fe4d0b3a" kind="function"><name>~TLoadingResult</name></member>
+    <member refid="struct_bvr_1_1_t_loading_result_1ac6950cbe45fc5a7f98fb6f2d91242a19" kind="function"><name>Make</name></member>
+    <member refid="struct_bvr_1_1_t_loading_result_1aaa1212979ff8a63c72bde7a3aed1afbf" kind="function"><name>Make</name></member>
   </compound>
   <compound refid="class_bvr_1_1_t_member_fn_invokable_instance" kind="class"><name>Bvr::TMemberFnInvokableInstance</name>
   </compound>
@@ -2128,6 +2149,13 @@
     <member refid="struct_bvr_1_1_utils_1_1uuid_1a6775a2e9724347066399d0e16620f06e" kind="function"><name>ParseHex</name></member>
     <member refid="struct_bvr_1_1_utils_1_1uuid_1a19f680e80e26ee5272edc2d7ff405206" kind="function"><name>RandomChar</name></member>
     <member refid="struct_bvr_1_1_utils_1_1uuid_1a424c9267c9e5ff44965a7ebefcc48fb8" kind="function"><name>Invalidate</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_t_loading_result_1_1_value" kind="struct"><name>Bvr::TLoadingResult::Value</name>
+    <member refid="struct_bvr_1_1_t_loading_result_1_1_value_1ac3f8382727559e9c2eb907125725cd1d" kind="variable"><name>m_val</name></member>
+    <member refid="struct_bvr_1_1_t_loading_result_1_1_value_1aa744641ec66a6137d9cec71faa66b9d5" kind="function"><name>Value</name></member>
+    <member refid="struct_bvr_1_1_t_loading_result_1_1_value_1a255186ef6d0de58e271b121c0952204f" kind="function"><name>Value</name></member>
+    <member refid="struct_bvr_1_1_t_loading_result_1_1_value_1a66a76e14a2e0b842acb38d80360d52e6" kind="function"><name>GetPtr</name></member>
+    <member refid="struct_bvr_1_1_t_loading_result_1_1_value_1a8ec4ad12a49321e5a0c38d4b57b91baa" kind="function"><name>GetType</name></member>
   </compound>
   <compound refid="class_bvr_1_1_meta_1_1_variant" kind="class"><name>Bvr::Meta::Variant</name>
     <member refid="class_bvr_1_1_meta_1_1_variant_1a3a9759338cf1c6ada83ffdf6c76d73ff" kind="variable"><name>m_data</name></member>
@@ -2814,6 +2842,8 @@
   <compound refid="_handle_pool_8hpp" kind="file"><name>HandlePool.hpp</name>
   </compound>
   <compound refid="_archive_8hpp" kind="file"><name>Archive.hpp</name>
+  </compound>
+  <compound refid="_asset_manager_8hpp" kind="file"><name>AssetManager.hpp</name>
   </compound>
   <compound refid="_asset_meta_helpers_8hpp" kind="file"><name>AssetMetaHelpers.hpp</name>
   </compound>
