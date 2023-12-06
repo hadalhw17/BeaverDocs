@@ -5,10 +5,18 @@
     <innerclass refid="struct_bvr_1_1_s_shadow_pass_info" prot="public">Bvr::SShadowPassInfo</innerclass>
     <innerclass refid="struct_bvr_1_1_s_render_info" prot="public">Bvr::SRenderInfo</innerclass>
     <innerclass refid="struct_bvr_1_1_basic_stream_slice" prot="public">Bvr::BasicStreamSlice</innerclass>
+    <innerclass refid="struct_bvr_1_1_t_a_a_b_b" prot="public">Bvr::TAABB</innerclass>
     <innerclass refid="struct_bvr_1_1_texture" prot="public">Bvr::Texture</innerclass>
+    <innerclass refid="struct_bvr_1_1_s_render_output_desc" prot="public">Bvr::SRenderOutputDesc</innerclass>
+    <innerclass refid="struct_bvr_1_1_i_g_p_u_buffer" prot="public">Bvr::IGPUBuffer</innerclass>
+    <innerclass refid="struct_bvr_1_1_i_material" prot="public">Bvr::IMaterial</innerclass>
+    <innerclass refid="struct_bvr_1_1_i_primitive_draw_collector" prot="public">Bvr::IPrimitiveDrawCollector</innerclass>
+    <innerclass refid="struct_bvr_1_1_i_frame_context" prot="public">Bvr::IFrameContext</innerclass>
+    <innerclass refid="struct_bvr_1_1_i_bvr_renderer" prot="public">Bvr::IBvrRenderer</innerclass>
     <innerclass refid="struct_bvr_1_1_t_component_render_system_3_01_handle_3_01_t_mat_01_4_01_4" prot="public">Bvr::TComponentRenderSystem&lt; Handle&lt; TMat &gt; &gt;</innerclass>
     <innerclass refid="struct_bvr_1_1_t_handle" prot="public">Bvr::THandle</innerclass>
     <innernamespace refid="namespace_bvr_1_1_animation">Bvr::Animation</innernamespace>
+    <innernamespace refid="namespace_bvr_1_1_bvr_im_gui">Bvr::BvrImGui</innernamespace>
     <innernamespace refid="namespace_bvr_1_1_renderer">Bvr::Renderer</innernamespace>
       <sectiondef kind="enum">
       <memberdef kind="enum" id="_render_output_8hpp_1a9e9d7e63fc276b98ee2029d1c193461c" prot="public" static="no" strong="yes">
@@ -52,7 +60,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderOutput.hpp" line="32" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderOutput.hpp" bodystart="32" bodyend="38"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderOutput.hpp" line="33" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderOutput.hpp" bodystart="33" bodyend="39"/>
       </memberdef>
       <memberdef kind="enum" id="_render_output_8hpp_1a37221e6c217f4b294e8f2f06e26f2b0d" prot="public" static="no" strong="yes">
         <type></type>
@@ -99,7 +107,150 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderOutput.hpp" line="41" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderOutput.hpp" bodystart="41" bodyend="47"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderOutput.hpp" line="42" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderOutput.hpp" bodystart="42" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="enum" id="_i_bvr_renderer_8hpp_1a7014188d3321c9eeaa5145bd6b326d0b" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>EPrimitiveTopology</name>
+        <enumvalue id="_i_bvr_renderer_8hpp_1a7014188d3321c9eeaa5145bd6b326d0baf5beeab7a1f452e5b0e9b03b44f0de92" prot="public">
+          <name>TriangleList</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_i_bvr_renderer_8hpp_1a7014188d3321c9eeaa5145bd6b326d0ba1da0b9ead8b051940a89214bae22831c" prot="public">
+          <name>TriangleStrip</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_i_bvr_renderer_8hpp_1a7014188d3321c9eeaa5145bd6b326d0ba18d58fde618e4a30e2dfdc122e693047" prot="public">
+          <name>TriangleFan</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_i_bvr_renderer_8hpp_1a7014188d3321c9eeaa5145bd6b326d0ba596e1b7afe8925f3f578c716d5af8fef" prot="public">
+          <name>LineList</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_i_bvr_renderer_8hpp_1a7014188d3321c9eeaa5145bd6b326d0bae7f9e73b8edd21f420a63b3ace5768a2" prot="public">
+          <name>LineStrip</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_i_bvr_renderer_8hpp_1a7014188d3321c9eeaa5145bd6b326d0ba1a18ff71b3df3e362a2489eef4b30003" prot="public">
+          <name>PointList</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_i_bvr_renderer_8hpp_1a7014188d3321c9eeaa5145bd6b326d0baf1b220525e3cc747140a46b7e2d7532e" prot="public">
+          <name>PatchList</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_i_bvr_renderer_8hpp_1a7014188d3321c9eeaa5145bd6b326d0bae93f994f01c537c4e2f7d8528c3eb5e9" prot="public">
+          <name>Count</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="107" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" bodystart="107" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="enum" id="_i_bvr_renderer_8hpp_1a2105313cd3bfe3156eeea53d34e1b976" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>EProfilingLevel</name>
+        <enumvalue id="_i_bvr_renderer_8hpp_1a2105313cd3bfe3156eeea53d34e1b976a28d0edd045e05cf5af64e35ae0c4c6ef" prot="public">
+          <name>Low</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_i_bvr_renderer_8hpp_1a2105313cd3bfe3156eeea53d34e1b976ad4a9fa383ab700c5bdd6f31cf7df0faf" prot="public">
+          <name>Verbose</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="119" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" bodystart="119" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="enum" id="_i_bvr_renderer_8hpp_1acf930d1972f88893e19e8afafa5d5a04" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>ECoreRenderPhases</name>
+        <enumvalue id="_i_bvr_renderer_8hpp_1acf930d1972f88893e19e8afafa5d5a04a628adbb6c98e56748110061187f57243" prot="public">
+          <name>GBuffer</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_i_bvr_renderer_8hpp_1acf930d1972f88893e19e8afafa5d5a04a67d2f6740a8eaebf4d5c6f79be8da481" prot="public">
+          <name>Forward</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_i_bvr_renderer_8hpp_1acf930d1972f88893e19e8afafa5d5a04ad2d84c1fc4f2d5d5f1c43bdb29dc236f" prot="public">
+          <name>HUD</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="168" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" bodystart="168" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="enum" id="_i_bvr_renderer_8hpp_1a6fa213d583519498ae3a738b73625d78" prot="public" static="no" strong="yes">
+        <type>uint8</type>
+        <name>EDebugProfilingStats</name>
+        <enumvalue id="_i_bvr_renderer_8hpp_1a6fa213d583519498ae3a738b73625d78a1a226c2f1347809a185b8567ba1fc5a7" prot="public">
+          <name>Profiling</name>
+          <initializer>= Bit32(0)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="201" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" bodystart="201" bodyend="203"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
@@ -115,7 +266,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderOutput.hpp" line="84" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderOutput.hpp" bodystart="84" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderOutput.hpp" line="85" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderOutput.hpp" bodystart="85" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_render_output_8hpp_1a1c5a84ba385c7642df93fbee9f8955c6" prot="public" static="no">
         <type><ref refid="struct_bvr_1_1_renderer_1_1_s_viewport" kindref="compound">Renderer::SViewport</ref></type>
@@ -129,7 +280,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderOutput.hpp" line="86" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderOutput.hpp" bodystart="86" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderOutput.hpp" line="87" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderOutput.hpp" bodystart="87" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_render_mesh_8hpp_1ae24f1352f49e2c499dfb82b12e1d7644" prot="public" static="no">
         <type><ref refid="struct_bvr_1_1_basic_stream_slice" kindref="compound">BasicStreamSlice</ref>&lt; false &gt;</type>
@@ -143,6 +294,19 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderMesh.hpp" line="7" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderMesh.hpp" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_i_bvr_renderer_8hpp_1adead0959edd5a854c83cb0e81d9a7df8" prot="public" static="no">
+        <type><ref refid="struct_bvr_1_1_t_handle" kindref="compound">Bvr::THandle</ref>&lt; <ref refid="struct_bvr_1_1_texture" kindref="compound">Bvr::Texture</ref> &gt;</type>
+        <definition>using Bvr::ITexture = typedef Bvr::THandle&lt;Bvr::Texture&gt;</definition>
+        <argsstring></argsstring>
+        <name>ITexture</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="124" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" bodystart="124" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -160,7 +324,23 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderOutput.hpp" line="48" column="1" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderOutput.hpp" declline="48" declcolumn="1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderOutput.hpp" line="49" column="1" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderOutput.hpp" declline="49" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_i_bvr_renderer_8hpp_1a11ecd1cb0eed41195071bbc9ac390d99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Bvr::BVR_ENUM_OPERATORS</definition>
+        <argsstring>(EDebugProfilingStats)</argsstring>
+        <name>BVR_ENUM_OPERATORS</name>
+        <param>
+          <type>EDebugProfilingStats</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="204" column="1" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" declline="204" declcolumn="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
