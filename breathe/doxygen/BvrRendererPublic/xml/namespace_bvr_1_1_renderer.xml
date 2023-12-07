@@ -2034,6 +2034,24 @@
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/Material.hpp" line="336" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/Material.hpp" bodystart="336" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="typedef" id="_material_8hpp_1ab16bdc5d94db2eacda24f1bb2a119ad9" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>std::unordered_set&lt; Handle&lt; T &gt; &gt;</type>
+        <definition>using Bvr::Renderer::TRetryNextFrame = typedef std::unordered_set&lt;Handle&lt;T&gt; &gt;</definition>
+        <argsstring></argsstring>
+        <name>TRetryNextFrame</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/Material.hpp" line="338" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/Material.hpp" bodystart="338" bodyend="-1"/>
+      </memberdef>
       </sectiondef>
       <sectiondef kind="var">
       <memberdef kind="variable" id="_common_shaders_8hpp_1ac9533961e1f518f17755efbffe51d3d7" prot="public" static="yes" constexpr="yes" mutable="no">
@@ -2291,7 +2309,7 @@
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/BindGroupMeta.hpp" line="104" column="6" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/BindGroupMeta.hpp" declline="104" declcolumn="6"/>
       </memberdef>
-      <memberdef kind="function" id="_material_8hpp_1afe0c36791e87482b27c3138f8c0c1815" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="_material_8hpp_1ae87fd53e2cd7c0367f821c11f8701441" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T</type>
@@ -2299,7 +2317,7 @@
         </templateparamlist>
         <type>void</type>
         <definition>void Bvr::Renderer::ExtractMaterialsSystem</definition>
-        <argsstring>(App &amp;app, RenderTextures &amp;textures, const Assets&lt; T &gt; &amp;srcMaterials, const Events&lt; AssetEvent&lt; T &gt;&gt; &amp;srcEvents, RenderMaterials &amp;dstMaterials)</argsstring>
+        <argsstring>(App &amp;app, RenderTextures &amp;textures, const Assets&lt; T &gt; &amp;srcMaterials, TRetryNextFrame&lt; T &gt; &amp;retries, const Events&lt; AssetEvent&lt; T &gt;&gt; &amp;srcEvents, RenderMaterials &amp;dstMaterials)</argsstring>
         <name>ExtractMaterialsSystem</name>
         <param>
           <type>App &amp;</type>
@@ -2312,6 +2330,10 @@
         <param>
           <type>const Assets&lt; T &gt; &amp;</type>
           <declname>srcMaterials</declname>
+        </param>
+        <param>
+          <type>TRetryNextFrame&lt; T &gt; &amp;</type>
+          <declname>retries</declname>
         </param>
         <param>
           <type>const Events&lt; AssetEvent&lt; T &gt;&gt; &amp;</type>
@@ -2327,7 +2349,45 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/Material.hpp" line="338" column="6" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/Material.hpp" bodystart="338" bodyend="377"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/Material.hpp" line="341" column="6" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/Material.hpp" bodystart="341" bodyend="384"/>
+      </memberdef>
+      <memberdef kind="function" id="_material_8hpp_1a52c728bafbb6823379f33de092287902" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void Bvr::Renderer::RetryCreating</definition>
+        <argsstring>(App &amp;app, RenderTextures &amp;textures, TRetryNextFrame&lt; T &gt; &amp;retries, const Assets&lt; T &gt; &amp;srcMaterials, RenderMaterials &amp;dstMaterials)</argsstring>
+        <name>RetryCreating</name>
+        <param>
+          <type>App &amp;</type>
+          <declname>app</declname>
+        </param>
+        <param>
+          <type>RenderTextures &amp;</type>
+          <declname>textures</declname>
+        </param>
+        <param>
+          <type>TRetryNextFrame&lt; T &gt; &amp;</type>
+          <declname>retries</declname>
+        </param>
+        <param>
+          <type>const Assets&lt; T &gt; &amp;</type>
+          <declname>srcMaterials</declname>
+        </param>
+        <param>
+          <type>RenderMaterials &amp;</type>
+          <declname>dstMaterials</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/Material.hpp" line="387" column="6" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/Material.hpp" bodystart="387" bodyend="410"/>
       </memberdef>
       <memberdef kind="function" id="_common_renderer_8hpp_1a2ec06b66a838b4cfc38cf7cd6c263b3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
