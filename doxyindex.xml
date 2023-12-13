@@ -3740,6 +3740,7 @@
     <member refid="de/d2d/classBvr_1_1CWorld_1a6f16557b24ece1954ec48911cedf6632" kind="typedef"><name>TRootsQuery</name></member>
     <member refid="de/d2d/classBvr_1_1CWorld_1a1375957ce574761c064831a665b3e051" kind="variable"><name>InPlaceRelease</name></member>
     <member refid="de/d2d/classBvr_1_1CWorld_1a145746c80844b4ad630bc44bb1783a5a" kind="variable"><name>m_hSelf</name></member>
+    <member refid="de/d2d/classBvr_1_1CWorld_1a7842fb0c7c1f6eb40154565284c2256b" kind="variable"><name>m_creationLock</name></member>
     <member refid="de/d2d/classBvr_1_1CWorld_1aa0d0e59bb416c492409a52b88dea6689" kind="variable"><name>m_resources</name></member>
     <member refid="de/d2d/classBvr_1_1CWorld_1a8c30100d2d9b767c9a58ba98bc72847d" kind="variable"><name>m_registry</name></member>
     <member refid="de/d2d/classBvr_1_1CWorld_1a880ea9825296fd8c6820dbc6985a048a" kind="variable"><name>m_currentLevelPath</name></member>
@@ -3777,7 +3778,6 @@
     <member refid="de/d2d/classBvr_1_1CWorld_1a5e38520e93cee4025d746c97bbcc525c" kind="function"><name>GetSimulationEnabled</name></member>
     <member refid="de/d2d/classBvr_1_1CWorld_1a4649cc7bd67d4b8322159984a89421a0" kind="function"><name>SetIsPaused</name></member>
     <member refid="de/d2d/classBvr_1_1CWorld_1a292271db2b86fa9929d24c3b1b63794d" kind="function"><name>IsPaused</name></member>
-    <member refid="de/d2d/classBvr_1_1CWorld_1abcbd8379daaf9102b4842e3634c55fa3" kind="function"><name>GetLastChild</name></member>
     <member refid="de/d2d/classBvr_1_1CWorld_1a49fc9a98672fa2ea5cf2b7ea2048223b" kind="function"><name>PublishUpdate</name></member>
     <member refid="de/d2d/classBvr_1_1CWorld_1a97f3600e1c2e9f42e2cb87cb2af97c6f" kind="function"><name>GetComponentStorage</name></member>
     <member refid="de/d2d/classBvr_1_1CWorld_1a69a30a95e22e8a5e6244c46cf992f42c" kind="function"><name>GetResource</name></member>
@@ -5217,13 +5217,13 @@
     <member refid="dd/d23/classBvr_1_1JsonReader_1af8ba6bef9e3497f89d4111cceb5e902e" kind="variable"><name>mDocument</name></member>
     <member refid="dd/d23/classBvr_1_1JsonReader_1a49f7898acb52c8444977d51c787c927f" kind="variable"><name>mStack</name></member>
     <member refid="dd/d23/classBvr_1_1JsonReader_1a41e4219240918445f9e0071fe9904ee8" kind="variable"><name>mError</name></member>
-    <member refid="dd/d23/classBvr_1_1JsonReader_1ac71778cbf770bdfef5ab98e0a48e4bdd" kind="function"><name>JsonReader</name></member>
+    <member refid="dd/d23/classBvr_1_1JsonReader_1ab8b5969a11b09191626a6a3e13c1e4b8" kind="function"><name>JsonReader</name></member>
     <member refid="dd/d23/classBvr_1_1JsonReader_1a628f46f03bdd9f4ef376534c871822c3" kind="function"><name>~JsonReader</name></member>
     <member refid="dd/d23/classBvr_1_1JsonReader_1a0838a6d373c2cab07046add32a58e1ab" kind="function"><name>operator bool</name></member>
     <member refid="dd/d23/classBvr_1_1JsonReader_1a2d878238d5e1f43c8fb7de650a2097aa" kind="function"><name>GetError</name></member>
     <member refid="dd/d23/classBvr_1_1JsonReader_1aa70fe44c0c2a59497d3e443fe2ff653a" kind="function"><name>StartObject</name></member>
-    <member refid="dd/d23/classBvr_1_1JsonReader_1a9c3193836c6441b5eaf318123ab1f6dc" kind="function"><name>Member</name></member>
-    <member refid="dd/d23/classBvr_1_1JsonReader_1a391744a1e6cebeb6596c650742bb5eaa" kind="function"><name>HasMember</name></member>
+    <member refid="dd/d23/classBvr_1_1JsonReader_1ae0126bb8ca6c4b59ce6ff068bf090b62" kind="function"><name>Member</name></member>
+    <member refid="dd/d23/classBvr_1_1JsonReader_1a78f647f8433a44a946f92afb5d2de69d" kind="function"><name>HasMember</name></member>
     <member refid="dd/d23/classBvr_1_1JsonReader_1a45c5ba04b577a92497beb5c554ed5082" kind="function"><name>IsArray</name></member>
     <member refid="dd/d23/classBvr_1_1JsonReader_1acfa5853afbeaf47813d19845ec1c5582" kind="function"><name>IsString</name></member>
     <member refid="dd/d23/classBvr_1_1JsonReader_1a870721c411441a2c6b1230fdbeafc18f" kind="function"><name>IsObject</name></member>
@@ -5266,8 +5266,8 @@
     <member refid="dc/dca/classBvr_1_1JsonWriter_1a063c9e1e3fb3368eb5dd7399c1f80573" kind="function"><name>GetString</name></member>
     <member refid="dc/dca/classBvr_1_1JsonWriter_1afe82a8c1d5f36258f97ca8bd8639f538" kind="function"><name>operator bool</name></member>
     <member refid="dc/dca/classBvr_1_1JsonWriter_1ade51bacec08490506a7b34753c6ee286" kind="function"><name>StartObject</name></member>
-    <member refid="dc/dca/classBvr_1_1JsonWriter_1ac17285cf13ad60db79a204960e7abfe2" kind="function"><name>Member</name></member>
-    <member refid="dc/dca/classBvr_1_1JsonWriter_1a5a4c916b3d8297be0671a9c6ee67c9e4" kind="function"><name>HasMember</name></member>
+    <member refid="dc/dca/classBvr_1_1JsonWriter_1af032fd33843ba83018bb81c6e4fb2877" kind="function"><name>Member</name></member>
+    <member refid="dc/dca/classBvr_1_1JsonWriter_1a47ac39640d9a467bc632503660d74b1d" kind="function"><name>HasMember</name></member>
     <member refid="dc/dca/classBvr_1_1JsonWriter_1aa1a95f843aeaa46e0621db64b683881e" kind="function"><name>IsArray</name></member>
     <member refid="dc/dca/classBvr_1_1JsonWriter_1a37f7cfe3bbfaa865055e9c6ae01c6192" kind="function"><name>EndObject</name></member>
     <member refid="dc/dca/classBvr_1_1JsonWriter_1a2419d972152837d13f41f94bc57fd328" kind="function"><name>StartArray</name></member>
@@ -5282,8 +5282,8 @@
     <member refid="dc/dca/classBvr_1_1JsonWriter_1a007b2e44ff0aab5d84499b8408425e78" kind="function"><name>operator&amp;</name></member>
     <member refid="dc/dca/classBvr_1_1JsonWriter_1a01ff971dff8c99789d50b44030cc1ccb" kind="function"><name>operator&amp;</name></member>
     <member refid="dc/dca/classBvr_1_1JsonWriter_1ae90313e43ecb13d68f104d0b1e84b486" kind="function"><name>SetNull</name></member>
-    <member refid="dc/dca/classBvr_1_1JsonWriter_1a21165bd320c3fcc990d45382eabd6f98" kind="function"><name>JsonWriter</name></member>
-    <member refid="dc/dca/classBvr_1_1JsonWriter_1ab8631270649367b4ea91250e66b5c3dc" kind="function"><name>operator=</name></member>
+    <member refid="dc/dca/classBvr_1_1JsonWriter_1a65d4d1070946e1e8deb47555862b9c70" kind="function"><name>JsonWriter</name></member>
+    <member refid="dc/dca/classBvr_1_1JsonWriter_1a4b383c39c8af7acb5e20ddb001b37e57" kind="function"><name>operator=</name></member>
   </compound>
   <compound refid="df/d20/structBvr_1_1Renderer_1_1CSSAOStage_1_1Kernel" kind="struct"><name>Bvr::Renderer::CSSAOStage::Kernel</name>
     <member refid="df/d20/structBvr_1_1Renderer_1_1CSSAOStage_1_1Kernel_1ad95660ecd1741a377cbc24bc66f1d380" kind="variable"><name>samples</name></member>
@@ -6530,6 +6530,7 @@
     <member refid="db/de3/structBvr_1_1GLTF_1_1SDocument_1a101c9bd2e8007e568b31fc5820322fe4" kind="variable"><name>skins</name></member>
     <member refid="db/de3/structBvr_1_1GLTF_1_1SDocument_1a2bd5df869b5ed04f2c1943d123532141" kind="variable"><name>lights</name></member>
     <member refid="db/de3/structBvr_1_1GLTF_1_1SDocument_1a10c7599db08c2b9abbe385ef90c1f5bf" kind="variable"><name>scene</name></member>
+    <member refid="db/de3/structBvr_1_1GLTF_1_1SDocument_1ad8d9ab46bceb8f13a96c4bdca24a36cc" kind="function"><name>GetImageData</name></member>
   </compound>
   <compound refid="dd/d71/structBvr_1_1Renderer_1_1SDrawBatch" kind="struct"><name>Bvr::Renderer::SDrawBatch</name>
     <member refid="dd/d71/structBvr_1_1Renderer_1_1SDrawBatch_1a5eb601a1357b578817c9cca183f2ae32" kind="variable"><name>m_pipelineDesc</name></member>
@@ -7360,12 +7361,14 @@
   </compound>
   <compound refid="d9/dc9/structBvr_1_1SParentComponent" kind="struct"><name>Bvr::SParentComponent</name>
     <member refid="d9/dc9/structBvr_1_1SParentComponent_1ab3e0c44132e2adb9e44871f900037b86" kind="variable"><name>first</name></member>
+    <member refid="d9/dc9/structBvr_1_1SParentComponent_1a090c0e9c82f284112c4c0ef742a1ac60" kind="variable"><name>last</name></member>
   </compound>
   <compound refid="dd/dd5/structBvr_1_1GLTF_1_1SParseInfo" kind="struct"><name>Bvr::GLTF::SParseInfo</name>
     <member refid="dd/dd5/structBvr_1_1GLTF_1_1SParseInfo_1a3ef2832c65f413757281abf1678a02c3" kind="variable"><name>bBinary</name></member>
     <member refid="dd/dd5/structBvr_1_1GLTF_1_1SParseInfo_1acaa0b706120ce983b42338250ba1234e" kind="variable"><name>bEmbedBuffers</name></member>
     <member refid="dd/dd5/structBvr_1_1GLTF_1_1SParseInfo_1ae14392c39201af29b2eb17d5ef58cfa1" kind="variable"><name>bEmbedImages</name></member>
     <member refid="dd/dd5/structBvr_1_1GLTF_1_1SParseInfo_1add0a88c1f7fd56df136642049da13ac8" kind="variable"><name>bDescOnly</name></member>
+    <member refid="dd/dd5/structBvr_1_1GLTF_1_1SParseInfo_1ae1be709a5a25f3e340db11780c2b7fd9" kind="variable"><name>shouldPrecacheImages</name></member>
     <member refid="dd/dd5/structBvr_1_1GLTF_1_1SParseInfo_1a96a5d5788990cd12f805ed16a23fba04" kind="variable"><name>binaryData</name></member>
     <member refid="dd/dd5/structBvr_1_1GLTF_1_1SParseInfo_1a41125f4a7ef2fe7a579b78ed3a094629" kind="variable"><name>baseDir</name></member>
     <member refid="dd/dd5/structBvr_1_1GLTF_1_1SParseInfo_1a4f3b8027ef00f438ad233805cd2fa17a" kind="variable"><name>name</name></member>
@@ -9875,20 +9878,22 @@
     <member refid="d6/dbd/structBvr_1_1Utils_1_1uuid_1a1af158dcd1d5eb2f45a8164fdc0d27f3" kind="function"><name>FromString</name></member>
     <member refid="d6/dbd/structBvr_1_1Utils_1_1uuid_1a5d0e9260c3effa243693facc35b6fb88" kind="function"><name>Generate</name></member>
     <member refid="d6/dbd/structBvr_1_1Utils_1_1uuid_1a6df9b2058db301969e8874c81e9db5b3" kind="function"><name>swap_endian</name></member>
-    <member refid="d6/dbd/structBvr_1_1Utils_1_1uuid_1a51d36b1e64c39a50ed201fb8a80f04dc" kind="function"><name>AppendBlockToStream</name></member>
+    <member refid="d6/dbd/structBvr_1_1Utils_1_1uuid_1a9036007f3475acadd56c79e4dde14480" kind="function"><name>AppendBlockToStream</name></member>
     <member refid="d6/dbd/structBvr_1_1Utils_1_1uuid_1a85cf40d8a554ec84e991bcf7003fd31c" kind="function"><name>ParseHexDigit</name></member>
     <member refid="d6/dbd/structBvr_1_1Utils_1_1uuid_1a6775a2e9724347066399d0e16620f06e" kind="function"><name>ParseHex</name></member>
-    <member refid="d6/dbd/structBvr_1_1Utils_1_1uuid_1a19f680e80e26ee5272edc2d7ff405206" kind="function"><name>RandomChar</name></member>
+    <member refid="d6/dbd/structBvr_1_1Utils_1_1uuid_1a1241d311c80a0daeecdf8e7a6ba4378f" kind="function"><name>RandomChar</name></member>
     <member refid="d6/dbd/structBvr_1_1Utils_1_1uuid_1a424c9267c9e5ff44965a7ebefcc48fb8" kind="function"><name>Invalidate</name></member>
   </compound>
   <compound refid="d0/ddb/structBvr_1_1UuidComponent" kind="struct"><name>Bvr::UuidComponent</name>
     <member refid="d0/ddb/structBvr_1_1UuidComponent_1af65e554cf32dd8380035ef97d2ef2fcd" kind="variable"><name>Uuid</name></member>
-    <member refid="d0/ddb/structBvr_1_1UuidComponent_1af1e8bd591fef568ca021b53c0332916c" kind="function"><name>UuidComponent</name></member>
+    <member refid="d0/ddb/structBvr_1_1UuidComponent_1a1971dfc7401cc1d4c79bb80ba8d6c823" kind="function"><name>UuidComponent</name></member>
     <member refid="d0/ddb/structBvr_1_1UuidComponent_1a1695b61cac64ee01723278019c77c4cb" kind="function"><name>UuidComponent</name></member>
     <member refid="d0/ddb/structBvr_1_1UuidComponent_1a4050169c1386b7a45f2c6c97a19b893d" kind="function"><name>operator==</name></member>
     <member refid="d0/ddb/structBvr_1_1UuidComponent_1a350bc040d256f62b5c9c9a7475f58d88" kind="function"><name>operator==</name></member>
     <member refid="d0/ddb/structBvr_1_1UuidComponent_1a05ccae4ec02ce927249808e468047097" kind="function"><name>operator!=</name></member>
     <member refid="d0/ddb/structBvr_1_1UuidComponent_1a1dbe36476b30f0b085a9c52ef27e6f4e" kind="function"><name>operator!=</name></member>
+    <member refid="d0/ddb/structBvr_1_1UuidComponent_1a791ebcaa84ab28101e2c572439e572e0" kind="function"><name>Generate</name></member>
+    <member refid="d0/ddb/structBvr_1_1UuidComponent_1abaf4fbfe7266546e98cdc6fc862e01dc" kind="function"><name>Null</name></member>
   </compound>
   <compound refid="d1/dee/structBvr_1_1TLoadingResult_1_1Value" kind="struct"><name>Bvr::TLoadingResult::Value</name>
     <member refid="d1/dee/structBvr_1_1TLoadingResult_1_1Value_1a2c85f42f006a580f33af13a04308d213" kind="variable"><name>m_val</name></member>
@@ -10506,7 +10511,6 @@
     <member refid="dd/da4/BvrSystem_8cpp_1a6c8208941d5558398499ae957fb9b730" kind="variable"><name>oldSizeY</name></member>
     <member refid="d1/ddc/Terrain_8cpp_1a22ff7065158ff82bdb98aa09d36efa10" kind="variable"><name>U16NormFac</name></member>
     <member refid="d1/ddc/Terrain_8cpp_1aeb42aae15083c1b362d245e224050f5a" kind="variable"><name>U8NormFac</name></member>
-    <member refid="d7/dfe/World_8cpp_1a258b95a74a8b258e6451dbc687f213a4" kind="variable"><name>lock</name></member>
     <member refid="d0/d35/WorldDefs_8hpp_1ac9f77fe6516d160929fc2c1b13d2ea0b" kind="variable"><name>IsWorldQuery</name></member>
     <member refid="da/df2/AssetBrowser_8cpp_1ac66565184252f370cb64058aae5d3cb3" kind="variable"><name>PanelPopupName</name></member>
     <member refid="da/df2/AssetBrowser_8cpp_1aa85fb18d2e94e42955a3d5153c0bb5b7" kind="variable"><name>FolderPopupName</name></member>
@@ -10784,6 +10788,7 @@
     <member refid="d4/d25/System_8hpp_1ab0aa48688ab26bf22997d6b742014eb7" kind="function"><name>Invoke</name></member>
     <member refid="da/d9f/JsonArchive_8cpp_1a3d26da3719bd7d615cb02c946016892c" kind="function"><name>IsBasicType</name></member>
     <member refid="da/d9f/JsonArchive_8cpp_1a3a9c0019b9330252c2a5800cfde0b87a" kind="function"><name>IsTagType</name></member>
+    <member refid="da/d9f/JsonArchive_8cpp_1a29be1617d9e4d01ac62c7aa70ffc2bc0" kind="function"><name>StrRef</name></member>
     <member refid="da/d9f/JsonArchive_8cpp_1ad129cbd0488b91e7018c97947decf8f7" kind="function"><name>IsVectorTypeImpl</name></member>
     <member refid="da/d9f/JsonArchive_8cpp_1ad2084d948af9c817f76b32aab231739a" kind="function"><name>IsTypeVector</name></member>
     <member refid="db/d43/AssetSystem_8cpp_1a36fa2afd6d1c4112156e6622be5fcc9d" kind="function"><name>SetBeginLoading</name></member>
@@ -12082,7 +12087,7 @@
     <member refid="d1/da5/Selection_8hpp_1a5afb02ca8055d2487e8ff965acaa2d79" kind="function"><name>BuildSelectionPlugin</name></member>
   </compound>
   <compound refid="d8/d92/namespaceBvr_1_1Serialisation" kind="namespace"><name>Bvr::Serialisation</name>
-    <member refid="da/d9f/JsonArchive_8cpp_1ac17218c8d9ab742ef979b48cfc04e6a2" kind="function"><name>RecordBasicType</name></member>
+    <member refid="da/d9f/JsonArchive_8cpp_1a950512fe7b73fa9e264ad29955852af0" kind="function"><name>RecordBasicType</name></member>
     <member refid="da/d9f/JsonArchive_8cpp_1a1ee0081c4a4f57b4c61f5b8a88693466" kind="function"><name>RecordProperty</name></member>
   </compound>
   <compound refid="d7/d63/namespaceBvr_1_1Sprite" kind="namespace"><name>Bvr::Sprite</name>
