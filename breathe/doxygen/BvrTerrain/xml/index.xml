@@ -17,10 +17,14 @@
     <member refid="class_bvr_1_1_c_terrain_1a5511b959a054407b206ada3bc897bed8" kind="function"><name>GetMesh</name></member>
     <member refid="class_bvr_1_1_c_terrain_1abc1060efa15d045bf9563aca661059a6" kind="function"><name>GetBounds</name></member>
     <member refid="class_bvr_1_1_c_terrain_1abd930c1c920e585e96e88f3cf641cafc" kind="function"><name>RecomputeBoundsAndNormals</name></member>
-    <member refid="class_bvr_1_1_c_terrain_1a694492a6384f8997e8d8307156aae012" kind="function"><name>ReadHeightValue</name></member>
+    <member refid="class_bvr_1_1_c_terrain_1ad0637d0f1ad26117d003d7fc525230fd" kind="function"><name>ReadHeightBilinear</name></member>
+    <member refid="class_bvr_1_1_c_terrain_1acc6a39f7d9a514b5264c4d1a7180d8e7" kind="function"><name>ReadHeightValue</name></member>
+    <member refid="class_bvr_1_1_c_terrain_1ac89bfabc928f42229cfab719056ca0a5" kind="function"><name>ReadWeightValue</name></member>
+    <member refid="class_bvr_1_1_c_terrain_1a7988b0072ef0cef6e9de2f6b3dbd58fa" kind="function"><name>ReadNormalValue</name></member>
     <member refid="class_bvr_1_1_c_terrain_1ab2b24a133291d572d44c0689d7bc0ece" kind="function"><name>WriteHeightValue</name></member>
+    <member refid="class_bvr_1_1_c_terrain_1a711c1b778c7320318ac68a7414afa64e" kind="function"><name>WriteWeightValue</name></member>
     <member refid="class_bvr_1_1_c_terrain_1a00d42d8d91ca0c6737266599bfc50744" kind="function"><name>AddHeightValue</name></member>
-    <member refid="class_bvr_1_1_c_terrain_1a291136bdd915595bf1774df7546613a4" kind="function"><name>AddLayerValue</name></member>
+    <member refid="class_bvr_1_1_c_terrain_1a6019413f74a4c64db80a5b4075df24a5" kind="function"><name>AddWeightValue</name></member>
     <member refid="class_bvr_1_1_c_terrain_1acb94bdc40e36473f0d61473211249e71" kind="function"><name>GetMaxAltitude</name></member>
     <member refid="class_bvr_1_1_c_terrain_1a7ec9c1b0e452c248419b883a1597a41c" kind="function"><name>InitSystem</name></member>
     <member refid="class_bvr_1_1_c_terrain_1ae2b654a5306ded269ef6693615b276a5" kind="function"><name>GenerateTemplateIndexBuffer</name></member>
@@ -29,7 +33,10 @@
     <member refid="class_bvr_1_1_c_terrain_1a5d76472070b71ec7a4bb74339b449773" kind="function"><name>UpdateConfiguration</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_terrain_editor_1_1_interaction" kind="struct"><name>Bvr::TerrainEditor::Interaction</name>
-    <member refid="struct_bvr_1_1_terrain_editor_1_1_interaction_1a89802d46d57dcaeae325feb65234b761" kind="variable"><name>position</name></member>
+    <member refid="struct_bvr_1_1_terrain_editor_1_1_interaction_1a7480b13acab2eb4bd5ff147a44d3d3c0" kind="variable"><name>WorldPos</name></member>
+    <member refid="struct_bvr_1_1_terrain_editor_1_1_interaction_1ad98b9453afa1b9e13ae504f4378a8044" kind="variable"><name>Normal</name></member>
+    <member refid="struct_bvr_1_1_terrain_editor_1_1_interaction_1a91dd35b0f6d9bdd9a5e008cbbbb58242" kind="variable"><name>HPosition</name></member>
+    <member refid="struct_bvr_1_1_terrain_editor_1_1_interaction_1ac32184877d5de6b145a020a78b2258cb" kind="variable"><name>Distance</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_s_noise_params" kind="struct"><name>Bvr::SNoiseParams</name>
     <member refid="struct_bvr_1_1_s_noise_params_1a89e1ab908fb69e2af9bc91a2609a54ac" kind="variable"><name>Amplitude</name></member>
@@ -45,6 +52,7 @@
     <member refid="struct_bvr_1_1_terrain_editor_1af0503072a1b01d85bcec35c5c9ba26c6" kind="variable"><name>CursorWorldDir</name></member>
     <member refid="struct_bvr_1_1_terrain_editor_1a5d2a1258212619f86a1feb0fbf13bd3e" kind="variable"><name>BrushSize</name></member>
     <member refid="struct_bvr_1_1_terrain_editor_1a8184f6f6cddcc5f0bf5600ff893843f5" kind="variable"><name>BrushStrength</name></member>
+    <member refid="struct_bvr_1_1_terrain_editor_1a6d5cd07905987fa4fc715e67bede1a64" kind="variable"><name>BrushType</name></member>
     <member refid="struct_bvr_1_1_terrain_editor_1a1d2bd3dbdbfee40a7c9971b657485854" kind="variable"><name>IsSubtractive</name></member>
     <member refid="struct_bvr_1_1_terrain_editor_1a1d4f5667c71a6dac60e2161449398d4c" kind="function"><name>TerrainEditor</name></member>
     <member refid="struct_bvr_1_1_terrain_editor_1aa93ce6a3fa2b914f2d8601069367cd18" kind="function"><name>TerrainEditor</name></member>
@@ -75,10 +83,19 @@
     <member refid="struct_bvr_1_1_terrain_layer_material_1ad3fe7469885c9f6b0a09001547f93e09" kind="variable"><name>IsGPUDriven</name></member>
     <member refid="struct_bvr_1_1_terrain_layer_material_1aa6b6e347c301d22e7b9b5fa4b8f78a34" kind="variable"><name>CastsShadow</name></member>
   </compound>
+  <compound refid="struct_bvr_1_1_terrain_object_layer" kind="struct"><name>Bvr::TerrainObjectLayer</name>
+    <member refid="struct_bvr_1_1_terrain_object_layer_1aff0c40746e1bd3686a97dd7bb5d1a9f3" kind="variable"><name>Object</name></member>
+    <member refid="struct_bvr_1_1_terrain_object_layer_1aadd8d5524d975fac8c060c6d6b51725c" kind="variable"><name>Count</name></member>
+    <member refid="struct_bvr_1_1_terrain_object_layer_1a5337cd974a8668c42ca503db64791826" kind="variable"><name>AngleThreshold</name></member>
+  </compound>
   <compound refid="struct_bvr_1_1_terrain_plugin" kind="struct"><name>Bvr::TerrainPlugin</name>
     <member refid="struct_bvr_1_1_terrain_plugin_1a1ba5c571fdb88264272e520f0675dd67" kind="function"><name>Build</name></member>
   </compound>
   <compound refid="namespace_bvr" kind="namespace"><name>Bvr</name>
+    <member refid="_terrain_editor_8hpp_1af5102a9143cecdc7d439d5a79b83dcf2" kind="enum"><name>EBrushType</name></member>
+    <member refid="_terrain_editor_8hpp_1af5102a9143cecdc7d439d5a79b83dcf2a36ec8dc76bf55896199b1276242944af" kind="enumvalue"><name>Raise</name></member>
+    <member refid="_terrain_editor_8hpp_1af5102a9143cecdc7d439d5a79b83dcf2ae510cdf33cd497134b47b9316314d4b4" kind="enumvalue"><name>Smooth</name></member>
+    <member refid="_terrain_editor_8hpp_1af5102a9143cecdc7d439d5a79b83dcf2ae93f994f01c537c4e2f7d8528c3eb5e9" kind="enumvalue"><name>Count</name></member>
     <member refid="_noise_8hpp_1aa9f360cee3b68a19a73fdb98a638f03e" kind="function"><name>PerlinNoise</name></member>
     <member refid="_noise_8hpp_1a7eb7d5f38c8ef42b4201195c987ebc68" kind="function"><name>Noised</name></member>
     <member refid="_noise_8hpp_1a56a1ee46a2fa9781803ef7752b65eecc" kind="function"><name>FBM</name></member>
