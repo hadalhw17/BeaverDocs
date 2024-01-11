@@ -159,6 +159,8 @@
       </node>
     </invincdepgraph>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_s_render_target" prot="public">Bvr::Renderer::SRenderTarget</innerclass>
+    <innerclass refid="struct_bvr_1_1_renderer_1_1_output_readback" prot="public">Bvr::Renderer::OutputReadback</innerclass>
+    <innerclass refid="struct_bvr_1_1_renderer_1_1_on_graph_executed" prot="public">Bvr::Renderer::OnGraphExecuted</innerclass>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_render_output_plugin" prot="public">Bvr::Renderer::RenderOutputPlugin</innerclass>
     <innerclass refid="struct_bvr_1_1_s_shadow_pass_info" prot="public">Bvr::SShadowPassInfo</innerclass>
     <innerclass refid="struct_bvr_1_1_s_render_info" prot="public">Bvr::SRenderInfo</innerclass>
@@ -181,76 +183,90 @@
 <codeline lineno="10"><highlight class="normal"></highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Bvr<sp/>{</highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Renderer<sp/>{</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Should<sp/>be<sp/>used<sp/>in<sp/>conjunction<sp/>with<sp/>Camera<sp/>to<sp/>render<sp/>from<sp/>ecs</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="15" refid="struct_bvr_1_1_renderer_1_1_s_render_target" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_renderer_1_1_s_render_target" kindref="compound">SRenderTarget</ref><sp/>{</highlight></codeline>
-<codeline lineno="17" refid="struct_bvr_1_1_renderer_1_1_s_render_target_1a180c298189b30456d3d18aaf0e91db71" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::variant&lt;Handle&lt;CImage&gt;,<sp/>Bvr::Window::Id&gt;<sp/><ref refid="struct_bvr_1_1_renderer_1_1_s_render_target_1a180c298189b30456d3d18aaf0e91db71" kindref="member">RenderTarget</ref>;</highlight></codeline>
-<codeline lineno="19" refid="struct_bvr_1_1_renderer_1_1_s_render_target_1ae84a4a2338ebab0ed203e5c01077bffc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::optional&lt;SViewport&gt;<sp/><ref refid="struct_bvr_1_1_renderer_1_1_s_render_target_1ae84a4a2338ebab0ed203e5c01077bffc" kindref="member">Viewport</ref>{std::nullopt};</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight></codeline>
-<codeline lineno="22" refid="struct_bvr_1_1_renderer_1_1_render_output_plugin" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_renderer_1_1_render_output_plugin" kindref="compound">RenderOutputPlugin</ref><sp/>{</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Build(App&amp;<sp/>app);</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="25"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Renderer</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight></codeline>
-<codeline lineno="27" refid="struct_bvr_1_1_s_shadow_pass_info" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_s_shadow_pass_info" kindref="compound">SShadowPassInfo</ref><sp/>{</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;CCamera&gt;<sp/>m_sunFrustums;</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;float&gt;<sp/><sp/><sp/>m_cascadeSplits;</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;float3&gt;<sp/><sp/>m_cascadeScales;</highlight></codeline>
-<codeline lineno="31"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">CGraphicsPipeline;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Should<sp/>be<sp/>used<sp/>in<sp/>conjunction<sp/>with<sp/>Camera<sp/>to<sp/>render<sp/>from<sp/>ecs</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="struct_bvr_1_1_renderer_1_1_s_render_target" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_renderer_1_1_s_render_target" kindref="compound">SRenderTarget</ref><sp/>{</highlight></codeline>
+<codeline lineno="19" refid="struct_bvr_1_1_renderer_1_1_s_render_target_1a180c298189b30456d3d18aaf0e91db71" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::variant&lt;Handle&lt;CImage&gt;,<sp/>Bvr::Window::Id&gt;<sp/><ref refid="struct_bvr_1_1_renderer_1_1_s_render_target_1a180c298189b30456d3d18aaf0e91db71" kindref="member">RenderTarget</ref>;</highlight></codeline>
+<codeline lineno="21" refid="struct_bvr_1_1_renderer_1_1_s_render_target_1ae84a4a2338ebab0ed203e5c01077bffc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::optional&lt;SViewport&gt;<sp/><ref refid="struct_bvr_1_1_renderer_1_1_s_render_target_1ae84a4a2338ebab0ed203e5c01077bffc" kindref="member">Viewport</ref>{std::nullopt};</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="struct_bvr_1_1_renderer_1_1_output_readback" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_renderer_1_1_output_readback" kindref="compound">OutputReadback</ref><sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>TCallback<sp/>=<sp/>std::function&lt;void(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>CImage&amp;)&gt;;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TCallback<sp/>OnReadback;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>OneTime<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"></highlight></codeline>
-<codeline lineno="34"><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/>ERenderMode<sp/>{</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>DefaultLit,<sp/><sp/></highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>Wireframe,<sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>PathTracing,<sp/></highlight></codeline>
-<codeline lineno="38"><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>Count</highlight></codeline>
-<codeline lineno="40"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"></highlight></codeline>
-<codeline lineno="43"><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/>EGraphicsPipelineFlags<sp/>{</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>None<sp/><sp/><sp/>=<sp/>0,</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>Only2D<sp/>=<sp/>Bit32(0),<sp/></highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>Empty<sp/>=</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Bit32(1),<sp/></highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>NoClear<sp/>=<sp/>Bit32(2),<sp/></highlight></codeline>
-<codeline lineno="49"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="50"><highlight class="normal">BVR_ENUM_OPERATORS(EGraphicsPipelineFlags);</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"></highlight></codeline>
-<codeline lineno="52" refid="struct_bvr_1_1_s_render_info" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_s_render_info" kindref="compound">SRenderInfo</ref><sp/>{</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="struct_bvr_1_1_s_render_info" kindref="compound">SRenderInfo</ref></highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>Default(EGraphicsPipelineFlags<sp/>eFlags<sp/>=<sp/>EGraphicsPipelineFlags::None)<sp/>{</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="struct_bvr_1_1_s_render_info" kindref="compound">SRenderInfo</ref>{</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.m_mainCamera<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>{},</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.m_viewport<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>Renderer::SViewport::Default(),</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.CameraEntity<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>{},</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.m_shadowInfo<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>{},</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.m_resolution<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>{0.f,<sp/>0.f},</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.m_pFrameContext<sp/><sp/><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.frameId<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0,</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.eRenderMode<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>ERenderMode::DefaultLit,</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.PipelineFlags<sp/><sp/><sp/><sp/><sp/>=<sp/>eFlags,</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"></highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>Is2DOnly()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(PipelineFlags<sp/>&amp;<sp/>EGraphicsPipelineFlags::Only2D)<sp/>!=</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EGraphicsPipelineFlags::None;</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="37" refid="struct_bvr_1_1_renderer_1_1_on_graph_executed" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_renderer_1_1_on_graph_executed" kindref="compound">OnGraphExecuted</ref><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>TCallback<sp/>=<sp/>std::function&lt;void(CWorld&amp;)&gt;;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TCallback<sp/>Callback;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>OneTime<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="struct_bvr_1_1_renderer_1_1_render_output_plugin" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_renderer_1_1_render_output_plugin" kindref="compound">RenderOutputPlugin</ref><sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Build(App&amp;<sp/>app);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Renderer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="struct_bvr_1_1_s_shadow_pass_info" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_s_shadow_pass_info" kindref="compound">SShadowPassInfo</ref><sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;CCamera&gt;<sp/>m_sunFrustums;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;float&gt;<sp/><sp/><sp/>m_cascadeSplits;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;float3&gt;<sp/><sp/>m_cascadeScales;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/>ERenderMode<sp/>{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>DefaultLit,<sp/><sp/></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>Wireframe,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>PathTracing,<sp/></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>Count</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/>EGraphicsPipelineFlags<sp/>{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>None<sp/><sp/><sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>Only2D<sp/>=<sp/>Bit32(0),<sp/></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>Empty<sp/>=</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Bit32(1),<sp/></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>NoClear<sp/>=<sp/>Bit32(2),<sp/></highlight></codeline>
+<codeline lineno="70"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">BVR_ENUM_OPERATORS(EGraphicsPipelineFlags);</highlight></codeline>
 <codeline lineno="72"><highlight class="normal"></highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>CCamera<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_mainCamera;</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_renderer_1_1_s_viewport" kindref="compound">Renderer::SViewport</ref><sp/><sp/><sp/><sp/>m_viewport{};</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>TEntity<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CameraEntity{};</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_s_shadow_pass_info" kindref="compound">SShadowPassInfo</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_shadowInfo;</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>uint2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_resolution{0,<sp/>0};</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>uint2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CursorPositionOffset{0,<sp/>0};</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_i_frame_context" kindref="compound">IFrameContext</ref>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_pFrameContext<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>frameId<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>ERenderMode<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>eRenderMode<sp/><sp/><sp/><sp/><sp/>=<sp/>ERenderMode::DefaultLit;</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>EGraphicsPipelineFlags<sp/>PipelineFlags<sp/><sp/><sp/>=<sp/>EGraphicsPipelineFlags::None;</highlight></codeline>
-<codeline lineno="83"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"></highlight></codeline>
-<codeline lineno="86"><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="struct_bvr_1_1_renderer_1_1_s_render_target" kindref="compound">TRenderTarget</ref><sp/>=<sp/><ref refid="struct_bvr_1_1_renderer_1_1_s_render_target" kindref="compound">Renderer::SRenderTarget</ref>;</highlight></codeline>
-<codeline lineno="88"><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="struct_bvr_1_1_renderer_1_1_s_viewport" kindref="compound">TViewport</ref><sp/>=<sp/><ref refid="struct_bvr_1_1_renderer_1_1_s_viewport" kindref="compound">Renderer::SViewport</ref>;</highlight></codeline>
-<codeline lineno="89"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Bvr</highlight></codeline>
+<codeline lineno="73" refid="struct_bvr_1_1_s_render_info" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_s_render_info" kindref="compound">SRenderInfo</ref><sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="struct_bvr_1_1_s_render_info" kindref="compound">SRenderInfo</ref></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>Default(EGraphicsPipelineFlags<sp/>eFlags<sp/>=<sp/>EGraphicsPipelineFlags::None)<sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="struct_bvr_1_1_s_render_info" kindref="compound">SRenderInfo</ref>{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.m_mainCamera<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>{},</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.m_viewport<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>Renderer::SViewport::Default(),</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.CameraEntity<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>{},</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.m_shadowInfo<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>{},</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.m_resolution<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>{0.f,<sp/>0.f},</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.m_pFrameContext<sp/><sp/><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.frameId<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.eRenderMode<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>ERenderMode::DefaultLit,</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.PipelineFlags<sp/><sp/><sp/><sp/><sp/>=<sp/>eFlags,</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>Is2DOnly()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(PipelineFlags<sp/>&amp;<sp/>EGraphicsPipelineFlags::Only2D)<sp/>!=</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EGraphicsPipelineFlags::None;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>CCamera<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_mainCamera;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_renderer_1_1_s_viewport" kindref="compound">Renderer::SViewport</ref><sp/><sp/><sp/><sp/>m_viewport{};</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>TEntity<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CameraEntity{};</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_s_shadow_pass_info" kindref="compound">SShadowPassInfo</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_shadowInfo;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>uint2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_resolution{0,<sp/>0};</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>uint2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CursorPositionOffset{0,<sp/>0};</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_i_frame_context" kindref="compound">IFrameContext</ref>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_pFrameContext<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>frameId<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>ERenderMode<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>eRenderMode<sp/><sp/><sp/><sp/><sp/>=<sp/>ERenderMode::DefaultLit;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>EGraphicsPipelineFlags<sp/>PipelineFlags<sp/><sp/><sp/>=<sp/>EGraphicsPipelineFlags::None;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="struct_bvr_1_1_renderer_1_1_s_render_target" kindref="compound">TRenderTarget</ref><sp/>=<sp/><ref refid="struct_bvr_1_1_renderer_1_1_s_render_target" kindref="compound">Renderer::SRenderTarget</ref>;</highlight></codeline>
+<codeline lineno="109"><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="struct_bvr_1_1_renderer_1_1_s_viewport" kindref="compound">TViewport</ref><sp/>=<sp/><ref refid="struct_bvr_1_1_renderer_1_1_s_viewport" kindref="compound">Renderer::SViewport</ref>;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Bvr</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderOutput.hpp"/>
   </compounddef>
