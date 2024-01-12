@@ -5,6 +5,8 @@
     <includes local="no">type_traits</includes>
     <includes local="no">tuple</includes>
     <includedby refid="_invokable_8hpp" local="yes">/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Invokable.hpp</includedby>
+    <includedby refid="_type_reg_8hpp" local="yes">/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/TypeReg.hpp</includedby>
+    <includedby refid="_method_8hpp" local="yes">/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/Method.hpp</includedby>
     <incdepgraph>
       <node id="1">
         <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/FunctionTraits.hpp</label>
@@ -22,15 +24,61 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
+      <node id="7">
+        <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/Archive.hpp</label>
+        <link refid="_archive_8hpp_source"/>
+      </node>
+      <node id="9">
+        <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/Method.hpp</label>
+        <link refid="_method_8hpp_source"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
       <node id="1">
         <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/FunctionTraits.hpp</label>
         <link refid="_function_traits_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/IniRW.hpp</label>
+        <link refid="_ini_r_w_8hpp_source"/>
+      </node>
+      <node id="4">
+        <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/Meta.hpp</label>
+        <link refid="_meta_8hpp_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/TypeReg.hpp</label>
+        <link refid="_type_reg_8hpp_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
       </node>
       <node id="2">
         <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Invokable.hpp</label>
         <link refid="_invokable_8hpp_source"/>
+      </node>
+      <node id="5">
+        <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp</label>
+        <link refid="_base_type_refl_8hpp_source"/>
+      </node>
+      <node id="8">
+        <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/TypeDesc.hpp</label>
+        <link refid="_type_desc_8hpp_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
       </node>
     </invincdepgraph>
     <innerclass refid="struct_bvr_1_1_detail_1_1make__void" prot="public">Bvr::Detail::make_void</innerclass>
@@ -183,37 +231,40 @@
 <codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::is_function&lt;F&gt;::value<sp/>||</highlight></codeline>
 <codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_detail_1_1_is_functor" kindref="compound">IsFunctor&lt;F&gt;::value</ref>&gt;;</highlight></codeline>
 <codeline lineno="113"><highlight class="normal"></highlight></codeline>
-<codeline lineno="114"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>F&gt;</highlight></codeline>
-<codeline lineno="115"><highlight class="normal">concept<sp/>Invokable<sp/>=<sp/>IsFunction&lt;F&gt;::value;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal">concept<sp/>IsCallable<sp/>=<sp/>IsFunction&lt;T&gt;::value;</highlight></codeline>
 <codeline lineno="116"><highlight class="normal"></highlight></codeline>
 <codeline lineno="117"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>F&gt;</highlight></codeline>
-<codeline lineno="118"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>IsVoidFunction<sp/>=<sp/>std::integral_constant&lt;</highlight></codeline>
-<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>bool,<sp/>std::is_same_v&lt;typename<sp/>TFunctionTraits&lt;F&gt;::ReturnT,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">&gt;&gt;;</highlight></codeline>
-<codeline lineno="120"><highlight class="normal"></highlight></codeline>
-<codeline lineno="121" refid="struct_bvr_1_1_detail_1_1_void_member_fn" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_detail_1_1_void_member_fn" kindref="compound">VoidMemberFn</ref><sp/>{</highlight></codeline>
-<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="struct_bvr_1_1_detail_1_1_void_member_fn" kindref="compound">Type</ref><sp/>=<sp/><ref refid="struct_bvr_1_1_detail_1_1_void_member_fn" kindref="compound">VoidMemberFn</ref>;</highlight></codeline>
-<codeline lineno="123"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="124" refid="struct_bvr_1_1_detail_1_1_return_member_fn" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_detail_1_1_return_member_fn" kindref="compound">ReturnMemberFn</ref><sp/>{</highlight></codeline>
-<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="struct_bvr_1_1_detail_1_1_return_member_fn" kindref="compound">Type</ref><sp/>=<sp/><ref refid="struct_bvr_1_1_detail_1_1_return_member_fn" kindref="compound">ReturnMemberFn</ref>;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">concept<sp/>Invokable<sp/>=<sp/>IsFunction&lt;F&gt;::value;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>F&gt;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>IsVoidFunction<sp/>=<sp/>std::integral_constant&lt;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>bool,<sp/>std::is_same_v&lt;typename<sp/>TFunctionTraits&lt;F&gt;::ReturnT,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">&gt;&gt;;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124" refid="struct_bvr_1_1_detail_1_1_void_member_fn" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_detail_1_1_void_member_fn" kindref="compound">VoidMemberFn</ref><sp/>{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="struct_bvr_1_1_detail_1_1_void_member_fn" kindref="compound">Type</ref><sp/>=<sp/><ref refid="struct_bvr_1_1_detail_1_1_void_member_fn" kindref="compound">VoidMemberFn</ref>;</highlight></codeline>
 <codeline lineno="126"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="127" refid="struct_bvr_1_1_detail_1_1_void_fn" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_detail_1_1_void_fn" kindref="compound">VoidFn</ref><sp/>{</highlight></codeline>
-<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="struct_bvr_1_1_detail_1_1_void_fn" kindref="compound">Type</ref><sp/>=<sp/><ref refid="struct_bvr_1_1_detail_1_1_void_fn" kindref="compound">VoidFn</ref>;</highlight></codeline>
+<codeline lineno="127" refid="struct_bvr_1_1_detail_1_1_return_member_fn" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_detail_1_1_return_member_fn" kindref="compound">ReturnMemberFn</ref><sp/>{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="struct_bvr_1_1_detail_1_1_return_member_fn" kindref="compound">Type</ref><sp/>=<sp/><ref refid="struct_bvr_1_1_detail_1_1_return_member_fn" kindref="compound">ReturnMemberFn</ref>;</highlight></codeline>
 <codeline lineno="129"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="130" refid="struct_bvr_1_1_detail_1_1_return_fn" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_detail_1_1_return_fn" kindref="compound">ReturnFn</ref><sp/>{</highlight></codeline>
-<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="struct_bvr_1_1_detail_1_1_return_fn" kindref="compound">Type</ref><sp/>=<sp/><ref refid="struct_bvr_1_1_detail_1_1_return_fn" kindref="compound">ReturnFn</ref>;</highlight></codeline>
+<codeline lineno="130" refid="struct_bvr_1_1_detail_1_1_void_fn" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_detail_1_1_void_fn" kindref="compound">VoidFn</ref><sp/>{</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="struct_bvr_1_1_detail_1_1_void_fn" kindref="compound">Type</ref><sp/>=<sp/><ref refid="struct_bvr_1_1_detail_1_1_void_fn" kindref="compound">VoidFn</ref>;</highlight></codeline>
 <codeline lineno="132"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="133"><highlight class="normal"></highlight></codeline>
-<codeline lineno="134"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Fn&gt;</highlight></codeline>
-<codeline lineno="135" refid="struct_bvr_1_1_detail_1_1_function_type" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_detail_1_1_function_type" kindref="compound">FunctionType</ref></highlight></codeline>
-<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>std::conditional_t&lt;</highlight></codeline>
-<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::is_member_function_pointer_v&lt;Fn&gt;,</highlight></codeline>
-<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::conditional_t&lt;IsVoidFunction&lt;Fn&gt;::value,<sp/>VoidMemberFn,</highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ReturnMemberFn&gt;,</highlight></codeline>
-<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::conditional_t&lt;</highlight></codeline>
-<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IsFunctor&lt;Fn&gt;::value,</highlight></codeline>
-<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::conditional_t&lt;IsVoidFunction&lt;Fn&gt;::value,<sp/>VoidFn,<sp/>ReturnFn&gt;,</highlight></codeline>
-<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>void&gt;&gt;<sp/>{};</highlight></codeline>
-<codeline lineno="144"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Bvr::Detail</highlight></codeline>
+<codeline lineno="133" refid="struct_bvr_1_1_detail_1_1_return_fn" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_detail_1_1_return_fn" kindref="compound">ReturnFn</ref><sp/>{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="struct_bvr_1_1_detail_1_1_return_fn" kindref="compound">Type</ref><sp/>=<sp/><ref refid="struct_bvr_1_1_detail_1_1_return_fn" kindref="compound">ReturnFn</ref>;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Fn&gt;</highlight></codeline>
+<codeline lineno="138" refid="struct_bvr_1_1_detail_1_1_function_type" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_detail_1_1_function_type" kindref="compound">FunctionType</ref></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>std::conditional_t&lt;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::is_member_function_pointer_v&lt;Fn&gt;,</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::conditional_t&lt;IsVoidFunction&lt;Fn&gt;::value,<sp/>VoidMemberFn,</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ReturnMemberFn&gt;,</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::conditional_t&lt;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IsFunctor&lt;Fn&gt;::value,</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::conditional_t&lt;IsVoidFunction&lt;Fn&gt;::value,<sp/>VoidFn,<sp/>ReturnFn&gt;,</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>void&gt;&gt;<sp/>{};</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Bvr::Detail</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/FunctionTraits.hpp"/>
   </compounddef>
