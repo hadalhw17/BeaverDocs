@@ -270,8 +270,8 @@
 <codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>World-&gt;GetComponent&lt;Bvr::UI::Style&gt;(CurrentEnt);</highlight></codeline>
 <codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="168"><highlight class="normal"></highlight></codeline>
-<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>CompT,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;<sp/>TBase&amp;<sp/>Patch(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>fn)<sp/>{</highlight></codeline>
-<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>World-&gt;GetRegistry().patch&lt;CompT&gt;(CurrentEnt,<sp/>fn);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>CompT,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;<sp/>TBase&amp;<sp/>Patch(T&amp;&amp;<sp/>fn)<sp/>{</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>World-&gt;GetRegistry().patch&lt;CompT&gt;(CurrentEnt,<sp/>std::forward&lt;T&gt;(fn));</highlight></codeline>
 <codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ReturnBase();</highlight></codeline>
 <codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="173"><highlight class="normal"></highlight></codeline>
