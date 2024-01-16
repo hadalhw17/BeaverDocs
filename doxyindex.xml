@@ -1109,6 +1109,7 @@
     <member refid="db/d4b/classBvr_1_1Renderer_1_1CCommandList_1acba97fe5b4a894a91a5f615ab5577e51" kind="function"><name>GetCurrentBuffer</name></member>
     <member refid="db/d4b/classBvr_1_1Renderer_1_1CCommandList_1ac3ea6a759eda7491481c0f0543fa0e2f" kind="function"><name>GetCurrentBuffer</name></member>
     <member refid="db/d4b/classBvr_1_1Renderer_1_1CCommandList_1a8cbceb1d2c3b38c935ba47c3b1bbd122" kind="function"><name>GetCommandListFence</name></member>
+    <member refid="db/d4b/classBvr_1_1Renderer_1_1CCommandList_1a1baee0b802f6f8a0df9b3ff082c5121a" kind="function"><name>WaitForFence</name></member>
     <member refid="db/d4b/classBvr_1_1Renderer_1_1CCommandList_1a6dfb13cf7b364394b797adf105ac7f13" kind="function"><name>Submit</name></member>
   </compound>
   <compound refid="df/dc8/classBvr_1_1Renderer_1_1CCommandListManager" kind="class"><name>Bvr::Renderer::CCommandListManager</name>
@@ -1263,14 +1264,12 @@
     <member refid="d7/d33/classBvr_1_1Renderer_1_1CDescriptorManager_1a87e6fa5b55b2b76edf09b4129b491c41" kind="function"><name>ReservePool</name></member>
   </compound>
   <compound refid="df/dc5/classBvr_1_1Renderer_1_1CDevice" kind="class"><name>Bvr::Renderer::CDevice</name>
-    <member refid="df/dc5/classBvr_1_1Renderer_1_1CDevice_1a9f04440629ec04498c140a3ca194666d" kind="typedef"><name>ReleaseTypeList</name></member>
     <member refid="df/dc5/classBvr_1_1Renderer_1_1CDevice_1a81c801285cdc03b9d076485972df9308" kind="variable"><name>m_instance</name></member>
     <member refid="df/dc5/classBvr_1_1Renderer_1_1CDevice_1a295f0d7a98fab0be9ba63fb112cf30db" kind="variable"><name>m_hwDevice</name></member>
     <member refid="df/dc5/classBvr_1_1Renderer_1_1CDevice_1a5c5872599dd907c2b438ee289dcbd804" kind="variable"><name>m_vkDevice</name></member>
     <member refid="df/dc5/classBvr_1_1Renderer_1_1CDevice_1a90697563885a55647815529637752dcc" kind="variable"><name>m_queues</name></member>
     <member refid="df/dc5/classBvr_1_1Renderer_1_1CDevice_1aac31e4fcbb621e10558cd03adce8443f" kind="variable"><name>m_pCommandListManager</name></member>
-    <member refid="df/dc5/classBvr_1_1Renderer_1_1CDevice_1a22f7ad2801f69fbe93bb7085dcb8c045" kind="variable"><name>m_releaseHeapLock</name></member>
-    <member refid="df/dc5/classBvr_1_1Renderer_1_1CDevice_1a2a46428425128591e02c1a98a29331d8" kind="variable"><name>m_releaseHeap</name></member>
+    <member refid="df/dc5/classBvr_1_1Renderer_1_1CDevice_1a4bb3143dae5f68a744e2f849fd2a86fe" kind="variable"><name>m_releaseHeap</name></member>
     <member refid="df/dc5/classBvr_1_1Renderer_1_1CDevice_1a57b0b4e74c063dd8e26deb5e044acfe9" kind="variable"><name>m_commandListPools</name></member>
     <member refid="df/dc5/classBvr_1_1Renderer_1_1CDevice_1a8c48787e42d1cbb4d96b595a37c2ea1a" kind="function"><name>CDevice</name></member>
     <member refid="df/dc5/classBvr_1_1Renderer_1_1CDevice_1a04b1dc4d47ef1daa603db1bc3cd2f4ec" kind="function"><name>~CDevice</name></member>
@@ -1278,7 +1277,9 @@
     <member refid="df/dc5/classBvr_1_1Renderer_1_1CDevice_1a2506b65ebdd189946993424c679c8be0" kind="function"><name>GetGPUInfo</name></member>
     <member refid="df/dc5/classBvr_1_1Renderer_1_1CDevice_1a02f9cc95a9ad034fa12683f3ba01184e" kind="function"><name>GetInstance</name></member>
     <member refid="df/dc5/classBvr_1_1Renderer_1_1CDevice_1ad988e9f2b0d1a3eb0dfb831fe9661317" kind="function"><name>GetDevice</name></member>
-    <member refid="df/dc5/classBvr_1_1Renderer_1_1CDevice_1a5567da97b18be9497af8dfaa618ff350" kind="function"><name>GetQueue</name></member>
+    <member refid="df/dc5/classBvr_1_1Renderer_1_1CDevice_1add57ca647ba7cb4898a8f711556e3d1d" kind="function"><name>GetQueue</name></member>
+    <member refid="df/dc5/classBvr_1_1Renderer_1_1CDevice_1a62df001cf61ac222521d16460e626a10" kind="function"><name>GetQueue</name></member>
+    <member refid="df/dc5/classBvr_1_1Renderer_1_1CDevice_1a02722b1dc469855ce90fa2c7bce9fa80" kind="function"><name>GetQueueFamily</name></member>
     <member refid="df/dc5/classBvr_1_1Renderer_1_1CDevice_1a99d7b46b85d8c6a6424711208dbc45ae" kind="function"><name>GetCommandListManager</name></member>
     <member refid="df/dc5/classBvr_1_1Renderer_1_1CDevice_1aa19d578dd4eaf616896489f1472d6817" kind="function"><name>FlushAllCommands</name></member>
     <member refid="df/dc5/classBvr_1_1Renderer_1_1CDevice_1abc8c1fd986c6205c840ac935529273e4" kind="function"><name>WaitCompletion</name></member>
@@ -1288,7 +1289,6 @@
     <member refid="df/dc5/classBvr_1_1Renderer_1_1CDevice_1ae3b9c204abdf64124abf31781cc5227f" kind="function"><name>EnsurePresentQueue</name></member>
     <member refid="df/dc5/classBvr_1_1Renderer_1_1CDevice_1a99667b82d91172f40c233bf5cb211dde" kind="function"><name>GetCommandListPool</name></member>
     <member refid="df/dc5/classBvr_1_1Renderer_1_1CDevice_1a83f375222d540dae8f5f5bfc1abb394f" kind="function"><name>Release</name></member>
-    <member refid="df/dc5/classBvr_1_1Renderer_1_1CDevice_1ad0e9fb5d5290a221a7515a95fa8bfb1b" kind="function"><name>ScheduleForDelete</name></member>
     <member refid="df/dc5/classBvr_1_1Renderer_1_1CDevice_1aa821e58d03613da07bd5753dc969c2dc" kind="function"><name>Init</name></member>
   </compound>
   <compound refid="d5/d1a/classBvr_1_1Renderer_1_1Device_1_1CDeviceComputePSO" kind="class"><name>Bvr::Renderer::Device::CDeviceComputePSO</name>
@@ -1388,7 +1388,7 @@
     <member refid="da/d1d/classBvr_1_1Renderer_1_1Detail_1_1CDXCompiler_1a8b2c810ba7824b22019ed120d3c21224" kind="variable"><name>m_includeHandler</name></member>
     <member refid="da/d1d/classBvr_1_1Renderer_1_1Detail_1_1CDXCompiler_1a8469bfe00ee23af62790540645aceac8" kind="variable"><name>m_defaultParams</name></member>
     <member refid="da/d1d/classBvr_1_1Renderer_1_1Detail_1_1CDXCompiler_1ac5c6c6fd1aff8434b580ac4532b81778" kind="function"><name>Create</name></member>
-    <member refid="da/d1d/classBvr_1_1Renderer_1_1Detail_1_1CDXCompiler_1aed1b5ed5168db0e13af5ec88e3f5be2c" kind="function"><name>Compile</name></member>
+    <member refid="da/d1d/classBvr_1_1Renderer_1_1Detail_1_1CDXCompiler_1ac53bfb344cd94a2ac564d8eea7e71967" kind="function"><name>Compile</name></member>
   </compound>
   <compound refid="d0/d1e/classBvr_1_1CDynamicLibrary" kind="class"><name>Bvr::CDynamicLibrary</name>
     <member refid="d0/d1e/classBvr_1_1CDynamicLibrary_1adbb6a66e58644fadbac6c096e2512234" kind="variable"><name>hModule</name></member>
@@ -1779,12 +1779,10 @@
     <member refid="de/dc6/classBvr_1_1Renderer_1_1CFrameContext_1a0c4f609ec462ab591a578f81abae6c08" kind="variable"><name>DepthSliceCount</name></member>
     <member refid="de/dc6/classBvr_1_1Renderer_1_1CFrameContext_1a02c7c73f31d1186a8ade261063b74b9b" kind="variable"><name>MaxLights</name></member>
     <member refid="de/dc6/classBvr_1_1Renderer_1_1CFrameContext_1af806afd86feb30ff96b7e0d95426319b" kind="variable"><name>m_renderLists</name></member>
-    <member refid="de/dc6/classBvr_1_1Renderer_1_1CFrameContext_1a7738b156fa58d2d5208d46195c99ecd3" kind="variable"><name>m_renderInfo</name></member>
     <member refid="de/dc6/classBvr_1_1Renderer_1_1CFrameContext_1a668e0c509f01f22b0045b60d8d6d449e" kind="variable"><name>m_pointLights</name></member>
     <member refid="de/dc6/classBvr_1_1Renderer_1_1CFrameContext_1a9500da735b5c24d9f3e3145c4f6a6ed7" kind="variable"><name>m_timer</name></member>
     <member refid="de/dc6/classBvr_1_1Renderer_1_1CFrameContext_1a9d9af1266e4593eb1db4b6e7c59e6fde" kind="variable"><name>time</name></member>
     <member refid="de/dc6/classBvr_1_1Renderer_1_1CFrameContext_1ab574229c7b4721c1db9d5ebc3de67b48" kind="variable"><name>m_frameIdx</name></member>
-    <member refid="de/dc6/classBvr_1_1Renderer_1_1CFrameContext_1a604232c08f060e63a7394f0490ac859e" kind="variable"><name>m_perViewResourceSet</name></member>
     <member refid="de/dc6/classBvr_1_1Renderer_1_1CFrameContext_1a75a51e4b9ebb166c4ec706332b3e5edd" kind="variable"><name>m_pGraphicsPipeline</name></member>
     <member refid="de/dc6/classBvr_1_1Renderer_1_1CFrameContext_1ad5a7ba829d50690e0e87bf2698cb71b3" kind="variable"><name>m_hLightListViewCB</name></member>
     <member refid="de/dc6/classBvr_1_1Renderer_1_1CFrameContext_1a866e86e5191fa1f35626f6ee7136e4e7" kind="variable"><name>m_pGPUScene</name></member>
@@ -1808,15 +1806,15 @@
     <member refid="de/dc6/classBvr_1_1Renderer_1_1CFrameContext_1a35b76c16da204e62575b2eb914846807" kind="function"><name>SetGraphicsPipeline</name></member>
     <member refid="de/dc6/classBvr_1_1Renderer_1_1CFrameContext_1a14134dcac1573c5d8387cd337da692e4" kind="function"><name>GetGraphicsPipeline</name></member>
     <member refid="de/dc6/classBvr_1_1Renderer_1_1CFrameContext_1a370d7857119a1f59deab38b51d3eb0ed" kind="function"><name>EndFrame</name></member>
-    <member refid="de/dc6/classBvr_1_1Renderer_1_1CFrameContext_1a67b19d72f0133844cee3f2f56dd8021b" kind="function"><name>GetRenderInfo</name></member>
-    <member refid="de/dc6/classBvr_1_1Renderer_1_1CFrameContext_1a2d86ad29516151c83035c8bb6db82477" kind="function"><name>GetRenderInfo</name></member>
+    <member refid="de/dc6/classBvr_1_1Renderer_1_1CFrameContext_1aba151702d551eb0f4270366775f41485" kind="function"><name>GetRenderInfo</name></member>
+    <member refid="de/dc6/classBvr_1_1Renderer_1_1CFrameContext_1ac085171603b7d780ff4dcabdabc10070" kind="function"><name>GetRenderInfo</name></member>
     <member refid="de/dc6/classBvr_1_1Renderer_1_1CFrameContext_1ad39cc382d2f40e3927e23d16c673684c" kind="function"><name>FinaliseContext</name></member>
     <member refid="de/dc6/classBvr_1_1Renderer_1_1CFrameContext_1a8fddc9b768757120dad20fba01726200" kind="function"><name>AddMeshPrimitive</name></member>
     <member refid="de/dc6/classBvr_1_1Renderer_1_1CFrameContext_1aaaca8a022a020f9d03c501f0352049f7" kind="function"><name>AddMeshPrimitives</name></member>
     <member refid="de/dc6/classBvr_1_1Renderer_1_1CFrameContext_1a665d8768d75db672da021b7c06976896" kind="function"><name>AddRenderMesh</name></member>
     <member refid="de/dc6/classBvr_1_1Renderer_1_1CFrameContext_1a8b1c7d93adf26028d44b777444cc89d8" kind="function"><name>AddPointLight</name></member>
-    <member refid="de/dc6/classBvr_1_1Renderer_1_1CFrameContext_1a788ac134abbf06315fda8d7126c6a92c" kind="function"><name>GetPerViewResourceSet</name></member>
-    <member refid="de/dc6/classBvr_1_1Renderer_1_1CFrameContext_1ae437513ed5e4a009acd642a255fb050a" kind="function"><name>GetPerViewResourceSet</name></member>
+    <member refid="de/dc6/classBvr_1_1Renderer_1_1CFrameContext_1adc64aed49202d8a8d7f097d1e8d83364" kind="function"><name>GetPerViewResourceSet</name></member>
+    <member refid="de/dc6/classBvr_1_1Renderer_1_1CFrameContext_1a9fce0ed03bb1341e7a4c38d082ebd8b1" kind="function"><name>GetPerViewResourceSet</name></member>
     <member refid="de/dc6/classBvr_1_1Renderer_1_1CFrameContext_1a572fb433fe75b062880878b45339c128" kind="function"><name>GetIPDC</name></member>
     <member refid="de/dc6/classBvr_1_1Renderer_1_1CFrameContext_1a48a1c63ed786696d24dd8af9bc02bead" kind="function"><name>GetPDC</name></member>
     <member refid="de/dc6/classBvr_1_1Renderer_1_1CFrameContext_1a2bcef5008467bc125cdaa8189b00a590" kind="function"><name>GetGPUScene</name></member>
@@ -2025,10 +2023,10 @@
     <member refid="d4/db9/classBvr_1_1Renderer_1_1CGraphicsPipeline_1a17f23c40d9de7075847f1b1070a2aa56" kind="function"><name>GetPipelineResources</name></member>
     <member refid="d4/db9/classBvr_1_1Renderer_1_1CGraphicsPipeline_1ab893f9236130680d198dccda94223516" kind="function"><name>GetPipelineResources</name></member>
     <member refid="d4/db9/classBvr_1_1Renderer_1_1CGraphicsPipeline_1a24293b8352a6d108d9f3b3a37caa09ea" kind="function"><name>FrameContext</name></member>
-    <member refid="d4/db9/classBvr_1_1Renderer_1_1CGraphicsPipeline_1a3abc95c90c78e0b5b58b1f3162b6aa35" kind="function"><name>GetPipelineOutput</name></member>
+    <member refid="d4/db9/classBvr_1_1Renderer_1_1CGraphicsPipeline_1a6cdef054f2e84758a3b8386fd0d0e36c" kind="function"><name>GetPipelineOutput</name></member>
     <member refid="d4/db9/classBvr_1_1Renderer_1_1CGraphicsPipeline_1ac797a54bb7441207268925ca5a704f55" kind="function"><name>FrameContext</name></member>
     <member refid="d4/db9/classBvr_1_1Renderer_1_1CGraphicsPipeline_1a180c753e0dc365a5d88863b132c92434" kind="function"><name>ICtx</name></member>
-    <member refid="d4/db9/classBvr_1_1Renderer_1_1CGraphicsPipeline_1a2ed399e83cf41539458fe453aab2044d" kind="function"><name>SetRenderOutput</name></member>
+    <member refid="d4/db9/classBvr_1_1Renderer_1_1CGraphicsPipeline_1af31ed3ecabce093fcfe369a3cb1b2372" kind="function"><name>SetRenderOutput</name></member>
     <member refid="d4/db9/classBvr_1_1Renderer_1_1CGraphicsPipeline_1a9487cee5b3600f8f793b402d9e067f97" kind="function"><name>GetStage</name></member>
     <member refid="d4/db9/classBvr_1_1Renderer_1_1CGraphicsPipeline_1a72edd391801f085dd2e1ca5f8ae4dd07" kind="function"><name>RegisterStage</name></member>
     <member refid="d4/db9/classBvr_1_1Renderer_1_1CGraphicsPipeline_1a8e0655620192c102f420c0b93c967ac4" kind="function"><name>IsStageActive</name></member>
@@ -2075,6 +2073,8 @@
     <member refid="d2/d2c/classBvr_1_1Renderer_1_1CGraphicsResource_1a97a388fa3ef4d0fdd3960bf9afbb244b" kind="function"><name>Release</name></member>
     <member refid="d2/d2c/classBvr_1_1Renderer_1_1CGraphicsResource_1a3d1c62522fdddbd03a5284edd3d44bf5" kind="function"><name>BindMemory</name></member>
     <member refid="d2/d2c/classBvr_1_1Renderer_1_1CGraphicsResource_1abf6911e7a7f0edc5ef7a0cf3db17a4e1" kind="function"><name>SetDebugName</name></member>
+    <member refid="d2/d2c/classBvr_1_1Renderer_1_1CGraphicsResource_1adc2f13db72388ada1f6206850da1f906" kind="function"><name>Allocate</name></member>
+    <member refid="d2/d2c/classBvr_1_1Renderer_1_1CGraphicsResource_1acc800896b7c67a6c9ec18bbf0e422482" kind="function"><name>DecodeHandle</name></member>
     <member refid="d2/d2c/classBvr_1_1Renderer_1_1CGraphicsResource_1a9d573fe0c4805a12e9be30c48d802c7d" kind="function"><name>GetMemoryRange</name></member>
     <member refid="d2/d2c/classBvr_1_1Renderer_1_1CGraphicsResource_1aaa53b2fedc90b27128d4ac5d623e0ce5" kind="function"><name>SetMemoryAllocation</name></member>
     <member refid="d2/d2c/classBvr_1_1Renderer_1_1CGraphicsResource_1a6f59387c17b92ded99953d33b09b6ce6" kind="function"><name>GetSize</name></member>
@@ -2140,7 +2140,7 @@
     <member refid="d4/dd2/classBvr_1_1Renderer_1_1CHWDevice_1aedb5f6c7ea26358e5f246e6097e4bc9c" kind="function"><name>~CHWDevice</name></member>
     <member refid="d4/dd2/classBvr_1_1Renderer_1_1CHWDevice_1a988b2310e0ba5ee1ded8084fedbbcaec" kind="function"><name>GetInstance</name></member>
     <member refid="d4/dd2/classBvr_1_1Renderer_1_1CHWDevice_1a58cf7cc6782655f98ef710c22190901f" kind="function"><name>GetDevice</name></member>
-    <member refid="d4/dd2/classBvr_1_1Renderer_1_1CHWDevice_1aaab2ce194e6bb0f165a5356e2c405f95" kind="function"><name>GetPhysicalDeviceProperties</name></member>
+    <member refid="d4/dd2/classBvr_1_1Renderer_1_1CHWDevice_1adaf3182d034b3f269b7c201028622c33" kind="function"><name>GetPhysicalDeviceProperties</name></member>
     <member refid="d4/dd2/classBvr_1_1Renderer_1_1CHWDevice_1aed1c22038243b691a5d027b6e8b312ab" kind="function"><name>GetQueueFamilyIndex</name></member>
     <member refid="d4/dd2/classBvr_1_1Renderer_1_1CHWDevice_1a8d3dd89a417baee5dc6c9d9d8eed73a2" kind="function"><name>FindPresentQueue</name></member>
     <member refid="d4/dd2/classBvr_1_1Renderer_1_1CHWDevice_1ac4a0f51fdbdac5c8e82d92957fe45a94" kind="function"><name>IsDedicated</name></member>
@@ -2601,7 +2601,7 @@
     <member refid="d6/d6c/classBvr_1_1CMesh_1a4430db3724db2cb5ffc3f5d9213fbcbb" kind="variable"><name>m_primitives</name></member>
     <member refid="d6/d6c/classBvr_1_1CMesh_1aba984ab92a4bf1b1304eb12d1cae8af3" kind="variable"><name>m_streamMap</name></member>
     <member refid="d6/d6c/classBvr_1_1CMesh_1a05517cfc03d29caa9d452d4f3f88c387" kind="variable"><name>m_indexStream</name></member>
-    <member refid="d6/d6c/classBvr_1_1CMesh_1a63fb9dd35243a83809533087e7311109" kind="variable"><name>m_topology</name></member>
+    <member refid="d6/d6c/classBvr_1_1CMesh_1aa968cafe8f3cbb13c23e1b5dff48061f" kind="variable"><name>m_topology</name></member>
     <member refid="d6/d6c/classBvr_1_1CMesh_1a5b6fb7c5506d6b72c03262deb6655efb" kind="variable"><name>m_allowRaytracing</name></member>
     <member refid="d6/d6c/classBvr_1_1CMesh_1a63b8b06d2e12e3619a2a16a299224604" kind="function"><name>CMesh</name></member>
     <member refid="d6/d6c/classBvr_1_1CMesh_1ad3eaa5fa29f6fd5465a000c16c07bb20" kind="function"><name>~CMesh</name></member>
@@ -2612,14 +2612,14 @@
     <member refid="d6/d6c/classBvr_1_1CMesh_1a107ad6828ddaafd567679611d7f115c4" kind="function"><name>LoadGeometry</name></member>
     <member refid="d6/d6c/classBvr_1_1CMesh_1a54ded3385b2d3cae72502c37a5f2ce7c" kind="function"><name>AppendGeometry</name></member>
     <member refid="d6/d6c/classBvr_1_1CMesh_1a199afe69cef37ff0d10f8b043b53e1ed" kind="function"><name>SetMaterial</name></member>
-    <member refid="d6/d6c/classBvr_1_1CMesh_1ae81fbfb3117f79d4fd42200009194452" kind="function"><name>SetTopology</name></member>
+    <member refid="d6/d6c/classBvr_1_1CMesh_1adaacee6072766c6fe7b83d1f2000c340" kind="function"><name>SetTopology</name></member>
     <member refid="d6/d6c/classBvr_1_1CMesh_1afe5b835aec4b688cb56df3b9e681ffab" kind="function"><name>AllowRaytracing</name></member>
     <member refid="d6/d6c/classBvr_1_1CMesh_1aa023f2a7e7283f2265631b84283d8166" kind="function"><name>AllowRaytracing</name></member>
-    <member refid="d6/d6c/classBvr_1_1CMesh_1a88443542ad14f09d7c67f3195e9544cf" kind="function"><name>GetTopology</name></member>
+    <member refid="d6/d6c/classBvr_1_1CMesh_1acf5e79c3d457e81dcefe8cf2c2c4dc94" kind="function"><name>GetTopology</name></member>
     <member refid="d6/d6c/classBvr_1_1CMesh_1a31016ae6256615aba09ffe4ca8a02cd0" kind="function"><name>GetBounds</name></member>
+    <member refid="d6/d6c/classBvr_1_1CMesh_1a4a6a8dcf612d0021c40af3c5ff5f11eb" kind="function"><name>GetIndexStream</name></member>
     <member refid="d6/d6c/classBvr_1_1CMesh_1a3aa4b0873eed7ab84f4e6d80bb14e802" kind="function"><name>GetStreamMap</name></member>
     <member refid="d6/d6c/classBvr_1_1CMesh_1a8abb036b56fb71bfce036c87ff884dbe" kind="function"><name>GetStreamMap</name></member>
-    <member refid="d6/d6c/classBvr_1_1CMesh_1a4a6a8dcf612d0021c40af3c5ff5f11eb" kind="function"><name>GetIndexStream</name></member>
     <member refid="d6/d6c/classBvr_1_1CMesh_1ac1ae66cb4a9434a6728fc5e4d05bf171" kind="function"><name>GetRenderPrimitives</name></member>
     <member refid="d6/d6c/classBvr_1_1CMesh_1a39571abc8c8d1f85a51e58bc1f8b4ce2" kind="function"><name>GetRenderPrimitives</name></member>
     <member refid="d6/d6c/classBvr_1_1CMesh_1a0e582950875b15e02b3da6f33033ac06" kind="function"><name>Reset</name></member>
@@ -3202,7 +3202,7 @@
     <member refid="da/de5/classBvr_1_1Renderer_1_1CShader_1a3688808547cc4891564b0445bc67a405" kind="variable"><name>m_pipelineLayout</name></member>
     <member refid="da/de5/classBvr_1_1Renderer_1_1CShader_1a1fffee2bbe58caba47b93fe8099a9881" kind="function"><name>CShader</name></member>
     <member refid="da/de5/classBvr_1_1Renderer_1_1CShader_1afd8d55306885067f791936edfd4152f7" kind="function"><name>~CShader</name></member>
-    <member refid="da/de5/classBvr_1_1Renderer_1_1CShader_1a385c9adf601b3d3008b2d1fceb2bfbb6" kind="function"><name>Init</name></member>
+    <member refid="da/de5/classBvr_1_1Renderer_1_1CShader_1a8f7cbe66de40763ef16355e4c8271527" kind="function"><name>Init</name></member>
     <member refid="da/de5/classBvr_1_1Renderer_1_1CShader_1a1389b676ad31df92113a3843df865ac8" kind="function"><name>ResetTempData</name></member>
     <member refid="da/de5/classBvr_1_1Renderer_1_1CShader_1a3eb3ec3442e64737a90a1711367886af" kind="function"><name>IsCompiled</name></member>
     <member refid="da/de5/classBvr_1_1Renderer_1_1CShader_1acfabfd5b1d8113c8e4eaadb656a80fd8" kind="function"><name>GetHash</name></member>
@@ -3210,7 +3210,7 @@
     <member refid="da/de5/classBvr_1_1Renderer_1_1CShader_1a065ce8b0a9b68b5d8c61d32654d0711b" kind="function"><name>GetTechniqueName</name></member>
     <member refid="da/de5/classBvr_1_1Renderer_1_1CShader_1ac81ae5dbdceec2e24167364fdd44f3ec" kind="function"><name>GetName</name></member>
     <member refid="da/de5/classBvr_1_1Renderer_1_1CShader_1af79278512662fc886cdfd345411c6eaa" kind="function"><name>GetDefineMap</name></member>
-    <member refid="da/de5/classBvr_1_1Renderer_1_1CShader_1a58efec25f62c17dba45cf9be6631b4d8" kind="function"><name>GetShaderReflection</name></member>
+    <member refid="da/de5/classBvr_1_1Renderer_1_1CShader_1aa8f39f9bbc5e8c274762a769939b4ef8" kind="function"><name>GetShaderReflection</name></member>
     <member refid="da/de5/classBvr_1_1Renderer_1_1CShader_1adf255566bb750a26fec5543a997e2054" kind="function"><name>GetVertexAttributes</name></member>
     <member refid="da/de5/classBvr_1_1Renderer_1_1CShader_1ab6045225e07cd24f908383eb68de882f" kind="function"><name>GetPipelineLayout</name></member>
     <member refid="da/de5/classBvr_1_1Renderer_1_1CShader_1abfeb3edd765a90a2b43b3b46faf2e9cf" kind="function"><name>GetSemanticIndex</name></member>
@@ -3228,11 +3228,11 @@
     <member refid="d0/d51/classBvr_1_1Renderer_1_1CShaderCompiler_1abdaf0a44b844ab2406e1b90ef7555353" kind="variable"><name>s_pCacheFolderName</name></member>
     <member refid="d0/d51/classBvr_1_1Renderer_1_1CShaderCompiler_1a07f1d48a0dc7953aa96086f3a319701a" kind="function"><name>Init</name></member>
     <member refid="d0/d51/classBvr_1_1Renderer_1_1CShaderCompiler_1aa02c6ebaaae55f21d72ba7c2c7db5015" kind="function"><name>Release</name></member>
-    <member refid="d0/d51/classBvr_1_1Renderer_1_1CShaderCompiler_1afd6b08d9268eedad272c016f1cd93468" kind="function"><name>Compile</name></member>
+    <member refid="d0/d51/classBvr_1_1Renderer_1_1CShaderCompiler_1afa6c2cd228273ec0057920ac3c7230fc" kind="function"><name>Compile</name></member>
     <member refid="d0/d51/classBvr_1_1Renderer_1_1CShaderCompiler_1a0010a028c13be501ae18585b3172c8cc" kind="function"><name>GetCachePath</name></member>
     <member refid="d0/d51/classBvr_1_1Renderer_1_1CShaderCompiler_1a8995b3c0f0ac84e999f9a26f30ce0484" kind="function"><name>GetDefaultIncludePath</name></member>
     <member refid="d0/d51/classBvr_1_1Renderer_1_1CShaderCompiler_1ac18e441d147f6bd2237a7a473a0b28a4" kind="function"><name>ParseTechnique</name></member>
-    <member refid="d0/d51/classBvr_1_1Renderer_1_1CShaderCompiler_1a0a854a72a4b1f0e86f1fb66b79245649" kind="function"><name>CompileStage</name></member>
+    <member refid="d0/d51/classBvr_1_1Renderer_1_1CShaderCompiler_1a766cde41b8fca4e767c44c6bf2ddadb1" kind="function"><name>CompileStage</name></member>
     <member refid="d0/d51/classBvr_1_1Renderer_1_1CShaderCompiler_1a5a4a2d1c9af62189d6092d05d1da4602" kind="function"><name>GetStagePrefix</name></member>
     <member refid="d0/d51/classBvr_1_1Renderer_1_1CShaderCompiler_1a34f97e1a633b761fd1e68f6068c5da23" kind="function"><name>GetSystemDefines</name></member>
     <member refid="d0/d51/classBvr_1_1Renderer_1_1CShaderCompiler_1a70d4e827cd7fae6a371e7f63bd3d57a1" kind="function"><name>GetCommonShaderParams</name></member>
@@ -3253,7 +3253,7 @@
     <member refid="d4/d42/classBvr_1_1Renderer_1_1CShaderReflection_1a583623d350881493975a38dd1767b035" kind="variable"><name>m_pImpl</name></member>
     <member refid="d4/d42/classBvr_1_1Renderer_1_1CShaderReflection_1af3bf434fe999cac8f7a4b2c30922b1e0" kind="variable"><name>m_entryPoint</name></member>
     <member refid="d4/d42/classBvr_1_1Renderer_1_1CShaderReflection_1a836e51a948ebd3981614e7b979cd57d5" kind="variable"><name>m_eShaderType</name></member>
-    <member refid="d4/d42/classBvr_1_1Renderer_1_1CShaderReflection_1a14b6e1b6ade85cc71dac3c1b780aed71" kind="function"><name>CShaderReflection</name></member>
+    <member refid="d4/d42/classBvr_1_1Renderer_1_1CShaderReflection_1a3d573b5497094c8c9bb7ae63b3d79763" kind="function"><name>CShaderReflection</name></member>
     <member refid="d4/d42/classBvr_1_1Renderer_1_1CShaderReflection_1a144e17beb1d69c8934d754f197a12488" kind="function"><name>~CShaderReflection</name></member>
     <member refid="d4/d42/classBvr_1_1Renderer_1_1CShaderReflection_1a4fc4a33a228098574e0c5da27b3a8671" kind="function"><name>BuildPipelineLayout</name></member>
     <member refid="d4/d42/classBvr_1_1Renderer_1_1CShaderReflection_1a762041dd26f2edb0cb4c4af6c1f045be" kind="function"><name>BuldVertexStreamSet</name></member>
@@ -3437,10 +3437,6 @@
     <member refid="d0/d47/classBvr_1_1CTerrain_1aac216e84e1697da952886c3780ffe63e" kind="function"><name>GenerateTemplateVertexBuffer</name></member>
     <member refid="d0/d47/classBvr_1_1CTerrain_1a624c138f09f55441300560e2fe7edbab" kind="function"><name>WriteNormalValue</name></member>
     <member refid="d0/d47/classBvr_1_1CTerrain_1a5d76472070b71ec7a4bb74339b449773" kind="function"><name>UpdateConfiguration</name></member>
-  </compound>
-  <compound refid="dd/da7/classBvr_1_1Renderer_1_1CTerrainGenPass" kind="class"><name>Bvr::Renderer::CTerrainGenPass</name>
-    <member refid="dd/da7/classBvr_1_1Renderer_1_1CTerrainGenPass_1a9a260c712c1e03826bc9e04dccf0ef6f" kind="function"><name>~CTerrainGenPass</name></member>
-    <member refid="dd/da7/classBvr_1_1Renderer_1_1CTerrainGenPass_1a420cde654493e28c8c4b2180aaf10735" kind="function"><name>Execute</name></member>
   </compound>
   <compound refid="dd/d6c/structBvr_1_1Tests_1_1CTestGraphNode" kind="struct"><name>Bvr::Tests::CTestGraphNode</name>
     <member refid="dd/d6c/structBvr_1_1Tests_1_1CTestGraphNode_1afb66854be87c80ce8e676cade0173c2b" kind="variable"><name>m_name</name></member>
@@ -3763,7 +3759,6 @@
     <member refid="de/d2d/classBvr_1_1CWorld_1a6f16557b24ece1954ec48911cedf6632" kind="typedef"><name>TRootsQuery</name></member>
     <member refid="de/d2d/classBvr_1_1CWorld_1a1375957ce574761c064831a665b3e051" kind="variable"><name>InPlaceRelease</name></member>
     <member refid="de/d2d/classBvr_1_1CWorld_1a145746c80844b4ad630bc44bb1783a5a" kind="variable"><name>m_hSelf</name></member>
-    <member refid="de/d2d/classBvr_1_1CWorld_1a7842fb0c7c1f6eb40154565284c2256b" kind="variable"><name>m_creationLock</name></member>
     <member refid="de/d2d/classBvr_1_1CWorld_1aa0d0e59bb416c492409a52b88dea6689" kind="variable"><name>m_resources</name></member>
     <member refid="de/d2d/classBvr_1_1CWorld_1ac13f77de934a21652a0819b4ada81d3f" kind="variable"><name>m_reg</name></member>
     <member refid="de/d2d/classBvr_1_1CWorld_1a880ea9825296fd8c6820dbc6985a048a" kind="variable"><name>m_currentLevelPath</name></member>
@@ -4753,7 +4748,7 @@
     <member refid="dc/d18/structBvr_1_1IBvrRenderer_1a501eef91a0d47c37294826e491bd0b14" kind="function"><name>ShowProfilingStats</name></member>
     <member refid="dc/d18/structBvr_1_1IBvrRenderer_1a102fd96828fb33066cbd38a353ac3508" kind="function"><name>SetUpFrameContext</name></member>
     <member refid="dc/d18/structBvr_1_1IBvrRenderer_1afb730d591d8291d905612cadffc99070" kind="function"><name>GetBindlessId</name></member>
-    <member refid="dc/d18/structBvr_1_1IBvrRenderer_1a0ebf6bd0867f8920f3f154942d9708de" kind="function"><name>ResolveImageHandle</name></member>
+    <member refid="dc/d18/structBvr_1_1IBvrRenderer_1a3f9f0ed18b2e40e4e6c21d3c6ce1ac4c" kind="function"><name>ResolveImageHandle</name></member>
     <member refid="dc/d18/structBvr_1_1IBvrRenderer_1a7248c6dc4700847c54df587e0ad56751" kind="function"><name>CreateImageView</name></member>
   </compound>
   <compound refid="d1/d93/structBvr_1_1IComponentBind" kind="struct"><name>Bvr::IComponentBind</name>
@@ -4937,6 +4932,8 @@
     <member refid="d3/dab/structBvr_1_1Renderer_1_1CFrameContext_1_1Impl_1a0e716b0826bba353ce91d5248053bb2f" kind="variable"><name>RendMeshes</name></member>
     <member refid="d3/dab/structBvr_1_1Renderer_1_1CFrameContext_1_1Impl_1ac7f0501d1058d0668e41cd65f11f9e53" kind="variable"><name>RendMats</name></member>
     <member refid="d3/dab/structBvr_1_1Renderer_1_1CFrameContext_1_1Impl_1ad342672185a76eb91f9547009d38553f" kind="variable"><name>RenderInfo</name></member>
+    <member refid="d3/dab/structBvr_1_1Renderer_1_1CFrameContext_1_1Impl_1af5494585b2136f0e8977b99497e2ec57" kind="variable"><name>PerViewResources</name></member>
+    <member refid="d3/dab/structBvr_1_1Renderer_1_1CFrameContext_1_1Impl_1a9532bc59e3ff052ffdcec4b7daa0ee84" kind="variable"><name>m_renderInfo</name></member>
     <member refid="d3/dab/structBvr_1_1Renderer_1_1CFrameContext_1_1Impl_1afda8d8d550e0991c1f8cc0c8899c055f" kind="function"><name>Impl</name></member>
     <member refid="d3/dab/structBvr_1_1Renderer_1_1CFrameContext_1_1Impl_1a3edd8dcf58f3fccfa996622975c64234" kind="function"><name>NodeAllocator</name></member>
     <member refid="d3/dab/structBvr_1_1Renderer_1_1CFrameContext_1_1Impl_1ab784d6a3e9d598e9e9d98bda02fcf488" kind="function"><name>ItemAllocator</name></member>
@@ -5722,12 +5719,6 @@
     <member refid="d7/d40/structBvr_1_1Renderer_1_1CSSAOStage_1_1Params_1a61a38c6ec3326d1afbf3332b6eaedba0" kind="variable"><name>FrustumTR</name></member>
     <member refid="d7/d40/structBvr_1_1Renderer_1_1CSSAOStage_1_1Params_1a113566eaaab80e4524a3208d280b6e6e" kind="variable"><name>FrustumBL</name></member>
   </compound>
-  <compound refid="d9/df8/structBvr_1_1Renderer_1_1SHeightmapGeneration_1_1Params" kind="struct"><name>Bvr::Renderer::SHeightmapGeneration::Params</name>
-    <member refid="d9/df8/structBvr_1_1Renderer_1_1SHeightmapGeneration_1_1Params_1a2dd03de996ede89c72b446dc8b1489d2" kind="variable"><name>TerrainParams</name></member>
-    <member refid="d9/df8/structBvr_1_1Renderer_1_1SHeightmapGeneration_1_1Params_1af2d57d51b5b5f7f438e715a98a791531" kind="variable"><name>NoiseParams</name></member>
-    <member refid="d9/df8/structBvr_1_1Renderer_1_1SHeightmapGeneration_1_1Params_1a50ebb81b6a9f970b09f309600a120c21" kind="variable"><name>tilingOffset</name></member>
-    <member refid="d9/df8/structBvr_1_1Renderer_1_1SHeightmapGeneration_1_1Params_1a58fb4009eab31cccb3896a7c380b54c1" kind="variable"><name>padding</name></member>
-  </compound>
   <compound refid="d8/d04/structBvr_1_1Particles_1_1GPUEmitterStorage_1_1ParticleBuffers" kind="struct"><name>Bvr::Particles::GPUEmitterStorage::ParticleBuffers</name>
     <member refid="d8/d04/structBvr_1_1Particles_1_1GPUEmitterStorage_1_1ParticleBuffers_1ad871434e2616455df35caf0c4603ed24" kind="variable"><name>ParticleStorage</name></member>
     <member refid="d8/d04/structBvr_1_1Particles_1_1GPUEmitterStorage_1_1ParticleBuffers_1ae50c6033ef6ee2b23bc81223b0fd1b11" kind="variable"><name>AliveLists</name></member>
@@ -6164,6 +6155,12 @@
   <compound refid="d0/d0b/structBvr_1_1Gizmo_1_1ReleaseChecker" kind="struct"><name>Bvr::Gizmo::ReleaseChecker</name>
     <member refid="d0/d0b/structBvr_1_1Gizmo_1_1ReleaseChecker_1aa0ca49e68666df48a74cda586aad03b4" kind="variable"><name>ToCheck</name></member>
   </compound>
+  <compound refid="d7/d4f/structBvr_1_1Renderer_1_1CDevice_1_1ReleaseHeap" kind="struct"><name>Bvr::Renderer::CDevice::ReleaseHeap</name>
+    <member refid="d7/d4f/structBvr_1_1Renderer_1_1CDevice_1_1ReleaseHeap_1a29e0042a3765bc2bb04400cbe880d419" kind="variable"><name>m_releaseHeapLock</name></member>
+    <member refid="d7/d4f/structBvr_1_1Renderer_1_1CDevice_1_1ReleaseHeap_1a4e4c01781c2771a06cc6d33945409019" kind="variable"><name>m_releaseHeap</name></member>
+    <member refid="d7/d4f/structBvr_1_1Renderer_1_1CDevice_1_1ReleaseHeap_1abe6b7b902f043770018d3911077a8a75" kind="function"><name>ScheduleForDelete</name></member>
+    <member refid="d7/d4f/structBvr_1_1Renderer_1_1CDevice_1_1ReleaseHeap_1a6a07796e4fb5080c8f15ef2561c5cd90" kind="function"><name>Flush</name></member>
+  </compound>
   <compound refid="dc/de0/structBvr_1_1Meta_1_1Detail_1_1RemoveAllPointers" kind="struct"><name>Bvr::Meta::Detail::RemoveAllPointers</name>
     <member refid="dc/de0/structBvr_1_1Meta_1_1Detail_1_1RemoveAllPointers_1a92ba61e46954160c254d8327450ab088" kind="typedef"><name>Type</name></member>
   </compound>
@@ -6434,7 +6431,7 @@
     <member refid="df/d35/structBvr_1_1Renderer_1_1SBindPoint_1a848f2a30ca99c7ac2f67f3b24281c043" kind="variable"><name>Slot</name></member>
     <member refid="df/d35/structBvr_1_1Renderer_1_1SBindPoint_1ada4d6b972e9bd74ce9d6c01ca89b1b03" kind="variable"><name>Stages</name></member>
     <member refid="df/d35/structBvr_1_1Renderer_1_1SBindPoint_1af9c28d2a20d590f9c6e0d8ca07df4e67" kind="variable"><name>Hash</name></member>
-    <member refid="df/d35/structBvr_1_1Renderer_1_1SBindPoint_1a3ed5aa98bdf53a37c9c0eb4ef1b52f6c" kind="variable"><name>@14</name></member>
+    <member refid="df/d35/structBvr_1_1Renderer_1_1SBindPoint_1ab42faffac16535393540e549704918aa" kind="variable"><name>@16</name></member>
     <member refid="df/d35/structBvr_1_1Renderer_1_1SBindPoint_1af226c32cc4e310dc7fece4b01886b390" kind="function"><name>SBindPoint</name></member>
     <member refid="df/d35/structBvr_1_1Renderer_1_1SBindPoint_1a7364a160b004370a921468a431ca0697" kind="function"><name>operator==</name></member>
     <member refid="df/d35/structBvr_1_1Renderer_1_1SBindPoint_1a6d70f8fc9f8efe1ef71d290d45cbd30e" kind="function"><name>operator!=</name></member>
@@ -6450,7 +6447,8 @@
     <member refid="df/d35/structBvr_1_1Renderer_1_1SBindPoint_1abee7c2bd6d643ec6af8b75165396a598" kind="function"><name>operator&gt;=</name></member>
   </compound>
   <compound refid="d0/d09/structBvr_1_1Renderer_1_1SBlendStateInfo" kind="struct"><name>Bvr::Renderer::SBlendStateInfo</name>
-    <member refid="d0/d09/structBvr_1_1Renderer_1_1SBlendStateInfo_1a16883ef4225c3647dea14c093d7be1a3" kind="variable"><name>Attachments</name></member>
+    <member refid="d0/d09/structBvr_1_1Renderer_1_1SBlendStateInfo_1a60717eb6cb7727586c83754801f6b42e" kind="variable"><name>Attachments</name></member>
+    <member refid="d0/d09/structBvr_1_1Renderer_1_1SBlendStateInfo_1a86c22437c40b0bf920054fb998f911b9" kind="variable"><name>Count</name></member>
     <member refid="d0/d09/structBvr_1_1Renderer_1_1SBlendStateInfo_1abd3591f4995d50a50d341c88b0553a45" kind="function"><name>GetHash</name></member>
     <member refid="d0/d09/structBvr_1_1Renderer_1_1SBlendStateInfo_1a6b563acb824861667df6090f34ddc336" kind="function"><name>FromAttachment</name></member>
   </compound>
@@ -6751,10 +6749,16 @@
     <member refid="df/d1f/structBvr_1_1Renderer_1_1SDeferredMemoryObjectRelease_1aa1b3175cf633652946be952d652cf395" kind="variable"><name>SourceHeap</name></member>
     <member refid="df/d1f/structBvr_1_1Renderer_1_1SDeferredMemoryObjectRelease_1ad5397c09b6588d6a2084374e612b8130" kind="variable"><name>Allocation</name></member>
   </compound>
-  <compound refid="d0/dbd/structBvr_1_1Renderer_1_1CDevice_1_1SDeferredReleaseItem" kind="struct"><name>Bvr::Renderer::CDevice::SDeferredReleaseItem</name>
-    <member refid="d0/dbd/structBvr_1_1Renderer_1_1CDevice_1_1SDeferredReleaseItem_1a72e1ae876544d36bf80fb8d5767230a2" kind="variable"><name>item</name></member>
-    <member refid="d0/dbd/structBvr_1_1Renderer_1_1CDevice_1_1SDeferredReleaseItem_1a0702b653ccff464bae79ad9e97debd79" kind="variable"><name>fenceOrFrameId</name></member>
-    <member refid="d0/dbd/structBvr_1_1Renderer_1_1CDevice_1_1SDeferredReleaseItem_1a044562da245f15fa7627fb8f925beb52" kind="variable"><name>pFenceOwner</name></member>
+  <compound refid="d0/d7e/structBvr_1_1Renderer_1_1SDeferredReleaseItem" kind="struct"><name>Bvr::Renderer::SDeferredReleaseItem</name>
+    <member refid="d0/d7e/structBvr_1_1Renderer_1_1SDeferredReleaseItem_1a77edb3fb1253a2087ce9ebf33941a264" kind="typedef"><name>StorageType</name></member>
+    <member refid="d0/d7e/structBvr_1_1Renderer_1_1SDeferredReleaseItem_1a2075ee8f386eb52e5a3dcdfb37ba4677" kind="typedef"><name>FunctionType</name></member>
+    <member refid="d0/d7e/structBvr_1_1Renderer_1_1SDeferredReleaseItem_1ae453871f411c7397c0954b92c93c8ba9" kind="variable"><name>item</name></member>
+    <member refid="d0/d7e/structBvr_1_1Renderer_1_1SDeferredReleaseItem_1a6388344048437ff96125cdabc8f36c31" kind="variable"><name>pReleaseFn</name></member>
+    <member refid="d0/d7e/structBvr_1_1Renderer_1_1SDeferredReleaseItem_1a3d6aedf9cd4d37489b179587ed6f6aaf" kind="variable"><name>fenceOrFrameId</name></member>
+    <member refid="d0/d7e/structBvr_1_1Renderer_1_1SDeferredReleaseItem_1aac1c78e56c10d4fd4d674477161a2181" kind="variable"><name>pFenceOwner</name></member>
+    <member refid="d0/d7e/structBvr_1_1Renderer_1_1SDeferredReleaseItem_1a05e96109a30cb6486980224de0778f7b" kind="function"><name>ReleaseFn</name></member>
+    <member refid="d0/d7e/structBvr_1_1Renderer_1_1SDeferredReleaseItem_1a065b8363d20600e5cb72112d2ee1f6ea" kind="function"><name>Make</name></member>
+    <member refid="d0/d7e/structBvr_1_1Renderer_1_1SDeferredReleaseItem_1acd3ae3213f70330dd98cc3050699d5cf" kind="function"><name>Release</name></member>
   </compound>
   <compound refid="db/da8/structBvr_1_1Renderer_1_1CDepthStage_1_1SDepthParams" kind="struct"><name>Bvr::Renderer::CDepthStage::SDepthParams</name>
     <member refid="db/da8/structBvr_1_1Renderer_1_1CDepthStage_1_1SDepthParams_1a6a2d3c9424f789746c371494c7351ee9" kind="variable"><name>resolution</name></member>
@@ -7173,7 +7177,7 @@
   </compound>
   <compound refid="d2/d60/structBvr_1_1Renderer_1_1SGraphicsPipelineResources" kind="struct"><name>Bvr::Renderer::SGraphicsPipelineResources</name>
     <member refid="d2/d60/structBvr_1_1Renderer_1_1SGraphicsPipelineResources_1af3820b48f0a0a0dc0a8efb5028f4e5e6" kind="typedef"><name>TexT</name></member>
-    <member refid="d2/d60/structBvr_1_1Renderer_1_1SGraphicsPipelineResources_1accbed5257042a15f9c967594966a20c8" kind="variable"><name>m_hPipelineOutput</name></member>
+    <member refid="d2/d60/structBvr_1_1Renderer_1_1SGraphicsPipelineResources_1a2b8488db6ada21ddb13d3938720f5b7c" kind="variable"><name>m_hPipelineOutput</name></member>
     <member refid="d2/d60/structBvr_1_1Renderer_1_1SGraphicsPipelineResources_1ab5816c969ff1aee06ab917c1c6faa9a5" kind="variable"><name>HDRTarget</name></member>
     <member refid="d2/d60/structBvr_1_1Renderer_1_1SGraphicsPipelineResources_1a28ba8ce259f17a715f96a4d06c886d3a" kind="variable"><name>PipelineOutput</name></member>
     <member refid="d2/d60/structBvr_1_1Renderer_1_1SGraphicsPipelineResources_1ac8984628b60a41619695f893f20ce6ea" kind="variable"><name>DepthTarget</name></member>
@@ -7244,10 +7248,6 @@
   <compound refid="d5/d8b/structBvr_1_1Renderer_1_1SShaderItem_1_1SHash" kind="struct"><name>Bvr::Renderer::SShaderItem::SHash</name>
     <member refid="d5/d8b/structBvr_1_1Renderer_1_1SShaderItem_1_1SHash_1a2b2995bc29a90aedfde537beb2555740" kind="function"><name>operator()</name></member>
     <member refid="d5/d8b/structBvr_1_1Renderer_1_1SShaderItem_1_1SHash_1a2644a61714b84222251c99682c610e14" kind="function"><name>operator()</name></member>
-  </compound>
-  <compound refid="d0/d79/structBvr_1_1Renderer_1_1SHeightmapGeneration" kind="struct"><name>Bvr::Renderer::SHeightmapGeneration</name>
-    <member refid="d0/d79/structBvr_1_1Renderer_1_1SHeightmapGeneration_1a2e7af509509e51c63affb554bb704c26" kind="variable"><name>m_params</name></member>
-    <member refid="d0/d79/structBvr_1_1Renderer_1_1SHeightmapGeneration_1ab304a7b685c97f2c198c3a9cb07a6407" kind="variable"><name>m_terrainOut</name></member>
   </compound>
   <compound refid="d3/dc9/structBvr_1_1SHierarchyComponent" kind="struct"><name>Bvr::SHierarchyComponent</name>
     <member refid="d3/dc9/structBvr_1_1SHierarchyComponent_1ab7d8a3faf16dffc94122db267daf5ac4" kind="variable"><name>parentId</name></member>
@@ -7954,7 +7954,7 @@
   </compound>
   <compound refid="dd/df3/structBvr_1_1Renderer_1_1SRendererResources" kind="struct"><name>Bvr::Renderer::SRendererResources</name>
     <member refid="dd/df3/structBvr_1_1Renderer_1_1SRendererResources_1a085f6c2b7fde4c196e032045abd375a6" kind="variable"><name>s_pShadowMap</name></member>
-    <member refid="dd/df3/structBvr_1_1Renderer_1_1SRendererResources_1a064ab5a7345e28baade8725c350177d1" kind="variable"><name>s_DefaultTexture</name></member>
+    <member refid="dd/df3/structBvr_1_1Renderer_1_1SRendererResources_1aed4487d2f4305c86dc08a00a674200de" kind="variable"><name>s_DefaultTexture</name></member>
     <member refid="dd/df3/structBvr_1_1Renderer_1_1SRendererResources_1a0ab4c5c5fd18a3f920d8ae321cbfbed6" kind="variable"><name>s_pNullUAVBuf</name></member>
     <member refid="dd/df3/structBvr_1_1Renderer_1_1SRendererResources_1a388493f412e9dfa31e84b7108b1240fa" kind="variable"><name>s_pNullTex</name></member>
     <member refid="dd/df3/structBvr_1_1Renderer_1_1SRendererResources_1a7f5ea51e28e6121ac148409e450ca0f3" kind="variable"><name>s_pTexBlueNoise</name></member>
@@ -8210,8 +8210,8 @@
     <member refid="da/d21/structBvr_1_1Renderer_1_1SSetBinding_1a3d8b20723c3b29ede8dffa38d906e248" kind="variable"><name>ImageView</name></member>
     <member refid="da/d21/structBvr_1_1Renderer_1_1SSetBinding_1a003cfcd143467470b148f4b97324cbe1" kind="variable"><name>BufferView</name></member>
     <member refid="da/d21/structBvr_1_1Renderer_1_1SSetBinding_1a56839d51ee58a9a9c2fb728f660265c5" kind="variable"><name>AccelerationStructure</name></member>
-    <member refid="da/d21/structBvr_1_1Renderer_1_1SSetBinding_1adee3365a082afd4b31819cd90b633c46" kind="variable"><name>FastCompare</name></member>
-    <member refid="da/d21/structBvr_1_1Renderer_1_1SSetBinding_1a7fdecf7d6fec9039515f68d1918e1d69" kind="variable"><name>@18</name></member>
+    <member refid="da/d21/structBvr_1_1Renderer_1_1SSetBinding_1a8941d0514dd54b425747c19efbbd54a1" kind="variable"><name>FastCompare</name></member>
+    <member refid="da/d21/structBvr_1_1Renderer_1_1SSetBinding_1a0851789daabf623d75fa71095b421cdf" kind="variable"><name>@14</name></member>
     <member refid="da/d21/structBvr_1_1Renderer_1_1SSetBinding_1a907efce5bdc2fa8b06e00177a0e79ca8" kind="variable"><name>BindingType</name></member>
     <member refid="da/d21/structBvr_1_1Renderer_1_1SSetBinding_1a1f3dbd055717fdd989645a8ab8d706b1" kind="variable"><name>ResourceType</name></member>
     <member refid="da/d21/structBvr_1_1Renderer_1_1SSetBinding_1a07b9c67f754730be2eee98409db54a43" kind="function"><name>SSetBinding</name></member>
@@ -8428,16 +8428,6 @@
     <member refid="db/d47/structBvr_1_1Renderer_1_1STechniqueDesc_1aba6392d68fcdd70f404ca2ad74242551" kind="variable"><name>DefineMap</name></member>
     <member refid="db/d47/structBvr_1_1Renderer_1_1STechniqueDesc_1a89455ba7e1c1b7634a55843d7b2568d9" kind="function"><name>operator==</name></member>
     <member refid="db/d47/structBvr_1_1Renderer_1_1STechniqueDesc_1a85e53922d88b380f3e4ff662ab840fbc" kind="function"><name>AddDefine</name></member>
-  </compound>
-  <compound refid="de/d8f/structBvr_1_1STerrainGeneration" kind="struct"><name>Bvr::STerrainGeneration</name>
-    <member refid="de/d8f/structBvr_1_1STerrainGeneration_1ae2a148dbbd39ca40549e2b2621f28fd8" kind="variable"><name>pTerrainTexture</name></member>
-    <member refid="de/d8f/structBvr_1_1STerrainGeneration_1aff172892f626fb76b32a565ea85eb413" kind="variable"><name>offset</name></member>
-    <member refid="de/d8f/structBvr_1_1STerrainGeneration_1a1beca5c1fd264abd5ba7b21dfb441c98" kind="variable"><name>terrainSize</name></member>
-    <member refid="de/d8f/structBvr_1_1STerrainGeneration_1a16f015fa4599f67460d108c1e46b08a8" kind="variable"><name>gridSize</name></member>
-    <member refid="de/d8f/structBvr_1_1STerrainGeneration_1a466295802519a4f44bded9d7e305f9ff" kind="variable"><name>chunkCount</name></member>
-    <member refid="de/d8f/structBvr_1_1STerrainGeneration_1a75ce9343fc10e9aa0beed3b3b82ee21a" kind="variable"><name>octaves</name></member>
-    <member refid="de/d8f/structBvr_1_1STerrainGeneration_1a0a3749b7c4a5394d599ac26f37e157c4" kind="variable"><name>frequency</name></member>
-    <member refid="de/d8f/structBvr_1_1STerrainGeneration_1a66155a678f1167301a5fddd15a95249d" kind="variable"><name>elevation</name></member>
   </compound>
   <compound refid="db/df4/structBvr_1_1Tests_1_1STestAsset" kind="struct"><name>Bvr::Tests::STestAsset</name>
     <member refid="db/df4/structBvr_1_1Tests_1_1STestAsset_1a7189fecbd97fa0d021fb3c7e70583880" kind="variable"><name>InPlaceRelease</name></member>
@@ -9428,7 +9418,7 @@
   <compound refid="de/dce/structBvr_1_1Detail_1_1TExtractedType" kind="struct"><name>Bvr::Detail::TExtractedType</name>
     <member refid="de/dce/structBvr_1_1Detail_1_1TExtractedType_1af7e4138890bff459e9fcf3ede5ea8744" kind="typedef"><name>Type</name></member>
   </compound>
-  <compound refid="d2/df8/structBvr_1_1Texture" kind="struct"><name>Bvr::Texture</name>
+  <compound refid="dc/dc8/structBvr_1_1Renderer_1_1Texture" kind="struct"><name>Bvr::Renderer::Texture</name>
   </compound>
   <compound refid="dd/def/structBvr_1_1Renderer_1_1CAliasedTextureCreator_1_1TextureAllocation" kind="struct"><name>Bvr::Renderer::CAliasedTextureCreator::TextureAllocation</name>
     <member refid="dd/def/structBvr_1_1Renderer_1_1CAliasedTextureCreator_1_1TextureAllocation_1afa57f44c4c03b6a94a8c19dc1ae51d0f" kind="variable"><name>Layout</name></member>
@@ -9550,10 +9540,11 @@
     <member refid="d8/d57/structBvr_1_1Detail_1_1TGetArgsGroup_3_01TypeList_3_01Ts_8_8_8_01_4_01_4_1a6158a6c1290a9f512e77fe023492c64f" kind="typedef"><name>Type</name></member>
   </compound>
   <compound refid="da/d2b/structBvr_1_1THandle" kind="struct"><name>Bvr::THandle</name>
-    <member refid="da/d2b/structBvr_1_1THandle_1aa003a085b7f50cd32e5d114856b9d872" kind="typedef"><name>IdT</name></member>
+    <member refid="da/d2b/structBvr_1_1THandle_1a3a527683d279e1c15ddfe02b90796437" kind="typedef"><name>EntityT</name></member>
+    <member refid="da/d2b/structBvr_1_1THandle_1acffec6bea8e936474ec25c199bc86089" kind="typedef"><name>TTraits</name></member>
+    <member refid="da/d2b/structBvr_1_1THandle_1a12ad56a5cc1eb5e616d842efb56e169b" kind="typedef"><name>IdT</name></member>
     <member refid="da/d2b/structBvr_1_1THandle_1abd3ac55f821499c9abda4252c7b93873" kind="friend"><name>THandlePool</name></member>
-    <member refid="da/d2b/structBvr_1_1THandle_1a956cb58f7ef1a2512f7b53bd77dd2fe1" kind="variable"><name>m_index</name></member>
-    <member refid="da/d2b/structBvr_1_1THandle_1ad3456178ac88a0cc3d310f90dafb8a81" kind="variable"><name>m_generation</name></member>
+    <member refid="da/d2b/structBvr_1_1THandle_1a8f85130bbee11aba2b5e50b1d6126793" kind="variable"><name>m_index</name></member>
     <member refid="da/d2b/structBvr_1_1THandle_1a7448af0c160821761cab537a7262994f" kind="function"><name>THandle</name></member>
     <member refid="da/d2b/structBvr_1_1THandle_1a096aa3f6403dff84148af9b99de83221" kind="function"><name>~THandle</name></member>
     <member refid="da/d2b/structBvr_1_1THandle_1af83708a1a5f31242e8752f19d882a511" kind="function"><name>THandle</name></member>
@@ -9562,6 +9553,8 @@
     <member refid="da/d2b/structBvr_1_1THandle_1a42f2e4b6da339cebf42b138c5c31f1b2" kind="function"><name>operator=</name></member>
     <member refid="da/d2b/structBvr_1_1THandle_1afbb6feda65f2815cb8f0f82c7d3dbfb8" kind="function"><name>operator&lt;=&gt;</name></member>
     <member refid="da/d2b/structBvr_1_1THandle_1a165300ccd6950fef1f81da99e524b832" kind="function"><name>operator bool</name></member>
+    <member refid="da/d2b/structBvr_1_1THandle_1ab8cebe77d0e03ddedf03d70a63a4f903" kind="function"><name>Generation</name></member>
+    <member refid="da/d2b/structBvr_1_1THandle_1ad474686c69d99057f998dec63f2a257e" kind="function"><name>Index</name></member>
     <member refid="da/d2b/structBvr_1_1THandle_1ade89077469dcd93bdf9bec01d2ae97ba" kind="function"><name>THandle</name></member>
   </compound>
   <compound refid="d1/dac/classBvr_1_1THandlePool" kind="class"><name>Bvr::THandlePool</name>
@@ -10957,15 +10950,6 @@
     <member refid="d2/d8c/IBvrRenderer_8hpp_1acf930d1972f88893e19e8afafa5d5a04a628adbb6c98e56748110061187f57243" kind="enumvalue"><name>GBuffer</name></member>
     <member refid="d2/d8c/IBvrRenderer_8hpp_1acf930d1972f88893e19e8afafa5d5a04a67d2f6740a8eaebf4d5c6f79be8da481" kind="enumvalue"><name>Forward</name></member>
     <member refid="d2/d8c/IBvrRenderer_8hpp_1acf930d1972f88893e19e8afafa5d5a04ad2d84c1fc4f2d5d5f1c43bdb29dc236f" kind="enumvalue"><name>HUD</name></member>
-    <member refid="d2/d8c/IBvrRenderer_8hpp_1a7014188d3321c9eeaa5145bd6b326d0b" kind="enum"><name>EPrimitiveTopology</name></member>
-    <member refid="d2/d8c/IBvrRenderer_8hpp_1a7014188d3321c9eeaa5145bd6b326d0baf5beeab7a1f452e5b0e9b03b44f0de92" kind="enumvalue"><name>TriangleList</name></member>
-    <member refid="d2/d8c/IBvrRenderer_8hpp_1a7014188d3321c9eeaa5145bd6b326d0ba1da0b9ead8b051940a89214bae22831c" kind="enumvalue"><name>TriangleStrip</name></member>
-    <member refid="d2/d8c/IBvrRenderer_8hpp_1a7014188d3321c9eeaa5145bd6b326d0ba18d58fde618e4a30e2dfdc122e693047" kind="enumvalue"><name>TriangleFan</name></member>
-    <member refid="d2/d8c/IBvrRenderer_8hpp_1a7014188d3321c9eeaa5145bd6b326d0ba596e1b7afe8925f3f578c716d5af8fef" kind="enumvalue"><name>LineList</name></member>
-    <member refid="d2/d8c/IBvrRenderer_8hpp_1a7014188d3321c9eeaa5145bd6b326d0bae7f9e73b8edd21f420a63b3ace5768a2" kind="enumvalue"><name>LineStrip</name></member>
-    <member refid="d2/d8c/IBvrRenderer_8hpp_1a7014188d3321c9eeaa5145bd6b326d0ba1a18ff71b3df3e362a2489eef4b30003" kind="enumvalue"><name>PointList</name></member>
-    <member refid="d2/d8c/IBvrRenderer_8hpp_1a7014188d3321c9eeaa5145bd6b326d0baf1b220525e3cc747140a46b7e2d7532e" kind="enumvalue"><name>PatchList</name></member>
-    <member refid="d2/d8c/IBvrRenderer_8hpp_1a7014188d3321c9eeaa5145bd6b326d0bae93f994f01c537c4e2f7d8528c3eb5e9" kind="enumvalue"><name>Count</name></member>
     <member refid="d2/d8c/IBvrRenderer_8hpp_1a2105313cd3bfe3156eeea53d34e1b976" kind="enum"><name>EProfilingLevel</name></member>
     <member refid="d2/d8c/IBvrRenderer_8hpp_1a2105313cd3bfe3156eeea53d34e1b976a28d0edd045e05cf5af64e35ae0c4c6ef" kind="enumvalue"><name>Low</name></member>
     <member refid="d2/d8c/IBvrRenderer_8hpp_1a2105313cd3bfe3156eeea53d34e1b976ad4a9fa383ab700c5bdd6f31cf7df0faf" kind="enumvalue"><name>Verbose</name></member>
@@ -11019,7 +11003,8 @@
     <member refid="dc/d28/BvrMath_8hpp_1a4ab21fed75816aa6fa7d524eac1d13e4" kind="typedef"><name>quat</name></member>
     <member refid="dc/d28/BvrMath_8hpp_1aaea9049750ce9b8e1895e7e8baa6e12a" kind="typedef"><name>AABB</name></member>
     <member refid="dc/d28/BvrMath_8hpp_1a59d02226c8b10cb73d48f1b8c92e3172" kind="typedef"><name>AABBI</name></member>
-    <member refid="d2/d8c/IBvrRenderer_8hpp_1a34b416ce1ee8e38e4b12a081c2be3357" kind="typedef"><name>ITexture</name></member>
+    <member refid="d2/d8c/IBvrRenderer_8hpp_1a24e6d557d57a660b74dcb7d57110800f" kind="typedef"><name>ETopology</name></member>
+    <member refid="d2/d8c/IBvrRenderer_8hpp_1a5b428650fb657340418d5edc3d17fb4f" kind="typedef"><name>ITexture</name></member>
     <member refid="d3/d62/RenderOutput_8hpp_1a9b8e00f7fbd455286ff5ae411884c888" kind="typedef"><name>TRenderTarget</name></member>
     <member refid="d3/d62/RenderOutput_8hpp_1a1c5a84ba385c7642df93fbee9f8955c6" kind="typedef"><name>TViewport</name></member>
     <member refid="d1/ddc/Terrain_8cpp_1ab02300ee19f22bec1700dbf32ab69403" kind="typedef"><name>u16_4</name></member>
@@ -11230,9 +11215,9 @@
   </compound>
   <compound refid="d2/d21/namespaceBvr_1_1_0d150" kind="namespace"><name>Bvr::@150</name>
   </compound>
-  <compound refid="d1/d79/namespaceBvr_1_1_0d327" kind="namespace"><name>Bvr::@327</name>
+  <compound refid="d6/d37/namespaceBvr_1_1_0d325" kind="namespace"><name>Bvr::@325</name>
   </compound>
-  <compound refid="dd/df2/namespaceBvr_1_1_0d410" kind="namespace"><name>Bvr::@410</name>
+  <compound refid="d7/da3/namespaceBvr_1_1_0d408" kind="namespace"><name>Bvr::@408</name>
   </compound>
   <compound refid="de/d29/namespaceBvr_1_1Animation" kind="namespace"><name>Bvr::Animation</name>
     <member refid="d5/d42/AnimationSystem_8hpp_1a1a346d07b65ff164f2fa070966ee4f52" kind="enum"><name>EInterpolationMode</name></member>
@@ -11268,8 +11253,8 @@
   </compound>
   <compound refid="df/d93/namespaceBvr_1_1BvrImGui" kind="namespace"><name>Bvr::BvrImGui</name>
     <member refid="d2/d8c/IBvrRenderer_8hpp_1a9c540414a7146e2a3657c9fecfabdba9" kind="function"><name>Image</name></member>
-    <member refid="d2/d8c/IBvrRenderer_8hpp_1a03b70ba87d41df65ea16a9e6fb1adc24" kind="function"><name>Image</name></member>
-    <member refid="d2/d8c/IBvrRenderer_8hpp_1a28691cf1f5a447b92bd497f6d94e94c8" kind="function"><name>ImageButton</name></member>
+    <member refid="d2/d8c/IBvrRenderer_8hpp_1a4a2054a8b5cfddd9ebebaf173844f4e1" kind="function"><name>Image</name></member>
+    <member refid="d2/d8c/IBvrRenderer_8hpp_1ae494bd8806eaaebcdb6f1a9b3710c34f" kind="function"><name>ImageButton</name></member>
     <member refid="d2/d8c/IBvrRenderer_8hpp_1a953f61d920bf0420852b632acb099781" kind="function"><name>ImageButton</name></member>
   </compound>
   <compound refid="d5/dfc/namespaceBvr_1_1ConsoleSystem" kind="namespace"><name>Bvr::ConsoleSystem</name>
@@ -12366,6 +12351,15 @@
     <member refid="dd/dd7/CommonRenderer_8hpp_1a41ce55353d11724dd9c16808e7bdd53cafe99720d2bf6c77e4f45aa213da0f44c" kind="enumvalue"><name>PosCol</name></member>
     <member refid="dd/dd7/CommonRenderer_8hpp_1a41ce55353d11724dd9c16808e7bdd53ca88fa71f0a6e0dfedbb46d91cc0b37a50" kind="enumvalue"><name>Index</name></member>
     <member refid="dd/dd7/CommonRenderer_8hpp_1a41ce55353d11724dd9c16808e7bdd53cae93f994f01c537c4e2f7d8528c3eb5e9" kind="enumvalue"><name>Count</name></member>
+    <member refid="dd/dd7/CommonRenderer_8hpp_1a2a12be00e9c4ec338a2a3aaf7f3cc548" kind="enum"><name>EPrimitiveTopology</name></member>
+    <member refid="dd/dd7/CommonRenderer_8hpp_1a2a12be00e9c4ec338a2a3aaf7f3cc548af5beeab7a1f452e5b0e9b03b44f0de92" kind="enumvalue"><name>TriangleList</name></member>
+    <member refid="dd/dd7/CommonRenderer_8hpp_1a2a12be00e9c4ec338a2a3aaf7f3cc548a1da0b9ead8b051940a89214bae22831c" kind="enumvalue"><name>TriangleStrip</name></member>
+    <member refid="dd/dd7/CommonRenderer_8hpp_1a2a12be00e9c4ec338a2a3aaf7f3cc548a18d58fde618e4a30e2dfdc122e693047" kind="enumvalue"><name>TriangleFan</name></member>
+    <member refid="dd/dd7/CommonRenderer_8hpp_1a2a12be00e9c4ec338a2a3aaf7f3cc548a596e1b7afe8925f3f578c716d5af8fef" kind="enumvalue"><name>LineList</name></member>
+    <member refid="dd/dd7/CommonRenderer_8hpp_1a2a12be00e9c4ec338a2a3aaf7f3cc548ae7f9e73b8edd21f420a63b3ace5768a2" kind="enumvalue"><name>LineStrip</name></member>
+    <member refid="dd/dd7/CommonRenderer_8hpp_1a2a12be00e9c4ec338a2a3aaf7f3cc548a1a18ff71b3df3e362a2489eef4b30003" kind="enumvalue"><name>PointList</name></member>
+    <member refid="dd/dd7/CommonRenderer_8hpp_1a2a12be00e9c4ec338a2a3aaf7f3cc548af1b220525e3cc747140a46b7e2d7532e" kind="enumvalue"><name>PatchList</name></member>
+    <member refid="dd/dd7/CommonRenderer_8hpp_1a2a12be00e9c4ec338a2a3aaf7f3cc548ae93f994f01c537c4e2f7d8528c3eb5e9" kind="enumvalue"><name>Count</name></member>
     <member refid="dd/dd7/CommonRenderer_8hpp_1a7433e786279b7639ac9430023439e2b3" kind="enum"><name>ESamplerFilter</name></member>
     <member refid="dd/dd7/CommonRenderer_8hpp_1a7433e786279b7639ac9430023439e2b3a2a3cd5946cfd317eb99c3d32e35e2d4c" kind="enumvalue"><name>Point</name></member>
     <member refid="dd/dd7/CommonRenderer_8hpp_1a7433e786279b7639ac9430023439e2b3a32a843da6ea40ab3b17a3421ccdf671b" kind="enumvalue"><name>Linear</name></member>
@@ -12535,12 +12529,12 @@
     <member refid="d3/d80/GPUPipelineDefs_8hpp_1a1de1dd187a3a5a99e753559767c71aa7" kind="typedef"><name>StreamList</name></member>
     <member refid="d5/db0/RayTracingAccelerationStructure_8hpp_1a873f0a90df966c881b5ed7409614b946" kind="typedef"><name>SAccelerationStructurePtr</name></member>
     <member refid="d8/db2/Renderer_8h_1a3a12a1a4e7920ea97713c4430a121fc5" kind="typedef"><name>RenderTextures</name></member>
-    <member refid="d8/db2/Renderer_8h_1aca938e8ca20ea3da21a830c5bd25313f" kind="typedef"><name>TexturePool</name></member>
+    <member refid="d8/db2/Renderer_8h_1a8e8a4a750ec7850b478b7c06759a0373" kind="typedef"><name>TexturePool</name></member>
     <member refid="d8/db2/Renderer_8h_1a82a578c1b15f1e95a3d684c6068d9e2b" kind="typedef"><name>TOutputReadbacks</name></member>
     <member refid="d8/db2/Renderer_8h_1a805256233d0fe50b57eb50bb26002b29" kind="typedef"><name>TGraphCallbacks</name></member>
     <member refid="d8/d06/RenderList_8hpp_1a71ad54cff84129d758aeb6a95eea8b7c" kind="typedef"><name>SGPUSceneNode</name></member>
     <member refid="dc/d83/RenderOutput_8cpp_1a1a3702f1cf741fecdc69de15e2ef43fc" kind="typedef"><name>TGraphViewportDependency</name></member>
-    <member refid="d1/def/CommonShaders_8hpp_1ae1bf7b5ca8e00ea2f9cd7b9e702b9379" kind="typedef"><name>ShaderBlobT</name></member>
+    <member refid="d1/def/CommonShaders_8hpp_1acc697c11e8f0e8638efa519c0e894d07" kind="typedef"><name>TShaderBlob</name></member>
     <member refid="d6/dee/FrameGraphDefs_8hpp_1a4014e2f2fc7c7a9fbb80d5cfe54adaf5" kind="typedef"><name>TFGId</name></member>
     <member refid="d6/dee/FrameGraphDefs_8hpp_1a18223a594e678fe655795d5f555044c2" kind="typedef"><name>TFGHandleBase</name></member>
     <member refid="d6/dee/FrameGraphDefs_8hpp_1a2c9035fd823861ede96fec842fbabb93" kind="typedef"><name>TFGNodes</name></member>
@@ -12594,17 +12588,29 @@
     <member refid="de/d7e/BvrImgui_8cpp_1a7bdbc46ed1fc90fe8a26e971018a9d5b" kind="function"><name>InitRenderBackend</name></member>
     <member refid="de/d7e/BvrImgui_8cpp_1a7c3f246bf067252e2183b26d92963485" kind="function"><name>CreateFontsTexture</name></member>
     <member refid="d0/d0f/DebugRenderer_8cpp_1a95079713478dccb2a6c342b1abfc9c99" kind="function"><name>GetPSO</name></member>
+    <member refid="d2/dc0/Device_8cpp_1a6d7c56cfe0b2602f67ff7a678d424465" kind="function"><name>DEC_RELEASE</name></member>
+    <member refid="d2/dc0/Device_8cpp_1a748c26953c6ed471eb78f8bd53d7d41e" kind="function"><name>DEC_RELEASE</name></member>
+    <member refid="d2/dc0/Device_8cpp_1acb25bc87d3ff81e63bcedd0686a55eef" kind="function"><name>DEC_RELEASE</name></member>
+    <member refid="d2/dc0/Device_8cpp_1a8bfcb83ccb906df731d5738604518dad" kind="function"><name>DEC_RELEASE</name></member>
+    <member refid="d2/dc0/Device_8cpp_1a9aad548af334897bc815d4daefe7bbfa" kind="function"><name>DEC_RELEASE</name></member>
+    <member refid="d2/dc0/Device_8cpp_1a503844a2ec846d746ba41ac24bdc4605" kind="function"><name>DEC_RELEASE</name></member>
+    <member refid="d2/dc0/Device_8cpp_1ab8db754a05273fe16d92a267cd160811" kind="function"><name>DEC_RELEASE</name></member>
+    <member refid="d2/dc0/Device_8cpp_1a7a24fdc7bafdcef83de15e87d67b4cfd" kind="function"><name>DEC_RELEASE</name></member>
+    <member refid="d2/dc0/Device_8cpp_1aa7821357e488f0466efc20b4c495098d" kind="function"><name>DEC_RELEASE</name></member>
+    <member refid="d2/dc0/Device_8cpp_1ad6317ccee96654b398614fef84759664" kind="function"><name>DEC_RELEASE</name></member>
+    <member refid="d2/dc0/Device_8cpp_1a7a9445e05713b0751e30bfff398f99fb" kind="function"><name>DEC_RELEASE</name></member>
+    <member refid="d2/dc0/Device_8cpp_1aa221b93f6f05b8bab8a76cd784b128da" kind="function"><name>DEC_RELEASE</name></member>
+    <member refid="d2/dc0/Device_8cpp_1af0895f5be81f07ae2d2ae98d00f97a53" kind="function"><name>DEC_RELEASE</name></member>
     <member refid="db/dba/GraphicsResource_8cpp_1a741b9e47d149d4936a40e797fde50941" kind="function"><name>memcpy_sse</name></member>
     <member refid="d3/de5/FrameGraphDependencyGraph_8hpp_1acb20c6f11e26b649f21d7a401ba4ed44" kind="function"><name>CollectGraphNodes</name></member>
     <member refid="d3/de5/FrameGraphDependencyGraph_8hpp_1a22f4c9e99d1dc247a0b7824466f9db83" kind="function"><name>ProcessNodeDeps</name></member>
     <member refid="d3/d80/GPUPipelineDefs_8hpp_1aa6420b1dc4f726eb8aa81b7b9a4f76d7" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
-    <member refid="d8/dff/GraphicsPass_8cpp_1ab7faca1269b733b4237e0ce9b79fb377" kind="function"><name>RegisterDebugShaderInfo</name></member>
+    <member refid="d8/dff/GraphicsPass_8cpp_1adc3381adde91f82d234c9ca1bf5197d2" kind="function"><name>RegisterDebugShaderInfo</name></member>
     <member refid="d5/d64/CullPass_8cpp_1a7be0f346240f5492e2137507c2f568ea" kind="function"><name>ClearSortKeys</name></member>
     <member refid="d5/d64/CullPass_8cpp_1ac17ae8e269a06f06f129c9bfb615de82" kind="function"><name>ScheduleFill</name></member>
     <member refid="d5/d64/CullPass_8cpp_1aacd768d2f64d86d47d7bfe944a56cfeb" kind="function"><name>ScheduleCullPass</name></member>
     <member refid="d5/d64/CullPass_8cpp_1ac5120d92f2f28972f09c18e7bd105f51" kind="function"><name>SortList</name></member>
     <member refid="d7/d56/LightingStage_8cpp_1a7bd4c739b2f46d80d716434da9272162" kind="function"><name>FillSSAOParams</name></member>
-    <member refid="d7/de6/TerrainGen_8cpp_1a14993aef6079c9f88b7cdc5363f20672" kind="function"><name>FillTerrainGenparams</name></member>
     <member refid="df/d5f/GraphicsPipeline_8cpp_1aa0eedaf71ba5c0e3880cc909e622ca45" kind="function"><name>PrintDebugStats</name></member>
     <member refid="df/d5f/GraphicsPipeline_8cpp_1ac0d372e9816a27ad878781d5fe0c1738" kind="function"><name>BuildDefaultPipelineStages</name></member>
     <member refid="d2/d0c/Instance_8cpp_1af448040c5e8806b8ab3c336733653f0b" kind="function"><name>CVarEnableValidation</name></member>
@@ -12639,6 +12645,7 @@
     <member refid="dd/dd7/CommonRenderer_8hpp_1afd738799da8b1f0559c393d054279e79" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
     <member refid="dd/dd7/CommonRenderer_8hpp_1a318ba30327ec82c81704f44301f7a4eb" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
     <member refid="dd/dd7/CommonRenderer_8hpp_1ade9638d0a976fe7f7082ecfbd4af36bc" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
+    <member refid="dd/dd7/CommonRenderer_8hpp_1ac26e11d9f2e6756b2700a592291d137a" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
     <member refid="d1/def/CommonShaders_8hpp_1ab1ff1d0bc1427b8743fe1a730f3bd55c" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
     <member refid="db/da5/FrameGraph_8hpp_1a3d9f4b64d278f7a58687c6c3020a1281" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
     <member refid="d0/d70/Material_8hpp_1ae87fd53e2cd7c0367f821c11f8701441" kind="function"><name>ExtractMaterialsSystem</name></member>
@@ -12647,9 +12654,9 @@
     <member refid="d0/d76/Tests_8cpp_1a30d59199947414b15449a0776a123b0b" kind="function"><name>TEST_CASE</name></member>
     <member refid="d0/d76/Tests_8cpp_1af14475ef7ac558f96e5c3e5275ee9649" kind="function"><name>TEST_CASE</name></member>
   </compound>
-  <compound refid="df/d99/namespaceBvr_1_1Renderer_1_1_0d288" kind="namespace"><name>Bvr::Renderer::@288</name>
+  <compound refid="d5/d9f/namespaceBvr_1_1Renderer_1_1_0d286" kind="namespace"><name>Bvr::Renderer::@286</name>
   </compound>
-  <compound refid="db/d5e/namespaceBvr_1_1Renderer_1_1_0d296" kind="namespace"><name>Bvr::Renderer::@296</name>
+  <compound refid="d4/d88/namespaceBvr_1_1Renderer_1_1_0d294" kind="namespace"><name>Bvr::Renderer::@294</name>
   </compound>
   <compound refid="d3/d2b/namespaceBvr_1_1Renderer_1_1Attr" kind="namespace"><name>Bvr::Renderer::Attr</name>
     <member refid="d3/d9a/BindGroupMeta_8cpp_1a1afc1e01f5db8b30997354472e055ccb" kind="function"><name>Binding</name></member>
@@ -12668,8 +12675,8 @@
     <member refid="df/db5/AtmosphereStage_8cpp_1ac740c6f27f3b5b8bf0880182193699fa" kind="variable"><name>MoleculeCount</name></member>
     <member refid="df/db5/AtmosphereStage_8cpp_1a34dc50189f340d04f69f82d85d50514d" kind="variable"><name>RefractIndex</name></member>
     <member refid="df/db5/AtmosphereStage_8cpp_1aba97f88722d3ae931898f1ea25a90227" kind="variable"><name>DepolarizationFactor</name></member>
-    <member refid="df/db5/AtmosphereStage_8cpp_1a95e9b7b70593021f32e061c994cd9a5c" kind="variable"><name>TransmittanceBlendingState</name></member>
-    <member refid="df/db5/AtmosphereStage_8cpp_1a7dfbe448bebcd035b2d67922ef0bfe35" kind="variable"><name>DualBlendingState</name></member>
+    <member refid="df/db5/AtmosphereStage_8cpp_1ae5f509ff8f59562116d553da7c3a914f" kind="variable"><name>TransmittanceBlendingState</name></member>
+    <member refid="df/db5/AtmosphereStage_8cpp_1a26aa4d46b46c30299cf504864eafc07c" kind="variable"><name>DualBlendingState</name></member>
     <member refid="d3/d9a/BindGroupMeta_8cpp_1af1c7f7acf6141657086702b28d142a56" kind="function"><name>GetBinding</name></member>
     <member refid="d3/d9a/BindGroupMeta_8cpp_1a8619b9b865a886f7ac6c03083676899e" kind="function"><name>AddInputResourcesToNode</name></member>
     <member refid="d2/dc0/Device_8cpp_1a1b5a417da7707cf785b8bd2254086815" kind="function"><name>GetDeviceExtensions</name></member>
@@ -12680,7 +12687,7 @@
     <member refid="da/d95/FrameContext_8cpp_1a947f3c3a2e5de7da252f787948f0b56e" kind="function"><name>AllocateBindlessPerDrawResources</name></member>
     <member refid="da/d95/FrameContext_8cpp_1a5706cf0e94b3cfd99ca4c5148f7ea7b7" kind="function"><name>AddPrimitiveToRenderList</name></member>
     <member refid="d8/dff/GraphicsPass_8cpp_1a0d78f7ce6594749caf8c597f23cf74a4" kind="function"><name>CreatePipelineLayout</name></member>
-    <member refid="d8/dff/GraphicsPass_8cpp_1afb89ec95650690c0fb4d4c4dc8877d67" kind="function"><name>CreateShaderModule</name></member>
+    <member refid="d8/dff/GraphicsPass_8cpp_1afec3e70c2126a39869e33c928c11d8d0" kind="function"><name>CreateShaderModule</name></member>
     <member refid="df/db5/AtmosphereStage_8cpp_1a1dd89f95e25fef446debe846346ff575" kind="function"><name>ComputeRayleighScatteringCoef</name></member>
     <member refid="df/db5/AtmosphereStage_8cpp_1a829496b1bb2bb0713aa64d9e8822caed" kind="function"><name>GetVolumetricFogZParams</name></member>
     <member refid="df/db5/AtmosphereStage_8cpp_1acc90f1ab144957d405408aa924a93a69" kind="function"><name>ExtractFogParams</name></member>
@@ -12721,7 +12728,7 @@
     <member refid="d3/d73/ShaderManager_8cpp_1aede50b84b0a7627c1d32cd0b81d21842" kind="function"><name>GetFileTimestep</name></member>
     <member refid="d3/d73/ShaderManager_8cpp_1a68a864e0f8a5339a0bf5bb49d49c024a" kind="function"><name>ComputeShaderHash</name></member>
     <member refid="d3/d73/ShaderManager_8cpp_1aef9d3db0db3ccde269b9bc748e7531f5" kind="function"><name>LoadShaderFromCache</name></member>
-    <member refid="d3/d73/ShaderManager_8cpp_1a3dc5cdec4b6bf2340edbd84a2050557a" kind="function"><name>SaveShaderToCahce</name></member>
+    <member refid="d3/d73/ShaderManager_8cpp_1acf1dbf696a297e656bbba0f2aada1ce7" kind="function"><name>SaveShaderToCahce</name></member>
     <member refid="dd/d81/DXCWrapper_8cpp_1a80e5783f06bb07b3c222f00c7c59c07f" kind="function"><name>to_wstring</name></member>
     <member refid="dd/d81/DXCWrapper_8cpp_1ab8a62aaa6369d2048972a8d42e1f5511" kind="function"><name>GetShaderModel</name></member>
     <member refid="d5/d22/Reflection_8cpp_1ad4212cfd02821deb5bc889f2601387fd" kind="function"><name>ToBvrShaderType</name></member>
@@ -12731,7 +12738,7 @@
   </compound>
   <compound refid="db/d7f/namespaceBvr_1_1Renderer_1_1Detail_1_1_0d232" kind="namespace"><name>Bvr::Renderer::Detail::@232</name>
   </compound>
-  <compound refid="d8/db7/namespaceBvr_1_1Renderer_1_1Detail_1_1_0d279" kind="namespace"><name>Bvr::Renderer::Detail::@279</name>
+  <compound refid="df/d42/namespaceBvr_1_1Renderer_1_1Detail_1_1_0d277" kind="namespace"><name>Bvr::Renderer::Detail::@277</name>
   </compound>
   <compound refid="dd/df9/namespaceBvr_1_1Renderer_1_1Device" kind="namespace"><name>Bvr::Renderer::Device</name>
     <member refid="dc/daf/BufferView_8cpp_1ae5a735abd83e1afc9a6c87e6e6c153b5" kind="variable"><name>s_bufferViewPool</name></member>
@@ -12762,7 +12769,7 @@
     <member refid="dd/d81/DXCWrapper_8cpp_1a9aa0a16a0d3dc430140d55f61620874f" kind="function"><name>GetInstance</name></member>
     <member refid="dd/d81/DXCWrapper_8cpp_1aaf8ca64008976ba87032dda3708839e1" kind="function"><name>Create</name></member>
     <member refid="dd/d81/DXCWrapper_8cpp_1ab2afa4dec113bca304b48e809e5aeab9" kind="function"><name>Release</name></member>
-    <member refid="dd/d81/DXCWrapper_8cpp_1a669ea5f3473765816f2052279d2dbcc1" kind="function"><name>Compile</name></member>
+    <member refid="dd/d81/DXCWrapper_8cpp_1a6dadc4d97a1ee26144bea5192a36892a" kind="function"><name>Compile</name></member>
   </compound>
   <compound refid="df/d4e/namespaceBvr_1_1Renderer_1_1Extensions" kind="namespace"><name>Bvr::Renderer::Extensions</name>
     <member refid="d2/dd4/Extensions_8cpp_1af5fad6e465da9824bc3c265910dc7231" kind="variable"><name>vkCmdSetCheckpoint</name></member>
@@ -12827,20 +12834,6 @@
     <member refid="de/ddb/TextureFormats_8hpp_1ab6540f673d756823e3e2e8f8feb8431a" kind="function"><name>GetPixelSize</name></member>
   </compound>
   <compound refid="de/d90/namespaceBvr_1_1Renderer_1_1Vk" kind="namespace"><name>Bvr::Renderer::Vk</name>
-    <member refid="d2/dc0/Device_8cpp_1a85a7d261597e0ffc106a4d9579bb577c" kind="function"><name>Destroy</name></member>
-    <member refid="d2/dc0/Device_8cpp_1a370a127c887e9541f5cedd136700966f" kind="function"><name>Destroy</name></member>
-    <member refid="d2/dc0/Device_8cpp_1ad9c5a7a7607942116e92f39e60ca31c8" kind="function"><name>Destroy</name></member>
-    <member refid="d2/dc0/Device_8cpp_1a5dd8dac9d095f706f1f0e192daa4390d" kind="function"><name>Destroy</name></member>
-    <member refid="d2/dc0/Device_8cpp_1aa4a5d467867a1291fd7c42d6845c40ba" kind="function"><name>Destroy</name></member>
-    <member refid="d2/dc0/Device_8cpp_1a4968f5b22ec854b919792877ab2af40b" kind="function"><name>Destroy</name></member>
-    <member refid="d2/dc0/Device_8cpp_1a05cef913e2396dfeb986ecc230512968" kind="function"><name>Destroy</name></member>
-    <member refid="d2/dc0/Device_8cpp_1a7b5690b11163a430d630f9a4d15907a3" kind="function"><name>Destroy</name></member>
-    <member refid="d2/dc0/Device_8cpp_1abbb49bd30a4ede057cf633308115dbda" kind="function"><name>Destroy</name></member>
-    <member refid="d2/dc0/Device_8cpp_1a0e069baf3fe5250e711019c1b53ede36" kind="function"><name>Destroy</name></member>
-    <member refid="d2/dc0/Device_8cpp_1ad39641f67191ff1afa87f4ff0fea3a37" kind="function"><name>Destroy</name></member>
-    <member refid="d2/dc0/Device_8cpp_1ab2956a4abed00ac4273d8d69db07de36" kind="function"><name>Destroy</name></member>
-    <member refid="d2/dc0/Device_8cpp_1a7d2556891f847240f68c54a5b6d4f4b2" kind="function"><name>Destroy</name></member>
-    <member refid="d2/dc0/Device_8cpp_1aacfd71788dfbf515eaae157b54d065d6" kind="function"><name>Destroy</name></member>
     <member refid="d3/df1/VulkanUtils_8cpp_1ae929f476d483fe1b690f4b9621b187e6" kind="function"><name>Convert</name></member>
     <member refid="d3/df1/VulkanUtils_8cpp_1a55d35ce23a224031021e5b4189058cb5" kind="function"><name>Convert</name></member>
     <member refid="d3/df1/VulkanUtils_8cpp_1ad9e45cc474a6182ebb0a7c69acf576b5" kind="function"><name>Convert</name></member>
@@ -12857,6 +12850,8 @@
     <member refid="d3/df1/VulkanUtils_8cpp_1a6b2d7b996f8083ae900f23d8bfea84c7" kind="function"><name>Convert</name></member>
     <member refid="d3/df1/VulkanUtils_8cpp_1aacbc06d607a0d0f8e0d67e0c531ce329" kind="function"><name>SetObjectName</name></member>
     <member refid="d3/df1/VulkanUtils_8cpp_1a15592fe3e42fce9d07b06e4ce0e29a4f" kind="function"><name>ResultFail</name></member>
+  </compound>
+  <compound refid="db/d28/namespaceBvr_1_1Renderer_1_1Vk_1_1_0d201" kind="namespace"><name>Bvr::Renderer::Vk::@201</name>
   </compound>
   <compound refid="dc/df0/namespaceBvr_1_1Renderer_1_1Window" kind="namespace"><name>Bvr::Renderer::Window</name>
     <member refid="db/d54/RenderWindow_8hpp_1a175e1fd8dea11d4e115e536060168ae7" kind="typedef"><name>Id</name></member>
@@ -13200,10 +13195,6 @@
   <compound refid="d8/d54/namespacePhysics" kind="namespace"><name>Physics</name>
   </compound>
   <compound refid="d9/d9d/namespacephysx" kind="namespace"><name>physx</name>
-  </compound>
-  <compound refid="d9/d5e/namespacePrivate" kind="namespace"><name>Private</name>
-  </compound>
-  <compound refid="de/d12/namespacePrivate_1_1_0d91" kind="namespace"><name>Private::@91</name>
   </compound>
   <compound refid="d1/dc3/namespacerapidjson" kind="namespace"><name>rapidjson</name>
   </compound>
@@ -13711,13 +13702,13 @@
   </compound>
   <compound refid="d0/de2/MeshIO_8cpp" kind="file"><name>MeshIO.cpp</name>
     <member refid="d0/de2/MeshIO_8cpp_1a267d7d04abca953a09699595764ed023" kind="variable"><name>BVR_REFLECTION_BLOCK</name></member>
-    <member refid="d0/de2/MeshIO_8cpp_1a5532f7392a1d1e0d59e0d0a9a1fca24c" kind="function"><name>Value</name></member>
-    <member refid="d0/de2/MeshIO_8cpp_1af7b7814032df484425885aa62f39fb29" kind="function"><name>Value</name></member>
-    <member refid="d0/de2/MeshIO_8cpp_1acb6fc95c1b905f8be19df1e341b3cc1e" kind="function"><name>Value</name></member>
-    <member refid="d0/de2/MeshIO_8cpp_1a71cec77904deb59b4ba5e2c870f3297d" kind="function"><name>Value</name></member>
-    <member refid="d0/de2/MeshIO_8cpp_1ad89729126407eb0b7b80bda9ec82ef18" kind="function"><name>Value</name></member>
-    <member refid="d0/de2/MeshIO_8cpp_1a785a7a27a1df659ab37556486808b984" kind="function"><name>Value</name></member>
-    <member refid="d0/de2/MeshIO_8cpp_1a43b9f478d7be916edb9945774cf7f56c" kind="function"><name>Value</name></member>
+    <member refid="d0/de2/MeshIO_8cpp_1a9001ce102b92367e190fb41b92103eba" kind="function"><name>Value</name></member>
+    <member refid="d0/de2/MeshIO_8cpp_1a66d55193dabb1835cdc0bead581699d0" kind="function"><name>Value</name></member>
+    <member refid="d0/de2/MeshIO_8cpp_1a45259234f2d1bb6b183915256792ea29" kind="function"><name>Value</name></member>
+    <member refid="d0/de2/MeshIO_8cpp_1aa0916ffb6d30c07d42c71f887ed41776" kind="function"><name>Value</name></member>
+    <member refid="d0/de2/MeshIO_8cpp_1a04e05658bd851c04a20cad9ba229c49c" kind="function"><name>Value</name></member>
+    <member refid="d0/de2/MeshIO_8cpp_1ab193a571275eb8441b3a98e61341ed8f" kind="function"><name>Value</name></member>
+    <member refid="d0/de2/MeshIO_8cpp_1a5d7f49eb5b8c9954cf3ac1c431dd4c20" kind="function"><name>Value</name></member>
   </compound>
   <compound refid="d4/dbc/MeshIO_8hpp" kind="file"><name>MeshIO.hpp</name>
   </compound>
@@ -13786,9 +13777,9 @@
   <compound refid="de/d7e/BvrImgui_8cpp" kind="file"><name>BvrImgui.cpp</name>
     <member refid="de/d7e/BvrImgui_8cpp_1a1ba04581369b6387200fec217764ff53" kind="define"><name>GET_WND</name></member>
     <member refid="de/d7e/BvrImgui_8cpp_1a0d2f1b34c5ba59a7b4721a2cfca04569" kind="function"><name>BvrImGui_Image</name></member>
-    <member refid="de/d7e/BvrImgui_8cpp_1a66fa8eb850f1214b9417c4c54c7b0d34" kind="function"><name>BvrImGui_Texture</name></member>
+    <member refid="de/d7e/BvrImgui_8cpp_1adc312a2e9cab80a4ed5137732f36d744" kind="function"><name>BvrImGui_Texture</name></member>
     <member refid="de/d7e/BvrImgui_8cpp_1a14634697cd11fabbe0a0bd1c453540b3" kind="function"><name>BvrImGui_ImageButton</name></member>
-    <member refid="de/d7e/BvrImgui_8cpp_1a4b3505a23867a2ffe3bad9d7a248e48a" kind="function"><name>BvrImGui_TextureButton</name></member>
+    <member refid="de/d7e/BvrImgui_8cpp_1a0b82a9dd809c04a68635c24222ff6e05" kind="function"><name>BvrImGui_TextureButton</name></member>
   </compound>
   <compound refid="d6/df3/BvrImGui_8hpp" kind="file"><name>BvrImGui.hpp</name>
     <member refid="d6/df3/BvrImGui_8hpp_1a364f4447ecbc4ca176145ccff9db6286" kind="typedef"><name>ImTextureID</name></member>
@@ -13809,6 +13800,7 @@
   <compound refid="d0/d37/DescriptorSet_8h" kind="file"><name>DescriptorSet.h</name>
   </compound>
   <compound refid="d2/dc0/Device_8cpp" kind="file"><name>Device.cpp</name>
+    <member refid="d2/dc0/Device_8cpp_1a6854a63389f56c0d755061c1d5c1e98a" kind="define"><name>DEC_RELEASE</name></member>
   </compound>
   <compound refid="de/d05/Device_8h" kind="file"><name>Device.h</name>
     <member refid="de/d05/Device_8h_1a4fa6a943f025ab3ed9efe2dd50a2d0c6" kind="define"><name>MAX_PENDING_RESOURCE_UPDATES</name></member>
@@ -13944,11 +13936,6 @@
   </compound>
   <compound refid="db/d3e/ShadowPass_8hpp" kind="file"><name>ShadowPass.hpp</name>
   </compound>
-  <compound refid="d7/de6/TerrainGen_8cpp" kind="file"><name>TerrainGen.cpp</name>
-    <member refid="d7/de6/TerrainGen_8cpp_1a267d7d04abca953a09699595764ed023" kind="variable"><name>BVR_REFLECTION_BLOCK</name></member>
-  </compound>
-  <compound refid="d3/d2d/TerrainGen_8hpp" kind="file"><name>TerrainGen.hpp</name>
-  </compound>
   <compound refid="dc/dad/UtilityPasses_8cpp" kind="file"><name>UtilityPasses.cpp</name>
   </compound>
   <compound refid="d4/daf/HWDevice_8cpp" kind="file"><name>HWDevice.cpp</name>
@@ -14049,8 +14036,8 @@
   <compound refid="d2/d8c/IBvrRenderer_8hpp" kind="file"><name>IBvrRenderer.hpp</name>
     <member refid="d2/d8c/IBvrRenderer_8hpp_1a238347d7669f8f1e9c83bfe63a2730c4" kind="define"><name>__cdecl</name></member>
     <member refid="d2/d8c/IBvrRenderer_8hpp_1a4c0a335b190c671c6762d7ed6806b9bb" kind="function"><name>BvrImGui_Image</name></member>
-    <member refid="d2/d8c/IBvrRenderer_8hpp_1acafb1d10d72d67cbf12650e98cd53f02" kind="function"><name>BvrImGui_Texture</name></member>
-    <member refid="d2/d8c/IBvrRenderer_8hpp_1a90cb2604e1661b776d641c0f13546abe" kind="function"><name>BvrImGui_TextureButton</name></member>
+    <member refid="d2/d8c/IBvrRenderer_8hpp_1a0bb4bb29a8884bc9cc5550f5caec2b7f" kind="function"><name>BvrImGui_Texture</name></member>
+    <member refid="d2/d8c/IBvrRenderer_8hpp_1aa6f488bacf8443f802205d1e929716c1" kind="function"><name>BvrImGui_TextureButton</name></member>
     <member refid="d2/d8c/IBvrRenderer_8hpp_1afe196be04a79d0fb9417052d2810995a" kind="function"><name>BvrImGui_ImageButton</name></member>
   </compound>
   <compound refid="d0/d70/Material_8hpp" kind="file"><name>Material.hpp</name>
