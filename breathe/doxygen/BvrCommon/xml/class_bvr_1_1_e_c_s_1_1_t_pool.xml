@@ -2,16 +2,19 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="class_bvr_1_1_e_c_s_1_1_t_pool" kind="class" language="C++" prot="public">
     <compoundname>Bvr::ECS::TPool</compoundname>
-    <basecompoundref refid="class_bvr_1_1_e_c_s_1_1_t_basic_dense_storage" prot="public" virt="non-virtual">Bvr::ECS::TBasicDenseStorage&lt; T, TEntity &gt;</basecompoundref>
+    <basecompoundref refid="class_bvr_1_1_e_c_s_1_1_t_basic_dense_storage" prot="public" virt="non-virtual">Bvr::ECS::TBasicDenseStorage&lt; T, TEntity, Allocator &gt;</basecompoundref>
     <templateparamlist>
       <param>
         <type>typename T</type>
       </param>
+      <param>
+        <type>typename Allocator</type>
+      </param>
     </templateparamlist>
       <sectiondef kind="private-type">
-      <memberdef kind="typedef" id="class_bvr_1_1_e_c_s_1_1_t_pool_1acab1d253b983df520bb1e13b7d220dba" prot="private" static="no">
-        <type><ref refid="class_bvr_1_1_e_c_s_1_1_t_basic_dense_storage" kindref="compound">TBasicDenseStorage</ref>&lt; T, TEntity &gt;</type>
-        <definition>using Bvr::ECS::TPool&lt; T &gt;::TBase =  TBasicDenseStorage&lt;T, TEntity&gt;</definition>
+      <memberdef kind="typedef" id="class_bvr_1_1_e_c_s_1_1_t_pool_1a2110a0c6a72fada34b9f30def1aaee77" prot="private" static="no">
+        <type><ref refid="class_bvr_1_1_e_c_s_1_1_t_basic_dense_storage" kindref="compound">TBasicDenseStorage</ref>&lt; T, TEntity, Allocator &gt;</type>
+        <definition>using Bvr::ECS::TPool&lt; T, Allocator &gt;::TBase =  TBasicDenseStorage&lt;T, TEntity, Allocator&gt;</definition>
         <argsstring></argsstring>
         <name>TBase</name>
         <briefdescription>
@@ -22,24 +25,11 @@
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="139" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="139" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="class_bvr_1_1_e_c_s_1_1_t_pool_1af699bd7f9d731b8385a10daed0270aa5" prot="private" static="no">
-        <type>std::allocator_traits&lt; std::allocator&lt; T &gt; &gt;</type>
-        <definition>using Bvr::ECS::TPool&lt; T &gt;::AllocTraitsT =  std::allocator_traits&lt;std::allocator&lt;T&gt; &gt;</definition>
-        <argsstring></argsstring>
-        <name>AllocTraitsT</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="140" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="140" bodyend="-1"/>
-      </memberdef>
       </sectiondef>
       <sectiondef kind="public-type">
-      <memberdef kind="typedef" id="class_bvr_1_1_e_c_s_1_1_t_pool_1a66ac5d91ba365dc1c994637fe7ecf585" prot="public" static="no">
-        <type>std::function&lt; void(const TEntity)&gt;</type>
-        <definition>using Bvr::ECS::TPool&lt; T &gt;::TSignalFn =  std::function&lt;void(const TEntity)&gt;</definition>
+      <memberdef kind="typedef" id="class_bvr_1_1_e_c_s_1_1_t_pool_1a767116182bca5428c5964cf35c77626d" prot="public" static="no">
+        <type>std::function&lt; void(<ref refid="class_bvr_1_1_e_c_s_1_1_reg" kindref="compound">Reg</ref> &amp;, const TEntity)&gt;</type>
+        <definition>using Bvr::ECS::TPool&lt; T, Allocator &gt;::TSignalFn =  std::function&lt;void(Reg&amp;, const TEntity)&gt;</definition>
         <argsstring></argsstring>
         <name>TSignalFn</name>
         <briefdescription>
@@ -48,11 +38,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="175" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="175" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="174" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="174" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="class_bvr_1_1_e_c_s_1_1_t_pool_1a58028e3968f68e1484a9a43837457dc2" prot="public" static="no">
+      <memberdef kind="typedef" id="class_bvr_1_1_e_c_s_1_1_t_pool_1a474985762d942efa74d5f41fe6caaba6" prot="public" static="no">
         <type>typename <ref refid="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set" kindref="compound">TBase::BaseT</ref></type>
-        <definition>using Bvr::ECS::TPool&lt; T &gt;::TSparse =  typename TBase::BaseT</definition>
+        <definition>using Bvr::ECS::TPool&lt; T, Allocator &gt;::TSparse =  typename TBase::BaseT</definition>
         <argsstring></argsstring>
         <name>TSparse</name>
         <briefdescription>
@@ -61,11 +51,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="176" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="176" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="175" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="175" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="class_bvr_1_1_e_c_s_1_1_t_pool_1a4c5ed672674b97b9160ec09724f3a835" prot="public" static="no">
+      <memberdef kind="typedef" id="class_bvr_1_1_e_c_s_1_1_t_pool_1a5e2aac70d8fe9679c767d3912c2d6c31" prot="public" static="no">
         <type>TEntity</type>
-        <definition>using Bvr::ECS::TPool&lt; T &gt;::EntityT =  TEntity</definition>
+        <definition>using Bvr::ECS::TPool&lt; T, Allocator &gt;::EntityT =  TEntity</definition>
         <argsstring></argsstring>
         <name>EntityT</name>
         <briefdescription>
@@ -74,11 +64,24 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="177" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="177" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="176" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="176" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="class_bvr_1_1_e_c_s_1_1_t_pool_1ab9cb07fc6db08cbe42c5feb368f88871" prot="public" static="no">
+      <memberdef kind="typedef" id="class_bvr_1_1_e_c_s_1_1_t_pool_1a268d57dc2add1ac801d939014beabe8e" prot="public" static="no">
+        <type>typename TBase::allocator_type</type>
+        <definition>using Bvr::ECS::TPool&lt; T, Allocator &gt;::allocator_type =  typename TBase::allocator_type</definition>
+        <argsstring></argsstring>
+        <name>allocator_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="178" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="178" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="class_bvr_1_1_e_c_s_1_1_t_pool_1a03a62b46dcfa45cb81294d5162622bd9" prot="public" static="no">
         <type>typename TBase::size_type</type>
-        <definition>using Bvr::ECS::TPool&lt; T &gt;::size_type =  typename TBase::size_type</definition>
+        <definition>using Bvr::ECS::TPool&lt; T, Allocator &gt;::size_type =  typename TBase::size_type</definition>
         <argsstring></argsstring>
         <name>size_type</name>
         <briefdescription>
@@ -91,22 +94,23 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="class_bvr_1_1_e_c_s_1_1_t_pool_1a7aadc28af52633d1fe6efc2dcbb0dad4" prot="private" static="no" mutable="no">
-        <type>TSignalFn</type>
-        <definition>TSignalFn Bvr::ECS::TPool&lt; T &gt;::OnPatch</definition>
+      <memberdef kind="variable" id="class_bvr_1_1_e_c_s_1_1_t_pool_1a7a62e4889f9afcfc92c9d054fc051695" prot="private" static="no" mutable="no">
+        <type><ref refid="class_bvr_1_1_e_c_s_1_1_reg" kindref="compound">Reg</ref> *</type>
+        <definition>Reg* Bvr::ECS::TPool&lt; T, Allocator &gt;::m_pOwner</definition>
         <argsstring></argsstring>
-        <name>OnPatch</name>
+        <name>m_pOwner</name>
+        <initializer>= nullptr</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="237" column="15" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="237" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="254" column="14" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="254" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_bvr_1_1_e_c_s_1_1_t_pool_1ab2d36d09684ef0b187334c174961bbd0" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_bvr_1_1_e_c_s_1_1_t_pool_1a164c2bba9e668f6f7fdf675f624ddf4b" prot="private" static="no" mutable="no">
         <type>TSignalFn</type>
-        <definition>TSignalFn Bvr::ECS::TPool&lt; T &gt;::OnCreate</definition>
+        <definition>TSignalFn Bvr::ECS::TPool&lt; T, Allocator &gt;::OnCreate</definition>
         <argsstring></argsstring>
         <name>OnCreate</name>
         <briefdescription>
@@ -115,11 +119,24 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="238" column="15" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="238" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="255" column="15" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="255" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_bvr_1_1_e_c_s_1_1_t_pool_1a21a220e5ab87fec2e17b8e2c28f5f402" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="class_bvr_1_1_e_c_s_1_1_t_pool_1a795851ce3ef5cb5ed3445741de2a8d33" prot="private" static="no" mutable="no">
         <type>TSignalFn</type>
-        <definition>TSignalFn Bvr::ECS::TPool&lt; T &gt;::OnRemove</definition>
+        <definition>TSignalFn Bvr::ECS::TPool&lt; T, Allocator &gt;::OnPatch</definition>
+        <argsstring></argsstring>
+        <name>OnPatch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="256" column="15" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="256" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_e_c_s_1_1_t_pool_1a7b319e094172fa6e5e784fdd0f92efa1" prot="private" static="no" mutable="no">
+        <type>TSignalFn</type>
+        <definition>TSignalFn Bvr::ECS::TPool&lt; T, Allocator &gt;::OnRemove</definition>
         <argsstring></argsstring>
         <name>OnRemove</name>
         <briefdescription>
@@ -128,13 +145,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="239" column="15" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="239" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="257" column="15" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="257" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-func">
-      <memberdef kind="function" id="class_bvr_1_1_e_c_s_1_1_t_pool_1a65e94564036c773d44c43e0213621596" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+      <memberdef kind="function" id="class_bvr_1_1_e_c_s_1_1_t_pool_1a2c7e2d1b86210531ae009cf00614c21b" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>TBase::BaseT::iterator</type>
-        <definition>virtual TBase::BaseT::iterator Bvr::ECS::TPool&lt; T &gt;::try_emplace</definition>
+        <definition>virtual TBase::BaseT::iterator Bvr::ECS::TPool&lt; T, Allocator &gt;::try_emplace</definition>
         <argsstring>(TEntity ent, const void *pData) override</argsstring>
         <name>try_emplace</name>
         <reimplements refid="class_bvr_1_1_e_c_s_1_1_t_basic_dense_storage_1a2757ff4a8f17d56f34c1278663d356f7">try_emplace</reimplements>
@@ -152,11 +169,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="145" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="145" bodyend="149"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="144" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="144" bodyend="148"/>
       </memberdef>
-      <memberdef kind="function" id="class_bvr_1_1_e_c_s_1_1_t_pool_1a0b15a3d413706baf46b7f6f9e336ba9c" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+      <memberdef kind="function" id="class_bvr_1_1_e_c_s_1_1_t_pool_1a85b103577928a87dea1a8205134272bf" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
-        <definition>virtual void Bvr::ECS::TPool&lt; T &gt;::SwapAndPop</definition>
+        <definition>virtual void Bvr::ECS::TPool&lt; T, Allocator &gt;::SwapAndPop</definition>
         <argsstring>(typename TBase::BaseT::iterator first, typename TBase::BaseT::iterator last) override</argsstring>
         <name>SwapAndPop</name>
         <param>
@@ -173,11 +190,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="151" column="18" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="151" bodyend="161"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="150" column="18" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="150" bodyend="160"/>
       </memberdef>
-      <memberdef kind="function" id="class_bvr_1_1_e_c_s_1_1_t_pool_1a8430b10e6ae3261eb312116889ac7dee" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+      <memberdef kind="function" id="class_bvr_1_1_e_c_s_1_1_t_pool_1a0431624f30bfae0b58cf346c5b02885f" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
-        <definition>virtual void Bvr::ECS::TPool&lt; T &gt;::InPlacePop</definition>
+        <definition>virtual void Bvr::ECS::TPool&lt; T, Allocator &gt;::InPlacePop</definition>
         <argsstring>(typename TBase::BaseT::iterator first, typename TBase::BaseT::iterator last) override</argsstring>
         <name>InPlacePop</name>
         <param>
@@ -194,26 +211,70 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="162" column="18" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="162" bodyend="172"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="161" column="18" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="161" bodyend="171"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="class_bvr_1_1_e_c_s_1_1_t_pool_1a9456af87ab68826959e7851e5ec48b50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_bvr_1_1_e_c_s_1_1_t_pool_1ab14325593539abf69727e8ac45f2a0f7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
-        <definition>Bvr::ECS::TPool&lt; T &gt;::TPool</definition>
-        <argsstring>()=default</argsstring>
+        <definition>Bvr::ECS::TPool&lt; T, Allocator &gt;::TPool</definition>
+        <argsstring>(Reg *pOwner=nullptr, allocator_type allocator={})</argsstring>
         <name>TPool</name>
+        <param>
+          <type><ref refid="class_bvr_1_1_e_c_s_1_1_reg" kindref="compound">Reg</ref> *</type>
+          <declname>pOwner</declname>
+          <defval>nullptr</defval>
+        </param>
+        <param>
+          <type>allocator_type</type>
+          <declname>allocator</declname>
+          <defval>{}</defval>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="181" column="5"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="181" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="181" bodyend="182"/>
       </memberdef>
-      <memberdef kind="function" id="class_bvr_1_1_e_c_s_1_1_t_pool_1afe2ae2d89bff5eed5ff111514e37c965" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_bvr_1_1_e_c_s_1_1_t_pool_1aface8fa4168320b80c9ecaa1b99c448d" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type></type>
-        <definition>Bvr::ECS::TPool&lt; T &gt;::~TPool</definition>
+        <definition>Bvr::ECS::TPool&lt; T, Allocator &gt;::TPool</definition>
+        <argsstring>(TPool &amp;&amp;other) noexcept</argsstring>
+        <name>TPool</name>
+        <param>
+          <type><ref refid="class_bvr_1_1_e_c_s_1_1_t_pool" kindref="compound">TPool</ref> &amp;&amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="184" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="184" bodyend="188"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_e_c_s_1_1_t_pool_1a9ea368121ab1aa00748e4c2d6f49f8da" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="class_bvr_1_1_e_c_s_1_1_t_pool" kindref="compound">TPool</ref> &amp;</type>
+        <definition>TPool&amp; Bvr::ECS::TPool&lt; T, Allocator &gt;::operator=</definition>
+        <argsstring>(TPool &amp;&amp;other) noexcept</argsstring>
+        <name>operator=</name>
+        <param>
+          <type><ref refid="class_bvr_1_1_e_c_s_1_1_t_pool" kindref="compound">TPool</ref> &amp;&amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="190" column="11" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="190" bodyend="202"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_e_c_s_1_1_t_pool_1ae1adcb68a3a699bd989992207cee686a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Bvr::ECS::TPool&lt; T, Allocator &gt;::~TPool</definition>
         <argsstring>()=default</argsstring>
         <name>~TPool</name>
         <briefdescription>
@@ -222,11 +283,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="182" column="5"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="204" column="5"/>
       </memberdef>
-      <memberdef kind="function" id="class_bvr_1_1_e_c_s_1_1_t_pool_1a7e160388547bf7628048ba2a90ca1a04" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_bvr_1_1_e_c_s_1_1_t_pool_1a736777d2fc35edfc7ce81b2324d204e3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>size_type</type>
-        <definition>size_type Bvr::ECS::TPool&lt; T &gt;::remove</definition>
+        <definition>size_type Bvr::ECS::TPool&lt; T, Allocator &gt;::remove</definition>
         <argsstring>(const EntityT ent)</argsstring>
         <name>remove</name>
         <param>
@@ -239,16 +300,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="184" column="15" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="184" bodyend="184"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="206" column="15" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="206" bodyend="206"/>
       </memberdef>
-      <memberdef kind="function" id="class_bvr_1_1_e_c_s_1_1_t_pool_1a806fc0515263b1c08e765884328ef11c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_bvr_1_1_e_c_s_1_1_t_pool_1ab1654eee95a9da4f961489f4d2efda2c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename Iterator</type>
           </param>
         </templateparamlist>
         <type>size_type</type>
-        <definition>size_type Bvr::ECS::TPool&lt; T &gt;::remove</definition>
+        <definition>size_type Bvr::ECS::TPool&lt; T, Allocator &gt;::remove</definition>
         <argsstring>(Iterator begin, Iterator end)</argsstring>
         <name>remove</name>
         <param>
@@ -265,9 +326,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="186" column="15" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="186" bodyend="193"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="208" column="15" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="208" bodyend="215"/>
       </memberdef>
-      <memberdef kind="function" id="class_bvr_1_1_e_c_s_1_1_t_pool_1a25cda06dd409f736f3538645a0e0c821" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_bvr_1_1_e_c_s_1_1_t_pool_1a32724e61a76b003ddf066110548ca8e1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename...</type>
@@ -276,11 +337,11 @@
           </param>
         </templateparamlist>
         <type>decltype(auto)</type>
-        <definition>decltype(auto) Bvr::ECS::TPool&lt; T &gt;::patch</definition>
-        <argsstring>(const TEntity ent, Args &amp;&amp;... args)</argsstring>
+        <definition>decltype(auto) Bvr::ECS::TPool&lt; T, Allocator &gt;::patch</definition>
+        <argsstring>(const EntityT ent, Args &amp;&amp;... args)</argsstring>
         <name>patch</name>
         <param>
-          <type>const TEntity</type>
+          <type>const EntityT</type>
           <declname>ent</declname>
         </param>
         <param>
@@ -293,9 +354,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="196" column="14" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="196" bodyend="206"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="218" column="14" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="218" bodyend="228"/>
       </memberdef>
-      <memberdef kind="function" id="class_bvr_1_1_e_c_s_1_1_t_pool_1a4cde68a685a32f07e50f287e12e3ec29" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_bvr_1_1_e_c_s_1_1_t_pool_1a671c08fa04f4566b260777af737ebf5a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename...</type>
@@ -304,11 +365,11 @@
           </param>
         </templateparamlist>
         <type>decltype(auto)</type>
-        <definition>decltype(auto) Bvr::ECS::TPool&lt; T &gt;::emplace</definition>
-        <argsstring>(const TEntity ent, Args &amp;&amp;... args)</argsstring>
+        <definition>decltype(auto) Bvr::ECS::TPool&lt; T, Allocator &gt;::emplace</definition>
+        <argsstring>(const EntityT ent, Args &amp;&amp;... args)</argsstring>
         <name>emplace</name>
         <param>
-          <type>const TEntity</type>
+          <type>const EntityT</type>
           <declname>ent</declname>
         </param>
         <param>
@@ -321,28 +382,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="209" column="14" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="209" bodyend="213"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="231" column="14" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="231" bodyend="235"/>
       </memberdef>
-      <memberdef kind="function" id="class_bvr_1_1_e_c_s_1_1_t_pool_1ad982043521a3af4723804f0eca0e3f45" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_bvr_1_1_e_c_s_1_1_t_pool_1a874d9b5959ce226410155571caf33f08" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void Bvr::ECS::TPool&lt; T &gt;::SetPatch</definition>
-        <argsstring>(TSignalFn &amp;&amp;fn)</argsstring>
-        <name>SetPatch</name>
-        <param>
-          <type>TSignalFn &amp;&amp;</type>
-          <declname>fn</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="215" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="215" bodyend="215"/>
-      </memberdef>
-      <memberdef kind="function" id="class_bvr_1_1_e_c_s_1_1_t_pool_1abed822a83e6623068fc8667861f80a65" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>void Bvr::ECS::TPool&lt; T &gt;::SetOnCreate</definition>
+        <definition>void Bvr::ECS::TPool&lt; T, Allocator &gt;::SetOnCreate</definition>
         <argsstring>(TSignalFn &amp;&amp;fn)</argsstring>
         <name>SetOnCreate</name>
         <param>
@@ -355,11 +399,28 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="216" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="216" bodyend="216"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="237" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="237" bodyend="237"/>
       </memberdef>
-      <memberdef kind="function" id="class_bvr_1_1_e_c_s_1_1_t_pool_1a997dc012fa365ebbc151f9ed9db4009b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_bvr_1_1_e_c_s_1_1_t_pool_1a2537c5e5cadd04cc57b74470e00297e3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void Bvr::ECS::TPool&lt; T &gt;::SetOnRemove</definition>
+        <definition>void Bvr::ECS::TPool&lt; T, Allocator &gt;::SetPatch</definition>
+        <argsstring>(TSignalFn &amp;&amp;fn)</argsstring>
+        <name>SetPatch</name>
+        <param>
+          <type>TSignalFn &amp;&amp;</type>
+          <declname>fn</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="238" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="238" bodyend="238"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_e_c_s_1_1_t_pool_1a8ada09fb1cb7a78cc3c11017dcaff222" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::ECS::TPool&lt; T, Allocator &gt;::SetOnRemove</definition>
         <argsstring>(TSignalFn &amp;&amp;fn)</argsstring>
         <name>SetOnRemove</name>
         <param>
@@ -372,17 +433,35 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="217" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="217" bodyend="217"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="239" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="239" bodyend="239"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_e_c_s_1_1_t_pool_1a7d7d291b8e72bad2e77076fea680f616" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void Bvr::ECS::TPool&lt; T, Allocator &gt;::Rebind</definition>
+        <argsstring>(Reg *pReg) override</argsstring>
+        <name>Rebind</name>
+        <reimplements refid="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set_1ab766d2c759a7ce289314860ab1a4056d">Rebind</reimplements>
+        <param>
+          <type><ref refid="class_bvr_1_1_e_c_s_1_1_reg" kindref="compound">Reg</ref> *</type>
+          <declname>pReg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="240" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="240" bodyend="240"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
-      <memberdef kind="function" id="class_bvr_1_1_e_c_s_1_1_t_pool_1a7f8bff158911dc3e704c85e79fa23888" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_bvr_1_1_e_c_s_1_1_t_pool_1abb67e0e567196dc82c54f823eada8d49" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void Bvr::ECS::TPool&lt; T &gt;::Created</definition>
-        <argsstring>(const TEntity ent)</argsstring>
+        <definition>void Bvr::ECS::TPool&lt; T, Allocator &gt;::Created</definition>
+        <argsstring>(const EntityT ent)</argsstring>
         <name>Created</name>
         <param>
-          <type>const TEntity</type>
+          <type>const EntityT</type>
           <declname>ent</declname>
         </param>
         <briefdescription>
@@ -391,15 +470,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="220" column="17" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="220" bodyend="224"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="243" column="17" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="243" bodyend="243"/>
       </memberdef>
-      <memberdef kind="function" id="class_bvr_1_1_e_c_s_1_1_t_pool_1aee90baec31e37e4f4ab88d040c55b9e6" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_bvr_1_1_e_c_s_1_1_t_pool_1a8cade7eaefda5d62e830f4af810d034b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void Bvr::ECS::TPool&lt; T &gt;::Updated</definition>
-        <argsstring>(const TEntity ent)</argsstring>
+        <definition>void Bvr::ECS::TPool&lt; T, Allocator &gt;::Updated</definition>
+        <argsstring>(const EntityT ent)</argsstring>
         <name>Updated</name>
         <param>
-          <type>const TEntity</type>
+          <type>const EntityT</type>
           <declname>ent</declname>
         </param>
         <briefdescription>
@@ -408,15 +487,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="225" column="17" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="225" bodyend="229"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="244" column="17" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="244" bodyend="244"/>
       </memberdef>
-      <memberdef kind="function" id="class_bvr_1_1_e_c_s_1_1_t_pool_1a967a251de06d1edc5926851c14054b85" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_bvr_1_1_e_c_s_1_1_t_pool_1a25b51a0e18593c50e733e061626e6a7e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void Bvr::ECS::TPool&lt; T &gt;::Removed</definition>
-        <argsstring>(const TEntity ent)</argsstring>
+        <definition>void Bvr::ECS::TPool&lt; T, Allocator &gt;::Removed</definition>
+        <argsstring>(const EntityT ent)</argsstring>
         <name>Removed</name>
         <param>
-          <type>const TEntity</type>
+          <type>const EntityT</type>
           <declname>ent</declname>
         </param>
         <briefdescription>
@@ -425,7 +504,28 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="230" column="17" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="230" bodyend="234"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="245" column="17" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="245" bodyend="245"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_e_c_s_1_1_t_pool_1aeeca7da2960d1ee683c99a4cd45258c7" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::ECS::TPool&lt; T, Allocator &gt;::DispatchSignal</definition>
+        <argsstring>(TSignalFn &amp;signal, const EntityT ent)</argsstring>
+        <name>DispatchSignal</name>
+        <param>
+          <type>TSignalFn &amp;</type>
+          <declname>signal</declname>
+        </param>
+        <param>
+          <type>const EntityT</type>
+          <declname>ent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="247" column="17" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="247" bodyend="251"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -433,45 +533,44 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="3">
-        <label>Bvr::ECS::TBasicSparseSet&lt; EntT, AllocatorT &gt;</label>
-        <link refid="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set"/>
-      </node>
       <node id="1">
-        <label>Bvr::ECS::TPool&lt; T &gt;</label>
+        <label>Bvr::ECS::TPool&lt; T, Allocator &gt;</label>
         <link refid="class_bvr_1_1_e_c_s_1_1_t_pool"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="3">
+        <label>Bvr::ECS::TBasicSparseSet&lt; EntT, AllocatorT &gt;</label>
+        <link refid="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set"/>
+      </node>
       <node id="2">
-        <label>Bvr::ECS::TBasicDenseStorage&lt; T, TEntity &gt;</label>
+        <label>Bvr::ECS::TBasicDenseStorage&lt; T, TEntity, Allocator &gt;</label>
         <link refid="class_bvr_1_1_e_c_s_1_1_t_basic_dense_storage"/>
         <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="3">
-        <label>Bvr::ECS::TBasicSparseSet&lt; EntT, AllocatorT &gt;</label>
-        <link refid="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set"/>
-      </node>
       <node id="1">
-        <label>Bvr::ECS::TPool&lt; T &gt;</label>
+        <label>Bvr::ECS::TPool&lt; T, Allocator &gt;</label>
         <link refid="class_bvr_1_1_e_c_s_1_1_t_pool"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="3">
+        <label>Bvr::ECS::TBasicSparseSet&lt; EntT, AllocatorT &gt;</label>
+        <link refid="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set"/>
+      </node>
       <node id="2">
-        <label>Bvr::ECS::TBasicDenseStorage&lt; T, TEntity &gt;</label>
+        <label>Bvr::ECS::TBasicDenseStorage&lt; T, TEntity, Allocator &gt;</label>
         <link refid="class_bvr_1_1_e_c_s_1_1_t_basic_dense_storage"/>
         <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="138" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="138" bodyend="240"/>
+    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="138" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="138" bodyend="258"/>
     <listofallmembers>
-      <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_dense_storage_1a6708fb13ef7fb81ec70bd0ba14971c2c" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>allocator_type</name></member>
-      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1af699bd7f9d731b8385a10daed0270aa5" prot="private" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>AllocTraitsT</name></member>
+      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1a268d57dc2add1ac801d939014beabe8e" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>allocator_type</name></member>
       <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set_1a9bd7266aea1741596820efa5a01c7dde" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>at</name></member>
       <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_dense_storage_1a194377db572bd35542f1bd452ba8ef6f" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>BaseT</name></member>
       <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_dense_storage_1a95d243225d5d8d3deac64b255dd6e493" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>begin</name></member>
@@ -484,14 +583,15 @@
       <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_dense_storage_1a15e86dc5eced58790bf8214b1f5bf533" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>const_pointer</name></member>
       <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_dense_storage_1a781a3c350ca9bb00d69bd36474b53727" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>const_reference</name></member>
       <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set_1adb77aad16ae2893f4f211cd49039540d" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>contains</name></member>
-      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1a7f8bff158911dc3e704c85e79fa23888" prot="private" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>Created</name></member>
+      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1abb67e0e567196dc82c54f823eada8d49" prot="private" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>Created</name></member>
       <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_dense_storage_1a9fb8fcc7d1bc16928aa04cb3b43d7fc2" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>difference_type</name></member>
+      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1aeeca7da2960d1ee683c99a4cd45258c7" prot="private" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>DispatchSignal</name></member>
       <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_dense_storage_1aebf42e9a1a4ac58670f2c56d506f5848" prot="protected" virt="virtual"><scope>Bvr::ECS::TPool</scope><name>ElemAt</name></member>
-      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1a4cde68a685a32f07e50f287e12e3ec29" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>emplace</name></member>
+      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1a671c08fa04f4566b260777af737ebf5a" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>emplace</name></member>
       <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set_1a7876de84c9078f289396b7958cd16178" prot="public" virt="non-virtual" ambiguityscope="Bvr::ECS::TBasicSparseSet::"><scope>Bvr::ECS::TPool</scope><name>emplace</name></member>
       <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set_1ac3f244003a00039a5efe37ea8924a153" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>empty</name></member>
       <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_dense_storage_1a1057ede791e5ccd9a00c00cc39c59b6a" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>end</name></member>
-      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1a4c5ed672674b97b9160ec09724f3a835" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>EntityT</name></member>
+      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1a5e2aac70d8fe9679c767d3912c2d6c31" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>EntityT</name></member>
       <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set_1af83c13ad1d0ffb1bac2c2ab987cfc69c" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>erase</name></member>
       <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set_1adc962c653c32f977c24385e94108da25" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>EReleasePolicy</name></member>
       <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set_1a3b5b75c17d62338189dfe9ea97dbc7a7" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>find</name></member>
@@ -503,45 +603,49 @@
       <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set_1a2e9556c09ac884af500223613c5c2f42" prot="public" virt="non-virtual" ambiguityscope="Bvr::ECS::TBasicSparseSet::"><scope>Bvr::ECS::TPool</scope><name>get</name></member>
       <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_dense_storage_1a07e01b7313c13417a653544be468ed68" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>GetAllocator</name></member>
       <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set_1a1d5224980b98a86487e90e453ac86531" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>index</name></member>
-      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1a8430b10e6ae3261eb312116889ac7dee" prot="protected" virt="virtual"><scope>Bvr::ECS::TPool</scope><name>InPlacePop</name></member>
-      <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_dense_storage_1a99b5a9ed4dab90519458b837ab26481a" prot="protected" virt="virtual" ambiguityscope="TBasicDenseStorage&lt; T, TEntity &gt;::"><scope>Bvr::ECS::TPool</scope><name>InPlacePop</name></member>
+      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1a0431624f30bfae0b58cf346c5b02885f" prot="protected" virt="virtual"><scope>Bvr::ECS::TPool</scope><name>InPlacePop</name></member>
+      <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_dense_storage_1a99b5a9ed4dab90519458b837ab26481a" prot="protected" virt="virtual" ambiguityscope="TBasicDenseStorage&lt; T, TEntity, Allocator &gt;::"><scope>Bvr::ECS::TPool</scope><name>InPlacePop</name></member>
       <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_dense_storage_1a1c5cc5b8611906965f4294c0553fc273" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>iterator</name></member>
+      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1a7a62e4889f9afcfc92c9d054fc051695" prot="private" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>m_pOwner</name></member>
       <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set_1a7fe08e28d37a7403e10ec4a61880eb57" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>Null</name></member>
-      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1ab2d36d09684ef0b187334c174961bbd0" prot="private" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>OnCreate</name></member>
-      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1a7aadc28af52633d1fe6efc2dcbb0dad4" prot="private" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>OnPatch</name></member>
-      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1a21a220e5ab87fec2e17b8e2c28f5f402" prot="private" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>OnRemove</name></member>
+      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1a164c2bba9e668f6f7fdf675f624ddf4b" prot="private" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>OnCreate</name></member>
+      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1a795851ce3ef5cb5ed3445741de2a8d33" prot="private" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>OnPatch</name></member>
+      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1a7b319e094172fa6e5e784fdd0f92efa1" prot="private" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>OnRemove</name></member>
+      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1a9ea368121ab1aa00748e4c2d6f49f8da" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>operator=</name></member>
       <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set_1aba954d7072985d1b833d71e193a00373" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>operator[]</name></member>
-      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1a25cda06dd409f736f3538645a0e0c821" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>patch</name></member>
+      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1a32724e61a76b003ddf066110548ca8e1" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>patch</name></member>
       <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_dense_storage_1a1ae661aa5b5d1b1e24483f57a4b1440f" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>pointer</name></member>
+      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1a7d7d291b8e72bad2e77076fea680f616" prot="public" virt="virtual"><scope>Bvr::ECS::TPool</scope><name>Rebind</name></member>
       <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_dense_storage_1a3b2f17bb9bc8c6802cef5f7396cf3dab" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>reference</name></member>
-      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1a7e160388547bf7628048ba2a90ca1a04" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>remove</name></member>
-      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1a806fc0515263b1c08e765884328ef11c" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>remove</name></member>
-      <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set_1a15fcbb7a9359b2a41e3b8f945679d4bb" prot="public" virt="non-virtual" ambiguityscope="TBasicDenseStorage&lt; T, TEntity &gt;::"><scope>Bvr::ECS::TPool</scope><name>remove</name></member>
-      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1a967a251de06d1edc5926851c14054b85" prot="private" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>Removed</name></member>
+      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1a736777d2fc35edfc7ce81b2324d204e3" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>remove</name></member>
+      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1ab1654eee95a9da4f961489f4d2efda2c" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>remove</name></member>
+      <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set_1a15fcbb7a9359b2a41e3b8f945679d4bb" prot="public" virt="non-virtual" ambiguityscope="TBasicDenseStorage&lt; T, TEntity, Allocator &gt;::"><scope>Bvr::ECS::TPool</scope><name>remove</name></member>
+      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1a25b51a0e18593c50e733e061626e6a7e" prot="private" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>Removed</name></member>
       <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_dense_storage_1a8a0c70c19e884ad2a144bbb6279aa2d4" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>reserve</name></member>
-      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1abed822a83e6623068fc8667861f80a65" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>SetOnCreate</name></member>
-      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1a997dc012fa365ebbc151f9ed9db4009b" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>SetOnRemove</name></member>
-      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1ad982043521a3af4723804f0eca0e3f45" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>SetPatch</name></member>
+      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1a874d9b5959ce226410155571caf33f08" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>SetOnCreate</name></member>
+      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1a8ada09fb1cb7a78cc3c11017dcaff222" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>SetOnRemove</name></member>
+      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1a2537c5e5cadd04cc57b74470e00297e3" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>SetPatch</name></member>
       <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set_1a392939e78ccb7852d41deb3a6c1812f0" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>size</name></member>
-      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1ab9cb07fc6db08cbe42c5feb368f88871" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>size_type</name></member>
+      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1a03a62b46dcfa45cb81294d5162622bd9" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>size_type</name></member>
       <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_dense_storage_1aef0a4c40adb065c591ff7289b5fbf6b2" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>sort</name></member>
-      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1a0b15a3d413706baf46b7f6f9e336ba9c" prot="protected" virt="virtual"><scope>Bvr::ECS::TPool</scope><name>SwapAndPop</name></member>
-      <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_dense_storage_1ab92911585c23d4fcb40d747a7ffcca80" prot="protected" virt="virtual" ambiguityscope="TBasicDenseStorage&lt; T, TEntity &gt;::"><scope>Bvr::ECS::TPool</scope><name>SwapAndPop</name></member>
+      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1a85b103577928a87dea1a8205134272bf" prot="protected" virt="virtual"><scope>Bvr::ECS::TPool</scope><name>SwapAndPop</name></member>
+      <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_dense_storage_1ab92911585c23d4fcb40d747a7ffcca80" prot="protected" virt="virtual" ambiguityscope="TBasicDenseStorage&lt; T, TEntity, Allocator &gt;::"><scope>Bvr::ECS::TPool</scope><name>SwapAndPop</name></member>
       <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_dense_storage_1aab17e7c8249921b911a7ae86e006bdf2" prot="protected" virt="virtual"><scope>Bvr::ECS::TPool</scope><name>SwapElements</name></member>
-      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1acab1d253b983df520bb1e13b7d220dba" prot="private" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>TBase</name></member>
+      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1a2110a0c6a72fada34b9f30def1aaee77" prot="private" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>TBase</name></member>
       <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_dense_storage_1a4970ccf1525eb9ceb7dd93af862a6d3d" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>TBasicDenseStorage</name></member>
       <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set_1a41a1dac0bbf95a7bfc8b0c76305595a3" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>TBasicSparseSet</name></member>
       <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set_1af99a35f965f44a2335b66b58fc6e7101" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>Tombstone</name></member>
-      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1a9456af87ab68826959e7851e5ec48b50" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>TPool</name></member>
-      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1a65e94564036c773d44c43e0213621596" prot="protected" virt="virtual"><scope>Bvr::ECS::TPool</scope><name>try_emplace</name></member>
+      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1ab14325593539abf69727e8ac45f2a0f7" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>TPool</name></member>
+      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1aface8fa4168320b80c9ecaa1b99c448d" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>TPool</name></member>
+      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1a2c7e2d1b86210531ae009cf00614c21b" prot="protected" virt="virtual"><scope>Bvr::ECS::TPool</scope><name>try_emplace</name></member>
       <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set_1aefed59398bfb15790a70613d2fa467d6" prot="protected" virt="virtual" ambiguityscope="Bvr::ECS::TBasicSparseSet::"><scope>Bvr::ECS::TPool</scope><name>try_emplace</name></member>
-      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1a66ac5d91ba365dc1c994637fe7ecf585" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>TSignalFn</name></member>
-      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1a58028e3968f68e1484a9a43837457dc2" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>TSparse</name></member>
-      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1aee90baec31e37e4f4ab88d040c55b9e6" prot="private" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>Updated</name></member>
+      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1a767116182bca5428c5964cf35c77626d" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>TSignalFn</name></member>
+      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1a474985762d942efa74d5f41fe6caaba6" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>TSparse</name></member>
+      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1a8cade7eaefda5d62e830f4af810d034b" prot="private" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>Updated</name></member>
       <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_dense_storage_1a85693d118fcbea33a771c19a9f6c4d1b" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>value_type</name></member>
       <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_dense_storage_1a6da62ee5ece57594409857bb8186ad44" prot="public" virt="virtual"><scope>Bvr::ECS::TPool</scope><name>~TBasicDenseStorage</name></member>
       <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set_1a82a860866db21a5c04f165ae56b13278" prot="public" virt="virtual"><scope>Bvr::ECS::TPool</scope><name>~TBasicSparseSet</name></member>
-      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1afe2ae2d89bff5eed5ff111514e37c965" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>~TPool</name></member>
+      <member refid="class_bvr_1_1_e_c_s_1_1_t_pool_1ae1adcb68a3a699bd989992207cee686a" prot="public" virt="non-virtual"><scope>Bvr::ECS::TPool</scope><name>~TPool</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

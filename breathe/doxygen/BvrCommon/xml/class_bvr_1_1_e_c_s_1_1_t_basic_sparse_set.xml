@@ -3,7 +3,7 @@
   <compounddef id="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set" kind="class" language="C++" prot="public">
     <compoundname>Bvr::ECS::TBasicSparseSet</compoundname>
     <derivedcompoundref refid="class_bvr_1_1_e_c_s_1_1_t_basic_dense_storage" prot="public" virt="non-virtual">Bvr::ECS::TBasicDenseStorage&lt; T, typename Handle&lt; T &gt;::EntityT &gt;</derivedcompoundref>
-    <derivedcompoundref refid="class_bvr_1_1_e_c_s_1_1_t_basic_dense_storage" prot="public" virt="non-virtual">Bvr::ECS::TBasicDenseStorage&lt; T, TEntity &gt;</derivedcompoundref>
+    <derivedcompoundref refid="class_bvr_1_1_e_c_s_1_1_t_basic_dense_storage" prot="public" virt="non-virtual">Bvr::ECS::TBasicDenseStorage&lt; T, TEntity, Allocator &gt;</derivedcompoundref>
     <templateparamlist>
       <param>
         <type>typename EntT</type>
@@ -243,7 +243,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/SparseSet.hpp" line="348" column="20" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/SparseSet.hpp" bodystart="348" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/SparseSet.hpp" line="350" column="20" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/SparseSet.hpp" bodystart="350" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set_1a3b3c9db34037e8e86bc6786ecaf7d892" prot="private" static="no" mutable="no">
         <type>DenseSetT</type>
@@ -256,7 +256,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/SparseSet.hpp" line="349" column="20" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/SparseSet.hpp" bodystart="349" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/SparseSet.hpp" line="351" column="20" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/SparseSet.hpp" bodystart="351" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set_1a813fd3582bd7a57e39f20a5c4ceb66c0" prot="private" static="no" mutable="no">
         <type>EntityT</type>
@@ -269,7 +269,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/SparseSet.hpp" line="350" column="20" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/SparseSet.hpp" bodystart="350" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/SparseSet.hpp" line="352" column="20" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/SparseSet.hpp" bodystart="352" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set_1abcefcc7e7c9ba72bdd0ee4638a61fe1b" prot="private" static="no" mutable="no">
         <type>EReleasePolicy</type>
@@ -282,7 +282,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/SparseSet.hpp" line="351" column="20" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/SparseSet.hpp" bodystart="351" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/SparseSet.hpp" line="353" column="20" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/SparseSet.hpp" bodystart="353" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -878,12 +878,36 @@
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/SparseSet.hpp" line="326" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/SparseSet.hpp" bodystart="326" bodyend="345"/>
       </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set_1ab766d2c759a7ce289314860ab1a4056d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Bvr::ECS::TBasicSparseSet&lt; EntT, AllocatorT &gt;::Rebind</definition>
+        <argsstring>(class Reg *pReg)</argsstring>
+        <name>Rebind</name>
+        <reimplementedby refid="class_bvr_1_1_e_c_s_1_1_t_pool_1a7d7d291b8e72bad2e77076fea680f616">Rebind</reimplementedby>
+        <param>
+          <type>class <ref refid="class_bvr_1_1_e_c_s_1_1_reg" kindref="compound">Reg</ref> *</type>
+          <declname>pReg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/SparseSet.hpp" line="347" column="18" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/SparseSet.hpp" bodystart="347" bodyend="347"/>
+      </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
+      <node id="5">
+        <label>Bvr::ECS::TPool&lt; T, Allocator &gt;</label>
+        <link refid="class_bvr_1_1_e_c_s_1_1_t_pool"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="2">
         <label>Bvr::ECS::TBasicDenseStorage&lt; T, typename Handle&lt; T &gt;::EntityT &gt;</label>
         <link refid="class_bvr_1_1_e_c_s_1_1_t_basic_dense_storage"/>
@@ -900,20 +924,14 @@
         <label>Bvr::ECS::TBasicSparseSet&lt; EntT, AllocatorT &gt;</label>
         <link refid="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set"/>
       </node>
-      <node id="5">
-        <label>Bvr::ECS::TPool&lt; T &gt;</label>
-        <link refid="class_bvr_1_1_e_c_s_1_1_t_pool"/>
-        <childnode refid="4" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="4">
-        <label>Bvr::ECS::TBasicDenseStorage&lt; T, TEntity &gt;</label>
+        <label>Bvr::ECS::TBasicDenseStorage&lt; T, TEntity, Allocator &gt;</label>
         <link refid="class_bvr_1_1_e_c_s_1_1_t_basic_dense_storage"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/SparseSet.hpp" line="97" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/SparseSet.hpp" bodystart="97" bodyend="352"/>
+    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/SparseSet.hpp" line="97" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/SparseSet.hpp" bodystart="97" bodyend="354"/>
     <listofallmembers>
       <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set_1a8699d6cffe0b609a3a2f175de3f231ab" prot="private" virt="non-virtual"><scope>Bvr::ECS::TBasicSparseSet</scope><name>alloc_traits</name></member>
       <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set_1a60144166d271cdb3c9b70ec3681b28a7" prot="private" virt="non-virtual"><scope>Bvr::ECS::TBasicSparseSet</scope><name>AssureFor</name></member>
@@ -951,6 +969,7 @@
       <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set_1aba954d7072985d1b833d71e193a00373" prot="public" virt="non-virtual"><scope>Bvr::ECS::TBasicSparseSet</scope><name>operator[]</name></member>
       <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set_1a4534f0eccbf62b4710eb0256731bde25" prot="private" virt="non-virtual"><scope>Bvr::ECS::TBasicSparseSet</scope><name>PagePos</name></member>
       <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set_1a137304981fe532a6872ee42868da888a" prot="private" virt="non-virtual"><scope>Bvr::ECS::TBasicSparseSet</scope><name>PageSize</name></member>
+      <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set_1ab766d2c759a7ce289314860ab1a4056d" prot="public" virt="virtual"><scope>Bvr::ECS::TBasicSparseSet</scope><name>Rebind</name></member>
       <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set_1a15fcbb7a9359b2a41e3b8f945679d4bb" prot="public" virt="non-virtual"><scope>Bvr::ECS::TBasicSparseSet</scope><name>remove</name></member>
       <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set_1a2817b60f07e51a7eae80dc31d3bf1594" prot="public" virt="non-virtual"><scope>Bvr::ECS::TBasicSparseSet</scope><name>reserve</name></member>
       <member refid="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set_1a804a6b098ce2d3578085cf230357a172" prot="private" virt="non-virtual"><scope>Bvr::ECS::TBasicSparseSet</scope><name>SetIteratorT</name></member>
