@@ -22,20 +22,22 @@
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
       </node>
       <node id="4">
         <label>BvrCommon/TextureFormats.hpp</label>
+      </node>
+      <node id="18">
+        <label>volk/volk.h</label>
       </node>
       <node id="11">
         <label>BvrRenderer/BvrRendererExport.hpp</label>
       </node>
       <node id="17">
-        <label>vulkan/vk_platform.h</label>
-      </node>
-      <node id="16">
         <label>BvrCommon/Handle.hpp</label>
       </node>
-      <node id="15">
+      <node id="16">
         <label>Hash.h</label>
       </node>
       <node id="6">
@@ -45,8 +47,6 @@
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
         <childnode refid="13" relation="include">
         </childnode>
         <childnode refid="14" relation="include">
@@ -54,6 +54,8 @@
         <childnode refid="15" relation="include">
         </childnode>
         <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
         </childnode>
       </node>
       <node id="2">
@@ -63,13 +65,14 @@
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
         <childnode refid="18" relation="include">
         </childnode>
       </node>
       <node id="10">
         <label>Utils/Assert.hpp</label>
+      </node>
+      <node id="12">
+        <label>vector</label>
       </node>
       <node id="3">
         <label>BvrFormats.hpp</label>
@@ -79,7 +82,7 @@
         <childnode refid="5" relation="include">
         </childnode>
       </node>
-      <node id="14">
+      <node id="15">
         <label>array</label>
       </node>
       <node id="1">
@@ -95,13 +98,10 @@
       <node id="8">
         <label>Platform/CompilerSettings.hpp</label>
       </node>
-      <node id="18">
-        <label>vulkan/vulkan_core.h</label>
-      </node>
-      <node id="12">
+      <node id="13">
         <label>BvrCommon/Utils.hpp</label>
       </node>
-      <node id="13">
+      <node id="14">
         <label>set</label>
       </node>
       <node id="19">
@@ -177,7 +177,7 @@
 <codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/>uint64<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Size()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>key.size;<sp/>}</highlight></codeline>
 <codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/>uint64<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Offset()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>key.offset;<sp/>}</highlight></codeline>
 <codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/>VkBuffer<sp/><sp/><sp/><sp/><sp/>Buffer()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>vkBuffer;<sp/>}</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/>VkBufferView<sp/>View()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>vkView;<sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/>Vk::BufferView<sp/>View()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>vkView;<sp/>}</highlight></codeline>
 <codeline lineno="57"><highlight class="normal"></highlight></codeline>
 <codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>SBufferView*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Get(THandle&lt;BufferView&gt;<sp/>hView);</highlight></codeline>
 <codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Release(THandle&lt;BufferView&gt;<sp/>hView,</highlight></codeline>
@@ -205,7 +205,7 @@
 <codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>THandle&lt;BufferView&gt;<sp/>CreateBufferView(Renderer::CBuffer*<sp/>pBuffer,</highlight></codeline>
 <codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SKey&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>key);</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>VkBufferView<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vkView<sp/>=<sp/>VK_NULL_HANDLE;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vk::BufferView<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vkView<sp/>=<sp/>VK_NULL_HANDLE;</highlight></codeline>
 <codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>No<sp/>ownership<sp/>of<sp/>the<sp/>buffer</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>VkBuffer<sp/>vkBuffer<sp/>=<sp/>VK_NULL_HANDLE;</highlight></codeline>
 <codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>

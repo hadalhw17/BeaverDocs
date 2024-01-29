@@ -36,7 +36,6 @@
   <compound refid="struct_bvr_1_1_meta_1_1_detail_1_1_arg_traits_3_01_type_list_3_01_t_8_8_8_01_4_01_4" kind="struct"><name>Bvr::Meta::Detail::ArgTraits&lt; TypeList&lt; T... &gt; &gt;</name>
     <member refid="struct_bvr_1_1_meta_1_1_detail_1_1_arg_traits_3_01_type_list_3_01_t_8_8_8_01_4_01_4_1a5d881aa4d20586bc7858450b94f0bf3b" kind="typedef"><name>TArgs</name></member>
     <member refid="struct_bvr_1_1_meta_1_1_detail_1_1_arg_traits_3_01_type_list_3_01_t_8_8_8_01_4_01_4_1a03abdcfe49c004a2fbf9651a2fb8efb5" kind="function"><name>AreArgsValid</name></member>
-    <member refid="struct_bvr_1_1_meta_1_1_detail_1_1_arg_traits_3_01_type_list_3_01_t_8_8_8_01_4_01_4_1a60d88485381c8f7e61fcedc299414943" kind="function"><name>IsCallerValid</name></member>
     <member refid="struct_bvr_1_1_meta_1_1_detail_1_1_arg_traits_3_01_type_list_3_01_t_8_8_8_01_4_01_4_1a684bb4d5a6c309a9877bcdf0fc33c93c" kind="function"><name>GetTypes</name></member>
     <member refid="struct_bvr_1_1_meta_1_1_detail_1_1_arg_traits_3_01_type_list_3_01_t_8_8_8_01_4_01_4_1a6aff2d64ec0187d84c8b530b7837be9f" kind="function"><name>Invoke</name></member>
   </compound>
@@ -774,6 +773,7 @@
     <member refid="class_bvr_1_1_meta_1_1_registry_replayer_1a6d678077b186d6712e4a60e2af96bfb7" kind="function"><name>PrintTypes</name></member>
     <member refid="class_bvr_1_1_meta_1_1_registry_replayer_1a1d6a13d11e6012bd1c811f217368a439" kind="function"><name>UnregisterAllTypes</name></member>
     <member refid="class_bvr_1_1_meta_1_1_registry_replayer_1acecc84bb6ce932ed90c1833ec0a7becf" kind="function"><name>GetTypes</name></member>
+    <member refid="class_bvr_1_1_meta_1_1_registry_replayer_1a80f0ac078807d314c1222bd2182708f3" kind="function"><name>TakeSnapshot</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_meta_1_1_detail_1_1_remove_all_pointers" kind="struct"><name>Bvr::Meta::Detail::RemoveAllPointers</name>
     <member refid="struct_bvr_1_1_meta_1_1_detail_1_1_remove_all_pointers_1a92ba61e46954160c254d8327450ab088" kind="typedef"><name>Type</name></member>
@@ -881,30 +881,33 @@
     <member refid="class_bvr_1_1_meta_1_1_type_1a5b4fe4c3f71ae87788c43986fbb0fcb6" kind="variable"><name>m_pTypeData</name></member>
     <member refid="class_bvr_1_1_meta_1_1_type_1ab00f6ceca178311a4c27b1cefeb82d92" kind="function"><name>Type</name></member>
     <member refid="class_bvr_1_1_meta_1_1_type_1aeafe4ba09b9a01532480eaab51ec2920" kind="function"><name>Type</name></member>
-    <member refid="class_bvr_1_1_meta_1_1_type_1ab4c03562bdbba077b5d1aed15622fc4a" kind="function"><name>operator==</name></member>
-    <member refid="class_bvr_1_1_meta_1_1_type_1a9c3bff9d02ad38b3cce173716cbdae84" kind="function"><name>operator==</name></member>
+    <member refid="class_bvr_1_1_meta_1_1_type_1a8d8c2ba8147a3361007c7c8a70604882" kind="function"><name>~Type</name></member>
     <member refid="class_bvr_1_1_meta_1_1_type_1adfbd3d42f229fa8474b4d0d436fc282b" kind="function"><name>operator bool</name></member>
-    <member refid="class_bvr_1_1_meta_1_1_type_1a7dc93e226d36d3168d501a824fc6349c" kind="function"><name>GetTypeData</name></member>
-    <member refid="class_bvr_1_1_meta_1_1_type_1a6c1a1e2ca21595eaa804bf1c60f501d4" kind="function"><name>GetTypeData</name></member>
+    <member refid="class_bvr_1_1_meta_1_1_type_1ab4c03562bdbba077b5d1aed15622fc4a" kind="function"><name>operator==</name></member>
+    <member refid="class_bvr_1_1_meta_1_1_type_1afe8ffed0aee95bb1438faeb2b43fb318" kind="function"><name>operator==</name></member>
     <member refid="class_bvr_1_1_meta_1_1_type_1a243a8895924c6a09082ff9f5de7b87e9" kind="function"><name>SetPropertyValue</name></member>
     <member refid="class_bvr_1_1_meta_1_1_type_1a7901e204e98ef68e8056ec7e3ac294d3" kind="function"><name>IsValid</name></member>
-    <member refid="class_bvr_1_1_meta_1_1_type_1a30f495e48caefbfe8952d00e347d4ab3" kind="function"><name>IsWrapper</name></member>
-    <member refid="class_bvr_1_1_meta_1_1_type_1a6373ee08d575be6aa167cec39b5eb8dd" kind="function"><name>IsEmpty</name></member>
-    <member refid="class_bvr_1_1_meta_1_1_type_1a6a46aab4218bac543d4005ddbb83dc70" kind="function"><name>IsClass</name></member>
-    <member refid="class_bvr_1_1_meta_1_1_type_1aa998183c75e455b558e2640b6000d5f9" kind="function"><name>IsEnum</name></member>
-    <member refid="class_bvr_1_1_meta_1_1_type_1a2508f4aa732e9efec8065f0bf51e6f51" kind="function"><name>IsArray</name></member>
-    <member refid="class_bvr_1_1_meta_1_1_type_1aac2a46a6bc0427f968fcd8153539c99b" kind="function"><name>IsPointer</name></member>
-    <member refid="class_bvr_1_1_meta_1_1_type_1a8b35912506cc849fc711033c645bf82b" kind="function"><name>IsArithmetic</name></member>
-    <member refid="class_bvr_1_1_meta_1_1_type_1a19941b69a79ab5f74e8d33c0b7cc2908" kind="function"><name>IsSequentialContainer</name></member>
-    <member refid="class_bvr_1_1_meta_1_1_type_1a9ca7b3acb7b97644a46edd249274543b" kind="function"><name>IsAssociativeContainer</name></member>
+    <member refid="class_bvr_1_1_meta_1_1_type_1a1d719703afdfac1c2289683edab86b48" kind="function"><name>IsWrapper</name></member>
+    <member refid="class_bvr_1_1_meta_1_1_type_1abd90143ecf079c1d1cf563bf7a5056d8" kind="function"><name>IsEmpty</name></member>
+    <member refid="class_bvr_1_1_meta_1_1_type_1ad9e9211b27e7bd74bcbbfb748ffd6341" kind="function"><name>IsClass</name></member>
+    <member refid="class_bvr_1_1_meta_1_1_type_1aab1bb940d42610fa924c534a11e932dd" kind="function"><name>IsEnum</name></member>
+    <member refid="class_bvr_1_1_meta_1_1_type_1aaa969e0330a746f85745874c47cb24a2" kind="function"><name>IsArray</name></member>
+    <member refid="class_bvr_1_1_meta_1_1_type_1acde2fea939be02cc1a73746f3e8733c0" kind="function"><name>IsPointer</name></member>
+    <member refid="class_bvr_1_1_meta_1_1_type_1a3c98023776aa33d03fb57396da33fd42" kind="function"><name>IsArithmetic</name></member>
+    <member refid="class_bvr_1_1_meta_1_1_type_1a183aa098a0eb0ac919147c54eeda319a" kind="function"><name>IsSequentialContainer</name></member>
+    <member refid="class_bvr_1_1_meta_1_1_type_1adfb81667e1846cae6cd8863353e9698f" kind="function"><name>IsAssociativeContainer</name></member>
     <member refid="class_bvr_1_1_meta_1_1_type_1a2b9cf077df4fbd5c1b8107d282c285a7" kind="function"><name>GetEnum</name></member>
-    <member refid="class_bvr_1_1_meta_1_1_type_1a1713b604ed6f938980a563c0f78d7580" kind="function"><name>GetHash</name></member>
-    <member refid="class_bvr_1_1_meta_1_1_type_1a6ca4f615aaff182a33dd4e3541da9cb4" kind="function"><name>SizeOf</name></member>
-    <member refid="class_bvr_1_1_meta_1_1_type_1a3d1bb5eed841bc03a77c48569f911ef5" kind="function"><name>GetTypeName</name></member>
-    <member refid="class_bvr_1_1_meta_1_1_type_1a74da17df3e8e2faf1e43105e9f43096b" kind="function"><name>GetProperties</name></member>
-    <member refid="class_bvr_1_1_meta_1_1_type_1a449c1eaad97e7330d047b68897c31555" kind="function"><name>GetMethods</name></member>
-    <member refid="class_bvr_1_1_meta_1_1_type_1a4a81b8926ec67fe478d3a57c50a2f930" kind="function"><name>GetTemplateArgs</name></member>
-    <member refid="class_bvr_1_1_meta_1_1_type_1a323b2d7623ae28133244ee6a417f9261" kind="function"><name>GetTypeInfo</name></member>
+    <member refid="class_bvr_1_1_meta_1_1_type_1ac414fed85e6c7e8314f398df131e3f95" kind="function"><name>GetName</name></member>
+    <member refid="class_bvr_1_1_meta_1_1_type_1a7b2a5cb985bb1e79bca28f333db5ff03" kind="function"><name>GetTypeName</name></member>
+    <member refid="class_bvr_1_1_meta_1_1_type_1a45be1af4e869328057fa82123b2709d8" kind="function"><name>GetHash</name></member>
+    <member refid="class_bvr_1_1_meta_1_1_type_1ac600ab3cdde9f4239d61c46ab812523e" kind="function"><name>SizeOf</name></member>
+    <member refid="class_bvr_1_1_meta_1_1_type_1afc3365174ba4be73f22499150d41a1ea" kind="function"><name>GetProperties</name></member>
+    <member refid="class_bvr_1_1_meta_1_1_type_1a758ade552e6412454e4289370fa79883" kind="function"><name>GetMethods</name></member>
+    <member refid="class_bvr_1_1_meta_1_1_type_1a881bbb4166434a7c9bf52b5d2a89e77b" kind="function"><name>GetTemplateArgs</name></member>
+    <member refid="class_bvr_1_1_meta_1_1_type_1a5b8e1b9d133b933efa902ea8e9500625" kind="function"><name>GetTypeInfo</name></member>
+    <member refid="class_bvr_1_1_meta_1_1_type_1aa35a986c6784aa24807a2747165806ed" kind="function"><name>GetTypeData</name></member>
+    <member refid="class_bvr_1_1_meta_1_1_type_1aa769983570c5e9f414bd1ddde52d8237" kind="function"><name>GetTypeData</name></member>
+    <member refid="class_bvr_1_1_meta_1_1_type_1aacd4728c4e638a802e72e9d8190d7978" kind="function"><name>GetRawType</name></member>
     <member refid="class_bvr_1_1_meta_1_1_type_1a3e8a578b6541d889911458686adea172" kind="function"><name>GetConversionMethod</name></member>
     <member refid="class_bvr_1_1_meta_1_1_type_1ac46cd43e2b1a29f42b094e79d5dfc420" kind="function"><name>Is</name></member>
     <member refid="class_bvr_1_1_meta_1_1_type_1a7fbb2f940cafaf942eb4d47ab2eec9ea" kind="function"><name>GetProperty</name></member>
@@ -913,7 +916,7 @@
     <member refid="class_bvr_1_1_meta_1_1_type_1a1291fb00aae4df24dfff5c82fa66a320" kind="function"><name>CreateVariant</name></member>
     <member refid="class_bvr_1_1_meta_1_1_type_1adb2a0b73590c4b6c20762ac49668181c" kind="function"><name>CreateWrappedValue</name></member>
     <member refid="class_bvr_1_1_meta_1_1_type_1a76e4cd76cc7f714da43b3c3c5bbc5a05" kind="function"><name>Visit</name></member>
-    <member refid="class_bvr_1_1_meta_1_1_type_1a8226522de540e21abc96ff80235be36c" kind="function"><name>Get</name></member>
+    <member refid="class_bvr_1_1_meta_1_1_type_1a66231aef6b0e71365c078b17c1268b02" kind="function"><name>Get</name></member>
     <member refid="class_bvr_1_1_meta_1_1_type_1a2b65743501013aa5c4b7da52c838bbd8" kind="function"><name>SetValue</name></member>
     <member refid="class_bvr_1_1_meta_1_1_type_1a2e0837ec1cc736473776617ac3862ea6" kind="function"><name>ConversionMethod</name></member>
     <member refid="class_bvr_1_1_meta_1_1_type_1a58702a9db47946ffb57dc2389f470aee" kind="function"><name>InvokeGlobalFunction</name></member>
@@ -949,6 +952,7 @@
   </compound>
   <compound refid="struct_bvr_1_1_type_info" kind="struct"><name>Bvr::TypeInfo</name>
     <member refid="struct_bvr_1_1_type_info_1aeaa76be40928d8f87af669b240ff83db" kind="variable"><name>m_typeName</name></member>
+    <member refid="struct_bvr_1_1_type_info_1a3f0a872310f50a0f6ab677acfd23ea80" kind="function"><name>TypeInfo</name></member>
     <member refid="struct_bvr_1_1_type_info_1ac803545467acf49463682ca1b9658574" kind="function"><name>TypeInfo</name></member>
     <member refid="struct_bvr_1_1_type_info_1a06854d181c5bd924eba61c952308d8a0" kind="function"><name>GetName</name></member>
     <member refid="struct_bvr_1_1_type_info_1af5a3222e3c9eaee6799974aa6462ecbe" kind="function"><name>GetHash</name></member>
@@ -990,20 +994,22 @@
     <member refid="class_bvr_1_1_meta_1_1_type_registry_1a1b19d31e4c24352857dd5a614485e91a" kind="variable"><name>m_methodList</name></member>
     <member refid="class_bvr_1_1_meta_1_1_type_registry_1a76ff009f9471c269c2ccf95ab3c37781" kind="variable"><name>m_typeConversions</name></member>
     <member refid="class_bvr_1_1_meta_1_1_type_registry_1a44ef8038bcd9669412c82889afa8dc6a" kind="variable"><name>m_enumList</name></member>
-    <member refid="class_bvr_1_1_meta_1_1_type_registry_1ae9419400e3a1ade987909a44896b568e" kind="variable"><name>m_typeNameLookup</name></member>
-    <member refid="class_bvr_1_1_meta_1_1_type_registry_1aa74819927da7b6f4856fba52fff42d00" kind="variable"><name>m_typeHashLookup</name></member>
+    <member refid="class_bvr_1_1_meta_1_1_type_registry_1ac66a94804e32b77479254d3e89aec5d3" kind="variable"><name>m_typeNameLookup</name></member>
+    <member refid="class_bvr_1_1_meta_1_1_type_registry_1a40ad3e1e3a8fda51a28fb34d229d5d2e" kind="variable"><name>m_typeInfoLookup</name></member>
     <member refid="class_bvr_1_1_meta_1_1_type_registry_1a601c78a60b8ee9ca577121a25ff28dc4" kind="friend"><name>Bind</name></member>
     <member refid="class_bvr_1_1_meta_1_1_type_registry_1a7410649bd4a495cbddc7cb9eafa76322" kind="friend"><name>RegistryReplayer</name></member>
     <member refid="class_bvr_1_1_meta_1_1_type_registry_1a2594dd011b1dbc113ad9d61aa677e2a9" kind="function"><name>Enum</name></member>
     <member refid="class_bvr_1_1_meta_1_1_type_registry_1a1b2183c73e09b165ea51721c0f69dfa7" kind="function"><name>Function</name></member>
     <member refid="class_bvr_1_1_meta_1_1_type_registry_1a5515b45520d72de3868a85cdf105cfc5" kind="function"><name>Get</name></member>
-    <member refid="class_bvr_1_1_meta_1_1_type_registry_1a6b1817f719d2bbda6f403889fbac7798" kind="function"><name>GetTypeByName</name></member>
-    <member refid="class_bvr_1_1_meta_1_1_type_registry_1a185dc93af0292c26567def5647f2805f" kind="function"><name>GetTypeByHash</name></member>
+    <member refid="class_bvr_1_1_meta_1_1_type_registry_1a508c557b6ee66c8a27fc4e28da52690e" kind="function"><name>GetTypeByName</name></member>
+    <member refid="class_bvr_1_1_meta_1_1_type_registry_1aa2d88e7615c01bb020a30a94b6433bb8" kind="function"><name>GetTypeByHash</name></member>
+    <member refid="class_bvr_1_1_meta_1_1_type_registry_1aeaf531df2890cba38da66710bccd1990" kind="function"><name>GetTypeByTypeInfo</name></member>
     <member refid="class_bvr_1_1_meta_1_1_type_registry_1a4557fe608f2a94bf7d986963ec5b4adf" kind="function"><name>RegisterTypeData</name></member>
     <member refid="class_bvr_1_1_meta_1_1_type_registry_1aa7796fd120b0b23ea85d5fbf59efa785" kind="function"><name>RegisterProperty</name></member>
     <member refid="class_bvr_1_1_meta_1_1_type_registry_1a603415883060a973b5bdf28d04e29897" kind="function"><name>RegisterMethod</name></member>
     <member refid="class_bvr_1_1_meta_1_1_type_registry_1a2fe71b381bdd60d194952a7fe659af0d" kind="function"><name>RegisterEnum</name></member>
     <member refid="class_bvr_1_1_meta_1_1_type_registry_1a96e35215b2f09564aa7d43943e5183e1" kind="function"><name>RegisterConversionMethod</name></member>
+    <member refid="class_bvr_1_1_meta_1_1_type_registry_1a53fd46c8a1dc2b0ef50bd95c2a8cf497" kind="function"><name>RegisterAlias</name></member>
     <member refid="class_bvr_1_1_meta_1_1_type_registry_1a65dfa2c23f12009d39d2f1fee7627a6f" kind="function"><name>GetPropertyForType</name></member>
     <member refid="class_bvr_1_1_meta_1_1_type_registry_1ac204f12dcb76d6907add878d33ffbf94" kind="function"><name>GetMethodForType</name></member>
   </compound>
@@ -1241,55 +1247,53 @@
     <member refid="_type_desc_8hpp_1ac5bbe0babfd3aab238904ec92c4c721caf455b17ec8e8c2ce0315df7c275a4930" kind="enumvalue"><name>IsSequentialContainer</name></member>
     <member refid="_type_desc_8hpp_1ac5bbe0babfd3aab238904ec92c4c721cabf9bb1af3b4c603c2585a40eac62b1a6" kind="enumvalue"><name>IsAssociativeContainer</name></member>
     <member refid="_type_desc_8hpp_1ac5bbe0babfd3aab238904ec92c4c721cae93f994f01c537c4e2f7d8528c3eb5e9" kind="enumvalue"><name>Count</name></member>
-    <member refid="_type_8hpp_1a19e1683ad25c01fd4300683749273abe" kind="typedef"><name>ptr_t</name></member>
     <member refid="_variant_policy_8hpp_1ad79c7c713bbbcfa8fe4efdc113490fc8" kind="typedef"><name>VariantPolicyFN</name></member>
     <member refid="_variant_policy_8hpp_1a6e88a4615e262446c1656f367a95ecd9" kind="typedef"><name>CanPlaceInVariant</name></member>
     <member refid="_variant_policy_8hpp_1a9e9eeb8f3b6885f5d872ec6369911545" kind="typedef"><name>RawArrayTypeT</name></member>
     <member refid="_variant_policy_8hpp_1aa73e11c5bccc641c9ce4e3c3a25256fb" kind="typedef"><name>Is1DCharArray</name></member>
     <member refid="_variant_policy_8hpp_1a2c4ab96b01e97f62b2b54af9852eb16f" kind="typedef"><name>VariantPolicy</name></member>
-    <member refid="_variant_data_8hpp_1afa6442145b5bd080706c4eaab39e8200" kind="typedef"><name>VariantBaseTypes</name></member>
-    <member refid="_variant_data_8hpp_1a8d7ffc3a2d2bc2df16e9e5da79917561" kind="typedef"><name>VariantData</name></member>
     <member refid="_type_desc_8hpp_1adf2cd026e2649e6c4bc35cd48262b195" kind="typedef"><name>TypeTraitVal</name></member>
     <member refid="_type_desc_8hpp_1ae55a1020172e55266b3352c39db5597b" kind="typedef"><name>TypeTraits</name></member>
     <member refid="_type_desc_8hpp_1a669251e9532a322dd268849cafa44d4e" kind="typedef"><name>BinderBase</name></member>
-    <member refid="_argument_extractor_8hpp_1a142f0b1631b96f63bc4fc681ab79f21d" kind="typedef"><name>CountArgs</name></member>
-    <member refid="_variant_8hpp_1a2e8649d4b7c67360495fb1b6d84f5160" kind="typedef"><name>DecayExceptArrayT</name></member>
-    <member refid="_variant_8hpp_1ab52b7833952c292d8f63651398331f29" kind="typedef"><name>DecayVariantT</name></member>
-    <member refid="_argument_8hpp_1acdf6e64de6b6858fd8d1ffc4973ea28c" kind="typedef"><name>IsVariant</name></member>
     <member refid="_property_traits_8hpp_1acde3f003514a0d58ece94733f66322d1" kind="typedef"><name>size_t</name></member>
     <member refid="_property_traits_8hpp_1a529a8c121c081fde57e66a5b34fb470a" kind="typedef"><name>ptrdiff_t</name></member>
+    <member refid="_property_traits_8hpp_1a19e1683ad25c01fd4300683749273abe" kind="typedef"><name>ptr_t</name></member>
     <member refid="_property_traits_8hpp_1a91d8431bdc95eb74fe0f848ad2aad767" kind="typedef"><name>AsTypeListT</name></member>
     <member refid="_property_traits_8hpp_1ac35042bfac1e43a01ca4d11441fe37a2" kind="typedef"><name>TypeListCatT</name></member>
     <member refid="_property_traits_8hpp_1a8184e8b72b8fced61b11722a73d46697" kind="typedef"><name>TypeListElementT</name></member>
     <member refid="_property_traits_8hpp_1a8643f3a5264078266b2228bf45e833fd" kind="typedef"><name>MaxSizeOfList</name></member>
     <member refid="_property_traits_8hpp_1ac08642a06295181728d8c2bc2ea1bc84" kind="typedef"><name>MaxAlignOfList</name></member>
-    <member refid="_instance_8hpp_1aae44eef2023bd7b003a25b905df56bb6" kind="variable"><name>Instanceable</name></member>
-    <member refid="_argument_8hpp_1a60892f28a772443ae08d033f283b38a6" kind="variable"><name>Argumentable</name></member>
+    <member refid="_argument_extractor_8hpp_1a142f0b1631b96f63bc4fc681ab79f21d" kind="typedef"><name>CountArgs</name></member>
+    <member refid="_argument_8hpp_1acdf6e64de6b6858fd8d1ffc4973ea28c" kind="typedef"><name>IsVariant</name></member>
+    <member refid="_variant_data_8hpp_1afa6442145b5bd080706c4eaab39e8200" kind="typedef"><name>VariantBaseTypes</name></member>
+    <member refid="_variant_data_8hpp_1a8d7ffc3a2d2bc2df16e9e5da79917561" kind="typedef"><name>VariantData</name></member>
+    <member refid="_variant_8hpp_1a2e8649d4b7c67360495fb1b6d84f5160" kind="typedef"><name>DecayExceptArrayT</name></member>
+    <member refid="_variant_8hpp_1ab52b7833952c292d8f63651398331f29" kind="typedef"><name>DecayVariantT</name></member>
     <member refid="_property_traits_8hpp_1a363574ff9c51f5451aacb756978c6d64" kind="variable"><name>MemberOf</name></member>
     <member refid="_property_traits_8hpp_1af21f5b591e740f0dcfbfd3e616fa7db6" kind="variable"><name>AlignmentOf_V</name></member>
-    <member refid="_type_8hpp_1a4a947ef3436397fab111bb8703ebba16" kind="function"><name>MakeTypeData</name></member>
-    <member refid="_type_8hpp_1abb7406c8c57837eea303afac4fb89446" kind="function"><name>OffsetOf</name></member>
-    <member refid="_enum_8hpp_1a9fbb26d41bacc24c7396e6db2c1653b7" kind="function"><name>Value</name></member>
+    <member refid="_instance_8hpp_1aae44eef2023bd7b003a25b905df56bb6" kind="variable"><name>Instanceable</name></member>
+    <member refid="_argument_8hpp_1a60892f28a772443ae08d033f283b38a6" kind="variable"><name>Argumentable</name></member>
     <member refid="_type_desc_8hpp_1a4a947ef3436397fab111bb8703ebba16" kind="function"><name>MakeTypeData</name></member>
     <member refid="_type_desc_8hpp_1a55073063ae3969f0f38f332e039c6a3f" kind="function"><name>MakePropertyData</name></member>
     <member refid="_type_desc_8hpp_1a10237321b5854f2e8d0c9b38ed5e2517" kind="function"><name>MakeMethodData</name></member>
     <member refid="_type_desc_8hpp_1a6112ea8a91cd7a339480e77414dfeb88" kind="function"><name>AddProperty</name></member>
     <member refid="_type_desc_8hpp_1a8a327de18af81df9e83254bb0d10b0f6" kind="function"><name>ExtractAttributes</name></member>
+    <member refid="_property_traits_8hpp_1a3667c94ee60a1257cc40cfb7ebef2808" kind="function"><name>AsPointer</name></member>
+    <member refid="_enum_8hpp_1a9fbb26d41bacc24c7396e6db2c1653b7" kind="function"><name>Value</name></member>
     <member refid="_argument_extractor_8hpp_1ae12b394a6e1120a9835c64e5955fcd5d" kind="function"><name>ForwardToVector</name></member>
     <member refid="_argument_extractor_8hpp_1a73d1234ab69fea3ca94bf3aed584de40" kind="function"><name>ForwardToArray</name></member>
+    <member refid="_type_8hpp_1a4a947ef3436397fab111bb8703ebba16" kind="function"><name>MakeTypeData</name></member>
+    <member refid="_type_8hpp_1abb7406c8c57837eea303afac4fb89446" kind="function"><name>OffsetOf</name></member>
     <member refid="_variant_8hpp_1a05cfcc31de777ac479ffda8b7b60ae68" kind="function"><name>unsafe_variant_cast</name></member>
     <member refid="_variant_8hpp_1a84a99598900331a1d6c704cdaf1ef216" kind="function"><name>unsafe_variant_cast</name></member>
     <member refid="_variant_8hpp_1ab72db80d49dfcac352440e25a8523da9" kind="function"><name>variant_cast</name></member>
     <member refid="_variant_8hpp_1aa15aa6b2b8aead3b4fad8660edcf3396" kind="function"><name>variant_cast</name></member>
-    <member refid="_property_traits_8hpp_1a3667c94ee60a1257cc40cfb7ebef2808" kind="function"><name>AsPointer</name></member>
   </compound>
   <compound refid="namespace_bvr_1_1_meta_1_1_detail" kind="namespace"><name>Bvr::Meta::Detail</name>
     <member refid="_variant_policy_8hpp_1a5617422f9121b4823dfbcd10a8aa927c" kind="typedef"><name>EnumCaster</name></member>
-    <member refid="_wrapper_binder_8hpp_1a051e93a792e7b992ad949eac1f3861ed" kind="typedef"><name>WrapperBinderT</name></member>
-    <member refid="_wrapper_binder_8hpp_1a170c09bc725f9d2e8351c1c0cda5da35" kind="typedef"><name>IsWrapper</name></member>
-    <member refid="_wrapper_binder_8hpp_1a9dcac2db4272b476b86002a09d1171ec" kind="typedef"><name>WrapperAddressReturnType</name></member>
     <member refid="_type_desc_8hpp_1a680e583ee4dc9ce964e3f9a68dd3f1c4" kind="typedef"><name>CreateVariantPolicyT</name></member>
-    <member refid="_type_casting_8hpp_1a07198b9e93e9689cec745af5c805355c" kind="typedef"><name>AreIntegrals</name></member>
+    <member refid="_property_traits_8hpp_1afa20aff544082da30b59046e43809e60" kind="typedef"><name>IsSequentialContainer</name></member>
+    <member refid="_property_traits_8hpp_1a20e5c080d1aa3531ba65c6f43e91681f" kind="typedef"><name>IsAssociativeContainer</name></member>
     <member refid="_utils_8hpp_1a8c74fc7f1271478d0ba48e4d6a423874" kind="typedef"><name>RemoveAllPointersT</name></member>
     <member refid="_utils_8hpp_1a51a2f0daac8607220a9cbf9dc690c7f6" kind="typedef"><name>RemoveAllPointersExceptOneT</name></member>
     <member refid="_utils_8hpp_1ad6183e7d32ba47078ad3e1dedda1c2d9" kind="typedef"><name>IsFunctionPtr</name></member>
@@ -1297,10 +1301,11 @@
     <member refid="_utils_8hpp_1acf166572eb00f6a7ffa4a43f04ef8270" kind="typedef"><name>NormalReturnT</name></member>
     <member refid="_utils_8hpp_1a031c3a7cbee1ea575f6da6e8753eff86" kind="typedef"><name>RawAddressofReturnType</name></member>
     <member refid="_utils_8hpp_1a51dc73ad78bd883aa63d7b29e8da2639" kind="typedef"><name>RawAddressofReturnTypeT</name></member>
-    <member refid="_property_traits_8hpp_1afa20aff544082da30b59046e43809e60" kind="typedef"><name>IsSequentialContainer</name></member>
-    <member refid="_property_traits_8hpp_1a20e5c080d1aa3531ba65c6f43e91681f" kind="typedef"><name>IsAssociativeContainer</name></member>
+    <member refid="_type_casting_8hpp_1a07198b9e93e9689cec745af5c805355c" kind="typedef"><name>AreIntegrals</name></member>
+    <member refid="_wrapper_binder_8hpp_1a051e93a792e7b992ad949eac1f3861ed" kind="typedef"><name>WrapperBinderT</name></member>
+    <member refid="_wrapper_binder_8hpp_1a170c09bc725f9d2e8351c1c0cda5da35" kind="typedef"><name>IsWrapper</name></member>
+    <member refid="_wrapper_binder_8hpp_1a9dcac2db4272b476b86002a09d1171ec" kind="typedef"><name>WrapperAddressReturnType</name></member>
     <member refid="_iterator_binder_8hpp_1a488c0af2190040c17527e97724ba98d6" kind="typedef"><name>IteratorData</name></member>
-    <member refid="_type_8hpp_1a686842ad13c591b8d2873eeb90a3f387" kind="function"><name>MakeInvalidTypeData</name></member>
     <member refid="_variant_policy_8hpp_1ae3d43b6c3593faef93022f6eb0df60b6" kind="function"><name>IsFloatingPoint</name></member>
     <member refid="_variant_policy_8hpp_1a26c9e6534b16d2713f913ea67f49c625" kind="function"><name>GetVariantType</name></member>
     <member refid="_variant_policy_8hpp_1a43738667404556b1dde8bd959a2bcd50" kind="function"><name>VariantEqCmp</name></member>
@@ -1311,15 +1316,17 @@
     <member refid="_variant_policy_8hpp_1a44607a0eeebbc1ad96283542d7298450" kind="function"><name>CreateVariantAssociativeView</name></member>
     <member refid="_variant_policy_8hpp_1a8439dae7726b57a04ca76f63702e8e2e" kind="function"><name>GetWrappedValue</name></member>
     <member refid="_variant_policy_8hpp_1a6df44ad94959b56381459f23b559a38f" kind="function"><name>GetWrappedValue</name></member>
-    <member refid="_wrapper_binder_8hpp_1ac0c821e90811149e4711a076a19f24c3" kind="function"><name>WrappedRawAddressOf</name></member>
     <member refid="_type_desc_8hpp_1a5eab46a77a37ebc820350ab093adc16c" kind="function"><name>TestTrait</name></member>
     <member refid="_type_desc_8hpp_1aa017307843c0e8ea6f62351318c74c28" kind="function"><name>TestTrait</name></member>
     <member refid="_type_desc_8hpp_1a973e079c6bd88105e6f2539b965260e2" kind="function"><name>CreateWrapper</name></member>
     <member refid="_type_desc_8hpp_1a0ad8b8c72dba410b67b4dec31036dc19" kind="function"><name>GetCreateWrapperFn</name></member>
     <member refid="_type_desc_8hpp_1ac0333876d007c9e81dc6bd5535c11d88" kind="function"><name>GetCreateWrapperFn</name></member>
     <member refid="_type_desc_8hpp_1a60c17300ec5f7d2586d39a711cf53fba" kind="function"><name>GetWrappedType</name></member>
+    <member refid="_type_desc_8hpp_1af563ee9653236179049eeee234c1d344" kind="function"><name>MakeInvalidTypeData</name></member>
     <member refid="_type_desc_8hpp_1acb5c1eee66a32586e849a56973da28e9" kind="function"><name>SizeOfHelper</name></member>
     <member refid="_type_desc_8hpp_1a839244f445ddcb7afe643996c33f4731" kind="function"><name>GetRawTypeData</name></member>
+    <member refid="_utils_8hpp_1a9b22bb9845e8131494fc4147df724718" kind="function"><name>RawAddressOf</name></member>
+    <member refid="_utils_8hpp_1a9c511abe9e8dcf5cf3105e015d489118" kind="function"><name>RawAddressOf</name></member>
     <member refid="_type_casting_8hpp_1aa72a92a26bebd82ff26d16a559b95cb9" kind="function"><name>IsWrappedEnum</name></member>
     <member refid="_type_casting_8hpp_1ae31fa7c8f8ca2612223f0687805b5dac" kind="function"><name>CastTo</name></member>
     <member refid="_type_casting_8hpp_1a31e36f681886209cb397718112af05ea" kind="function"><name>CastTo</name></member>
@@ -1337,9 +1344,8 @@
     <member refid="_type_casting_8hpp_1a7336b2e8255782a4c1d626d9aa10da49" kind="function"><name>StringToU64</name></member>
     <member refid="_type_casting_8hpp_1af491efd73d4a3bcce64c9935cad91666" kind="function"><name>StringToF32</name></member>
     <member refid="_type_casting_8hpp_1a2c724c7c558908f35bf352ffb0b9acb4" kind="function"><name>StringToF64</name></member>
-    <member refid="_variant_8hpp_1a2beb3b2e40e41f38439e0342b814cd89" kind="function"><name>GetVariantObjectMemoryStorage</name></member>
-    <member refid="_utils_8hpp_1a9b22bb9845e8131494fc4147df724718" kind="function"><name>RawAddressOf</name></member>
-    <member refid="_utils_8hpp_1a9c511abe9e8dcf5cf3105e015d489118" kind="function"><name>RawAddressOf</name></member>
+    <member refid="_wrapper_binder_8hpp_1ac0c821e90811149e4711a076a19f24c3" kind="function"><name>WrappedRawAddressOf</name></member>
+    <member refid="_object_memory_storage_8hpp_1ac09dd5efedc3d45eabdd89bd1fa6a41b" kind="function"><name>GetVariantObjectMemoryStorage</name></member>
   </compound>
   <compound refid="namespace_bvr_1_1_meta_1_1_interface" kind="namespace"><name>Bvr::Meta::Interface</name>
     <member refid="_type_desc_8hpp_1a50a89c6bdb377881e12939afcb3ce075" kind="typedef"><name>CreateWrapperFn</name></member>
