@@ -280,19 +280,34 @@
       </node>
     </incdepgraph>
       <sectiondef kind="define">
-      <memberdef kind="define" id="_base_type_refl_8hpp_1ae66dc24c4975af1d9fc14f8ec607fae8" prot="public" static="no">
+      <memberdef kind="define" id="_base_type_refl_8hpp_1a75aa544d24eb742572489b23a68ba8de" prot="public" static="no">
         <name>REGISTER_BASE_TYPE</name>
         <param><defname>T</defname></param>
-        <param><defname>NAME</defname></param>
-        <initializer><ref refid="class_bvr_1_1_meta_1_1_type_registry_1_1_class__" kindref="compound">Bvr::Meta::TypeRegistry::Class_</ref>&lt;T&gt;(NAME)</initializer>
+        <initializer>    { [[maybe_unused]] auto t = Bvr::Meta::Type::Get&lt;T&gt;(); }                   \
+    { [[maybe_unused]] auto t = Bvr::Meta::Type::Get&lt;T*&gt;(); }                  \
+    { [[maybe_unused]] auto t = Bvr::Meta::Type::Get&lt;const T*&gt;(); }</initializer>
         <briefdescription>
-<para>This file needs to be inluded only once! </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="4" column="9" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" bodystart="4" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="3" column="9" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" bodystart="3" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_base_type_refl_8hpp_1aa37cee35d01142d60e88cb45ef474c9b" prot="public" static="no">
+        <name>REGISTER_BASE_TYPE_N</name>
+        <param><defname>T</defname></param>
+        <param><defname>NAME</defname></param>
+        <initializer>    <ref refid="class_bvr_1_1_meta_1_1_type_registry_1_1_class__" kindref="compound">Bvr::Meta::TypeRegistry::Class_</ref>&lt;T&gt;(NAME);                                  \
+    <ref refid="class_bvr_1_1_meta_1_1_type_registry_1_1_class__" kindref="compound">Bvr::Meta::TypeRegistry::Class_</ref>&lt;T*&gt;(NAME &quot;*&quot;);                             \
+    <ref refid="class_bvr_1_1_meta_1_1_type_registry_1_1_class__" kindref="compound">Bvr::Meta::TypeRegistry::Class_</ref>&lt;const T*&gt;(&quot;const &quot; NAME &quot;*&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="8" column="9" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" bodystart="8" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="var">
@@ -302,24 +317,145 @@
         <argsstring></argsstring>
         <name>BVR_REFLECTION_BLOCK</name>
         <initializer>{
-    REGISTER_BASE_TYPE(int32, &quot;int&quot;)</initializer>
+    using namespace Bvr::Meta</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="8" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" bodystart="8" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="16" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" bodystart="16" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
-      <memberdef kind="function" id="_base_type_refl_8hpp_1a9abd0674183e9ef628ce96be6c9adc4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="_base_type_refl_8hpp_1a4fb4941694da349723aae567544bec52" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>REGISTER_BASE_TYPE</definition>
-        <argsstring>(int64, &quot;int64&quot;)</argsstring>
+        <argsstring>(Type)</argsstring>
         <name>REGISTER_BASE_TYPE</name>
         <param>
-          <type>int64</type>
+          <type><ref refid="class_bvr_1_1_meta_1_1_type" kindref="compound">Type</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="23" column="5" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" declline="23" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="_base_type_refl_8hpp_1ae7fff50cdae9cee8aa8cfd54335c5db2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>REGISTER_BASE_TYPE</definition>
+        <argsstring>(Variant)</argsstring>
+        <name>REGISTER_BASE_TYPE</name>
+        <param>
+          <type><ref refid="class_bvr_1_1_meta_1_1_variant" kindref="compound">Variant</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="24" column="5" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" declline="24" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="_base_type_refl_8hpp_1ace7c827962847a4d45c885526f9936be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>REGISTER_BASE_TYPE</definition>
+        <argsstring>(Instance)</argsstring>
+        <name>REGISTER_BASE_TYPE</name>
+        <param>
+          <type><ref refid="class_bvr_1_1_meta_1_1_instance" kindref="compound">Instance</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="25" column="5" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" declline="25" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="_base_type_refl_8hpp_1a8696a54afe35475f16e31f7d9f81ad42" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>REGISTER_BASE_TYPE</definition>
+        <argsstring>(std::reference_wrapper&lt; Variant &gt;)</argsstring>
+        <name>REGISTER_BASE_TYPE</name>
+        <param>
+          <type>std::reference_wrapper&lt; <ref refid="class_bvr_1_1_meta_1_1_variant" kindref="compound">Variant</ref> &gt;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="26" column="5" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" declline="26" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="_base_type_refl_8hpp_1a8d3dd7a90890ed2cd9384529bd2f93bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>REGISTER_BASE_TYPE_N</definition>
+        <argsstring>(std::int16_t, &quot;int16&quot;)</argsstring>
+        <name>REGISTER_BASE_TYPE_N</name>
+        <param>
+          <type>std::int16_t</type>
+        </param>
+        <param>
+          <type>&quot;int16&quot;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="28" column="5" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" declline="28" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="_base_type_refl_8hpp_1ac95961d7b0cbcf77f268c0ce5279915d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>REGISTER_BASE_TYPE_N</definition>
+        <argsstring>(std::uint16_t, &quot;uint16&quot;)</argsstring>
+        <name>REGISTER_BASE_TYPE_N</name>
+        <param>
+          <type>std::uint16_t</type>
+        </param>
+        <param>
+          <type>&quot;uint16&quot;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="29" column="5" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" declline="29" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="_base_type_refl_8hpp_1a4fd0f50d31ac0f8ec40170337fdcec58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>REGISTER_BASE_TYPE_N</definition>
+        <argsstring>(std::int32_t, &quot;int&quot;)</argsstring>
+        <name>REGISTER_BASE_TYPE_N</name>
+        <param>
+          <type>std::int32_t</type>
+        </param>
+        <param>
+          <type>&quot;int&quot;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="30" column="5" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" declline="30" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="_base_type_refl_8hpp_1a13e9052520adba01d148ba8f4f11b9b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>REGISTER_BASE_TYPE_N</definition>
+        <argsstring>(std::int64_t, &quot;int64&quot;)</argsstring>
+        <name>REGISTER_BASE_TYPE_N</name>
+        <param>
+          <type>std::int64_t</type>
         </param>
         <param>
           <type>&quot;int64&quot;</type>
@@ -330,15 +466,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="10" column="5" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" declline="10" declcolumn="5"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="31" column="5" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" declline="31" declcolumn="5"/>
       </memberdef>
-      <memberdef kind="function" id="_base_type_refl_8hpp_1a3fa8abaf8fd09fe6afb291173523294c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="_base_type_refl_8hpp_1a2d4730d432118ec4991d370c5c0d849d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
-        <definition>REGISTER_BASE_TYPE</definition>
-        <argsstring>(uint32, &quot;uint&quot;)</argsstring>
-        <name>REGISTER_BASE_TYPE</name>
+        <definition>REGISTER_BASE_TYPE_N</definition>
+        <argsstring>(std::uint32_t, &quot;uint&quot;)</argsstring>
+        <name>REGISTER_BASE_TYPE_N</name>
         <param>
-          <type>uint32</type>
+          <type>std::uint32_t</type>
         </param>
         <param>
           <type>&quot;uint&quot;</type>
@@ -349,15 +485,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="11" column="5" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" declline="11" declcolumn="5"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="32" column="5" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" declline="32" declcolumn="5"/>
       </memberdef>
-      <memberdef kind="function" id="_base_type_refl_8hpp_1ad5947aa8e10c07150aa7ad191b9f7510" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="_base_type_refl_8hpp_1aa6f0aff52d63c380820938743aaa346d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
-        <definition>REGISTER_BASE_TYPE</definition>
-        <argsstring>(uint64, &quot;uint64&quot;)</argsstring>
-        <name>REGISTER_BASE_TYPE</name>
+        <definition>REGISTER_BASE_TYPE_N</definition>
+        <argsstring>(std::uint64_t, &quot;uint64&quot;)</argsstring>
+        <name>REGISTER_BASE_TYPE_N</name>
         <param>
-          <type>uint64</type>
+          <type>std::uint64_t</type>
         </param>
         <param>
           <type>&quot;uint64&quot;</type>
@@ -368,13 +504,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="12" column="5" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" declline="12" declcolumn="5"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="33" column="5" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" declline="33" declcolumn="5"/>
       </memberdef>
-      <memberdef kind="function" id="_base_type_refl_8hpp_1ac6497210bea812d441b3e6ab54a4e8ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="_base_type_refl_8hpp_1a62110859292a2f33376b8c395e1ce557" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
-        <definition>REGISTER_BASE_TYPE</definition>
+        <definition>REGISTER_BASE_TYPE_N</definition>
         <argsstring>(bool, &quot;bool&quot;)</argsstring>
-        <name>REGISTER_BASE_TYPE</name>
+        <name>REGISTER_BASE_TYPE_N</name>
         <param>
           <type>bool</type>
         </param>
@@ -387,13 +523,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="13" column="5" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" declline="13" declcolumn="5"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="35" column="5" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" declline="35" declcolumn="5"/>
       </memberdef>
-      <memberdef kind="function" id="_base_type_refl_8hpp_1a7fadfc4552738aa629f51e892a6d82c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="_base_type_refl_8hpp_1a897da5a1888473cf8255d77b41ac79e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
-        <definition>REGISTER_BASE_TYPE</definition>
+        <definition>REGISTER_BASE_TYPE_N</definition>
         <argsstring>(float, &quot;float&quot;)</argsstring>
-        <name>REGISTER_BASE_TYPE</name>
+        <name>REGISTER_BASE_TYPE_N</name>
         <param>
           <type>float</type>
         </param>
@@ -406,13 +542,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="14" column="5" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" declline="14" declcolumn="5"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="36" column="5" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" declline="36" declcolumn="5"/>
       </memberdef>
-      <memberdef kind="function" id="_base_type_refl_8hpp_1a3ce4241e2079570fff801fa61dcd537b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="_base_type_refl_8hpp_1aec9ca66693e6744b7b24d93a7dbd4b40" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
-        <definition>REGISTER_BASE_TYPE</definition>
+        <definition>REGISTER_BASE_TYPE_N</definition>
         <argsstring>(double, &quot;double&quot;)</argsstring>
-        <name>REGISTER_BASE_TYPE</name>
+        <name>REGISTER_BASE_TYPE_N</name>
         <param>
           <type>double</type>
         </param>
@@ -425,13 +561,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="15" column="5" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" declline="15" declcolumn="5"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="37" column="5" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" declline="37" declcolumn="5"/>
       </memberdef>
-      <memberdef kind="function" id="_base_type_refl_8hpp_1aaf045f1b1cbfbad502948bcc49790b55" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="_base_type_refl_8hpp_1a77ae503efb1487cad54507fe68e68455" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
-        <definition>REGISTER_BASE_TYPE</definition>
+        <definition>REGISTER_BASE_TYPE_N</definition>
         <argsstring>(long double, &quot;long double&quot;)</argsstring>
-        <name>REGISTER_BASE_TYPE</name>
+        <name>REGISTER_BASE_TYPE_N</name>
         <param>
           <type>long double</type>
         </param>
@@ -444,15 +580,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="16" column="5" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" declline="16" declcolumn="5"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="38" column="5" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" declline="38" declcolumn="5"/>
       </memberdef>
-      <memberdef kind="function" id="_base_type_refl_8hpp_1aa21653e03c26c2ad0d6034dd47b47906" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="_base_type_refl_8hpp_1a593c061d38358d41d27ff9bb9744b54c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
-        <definition>REGISTER_BASE_TYPE</definition>
-        <argsstring>(signed char, &quot;char&quot;)</argsstring>
-        <name>REGISTER_BASE_TYPE</name>
+        <definition>REGISTER_BASE_TYPE_N</definition>
+        <argsstring>(char, &quot;char&quot;)</argsstring>
+        <name>REGISTER_BASE_TYPE_N</name>
         <param>
-          <type>signed char</type>
+          <type>char</type>
         </param>
         <param>
           <type>&quot;char&quot;</type>
@@ -463,13 +599,51 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="17" column="5" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" declline="17" declcolumn="5"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="40" column="5" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" declline="40" declcolumn="5"/>
       </memberdef>
-      <memberdef kind="function" id="_base_type_refl_8hpp_1ade0ac1cfc96def4e9ba872e011c426f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="_base_type_refl_8hpp_1a8fb43171ca94cee6551f3474a7552caa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
-        <definition>REGISTER_BASE_TYPE</definition>
+        <definition>REGISTER_BASE_TYPE_N</definition>
+        <argsstring>(wchar_t, &quot;wchar&quot;)</argsstring>
+        <name>REGISTER_BASE_TYPE_N</name>
+        <param>
+          <type>wchar_t</type>
+        </param>
+        <param>
+          <type>&quot;wchar&quot;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="41" column="5" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" declline="41" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="_base_type_refl_8hpp_1a386ae3bce6a7a3886594841426295f85" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>REGISTER_BASE_TYPE_N</definition>
+        <argsstring>(signed char, &quot;schar&quot;)</argsstring>
+        <name>REGISTER_BASE_TYPE_N</name>
+        <param>
+          <type>signed char</type>
+        </param>
+        <param>
+          <type>&quot;schar&quot;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="42" column="5" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" declline="42" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="_base_type_refl_8hpp_1a8ec9184a7d7311b3ea8b761626e77111" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>REGISTER_BASE_TYPE_N</definition>
         <argsstring>(unsigned char, &quot;uchar&quot;)</argsstring>
-        <name>REGISTER_BASE_TYPE</name>
+        <name>REGISTER_BASE_TYPE_N</name>
         <param>
           <type>unsigned char</type>
         </param>
@@ -482,13 +656,77 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="18" column="5" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" declline="18" declcolumn="5"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="43" column="5" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" declline="43" declcolumn="5"/>
       </memberdef>
-      <memberdef kind="function" id="_base_type_refl_8hpp_1a6b2140b5b0de56acd565cc7d65d5eb39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="_base_type_refl_8hpp_1a2ebbd449e7a44189cd97aba9f95dba17" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>REGISTER_BASE_TYPE</definition>
-        <argsstring>(std::string, &quot;string&quot;)</argsstring>
+        <argsstring>(long int)</argsstring>
         <name>REGISTER_BASE_TYPE</name>
+        <param>
+          <type>long int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="45" column="5" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" declline="45" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="_base_type_refl_8hpp_1a43e1dd5be55692c1fc0b59ed57007edf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>REGISTER_BASE_TYPE</definition>
+        <argsstring>(unsigned long int)</argsstring>
+        <name>REGISTER_BASE_TYPE</name>
+        <param>
+          <type>unsigned long int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="46" column="5" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" declline="46" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="_base_type_refl_8hpp_1a705b8875a1fa2202b606a8986d3de2eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>REGISTER_BASE_TYPE</definition>
+        <argsstring>(long long int)</argsstring>
+        <name>REGISTER_BASE_TYPE</name>
+        <param>
+          <type>long long int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="47" column="5" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" declline="47" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="_base_type_refl_8hpp_1a80e72a61b706faf5ec2c4c6c3df922fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>REGISTER_BASE_TYPE</definition>
+        <argsstring>(unsigned long long int)</argsstring>
+        <name>REGISTER_BASE_TYPE</name>
+        <param>
+          <type>unsigned long long int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="48" column="5" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" declline="48" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="_base_type_refl_8hpp_1ae4ec0cb10f8413ca2d43b16e0b53f982" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>REGISTER_BASE_TYPE_N</definition>
+        <argsstring>(std::string, &quot;string&quot;)</argsstring>
+        <name>REGISTER_BASE_TYPE_N</name>
         <param>
           <type>std::string</type>
         </param>
@@ -501,18 +739,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="19" column="5" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" declline="19" declcolumn="5"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="51" column="5" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" declline="51" declcolumn="5"/>
       </memberdef>
-      <memberdef kind="function" id="_base_type_refl_8hpp_1ac91f47576175e214d51e41018d86c281" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="_base_type_refl_8hpp_1ad45c53b2d3d04d9139b060612e8e0e8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>REGISTER_BASE_TYPE</definition>
-        <argsstring>(Bvr::Meta::Type, &quot;Type&quot;)</argsstring>
+        <argsstring>(std::vector&lt; int &gt;)</argsstring>
         <name>REGISTER_BASE_TYPE</name>
         <param>
-          <type><ref refid="class_bvr_1_1_meta_1_1_type" kindref="compound">Bvr::Meta::Type</ref></type>
-        </param>
-        <param>
-          <type>&quot;Type&quot;</type>
+          <type>std::vector&lt; int &gt;</type>
         </param>
         <briefdescription>
         </briefdescription>
@@ -520,7 +755,39 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="20" column="5" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" declline="20" declcolumn="5"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="53" column="5" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" declline="53" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="_base_type_refl_8hpp_1a702b215dbf4bb897b54945ef32ceca1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>REGISTER_BASE_TYPE</definition>
+        <argsstring>(std::vector&lt; float &gt;)</argsstring>
+        <name>REGISTER_BASE_TYPE</name>
+        <param>
+          <type>std::vector&lt; float &gt;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="54" column="5" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" declline="54" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="_base_type_refl_8hpp_1a293c8af5f14df2fc9f0efabc5689d007" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>REGISTER_BASE_TYPE</definition>
+        <argsstring>(std::vector&lt; double &gt;)</argsstring>
+        <name>REGISTER_BASE_TYPE</name>
+        <param>
+          <type>std::vector&lt; double &gt;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" line="55" column="5" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp" declline="55" declcolumn="5"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -528,28 +795,62 @@
     <detaileddescription>
     </detaileddescription>
     <programlisting>
-<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>REGISTER_BASE_TYPE(T,<sp/>NAME)<sp/>Bvr::Meta::TypeRegistry::Class_&lt;T&gt;(NAME)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Meta/Meta.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>REGISTER_BASE_TYPE(T)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="4"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/>[[maybe_unused]]<sp/>auto<sp/>t<sp/>=<sp/>Bvr::Meta::Type::Get&lt;T&gt;();<sp/>}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="5"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/>[[maybe_unused]]<sp/>auto<sp/>t<sp/>=<sp/>Bvr::Meta::Type::Get&lt;T*&gt;();<sp/>}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="6"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/>[[maybe_unused]]<sp/>auto<sp/>t<sp/>=<sp/>Bvr::Meta::Type::Get&lt;const<sp/>T*&gt;();<sp/>}</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal">BVR_REFLECTION_BLOCK<sp/>{</highlight></codeline>
-<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>REGISTER_BASE_TYPE(int32,<sp/></highlight><highlight class="stringliteral">&quot;int&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>REGISTER_BASE_TYPE(int64,<sp/></highlight><highlight class="stringliteral">&quot;int64&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>REGISTER_BASE_TYPE(uint32,<sp/></highlight><highlight class="stringliteral">&quot;uint&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>REGISTER_BASE_TYPE(uint64,<sp/></highlight><highlight class="stringliteral">&quot;uint64&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>REGISTER_BASE_TYPE(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;bool&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>REGISTER_BASE_TYPE(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;float&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>REGISTER_BASE_TYPE(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;double&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>REGISTER_BASE_TYPE(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;long<sp/>double&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>REGISTER_BASE_TYPE(</highlight><highlight class="keywordtype">signed</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;char&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>REGISTER_BASE_TYPE(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;uchar&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>REGISTER_BASE_TYPE(std::string,<sp/></highlight><highlight class="stringliteral">&quot;string&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>REGISTER_BASE_TYPE(<ref refid="class_bvr_1_1_meta_1_1_type" kindref="compound">Bvr::Meta::Type</ref>,<sp/></highlight><highlight class="stringliteral">&quot;Type&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>REGISTER_BASE_TYPE_N(T,<sp/>NAME)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="9"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>Bvr::Meta::TypeRegistry::Class_&lt;T&gt;(NAME);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="10"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>Bvr::Meta::TypeRegistry::Class_&lt;T*&gt;(NAME<sp/>&quot;*&quot;</highlight><highlight class="normal">);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>Bvr::Meta::TypeRegistry::Class_&lt;const<sp/>T*&gt;(&quot;const<sp/>&quot;<sp/>NAME<sp/>&quot;*&quot;)</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Meta/Meta.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">BVR_REFLECTION_BLOCK<sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">Bvr::Meta;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/>[[maybe_unused]]<sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>t<sp/>=<sp/>Type::Get&lt;std::nullptr_t&gt;();<sp/>}</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>Detail::MakeInvalidTypeData();</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>REGISTER_BASE_TYPE</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>REGISTER_BASE_TYPE(<ref refid="class_bvr_1_1_meta_1_1_type" kindref="compound">Type</ref>);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>REGISTER_BASE_TYPE(<ref refid="class_bvr_1_1_meta_1_1_variant" kindref="compound">Variant</ref>);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>REGISTER_BASE_TYPE(<ref refid="class_bvr_1_1_meta_1_1_instance" kindref="compound">Instance</ref>);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>REGISTER_BASE_TYPE(std::reference_wrapper&lt;Variant&gt;);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>REGISTER_BASE_TYPE_N(std::int16_t,<sp/></highlight><highlight class="stringliteral">&quot;int16&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>REGISTER_BASE_TYPE_N(std::uint16_t,<sp/></highlight><highlight class="stringliteral">&quot;uint16&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>REGISTER_BASE_TYPE_N(std::int32_t,<sp/></highlight><highlight class="stringliteral">&quot;int&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>REGISTER_BASE_TYPE_N(std::int64_t,<sp/></highlight><highlight class="stringliteral">&quot;int64&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>REGISTER_BASE_TYPE_N(std::uint32_t,<sp/></highlight><highlight class="stringliteral">&quot;uint&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>REGISTER_BASE_TYPE_N(std::uint64_t,<sp/></highlight><highlight class="stringliteral">&quot;uint64&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>REGISTER_BASE_TYPE_N(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;bool&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>REGISTER_BASE_TYPE_N(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;float&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>REGISTER_BASE_TYPE_N(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;double&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>REGISTER_BASE_TYPE_N(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;long<sp/>double&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>REGISTER_BASE_TYPE_N(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;char&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>REGISTER_BASE_TYPE_N(</highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;wchar&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>REGISTER_BASE_TYPE_N(</highlight><highlight class="keywordtype">signed</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;schar&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>REGISTER_BASE_TYPE_N(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;uchar&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>REGISTER_BASE_TYPE(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>REGISTER_BASE_TYPE(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>REGISTER_BASE_TYPE(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>REGISTER_BASE_TYPE(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>REGISTER_BASE_TYPE_N(std::string,<sp/></highlight><highlight class="stringliteral">&quot;string&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>REGISTER_BASE_TYPE(std::vector&lt;int&gt;);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>REGISTER_BASE_TYPE(std::vector&lt;float&gt;);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>REGISTER_BASE_TYPE(std::vector&lt;double&gt;);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/BaseTypeRefl.hpp"/>
   </compounddef>
