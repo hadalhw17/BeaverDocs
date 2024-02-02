@@ -3,7 +3,7 @@
   <compounddef id="namespace_bvr_1_1gl_t_f_helpers" kind="namespace" language="C++">
     <compoundname>Bvr::glTFHelpers</compoundname>
       <sectiondef kind="func">
-      <memberdef kind="function" id="_gltf_helpers_8hpp_1aa293c300d969d5d7eb0f51052d4bc37a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="_gltf_helpers_8hpp_1aa293c300d969d5d7eb0f51052d4bc37a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>size_t</type>
         <definition>size_t Bvr::glTFHelpers::IdCast</definition>
         <argsstring>(int id)</argsstring>
@@ -18,9 +18,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="8" column="8" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="8" bodyend="10"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="8" column="15" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="8" bodyend="10"/>
       </memberdef>
-      <memberdef kind="function" id="_gltf_helpers_8hpp_1a951625140dd6fd81d910c3ebdb96c70f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="_gltf_helpers_8hpp_1a55dd9ff806ddc0113e354366b1526ef5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>bool</type>
@@ -28,16 +28,12 @@
             <defname>bMutable</defname>
           </param>
           <param>
-            <type>typename SliceT</type>
-            <defval>BasicStreamSlice&lt;bMutable&gt;</defval>
-          </param>
-          <param>
             <type>typename ModelT</type>
-            <defval>std::conditional_t&lt;bMutable, <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_document" kindref="compound">Bvr::GLTF::SDocument</ref>,                                               const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_document" kindref="compound">Bvr::GLTF::SDocument</ref>&gt;</defval>
+            <defval>std::conditional_t&lt;                             bMutable, GLTF::SDocument, const GLTF::SDocument&gt;</defval>
           </param>
         </templateparamlist>
-        <type>SliceT</type>
-        <definition>SliceT Bvr::glTFHelpers::AccessorToSlice</definition>
+        <type>BasicStreamSlice&lt; bMutable &gt;</type>
+        <definition>BasicStreamSlice&lt;bMutable&gt; Bvr::glTFHelpers::AccessorToSlice</definition>
         <argsstring>(ModelT &amp;doc, const int accessorIdx)</argsstring>
         <name>AccessorToSlice</name>
         <param>
@@ -54,9 +50,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="15" column="15" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="15" bodyend="29"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="14" column="25" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="14" bodyend="28"/>
       </memberdef>
-      <memberdef kind="function" id="_gltf_helpers_8hpp_1ad3946275b4a64650b67ba0bdf2d67cf3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="_gltf_helpers_8hpp_1afa1702ffbad58cfbb42b4886b6f309af" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>bool</type>
@@ -64,24 +60,20 @@
             <defname>bMutable</defname>
           </param>
           <param>
-            <type>typename SliceT</type>
-            <defval>BasicStreamSlice&lt;bMutable&gt;</defval>
-          </param>
-          <param>
             <type>typename ModelT</type>
-            <defval>std::conditional_t&lt;bMutable, <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_document" kindref="compound">Bvr::GLTF::SDocument</ref>,                                               const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_document" kindref="compound">Bvr::GLTF::SDocument</ref>&gt;</defval>
+            <defval>std::conditional_t&lt;                             bMutable, GLTF::SDocument, const GLTF::SDocument&gt;</defval>
           </param>
         </templateparamlist>
-        <type>SliceT</type>
-        <definition>SliceT Bvr::glTFHelpers::GetAttribute</definition>
-        <argsstring>(ModelT &amp;gltfMesh, const Bvr::GLTF::SPrimitive &amp;prim, const char *attributeName)</argsstring>
+        <type>BasicStreamSlice&lt; bMutable &gt;</type>
+        <definition>BasicStreamSlice&lt;bMutable&gt; Bvr::glTFHelpers::GetAttribute</definition>
+        <argsstring>(ModelT &amp;gltfMesh, const GLTF::SPrimitive &amp;prim, const char *attributeName)</argsstring>
         <name>GetAttribute</name>
         <param>
           <type>ModelT &amp;</type>
           <declname>gltfMesh</declname>
         </param>
         <param>
-          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_primitive" kindref="compound">Bvr::GLTF::SPrimitive</ref> &amp;</type>
+          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_primitive" kindref="compound">GLTF::SPrimitive</ref> &amp;</type>
           <declname>prim</declname>
         </param>
         <param>
@@ -94,9 +86,34 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="34" column="15" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="34" bodyend="41"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="32" column="25" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="32" bodyend="40"/>
       </memberdef>
-      <memberdef kind="function" id="_gltf_helpers_8hpp_1aa6379fae4ad5ff3e936b5599bf369926" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="_gltf_helpers_8hpp_1a3fe3615bfe7cc71910df43179cb4e49d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t Bvr::glTFHelpers::GetStreamFormatSize</definition>
+        <argsstring>(const GLTF::SDocument &amp;doc, const GLTF::SPrimitive &amp;prim, const char *attributeName)</argsstring>
+        <name>GetStreamFormatSize</name>
+        <param>
+          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_document" kindref="compound">GLTF::SDocument</ref> &amp;</type>
+          <declname>doc</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_primitive" kindref="compound">GLTF::SPrimitive</ref> &amp;</type>
+          <declname>prim</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>attributeName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="42" column="15" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="42" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="_gltf_helpers_8hpp_1ab24bccc9949d453e0a7115d24d1700c6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T</type>
@@ -104,18 +121,18 @@
         </templateparamlist>
         <type>void</type>
         <definition>void Bvr::glTFHelpers::GetAttribute</definition>
-        <argsstring>(std::vector&lt; T &gt; &amp;attribute, const Bvr::GLTF::SDocument &amp;gltfMesh, const Bvr::GLTF::SPrimitive &amp;prim, const char *attributeName)</argsstring>
+        <argsstring>(std::vector&lt; T &gt; &amp;attribute, const GLTF::SDocument &amp;gltfMesh, const GLTF::SPrimitive &amp;prim, const char *attributeName)</argsstring>
         <name>GetAttribute</name>
         <param>
           <type>std::vector&lt; T &gt; &amp;</type>
           <declname>attribute</declname>
         </param>
         <param>
-          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_document" kindref="compound">Bvr::GLTF::SDocument</ref> &amp;</type>
+          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_document" kindref="compound">GLTF::SDocument</ref> &amp;</type>
           <declname>gltfMesh</declname>
         </param>
         <param>
-          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_primitive" kindref="compound">Bvr::GLTF::SPrimitive</ref> &amp;</type>
+          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_primitive" kindref="compound">GLTF::SPrimitive</ref> &amp;</type>
           <declname>prim</declname>
         </param>
         <param>
@@ -128,9 +145,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="45" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="45" bodyend="57"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="56" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="56" bodyend="70"/>
       </memberdef>
-      <memberdef kind="function" id="_gltf_helpers_8hpp_1a824bb2c1238ebdf891fc7d1fb6683f28" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="_gltf_helpers_8hpp_1ac76c355ac0a259444bb582c193bed9c9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>bool</type>
@@ -144,10 +161,10 @@
         </templateparamlist>
         <type>SliceT</type>
         <definition>SliceT Bvr::glTFHelpers::GetIndexBuffer</definition>
-        <argsstring>(const Bvr::GLTF::SDocument &amp;model, int meshIdx, int primitiveIdx, int &amp;componentSize)</argsstring>
+        <argsstring>(const GLTF::SDocument &amp;model, int meshIdx, int primitiveIdx, int &amp;componentSize)</argsstring>
         <name>GetIndexBuffer</name>
         <param>
-          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_document" kindref="compound">Bvr::GLTF::SDocument</ref> &amp;</type>
+          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_document" kindref="compound">GLTF::SDocument</ref> &amp;</type>
           <declname>model</declname>
         </param>
         <param>
@@ -168,9 +185,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="60" column="15" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="60" bodyend="89"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="73" column="15" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="73" bodyend="103"/>
       </memberdef>
-      <memberdef kind="function" id="_gltf_helpers_8hpp_1a810696bc36a042a91ea02b4a88d5366b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="_gltf_helpers_8hpp_1af8f989dfb97bb5071c81a52d5adb928b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>bool</type>
@@ -179,11 +196,11 @@
           </param>
         </templateparamlist>
         <type>int</type>
-        <definition>int Bvr::glTFHelpers::GetIndexBuffer</definition>
-        <argsstring>(const Bvr::GLTF::SDocument &amp;model, int meshIdx, int primitiveIdx, int vertexStart, std::vector&lt; uint32 &gt; &amp;outBuffer)</argsstring>
-        <name>GetIndexBuffer</name>
+        <definition>int Bvr::glTFHelpers::ConvertIndexStream</definition>
+        <argsstring>(const GLTF::SDocument &amp;model, int meshIdx, int primitiveIdx, int vertexStart, std::vector&lt; uint32 &gt; &amp;outBuffer)</argsstring>
+        <name>ConvertIndexStream</name>
         <param>
-          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_document" kindref="compound">Bvr::GLTF::SDocument</ref> &amp;</type>
+          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_document" kindref="compound">GLTF::SDocument</ref> &amp;</type>
           <declname>model</declname>
         </param>
         <param>
@@ -208,15 +225,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="92" column="12" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="92" bodyend="137"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="106" column="12" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="106" bodyend="153"/>
       </memberdef>
-      <memberdef kind="function" id="_gltf_helpers_8hpp_1a1105b441279fd31655fdc3934092a80d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="_gltf_helpers_8hpp_1a063ea39f4e297dbc854a94b96029b2f3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>AABB</type>
         <definition>AABB Bvr::glTFHelpers::GetPrimitiveBounds</definition>
-        <argsstring>(const Bvr::GLTF::SDocument &amp;doc, int meshIdx, int primitiveIdx)</argsstring>
+        <argsstring>(const GLTF::SDocument &amp;doc, int meshIdx, int primitiveIdx)</argsstring>
         <name>GetPrimitiveBounds</name>
         <param>
-          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_document" kindref="compound">Bvr::GLTF::SDocument</ref> &amp;</type>
+          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_document" kindref="compound">GLTF::SDocument</ref> &amp;</type>
           <declname>doc</declname>
         </param>
         <param>
@@ -233,15 +250,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="139" column="13" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="139" bodyend="159"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="155" column="13" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="155" bodyend="175"/>
       </memberdef>
-      <memberdef kind="function" id="_gltf_helpers_8hpp_1a3ce22d6a4a111791134a48539e327ba4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="_gltf_helpers_8hpp_1ab0fdc738c58315fbe9cbe7f8ae94997c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>mat4</type>
         <definition>mat4 Bvr::glTFHelpers::GetNodeTransform</definition>
-        <argsstring>(const Bvr::GLTF::SDocument &amp;document, int nodeIdx)</argsstring>
+        <argsstring>(const GLTF::SDocument &amp;document, int nodeIdx)</argsstring>
         <name>GetNodeTransform</name>
         <param>
-          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_document" kindref="compound">Bvr::GLTF::SDocument</ref> &amp;</type>
+          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_document" kindref="compound">GLTF::SDocument</ref> &amp;</type>
           <declname>document</declname>
         </param>
         <param>
@@ -254,15 +271,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="161" column="13" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="161" bodyend="193"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="177" column="13" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="177" bodyend="208"/>
       </memberdef>
-      <memberdef kind="function" id="_gltf_helpers_8hpp_1adeaac10aeeb07a565f531b035fea93d5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="_gltf_helpers_8hpp_1a920a93d8ec8dcfbe979c72fe45a89753" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
         <definition>int Bvr::glTFHelpers::GetNodeLightId</definition>
-        <argsstring>(const Bvr::GLTF::SDocument &amp;model, int nodeIdx)</argsstring>
+        <argsstring>(const GLTF::SDocument &amp;model, int nodeIdx)</argsstring>
         <name>GetNodeLightId</name>
         <param>
-          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_document" kindref="compound">Bvr::GLTF::SDocument</ref> &amp;</type>
+          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_document" kindref="compound">GLTF::SDocument</ref> &amp;</type>
           <declname>model</declname>
         </param>
         <param>
@@ -275,15 +292,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="195" column="12" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="195" bodyend="198"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="210" column="12" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="210" bodyend="213"/>
       </memberdef>
-      <memberdef kind="function" id="_gltf_helpers_8hpp_1a3352ee08c02fbbea5b3977a7b70b477a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="_gltf_helpers_8hpp_1aa5f557a66a028af7475c9ff25f0e2779" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void Bvr::glTFHelpers::WriteTransform</definition>
-        <argsstring>(Bvr::GLTF::SDocument &amp;document, int nodeIdx, const mat4 transform)</argsstring>
+        <argsstring>(GLTF::SDocument &amp;document, int nodeIdx, const mat4 transform)</argsstring>
         <name>WriteTransform</name>
         <param>
-          <type><ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_document" kindref="compound">Bvr::GLTF::SDocument</ref> &amp;</type>
+          <type><ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_document" kindref="compound">GLTF::SDocument</ref> &amp;</type>
           <declname>document</declname>
         </param>
         <param>
@@ -300,19 +317,19 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="200" column="13" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="200" bodyend="226"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="215" column="13" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="215" bodyend="241"/>
       </memberdef>
-      <memberdef kind="function" id="_gltf_helpers_8hpp_1af1fd6b36e7b4c2dd66d8143279fc4be9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="_gltf_helpers_8hpp_1aed47072ab3ad4a65939833f655b158ab" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
         <definition>int Bvr::glTFHelpers::GetAnimationSamplerInputCount</definition>
-        <argsstring>(const Bvr::GLTF::SAnimation::SSampler &amp;sampler, const Bvr::GLTF::SDocument &amp;model)</argsstring>
+        <argsstring>(const GLTF::SAnimation::SSampler &amp;sampler, const GLTF::SDocument &amp;model)</argsstring>
         <name>GetAnimationSamplerInputCount</name>
         <param>
-          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_animation_1_1_s_sampler" kindref="compound">Bvr::GLTF::SAnimation::SSampler</ref> &amp;</type>
+          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_animation_1_1_s_sampler" kindref="compound">GLTF::SAnimation::SSampler</ref> &amp;</type>
           <declname>sampler</declname>
         </param>
         <param>
-          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_document" kindref="compound">Bvr::GLTF::SDocument</ref> &amp;</type>
+          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_document" kindref="compound">GLTF::SDocument</ref> &amp;</type>
           <declname>model</declname>
         </param>
         <briefdescription>
@@ -321,19 +338,19 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="229" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="229" bodyend="234"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="244" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="244" bodyend="248"/>
       </memberdef>
-      <memberdef kind="function" id="_gltf_helpers_8hpp_1a450965c2b166c125d873b13f7920931b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="_gltf_helpers_8hpp_1a562713821dc7e3ca8e02be37542a59af" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
         <definition>int Bvr::glTFHelpers::GetAnimationSamplerOutputCount</definition>
-        <argsstring>(const Bvr::GLTF::SAnimation::SSampler &amp;sampler, const Bvr::GLTF::SDocument &amp;model)</argsstring>
+        <argsstring>(const GLTF::SAnimation::SSampler &amp;sampler, const GLTF::SDocument &amp;model)</argsstring>
         <name>GetAnimationSamplerOutputCount</name>
         <param>
-          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_animation_1_1_s_sampler" kindref="compound">Bvr::GLTF::SAnimation::SSampler</ref> &amp;</type>
+          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_animation_1_1_s_sampler" kindref="compound">GLTF::SAnimation::SSampler</ref> &amp;</type>
           <declname>sampler</declname>
         </param>
         <param>
-          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_document" kindref="compound">Bvr::GLTF::SDocument</ref> &amp;</type>
+          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_document" kindref="compound">GLTF::SDocument</ref> &amp;</type>
           <declname>model</declname>
         </param>
         <briefdescription>
@@ -342,19 +359,19 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="237" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="237" bodyend="242"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="251" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="251" bodyend="255"/>
       </memberdef>
-      <memberdef kind="function" id="_gltf_helpers_8hpp_1a853fa653320e3bdedd6b5f0d9d60d616" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="_gltf_helpers_8hpp_1ad3b622a9a83dca92573c5d27684d5f35" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
         <definition>bool Bvr::glTFHelpers::GetAnimationSamplerBounds</definition>
-        <argsstring>(const Bvr::GLTF::SAnimation::SSampler &amp;sampler, const Bvr::GLTF::SDocument &amp;model, float &amp;min, float &amp;max)</argsstring>
+        <argsstring>(const GLTF::SAnimation::SSampler &amp;sampler, const GLTF::SDocument &amp;model, float &amp;min, float &amp;max)</argsstring>
         <name>GetAnimationSamplerBounds</name>
         <param>
-          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_animation_1_1_s_sampler" kindref="compound">Bvr::GLTF::SAnimation::SSampler</ref> &amp;</type>
+          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_animation_1_1_s_sampler" kindref="compound">GLTF::SAnimation::SSampler</ref> &amp;</type>
           <declname>sampler</declname>
         </param>
         <param>
-          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_document" kindref="compound">Bvr::GLTF::SDocument</ref> &amp;</type>
+          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_document" kindref="compound">GLTF::SDocument</ref> &amp;</type>
           <declname>model</declname>
         </param>
         <param>
@@ -371,7 +388,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="245" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="245" bodyend="261"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="257" column="13" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="257" bodyend="271"/>
       </memberdef>
       <memberdef kind="function" id="_gltf_helpers_8hpp_1ab489a1bbdd9c4d97db45ce392b682db8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>float</type>
@@ -388,7 +405,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="263" column="14" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="263" bodyend="265"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="274" column="14" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="274" bodyend="276"/>
       </memberdef>
       <memberdef kind="function" id="_gltf_helpers_8hpp_1a65b7ef7138c48a4bb788c2df9b665969" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>float</type>
@@ -405,7 +422,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="267" column="14" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="267" bodyend="269"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="278" column="14" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="278" bodyend="280"/>
       </memberdef>
       <memberdef kind="function" id="_gltf_helpers_8hpp_1a15f17104099dc84a69eb9174852130e5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>float</type>
@@ -422,7 +439,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="271" column="14" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="271" bodyend="273"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="282" column="14" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="282" bodyend="284"/>
       </memberdef>
       <memberdef kind="function" id="_gltf_helpers_8hpp_1a8481b1989e1e501e73ef25ab2d454a44" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>float</type>
@@ -439,27 +456,44 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="275" column="14" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="275" bodyend="277"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="286" column="14" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="286" bodyend="288"/>
       </memberdef>
-      <memberdef kind="function" id="_gltf_helpers_8hpp_1a218c35a038edcabbb1e861888da57f03" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="_gltf_helpers_8hpp_1a7bfc5a6de102d26940110b837593fa29" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float Bvr::glTFHelpers::DecodeAnimationChannelValue</definition>
+        <argsstring>(float c)</argsstring>
+        <name>DecodeAnimationChannelValue</name>
+        <param>
+          <type>float</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="290" column="14" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="290" bodyend="292"/>
+      </memberdef>
+      <memberdef kind="function" id="_gltf_helpers_8hpp_1a3582b5a144288c9d88f49a7b91953dae" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>const uint8_t *</type>
         <definition>const uint8_t* Bvr::glTFHelpers::GetBufferAddress</definition>
-        <argsstring>(const int i, const Bvr::GLTF::SAccessor &amp;accessor, const Bvr::GLTF::SBufferView &amp;bufferViewObject, const Bvr::GLTF::SBuffer &amp;buffer)</argsstring>
+        <argsstring>(const int i, const GLTF::SAccessor &amp;accessor, const GLTF::SBufferView &amp;bufferViewObject, const GLTF::SBuffer &amp;buffer)</argsstring>
         <name>GetBufferAddress</name>
         <param>
           <type>const int</type>
           <declname>i</declname>
         </param>
         <param>
-          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_accessor" kindref="compound">Bvr::GLTF::SAccessor</ref> &amp;</type>
+          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_accessor" kindref="compound">GLTF::SAccessor</ref> &amp;</type>
           <declname>accessor</declname>
         </param>
         <param>
-          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_buffer_view" kindref="compound">Bvr::GLTF::SBufferView</ref> &amp;</type>
+          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_buffer_view" kindref="compound">GLTF::SBufferView</ref> &amp;</type>
           <declname>bufferViewObject</declname>
         </param>
         <param>
-          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_buffer" kindref="compound">Bvr::GLTF::SBuffer</ref> &amp;</type>
+          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_buffer" kindref="compound">GLTF::SBuffer</ref> &amp;</type>
           <declname>buffer</declname>
         </param>
         <briefdescription>
@@ -468,23 +502,23 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="280" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="280" bodyend="295"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="295" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="295" bodyend="310"/>
       </memberdef>
-      <memberdef kind="function" id="_gltf_helpers_8hpp_1acd23a0488bc561587dd376f62103060f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="_gltf_helpers_8hpp_1a66fdb4182e2aee84b1f5e981ea1c0741" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
         <definition>bool Bvr::glTFHelpers::DecodeScalarAnimationValue</definition>
-        <argsstring>(const size_t i, const Bvr::GLTF::SAccessor &amp;accessor, const Bvr::GLTF::SDocument &amp;model, float *scalar)</argsstring>
+        <argsstring>(const size_t i, const GLTF::SAccessor &amp;accessor, const GLTF::SDocument &amp;model, float *scalar)</argsstring>
         <name>DecodeScalarAnimationValue</name>
         <param>
           <type>const size_t</type>
           <declname>i</declname>
         </param>
         <param>
-          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_accessor" kindref="compound">Bvr::GLTF::SAccessor</ref> &amp;</type>
+          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_accessor" kindref="compound">GLTF::SAccessor</ref> &amp;</type>
           <declname>accessor</declname>
         </param>
         <param>
-          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_document" kindref="compound">Bvr::GLTF::SDocument</ref> &amp;</type>
+          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_document" kindref="compound">GLTF::SDocument</ref> &amp;</type>
           <declname>model</declname>
         </param>
         <param>
@@ -497,23 +531,23 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="297" column="13" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="297" bodyend="339"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="312" column="13" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="312" bodyend="342"/>
       </memberdef>
-      <memberdef kind="function" id="_gltf_helpers_8hpp_1ae2599e2bf98405fbbd22f4390d5fc377" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="_gltf_helpers_8hpp_1acf7fbfaa09140f1d4693e4d5971b76f9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
         <definition>bool Bvr::glTFHelpers::DecodeTranslationAnimationValue</definition>
-        <argsstring>(const size_t i, const Bvr::GLTF::SAccessor &amp;accessor, const Bvr::GLTF::SDocument &amp;model, float *xyz)</argsstring>
+        <argsstring>(const size_t i, const GLTF::SAccessor &amp;accessor, const GLTF::SDocument &amp;model, float *xyz)</argsstring>
         <name>DecodeTranslationAnimationValue</name>
         <param>
           <type>const size_t</type>
           <declname>i</declname>
         </param>
         <param>
-          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_accessor" kindref="compound">Bvr::GLTF::SAccessor</ref> &amp;</type>
+          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_accessor" kindref="compound">GLTF::SAccessor</ref> &amp;</type>
           <declname>accessor</declname>
         </param>
         <param>
-          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_document" kindref="compound">Bvr::GLTF::SDocument</ref> &amp;</type>
+          <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_document" kindref="compound">GLTF::SDocument</ref> &amp;</type>
           <declname>model</declname>
         </param>
         <param>
@@ -526,7 +560,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="341" column="13" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="341" bodyend="368"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="344" column="13" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="344" bodyend="370"/>
       </memberdef>
       <memberdef kind="function" id="_gltf_helpers_8hpp_1af2306c6461d534f556c5de461e009df9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -555,16 +589,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="370" column="13" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="370" bodyend="398"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="372" column="13" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="372" bodyend="398"/>
       </memberdef>
-      <memberdef kind="function" id="_gltf_helpers_8hpp_1a2be5381fee2ad7c632f0143fb53515cc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="_gltf_helpers_8hpp_1ae14993e821fab50a66659223f2eba8e4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
         <definition>bool Bvr::glTFHelpers::DecodeRotationAnimationValue</definition>
-        <argsstring>(const size_t i, const Bvr::GLTF::SAccessor &amp;accessor, const Bvr::GLTF::SDocument &amp;model, float *xyzw)</argsstring>
+        <argsstring>(const size_t frameIdx, const Bvr::GLTF::SAccessor &amp;accessor, const Bvr::GLTF::SDocument &amp;model, float *xyzw)</argsstring>
         <name>DecodeRotationAnimationValue</name>
         <param>
           <type>const size_t</type>
-          <declname>i</declname>
+          <declname>frameIdx</declname>
         </param>
         <param>
           <type>const <ref refid="struct_bvr_1_1_g_l_t_f_1_1_s_accessor" kindref="compound">Bvr::GLTF::SAccessor</ref> &amp;</type>
@@ -584,7 +618,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="400" column="13" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="400" bodyend="465"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" line="400" column="13" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrGLTF/GltfHelpers.hpp" bodystart="400" bodyend="437"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
