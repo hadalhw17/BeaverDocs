@@ -1663,6 +1663,7 @@
     <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1a51f0267e7056df34c5b1280555cb8ef3a0a63e5179ad6402bf5c9e490aa7a323c" kind="enumvalue"><name>RayTracing</name></member>
     <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1a51f0267e7056df34c5b1280555cb8ef3ac5657dc3694b5dea2a3726da8772d8b9" kind="enumvalue"><name>Transfer</name></member>
     <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1a51f0267e7056df34c5b1280555cb8ef3af0f5c52ec6c5896e50f289983e01bcf6" kind="enumvalue"><name>Overlay</name></member>
+    <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1a51f0267e7056df34c5b1280555cb8ef3a904018fafd37c5192de9a130a5971365" kind="enumvalue"><name>ForceClear</name></member>
     <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1a1501818f0cdbf46819f37debfddb7a76" kind="variable"><name>m_frameGraph</name></member>
     <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1a4315fa767d4c481f3eb5727f86d029f1" kind="variable"><name>m_inputImages</name></member>
     <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1a0fce1ec4691f8f9385fb772807eb9156" kind="variable"><name>m_outputStorageImages</name></member>
@@ -4472,7 +4473,7 @@
   <compound refid="d4/db4/structBvr_1_1Renderer_1_1ExecutionUtils_1_1Graphics" kind="struct"><name>Bvr::Renderer::ExecutionUtils::Graphics</name>
     <member refid="d4/db4/structBvr_1_1Renderer_1_1ExecutionUtils_1_1Graphics_1a427027055504452660e0be075a846551" kind="function"><name>FullScreenPass</name></member>
     <member refid="d4/db4/structBvr_1_1Renderer_1_1ExecutionUtils_1_1Graphics_1a920608ee0778831ad33cd8a83afbf2c5" kind="function"><name>FullScreenPass</name></member>
-    <member refid="d4/db4/structBvr_1_1Renderer_1_1ExecutionUtils_1_1Graphics_1a64faa90827fa9d4bd9ba1c7c402986f6" kind="function"><name>DrawList</name></member>
+    <member refid="d4/db4/structBvr_1_1Renderer_1_1ExecutionUtils_1_1Graphics_1a49adc095d89de3cd410537e7c4cf739c" kind="function"><name>DrawList</name></member>
     <member refid="d4/db4/structBvr_1_1Renderer_1_1ExecutionUtils_1_1Graphics_1ab9c54e9e832a6fbb50c8bdf6b6328c44" kind="function"><name>DrawIndirect</name></member>
   </compound>
   <compound refid="d2/d64/classBvr_1_1Renderer_1_1GraphicsPipelineStageRegistrator" kind="class"><name>Bvr::Renderer::GraphicsPipelineStageRegistrator</name>
@@ -7382,27 +7383,22 @@
   <compound refid="d8/dd9/structBvr_1_1Renderer_1_1TMaterialTraits_1_1ShaderName" kind="struct"><name>Bvr::Renderer::TMaterialTraits::ShaderName</name>
     <member refid="d8/dd9/structBvr_1_1Renderer_1_1TMaterialTraits_1_1ShaderName_1ac637d68b02b4f5b84ffa6c5da9e6f070" kind="function"><name>Get</name></member>
   </compound>
-  <compound refid="df/d1f/structBvr_1_1ShadowParams" kind="struct"><name>Bvr::ShadowParams</name>
-    <member refid="df/d1f/structBvr_1_1ShadowParams_1afdc29f267743df19252009801a4ea6bd" kind="enum"><name>EFilterSize</name></member>
-    <member refid="df/d1f/structBvr_1_1ShadowParams_1afdc29f267743df19252009801a4ea6bda8e683187a00e5d462a4aeee69e9d3d9c" kind="enumvalue"><name>x2</name></member>
-    <member refid="df/d1f/structBvr_1_1ShadowParams_1afdc29f267743df19252009801a4ea6bda1414c9756505ddfb8ba0a3b6fc9d691f" kind="enumvalue"><name>x3</name></member>
-    <member refid="df/d1f/structBvr_1_1ShadowParams_1afdc29f267743df19252009801a4ea6bdaf4fe292eb01627a0219872d44a305ec5" kind="enumvalue"><name>x5</name></member>
-    <member refid="df/d1f/structBvr_1_1ShadowParams_1afdc29f267743df19252009801a4ea6bda2436f23b98933a71439259c4bca8674b" kind="enumvalue"><name>x7</name></member>
-    <member refid="df/d1f/structBvr_1_1ShadowParams_1afdc29f267743df19252009801a4ea6bdad0c2225b640deec861a1208f37a77c25" kind="enumvalue"><name>x9</name></member>
-    <member refid="df/d1f/structBvr_1_1ShadowParams_1ad84fd8fd75a12f93c2c7224702e1f656" kind="enum"><name>EFilterType</name></member>
-    <member refid="df/d1f/structBvr_1_1ShadowParams_1ad84fd8fd75a12f93c2c7224702e1f656af9c3b4d4280f1971275ef4aadcc1dd0a" kind="enumvalue"><name>PCFUniform</name></member>
-    <member refid="df/d1f/structBvr_1_1ShadowParams_1ad84fd8fd75a12f93c2c7224702e1f656a2f8d92470313092441eda424cb37a5d4" kind="enumvalue"><name>PCFKernel</name></member>
-    <member refid="df/d1f/structBvr_1_1ShadowParams_1ad84fd8fd75a12f93c2c7224702e1f656aa4fce3484b6f3cee09d458d358b52124" kind="enumvalue"><name>PCFDisc</name></member>
-    <member refid="df/d1f/structBvr_1_1ShadowParams_1aa1f49d3fbdbf79b4092b2af3fdc7c4bb" kind="variable"><name>CascadeCount</name></member>
-    <member refid="df/d1f/structBvr_1_1ShadowParams_1a97f24159d7538d5e90f1faf193989470" kind="variable"><name>CascadeSplitLambda</name></member>
-    <member refid="df/d1f/structBvr_1_1ShadowParams_1af1bc602628740b22e6de83b339f1c9e0" kind="variable"><name>MaxShadowRange</name></member>
-    <member refid="df/d1f/structBvr_1_1ShadowParams_1a1c4b6131bef68fba726ce138997ce8ba" kind="variable"><name>OffsetScale</name></member>
-    <member refid="df/d1f/structBvr_1_1ShadowParams_1a849c693012a5dac275b13fe25a314a15" kind="variable"><name>FilterType</name></member>
-    <member refid="df/d1f/structBvr_1_1ShadowParams_1a69927dd22067c6c8a0d80705354fa584" kind="variable"><name>FilterSize</name></member>
-    <member refid="df/d1f/structBvr_1_1ShadowParams_1aff437747470c328044630911aaa06212" kind="variable"><name>CullView</name></member>
-    <member refid="df/d1f/structBvr_1_1ShadowParams_1aa457c7c74452477fc44b5f0256cad5ce" kind="variable"><name>CullSun</name></member>
-    <member refid="df/d1f/structBvr_1_1ShadowParams_1a26d6331dc93600905d72dbd1964187b2" kind="variable"><name>Multiview</name></member>
-    <member refid="df/d1f/structBvr_1_1ShadowParams_1a21bc45b0391a46a1ca6255071d29048c" kind="function"><name>ShadowParams</name></member>
+  <compound refid="d7/d90/structBvr_1_1ShadowFilter" kind="struct"><name>Bvr::ShadowFilter</name>
+    <member refid="d7/d90/structBvr_1_1ShadowFilter_1a80a0b4136ad347703d7834d4cf0155e0" kind="enum"><name>ESize</name></member>
+    <member refid="d7/d90/structBvr_1_1ShadowFilter_1a80a0b4136ad347703d7834d4cf0155e0a8e683187a00e5d462a4aeee69e9d3d9c" kind="enumvalue"><name>x2</name></member>
+    <member refid="d7/d90/structBvr_1_1ShadowFilter_1a80a0b4136ad347703d7834d4cf0155e0a1414c9756505ddfb8ba0a3b6fc9d691f" kind="enumvalue"><name>x3</name></member>
+    <member refid="d7/d90/structBvr_1_1ShadowFilter_1a80a0b4136ad347703d7834d4cf0155e0af4fe292eb01627a0219872d44a305ec5" kind="enumvalue"><name>x5</name></member>
+    <member refid="d7/d90/structBvr_1_1ShadowFilter_1a80a0b4136ad347703d7834d4cf0155e0a2436f23b98933a71439259c4bca8674b" kind="enumvalue"><name>x7</name></member>
+    <member refid="d7/d90/structBvr_1_1ShadowFilter_1a80a0b4136ad347703d7834d4cf0155e0ad0c2225b640deec861a1208f37a77c25" kind="enumvalue"><name>x9</name></member>
+    <member refid="d7/d90/structBvr_1_1ShadowFilter_1a80a0b4136ad347703d7834d4cf0155e0ae93f994f01c537c4e2f7d8528c3eb5e9" kind="enumvalue"><name>Count</name></member>
+    <member refid="d7/d90/structBvr_1_1ShadowFilter_1a8055e25e6b4c9b4e8f9e8f88b184b998" kind="enum"><name>EType</name></member>
+    <member refid="d7/d90/structBvr_1_1ShadowFilter_1a8055e25e6b4c9b4e8f9e8f88b184b998af9c3b4d4280f1971275ef4aadcc1dd0a" kind="enumvalue"><name>PCFUniform</name></member>
+    <member refid="d7/d90/structBvr_1_1ShadowFilter_1a8055e25e6b4c9b4e8f9e8f88b184b998a2f8d92470313092441eda424cb37a5d4" kind="enumvalue"><name>PCFKernel</name></member>
+    <member refid="d7/d90/structBvr_1_1ShadowFilter_1a8055e25e6b4c9b4e8f9e8f88b184b998aa4fce3484b6f3cee09d458d358b52124" kind="enumvalue"><name>PCFDisc</name></member>
+    <member refid="d7/d90/structBvr_1_1ShadowFilter_1a670490ef9148475cd782c6fa2cb54356" kind="variable"><name>Type</name></member>
+    <member refid="d7/d90/structBvr_1_1ShadowFilter_1a1dfd9e7e71f97d3562221e7d1a62329e" kind="variable"><name>Size</name></member>
+    <member refid="d7/d90/structBvr_1_1ShadowFilter_1a6cf02c9d6a09b03788e748cf6b7b4056" kind="variable"><name>NormalBiasScale</name></member>
+    <member refid="d7/d90/structBvr_1_1ShadowFilter_1aec0719e5de015614c163ba71093a9988" kind="variable"><name>ConstantBias</name></member>
   </compound>
   <compound refid="d5/d57/structBvr_1_1Renderer_1_1SHandleObject" kind="struct"><name>Bvr::Renderer::SHandleObject</name>
     <member refid="d5/d57/structBvr_1_1Renderer_1_1SHandleObject_1aef31f64007abff603af656927c440ba5" kind="variable"><name>name</name></member>
@@ -7947,8 +7943,8 @@
     <member refid="d5/d9f/structBvr_1_1Renderer_1_1SPerViewCB_1adffac4574c53baf0d35841a9907fe04f" kind="variable"><name>DepthParams</name></member>
     <member refid="d5/d9f/structBvr_1_1Renderer_1_1SPerViewCB_1a902ddc596b778faa3a02a72f9c49d43e" kind="variable"><name>ScreenSize</name></member>
     <member refid="d5/d9f/structBvr_1_1Renderer_1_1SPerViewCB_1a1a22ea749531baaba12d736b950a575c" kind="variable"><name>ScreenSizeTr</name></member>
-    <member refid="d5/d9f/structBvr_1_1Renderer_1_1SPerViewCB_1a7e03d99580103164b8b0b44d7d1048c4" kind="variable"><name>AnimParams</name></member>
-    <member refid="d5/d9f/structBvr_1_1Renderer_1_1SPerViewCB_1ad89bf11b34bd61cc3e7522667f1af471" kind="variable"><name>cascadeIds</name></member>
+    <member refid="d5/d9f/structBvr_1_1Renderer_1_1SPerViewCB_1ad002dca126f0507167bbeaaeaae73672" kind="variable"><name>AnimParams</name></member>
+    <member refid="d5/d9f/structBvr_1_1Renderer_1_1SPerViewCB_1a42b5e81068ffeae1c6f89cb224bc32bf" kind="variable"><name>CascadeIds</name></member>
     <member refid="d5/d9f/structBvr_1_1Renderer_1_1SPerViewCB_1ac161070977f4473e8b1f71f6b88d54ac" kind="variable"><name>splitDepth</name></member>
     <member refid="d5/d9f/structBvr_1_1Renderer_1_1SPerViewCB_1afcc80b3a7b9a1a919b74a2a18a29d116" kind="variable"><name>LightMatr</name></member>
     <member refid="d5/d9f/structBvr_1_1Renderer_1_1SPerViewCB_1a5c60c7e643cd4674fed3d90804ecb809" kind="variable"><name>lightDir</name></member>
@@ -8138,7 +8134,7 @@
     <member refid="d6/dc7/structBvr_1_1Detail_1_1SRemoveKeyframeCommand_1ac5a4aaeb21a98ad6b19ee595a66eaadc" kind="function"><name>Undo</name></member>
   </compound>
   <compound refid="dd/df3/structBvr_1_1Renderer_1_1SRendererResources" kind="struct"><name>Bvr::Renderer::SRendererResources</name>
-    <member refid="dd/df3/structBvr_1_1Renderer_1_1SRendererResources_1a085f6c2b7fde4c196e032045abd375a6" kind="variable"><name>s_pShadowMap</name></member>
+    <member refid="dd/df3/structBvr_1_1Renderer_1_1SRendererResources_1a611be0c49117161e2efeb91b820c24b2" kind="variable"><name>s_pShadowMap</name></member>
     <member refid="dd/df3/structBvr_1_1Renderer_1_1SRendererResources_1aed4487d2f4305c86dc08a00a674200de" kind="variable"><name>s_DefaultTexture</name></member>
     <member refid="dd/df3/structBvr_1_1Renderer_1_1SRendererResources_1a0ab4c5c5fd18a3f920d8ae321cbfbed6" kind="variable"><name>s_pNullUAVBuf</name></member>
     <member refid="dd/df3/structBvr_1_1Renderer_1_1SRendererResources_1a388493f412e9dfa31e84b7108b1240fa" kind="variable"><name>s_pNullTex</name></member>
@@ -8453,18 +8449,19 @@
     <member refid="d5/d78/structBvr_1_1Renderer_1_1CShaderReflection_1_1Impl_1_1SShaderParam_1a1f1e1deda08a27a8797712aa863ecf91" kind="variable"><name>m_eBaseType</name></member>
   </compound>
   <compound refid="dd/dda/structBvr_1_1SShadowPassInfo" kind="struct"><name>Bvr::SShadowPassInfo</name>
-    <member refid="dd/dda/structBvr_1_1SShadowPassInfo_1ae0a228ae869eec966b59840a6c2269d8" kind="variable"><name>m_sunFrustums</name></member>
-    <member refid="dd/dda/structBvr_1_1SShadowPassInfo_1a33ee40c99c93657d87cc72f5ddb84876" kind="variable"><name>m_cascadeSplits</name></member>
-    <member refid="dd/dda/structBvr_1_1SShadowPassInfo_1a1b236fffb81dbe7595e95cf98e270965" kind="variable"><name>m_cascadeScales</name></member>
+    <member refid="dd/dda/structBvr_1_1SShadowPassInfo_1a4a5dc701cc991d68d36e332e94ac91aa" kind="variable"><name>LightMatrices</name></member>
+    <member refid="dd/dda/structBvr_1_1SShadowPassInfo_1a2be2c22864a11122dc26853fa88c4897" kind="variable"><name>CullingCameras</name></member>
+    <member refid="dd/dda/structBvr_1_1SShadowPassInfo_1a1f555a40415b029d42a4ad613ca6c331" kind="variable"><name>CascadeSplits</name></member>
   </compound>
   <compound refid="d6/d48/structBvr_1_1Renderer_1_1Detail_1_1SShadowSamplingCB" kind="struct"><name>Bvr::Renderer::Detail::SShadowSamplingCB</name>
     <member refid="d6/d48/structBvr_1_1Renderer_1_1Detail_1_1SShadowSamplingCB_1a8da0870effeafc5c5213a94a8fdc4b98" kind="variable"><name>FrustumTL</name></member>
     <member refid="d6/d48/structBvr_1_1Renderer_1_1Detail_1_1SShadowSamplingCB_1aebab57c3251e00e496aec9dc4bee6207" kind="variable"><name>FrustumTR</name></member>
     <member refid="d6/d48/structBvr_1_1Renderer_1_1Detail_1_1SShadowSamplingCB_1ae33a0b74c1f860751f63bce2068eb71d" kind="variable"><name>FrustumBL</name></member>
-    <member refid="d6/d48/structBvr_1_1Renderer_1_1Detail_1_1SShadowSamplingCB_1a1cbafdf49614aca6d1a2e4d6152735b8" kind="variable"><name>offsetScale</name></member>
+    <member refid="d6/d48/structBvr_1_1Renderer_1_1Detail_1_1SShadowSamplingCB_1a3e99faa33ec3e8fccacc5d37be1787ca" kind="variable"><name>NormalBias</name></member>
+    <member refid="d6/d48/structBvr_1_1Renderer_1_1Detail_1_1SShadowSamplingCB_1a10bd73cd03fd644031ffcc90e8d99e51" kind="variable"><name>ConstantBias</name></member>
     <member refid="d6/d48/structBvr_1_1Renderer_1_1Detail_1_1SShadowSamplingCB_1a0f15339e9bd092958c113a1b02cbc96f" kind="variable"><name>kernelType</name></member>
-    <member refid="d6/d48/structBvr_1_1Renderer_1_1Detail_1_1SShadowSamplingCB_1a2989af1b1c84fe0b41cfc0af4c296656" kind="variable"><name>padding0</name></member>
-    <member refid="d6/d48/structBvr_1_1Renderer_1_1Detail_1_1SShadowSamplingCB_1a64ecb61bfe1186bcd38cffa44ed0f48d" kind="variable"><name>padding1</name></member>
+    <member refid="d6/d48/structBvr_1_1Renderer_1_1Detail_1_1SShadowSamplingCB_1a3e17b0ed72b462c4fb052c36601c66df" kind="variable"><name>Padding0</name></member>
+    <member refid="d6/d48/structBvr_1_1Renderer_1_1Detail_1_1SShadowSamplingCB_1a4bbed5c3cec7a0c18b234e2fc6fc79c7" kind="variable"><name>CascadeSize</name></member>
   </compound>
   <compound refid="da/d5b/structBvr_1_1GLTF_1_1SSkin" kind="struct"><name>Bvr::GLTF::SSkin</name>
     <member refid="da/d5b/structBvr_1_1GLTF_1_1SSkin_1a721819353918b3f6e0f808c37385e189" kind="variable"><name>name</name></member>
@@ -8753,6 +8750,13 @@
     <member refid="d0/d53/structBvr_1_1Sun_1a0e1ab3e9ef2d28a8c1f097b86f038c26" kind="variable"><name>SunDiskAngleDiam</name></member>
     <member refid="d0/d53/structBvr_1_1Sun_1a6a99ca27405aeb19e656ee553089c205" kind="variable"><name>SynchWithAtmos</name></member>
     <member refid="d0/d53/structBvr_1_1Sun_1ac1e3e3abd98d32f8346cc2158174c5f7" kind="function"><name>Sun</name></member>
+  </compound>
+  <compound refid="d1/d3e/structBvr_1_1SunShadowSettings" kind="struct"><name>Bvr::SunShadowSettings</name>
+    <member refid="d1/d3e/structBvr_1_1SunShadowSettings_1af13fc4911e8d75957f27b682359fbc11" kind="variable"><name>CascadeCount</name></member>
+    <member refid="d1/d3e/structBvr_1_1SunShadowSettings_1afece8376a1b4fd9e5439dbdecf07e74d" kind="variable"><name>CascadeSplitLambda</name></member>
+    <member refid="d1/d3e/structBvr_1_1SunShadowSettings_1a3e9493367d11a34a0d77e1ea3dde76a1" kind="variable"><name>MaxShadowRange</name></member>
+    <member refid="d1/d3e/structBvr_1_1SunShadowSettings_1a154f4df1ce1788657d724ec50a172327" kind="variable"><name>AreStableCascades</name></member>
+    <member refid="d1/d3e/structBvr_1_1SunShadowSettings_1a238e8f68bec52bab7b3f5777dc5ff47c" kind="variable"><name>Multiview</name></member>
   </compound>
   <compound refid="db/d5f/structBvr_1_1SVertex" kind="struct"><name>Bvr::SVertex</name>
     <member refid="db/d5f/structBvr_1_1SVertex_1a347f17d1c25b576168ef5344fe99431e" kind="variable"><name>position</name></member>
@@ -10912,7 +10916,6 @@
   <compound refid="d0/d21/structBvr_1_1WorldProperties" kind="struct"><name>Bvr::WorldProperties</name>
     <member refid="d0/d21/structBvr_1_1WorldProperties_1a078a88314145d5e3d0af7de871daa3de" kind="variable"><name>Environment</name></member>
     <member refid="d0/d21/structBvr_1_1WorldProperties_1ae34c81e3dd6c5a14b20a354809a35088" kind="variable"><name>PostEffects</name></member>
-    <member refid="d0/d21/structBvr_1_1WorldProperties_1ab0a1494afa3bd7ddcf9280af82097eb4" kind="variable"><name>Shadows</name></member>
     <member refid="d0/d21/structBvr_1_1WorldProperties_1a37ab641f0423a09a91b0d3028f7cc58e" kind="function"><name>WorldProperties</name></member>
   </compound>
   <compound refid="d4/d87/structBvr_1_1WorldSpaceTransform" kind="struct"><name>Bvr::WorldSpaceTransform</name>
@@ -11298,7 +11301,7 @@
     <member refid="d2/dac/3DEngine_8cpp_1af77922c49cae748beb2d6d6e1e0970c2" kind="function"><name>PrecreateTransforms</name></member>
     <member refid="d2/dac/3DEngine_8cpp_1aec7d31fc17a45d5685062b987c61b037" kind="function"><name>CopyTransforms</name></member>
     <member refid="d2/dac/3DEngine_8cpp_1a10418d83d73f9e98dfc7c45cad0d0337" kind="function"><name>TickWorld</name></member>
-    <member refid="d4/df0/DefaultComponentrenderSystems_8cpp_1a07d6e468e5fe5506ac1ce6e058206bc8" kind="function"><name>PrepareSunFrustums</name></member>
+    <member refid="d4/df0/DefaultComponentrenderSystems_8cpp_1a6ece9b0d13bc29a3b898fcd905cda297" kind="function"><name>PrepareSunFrustums</name></member>
     <member refid="d4/df0/DefaultComponentrenderSystems_8cpp_1a41babeddf0ad4f91d44b49d7a8cd4b61" kind="function"><name>CollectMeshAssets</name></member>
     <member refid="d4/df0/DefaultComponentrenderSystems_8cpp_1aa807e76a7fed68df0592056ce6876ba7" kind="function"><name>CollectSkins</name></member>
     <member refid="d4/df0/DefaultComponentrenderSystems_8cpp_1a27f10b8e7ffcbaf6ce49ff49d5a38fd0" kind="function"><name>CopyBounds</name></member>
@@ -14550,14 +14553,14 @@
     <member refid="db/d68/DefaultComponents_8cpp_1a267d7d04abca953a09699595764ed023" kind="variable"><name>BVR_REFLECTION_BLOCK</name></member>
     <member refid="db/d68/DefaultComponents_8cpp_1a3dd92fe42a49e9775c5e2c0880888ca5" kind="function"><name>TypeRegistry::Class_&lt; Tags::Transform2D &gt;</name></member>
     <member refid="db/d68/DefaultComponents_8cpp_1acfdfbf7f227b109c6f8a8042421fbb2d" kind="function"><name>Value</name></member>
-    <member refid="db/d68/DefaultComponents_8cpp_1a6c544f2845cfb857e1f4c4b8a0a39499" kind="function"><name>TypeRegistry::Enum&lt; ShadowParams::EFilterSize &gt;</name></member>
-    <member refid="db/d68/DefaultComponents_8cpp_1a3e7227d094949a5392be01ea1f39d3c2" kind="function"><name>Value</name></member>
-    <member refid="db/d68/DefaultComponents_8cpp_1aa71954a5aee0c09938d0ee2c8f89254c" kind="function"><name>Value</name></member>
-    <member refid="db/d68/DefaultComponents_8cpp_1ad0536a1767c6de71bb928fdbc90c117a" kind="function"><name>Value</name></member>
-    <member refid="db/d68/DefaultComponents_8cpp_1aa0b2d654262f65406014674fd3d8fec0" kind="function"><name>Value</name></member>
-    <member refid="db/d68/DefaultComponents_8cpp_1a51db0c73d3d632ebb8d13e22e31c1057" kind="function"><name>TypeRegistry::Enum&lt; ShadowParams::EFilterType &gt;</name></member>
-    <member refid="db/d68/DefaultComponents_8cpp_1a5cca402447fab771152efc54e3b10181" kind="function"><name>Value</name></member>
-    <member refid="db/d68/DefaultComponents_8cpp_1adb0bcbd0fec61f1fc8f69e8fbd05078a" kind="function"><name>Value</name></member>
+    <member refid="db/d68/DefaultComponents_8cpp_1aa76c001292da17385c1c46513625f8c7" kind="function"><name>TypeRegistry::Enum&lt; ShadowFilter::ESize &gt;</name></member>
+    <member refid="db/d68/DefaultComponents_8cpp_1a851e4e4b827b94f09fcffd26a27ddd84" kind="function"><name>Value</name></member>
+    <member refid="db/d68/DefaultComponents_8cpp_1a1460e045d30984e3d4beaa817c1a1ec9" kind="function"><name>Value</name></member>
+    <member refid="db/d68/DefaultComponents_8cpp_1a269d39d0659d68e1977df0856b4ff765" kind="function"><name>Value</name></member>
+    <member refid="db/d68/DefaultComponents_8cpp_1a1b52a63fc8eaef92a7db095c379cd628" kind="function"><name>Value</name></member>
+    <member refid="db/d68/DefaultComponents_8cpp_1ac2ffef04c686d4de19122febf02211ac" kind="function"><name>TypeRegistry::Enum&lt; ShadowFilter::EType &gt;</name></member>
+    <member refid="db/d68/DefaultComponents_8cpp_1a23ff144496b3d566554d7cc26bffddcf" kind="function"><name>Value</name></member>
+    <member refid="db/d68/DefaultComponents_8cpp_1ae742219eba9471a92a5c5bea7d67e43a" kind="function"><name>Value</name></member>
   </compound>
   <compound refid="df/d4b/DefaultComponents_8hpp" kind="file"><name>DefaultComponents.hpp</name>
   </compound>
