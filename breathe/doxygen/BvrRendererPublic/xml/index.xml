@@ -296,6 +296,7 @@
     <member refid="class_bvr_1_1_renderer_1_1_c_graphics_pipeline_1a6cdef054f2e84758a3b8386fd0d0e36c" kind="function"><name>GetPipelineOutput</name></member>
     <member refid="class_bvr_1_1_renderer_1_1_c_graphics_pipeline_1ac797a54bb7441207268925ca5a704f55" kind="function"><name>FrameContext</name></member>
     <member refid="class_bvr_1_1_renderer_1_1_c_graphics_pipeline_1aae804efd6ad5b807cba4bedcd064de3f" kind="function"><name>ICtx</name></member>
+    <member refid="class_bvr_1_1_renderer_1_1_c_graphics_pipeline_1a2cc2ef4df78a38702a8b6f21f2536edd" kind="function"><name>ICtx</name></member>
     <member refid="class_bvr_1_1_renderer_1_1_c_graphics_pipeline_1af31ed3ecabce093fcfe369a3cb1b2372" kind="function"><name>SetRenderOutput</name></member>
     <member refid="class_bvr_1_1_renderer_1_1_c_graphics_pipeline_1a9487cee5b3600f8f793b402d9e067f97" kind="function"><name>GetStage</name></member>
     <member refid="class_bvr_1_1_renderer_1_1_c_graphics_pipeline_1a72edd391801f085dd2e1ca5f8ae4dd07" kind="function"><name>RegisterStage</name></member>
@@ -511,6 +512,7 @@
     <member refid="struct_bvr_1_1_i_frame_context_1ab5b2fe5a03ac00a9984e2abf296b0e29" kind="function"><name>GetIPDC</name></member>
     <member refid="struct_bvr_1_1_i_frame_context_1ae8007956593459f354f9ef0973da0588" kind="function"><name>World</name></member>
     <member refid="struct_bvr_1_1_i_frame_context_1a65eb8518f2c75951a7d7b5413633787f" kind="function"><name>GetRenderInfo</name></member>
+    <member refid="struct_bvr_1_1_i_frame_context_1a5af3fdc0e8bfd0375a81cc0e54b2918f" kind="function"><name>GetRenderInfo</name></member>
     <member refid="struct_bvr_1_1_i_frame_context_1a8f8df2a58f0193b9c171ca4044398544" kind="function"><name>GetGraphicsPipeline</name></member>
     <member refid="struct_bvr_1_1_i_frame_context_1a698d0b4c1729c0cee16bf8bffc45cc73" kind="function"><name>AddMeshPrimitive</name></member>
     <member refid="struct_bvr_1_1_i_frame_context_1a545817c35d66ea219d974ad872697743" kind="function"><name>AddMeshPrimitives</name></member>
@@ -811,6 +813,8 @@
     <member refid="struct_bvr_1_1_s_render_info_1a6fc35568be5998dbaa3c0840c109a448" kind="variable"><name>ViewportTransform</name></member>
     <member refid="struct_bvr_1_1_s_render_info_1a23bbecc0f4932c06a93694aecb9c6850" kind="function"><name>Default</name></member>
     <member refid="struct_bvr_1_1_s_render_info_1a73fa490f27d81696c1ea7973e6ed4066" kind="function"><name>Is2DOnly</name></member>
+    <member refid="struct_bvr_1_1_s_render_info_1aaf9e77009dc076ccaee431fa413165dd" kind="function"><name>IsReverseZ</name></member>
+    <member refid="struct_bvr_1_1_s_render_info_1a10ddbd78bfb9c91544197e2749a26b66" kind="function"><name>GetScenePSOFlags</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_renderer_1_1_s_render_target" kind="struct"><name>Bvr::Renderer::SRenderTarget</name>
     <member refid="struct_bvr_1_1_renderer_1_1_s_render_target_1a180c298189b30456d3d18aaf0e91db71" kind="variable"><name>RenderTarget</name></member>
@@ -1000,6 +1004,7 @@
     <member refid="_render_output_8hpp_1a37221e6c217f4b294e8f2f06e26f2b0da31c6eab72dbe1f79f763a7edf68c2f9b" kind="enumvalue"><name>Only2D</name></member>
     <member refid="_render_output_8hpp_1a37221e6c217f4b294e8f2f06e26f2b0dace2c8aed9c2fa0cfbed56cbda4d8bf07" kind="enumvalue"><name>Empty</name></member>
     <member refid="_render_output_8hpp_1a37221e6c217f4b294e8f2f06e26f2b0da878fd126d48c11c3ea699b54956958e4" kind="enumvalue"><name>NoClear</name></member>
+    <member refid="_render_output_8hpp_1a37221e6c217f4b294e8f2f06e26f2b0da2d4b577236c92efcce69fbefb646cd15" kind="enumvalue"><name>Depth0To1</name></member>
     <member refid="_i_bvr_renderer_8hpp_1acf930d1972f88893e19e8afafa5d5a04" kind="enum"><name>ECoreRenderPhases</name></member>
     <member refid="_i_bvr_renderer_8hpp_1acf930d1972f88893e19e8afafa5d5a04a628adbb6c98e56748110061187f57243" kind="enumvalue"><name>GBuffer</name></member>
     <member refid="_i_bvr_renderer_8hpp_1acf930d1972f88893e19e8afafa5d5a04a67d2f6740a8eaebf4d5c6f79be8da481" kind="enumvalue"><name>Forward</name></member>
@@ -1244,7 +1249,8 @@
     <member refid="_common_renderer_8hpp_1afd46949e70381a1957aa200ae63dfe3ea055739d3d609c52b857c7c0be46e748c" kind="enumvalue"><name>PointClamp</name></member>
     <member refid="_common_renderer_8hpp_1afd46949e70381a1957aa200ae63dfe3ea1868516d06918124893ee6b34bbc20e9" kind="enumvalue"><name>TriLinearRepeat</name></member>
     <member refid="_common_renderer_8hpp_1afd46949e70381a1957aa200ae63dfe3eaea6dd774e97df771dd31d73ac5920989" kind="enumvalue"><name>TriLinearClamp</name></member>
-    <member refid="_common_renderer_8hpp_1afd46949e70381a1957aa200ae63dfe3ea77d1048c670f69ecb586965b6e720eb7" kind="enumvalue"><name>ComparisonSampler</name></member>
+    <member refid="_common_renderer_8hpp_1afd46949e70381a1957aa200ae63dfe3ea919d8866180a1e892075b07ab5a61794" kind="enumvalue"><name>ComparisonSamplerL</name></member>
+    <member refid="_common_renderer_8hpp_1afd46949e70381a1957aa200ae63dfe3ea3fb29f748737c72067111d9e5d6714aa" kind="enumvalue"><name>ComparisonSamplerG</name></member>
     <member refid="_common_renderer_8hpp_1afd46949e70381a1957aa200ae63dfe3eae93f994f01c537c4e2f7d8528c3eb5e9" kind="enumvalue"><name>Count</name></member>
     <member refid="_common_renderer_8hpp_1a5765aa740795727da2f7500a7022a496" kind="enum"><name>ESamplerBorderColour</name></member>
     <member refid="_common_renderer_8hpp_1a5765aa740795727da2f7500a7022a496a2c192e68b11165439f906f5c874f741a" kind="enumvalue"><name>FloatBlackTransparent</name></member>
