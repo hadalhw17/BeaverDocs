@@ -251,6 +251,7 @@
     <member refid="class_bvr_1_1_c_level_editor_1a8fb1daae46c043832d1daef606a5927b" kind="variable"><name>m_currentLevelPath</name></member>
     <member refid="class_bvr_1_1_c_level_editor_1a14ea2e584f1df225b245158d896cce23" kind="variable"><name>m_viewports</name></member>
     <member refid="class_bvr_1_1_c_level_editor_1a5eceadb66185b012e7098104927e8ef2" kind="variable"><name>m_pFocusedViewport</name></member>
+    <member refid="class_bvr_1_1_c_level_editor_1adf2ebcf14ce90f52713ebf311c234495" kind="variable"><name>m_onKeyFrameInsert</name></member>
     <member refid="class_bvr_1_1_c_level_editor_1a31209d3edea7d1bebc3ee289e9100cb1" kind="variable"><name>m_allowKeyboardInput</name></member>
     <member refid="class_bvr_1_1_c_level_editor_1a48262bfe2058503705d04d6deaff39a2" kind="variable"><name>m_allowMouseInput</name></member>
     <member refid="class_bvr_1_1_c_level_editor_1ad009294de9670e8b0e0baf300f8869b9" kind="variable"><name>m_wasLevelModified</name></member>
@@ -297,6 +298,7 @@
     <member refid="class_bvr_1_1_c_level_editor_1aa42c64cf0e859599eff0d189e4ade170" kind="function"><name>Build</name></member>
     <member refid="class_bvr_1_1_c_level_editor_1a44f82f2c68f429f618885bf0d5709270" kind="function"><name>SetHoveredGizmo</name></member>
     <member refid="class_bvr_1_1_c_level_editor_1a0ff28d05d0dbeb90bf7d96982133365a" kind="function"><name>GetHoveredGizmo</name></member>
+    <member refid="class_bvr_1_1_c_level_editor_1a4da6948429d2a9a9fe52f897dc501736" kind="function"><name>SetOnKeyFrameInsert</name></member>
     <member refid="class_bvr_1_1_c_level_editor_1a01d12ed927c074b630ba0bbda5cf7d3f" kind="function"><name>OnKeyPress</name></member>
     <member refid="class_bvr_1_1_c_level_editor_1a6b76743bd2e783ec8327f6f96f973a40" kind="function"><name>OnMouseMove</name></member>
     <member refid="class_bvr_1_1_c_level_editor_1a86eeb893e46f80c2dcc3365babf20726" kind="function"><name>OnMousePress</name></member>
@@ -392,11 +394,14 @@
   <compound refid="class_bvr_1_1_c_scene_editor" kind="class"><name>Bvr::CSceneEditor</name>
     <member refid="class_bvr_1_1_c_scene_editor_1aef043157a3a859908336530a2e788737" kind="variable"><name>m_pCurrentScene</name></member>
     <member refid="class_bvr_1_1_c_scene_editor_1a41293f70abe5ee578db8d1c2f7401d7c" kind="variable"><name>m_pLevelEditor</name></member>
+    <member refid="class_bvr_1_1_c_scene_editor_1a38aad5a890f69515fad87a9cc1166dd2" kind="variable"><name>m_currentPlayer</name></member>
     <member refid="class_bvr_1_1_c_scene_editor_1a80d331ec32e2b0778ca409e6660ebf05" kind="variable"><name>m_currentTime</name></member>
     <member refid="class_bvr_1_1_c_scene_editor_1a4d70bbe05884bf96703f146513e7eade" kind="variable"><name>m_activeChannel</name></member>
     <member refid="class_bvr_1_1_c_scene_editor_1aa8649b8da46f987acec3b867f2d5859c" kind="function"><name>CSceneEditor</name></member>
     <member refid="class_bvr_1_1_c_scene_editor_1ad059d2a797670005d582cfde09dcd251" kind="function"><name>ShowImpl</name></member>
     <member refid="class_bvr_1_1_c_scene_editor_1ae4a8db2b5beb4b53ffee074a7eeb2dad" kind="function"><name>Sequencer</name></member>
+    <member refid="class_bvr_1_1_c_scene_editor_1a629cf4b36ef0731c59dcbb9706011221" kind="function"><name>EnableKeyFrameInsert</name></member>
+    <member refid="class_bvr_1_1_c_scene_editor_1af928c57e88be09f96dda5533452245ee" kind="function"><name>DisableKeyFrameInsert</name></member>
     <member refid="class_bvr_1_1_c_scene_editor_1a25b9e427efd031501388e0ff08b9fcc4" kind="function"><name>LoadScene</name></member>
     <member refid="class_bvr_1_1_c_scene_editor_1ae81ae4c9e0e7bd2b90f9bafb7f498658" kind="function"><name>OnNewScene</name></member>
     <member refid="class_bvr_1_1_c_scene_editor_1ab0dfbd9bae07cd6217a1aaf4ac0016a5" kind="function"><name>OnOpenScene</name></member>
@@ -551,8 +556,8 @@
   </compound>
   <compound refid="struct_bvr_1_1_s_component_modified_command" kind="struct"><name>Bvr::SComponentModifiedCommand</name>
     <member refid="struct_bvr_1_1_s_component_modified_command_1a6bd99d74be4b7b52479110f2a0431e41" kind="typedef"><name>ComponentT</name></member>
-    <member refid="struct_bvr_1_1_s_component_modified_command_1a3e8a88c1a420adb4e20027d5f42fa9f5" kind="variable"><name>originalValue</name></member>
-    <member refid="struct_bvr_1_1_s_component_modified_command_1a24638a9de73d980bafe816a508510640" kind="variable"><name>targetValue</name></member>
+    <member refid="struct_bvr_1_1_s_component_modified_command_1a2d54249a895d1cb81c56f350f626cb71" kind="variable"><name>originalValue</name></member>
+    <member refid="struct_bvr_1_1_s_component_modified_command_1a2d48207b7ab288cf2e0a9a118ed62fb6" kind="variable"><name>targetValue</name></member>
     <member refid="struct_bvr_1_1_s_component_modified_command_1a30099903988376a369854f0b30569861" kind="variable"><name>entity</name></member>
     <member refid="struct_bvr_1_1_s_component_modified_command_1a90887b1c7e2c6c9ef7a74eab4110cea8" kind="function"><name>SComponentModifiedCommand</name></member>
     <member refid="struct_bvr_1_1_s_component_modified_command_1a4319be6232faad81788bc03cc6314744" kind="function"><name>Do</name></member>
@@ -607,6 +612,12 @@
     <member refid="struct_bvr_1_1_selection_1_1_selection_material_1a2cc70f407076340beff83bfa944543fa" kind="variable"><name>IsWireframe</name></member>
     <member refid="struct_bvr_1_1_selection_1_1_selection_material_1a426d882fa253cc3d2da375edced347d8" kind="variable"><name>IsGPUDriven</name></member>
     <member refid="struct_bvr_1_1_selection_1_1_selection_material_1a4b5305a00b36e1e6fd678fd20a553429" kind="variable"><name>IsOverlay</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_s_keyframe_insertion_info" kind="struct"><name>Bvr::SKeyframeInsertionInfo</name>
+    <member refid="struct_bvr_1_1_s_keyframe_insertion_info_1a7eb14b3f0090d20f8b622630b1fd2010" kind="variable"><name>ComponentType</name></member>
+    <member refid="struct_bvr_1_1_s_keyframe_insertion_info_1ad973a7734e5d5f9e121de51db2add6dc" kind="variable"><name>Entity</name></member>
+    <member refid="struct_bvr_1_1_s_keyframe_insertion_info_1aaa614b57ce98abfbebce5a5b66bbc389" kind="variable"><name>PropertyName</name></member>
+    <member refid="struct_bvr_1_1_s_keyframe_insertion_info_1ac1295ba2fac9b547c33e6192268ea2c2" kind="variable"><name>WasSelected</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_s_level_editor_popup" kind="struct"><name>Bvr::SLevelEditorPopup</name>
     <member refid="struct_bvr_1_1_s_level_editor_popup_1a2f2543af046eaae6c6f739fd0eec637e" kind="typedef"><name>PopupItemsT</name></member>
@@ -774,11 +785,12 @@
   </compound>
   <compound refid="namespace_bvr" kind="namespace"><name>Bvr</name>
     <member refid="_level_editor_8hpp_1ae52ae479c03a418aaaa82870c271c4ea" kind="typedef"><name>CLevelEditors</name></member>
+    <member refid="_level_editor_8hpp_1a2925b7b39be7804da826d27070e6d6c1" kind="typedef"><name>TOnKeyFrameInsertFn</name></member>
     <member refid="_editor_viewport_8hpp_1a8687b8e97252949741bce5c3f75b2b4d" kind="typedef"><name>TGetActiveNameAction</name></member>
     <member refid="_editor_viewport_consumer_8hpp_1aa9f2313455d4ad7e593a3529ed0ae7b2" kind="typedef"><name>TViewportConsumers</name></member>
     <member refid="_editor_viewport_consumer_8hpp_1a700c99a1b152164909183c9e52ef7349" kind="typedef"><name>TResourceDropAction</name></member>
     <member refid="_bvr_editor_8hpp_1a293f23e1319fb3b54e9528310dc4c1ef" kind="variable"><name>gEditor</name></member>
-    <member refid="_component_property_editor_8hpp_1a3cb46a3ea38ed078c0d874298a3de118" kind="function"><name>EntityPropertyPannel</name></member>
+    <member refid="_component_property_editor_8hpp_1aeb4ab0a93481cd43b990c4a0b9b5beea" kind="function"><name>EntityPropertyPannel</name></member>
   </compound>
   <compound refid="namespace_bvr_1_1_detail" kind="namespace"><name>Bvr::Detail</name>
   </compound>
@@ -807,7 +819,11 @@
     <member refid="_widgets_8hpp_1a8bcdad8e3f41a8baa62bcea6f05cbe44" kind="function"><name>TryDrawPrimitiveType</name></member>
     <member refid="_widgets_8hpp_1affbc6a9ea66b2555b6b09257350bc46b" kind="function"><name>TryDrawPrimitiveType</name></member>
     <member refid="_widgets_8hpp_1a607de7e408203a81a3e8f5263a39f5a7" kind="function"><name>DrawVariant</name></member>
-    <member refid="_widgets_8hpp_1af8d925ca1a731724235df50b72ce1f81" kind="function"><name>DrawPropertyMeta</name></member>
+    <member refid="_widgets_8hpp_1a52eb3bcac8bfaddd62786d92c7ce9fbe" kind="function"><name>DrawPropertyMeta</name></member>
+    <member refid="_widgets_8hpp_1a88321c0a76d63a58b34b4723c34fc22a" kind="function"><name>GetPropertyNameChain</name></member>
+    <member refid="_widgets_8hpp_1a2c10bf9f6829d1e4f79b3ed1160dca32" kind="function"><name>HasCapturedKeyframes</name></member>
+    <member refid="_widgets_8hpp_1a51a22696c468ad542e9b7654e3d37caf" kind="function"><name>StartKeyframeCapture</name></member>
+    <member refid="_widgets_8hpp_1a744d50dd4526be79ab7b073b5e43f69e" kind="function"><name>EndKeyframeCapture</name></member>
     <member refid="_widgets_8hpp_1ab6e0093602ba2744324708af713f7cf7" kind="function"><name>DrawEditorImpl</name></member>
     <member refid="_widgets_8hpp_1a04123005351267492b46b4fc60e3aad1" kind="function"><name>DrawEditor</name></member>
     <member refid="_widgets_8hpp_1a3a5b7a59e8aac8680e375f158ac5953f" kind="function"><name>EditStructMetaImpl</name></member>
@@ -830,6 +846,7 @@
     <member refid="_widgets_8hpp_1a5f8fbf70d893b42fa3be58ad82fecef8" kind="function"><name>EditVariable</name></member>
     <member refid="_widgets_8hpp_1a67435dc1d1d1f620f288e2462babe851" kind="function"><name>EditVariable</name></member>
     <member refid="_widgets_8hpp_1a9e4c537200591b818393fec574d72ea8" kind="function"><name>HandleLoader</name></member>
+    <member refid="_widgets_8hpp_1a5034293d76ebbf9c19a7b46e248afb90" kind="function"><name>EntitySelector</name></member>
     <member refid="_widgets_8hpp_1a83853ad358adabf7c182adb80282f71c" kind="function"><name>DrawTransform</name></member>
   </compound>
   <compound refid="namespace_bvr_1_1_event" kind="namespace"><name>Bvr::Event</name>
