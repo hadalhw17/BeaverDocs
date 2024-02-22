@@ -2,20 +2,19 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="class_bvr_1_1_c_console" kind="class" language="C++" prot="public">
     <compoundname>Bvr::CConsole</compoundname>
-    <basecompoundref refid="class_bvr_1_1_editor_u_i_1_1_c_editor_tool" prot="public" virt="non-virtual">Bvr::EditorUI::CEditorTool</basecompoundref>
       <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="class_bvr_1_1_c_console_1afec4cab40566b324071a68cba0054c0b" prot="private" static="no" mutable="no">
-        <type>std::vector&lt; std::string &gt;</type>
-        <definition>std::vector&lt;std::string&gt; Bvr::CConsole::m_history</definition>
+      <memberdef kind="variable" id="class_bvr_1_1_c_console_1a69d130086ace281b1ce9a8a8817e890e" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Bvr::CConsole::m_name</definition>
         <argsstring></argsstring>
-        <name>m_history</name>
+        <name>m_name</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" line="28" column="33" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" bodystart="28" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" line="37" column="46" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" bodystart="37" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_bvr_1_1_c_console_1a033bbea2e6426353a7076bf638dad901" prot="private" static="no" mutable="no">
         <type>std::shared_ptr&lt; Detail::CConsoleLogSink &gt;</type>
@@ -28,34 +27,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" line="29" column="21" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" bodystart="29" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_bvr_1_1_c_console_1a7004f1ed216dd349d930393d9d14e32b" prot="private" static="no" mutable="no">
-        <type>char</type>
-        <definition>char Bvr::CConsole::m_consoleInputBuf[512]</definition>
-        <argsstring>[512]</argsstring>
-        <name>m_consoleInputBuf</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" line="30" column="46" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" bodystart="30" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_bvr_1_1_c_console_1aee0064e1fb87bcb9abb6b1c6c7ae41f2" prot="private" static="no" mutable="no">
-        <type>uint64</type>
-        <definition>uint64 Bvr::CConsole::m_previousHistoryPos</definition>
-        <argsstring></argsstring>
-        <name>m_previousHistoryPos</name>
-        <initializer>= ~0ull</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" line="31" column="46" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" bodystart="31" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" line="39" column="21" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" bodystart="39" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_bvr_1_1_c_console_1a40e32c63e9fe295c137c9241ad4999d9" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -69,17 +41,31 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" line="33" column="46" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" bodystart="33" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" line="41" column="46" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_console_1ab60657ed92fb967ff70a5965621f51b3" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Bvr::CConsole::m_shouldAutoscroll</definition>
+        <argsstring></argsstring>
+        <name>m_shouldAutoscroll</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" line="42" column="46" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" bodystart="42" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="class_bvr_1_1_c_console_1a2de213cad4c83ae32bb21c03238b3c9b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_bvr_1_1_c_console_1abf6db6e12523efd9e771636969aeba4d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>Bvr::CConsole::CConsole</definition>
-        <argsstring>(std::string name)</argsstring>
+        <argsstring>(std::string_view name)</argsstring>
         <name>CConsole</name>
         <param>
-          <type>std::string</type>
+          <type>std::string_view</type>
           <declname>name</declname>
         </param>
         <briefdescription>
@@ -88,7 +74,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" line="17" column="5"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" line="16" column="5"/>
       </memberdef>
       <memberdef kind="function" id="class_bvr_1_1_c_console_1a4af48d73b6dfe2472abe915bd1cc4129" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -101,47 +87,56 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" line="18" column="5"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" line="17" column="5"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="protected-func">
-      <memberdef kind="function" id="class_bvr_1_1_c_console_1aa17c0bf75a38566643cf47a93f728000" prot="protected" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
+      <memberdef kind="function" id="class_bvr_1_1_c_console_1a0a8c886c4499a3e6074aae70c51366c3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string_view</type>
+        <definition>std::string_view Bvr::CConsole::GetName</definition>
+        <argsstring>() const</argsstring>
+        <name>GetName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" line="19" column="22" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" bodystart="19" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_console_1a1268cab6b284df83c00256cdac49f0a5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
-        <definition>bool Bvr::CConsole::ShowImpl</definition>
-        <argsstring>() final</argsstring>
-        <name>ShowImpl</name>
-        <reimplements refid="class_bvr_1_1_editor_u_i_1_1_c_editor_tool_1a84d391f19b2c1cc64d7764e5fb76a30e">ShowImpl</reimplements>
+        <definition>bool Bvr::CConsole::ShouldAutoScroll</definition>
+        <argsstring>() const</argsstring>
+        <name>ShouldAutoScroll</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" line="21" column="10"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" line="20" column="22" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" bodystart="20" bodyend="20"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="private-func">
-      <memberdef kind="function" id="class_bvr_1_1_c_console_1a11003f2edb480dea4392cd414e303a41" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_bvr_1_1_c_console_1ac2c85bf84b23ce72845d06f80a35f7fa" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Bvr::CConsole::ShouldScrollToBottom</definition>
+        <argsstring>() const</argsstring>
+        <name>ShouldScrollToBottom</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" line="21" column="22" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" bodystart="21" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_console_1ae58be1946fe0d445e81087b7475e0de6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void Bvr::CConsole::ProcessCommand</definition>
-        <argsstring>()</argsstring>
-        <name>ProcessCommand</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" line="24" column="10"/>
-      </memberdef>
-      <memberdef kind="function" id="class_bvr_1_1_c_console_1a885c788750f3ecbfaab2a63e4f9c65da" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>int</type>
-        <definition>int Bvr::CConsole::TextInputCallback</definition>
-        <argsstring>(ImGuiInputTextCallbackData *pData)</argsstring>
-        <name>TextInputCallback</name>
+        <definition>void Bvr::CConsole::Autoscroll</definition>
+        <argsstring>(bool autoscroll=true)</argsstring>
+        <name>Autoscroll</name>
         <param>
-          <type>ImGuiInputTextCallbackData *</type>
-          <declname>pData</declname>
+          <type>bool</type>
+          <declname>autoscroll</declname>
+          <defval>true</defval>
         </param>
         <briefdescription>
         </briefdescription>
@@ -149,58 +144,125 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" line="25" column="10"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" line="23" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" bodystart="23" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_console_1a26bd2440c55d94c837b2adcd6729ad92" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CConsole::ScrollToBottom</definition>
+        <argsstring>(bool scroll=true)</argsstring>
+        <name>ScrollToBottom</name>
+        <param>
+          <type>bool</type>
+          <declname>scroll</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" line="24" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" bodystart="24" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_console_1a7e3e618d42e15f823a461dd290fe1fb0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void Bvr::CConsole::Log</definition>
+        <argsstring>(TFormatString&lt; Args... &gt; fmt, Args &amp;&amp;... args)</argsstring>
+        <name>Log</name>
+        <param>
+          <type>TFormatString&lt; Args... &gt;</type>
+          <declname>fmt</declname>
+        </param>
+        <param>
+          <type>Args &amp;&amp;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" line="26" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" bodystart="26" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_console_1a6b182e932060e9787687f5966bb6e692" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CConsole::Log</definition>
+        <argsstring>(std::string_view message)</argsstring>
+        <name>Log</name>
+        <param>
+          <type>std::string_view</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" line="29" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_console_1a3975c0b36d6820094e536e7e628f8fa9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CConsole::Clear</definition>
+        <argsstring>()</argsstring>
+        <name>Clear</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" line="31" column="10"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_bvr_1_1_c_console_1a5dae7a5815e34e3391eebab15b43da14" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CConsole::ProcessCommand</definition>
+        <argsstring>(std::string_view command)</argsstring>
+        <name>ProcessCommand</name>
+        <param>
+          <type>std::string_view</type>
+          <declname>command</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" line="34" column="10"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <inheritancegraph>
-      <node id="1">
-        <label>Bvr::CConsole</label>
-        <link refid="class_bvr_1_1_c_console"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>Bvr::EditorUI::CEditorTool</label>
-        <link refid="class_bvr_1_1_editor_u_i_1_1_c_editor_tool"/>
-      </node>
-    </inheritancegraph>
-    <collaborationgraph>
-      <node id="1">
-        <label>Bvr::CConsole</label>
-        <link refid="class_bvr_1_1_c_console"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>Bvr::EditorUI::CEditorTool</label>
-        <link refid="class_bvr_1_1_editor_u_i_1_1_c_editor_tool"/>
-      </node>
-    </collaborationgraph>
-    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" line="15" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" bodystart="15" bodyend="34"/>
+    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" line="14" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/Console.hpp" bodystart="14" bodyend="44"/>
     <listofallmembers>
-      <member refid="class_bvr_1_1_c_console_1a2de213cad4c83ae32bb21c03238b3c9b" prot="public" virt="non-virtual"><scope>Bvr::CConsole</scope><name>CConsole</name></member>
-      <member refid="class_bvr_1_1_editor_u_i_1_1_c_editor_tool_1acf1989b398ba0623892109b87699b42d" prot="public" virt="non-virtual"><scope>Bvr::CConsole</scope><name>CEditorTool</name></member>
-      <member refid="class_bvr_1_1_editor_u_i_1_1_c_editor_tool_1a3351010b3acd0aed4996926340f2c97d" prot="public" virt="virtual"><scope>Bvr::CConsole</scope><name>GetCommandList</name></member>
-      <member refid="class_bvr_1_1_editor_u_i_1_1_c_editor_tool_1afcb1be94f009f4c4bb32351379218954" prot="protected" virt="non-virtual"><scope>Bvr::CConsole</scope><name>GetMenuBar</name></member>
-      <member refid="class_bvr_1_1_editor_u_i_1_1_c_editor_tool_1a81e768a90b1fcd37b92779b5b40601f5" prot="public" virt="virtual"><scope>Bvr::CConsole</scope><name>GetWindowAlpha</name></member>
-      <member refid="class_bvr_1_1_editor_u_i_1_1_c_editor_tool_1a313a3203daf7a9f30996646fb6da75bf" prot="public" virt="virtual"><scope>Bvr::CConsole</scope><name>HasModifiedContent</name></member>
-      <member refid="class_bvr_1_1_editor_u_i_1_1_c_editor_tool_1a90ca7af4a86569fd094e6a7a58019410" prot="public" virt="non-virtual"><scope>Bvr::CConsole</scope><name>m_bOpened</name></member>
+      <member refid="class_bvr_1_1_c_console_1ae58be1946fe0d445e81087b7475e0de6" prot="public" virt="non-virtual"><scope>Bvr::CConsole</scope><name>Autoscroll</name></member>
+      <member refid="class_bvr_1_1_c_console_1abf6db6e12523efd9e771636969aeba4d" prot="public" virt="non-virtual"><scope>Bvr::CConsole</scope><name>CConsole</name></member>
+      <member refid="class_bvr_1_1_c_console_1a3975c0b36d6820094e536e7e628f8fa9" prot="public" virt="non-virtual"><scope>Bvr::CConsole</scope><name>Clear</name></member>
+      <member refid="class_bvr_1_1_c_console_1a0a8c886c4499a3e6074aae70c51366c3" prot="public" virt="non-virtual"><scope>Bvr::CConsole</scope><name>GetName</name></member>
+      <member refid="class_bvr_1_1_c_console_1a7e3e618d42e15f823a461dd290fe1fb0" prot="public" virt="non-virtual"><scope>Bvr::CConsole</scope><name>Log</name></member>
+      <member refid="class_bvr_1_1_c_console_1a6b182e932060e9787687f5966bb6e692" prot="public" virt="non-virtual"><scope>Bvr::CConsole</scope><name>Log</name></member>
       <member refid="class_bvr_1_1_c_console_1a40e32c63e9fe295c137c9241ad4999d9" prot="private" virt="non-virtual"><scope>Bvr::CConsole</scope><name>m_bScrollToBottom</name></member>
-      <member refid="class_bvr_1_1_c_console_1a7004f1ed216dd349d930393d9d14e32b" prot="private" virt="non-virtual"><scope>Bvr::CConsole</scope><name>m_consoleInputBuf</name></member>
-      <member refid="class_bvr_1_1_c_console_1afec4cab40566b324071a68cba0054c0b" prot="private" virt="non-virtual"><scope>Bvr::CConsole</scope><name>m_history</name></member>
-      <member refid="class_bvr_1_1_editor_u_i_1_1_c_editor_tool_1a9d9556d00662f4334d6ac6c22dd855cd" prot="public" virt="non-virtual"><scope>Bvr::CConsole</scope><name>m_name</name></member>
+      <member refid="class_bvr_1_1_c_console_1a69d130086ace281b1ce9a8a8817e890e" prot="private" virt="non-virtual"><scope>Bvr::CConsole</scope><name>m_name</name></member>
       <member refid="class_bvr_1_1_c_console_1a033bbea2e6426353a7076bf638dad901" prot="private" virt="non-virtual"><scope>Bvr::CConsole</scope><name>m_pLogSink</name></member>
-      <member refid="class_bvr_1_1_c_console_1aee0064e1fb87bcb9abb6b1c6c7ae41f2" prot="private" virt="non-virtual"><scope>Bvr::CConsole</scope><name>m_previousHistoryPos</name></member>
-      <member refid="class_bvr_1_1_c_console_1a11003f2edb480dea4392cd414e303a41" prot="private" virt="non-virtual"><scope>Bvr::CConsole</scope><name>ProcessCommand</name></member>
-      <member refid="class_bvr_1_1_editor_u_i_1_1_c_editor_tool_1abc8615a5fe8003841af8686c38b0f55a" prot="public" virt="non-virtual"><scope>Bvr::CConsole</scope><name>Show</name></member>
-      <member refid="class_bvr_1_1_c_console_1aa17c0bf75a38566643cf47a93f728000" prot="protected" virt="virtual"><scope>Bvr::CConsole</scope><name>ShowImpl</name></member>
-      <member refid="class_bvr_1_1_c_console_1a885c788750f3ecbfaab2a63e4f9c65da" prot="private" virt="non-virtual"><scope>Bvr::CConsole</scope><name>TextInputCallback</name></member>
+      <member refid="class_bvr_1_1_c_console_1ab60657ed92fb967ff70a5965621f51b3" prot="private" virt="non-virtual"><scope>Bvr::CConsole</scope><name>m_shouldAutoscroll</name></member>
+      <member refid="class_bvr_1_1_c_console_1a5dae7a5815e34e3391eebab15b43da14" prot="private" virt="non-virtual"><scope>Bvr::CConsole</scope><name>ProcessCommand</name></member>
+      <member refid="class_bvr_1_1_c_console_1a26bd2440c55d94c837b2adcd6729ad92" prot="public" virt="non-virtual"><scope>Bvr::CConsole</scope><name>ScrollToBottom</name></member>
+      <member refid="class_bvr_1_1_c_console_1a1268cab6b284df83c00256cdac49f0a5" prot="public" virt="non-virtual"><scope>Bvr::CConsole</scope><name>ShouldAutoScroll</name></member>
+      <member refid="class_bvr_1_1_c_console_1ac2c85bf84b23ce72845d06f80a35f7fa" prot="public" virt="non-virtual"><scope>Bvr::CConsole</scope><name>ShouldScrollToBottom</name></member>
       <member refid="class_bvr_1_1_c_console_1a4af48d73b6dfe2472abe915bd1cc4129" prot="public" virt="non-virtual"><scope>Bvr::CConsole</scope><name>~CConsole</name></member>
-      <member refid="class_bvr_1_1_editor_u_i_1_1_c_editor_tool_1aa94ecdc5cd97589f2d050192d92a2e7c" prot="public" virt="virtual"><scope>Bvr::CConsole</scope><name>~CEditorTool</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>
