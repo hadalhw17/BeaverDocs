@@ -42,9 +42,6 @@
     <innerclass refid="struct_bvr_1_1_i_asset_i_o" prot="public">Bvr::IAssetIO</innerclass>
     <innerclass refid="struct_bvr_1_1_s_decoded_path" prot="public">Bvr::SDecodedPath</innerclass>
     <innerclass refid="struct_bvr_1_1_s_asset_manager" prot="public">Bvr::SAssetManager</innerclass>
-    <innerclass refid="class_bvr_1_1_c_file_watcher" prot="public">Bvr::CFileWatcher</innerclass>
-    <innerclass refid="class_bvr_1_1_t_ini_reader" prot="public">Bvr::TIniReader</innerclass>
-    <innerclass refid="class_bvr_1_1_t_ini_writer" prot="public">Bvr::TIniWriter</innerclass>
     <innerclass refid="struct_bvr_1_1_handle" prot="public">Bvr::Handle</innerclass>
     <innerclass refid="struct_bvr_1_1_asset_id" prot="public">Bvr::AssetId</innerclass>
     <innerclass refid="struct_bvr_1_1_asset_lifetime_event" prot="public">Bvr::AssetLifetimeEvent</innerclass>
@@ -52,8 +49,12 @@
     <innerclass refid="struct_bvr_1_1_handle_type" prot="public">Bvr::HandleType</innerclass>
     <innerclass refid="struct_bvr_1_1_handle_lifetime" prot="public">Bvr::HandleLifetime</innerclass>
     <innerclass refid="struct_bvr_1_1_handle_untyped" prot="public">Bvr::HandleUntyped</innerclass>
+    <innerclass refid="class_bvr_1_1_c_file_watcher" prot="public">Bvr::CFileWatcher</innerclass>
+    <innerclass refid="class_bvr_1_1_t_ini_reader" prot="public">Bvr::TIniReader</innerclass>
+    <innerclass refid="class_bvr_1_1_t_ini_writer" prot="public">Bvr::TIniWriter</innerclass>
     <innerclass refid="struct_bvr_1_1_asset_event" prot="public">Bvr::AssetEvent</innerclass>
     <innerclass refid="struct_bvr_1_1_i_assets" prot="public">Bvr::IAssets</innerclass>
+    <innerclass refid="class_bvr_1_1_t_asset_iterator" prot="public">Bvr::TAssetIterator</innerclass>
     <innerclass refid="class_bvr_1_1_t_assets" prot="public">Bvr::TAssets</innerclass>
     <innerclass refid="struct_bvr_1_1_i_asset_saver" prot="public">Bvr::IAssetSaver</innerclass>
     <innerclass refid="class_bvr_1_1_asset_saver" prot="public">Bvr::AssetSaver</innerclass>
@@ -1357,35 +1358,36 @@
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/KeyCodes.hpp" line="164" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/KeyCodes.hpp" bodystart="164" bodyend="170"/>
       </memberdef>
-      <memberdef kind="enum" id="_asset_system_8hpp_1ad32e19f1b581203b0995349e37b1a369" prot="public" static="no" strong="yes">
+      <memberdef kind="enum" id="_asset_handle_8hpp_1ad32e19f1b581203b0995349e37b1a369" prot="public" static="no" strong="yes">
         <type>uint32</type>
         <name>AssetIndexT</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Base id for asset. Assigned to each asset, only unique within the asset type. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetSystem.hpp" line="23" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetSystem.hpp" bodystart="23" bodyend="23"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetHandle.hpp" line="11" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetHandle.hpp" bodystart="11" bodyend="11"/>
       </memberdef>
-      <memberdef kind="enum" id="_asset_system_8hpp_1a09eb584c8cbec30a81b268db7f21c2ad" prot="public" static="no" strong="yes">
+      <memberdef kind="enum" id="_asset_handle_8hpp_1a09eb584c8cbec30a81b268db7f21c2ad" prot="public" static="no" strong="yes">
         <type>uint8</type>
         <name>EHandleType</name>
-        <enumvalue id="_asset_system_8hpp_1a09eb584c8cbec30a81b268db7f21c2ada6adf97f83acf6453d4a6a4b1070f3754" prot="public">
+        <enumvalue id="_asset_handle_8hpp_1a09eb584c8cbec30a81b268db7f21c2ada6adf97f83acf6453d4a6a4b1070f3754" prot="public">
           <name>None</name>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="_asset_system_8hpp_1a09eb584c8cbec30a81b268db7f21c2adac43e0fd449c758dab8f891d8e19eb1a9" prot="public">
+        <enumvalue id="_asset_handle_8hpp_1a09eb584c8cbec30a81b268db7f21c2adac43e0fd449c758dab8f891d8e19eb1a9" prot="public">
           <name>Strong</name>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="_asset_system_8hpp_1a09eb584c8cbec30a81b268db7f21c2ada7324e3727807d95037eb19d304fd91ec" prot="public">
+        <enumvalue id="_asset_handle_8hpp_1a09eb584c8cbec30a81b268db7f21c2ada7324e3727807d95037eb19d304fd91ec" prot="public">
           <name>Weak</name>
           <briefdescription>
           </briefdescription>
@@ -1398,7 +1400,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetSystem.hpp" line="77" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetSystem.hpp" bodystart="77" bodyend="81"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetHandle.hpp" line="65" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetHandle.hpp" bodystart="65" bodyend="69"/>
       </memberdef>
       <memberdef kind="enum" id="_asset_system_8hpp_1a58fea1a257e5e6495045e40a71abe53a" prot="public" static="no" strong="yes">
         <type></type>
@@ -1430,7 +1432,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetSystem.hpp" line="399" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetSystem.hpp" bodystart="399" bodyend="403"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetSystem.hpp" line="20" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetSystem.hpp" bodystart="20" bodyend="24"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
@@ -1539,7 +1541,7 @@
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/TypeInfo.hpp" line="7" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/TypeInfo.hpp" bodystart="7" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="_asset_system_8hpp_1a03159bdb81b0028a9835c3959fa244a2" prot="public" static="no">
+      <memberdef kind="typedef" id="_asset_handle_8hpp_1a03159bdb81b0028a9835c3959fa244a2" prot="public" static="no">
         <type><ref refid="struct_bvr_1_1_asset_id" kindref="compound">AssetId</ref></type>
         <definition>using Bvr::HandleIdT = typedef AssetId</definition>
         <argsstring></argsstring>
@@ -1550,7 +1552,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetSystem.hpp" line="75" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetSystem.hpp" bodystart="75" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetHandle.hpp" line="63" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetHandle.hpp" bodystart="63" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_asset_system_8hpp_1a3957eaefc186763629e4c67b57353510" prot="public" static="no">
         <templateparamlist>
@@ -1568,7 +1570,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetSystem.hpp" line="607" column="13" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetSystem.hpp" bodystart="607" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetSystem.hpp" line="289" column="13" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetSystem.hpp" bodystart="289" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="var">
@@ -1590,6 +1592,29 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/DependencyGraph.hpp" line="44" column="9" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/DependencyGraph.hpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_asset_handle_8hpp_1a123062f6b2eea706aefd0caa6ee5e970" prot="public" static="no" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>concept</type>
+        <definition>concept Bvr::IsAssetHandle</definition>
+        <argsstring></argsstring>
+        <name>IsAssetHandle</name>
+        <initializer>= requires(T v) {
+    { v.Index() } -&gt; std::convertible_to&lt;<ref refid="struct_bvr_1_1_asset_id" kindref="compound">HandleIdT</ref>&gt;;
+    { v.ToWeak() } -&gt; std::convertible_to&lt;T&gt;;
+    { v.ToStrong() } -&gt; std::convertible_to&lt;T&gt;;
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetHandle.hpp" line="391" column="9" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetHandle.hpp" bodystart="391" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="_archive_8hpp_1af1f835b0d67996f12126b0d8de204efa" prot="public" static="no" mutable="no">
         <templateparamlist>
@@ -2255,6 +2280,50 @@
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/TypeInfo.hpp" line="138" column="28" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/TypeInfo.hpp" bodystart="138" bodyend="140"/>
       </memberdef>
+      <memberdef kind="function" id="_asset_handle_8hpp_1a8096d0e0a953b653ca4b3127199f07d2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="struct_bvr_1_1_handle_untyped" kindref="compound">HandleUntyped</ref></type>
+        <definition>static HandleUntyped Bvr::Convert</definition>
+        <argsstring>(const Handle&lt; T &gt; &amp;h)</argsstring>
+        <name>Convert</name>
+        <param>
+          <type>const <ref refid="struct_bvr_1_1_handle" kindref="compound">Handle</ref>&lt; T &gt; &amp;</type>
+          <declname>h</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetHandle.hpp" line="398" column="34" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetHandle.hpp" bodystart="398" bodyend="400"/>
+      </memberdef>
+      <memberdef kind="function" id="_asset_handle_8hpp_1a00954283544476b44636bf60766b6199" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="struct_bvr_1_1_handle" kindref="compound">Handle</ref>&lt; T &gt;</type>
+        <definition>static Handle&lt;T&gt; Bvr::Convert</definition>
+        <argsstring>(const HandleUntyped &amp;h)</argsstring>
+        <name>Convert</name>
+        <param>
+          <type>const <ref refid="struct_bvr_1_1_handle_untyped" kindref="compound">HandleUntyped</ref> &amp;</type>
+          <declname>h</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetHandle.hpp" line="401" column="27" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetHandle.hpp" bodystart="401" bodyend="403"/>
+      </memberdef>
       <memberdef kind="function" id="_archive_8hpp_1a2b086d129a85816dd8c9cb72dc11639b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
@@ -2285,50 +2354,6 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/Archive.hpp" line="45" column="6" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/Archive.hpp" bodystart="45" bodyend="50"/>
-      </memberdef>
-      <memberdef kind="function" id="_asset_system_8hpp_1a8096d0e0a953b653ca4b3127199f07d2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>typename T</type>
-          </param>
-        </templateparamlist>
-        <type><ref refid="struct_bvr_1_1_handle_untyped" kindref="compound">HandleUntyped</ref></type>
-        <definition>static HandleUntyped Bvr::Convert</definition>
-        <argsstring>(const Handle&lt; T &gt; &amp;h)</argsstring>
-        <name>Convert</name>
-        <param>
-          <type>const <ref refid="struct_bvr_1_1_handle" kindref="compound">Handle</ref>&lt; T &gt; &amp;</type>
-          <declname>h</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetSystem.hpp" line="610" column="34" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetSystem.hpp" bodystart="610" bodyend="612"/>
-      </memberdef>
-      <memberdef kind="function" id="_asset_system_8hpp_1a00954283544476b44636bf60766b6199" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>typename T</type>
-          </param>
-        </templateparamlist>
-        <type><ref refid="struct_bvr_1_1_handle" kindref="compound">Handle</ref>&lt; T &gt;</type>
-        <definition>static Handle&lt;T&gt; Bvr::Convert</definition>
-        <argsstring>(const HandleUntyped &amp;h)</argsstring>
-        <name>Convert</name>
-        <param>
-          <type>const <ref refid="struct_bvr_1_1_handle_untyped" kindref="compound">HandleUntyped</ref> &amp;</type>
-          <declname>h</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetSystem.hpp" line="613" column="27" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetSystem.hpp" bodystart="613" bodyend="615"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

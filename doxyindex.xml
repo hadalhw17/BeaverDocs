@@ -133,7 +133,7 @@
   <compound refid="dc/d9f/structBvr_1_1AssetBrowser" kind="struct"><name>Bvr::AssetBrowser</name>
     <member refid="dc/d9f/structBvr_1_1AssetBrowser_1a2ee5a01361c7e400d2b055970ceea0a9" kind="function"><name>SyncWithFileWatcher</name></member>
     <member refid="dc/d9f/structBvr_1_1AssetBrowser_1a726606d3214cf08e00023319d0de6d8a" kind="function"><name>OnOSFileDropped</name></member>
-    <member refid="dc/d9f/structBvr_1_1AssetBrowser_1ada6974964e12544427753c16e4c25dfe" kind="function"><name>UpdateSystem</name></member>
+    <member refid="dc/d9f/structBvr_1_1AssetBrowser_1a6d20c2a9071967a94e09ee594d8e31cc" kind="function"><name>UpdateSystem</name></member>
     <member refid="dc/d9f/structBvr_1_1AssetBrowser_1a8d183c472287f8851b05414d17f32442" kind="function"><name>InvalidateUI</name></member>
     <member refid="dc/d9f/structBvr_1_1AssetBrowser_1ab017b8ae6f50d2d935518330f7857828" kind="function"><name>InvokeCommands</name></member>
     <member refid="dc/d9f/structBvr_1_1AssetBrowser_1ac68ae5be318727c610cdc9ceb4587ef7" kind="function"><name>TrackProjectPath</name></member>
@@ -3344,6 +3344,7 @@
     <member refid="df/d78/classBvr_1_1Renderer_1_1CShaderSource_1aca2ce84cf78ee3aa6e280e9f63a3093d" kind="function"><name>GetSource</name></member>
     <member refid="df/d78/classBvr_1_1Renderer_1_1CShaderSource_1a923eb3edb16ea6f7f836e69014c971fd" kind="function"><name>GetTechniques</name></member>
     <member refid="df/d78/classBvr_1_1Renderer_1_1CShaderSource_1aacebd68505018c5370ca7f55ce0ee0c9" kind="function"><name>GetIncludes</name></member>
+    <member refid="df/d78/classBvr_1_1Renderer_1_1CShaderSource_1a0847df9dd221616fae6925df03e3c858" kind="function"><name>Reset</name></member>
   </compound>
   <compound refid="d9/dad/classBvr_1_1Renderer_1_1CShadowMapPass" kind="class"><name>Bvr::Renderer::CShadowMapPass</name>
     <member refid="d9/dad/classBvr_1_1Renderer_1_1CShadowMapPass_1a979897153b675bcf18e2978394ba5ddc" kind="function"><name>~CShadowMapPass</name></member>
@@ -3870,6 +3871,7 @@
     <member refid="de/d2d/classBvr_1_1CWorld_1a1653c42e1bf08159ebfc2f3ef4fcd140" kind="function"><name>Insert</name></member>
     <member refid="de/d2d/classBvr_1_1CWorld_1ab1fe4767c5ea4647a4ff092d96cd212b" kind="function"><name>CreateResource</name></member>
     <member refid="de/d2d/classBvr_1_1CWorld_1a5d9288d331bed33ea599393f09e7b6f2" kind="function"><name>RemoveResource</name></member>
+    <member refid="de/d2d/classBvr_1_1CWorld_1ad2149f719e13fb80fd6eb07559c07c3b" kind="function"><name>ClearResources</name></member>
     <member refid="de/d2d/classBvr_1_1CWorld_1a15f04da99c629ce1f59a887fd0c88215" kind="function"><name>Clone</name></member>
     <member refid="de/d2d/classBvr_1_1CWorld_1a342068bf114b607f0255f2a2df5763a4" kind="function"><name>TraverseScene</name></member>
     <member refid="de/d2d/classBvr_1_1CWorld_1af55aa0ee2a47a641403ae0eaf00593a6" kind="function"><name>TraverseSceneImpl</name></member>
@@ -4559,9 +4561,6 @@
     <member refid="d7/daa/structBvr_1_1Handle_1ae49ee892f6f560a41fcac0ecc56264b6" kind="function"><name>Weak</name></member>
     <member refid="d7/daa/structBvr_1_1Handle_1af9a1dc2986a65bb7a7db30f9600fa6ab" kind="function"><name>Strong</name></member>
   </compound>
-  <compound refid="d6/d78/structBvr_1_1Detail_1_1HandleHash" kind="struct"><name>Bvr::Detail::HandleHash</name>
-    <member refid="d6/d78/structBvr_1_1Detail_1_1HandleHash_1a0ef4bb4ed97612894c8bfe21115dfbd8" kind="function"><name>DoHash</name></member>
-  </compound>
   <compound refid="de/d96/structBvr_1_1HandleLifetime" kind="struct"><name>Bvr::HandleLifetime</name>
     <member refid="de/d96/structBvr_1_1HandleLifetime_1a9d7ad3ad664a620c1c38ed8aa15e2f73" kind="variable"><name>m_type</name></member>
     <member refid="de/d96/structBvr_1_1HandleLifetime_1a065b586ba7b3cd546775f51accbd3d34" kind="function"><name>HandleLifetime</name></member>
@@ -4637,14 +4636,6 @@
   <compound refid="d5/d60/structstd_1_1hash_3_01Bvr_1_1ECS_1_1TEntity_01_4" kind="struct"><name>std::hash&lt; Bvr::ECS::TEntity &gt;</name>
     <member refid="d5/d60/structstd_1_1hash_3_01Bvr_1_1ECS_1_1TEntity_01_4_1acc84dc36a48e83b601ada179788fd412" kind="function"><name>operator()</name></member>
   </compound>
-  <compound refid="d9/ddf/structstd_1_1hash_3_01Bvr_1_1Handle_3_01T_01_4_01_4" kind="struct"><name>std::hash&lt; Bvr::Handle&lt; T &gt; &gt;</name>
-    <member refid="d9/ddf/structstd_1_1hash_3_01Bvr_1_1Handle_3_01T_01_4_01_4_1a9dd26a29136dba97ba1c717b55ccda36" kind="typedef"><name>BaseT</name></member>
-    <member refid="d9/ddf/structstd_1_1hash_3_01Bvr_1_1Handle_3_01T_01_4_01_4_1a5231a3901259e1dec2dc8aa0db1b95dd" kind="function"><name>operator()</name></member>
-  </compound>
-  <compound refid="d8/dd9/structstd_1_1hash_3_01Bvr_1_1HandleUntyped_01_4" kind="struct"><name>std::hash&lt; Bvr::HandleUntyped &gt;</name>
-    <member refid="d8/dd9/structstd_1_1hash_3_01Bvr_1_1HandleUntyped_01_4_1a85627d5aaafac61c4fb288f50154c98c" kind="typedef"><name>BaseT</name></member>
-    <member refid="d8/dd9/structstd_1_1hash_3_01Bvr_1_1HandleUntyped_01_4_1aa310330f27395a6c5c150474042c6929" kind="function"><name>operator()</name></member>
-  </compound>
   <compound refid="dc/d38/structstd_1_1hash_3_01Bvr_1_1Meta_1_1Type_01_4" kind="struct"><name>std::hash&lt; Bvr::Meta::Type &gt;</name>
     <member refid="dc/d38/structstd_1_1hash_3_01Bvr_1_1Meta_1_1Type_01_4_1ab1903f668c6d87464100f20dc7b3ef55" kind="function"><name>operator()</name></member>
   </compound>
@@ -4686,6 +4677,9 @@
   </compound>
   <compound refid="db/d14/structstd_1_1hash_3_01Bvr_1_1Utils_1_1uuid_01_4" kind="struct"><name>std::hash&lt; Bvr::Utils::uuid &gt;</name>
     <member refid="db/d14/structstd_1_1hash_3_01Bvr_1_1Utils_1_1uuid_01_4_1a5b5d50f6e46645287d0aa0ec896f6603" kind="function"><name>operator()</name></member>
+  </compound>
+  <compound refid="d8/d0e/structstd_1_1hash_3_01Handle_01_4" kind="struct"><name>std::hash&lt; Handle &gt;</name>
+    <member refid="d8/d0e/structstd_1_1hash_3_01Handle_01_4_1a9bdb449c44a35f087735c3d10878cf42" kind="function"><name>operator()</name></member>
   </compound>
   <compound refid="d9/dd2/classBvrUtil_1_1Hasher" kind="class"><name>BvrUtil::Hasher</name>
     <member refid="d9/dd2/classBvrUtil_1_1Hasher_1a48748ea365d0e32f70851746c2871a11" kind="variable"><name>h</name></member>
@@ -7497,6 +7491,9 @@
     <member refid="dc/dff/structBvr_1_1SHotKeyComb_1a5535ad5ebad925d03925e05290e491f4" kind="function"><name>IsValid</name></member>
     <member refid="dc/dff/structBvr_1_1SHotKeyComb_1a1eac8d474caff8714b8d394f5cfe2574" kind="function"><name>ToString</name></member>
   </compound>
+  <compound refid="d9/d27/structBvr_1_1App_1_1ShutdownEvent" kind="struct"><name>Bvr::App::ShutdownEvent</name>
+    <member refid="d9/d27/structBvr_1_1App_1_1ShutdownEvent_1a5f1c233ed1fb5e3c3d03825fe43c99a2" kind="variable"><name>ShutDown</name></member>
+  </compound>
   <compound refid="d2/d98/structBvr_1_1Window_1_1SIdWrapper" kind="struct"><name>Bvr::Window::SIdWrapper</name>
     <member refid="d2/d98/structBvr_1_1Window_1_1SIdWrapper_1adb4ea67e213030d46293f0fde4f94a18" kind="variable"><name>m_hId</name></member>
     <member refid="d2/d98/structBvr_1_1Window_1_1SIdWrapper_1ab9bd7b6c3c024ed41f261d2aa5891d96" kind="function"><name>operator Window::Id</name></member>
@@ -9138,41 +9135,67 @@
     <member refid="df/d7d/structBvr_1_1MT_1_1TaskState_1a943d5f3044d54b1f8d3461224d225154" kind="function"><name>AddJobs</name></member>
     <member refid="df/d7d/structBvr_1_1MT_1_1TaskState_1a688ffa0933aaece77413de7a3438a1bb" kind="function"><name>IsDone</name></member>
   </compound>
+  <compound refid="dd/d0b/classBvr_1_1TAssetIterator" kind="class"><name>Bvr::TAssetIterator</name>
+    <member refid="dd/d0b/classBvr_1_1TAssetIterator_1a16170f4b899c239344ff07adcb3a667c" kind="typedef"><name>HandleT</name></member>
+    <member refid="dd/d0b/classBvr_1_1TAssetIterator_1a4169f2018b184a8de2769328e62f08da" kind="typedef"><name>HandleTraits</name></member>
+    <member refid="dd/d0b/classBvr_1_1TAssetIterator_1a79f1337c9f67bf42558432a3909e779b" kind="typedef"><name>value_type</name></member>
+    <member refid="dd/d0b/classBvr_1_1TAssetIterator_1a8b2b6804f0a3eb5a113310f937b85acb" kind="typedef"><name>pointer</name></member>
+    <member refid="dd/d0b/classBvr_1_1TAssetIterator_1ad44d8a4c5109d4b7b4d97ca12d7d05d2" kind="typedef"><name>reference</name></member>
+    <member refid="dd/d0b/classBvr_1_1TAssetIterator_1af21fda6954a3eb38c82ba7058053aff6" kind="typedef"><name>difference_type</name></member>
+    <member refid="dd/d0b/classBvr_1_1TAssetIterator_1af66581e77491d604de5a1090a28db7ce" kind="typedef"><name>iterator_category</name></member>
+    <member refid="dd/d0b/classBvr_1_1TAssetIterator_1a7e13fdd5a63caa1b64051ca3ad13b588" kind="variable"><name>m_pAssets</name></member>
+    <member refid="dd/d0b/classBvr_1_1TAssetIterator_1a33cbcfb59239252ff84d7490912a905a" kind="variable"><name>m_index</name></member>
+    <member refid="dd/d0b/classBvr_1_1TAssetIterator_1a4f6ad22178f2f7e1d80c89a019bf9b1c" kind="function"><name>TAssetIterator</name></member>
+    <member refid="dd/d0b/classBvr_1_1TAssetIterator_1a12edded874be69c92c94fe34cef9588c" kind="function"><name>operator[]</name></member>
+    <member refid="dd/d0b/classBvr_1_1TAssetIterator_1a202785d024b46c4a72f883758c5bf07e" kind="function"><name>operator-&gt;</name></member>
+    <member refid="dd/d0b/classBvr_1_1TAssetIterator_1add1aa0b688291ce32abd9ea7ca0dbe13" kind="function"><name>operator*</name></member>
+    <member refid="dd/d0b/classBvr_1_1TAssetIterator_1a66b309ae09a158f42d21c04d3df575fd" kind="function"><name>operator++</name></member>
+    <member refid="dd/d0b/classBvr_1_1TAssetIterator_1a367d0bdc27c767b5a717c3cf1e8229c5" kind="function"><name>operator++</name></member>
+    <member refid="dd/d0b/classBvr_1_1TAssetIterator_1a9ef9948234d57d5e9ed95e335e32ce48" kind="function"><name>operator==</name></member>
+    <member refid="dd/d0b/classBvr_1_1TAssetIterator_1a933fa03edc3969703a01266a7f406006" kind="function"><name>operator!=</name></member>
+    <member refid="dd/d0b/classBvr_1_1TAssetIterator_1a1a20cf9fe4eb73195e038828020fca97" kind="function"><name>IsValid</name></member>
+    <member refid="dd/d0b/classBvr_1_1TAssetIterator_1aa18c7b563074fa456e7472f3354437f7" kind="function"><name>IsEnd</name></member>
+    <member refid="dd/d0b/classBvr_1_1TAssetIterator_1af1be59e1cd533bc695faeea5963dbee0" kind="function"><name>Index</name></member>
+  </compound>
   <compound refid="de/d4f/classBvr_1_1TAssets" kind="class"><name>Bvr::TAssets</name>
     <member refid="de/d4f/classBvr_1_1TAssets_1a1e466b7214f298849f4802883b80669a" kind="typedef"><name>BaseT</name></member>
     <member refid="de/d4f/classBvr_1_1TAssets_1a0a52f0119b17e1b4c22467e5b678b4b3" kind="typedef"><name>HandleT</name></member>
     <member refid="de/d4f/classBvr_1_1TAssets_1aae360186b613c2ba631c405282db8881" kind="typedef"><name>EntityTraitsT</name></member>
     <member refid="de/d4f/classBvr_1_1TAssets_1ad82fdb9492c9b8876aaa87f707450cec" kind="typedef"><name>EntityT</name></member>
     <member refid="de/d4f/classBvr_1_1TAssets_1a42ea7db6b08f177fcb0017498d4e7042" kind="typedef"><name>HandleIdT</name></member>
-    <member refid="de/d4f/classBvr_1_1TAssets_1a19437e6595abb040662b336fb18722fb" kind="variable"><name>Null</name></member>
-    <member refid="de/d4f/classBvr_1_1TAssets_1a0121d57fbac224acc8a9445f19bf528d" kind="variable"><name>m_pSendFn</name></member>
+    <member refid="de/d4f/classBvr_1_1TAssets_1a134d0726ea2689c23db7c11068a88a55" kind="typedef"><name>iterator</name></member>
+    <member refid="de/d4f/classBvr_1_1TAssets_1a64bc2c6ca5dee9be925d6521769f2eff" kind="typedef"><name>const_iterator</name></member>
+    <member refid="de/d4f/classBvr_1_1TAssets_1a92d4c2540abcf72b80844f5febe1f08f" kind="typedef"><name>difference_type</name></member>
+    <member refid="de/d4f/classBvr_1_1TAssets_1a29feeb99eecb9cf65f32a0151370420d" kind="typedef"><name>size_type</name></member>
+    <member refid="de/d4f/classBvr_1_1TAssets_1a4b7a48d596b6c2235501fc6fae4cd303" kind="variable"><name>TAssetIterator&lt; TAssets &gt;</name></member>
     <member refid="de/d4f/classBvr_1_1TAssets_1a5c561c20c8f0d72544cdc2040c2ecce6" kind="variable"><name>m_lifetimeEvents</name></member>
     <member refid="de/d4f/classBvr_1_1TAssets_1adc93fe61060d19284aa496c55cd8b885" kind="variable"><name>m_tempAssetEventQueue</name></member>
     <member refid="de/d4f/classBvr_1_1TAssets_1ab4720a3564c819312dba4ed4b76d9b0a" kind="variable"><name>m_lifetimeInterface</name></member>
     <member refid="de/d4f/classBvr_1_1TAssets_1afe76c13891111e6599d4082e6f7555da" kind="variable"><name>m_entities</name></member>
     <member refid="de/d4f/classBvr_1_1TAssets_1a5db64100d446dd7da0f52e8127f05261" kind="variable"><name>m_freeList</name></member>
+    <member refid="de/d4f/classBvr_1_1TAssets_1a19437e6595abb040662b336fb18722fb" kind="variable"><name>Null</name></member>
+    <member refid="de/d4f/classBvr_1_1TAssets_1a0121d57fbac224acc8a9445f19bf528d" kind="variable"><name>m_pSendFn</name></member>
     <member refid="de/d4f/classBvr_1_1TAssets_1a037985a90ea1ab8d4be6967d7305e194" kind="function"><name>GenerateIdx</name></member>
-    <member refid="de/d4f/classBvr_1_1TAssets_1aa8cfabef4a93841689f6a4c2a3e7af2d" kind="function"><name>CreateIdx</name></member>
+    <member refid="de/d4f/classBvr_1_1TAssets_1a082e26a41e834a46013081716cebdbe5" kind="function"><name>CreateIdx</name></member>
     <member refid="de/d4f/classBvr_1_1TAssets_1aef1b977d66e30287b519e65d74f9c633" kind="function"><name>RecycleIdx</name></member>
     <member refid="de/d4f/classBvr_1_1TAssets_1a15c4097b381ccda817dedcde2f3ab910" kind="function"><name>ReleaseIdx</name></member>
     <member refid="de/d4f/classBvr_1_1TAssets_1a778f1079ac2f47b03047cb1bee5462b2" kind="function"><name>TAssets</name></member>
-    <member refid="de/d4f/classBvr_1_1TAssets_1a6a7957a56646c67d0a775f43bc637ec6" kind="function"><name>~TAssets</name></member>
+    <member refid="de/d4f/classBvr_1_1TAssets_1ad2214374e6108f9c0d1403fdf0d3fb70" kind="function"><name>~TAssets</name></member>
+    <member refid="de/d4f/classBvr_1_1TAssets_1a072d54e7eaaae0f766c4909f3276c228" kind="function"><name>WrapHandle</name></member>
     <member refid="de/d4f/classBvr_1_1TAssets_1abb46c56f9d0d5674880ed633a1b0c57e" kind="function"><name>ReserveHandle</name></member>
     <member refid="de/d4f/classBvr_1_1TAssets_1af8372c76b4e8a5f43f59d9795597d572" kind="function"><name>Emplace</name></member>
     <member refid="de/d4f/classBvr_1_1TAssets_1afb0db75f1b23f98cf51c4ff49a6d7953" kind="function"><name>Create</name></member>
     <member refid="de/d4f/classBvr_1_1TAssets_1a77be37ad6ce6fd80530917379acef830" kind="function"><name>Create</name></member>
-    <member refid="de/d4f/classBvr_1_1TAssets_1a5dd92fd52c1759a90bf228ed777df886" kind="function"><name>Remove</name></member>
+    <member refid="de/d4f/classBvr_1_1TAssets_1a22256cc6f20625f225b9e43c61ee9099" kind="function"><name>Remove</name></member>
     <member refid="de/d4f/classBvr_1_1TAssets_1a86414395701a84e54d04e08db5069abc" kind="function"><name>Remove</name></member>
-    <member refid="de/d4f/classBvr_1_1TAssets_1a7e199424bbb299da202237b9b875c171" kind="function"><name>begin</name></member>
-    <member refid="de/d4f/classBvr_1_1TAssets_1ae19bc2885ed3f7ff5c8176160ef6d851" kind="function"><name>end</name></member>
-    <member refid="de/d4f/classBvr_1_1TAssets_1a22cade3cb749870c132c55be50c83f44" kind="function"><name>GetMut</name></member>
-    <member refid="de/d4f/classBvr_1_1TAssets_1ab2a89cb41f302417859782bec48b15f9" kind="function"><name>Get</name></member>
-    <member refid="de/d4f/classBvr_1_1TAssets_1a88a681eee042ed3ce7afc12263729a87" kind="function"><name>GetMut</name></member>
-    <member refid="de/d4f/classBvr_1_1TAssets_1a7a397ac7ce650297adc238cf83028bc2" kind="function"><name>Get</name></member>
+    <member refid="de/d4f/classBvr_1_1TAssets_1a778c8133f276764c81a52c3a719272b3" kind="function"><name>GetMut</name></member>
+    <member refid="de/d4f/classBvr_1_1TAssets_1a2b3cfcd5641adb0a19b1580dbd7574fe" kind="function"><name>Get</name></member>
     <member refid="de/d4f/classBvr_1_1TAssets_1a4ac949cf8377edce45a1f19654c12899" kind="function"><name>Contains</name></member>
     <member refid="de/d4f/classBvr_1_1TAssets_1a0aea0a3b9cb583649ebdf73e629af0a0" kind="function"><name>Contains</name></member>
     <member refid="de/d4f/classBvr_1_1TAssets_1a85a20b32c3545c6f3a8fbb271275c9e4" kind="function"><name>GetLifetimeInterface</name></member>
-    <member refid="de/d4f/classBvr_1_1TAssets_1ae3f8abfd669619f337337713c953cb1e" kind="function"><name>Size</name></member>
+    <member refid="de/d4f/classBvr_1_1TAssets_1af9b9545da0ebbb75b74c0259228970fc" kind="function"><name>Size</name></member>
+    <member refid="de/d4f/classBvr_1_1TAssets_1a83b1840e1f24e8fde5de913ac99ed484" kind="function"><name>begin</name></member>
+    <member refid="de/d4f/classBvr_1_1TAssets_1a4432068dba5de8c667461aa5fcd43a48" kind="function"><name>end</name></member>
     <member refid="de/d4f/classBvr_1_1TAssets_1a7fe1f8e2ae2241edcf8e766efa838feb" kind="function"><name>FlushAssetEventsToGlobalQueue</name></member>
     <member refid="de/d4f/classBvr_1_1TAssets_1a01bacb7b4cd1841566c98dc2c02a1a58" kind="function"><name>PumpLifetimeEvents</name></member>
   </compound>
@@ -10719,6 +10742,7 @@
   <compound refid="d3/df6/structBvr_1_1Updated" kind="struct"><name>Bvr::Updated</name>
   </compound>
   <compound refid="d8/d10/structBvr_1_1Events_1_1UpdateSystem" kind="struct"><name>Bvr::Events::UpdateSystem</name>
+    <member refid="d8/d10/structBvr_1_1Events_1_1UpdateSystem_1ae1a4a1d7e7d452768684338785933b4c" kind="function"><name>Do</name></member>
     <member refid="d8/d10/structBvr_1_1Events_1_1UpdateSystem_1a09761fd13faaf18093a9c288159d75e4" kind="function"><name>Do</name></member>
     <member refid="d8/d10/structBvr_1_1Events_1_1UpdateSystem_1aa1a4eb65371167a73996e2db0a0ea2d1" kind="function"><name>Do</name></member>
     <member refid="d8/d10/structBvr_1_1Events_1_1UpdateSystem_1a0daebb20a0a137eb6ac076eb9cafbe64" kind="function"><name>Do</name></member>
@@ -11047,7 +11071,7 @@
     <member refid="db/dac/classBvr_1_1WRes_1a59a342752cd7694b0e9e68323164002d" kind="function"><name>operator*</name></member>
     <member refid="db/dac/classBvr_1_1WRes_1a68fae89afbc936a3509a52f7b70ee527" kind="function"><name>operator*</name></member>
   </compound>
-  <compound refid="d2/db1/namespace_0d157" kind="namespace"><name>@157</name>
+  <compound refid="d9/de9/namespace_0d158" kind="namespace"><name>@158</name>
   </compound>
   <compound refid="d2/d09/namespaceAnimation" kind="namespace"><name>Animation</name>
   </compound>
@@ -11086,11 +11110,11 @@
     <member refid="dc/d4f/CVar_8hpp_1a8331b7479ff89d18d9eb16eb93b5cf87a22ae0e2b89e5e3d477f988cc36d3272b" kind="enumvalue"><name>Float</name></member>
     <member refid="dc/d4f/CVar_8hpp_1a8331b7479ff89d18d9eb16eb93b5cf87ac26f15e86e3de4c398a8273272aba034" kind="enumvalue"><name>Bool</name></member>
     <member refid="dc/d4f/CVar_8hpp_1a8331b7479ff89d18d9eb16eb93b5cf87a27118326006d3829667a400ad23d5d98" kind="enumvalue"><name>String</name></member>
-    <member refid="db/d37/AssetSystem_8hpp_1ad32e19f1b581203b0995349e37b1a369" kind="enum"><name>AssetIndexT</name></member>
-    <member refid="db/d37/AssetSystem_8hpp_1a09eb584c8cbec30a81b268db7f21c2ad" kind="enum"><name>EHandleType</name></member>
-    <member refid="db/d37/AssetSystem_8hpp_1a09eb584c8cbec30a81b268db7f21c2ada6adf97f83acf6453d4a6a4b1070f3754" kind="enumvalue"><name>None</name></member>
-    <member refid="db/d37/AssetSystem_8hpp_1a09eb584c8cbec30a81b268db7f21c2adac43e0fd449c758dab8f891d8e19eb1a9" kind="enumvalue"><name>Strong</name></member>
-    <member refid="db/d37/AssetSystem_8hpp_1a09eb584c8cbec30a81b268db7f21c2ada7324e3727807d95037eb19d304fd91ec" kind="enumvalue"><name>Weak</name></member>
+    <member refid="d4/d08/AssetHandle_8hpp_1ad32e19f1b581203b0995349e37b1a369" kind="enum"><name>AssetIndexT</name></member>
+    <member refid="d4/d08/AssetHandle_8hpp_1a09eb584c8cbec30a81b268db7f21c2ad" kind="enum"><name>EHandleType</name></member>
+    <member refid="d4/d08/AssetHandle_8hpp_1a09eb584c8cbec30a81b268db7f21c2ada6adf97f83acf6453d4a6a4b1070f3754" kind="enumvalue"><name>None</name></member>
+    <member refid="d4/d08/AssetHandle_8hpp_1a09eb584c8cbec30a81b268db7f21c2adac43e0fd449c758dab8f891d8e19eb1a9" kind="enumvalue"><name>Strong</name></member>
+    <member refid="d4/d08/AssetHandle_8hpp_1a09eb584c8cbec30a81b268db7f21c2ada7324e3727807d95037eb19d304fd91ec" kind="enumvalue"><name>Weak</name></member>
     <member refid="db/d37/AssetSystem_8hpp_1a58fea1a257e5e6495045e40a71abe53a" kind="enum"><name>EAssetEvent</name></member>
     <member refid="db/d37/AssetSystem_8hpp_1a58fea1a257e5e6495045e40a71abe53aa0eceeb45861f9585dd7a97a3e36f85c6" kind="enumvalue"><name>Created</name></member>
     <member refid="db/d37/AssetSystem_8hpp_1a58fea1a257e5e6495045e40a71abe53aa35e0c8c0b180c95d4e122e55ed62cc64" kind="enumvalue"><name>Modified</name></member>
@@ -11290,8 +11314,8 @@
     <member refid="da/dd5/RenderFunction_8hpp_1a13dccf64c7ba31207258990b6b7a1a1c" kind="typedef"><name>TWithOutCtx</name></member>
     <member refid="d7/d72/AllocationFunctions_8hpp_1a2d910cee822d7aa527ede8e2d2f431c3" kind="typedef"><name>MallocFn</name></member>
     <member refid="d7/d72/AllocationFunctions_8hpp_1ac50047c19ca13f495b431cc4b41d1f36" kind="typedef"><name>FreeFn</name></member>
+    <member refid="d4/d08/AssetHandle_8hpp_1a03159bdb81b0028a9835c3959fa244a2" kind="typedef"><name>HandleIdT</name></member>
     <member refid="db/d43/AssetSystem_8cpp_1aea907f5add38e895a68d0bf0b8d586f6" kind="typedef"><name>TSourceInfoMap</name></member>
-    <member refid="db/d37/AssetSystem_8hpp_1a03159bdb81b0028a9835c3959fa244a2" kind="typedef"><name>HandleIdT</name></member>
     <member refid="db/d37/AssetSystem_8hpp_1a3957eaefc186763629e4c67b57353510" kind="typedef"><name>Assets</name></member>
     <member refid="dd/d04/FileWatcher_8cpp_1a050dee8ce4803cd5360a17149fe32b31" kind="typedef"><name>TPathStorage</name></member>
     <member refid="dd/d04/FileWatcher_8cpp_1afe6df6440c64d9e0d5fb4251db3af56f" kind="typedef"><name>TDirIter</name></member>
@@ -11353,6 +11377,7 @@
     <member refid="db/d8d/Archive_8hpp_1af1f835b0d67996f12126b0d8de204efa" kind="variable"><name>HasAmpOp</name></member>
     <member refid="db/d8d/Archive_8hpp_1abc44ab4ecc5050e3ed39038a6a9febfa" kind="variable"><name>ContainerProperty</name></member>
     <member refid="db/d8d/Archive_8hpp_1a312150d7319d204e6249503fbda0f84d" kind="variable"><name>Archiver</name></member>
+    <member refid="d4/d08/AssetHandle_8hpp_1a123062f6b2eea706aefd0caa6ee5e970" kind="variable"><name>IsAssetHandle</name></member>
     <member refid="de/d00/DependencyGraph_8hpp_1abb75f9b22f9a2b842799143dcfa589cd" kind="variable"><name>IsGraphNode</name></member>
     <member refid="d4/df1/GltfLoader_8cpp_1ad0ebe5f56effe48236646f7ca30fd49a" kind="variable"><name>kAsBinary</name></member>
     <member refid="d4/df1/GltfLoader_8cpp_1a219bbbf69409afc5d3c676309d95e6ad" kind="variable"><name>kEmbed</name></member>
@@ -11385,6 +11410,8 @@
     <member refid="d2/dac/3DEngine_8cpp_1af77922c49cae748beb2d6d6e1e0970c2" kind="function"><name>PrecreateTransforms</name></member>
     <member refid="d2/dac/3DEngine_8cpp_1aec7d31fc17a45d5685062b987c61b037" kind="function"><name>CopyTransforms</name></member>
     <member refid="d2/dac/3DEngine_8cpp_1a10418d83d73f9e98dfc7c45cad0d0337" kind="function"><name>TickWorld</name></member>
+    <member refid="d2/dac/3DEngine_8cpp_1a1e2680c1b57dd6adfed82ab70c460023" kind="function"><name>ReleaseMeshMaterialReferences</name></member>
+    <member refid="d2/dac/3DEngine_8cpp_1afe0d72336b7a4888dc346af4b41d028e" kind="function"><name>ReleaseWorldReferences</name></member>
     <member refid="d4/df0/DefaultComponentrenderSystems_8cpp_1a6ece9b0d13bc29a3b898fcd905cda297" kind="function"><name>PrepareSunFrustums</name></member>
     <member refid="d4/df0/DefaultComponentrenderSystems_8cpp_1a41babeddf0ad4f91d44b49d7a8cd4b61" kind="function"><name>CollectMeshAssets</name></member>
     <member refid="d4/df0/DefaultComponentrenderSystems_8cpp_1aa807e76a7fed68df0592056ce6876ba7" kind="function"><name>CollectSkins</name></member>
@@ -11399,7 +11426,7 @@
     <member refid="dd/d03/EnvironmentProbeComponent_8cpp_1a8b6e658193c2979b4c975cfcfd0d4a45" kind="function"><name>SetUpResampling</name></member>
     <member refid="dd/d03/EnvironmentProbeComponent_8cpp_1adc04fcb0d276d54eff68e40f04f7bef8" kind="function"><name>FinaliseCaptures</name></member>
     <member refid="d4/d70/VoxelManager_8cpp_1ac0f8c5574201148ca8c1729ed5833d72" kind="function"><name>Noise</name></member>
-    <member refid="d4/d70/VoxelManager_8cpp_1a5983e66e22b327c9ef7459b200d031f8" kind="function"><name>InitManager</name></member>
+    <member refid="d4/d70/VoxelManager_8cpp_1a2892de23861056133a013ff16c3d6a78" kind="function"><name>InitManager</name></member>
     <member refid="d4/d70/VoxelManager_8cpp_1a3a446fb9c1f5c76bf4fd3a395fc336a8" kind="function"><name>GenerateMesh</name></member>
     <member refid="d4/d70/VoxelManager_8cpp_1ab7f74dacf9169a5071be0c2725f87270" kind="function"><name>ProcessComponents</name></member>
     <member refid="d8/d07/AppLifetime_8cpp_1a2b2eab5b2e5f67b958287d2c2cfcdcc7" kind="function"><name>PollSensors</name></member>
@@ -11417,9 +11444,9 @@
     <member refid="df/dc8/CVar_8cpp_1ac5ddee6475b79fc364b48157b0a84f18" kind="function"><name>MakeCVar</name></member>
     <member refid="dc/d4f/CVar_8hpp_1a01daf07065b36afad039debe283020b4" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
     <member refid="db/d8d/Archive_8hpp_1a2b086d129a85816dd8c9cb72dc11639b" kind="function"><name>operator&amp;</name></member>
+    <member refid="d4/d08/AssetHandle_8hpp_1a8096d0e0a953b653ca4b3127199f07d2" kind="function"><name>Convert</name></member>
+    <member refid="d4/d08/AssetHandle_8hpp_1a00954283544476b44636bf60766b6199" kind="function"><name>Convert</name></member>
     <member refid="db/d43/AssetSystem_8cpp_1a5dda07d98943ac9ccabe7991e7b0641e" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
-    <member refid="db/d37/AssetSystem_8hpp_1a8096d0e0a953b653ca4b3127199f07d2" kind="function"><name>Convert</name></member>
-    <member refid="db/d37/AssetSystem_8hpp_1a00954283544476b44636bf60766b6199" kind="function"><name>Convert</name></member>
     <member refid="d3/d74/KeyCodes_8hpp_1ae500cffb248c2ad0ae6c54c4d5045131" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
     <member refid="d3/d74/KeyCodes_8hpp_1ab806ef0e1ca5af93babb49390f15939f" kind="function"><name>KeyToString</name></member>
     <member refid="d3/d74/KeyCodes_8hpp_1a6a1d75a0e181245abf60c15b42a3d9cb" kind="function"><name>ModToString</name></member>
@@ -11510,6 +11537,7 @@
     <member refid="d2/db3/LevelEditor_8cpp_1a23f38bdb90eb7723af286e72996f80ee" kind="function"><name>SwapWorldSystem</name></member>
     <member refid="d2/db3/LevelEditor_8cpp_1ab65f2c058f3fdee5d1098d329791fb86" kind="function"><name>ProcessDeferredLoads</name></member>
     <member refid="d2/db3/LevelEditor_8cpp_1ab80b1203e9f631eb73765e2e4f8f3a20" kind="function"><name>ToggleSimulateSystem</name></member>
+    <member refid="d2/db3/LevelEditor_8cpp_1a24593685bfc6c58113156591417d8fb0" kind="function"><name>ShutdownEditors</name></member>
     <member refid="d2/db3/LevelEditor_8cpp_1a48a4ffcfbb147767b1127b28280d5862" kind="function"><name>RemoveToolEventsOfType</name></member>
     <member refid="d2/db3/LevelEditor_8cpp_1a118710263ff169032e588d5f74e507c1" kind="function"><name>OnViewportFocused</name></member>
     <member refid="d2/df0/ComponentPropertyEditor_8cpp_1a95a536c26ca7070a805e09fbf73fb659" kind="function"><name>DrawComponent</name></member>
@@ -11536,15 +11564,15 @@
     <member refid="df/d93/IniTests_8cpp_1a713db6879939153716a48737eea51646" kind="function"><name>TEST_CASE</name></member>
     <member refid="df/d93/IniTests_8cpp_1ae4f7c14c021bdb9f4e50b847f60a1bba" kind="function"><name>TEST_CASE</name></member>
   </compound>
-  <compound refid="df/de1/namespaceBvr_1_1_0d133" kind="namespace"><name>Bvr::@133</name>
+  <compound refid="df/d39/namespaceBvr_1_1_0d134" kind="namespace"><name>Bvr::@134</name>
   </compound>
-  <compound refid="df/d7f/namespaceBvr_1_1_0d163" kind="namespace"><name>Bvr::@163</name>
+  <compound refid="d2/d61/namespaceBvr_1_1_0d164" kind="namespace"><name>Bvr::@164</name>
   </compound>
-  <compound refid="d4/dfd/namespaceBvr_1_1_0d347" kind="namespace"><name>Bvr::@347</name>
+  <compound refid="d0/dcd/namespaceBvr_1_1_0d348" kind="namespace"><name>Bvr::@348</name>
   </compound>
-  <compound refid="d6/d12/namespaceBvr_1_1_0d362" kind="namespace"><name>Bvr::@362</name>
+  <compound refid="dc/d2a/namespaceBvr_1_1_0d363" kind="namespace"><name>Bvr::@363</name>
   </compound>
-  <compound refid="db/d45/namespaceBvr_1_1_0d430" kind="namespace"><name>Bvr::@430</name>
+  <compound refid="d8/d44/namespaceBvr_1_1_0d431" kind="namespace"><name>Bvr::@431</name>
   </compound>
   <compound refid="de/d29/namespaceBvr_1_1Animation" kind="namespace"><name>Bvr::Animation</name>
     <member refid="d5/d42/AnimationSystem_8hpp_1a1a346d07b65ff164f2fa070966ee4f52" kind="enum"><name>EInterpolationMode</name></member>
@@ -11862,9 +11890,9 @@
     <member refid="d7/d92/SceneEditor_8cpp_1a147054b379972e15eebd615bbd4608e8" kind="function"><name>SampleAndModifyKeyframe</name></member>
     <member refid="d7/d92/SceneEditor_8cpp_1ad261aafed32a66f12dde6248cd2bac69" kind="function"><name>DeleteKeyframeFromEntity</name></member>
   </compound>
-  <compound refid="d5/dca/namespaceBvr_1_1Detail_1_1_0d157" kind="namespace"><name>Bvr::Detail::@157</name>
+  <compound refid="d1/d06/namespaceBvr_1_1Detail_1_1_0d158" kind="namespace"><name>Bvr::Detail::@158</name>
   </compound>
-  <compound refid="d0/d8a/namespaceBvr_1_1Detail_1_1_0d74" kind="namespace"><name>Bvr::Detail::@74</name>
+  <compound refid="d4/d7a/namespaceBvr_1_1Detail_1_1_0d75" kind="namespace"><name>Bvr::Detail::@75</name>
   </compound>
   <compound refid="da/db9/namespaceBvr_1_1Details" kind="namespace"><name>Bvr::Details</name>
     <member refid="d3/d22/Project_8cpp_1af7823969fbbad79046816cc119b5fd88" kind="function"><name>CreateDefaultAssetDir</name></member>
@@ -12548,7 +12576,7 @@
   </compound>
   <compound refid="df/d1e/namespaceBvr_1_1Python_1_1Detail" kind="namespace"><name>Bvr::Python::Detail</name>
   </compound>
-  <compound refid="d9/d40/namespaceBvr_1_1Python_1_1Detail_1_1_0d189" kind="namespace"><name>Bvr::Python::Detail::@189</name>
+  <compound refid="dd/d1f/namespaceBvr_1_1Python_1_1Detail_1_1_0d190" kind="namespace"><name>Bvr::Python::Detail::@190</name>
   </compound>
   <compound refid="da/d62/namespaceBvr_1_1Raycast" kind="namespace"><name>Bvr::Raycast</name>
     <member refid="d8/d2b/IntersectionFunctions_8hpp_1a1b596518391a078dfd21617606ec93b6" kind="function"><name>RayAABB</name></member>
@@ -13035,7 +13063,7 @@
     <member refid="d0/d76/Tests_8cpp_1a3531c9624545efe2340fe038f967a949" kind="function"><name>TEST_CASE</name></member>
     <member refid="d0/d76/Tests_8cpp_1af14475ef7ac558f96e5c3e5275ee9649" kind="function"><name>TEST_CASE</name></member>
   </compound>
-  <compound refid="d2/d08/namespaceBvr_1_1Renderer_1_1_0d312" kind="namespace"><name>Bvr::Renderer::@312</name>
+  <compound refid="d0/de3/namespaceBvr_1_1Renderer_1_1_0d313" kind="namespace"><name>Bvr::Renderer::@313</name>
   </compound>
   <compound refid="d3/d2b/namespaceBvr_1_1Renderer_1_1Attr" kind="namespace"><name>Bvr::Renderer::Attr</name>
     <member refid="d3/d9a/BindGroupMeta_8cpp_1a1afc1e01f5db8b30997354472e055ccb" kind="function"><name>Binding</name></member>
@@ -13119,11 +13147,11 @@
     <member refid="d0/d70/Material_8hpp_1ae13bbeb18dad1d2b8f2899cae168cb5b" kind="function"><name>GetMaterialMetaProperties</name></member>
     <member refid="d0/d70/Material_8hpp_1a082f13a857d25253af926ea017858f3c" kind="function"><name>MeshMaterialSystem</name></member>
   </compound>
-  <compound refid="df/dc6/namespaceBvr_1_1Renderer_1_1Detail_1_1_0d246" kind="namespace"><name>Bvr::Renderer::Detail::@246</name>
+  <compound refid="db/dbd/namespaceBvr_1_1Renderer_1_1Detail_1_1_0d247" kind="namespace"><name>Bvr::Renderer::Detail::@247</name>
   </compound>
-  <compound refid="d5/ded/namespaceBvr_1_1Renderer_1_1Detail_1_1_0d252" kind="namespace"><name>Bvr::Renderer::Detail::@252</name>
+  <compound refid="df/d52/namespaceBvr_1_1Renderer_1_1Detail_1_1_0d253" kind="namespace"><name>Bvr::Renderer::Detail::@253</name>
   </compound>
-  <compound refid="d0/dc1/namespaceBvr_1_1Renderer_1_1Detail_1_1_0d291" kind="namespace"><name>Bvr::Renderer::Detail::@291</name>
+  <compound refid="d8/d0f/namespaceBvr_1_1Renderer_1_1Detail_1_1_0d292" kind="namespace"><name>Bvr::Renderer::Detail::@292</name>
   </compound>
   <compound refid="dd/df9/namespaceBvr_1_1Renderer_1_1Device" kind="namespace"><name>Bvr::Renderer::Device</name>
     <member refid="dc/daf/BufferView_8cpp_1ae5a735abd83e1afc9a6c87e6e6c153b5" kind="variable"><name>s_bufferViewPool</name></member>
@@ -13248,7 +13276,7 @@
     <member refid="df/d54/VulkanUtils_8hpp_1a1af261fb8b27e504ff9baf50ded442cd" kind="function"><name>DECLARE_VK_HANDLE</name></member>
     <member refid="df/d54/VulkanUtils_8hpp_1a440c6b8cfd09ad0cfb2e2ee4268bf128" kind="function"><name>DECLARE_VK_HANDLE</name></member>
   </compound>
-  <compound refid="dc/dc0/namespaceBvr_1_1Renderer_1_1Vk_1_1_0d215" kind="namespace"><name>Bvr::Renderer::Vk::@215</name>
+  <compound refid="df/d3c/namespaceBvr_1_1Renderer_1_1Vk_1_1_0d216" kind="namespace"><name>Bvr::Renderer::Vk::@216</name>
   </compound>
   <compound refid="dc/df0/namespaceBvr_1_1Renderer_1_1Window" kind="namespace"><name>Bvr::Renderer::Window</name>
     <member refid="db/d54/RenderWindow_8hpp_1a175e1fd8dea11d4e115e536060168ae7" kind="typedef"><name>Id</name></member>
@@ -13359,6 +13387,7 @@
     <member refid="dc/d2d/CommonTests_2ResourceTests_8cpp_1a1aab85d9842137e096f996f4e00d984a" kind="function"><name>TEMPLATE_LIST_TEST_CASE</name></member>
     <member refid="dc/d2d/CommonTests_2ResourceTests_8cpp_1ac7e34e2575a9cdc8d183fc72429543b3" kind="function"><name>TEMPLATE_LIST_TEST_CASE</name></member>
     <member refid="dc/d2d/CommonTests_2ResourceTests_8cpp_1a468255ed0d0083937fb797ccd11690d7" kind="function"><name>TEMPLATE_LIST_TEST_CASE</name></member>
+    <member refid="dc/d2d/CommonTests_2ResourceTests_8cpp_1a87e6ccb4beadd4c865cee2f3ef8df767" kind="function"><name>TEMPLATE_LIST_TEST_CASE</name></member>
     <member refid="d0/d6b/Serialisation_8cpp_1a6fa8109251a0a045e27bf12d19d3d331" kind="function"><name>TEST_CASE</name></member>
     <member refid="d0/d6b/Serialisation_8cpp_1aa0520b8d77af05a0d3a49dca07e05e3c" kind="function"><name>TEST_CASE</name></member>
   </compound>
@@ -13548,8 +13577,8 @@
   </compound>
   <compound refid="d6/da3/namespaceBvr_1_1Window_1_1GLFW" kind="namespace"><name>Bvr::Window::GLFW</name>
     <member refid="dd/d50/glfwBackend_8cpp_1abee93c14c51fc0769cb145a052bb6f3d" kind="function"><name>DetectMonitors</name></member>
-    <member refid="dd/d50/glfwBackend_8cpp_1ad795ac14ca3eb4d5890bbae670155beb" kind="function"><name>UpdateWindows</name></member>
-    <member refid="dd/d50/glfwBackend_8cpp_1a7df653bbce2ee853445057905785ef40" kind="function"><name>CleanUpWindows</name></member>
+    <member refid="dd/d50/glfwBackend_8cpp_1ae68200e97c6bf8336744192c43227355" kind="function"><name>UpdateWindows</name></member>
+    <member refid="dd/d50/glfwBackend_8cpp_1a2577dd5bd5583bc3f00d75ccbef242af" kind="function"><name>CleanUpWindows</name></member>
     <member refid="dd/d50/glfwBackend_8cpp_1a6371554e1109ca0fce6d7960a9f394bc" kind="function"><name>PollInput</name></member>
     <member refid="dd/d50/glfwBackend_8cpp_1a55eb3298b7722e27e8a9749b2edd35ca" kind="function"><name>SyncCursors</name></member>
   </compound>
@@ -13825,6 +13854,9 @@
   </compound>
   <compound refid="db/d8d/Archive_8hpp" kind="file"><name>Archive.hpp</name>
   </compound>
+  <compound refid="d4/d08/AssetHandle_8hpp" kind="file"><name>AssetHandle.hpp</name>
+    <member refid="d4/d08/AssetHandle_8hpp_1a67a7a7026a9abd4e45b048f026cda088" kind="define"><name>HDL_NODISCARD</name></member>
+  </compound>
   <compound refid="d1/d79/AssetManager_8hpp" kind="file"><name>AssetManager.hpp</name>
   </compound>
   <compound refid="db/d19/AssetMetaHelpers_8hpp" kind="file"><name>AssetMetaHelpers.hpp</name>
@@ -13836,7 +13868,6 @@
   <compound refid="db/d43/AssetSystem_8cpp" kind="file"><name>AssetSystem.cpp</name>
   </compound>
   <compound refid="db/d37/AssetSystem_8hpp" kind="file"><name>AssetSystem.hpp</name>
-    <member refid="db/d37/AssetSystem_8hpp_1a67a7a7026a9abd4e45b048f026cda088" kind="define"><name>HDL_NODISCARD</name></member>
   </compound>
   <compound refid="dd/d04/FileWatcher_8cpp" kind="file"><name>FileWatcher.cpp</name>
   </compound>
