@@ -2,8 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="class_bvr_1_1_c_editor_tool" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>Bvr::CEditorTool</compoundname>
-    <derivedcompoundref refid="class_bvr_1_1_c_asset_browser" prot="public" virt="non-virtual">Bvr::CAssetBrowser</derivedcompoundref>
-    <derivedcompoundref refid="class_bvr_1_1_c_level_editor" prot="public" virt="non-virtual">Bvr::CLevelEditor</derivedcompoundref>
+    <derivedcompoundref refid="class_bvr_1_1_c_compount_editor_tool" prot="public" virt="non-virtual">Bvr::CCompountEditorTool</derivedcompoundref>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="class_bvr_1_1_c_editor_tool_1a38a814ea5f1c3a8b989dc4ff5d0773ba" prot="public" static="no" mutable="no">
         <type>std::string</type>
@@ -133,13 +132,13 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="class_bvr_1_1_c_editor_tool_1aad31b4c870020aac854d7f32b1eb30d4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_bvr_1_1_c_editor_tool_1a6614590ad14b02f95ab5ea7c50e25dae" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>Bvr::CEditorTool::CEditorTool</definition>
-        <argsstring>(std::string name)</argsstring>
+        <argsstring>(std::string_view name)</argsstring>
         <name>CEditorTool</name>
         <param>
-          <type>std::string</type>
+          <type>std::string_view</type>
           <declname>name</declname>
         </param>
         <briefdescription>
@@ -218,6 +217,7 @@
         <name>GetCommandList</name>
         <reimplementedby refid="class_bvr_1_1_c_asset_browser_1a16765707c18b19187d925352271ee1b3">GetCommandList</reimplementedby>
         <reimplementedby refid="class_bvr_1_1_c_level_editor_1abbab92fd0386539c978ffddd6de6c5d0">GetCommandList</reimplementedby>
+        <reimplementedby refid="class_bvr_1_1_c_material_editor_1a52adadacf373bb1fbae72a920d66c4bc">GetCommandList</reimplementedby>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -290,6 +290,10 @@
         <definition>virtual void Bvr::CEditorTool::Build</definition>
         <argsstring>(EditorUI::UIBuilder &amp;dst)=0</argsstring>
         <name>Build</name>
+        <reimplementedby refid="class_bvr_1_1_c_material_editor_1a8b57d56532dbb76fd29019670d8502eb">Build</reimplementedby>
+        <reimplementedby refid="struct_bvr_1_1_s_scene_panel_1a54fe2970345e812f6c4339787a9be05b">Build</reimplementedby>
+        <reimplementedby refid="class_bvr_1_1_c_resource_import_panel_1aa9053a4e6fbeba8e61387e838055413a">Build</reimplementedby>
+        <reimplementedby refid="class_bvr_1_1_c_scene_editor_1a4e879433a70356bcc15beed02b52e4e9">Build</reimplementedby>
         <reimplementedby refid="class_bvr_1_1_c_asset_browser_1a580cfe66ce270699496ae020d6322f4c">Build</reimplementedby>
         <reimplementedby refid="class_bvr_1_1_c_level_editor_1aa42c64cf0e859599eff0d189e4ade170">Build</reimplementedby>
         <param>
@@ -401,27 +405,57 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="2">
+      <node id="7">
+        <label>Bvr::CSceneEditor</label>
+        <link refid="class_bvr_1_1_c_scene_editor"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Bvr::CMaterialEditor</label>
+        <link refid="class_bvr_1_1_c_material_editor"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
         <label>Bvr::CAssetBrowser</label>
         <link refid="class_bvr_1_1_c_asset_browser"/>
-        <childnode refid="1" relation="public-inheritance">
+        <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
       <node id="1">
         <label>Bvr::CEditorTool</label>
         <link refid="class_bvr_1_1_c_editor_tool"/>
       </node>
-      <node id="3">
+      <node id="4">
         <label>Bvr::CLevelEditor</label>
         <link refid="class_bvr_1_1_c_level_editor"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>Bvr::SScenePanel</label>
+        <link refid="struct_bvr_1_1_s_scene_panel"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Bvr::CCompountEditorTool</label>
+        <link refid="class_bvr_1_1_c_compount_editor_tool"/>
         <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>Bvr::CResourceImportPanel</label>
+        <link refid="class_bvr_1_1_c_resource_import_panel"/>
+        <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/UI/EditorTool.hpp" line="7" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/UI/EditorTool.hpp" bodystart="7" bodyend="49"/>
     <listofallmembers>
       <member refid="class_bvr_1_1_c_editor_tool_1af3503e127aeb4145e79a69597ccb8aad" prot="protected" virt="pure-virtual"><scope>Bvr::CEditorTool</scope><name>Build</name></member>
-      <member refid="class_bvr_1_1_c_editor_tool_1aad31b4c870020aac854d7f32b1eb30d4" prot="public" virt="non-virtual"><scope>Bvr::CEditorTool</scope><name>CEditorTool</name></member>
+      <member refid="class_bvr_1_1_c_editor_tool_1a6614590ad14b02f95ab5ea7c50e25dae" prot="public" virt="non-virtual"><scope>Bvr::CEditorTool</scope><name>CEditorTool</name></member>
       <member refid="class_bvr_1_1_c_editor_tool_1add2ced94e565c6cf8839e6bbf4bd474b" prot="private" virt="non-virtual"><scope>Bvr::CEditorTool</scope><name>CreateWindow</name></member>
       <member refid="class_bvr_1_1_c_editor_tool_1a05f041ead9d4117ea66be11562ca2534" prot="public" virt="virtual"><scope>Bvr::CEditorTool</scope><name>GetCommandList</name></member>
       <member refid="class_bvr_1_1_c_editor_tool_1ad773602d49792ecc13f0ff367675e474" prot="protected" virt="non-virtual"><scope>Bvr::CEditorTool</scope><name>GetContentEntity</name></member>

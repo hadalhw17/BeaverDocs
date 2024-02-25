@@ -2,36 +2,77 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="_entity_tree_8hpp" kind="file" language="C++">
     <compoundname>EntityTree.hpp</compoundname>
-    <includes refid="_widgets_8hpp" local="yes">Widgets.hpp</includes>
+    <includes refid="_editor_tool_8hpp" local="yes">UI/EditorTool.hpp</includes>
     <incdepgraph>
-      <node id="3">
+      <node id="4">
         <label>BvrMath.hpp</label>
       </node>
-      <node id="6">
+      <node id="7">
         <label>Meta/Meta.hpp</label>
       </node>
-      <node id="5">
+      <node id="11">
+        <label>BvrFont/Font.hpp</label>
+      </node>
+      <node id="6">
         <label>BvrEditor/UICommand.hpp</label>
       </node>
-      <node id="4">
+      <node id="8">
+        <label>EditorUIToolkit.hpp</label>
+        <link refid="_editor_u_i_toolkit_8hpp_source"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
         <label>BvrWorld/Entity.hpp</label>
       </node>
-      <node id="2">
+      <node id="3">
         <label>Widgets.hpp</label>
         <link refid="_widgets_8hpp_source"/>
-        <childnode refid="3" relation="include">
-        </childnode>
         <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>BvrWindow/Window.hpp</label>
+      </node>
+      <node id="13">
+        <label>TransformComponent.hpp</label>
       </node>
       <node id="1">
         <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/EntityTree.hpp</label>
         <link refid="_entity_tree_8hpp"/>
         <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>BvrUI/BvrUI.hpp</label>
+      </node>
+      <node id="9">
+        <label>Entity.hpp</label>
+      </node>
+      <node id="2">
+        <label>UI/EditorTool.hpp</label>
+        <link refid="_editor_tool_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
         </childnode>
       </node>
     </incdepgraph>
@@ -44,25 +85,24 @@
     <programlisting>
 <codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Widgets.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;UI/EditorTool.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">CEntity;</highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Bvr<sp/>{</highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">CLevelEditor;</highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">SceneServer;</highlight></codeline>
-<codeline lineno="10" refid="struct_bvr_1_1_s_scene_panel" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_s_scene_panel" kindref="compound">SScenePanel</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_bvr_1_1_editor_u_i_1_1_c_editor_tool" kindref="compound">EditorUI::CEditorTool</ref><sp/>{</highlight></codeline>
-<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_s_scene_panel" kindref="compound">SScenePanel</ref>(<ref refid="class_bvr_1_1_c_level_editor" kindref="compound">CLevelEditor</ref>*<sp/>pEditor)</highlight></codeline>
-<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="class_bvr_1_1_c_editor_tool" kindref="compound">CEditorTool</ref>{</highlight><highlight class="stringliteral">&quot;Scene<sp/>Tree&quot;</highlight><highlight class="normal">},<sp/>m_pOwningEditor{pEditor}<sp/>{}</highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>ShowImpl()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal"><sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>DrawUI();<sp/>}</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>DrawUI();</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>DrawUIImpl(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>group,<sp/>CEntity&amp;<sp/>ent,<sp/>SceneServer&amp;<sp/>server);</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bvr_1_1_c_level_editor" kindref="compound">CLevelEditor</ref>*<sp/>m_pOwningEditor;</highlight></codeline>
-<codeline lineno="20"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="21"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Bvr</highlight></codeline>
+<codeline lineno="10" refid="struct_bvr_1_1_s_scene_panel" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_s_scene_panel" kindref="compound">SScenePanel</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_bvr_1_1_c_compount_editor_tool" kindref="compound">CCompountEditorTool</ref><sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_s_scene_panel" kindref="compound">SScenePanel</ref>(<ref refid="class_bvr_1_1_c_level_editor" kindref="compound">CLevelEditor</ref>*<sp/>pEditor);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Build(<ref refid="struct_bvr_1_1_editor_u_i_1_1_u_i_builder" kindref="compound">EditorUI::UIBuilder</ref>&amp;<sp/>dst)<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal"><sp/>{}</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>ShowImpl()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal"><sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>DrawUI();<sp/>}</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>DrawUI();</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>DrawUIImpl(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>group,<sp/>CEntity&amp;<sp/>ent,<sp/>SceneServer&amp;<sp/>server);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bvr_1_1_c_level_editor" kindref="compound">CLevelEditor</ref>*<sp/>m_pOwningEditor;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Bvr</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Panels/EntityTree.hpp"/>
   </compounddef>

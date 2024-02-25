@@ -133,9 +133,10 @@
   <compound refid="dc/d9f/structBvr_1_1AssetBrowser" kind="struct"><name>Bvr::AssetBrowser</name>
     <member refid="dc/d9f/structBvr_1_1AssetBrowser_1a2ee5a01361c7e400d2b055970ceea0a9" kind="function"><name>SyncWithFileWatcher</name></member>
     <member refid="dc/d9f/structBvr_1_1AssetBrowser_1a726606d3214cf08e00023319d0de6d8a" kind="function"><name>OnOSFileDropped</name></member>
-    <member refid="dc/d9f/structBvr_1_1AssetBrowser_1a6d20c2a9071967a94e09ee594d8e31cc" kind="function"><name>UpdateSystem</name></member>
+    <member refid="dc/d9f/structBvr_1_1AssetBrowser_1aee9834453620c4b2c9b6db7c099966cd" kind="function"><name>InitResources</name></member>
     <member refid="dc/d9f/structBvr_1_1AssetBrowser_1a8d183c472287f8851b05414d17f32442" kind="function"><name>InvalidateUI</name></member>
     <member refid="dc/d9f/structBvr_1_1AssetBrowser_1ab017b8ae6f50d2d935518330f7857828" kind="function"><name>InvokeCommands</name></member>
+    <member refid="dc/d9f/structBvr_1_1AssetBrowser_1a810a2fbb6b6755d7505ddf9eb949b725" kind="function"><name>CreateMainBrowser</name></member>
   </compound>
   <compound refid="d1/db3/structBvr_1_1AssetBrowserPlugin" kind="struct"><name>Bvr::AssetBrowserPlugin</name>
     <member refid="d1/db3/structBvr_1_1AssetBrowserPlugin_1a228cdb8aaa820c518f1ea67f1a0fd017" kind="function"><name>Build</name></member>
@@ -485,11 +486,10 @@
     <member refid="db/da9/classBvr_1_1CAssetBrowser_1acb9df07de75c1a9f11e52e795c0717d1" kind="variable"><name>CommandList</name></member>
     <member refid="db/da9/classBvr_1_1CAssetBrowser_1a01b12c718638037cb740426383a7074a" kind="variable"><name>m_pResourceImporter</name></member>
     <member refid="db/da9/classBvr_1_1CAssetBrowser_1af19155e2041302c176ad8faad317b453" kind="friend"><name>AssetBrowser</name></member>
-    <member refid="db/da9/classBvr_1_1CAssetBrowser_1aa73c4b2a688648b95b1bfe6326f27dd9" kind="function"><name>CAssetBrowser</name></member>
+    <member refid="db/da9/classBvr_1_1CAssetBrowser_1aa242a8985686a619cf3e207defd8602d" kind="function"><name>CAssetBrowser</name></member>
     <member refid="db/da9/classBvr_1_1CAssetBrowser_1a25b447fba6c404111b289493de7aa739" kind="function"><name>~CAssetBrowser</name></member>
     <member refid="db/da9/classBvr_1_1CAssetBrowser_1a610df0d127e22f6484635123d6865eb3" kind="function"><name>AddWatchDirectory</name></member>
     <member refid="db/da9/classBvr_1_1CAssetBrowser_1a5ad49879748085e43677395f7ff797b8" kind="function"><name>RemoveWatchDirectory</name></member>
-    <member refid="db/da9/classBvr_1_1CAssetBrowser_1a446e26674142e0075b7eac81d75cf08e" kind="function"><name>Show</name></member>
     <member refid="db/da9/classBvr_1_1CAssetBrowser_1a580cfe66ce270699496ae020d6322f4c" kind="function"><name>Build</name></member>
     <member refid="db/da9/classBvr_1_1CAssetBrowser_1ac265f72ccc877222b67c0a935a6072b1" kind="function"><name>GetCurrentPath</name></member>
     <member refid="db/da9/classBvr_1_1CAssetBrowser_1a16765707c18b19187d925352271ee1b3" kind="function"><name>GetCommandList</name></member>
@@ -507,6 +507,7 @@
     <member refid="db/da9/classBvr_1_1CAssetBrowser_1a08a13681003847adb0516762c1374f34" kind="function"><name>InvalidateUI</name></member>
     <member refid="db/da9/classBvr_1_1CAssetBrowser_1a42cd0e7553777365842890aa3301f088" kind="function"><name>CanBacktrackDir</name></member>
     <member refid="db/da9/classBvr_1_1CAssetBrowser_1a21cf5352d6e98d53d48a5132e3434759" kind="function"><name>GetParentDir</name></member>
+    <member refid="db/da9/classBvr_1_1CAssetBrowser_1acdad046659b4fcd166cf1c37ff0c8f52" kind="function"><name>ShowImpl</name></member>
   </compound>
   <compound refid="db/dca/structBvr_1_1Meta_1_1Detail_1_1CastFrom" kind="struct"><name>Bvr::Meta::Detail::CastFrom</name>
     <member refid="db/dca/structBvr_1_1Meta_1_1Detail_1_1CastFrom_1a7c2bc3f83f6e616d0c319058668c4a9c" kind="typedef"><name>SrcType</name></member>
@@ -983,10 +984,10 @@
     <member refid="d1/de8/classBvr_1_1CBvrEditor_1a6b3da73d996239101df6756a52e8b0cb" kind="function"><name>GetEditorHWorld</name></member>
     <member refid="d1/de8/classBvr_1_1CBvrEditor_1a3d4f978dfe230a95f36c1ef2bdc7fc0a" kind="function"><name>GetLevelEditor</name></member>
     <member refid="d1/de8/classBvr_1_1CBvrEditor_1af35853697f0e4049452697b70ff5f9d5" kind="function"><name>ExecuteCommand</name></member>
+    <member refid="d1/de8/classBvr_1_1CBvrEditor_1a4d125f4e4f731326311d10e7da77d397" kind="function"><name>AddEditorTool</name></member>
     <member refid="d1/de8/classBvr_1_1CBvrEditor_1aeea16730f847b18d00b3bf8ca2f87a07" kind="function"><name>ExecuteCommand</name></member>
     <member refid="d1/de8/classBvr_1_1CBvrEditor_1a44fd58496f7ac72ead6c6988f1f18dfa" kind="function"><name>Undo</name></member>
     <member refid="d1/de8/classBvr_1_1CBvrEditor_1addb95b4d51cc2e813b078e7d6cab80ff" kind="function"><name>Redo</name></member>
-    <member refid="d1/de8/classBvr_1_1CBvrEditor_1ae7581ed5973f50d6b540bb62e52cf079" kind="function"><name>GetTools</name></member>
     <member refid="d1/de8/classBvr_1_1CBvrEditor_1a11bd00843ec535ce593d5861d3670e7a" kind="function"><name>ExportAsset</name></member>
     <member refid="d1/de8/classBvr_1_1CBvrEditor_1a3c3a8fad1288ee132d2676968b5652b2" kind="function"><name>BeginEditorMainWindow</name></member>
     <member refid="d1/de8/classBvr_1_1CBvrEditor_1a38b939158be3580656d0669d70140e40" kind="function"><name>EndEditorMainWindow</name></member>
@@ -1151,6 +1152,13 @@
     <member refid="db/da3/classBvr_1_1CComponentRegistry_1a1e8584867ca6e28bb39c94c1ff351e89" kind="function"><name>GetAll</name></member>
     <member refid="db/da3/classBvr_1_1CComponentRegistry_1a2fb3a55f54a7ede2cc63719049536db2" kind="function"><name>Get</name></member>
   </compound>
+  <compound refid="d0/d85/classBvr_1_1CCompountEditorTool" kind="class"><name>Bvr::CCompountEditorTool</name>
+    <member refid="d0/d85/classBvr_1_1CCompountEditorTool_1ad97f20421ae5692b30f5a60d695de1ef" kind="variable"><name>m_EdWorldEnt</name></member>
+    <member refid="d0/d85/classBvr_1_1CCompountEditorTool_1ae8b0d981cd39a330f7a82918e6792761" kind="function"><name>CCompountEditorTool</name></member>
+    <member refid="d0/d85/classBvr_1_1CCompountEditorTool_1a565f7195e47053fec063092a7173b477" kind="function"><name>~CCompountEditorTool</name></member>
+    <member refid="d0/d85/classBvr_1_1CCompountEditorTool_1a7fbb909e3e67a43600ce769389c49e21" kind="function"><name>GetEdWorldEntity</name></member>
+    <member refid="d0/d85/classBvr_1_1CCompountEditorTool_1a0aaa8f76eb1618976a08dd587b20b528" kind="function"><name>CreateEntity</name></member>
+  </compound>
   <compound refid="da/da5/classBvr_1_1Renderer_1_1CComputePSO" kind="class"><name>Bvr::Renderer::CComputePSO</name>
     <member refid="da/da5/classBvr_1_1Renderer_1_1CComputePSO_1a998b938747f9cc0492c008c27d7689eb" kind="function"><name>~CComputePSO</name></member>
   </compound>
@@ -1191,6 +1199,7 @@
     <member refid="d1/d50/classBvr_1_1Detail_1_1CConsoleView_1ae8904c37a1cd749dd9fb47f256da5f69" kind="variable"><name>m_hintCursor</name></member>
     <member refid="d1/d50/classBvr_1_1Detail_1_1CConsoleView_1ac820a5f58e93194cff6d26d59e92b0c4" kind="variable"><name>m_shouldSkipReset</name></member>
     <member refid="d1/d50/classBvr_1_1Detail_1_1CConsoleView_1a9c7728e9c3c40629f5437d9a89c20a90" kind="function"><name>CConsoleView</name></member>
+    <member refid="d1/d50/classBvr_1_1Detail_1_1CConsoleView_1af30d38b1bc4092d4dbd7b81c3f1d87bf" kind="function"><name>Build</name></member>
     <member refid="d1/d50/classBvr_1_1Detail_1_1CConsoleView_1a96da5fa6a35822c1e0f3e52a562dc233" kind="function"><name>ShowImpl</name></member>
     <member refid="d1/d50/classBvr_1_1Detail_1_1CConsoleView_1a1c5f739063421cb478a99c3859f05d89" kind="function"><name>TextInputCallback</name></member>
     <member refid="d1/d50/classBvr_1_1Detail_1_1CConsoleView_1a316e57210f87106ec812d60325e5a87a" kind="function"><name>ClearInputBuf</name></member>
@@ -1482,7 +1491,7 @@
     <member refid="df/d35/classBvr_1_1CEditorTool_1a169130861281e71b095100acd63a790e" kind="variable"><name>m_footerEntity</name></member>
     <member refid="df/d35/classBvr_1_1CEditorTool_1a4c19b712f16d5b9fccf636dc0cd004c2" kind="variable"><name>m_isOwnWindow</name></member>
     <member refid="df/d35/classBvr_1_1CEditorTool_1afd7fef4a9d7c4d6ded4a0269abf03b9d" kind="variable"><name>m_shouldRebuild</name></member>
-    <member refid="df/d35/classBvr_1_1CEditorTool_1aad31b4c870020aac854d7f32b1eb30d4" kind="function"><name>CEditorTool</name></member>
+    <member refid="df/d35/classBvr_1_1CEditorTool_1a6614590ad14b02f95ab5ea7c50e25dae" kind="function"><name>CEditorTool</name></member>
     <member refid="df/d35/classBvr_1_1CEditorTool_1a7d3ebf70abcce0da61a185a111e73cab" kind="function"><name>~CEditorTool</name></member>
     <member refid="df/d35/classBvr_1_1CEditorTool_1a3b4dd8c740e9db32ff4fb3cdf660b059" kind="function"><name>Show</name></member>
     <member refid="df/d35/classBvr_1_1CEditorTool_1abe07431f139d6d7264142c5476269ee3" kind="function"><name>Hide</name></member>
@@ -1502,10 +1511,11 @@
   <compound refid="db/deb/classBvr_1_1EditorUI_1_1CEditorTool" kind="class"><name>Bvr::EditorUI::CEditorTool</name>
     <member refid="db/deb/classBvr_1_1EditorUI_1_1CEditorTool_1a9d9556d00662f4334d6ac6c22dd855cd" kind="variable"><name>m_name</name></member>
     <member refid="db/deb/classBvr_1_1EditorUI_1_1CEditorTool_1a90ca7af4a86569fd094e6a7a58019410" kind="variable"><name>m_bOpened</name></member>
+    <member refid="db/deb/classBvr_1_1EditorUI_1_1CEditorTool_1a79bb3d894f22c12d3769be6988cd5588" kind="variable"><name>m_allowChildDocking</name></member>
     <member refid="db/deb/classBvr_1_1EditorUI_1_1CEditorTool_1a01c87931001c1f85c72a93524cec0b56" kind="variable"><name>m_menuBar</name></member>
     <member refid="db/deb/classBvr_1_1EditorUI_1_1CEditorTool_1a8c6bee228660107e40f645295609a186" kind="function"><name>CEditorTool</name></member>
     <member refid="db/deb/classBvr_1_1EditorUI_1_1CEditorTool_1aa94ecdc5cd97589f2d050192d92a2e7c" kind="function"><name>~CEditorTool</name></member>
-    <member refid="db/deb/classBvr_1_1EditorUI_1_1CEditorTool_1abc8615a5fe8003841af8686c38b0f55a" kind="function"><name>Show</name></member>
+    <member refid="db/deb/classBvr_1_1EditorUI_1_1CEditorTool_1a4dcea14c208afd58f8b143c6d2f21fdb" kind="function"><name>GetName</name></member>
     <member refid="db/deb/classBvr_1_1EditorUI_1_1CEditorTool_1a81e768a90b1fcd37b92779b5b40601f5" kind="function"><name>GetWindowAlpha</name></member>
     <member refid="db/deb/classBvr_1_1EditorUI_1_1CEditorTool_1a3351010b3acd0aed4996926340f2c97d" kind="function"><name>GetCommandList</name></member>
     <member refid="db/deb/classBvr_1_1EditorUI_1_1CEditorTool_1a313a3203daf7a9f30996646fb6da75bf" kind="function"><name>HasModifiedContent</name></member>
@@ -2456,7 +2466,7 @@
     <member refid="d4/d90/classBvr_1_1CLevelEditor_1a48262bfe2058503705d04d6deaff39a2" kind="variable"><name>m_allowMouseInput</name></member>
     <member refid="d4/d90/classBvr_1_1CLevelEditor_1ad009294de9670e8b0e0baf300f8869b9" kind="variable"><name>m_wasLevelModified</name></member>
     <member refid="d4/d90/classBvr_1_1CLevelEditor_1ace7edaf776ecc7e627bbcaef0727a7c2" kind="variable"><name>LevelEditorSystems</name></member>
-    <member refid="d4/d90/classBvr_1_1CLevelEditor_1ae2e62a980ecc141547bb2d2b8c73b1ac" kind="function"><name>CLevelEditor</name></member>
+    <member refid="d4/d90/classBvr_1_1CLevelEditor_1a6f05a0c23865b6eb2e608f7c63b56096" kind="function"><name>CLevelEditor</name></member>
     <member refid="d4/d90/classBvr_1_1CLevelEditor_1a37767a5119994d8ac68f735e82ce8f67" kind="function"><name>~CLevelEditor</name></member>
     <member refid="d4/d90/classBvr_1_1CLevelEditor_1a6944b61c734669262f2a8e6a524fae4d" kind="function"><name>ShowImpl</name></member>
     <member refid="d4/d90/classBvr_1_1CLevelEditor_1abbab92fd0386539c978ffddd6de6c5d0" kind="function"><name>GetCommandList</name></member>
@@ -2499,18 +2509,18 @@
     <member refid="d4/d90/classBvr_1_1CLevelEditor_1a44f82f2c68f429f618885bf0d5709270" kind="function"><name>SetHoveredGizmo</name></member>
     <member refid="d4/d90/classBvr_1_1CLevelEditor_1a0ff28d05d0dbeb90bf7d96982133365a" kind="function"><name>GetHoveredGizmo</name></member>
     <member refid="d4/d90/classBvr_1_1CLevelEditor_1a4da6948429d2a9a9fe52f897dc501736" kind="function"><name>SetOnKeyFrameInsert</name></member>
+    <member refid="d4/d90/classBvr_1_1CLevelEditor_1a3077563a6ccc8afb6017686d9a6ec3f9" kind="function"><name>SetWasLevelModified</name></member>
     <member refid="d4/d90/classBvr_1_1CLevelEditor_1adfa78a1fff16e915fa992a75c767663e" kind="function"><name>OnKeyPress</name></member>
     <member refid="d4/d90/classBvr_1_1CLevelEditor_1aefee6ede3ca44ec231c9e57647c945a9" kind="function"><name>OnMouseMove</name></member>
     <member refid="d4/d90/classBvr_1_1CLevelEditor_1a9b2d11361dd2f0f6f48b8c61c0223bce" kind="function"><name>OnMousePress</name></member>
     <member refid="d4/d90/classBvr_1_1CLevelEditor_1a63f5c9231b0f5d7b0e511cec8061016e" kind="function"><name>OnMouseScroll</name></member>
     <member refid="d4/d90/classBvr_1_1CLevelEditor_1a0fcfcdbd87fe6de26603d4bce7246acc" kind="function"><name>CreateSceneFromEntity</name></member>
-    <member refid="d4/d90/classBvr_1_1CLevelEditor_1a3077563a6ccc8afb6017686d9a6ec3f9" kind="function"><name>SetWasLevelModified</name></member>
-    <member refid="d4/d90/classBvr_1_1CLevelEditor_1a96d10d58389506e5480547c6d67a1375" kind="function"><name>ShowMainToolsWindow</name></member>
+    <member refid="d4/d90/classBvr_1_1CLevelEditor_1a4ef05a2c264a20d9d2d6c47f5cc8507f" kind="function"><name>ShowEditorToolPanel</name></member>
+    <member refid="d4/d90/classBvr_1_1CLevelEditor_1afbef6505d45d55eeec9d54ba14fc5153" kind="function"><name>ShowPropertyPanel</name></member>
     <member refid="d4/d90/classBvr_1_1CLevelEditor_1a71db7adab212efd5884a6f9f840e1ace" kind="function"><name>CreateViewport</name></member>
     <member refid="d4/d90/classBvr_1_1CLevelEditor_1a7127191249a73ed2aaf36191cdca2cde" kind="function"><name>ToggleSimulate</name></member>
     <member refid="d4/d90/classBvr_1_1CLevelEditor_1a2370dbaccf7bdeb13b084da6971f14ed" kind="function"><name>DoEditScene</name></member>
     <member refid="d4/d90/classBvr_1_1CLevelEditor_1a7b5c16b14c034e2468c3d2d32171c5d2" kind="function"><name>ProcessCameraInput</name></member>
-    <member refid="d4/d90/classBvr_1_1CLevelEditor_1aa3edfd38df9fd90785dc4fe34e0db5d3" kind="function"><name>ShowEditorTools</name></member>
     <member refid="d4/d90/classBvr_1_1CLevelEditor_1a8c04f6260598c84065d803e547b63452" kind="function"><name>ActivateTool</name></member>
     <member refid="d4/d90/classBvr_1_1CLevelEditor_1a77a6107869d5778bb9a544312d52a196" kind="function"><name>ActivateTool</name></member>
     <member refid="d4/d90/classBvr_1_1CLevelEditor_1a13c48ad8ab9927cad428c074e72a7dc6" kind="function"><name>ActivateTool</name></member>
@@ -2621,6 +2631,7 @@
     <member refid="dd/d53/classBvr_1_1CMaterialEditor_1ab01a13c2cf6407ce2b6f2513072408ec" kind="function"><name>OnNewMaterial</name></member>
     <member refid="dd/d53/classBvr_1_1CMaterialEditor_1a22b0cefacb95e54c1a6e37c0706843d9" kind="function"><name>OnOpenMaterial</name></member>
     <member refid="dd/d53/classBvr_1_1CMaterialEditor_1a5cf63ebebd12422ba8474ebdb3ed70ed" kind="function"><name>SetUpPreviewWorld</name></member>
+    <member refid="dd/d53/classBvr_1_1CMaterialEditor_1a8b57d56532dbb76fd29019670d8502eb" kind="function"><name>Build</name></member>
   </compound>
   <compound refid="d7/d7b/classBvr_1_1CMaterialEdViewport" kind="class"><name>Bvr::CMaterialEdViewport</name>
     <member refid="d7/d7b/classBvr_1_1CMaterialEdViewport_1af1ce948b67cc45b148b0b16eef7df0e7" kind="variable"><name>m_pMaterialEd</name></member>
@@ -2877,9 +2888,10 @@
     <member refid="dc/db4/classBvr_1_1Profiling_1_1CProfilingSession_1aab88bc206e2c3bbfe3c5050b246d49e5" kind="function"><name>~CProfilingSession</name></member>
   </compound>
   <compound refid="db/d32/classBvr_1_1CProfilingTool" kind="class"><name>Bvr::CProfilingTool</name>
-    <member refid="db/d32/classBvr_1_1CProfilingTool_1a179430d8cef1cb13907791f08f1d6099" kind="function"><name>CProfilingTool</name></member>
+    <member refid="db/d32/classBvr_1_1CProfilingTool_1a45e1ea05684ca205caf7cfccefde6079" kind="function"><name>CProfilingTool</name></member>
     <member refid="db/d32/classBvr_1_1CProfilingTool_1a7b8b482ab2587f3e8d2c03a1451a6502" kind="function"><name>GetWindowAlpha</name></member>
     <member refid="db/d32/classBvr_1_1CProfilingTool_1ae04cf8164777a475dd3d5ba29a7a5f5d" kind="function"><name>ShowImpl</name></member>
+    <member refid="db/d32/classBvr_1_1CProfilingTool_1ac513b2dc850dd3cf855b1460117002fa" kind="function"><name>Build</name></member>
   </compound>
   <compound refid="d8/d56/classBvr_1_1Renderer_1_1CQueue" kind="class"><name>Bvr::Renderer::CQueue</name>
     <member refid="d8/d56/classBvr_1_1Renderer_1_1CQueue_1a80cc572ebe8e82761a6c3b77255b7af5" kind="variable"><name>m_device</name></member>
@@ -3095,15 +3107,15 @@
     <member refid="dd/d28/classBvr_1_1CRenderViewport_1a622e4081355d3767687ab739b8e9feef" kind="function"><name>GetName</name></member>
     <member refid="dd/d28/classBvr_1_1CRenderViewport_1a146a23fed8305494350209048c8a8ddb" kind="function"><name>OutputImage</name></member>
     <member refid="dd/d28/classBvr_1_1CRenderViewport_1af064f96a9b7d2af5ef6246611c3a4b50" kind="function"><name>GetFocused</name></member>
-    <member refid="dd/d28/classBvr_1_1CRenderViewport_1a69c86711bbccea56bd7c572b1638839a" kind="function"><name>OnMoved</name></member>
-    <member refid="dd/d28/classBvr_1_1CRenderViewport_1ae18c6112c6897a0eaab4de5f3a754d97" kind="function"><name>OnResize</name></member>
+    <member refid="dd/d28/classBvr_1_1CRenderViewport_1a118113c52dfc88e00ebba5e082070066" kind="function"><name>OnMoved</name></member>
+    <member refid="dd/d28/classBvr_1_1CRenderViewport_1a09c49aa8d6934f02b0759eee4bc89754" kind="function"><name>OnResize</name></member>
     <member refid="dd/d28/classBvr_1_1CRenderViewport_1abbbc66524c73b5d338d3465ac61ed206" kind="function"><name>SetFocused</name></member>
   </compound>
   <compound refid="d4/d6d/classBvr_1_1CResourceImportPanel" kind="class"><name>Bvr::CResourceImportPanel</name>
     <member refid="d4/d6d/classBvr_1_1CResourceImportPanel_1a7c265b30e4785e2013af05cc1ca26c6e" kind="variable"><name>m_resourcePath</name></member>
     <member refid="d4/d6d/classBvr_1_1CResourceImportPanel_1ab6cfd6136175bbb32592890b34fbec89" kind="variable"><name>m_sourcePath</name></member>
     <member refid="d4/d6d/classBvr_1_1CResourceImportPanel_1a7f051cb495283ba76a0772148092abe5" kind="variable"><name>m_pCurrentMetaFile</name></member>
-    <member refid="d4/d6d/classBvr_1_1CResourceImportPanel_1a8edd5e508c696e114ab489c69470dc02" kind="function"><name>CResourceImportPanel</name></member>
+    <member refid="d4/d6d/classBvr_1_1CResourceImportPanel_1a8de5d0574917af08f946c219cb086858" kind="function"><name>CResourceImportPanel</name></member>
     <member refid="d4/d6d/classBvr_1_1CResourceImportPanel_1ae3d103fbe1f0d6354563978878157d58" kind="function"><name>ImportFrom</name></member>
     <member refid="d4/d6d/classBvr_1_1CResourceImportPanel_1ac18b71328b555ac1117baa977c189461" kind="function"><name>Focus</name></member>
     <member refid="d4/d6d/classBvr_1_1CResourceImportPanel_1a927b6621f8071b972c543186a76f1160" kind="function"><name>DoImport</name></member>
@@ -3112,6 +3124,7 @@
     <member refid="d4/d6d/classBvr_1_1CResourceImportPanel_1a86533ba8cca52ee0de761844572439f8" kind="function"><name>GetCurrentMetaFile</name></member>
     <member refid="d4/d6d/classBvr_1_1CResourceImportPanel_1ad45c646418a034d0c40f69c06eafecaf" kind="function"><name>GetCurrentResourcePath</name></member>
     <member refid="d4/d6d/classBvr_1_1CResourceImportPanel_1a4c0bbaa79d4e9cbee5902804c2c1564f" kind="function"><name>ShowImpl</name></member>
+    <member refid="d4/d6d/classBvr_1_1CResourceImportPanel_1aa9053a4e6fbeba8e61387e838055413a" kind="function"><name>Build</name></member>
   </compound>
   <compound refid="dd/da0/classBvr_1_1CResourceMap" kind="class"><name>Bvr::CResourceMap</name>
     <member refid="dd/da0/classBvr_1_1CResourceMap_1a7d1ce0dfc75f964b297bd35efc1c92d7" kind="typedef"><name>IResourcePtr</name></member>
@@ -3191,8 +3204,9 @@
     <member refid="d6/d4f/classBvr_1_1CSceneEditor_1a38aad5a890f69515fad87a9cc1166dd2" kind="variable"><name>m_currentPlayer</name></member>
     <member refid="d6/d4f/classBvr_1_1CSceneEditor_1a80d331ec32e2b0778ca409e6660ebf05" kind="variable"><name>m_currentTime</name></member>
     <member refid="d6/d4f/classBvr_1_1CSceneEditor_1a4d70bbe05884bf96703f146513e7eade" kind="variable"><name>m_activeChannel</name></member>
-    <member refid="d6/d4f/classBvr_1_1CSceneEditor_1aa8649b8da46f987acec3b867f2d5859c" kind="function"><name>CSceneEditor</name></member>
+    <member refid="d6/d4f/classBvr_1_1CSceneEditor_1a7b206503481275c6b647babbe173ca8c" kind="function"><name>CSceneEditor</name></member>
     <member refid="d6/d4f/classBvr_1_1CSceneEditor_1ad059d2a797670005d582cfde09dcd251" kind="function"><name>ShowImpl</name></member>
+    <member refid="d6/d4f/classBvr_1_1CSceneEditor_1a4e879433a70356bcc15beed02b52e4e9" kind="function"><name>Build</name></member>
     <member refid="d6/d4f/classBvr_1_1CSceneEditor_1ae4a8db2b5beb4b53ffee074a7eeb2dad" kind="function"><name>Sequencer</name></member>
     <member refid="d6/d4f/classBvr_1_1CSceneEditor_1a629cf4b36ef0731c59dcbb9706011221" kind="function"><name>EnableKeyFrameInsert</name></member>
     <member refid="d6/d4f/classBvr_1_1CSceneEditor_1af928c57e88be09f96dda5533452245ee" kind="function"><name>DisableKeyFrameInsert</name></member>
@@ -4075,7 +4089,6 @@
     <member refid="da/d12/structBvr_1_1EditorSystem_1aecdbd4ac747801009af6303494049e27" kind="function"><name>BeginFrame</name></member>
     <member refid="da/d12/structBvr_1_1EditorSystem_1a3614f6deed730a8bddab68e644b363e2" kind="function"><name>EndFrame</name></member>
     <member refid="da/d12/structBvr_1_1EditorSystem_1a714ed2e05197236844dd45453bbd3f24" kind="function"><name>OnKeyPress</name></member>
-    <member refid="da/d12/structBvr_1_1EditorSystem_1aca4a8976c1e2e8b19a5eaa3f39dbec34" kind="function"><name>Tick</name></member>
     <member refid="da/d12/structBvr_1_1EditorSystem_1a03888a2219aeafbc91b393018b085f70" kind="function"><name>SetUpEditorWorld</name></member>
   </compound>
   <compound refid="d4/d75/structBvr_1_1EditorViewportPlugin" kind="struct"><name>Bvr::EditorViewportPlugin</name>
@@ -4832,6 +4845,7 @@
     <member refid="d2/d6b/structIBvrEditor_1a393ef753ec28389e0660ccaf54a97545" kind="function"><name>GetCurrentEditedLevel</name></member>
     <member refid="d2/d6b/structIBvrEditor_1a2cbcb8e602c05b1b8edcd933eda0e60a" kind="function"><name>GetCurrentSimulatedWorld</name></member>
     <member refid="d2/d6b/structIBvrEditor_1ae9e779e7b96731075dde731d7a51d075" kind="function"><name>ExecuteCommand</name></member>
+    <member refid="d2/d6b/structIBvrEditor_1af7ab5f31ce2cef3b50a9221778e93035" kind="function"><name>AddEditorTool</name></member>
   </compound>
   <compound refid="d3/def/structBvr_1_1IBvrEngine" kind="struct"><name>Bvr::IBvrEngine</name>
     <member refid="d3/def/structBvr_1_1IBvrEngine_1a0e0d524014cd41aa61119fa3f8260c52" kind="function"><name>~IBvrEngine</name></member>
@@ -5470,8 +5484,8 @@
     <member refid="db/dc6/classBvr_1_1IViewport_1a392a4c1a80995c35528f0d61b467beef" kind="function"><name>GetName</name></member>
     <member refid="db/dc6/classBvr_1_1IViewport_1a8c694a97ef041fefb1989fc1fd4c81bc" kind="function"><name>GetRect</name></member>
     <member refid="db/dc6/classBvr_1_1IViewport_1a0ec2b8ce9f64bece93fbeba2fbf1aeb0" kind="function"><name>ShowImpl</name></member>
-    <member refid="db/dc6/classBvr_1_1IViewport_1a679e76f9aa4f5781dbc67b7f7123a462" kind="function"><name>OnMoved</name></member>
-    <member refid="db/dc6/classBvr_1_1IViewport_1ade1c3cceaf46f0471dc1078c9bba8822" kind="function"><name>OnResize</name></member>
+    <member refid="db/dc6/classBvr_1_1IViewport_1afffe771e1345f6ac041907ddb76c8b0e" kind="function"><name>OnMoved</name></member>
+    <member refid="db/dc6/classBvr_1_1IViewport_1abdd916f2dd6e95f3c95e7975bb77eb36" kind="function"><name>OnResize</name></member>
     <member refid="db/dc6/classBvr_1_1IViewport_1ab7b358a31db03762e41a5f76eb27cefc" kind="function"><name>SetFocused</name></member>
     <member refid="db/dc6/classBvr_1_1IViewport_1a5fd2e3261860b234052b3588f8d7e982" kind="function"><name>GetFocused</name></member>
   </compound>
@@ -8438,6 +8452,7 @@
   <compound refid="dd/dbb/structBvr_1_1SScenePanel" kind="struct"><name>Bvr::SScenePanel</name>
     <member refid="dd/dbb/structBvr_1_1SScenePanel_1a7e52c97f42050d6821e3f149042dfd74" kind="variable"><name>m_pOwningEditor</name></member>
     <member refid="dd/dbb/structBvr_1_1SScenePanel_1aeb2688bb07c91a1a0ec6e5741d0e360c" kind="function"><name>SScenePanel</name></member>
+    <member refid="dd/dbb/structBvr_1_1SScenePanel_1a54fe2970345e812f6c4339787a9be05b" kind="function"><name>Build</name></member>
     <member refid="dd/dbb/structBvr_1_1SScenePanel_1ab3f3137201074f65176a0b7c09bb647a" kind="function"><name>ShowImpl</name></member>
     <member refid="dd/dbb/structBvr_1_1SScenePanel_1adf0aefe97b2b79d74554df32f3785057" kind="function"><name>DrawUI</name></member>
     <member refid="dd/dbb/structBvr_1_1SScenePanel_1a80cc6f0ba16bba503892f728ad41b900" kind="function"><name>DrawUIImpl</name></member>
@@ -11443,7 +11458,6 @@
     <member refid="da/df2/AssetBrowser_8cpp_1a358f4c29a2e98e8eab4e140fa7e709da" kind="variable"><name>ResourcePopupName</name></member>
     <member refid="d2/d19/BvrEditor_8cpp_1aa48b53d827fd85f7aec4e5271304ed56" kind="variable"><name>gEditor</name></member>
     <member refid="d2/d19/BvrEditor_8cpp_1aad2d3f913dc3f8e42fc24c4421ec3be2" kind="variable"><name>CVarShowNewEditor</name></member>
-    <member refid="d2/db3/LevelEditor_8cpp_1abcdc86bd85f60695cf0540efbb2aface" kind="variable"><name>DefaultToolBtnSize</name></member>
     <member refid="d2/df0/ComponentPropertyEditor_8cpp_1ac8fbc5edfc69082d3d7a58fc801d8512" kind="variable"><name>kPropertyEditorHeaderFlags</name></member>
     <member refid="df/d93/IniTests_8cpp_1a423ebc033087843e7bae62d5cfdf6e51" kind="variable"><name>TestIniFile</name></member>
     <member refid="d2/dac/3DEngine_8cpp_1ae7b575ef96fdfa12c98d9e1c5e15b2b9" kind="function"><name>BuildPBRMaterial</name></member>
@@ -11576,6 +11590,7 @@
     <member refid="d2/d26/WorldArchive_8hpp_1a43c292040b889f99bbeee3b8ac8e56e4" kind="function"><name>operator&amp;</name></member>
     <member refid="d2/d26/WorldArchive_8hpp_1ae0ba6750cba6f61df1f84b7432581cd3" kind="function"><name>operator&amp;</name></member>
     <member refid="d6/d0d/WorldLoader_8cpp_1ae7bd9e2f0c54c0e4b69889378054e8ec" kind="function"><name>CollectImpl</name></member>
+    <member refid="d2/d19/BvrEditor_8cpp_1af0b182562e5283b4c3fce95f544a1e6a" kind="function"><name>BuildEditorToolPlugin</name></member>
     <member refid="df/d3a/EditorViewport_8cpp_1a6c896101fc422f86cc8db677397cb2e9" kind="function"><name>RoundButton</name></member>
     <member refid="df/d3a/EditorViewport_8cpp_1a431a54d15d6b2edd8d245e7d29a7e837" kind="function"><name>DrawPopup</name></member>
     <member refid="d2/db3/LevelEditor_8cpp_1ad4c43e8967fa830456fabd4433f96f64" kind="function"><name>CopySceneRoot</name></member>
@@ -11584,6 +11599,7 @@
     <member refid="d2/db3/LevelEditor_8cpp_1ab80b1203e9f631eb73765e2e4f8f3a20" kind="function"><name>ToggleSimulateSystem</name></member>
     <member refid="d2/db3/LevelEditor_8cpp_1a24593685bfc6c58113156591417d8fb0" kind="function"><name>ShutdownEditors</name></member>
     <member refid="d2/db3/LevelEditor_8cpp_1a48a4ffcfbb147767b1127b28280d5862" kind="function"><name>RemoveToolEventsOfType</name></member>
+    <member refid="d2/db3/LevelEditor_8cpp_1ab9a516348b66d7a3832d9aec7b66bc08" kind="function"><name>UpdateTrackballCamera</name></member>
     <member refid="d2/db3/LevelEditor_8cpp_1a118710263ff169032e588d5f74e507c1" kind="function"><name>OnViewportFocused</name></member>
     <member refid="d2/df0/ComponentPropertyEditor_8cpp_1a95a536c26ca7070a805e09fbf73fb659" kind="function"><name>DrawComponent</name></member>
     <member refid="d2/df0/ComponentPropertyEditor_8cpp_1adbb7924f43a1e42f3328f8c326f95bcc" kind="function"><name>DrawComponent</name></member>
@@ -11606,6 +11622,8 @@
     <member refid="d3/d09/SelectionToolController_8cpp_1a6915f124f67d46b39f8608ede2f4142f" kind="function"><name>ClearSelection</name></member>
     <member refid="d3/d09/SelectionToolController_8cpp_1a26186966b6f02aff8f502036b2a1478d" kind="function"><name>AddToSelection</name></member>
     <member refid="d3/d09/SelectionToolController_8cpp_1abb20343d4136cf06871a01edf70796ad" kind="function"><name>SelectEntity</name></member>
+    <member refid="dc/dad/EditorTool_8cpp_1a60bef27a2b18a932d9b017652a3644ed" kind="function"><name>ShowTool</name></member>
+    <member refid="dc/dad/EditorTool_8cpp_1a55f9a1ea3c9bed84bfd171aa6ff6ee28" kind="function"><name>ShowTools</name></member>
     <member refid="df/d93/IniTests_8cpp_1a713db6879939153716a48737eea51646" kind="function"><name>TEST_CASE</name></member>
     <member refid="df/d93/IniTests_8cpp_1ae4f7c14c021bdb9f4e50b847f60a1bba" kind="function"><name>TEST_CASE</name></member>
   </compound>
@@ -11666,7 +11684,7 @@
     <member refid="d2/d8c/IBvrRenderer_8hpp_1a953f61d920bf0420852b632acb099781" kind="function"><name>ImageButton</name></member>
   </compound>
   <compound refid="d5/dfc/namespaceBvr_1_1ConsoleSystem" kind="namespace"><name>Bvr::ConsoleSystem</name>
-    <member refid="d5/d1a/Console_8cpp_1a3f6ffd4581a2478da65e68875686fdbf" kind="function"><name>Update</name></member>
+    <member refid="d5/d1a/Console_8cpp_1ae8fda5856bafe1ad46e049c64781b445" kind="function"><name>InitMainConsole</name></member>
   </compound>
   <compound refid="dd/d28/namespaceBvr_1_1Create" kind="namespace"><name>Bvr::Create</name>
   </compound>
