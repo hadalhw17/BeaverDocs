@@ -8,12 +8,13 @@
   <compound refid="struct_bvr_1_1_app" kind="struct"><name>Bvr::App</name>
     <member refid="struct_bvr_1_1_app_1aca5045e5ea21fcf2a91ed4fae1000af0" kind="variable"><name>subApps</name></member>
     <member refid="struct_bvr_1_1_app_1ad098384033d9129b94196bfc9cc5607a" kind="variable"><name>ShouldRun</name></member>
-    <member refid="struct_bvr_1_1_app_1a92f3c1c0c5e87690ad38ce6320c30743" kind="variable"><name>s_Instance</name></member>
+    <member refid="struct_bvr_1_1_app_1aa70bbb90a4df048fad78f454b33c5f50" kind="variable"><name>s_Instance</name></member>
     <member refid="struct_bvr_1_1_app_1adb71669cb065d604434a478f1e790f96" kind="variable"><name>m_resources</name></member>
     <member refid="struct_bvr_1_1_app_1ae53dd39f1397ad7d277db72229705f10" kind="variable"><name>m_pSchedule</name></member>
     <member refid="struct_bvr_1_1_app_1ab4f61d0ea0cfca618d9c6780f8e13b2b" kind="friend"><name>CAppBuildReplayer</name></member>
     <member refid="struct_bvr_1_1_app_1a2a242401624265b91007c0c3aedd8864" kind="function"><name>App</name></member>
     <member refid="struct_bvr_1_1_app_1a7cc06329c910168187d54496700be4a1" kind="function"><name>~App</name></member>
+    <member refid="struct_bvr_1_1_app_1a4855b3fa33074b072c3cf7f2b6685df0" kind="function"><name>ClearResources</name></member>
     <member refid="struct_bvr_1_1_app_1aefee2fe64bebe9f47a1228c2877aaf3b" kind="function"><name>RunOnce</name></member>
     <member refid="struct_bvr_1_1_app_1ac5abfbf88be2a352dd30e8c5fe65cd82" kind="function"><name>Run</name></member>
     <member refid="struct_bvr_1_1_app_1adf9bdaac2b710183cc83a7623a62e9dc" kind="function"><name>RunStartupSchedule</name></member>
@@ -44,6 +45,7 @@
     <member refid="class_bvr_1_1_c_app_build_replayer_1ac19e8fc7359ea1c9212d75cc5cc21a0e" kind="typedef"><name>FirstLast</name></member>
     <member refid="class_bvr_1_1_c_app_build_replayer_1a0b838b2be579eff0cafbede8b052a898" kind="variable"><name>m_app</name></member>
     <member refid="class_bvr_1_1_c_app_build_replayer_1ac8a05f00c21714d8775a3e7f9fbf0578" kind="variable"><name>m_systems</name></member>
+    <member refid="class_bvr_1_1_c_app_build_replayer_1aa62ff306e8e7bb8b475cfae3e4f3b2b0" kind="variable"><name>m_startupSystems</name></member>
     <member refid="class_bvr_1_1_c_app_build_replayer_1a9e86ecda3ea8623c3c7fc2d6daa86e53" kind="variable"><name>m_components</name></member>
     <member refid="class_bvr_1_1_c_app_build_replayer_1a7692d7362080fcfff4f64dc51124d9d7" kind="variable"><name>m_resources</name></member>
     <member refid="class_bvr_1_1_c_app_build_replayer_1ad9dcca8f3b05127bcbfd2e1f7215e386" kind="function"><name>CAppBuildReplayer</name></member>
@@ -150,10 +152,12 @@
   </compound>
   <compound refid="class_bvr_1_1_c_startup_schdule" kind="class"><name>Bvr::CStartupSchdule</name>
     <member refid="class_bvr_1_1_c_startup_schdule_1a8b420ffdb50390d0394c3bc09b4a1eb4" kind="variable"><name>StartupStageName</name></member>
+    <member refid="class_bvr_1_1_c_startup_schdule_1ab4f61d0ea0cfca618d9c6780f8e13b2b" kind="friend"><name>CAppBuildReplayer</name></member>
     <member refid="class_bvr_1_1_c_startup_schdule_1a7b8afdd1a9aafd70089ac9872042f0d0" kind="function"><name>CStartupSchdule</name></member>
     <member refid="class_bvr_1_1_c_startup_schdule_1a80310e7d6f57aed2a0553f881cf15263" kind="function"><name>~CStartupSchdule</name></member>
     <member refid="class_bvr_1_1_c_startup_schdule_1a2313b14b012b678494f4d8df8e487fa1" kind="function"><name>AddSystem</name></member>
     <member refid="class_bvr_1_1_c_startup_schdule_1a501ae21faa66b0acafc2d2ab73c41934" kind="function"><name>Run</name></member>
+    <member refid="class_bvr_1_1_c_startup_schdule_1a6aae1e0c48b1b4724d58935bf2e67522" kind="variable"><name>m_stages</name></member>
   </compound>
   <compound refid="class_bvr_1_1_dyn_plugin" kind="class"><name>Bvr::DynPlugin</name>
     <member refid="class_bvr_1_1_dyn_plugin_1a26ba7e53ce2657c44c2b3b81062df453" kind="variable"><name>m_name</name></member>
@@ -164,6 +168,7 @@
     <member refid="class_bvr_1_1_dyn_plugin_1ac623aa8e181c7ab721feb15bd5fdbba7" kind="friend"><name>DynPlugins</name></member>
     <member refid="class_bvr_1_1_dyn_plugin_1a1e33edd3075302f42d6ce73a31b9a516" kind="friend"><name>SRecordScope</name></member>
     <member refid="class_bvr_1_1_dyn_plugin_1a088cd1e48cecd2302a440f2f52e5bc79" kind="function"><name>DynPlugin</name></member>
+    <member refid="class_bvr_1_1_dyn_plugin_1a2b71d4172c29843e4e34edc932697d4f" kind="function"><name>DynPlugin</name></member>
     <member refid="class_bvr_1_1_dyn_plugin_1a52f5dab3129749941880419cd2d5e24b" kind="function"><name>~DynPlugin</name></member>
     <member refid="class_bvr_1_1_dyn_plugin_1a5a73481237637384549efcd9ef1f1e08" kind="function"><name>GetDLL</name></member>
     <member refid="class_bvr_1_1_dyn_plugin_1aeed5ff60460f72e65842a3b8f20608ee" kind="function"><name>IsValid</name></member>
@@ -172,11 +177,15 @@
   </compound>
   <compound refid="class_bvr_1_1_dyn_plugins" kind="class"><name>Bvr::DynPlugins</name>
     <member refid="class_bvr_1_1_dyn_plugins_1a59f9850002b86b7b8d78a324b70e0b14" kind="variable"><name>m_plugins</name></member>
+    <member refid="class_bvr_1_1_dyn_plugins_1a45cb8a79303379bdec35c029c06f079e" kind="variable"><name>m_searchPaths</name></member>
     <member refid="class_bvr_1_1_dyn_plugins_1a6e8a130d6b7aea58988c36a5b7f4f778" kind="function"><name>DynPlugins</name></member>
+    <member refid="class_bvr_1_1_dyn_plugins_1a9244a3cbda97ad8bb113f7350c6bd79f" kind="function"><name>operator=</name></member>
     <member refid="class_bvr_1_1_dyn_plugins_1a33cff898dec924bcde49d337e452a1b6" kind="function"><name>DynPlugins</name></member>
     <member refid="class_bvr_1_1_dyn_plugins_1ae6d1a385f790efe5493f51cfbcaa175c" kind="function"><name>~DynPlugins</name></member>
+    <member refid="class_bvr_1_1_dyn_plugins_1ab32941ccf1cece29079d276e9c5d3229" kind="function"><name>AddSearchPath</name></member>
+    <member refid="class_bvr_1_1_dyn_plugins_1abb29fa21f9c63f1c69d650639edf39f1" kind="function"><name>RemoveSearchPath</name></member>
     <member refid="class_bvr_1_1_dyn_plugins_1a20ea791e9be8189e88e173400fcb370b" kind="function"><name>Find</name></member>
-    <member refid="class_bvr_1_1_dyn_plugins_1a01b449100c966832d0cc8e22c610ff76" kind="function"><name>Load</name></member>
+    <member refid="class_bvr_1_1_dyn_plugins_1a9a93db93f9fd82b5500e0ffad4926f33" kind="function"><name>Load</name></member>
     <member refid="class_bvr_1_1_dyn_plugins_1a9beff0c36f4ec61dea98ccfa8dcb67f2" kind="function"><name>UnLoad</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_detail_1_1_t_system_function_1_1_extract_args" kind="struct"><name>Bvr::Detail::TSystemFunction::ExtractArgs</name>
@@ -522,19 +531,6 @@
     <member refid="class_bvr_1_1_w_res_1a68fae89afbc936a3509a52f7b70ee527" kind="function"><name>operator*</name></member>
   </compound>
   <compound refid="namespace_bvr" kind="namespace"><name>Bvr</name>
-    <member refid="_label_8hpp_1aa8b84baca1e3f5617a4d4c14a8f0eec6" kind="enum"><name>TSystemLabel</name></member>
-    <member refid="_bvr_app_8hpp_1a00a041757734a4629398665fc6bff5d0" kind="enum"><name>EStageFlags</name></member>
-    <member refid="_bvr_app_8hpp_1a00a041757734a4629398665fc6bff5d0a6adf97f83acf6453d4a6a4b1070f3754" kind="enumvalue"><name>None</name></member>
-    <member refid="_bvr_app_8hpp_1a00a041757734a4629398665fc6bff5d0aa32265e3ff7d55d382104535553f4564" kind="enumvalue"><name>SingleThreaded</name></member>
-    <member refid="_bvr_app_8hpp_1a00a041757734a4629398665fc6bff5d0a3aee746018287558354fbcd7dd8bb904" kind="enumvalue"><name>Concurrent</name></member>
-    <member refid="_system_8hpp_1a3501005221291677f784a12001d5dac2" kind="enum"><name>EShouldRun</name></member>
-    <member refid="_system_8hpp_1a3501005221291677f784a12001d5dac2abafd7322c6e97d25b6299b5d6fe8920b" kind="enumvalue"><name>No</name></member>
-    <member refid="_system_8hpp_1a3501005221291677f784a12001d5dac2a93cba07454f06a4a960172bbd6e2a435" kind="enumvalue"><name>Yes</name></member>
-    <member refid="_system_8hpp_1a3501005221291677f784a12001d5dac2a759dedf523c94d16edac448ad8312c86" kind="enumvalue"><name>NoAndCheckAgain</name></member>
-    <member refid="_system_8hpp_1a3501005221291677f784a12001d5dac2aec96d08411d0d17ed10c0dd8ce9a07c5" kind="enumvalue"><name>YesAndCheckAgain</name></member>
-    <member refid="_system_8hpp_1afba4fcb2a95302a5fba5a44c5f2f224f" kind="enum"><name>ESystemFlags</name></member>
-    <member refid="_system_8hpp_1afba4fcb2a95302a5fba5a44c5f2f224fa10cb63255b01dc74338995be0b31dab3" kind="enumvalue"><name>InheritStage</name></member>
-    <member refid="_system_8hpp_1afba4fcb2a95302a5fba5a44c5f2f224fa007f164694371cbd0a016e75dfb0320c" kind="enumvalue"><name>ForceSingleThreaded</name></member>
     <member refid="_state_8hpp_1adcc5919cf57ed88e482d2e954c8a9a15" kind="enum"><name>EStateTransition</name></member>
     <member refid="_state_8hpp_1adcc5919cf57ed88e482d2e954c8a9a15a6adf97f83acf6453d4a6a4b1070f3754" kind="enumvalue"><name>None</name></member>
     <member refid="_state_8hpp_1adcc5919cf57ed88e482d2e954c8a9a15a8509939e44cc05f7a4da43eaa87e45c4" kind="enumvalue"><name>Entering</name></member>
@@ -547,6 +543,19 @@
     <member refid="_state_8hpp_1ad24e6d8e02a2b638a1a7769e10c8ca9ca5d5b78699e57104f2fa03bbdf7b9197b" kind="enumvalue"><name>Set</name></member>
     <member refid="_state_8hpp_1ad24e6d8e02a2b638a1a7769e10c8ca9ca9c6a9d9f033001a9b3104984d319563b" kind="enumvalue"><name>Push</name></member>
     <member refid="_state_8hpp_1ad24e6d8e02a2b638a1a7769e10c8ca9ca0ae61bd0474e04c9f1195d4baa0213a0" kind="enumvalue"><name>Pop</name></member>
+    <member refid="_bvr_app_8hpp_1a00a041757734a4629398665fc6bff5d0" kind="enum"><name>EStageFlags</name></member>
+    <member refid="_bvr_app_8hpp_1a00a041757734a4629398665fc6bff5d0a6adf97f83acf6453d4a6a4b1070f3754" kind="enumvalue"><name>None</name></member>
+    <member refid="_bvr_app_8hpp_1a00a041757734a4629398665fc6bff5d0aa32265e3ff7d55d382104535553f4564" kind="enumvalue"><name>SingleThreaded</name></member>
+    <member refid="_bvr_app_8hpp_1a00a041757734a4629398665fc6bff5d0a3aee746018287558354fbcd7dd8bb904" kind="enumvalue"><name>Concurrent</name></member>
+    <member refid="_label_8hpp_1aa8b84baca1e3f5617a4d4c14a8f0eec6" kind="enum"><name>TSystemLabel</name></member>
+    <member refid="_system_8hpp_1a3501005221291677f784a12001d5dac2" kind="enum"><name>EShouldRun</name></member>
+    <member refid="_system_8hpp_1a3501005221291677f784a12001d5dac2abafd7322c6e97d25b6299b5d6fe8920b" kind="enumvalue"><name>No</name></member>
+    <member refid="_system_8hpp_1a3501005221291677f784a12001d5dac2a93cba07454f06a4a960172bbd6e2a435" kind="enumvalue"><name>Yes</name></member>
+    <member refid="_system_8hpp_1a3501005221291677f784a12001d5dac2a759dedf523c94d16edac448ad8312c86" kind="enumvalue"><name>NoAndCheckAgain</name></member>
+    <member refid="_system_8hpp_1a3501005221291677f784a12001d5dac2aec96d08411d0d17ed10c0dd8ce9a07c5" kind="enumvalue"><name>YesAndCheckAgain</name></member>
+    <member refid="_system_8hpp_1afba4fcb2a95302a5fba5a44c5f2f224f" kind="enum"><name>ESystemFlags</name></member>
+    <member refid="_system_8hpp_1afba4fcb2a95302a5fba5a44c5f2f224fa10cb63255b01dc74338995be0b31dab3" kind="enumvalue"><name>InheritStage</name></member>
+    <member refid="_system_8hpp_1afba4fcb2a95302a5fba5a44c5f2f224fa007f164694371cbd0a016e75dfb0320c" kind="enumvalue"><name>ForceSingleThreaded</name></member>
     <member refid="_bvr_app_8hpp_1a91588209a2ef35f2326d11e854a4fecd" kind="variable"><name>Plugin</name></member>
     <member refid="_system_8hpp_1a5f490921ac906cb0ff1ab178eff6004f" kind="variable"><name>ConditionalFn</name></member>
     <member refid="_label_8hpp_1a632617aaf531cb2e25c3489f6aa5eeea" kind="function"><name>TypeLabel</name></member>
@@ -578,10 +587,13 @@
     <member refid="_app_traits_8hpp_1a8fb1ce604bf3927df1e61109ac3bbacb" kind="variable"><name>AggregateArg</name></member>
     <member refid="_app_traits_8hpp_1abec09361ff2faca0af7e8f25da57566c" kind="variable"><name>IsWorldArgument</name></member>
     <member refid="_app_traits_8hpp_1aecbaa915dcf0046ae2ca9167aff4a6d0" kind="variable"><name>IsWorldSystem</name></member>
+    <member refid="_bvr_app_8hpp_1a245abd0780be6c83148fe5231fca9eb4" kind="function"><name>IsValid</name></member>
+    <member refid="_app_traits_8hpp_1a60aa254e658de72d2e9d14e6596eaaea" kind="function"><name>requires</name></member>
+    <member refid="_app_traits_8hpp_1a78c0ec572e4948eab3311ac70c171c3a" kind="function"><name>IsValid</name></member>
+    <member refid="_app_traits_8hpp_1a9be723b3c6663f4812641a0164392fbe" kind="function"><name>IsValid</name></member>
+    <member refid="_app_traits_8hpp_1ac54e25bf7a75e52f63b9a93607247fc1" kind="function"><name>IsValid</name></member>
+    <member refid="_app_traits_8hpp_1a9550bf9ad36dce66c004f899e966aa08" kind="function"><name>IsValid</name></member>
     <member refid="_system_8hpp_1afe0ea4a0d3da4fe02aa5ce4f008d29fc" kind="function"><name>IsValid</name></member>
-    <member refid="_system_8hpp_1a245abd0780be6c83148fe5231fca9eb4" kind="function"><name>IsValid</name></member>
-    <member refid="_system_8hpp_1a6237846e055a04df19c0fff418a1b652" kind="function"><name>IsValid</name></member>
-    <member refid="_system_8hpp_1a009c2d3ab9b2238cb641d06782663a92" kind="function"><name>IsValid</name></member>
     <member refid="_system_8hpp_1ad8af0fab4f750ba5b4ae778eb2871e59" kind="function"><name>ExtractToTuple</name></member>
     <member refid="_system_8hpp_1a0a7f5e69e53f756963e9054112f461a9" kind="function"><name>ExtractQuery</name></member>
     <member refid="_system_8hpp_1a6d85e989f748f4263d3e3ebaf095b723" kind="function"><name>ExtractWorldResource</name></member>
@@ -592,11 +604,6 @@
     <member refid="_system_8hpp_1aa387737c27b6ff2730dfa3ee2066cf0b" kind="function"><name>ApplyDefault</name></member>
     <member refid="_system_8hpp_1a60cb8f71360b0620290aee521263d836" kind="function"><name>ApplyDefaults</name></member>
     <member refid="_system_8hpp_1a026b968db154a39ff5e5672ed88c5b55" kind="function"><name>Invoke</name></member>
-    <member refid="_app_traits_8hpp_1a60aa254e658de72d2e9d14e6596eaaea" kind="function"><name>requires</name></member>
-    <member refid="_app_traits_8hpp_1a78c0ec572e4948eab3311ac70c171c3a" kind="function"><name>IsValid</name></member>
-    <member refid="_app_traits_8hpp_1a9be723b3c6663f4812641a0164392fbe" kind="function"><name>IsValid</name></member>
-    <member refid="_app_traits_8hpp_1ac54e25bf7a75e52f63b9a93607247fc1" kind="function"><name>IsValid</name></member>
-    <member refid="_app_traits_8hpp_1a9550bf9ad36dce66c004f899e966aa08" kind="function"><name>IsValid</name></member>
   </compound>
   <compound refid="namespace_bvr_1_1_meta" kind="namespace"><name>Bvr::Meta</name>
   </compound>

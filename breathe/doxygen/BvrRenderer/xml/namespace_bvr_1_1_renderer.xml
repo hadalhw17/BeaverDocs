@@ -2,8 +2,6 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="namespace_bvr_1_1_renderer" kind="namespace" language="C++">
     <compoundname>Bvr::Renderer</compoundname>
-    <innerclass refid="struct_bvr_1_1_renderer_1_1_extraction_label" prot="public">Bvr::Renderer::ExtractionLabel</innerclass>
-    <innerclass refid="class_bvr_1_1_renderer_1_1_c_binding_meta" prot="public">Bvr::Renderer::CBindingMeta</innerclass>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_image_view" prot="public">Bvr::Renderer::ImageView</innerclass>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_buffer_view" prot="public">Bvr::Renderer::BufferView</innerclass>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_texture" prot="public">Bvr::Renderer::Texture</innerclass>
@@ -11,6 +9,11 @@
     <innerclass refid="struct_bvr_1_1_renderer_1_1_s_buffer_sub_allocation" prot="public">Bvr::Renderer::SBufferSubAllocation</innerclass>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_s_viewport" prot="public">Bvr::Renderer::SViewport</innerclass>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_s_rect" prot="public">Bvr::Renderer::SRect</innerclass>
+    <innerclass refid="class_bvr_1_1_renderer_1_1_t_material_traits" prot="public">Bvr::Renderer::TMaterialTraits</innerclass>
+    <innerclass refid="class_bvr_1_1_renderer_1_1_c_material" prot="public">Bvr::Renderer::CMaterial</innerclass>
+    <innerclass refid="struct_bvr_1_1_renderer_1_1_material_plugin" prot="public">Bvr::Renderer::MaterialPlugin</innerclass>
+    <innerclass refid="struct_bvr_1_1_renderer_1_1_extraction_label" prot="public">Bvr::Renderer::ExtractionLabel</innerclass>
+    <innerclass refid="class_bvr_1_1_renderer_1_1_c_binding_meta" prot="public">Bvr::Renderer::CBindingMeta</innerclass>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_s_bind_point" prot="public">Bvr::Renderer::SBindPoint</innerclass>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_s_push_constant_range" prot="public">Bvr::Renderer::SPushConstantRange</innerclass>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_s_descriptor_set_layout" prot="public">Bvr::Renderer::SDescriptorSetLayout</innerclass>
@@ -23,36 +26,33 @@
     <innerclass refid="struct_bvr_1_1_renderer_1_1_s_compute_p_s_o_desc" prot="public">Bvr::Renderer::SComputePSODesc</innerclass>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_s_raytracing_p_s_o_desc" prot="public">Bvr::Renderer::SRaytracingPSODesc</innerclass>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_s_shader_item" prot="public">Bvr::Renderer::SShaderItem</innerclass>
-    <innerclass refid="struct_bvr_1_1_renderer_1_1_s_visitor" prot="public">Bvr::Renderer::SVisitor</innerclass>
-    <innerclass refid="struct_bvr_1_1_renderer_1_1_no_op" prot="public">Bvr::Renderer::NoOp</innerclass>
-    <innerclass refid="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler" prot="public">Bvr::Renderer::CRenderPassScheduler</innerclass>
-    <innerclass refid="struct_bvr_1_1_renderer_1_1_execution_utils" prot="public">Bvr::Renderer::ExecutionUtils</innerclass>
-    <innerclass refid="struct_bvr_1_1_renderer_1_1_g_p_u_sorting" prot="public">Bvr::Renderer::GPUSorting</innerclass>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_s_rend_primitive" prot="public">Bvr::Renderer::SRendPrimitive</innerclass>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_s_per_model_c_b" prot="public">Bvr::Renderer::SPerModelCB</innerclass>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_s_vertex_stream" prot="public">Bvr::Renderer::SVertexStream</innerclass>
     <innerclass refid="class_bvr_1_1_renderer_1_1_c_render_mesh" prot="public">Bvr::Renderer::CRenderMesh</innerclass>
-    <innerclass refid="struct_bvr_1_1_renderer_1_1_s_graphics_pipeline_resources" prot="public">Bvr::Renderer::SGraphicsPipelineResources</innerclass>
-    <innerclass refid="class_bvr_1_1_renderer_1_1_graphics_pipeline_stage_registrator" prot="public">Bvr::Renderer::GraphicsPipelineStageRegistrator</innerclass>
-    <innerclass refid="class_bvr_1_1_renderer_1_1_c_graphics_pipeline" prot="public">Bvr::Renderer::CGraphicsPipeline</innerclass>
-    <innerclass refid="class_bvr_1_1_renderer_1_1_t_stage_label" prot="public">Bvr::Renderer::TStageLabel</innerclass>
-    <innerclass refid="class_bvr_1_1_renderer_1_1_c_f_g_memory_pool" prot="public">Bvr::Renderer::CFGMemoryPool</innerclass>
-    <innerclass refid="class_bvr_1_1_renderer_1_1_c_f_g_allocator" prot="public">Bvr::Renderer::CFGAllocator</innerclass>
+    <innerclass refid="struct_bvr_1_1_renderer_1_1_s_visitor" prot="public">Bvr::Renderer::SVisitor</innerclass>
+    <innerclass refid="struct_bvr_1_1_renderer_1_1_no_op" prot="public">Bvr::Renderer::NoOp</innerclass>
+    <innerclass refid="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler" prot="public">Bvr::Renderer::CRenderPassScheduler</innerclass>
+    <innerclass refid="struct_bvr_1_1_renderer_1_1_execution_utils" prot="public">Bvr::Renderer::ExecutionUtils</innerclass>
     <innerclass refid="class_bvr_1_1_renderer_1_1_t_f_g_objects" prot="public">Bvr::Renderer::TFGObjects</innerclass>
-    <innerclass refid="class_bvr_1_1_renderer_1_1_c_graphics_pipeline_stage" prot="public">Bvr::Renderer::CGraphicsPipelineStage</innerclass>
     <innerclass refid="class_bvr_1_1_renderer_1_1_t_f_g_handle" prot="public">Bvr::Renderer::TFGHandle</innerclass>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_s_image_description" prot="public">Bvr::Renderer::SImageDescription</innerclass>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_s_buffer_description" prot="public">Bvr::Renderer::SBufferDescription</innerclass>
     <innerclass refid="class_bvr_1_1_renderer_1_1_t_f_g_null" prot="public">Bvr::Renderer::TFGNull</innerclass>
+    <innerclass refid="class_bvr_1_1_renderer_1_1_t_stage_label" prot="public">Bvr::Renderer::TStageLabel</innerclass>
+    <innerclass refid="class_bvr_1_1_renderer_1_1_c_f_g_memory_pool" prot="public">Bvr::Renderer::CFGMemoryPool</innerclass>
+    <innerclass refid="class_bvr_1_1_renderer_1_1_c_f_g_allocator" prot="public">Bvr::Renderer::CFGAllocator</innerclass>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_render_layer" prot="public">Bvr::Renderer::RenderLayer</innerclass>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_visible_entities" prot="public">Bvr::Renderer::VisibleEntities</innerclass>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_s_render_target" prot="public">Bvr::Renderer::SRenderTarget</innerclass>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_output_readback" prot="public">Bvr::Renderer::OutputReadback</innerclass>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_on_graph_executed" prot="public">Bvr::Renderer::OnGraphExecuted</innerclass>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_render_output_plugin" prot="public">Bvr::Renderer::RenderOutputPlugin</innerclass>
-    <innerclass refid="class_bvr_1_1_renderer_1_1_t_material_traits" prot="public">Bvr::Renderer::TMaterialTraits</innerclass>
-    <innerclass refid="class_bvr_1_1_renderer_1_1_c_material" prot="public">Bvr::Renderer::CMaterial</innerclass>
-    <innerclass refid="struct_bvr_1_1_renderer_1_1_material_plugin" prot="public">Bvr::Renderer::MaterialPlugin</innerclass>
+    <innerclass refid="struct_bvr_1_1_renderer_1_1_g_p_u_sorting" prot="public">Bvr::Renderer::GPUSorting</innerclass>
+    <innerclass refid="struct_bvr_1_1_renderer_1_1_s_graphics_pipeline_resources" prot="public">Bvr::Renderer::SGraphicsPipelineResources</innerclass>
+    <innerclass refid="class_bvr_1_1_renderer_1_1_graphics_pipeline_stage_registrator" prot="public">Bvr::Renderer::GraphicsPipelineStageRegistrator</innerclass>
+    <innerclass refid="class_bvr_1_1_renderer_1_1_c_graphics_pipeline" prot="public">Bvr::Renderer::CGraphicsPipeline</innerclass>
+    <innerclass refid="class_bvr_1_1_renderer_1_1_c_graphics_pipeline_stage" prot="public">Bvr::Renderer::CGraphicsPipelineStage</innerclass>
     <innerclass refid="class_bvr_1_1_renderer_1_1_c_frame_graph_resource" prot="public">Bvr::Renderer::CFrameGraphResource</innerclass>
     <innerclass refid="class_bvr_1_1_renderer_1_1_c_frame_graph_image" prot="public">Bvr::Renderer::CFrameGraphImage</innerclass>
     <innerclass refid="class_bvr_1_1_renderer_1_1_c_frame_graph_buffer" prot="public">Bvr::Renderer::CFrameGraphBuffer</innerclass>
@@ -63,15 +63,24 @@
     <innerclass refid="class_bvr_1_1_renderer_1_1_c_f_g_node" prot="public">Bvr::Renderer::CFGNode</innerclass>
     <innerclass refid="class_bvr_1_1_renderer_1_1_t_f_g_lambda_node" prot="public">Bvr::Renderer::TFGLambdaNode</innerclass>
     <innerclass refid="class_bvr_1_1_renderer_1_1_c_frame_graph" prot="public">Bvr::Renderer::CFrameGraph</innerclass>
-    <innerclass refid="struct_bvr_1_1_renderer_1_1_s_device_memory_allocation" prot="public">Bvr::Renderer::SDeviceMemoryAllocation</innerclass>
+    <innerclass refid="class_bvr_1_1_renderer_1_1_t_block_allocator" prot="public">Bvr::Renderer::TBlockAllocator</innerclass>
+    <innerclass refid="struct_bvr_1_1_renderer_1_1_s_profiling_marker" prot="public">Bvr::Renderer::SProfilingMarker</innerclass>
+    <innerclass refid="struct_bvr_1_1_renderer_1_1_s_profiling_data" prot="public">Bvr::Renderer::SProfilingData</innerclass>
+    <innerclass refid="struct_bvr_1_1_renderer_1_1_s_pipeline_profiler_marker_scope" prot="public">Bvr::Renderer::SPipelineProfilerMarkerScope</innerclass>
+    <innerclass refid="class_bvr_1_1_renderer_1_1_c_g_p_u_crash_handler" prot="public">Bvr::Renderer::CGPUCrashHandler</innerclass>
     <innerclass refid="class_bvr_1_1_renderer_1_1_c_bindless_set_container" prot="public">Bvr::Renderer::CBindlessSetContainer</innerclass>
-    <innerclass refid="class_bvr_1_1_renderer_1_1_c_bindless_storage" prot="public">Bvr::Renderer::CBindlessStorage</innerclass>
+    <innerclass refid="class_bvr_1_1_renderer_1_1_c_frame_context" prot="public">Bvr::Renderer::CFrameContext</innerclass>
+    <innerclass refid="struct_bvr_1_1_renderer_1_1_s_acceleration_structure" prot="public">Bvr::Renderer::SAccelerationStructure</innerclass>
+    <innerclass refid="class_bvr_1_1_renderer_1_1_c_buffer_bump_allocator" prot="public">Bvr::Renderer::CBufferBumpAllocator</innerclass>
     <innerclass refid="class_bvr_1_1_renderer_1_1_c_im_gui_renderer" prot="public">Bvr::Renderer::CImGuiRenderer</innerclass>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_im_gui_plugin" prot="public">Bvr::Renderer::ImGuiPlugin</innerclass>
-    <innerclass refid="class_bvr_1_1_renderer_1_1_c_g_p_u_crash_handler" prot="public">Bvr::Renderer::CGPUCrashHandler</innerclass>
+    <innerclass refid="struct_bvr_1_1_renderer_1_1_s_device_memory_allocation" prot="public">Bvr::Renderer::SDeviceMemoryAllocation</innerclass>
+    <innerclass refid="class_bvr_1_1_renderer_1_1_c_g_p_u_scene" prot="public">Bvr::Renderer::CGPUScene</innerclass>
+    <innerclass refid="struct_bvr_1_1_renderer_1_1_s_draw_batch" prot="public">Bvr::Renderer::SDrawBatch</innerclass>
+    <innerclass refid="struct_bvr_1_1_renderer_1_1_s_indirect_draw_batch" prot="public">Bvr::Renderer::SIndirectDrawBatch</innerclass>
+    <innerclass refid="class_bvr_1_1_renderer_1_1_c_indirect_draw_list" prot="public">Bvr::Renderer::CIndirectDrawList</innerclass>
+    <innerclass refid="struct_bvr_1_1_renderer_1_1_s_render_list" prot="public">Bvr::Renderer::SRenderList</innerclass>
     <innerclass refid="class_bvr_1_1_renderer_1_1_c_aliased_texture_creator" prot="public">Bvr::Renderer::CAliasedTextureCreator</innerclass>
-    <innerclass refid="class_bvr_1_1_renderer_1_1_c_frame_context" prot="public">Bvr::Renderer::CFrameContext</innerclass>
-    <innerclass refid="class_bvr_1_1_renderer_1_1_t_block_allocator" prot="public">Bvr::Renderer::TBlockAllocator</innerclass>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_s_per_view_c_b" prot="public">Bvr::Renderer::SPerViewCB</innerclass>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_s_g_p_u_model_data" prot="public">Bvr::Renderer::SGPUModelData</innerclass>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_s_g_p_u_draw_data" prot="public">Bvr::Renderer::SGPUDrawData</innerclass>
@@ -80,48 +89,39 @@
     <innerclass refid="struct_bvr_1_1_renderer_1_1_s_packed_streams" prot="public">Bvr::Renderer::SPackedStreams</innerclass>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_s_accelleration_structure_instance" prot="public">Bvr::Renderer::SAccellerationStructureInstance</innerclass>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_s_render_item" prot="public">Bvr::Renderer::SRenderItem</innerclass>
-    <innerclass refid="class_bvr_1_1_renderer_1_1_c_g_p_u_scene" prot="public">Bvr::Renderer::CGPUScene</innerclass>
-    <innerclass refid="struct_bvr_1_1_renderer_1_1_s_draw_batch" prot="public">Bvr::Renderer::SDrawBatch</innerclass>
-    <innerclass refid="struct_bvr_1_1_renderer_1_1_s_indirect_draw_batch" prot="public">Bvr::Renderer::SIndirectDrawBatch</innerclass>
-    <innerclass refid="class_bvr_1_1_renderer_1_1_c_indirect_draw_list" prot="public">Bvr::Renderer::CIndirectDrawList</innerclass>
-    <innerclass refid="struct_bvr_1_1_renderer_1_1_s_render_list" prot="public">Bvr::Renderer::SRenderList</innerclass>
-    <innerclass refid="class_bvr_1_1_renderer_1_1_c_buffer_bump_allocator" prot="public">Bvr::Renderer::CBufferBumpAllocator</innerclass>
-    <innerclass refid="struct_bvr_1_1_renderer_1_1_s_acceleration_structure" prot="public">Bvr::Renderer::SAccelerationStructure</innerclass>
-    <innerclass refid="struct_bvr_1_1_renderer_1_1_s_profiling_marker" prot="public">Bvr::Renderer::SProfilingMarker</innerclass>
-    <innerclass refid="struct_bvr_1_1_renderer_1_1_s_profiling_data" prot="public">Bvr::Renderer::SProfilingData</innerclass>
-    <innerclass refid="struct_bvr_1_1_renderer_1_1_s_pipeline_profiler_marker_scope" prot="public">Bvr::Renderer::SPipelineProfilerMarkerScope</innerclass>
+    <innerclass refid="class_bvr_1_1_renderer_1_1_c_bindless_storage" prot="public">Bvr::Renderer::CBindlessStorage</innerclass>
+    <innerclass refid="class_bvr_1_1_renderer_1_1_c_graphics_resource" prot="public">Bvr::Renderer::CGraphicsResource</innerclass>
     <innerclass refid="class_bvr_1_1_renderer_1_1_c_vk_command_buffer" prot="public">Bvr::Renderer::CVkCommandBuffer</innerclass>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_s_command_list_pool" prot="public">Bvr::Renderer::SCommandListPool</innerclass>
     <innerclass refid="class_bvr_1_1_renderer_1_1_c_queue" prot="public">Bvr::Renderer::CQueue</innerclass>
-    <innerclass refid="class_bvr_1_1_renderer_1_1_c_graphics_resource" prot="public">Bvr::Renderer::CGraphicsResource</innerclass>
-    <innerclass refid="class_bvr_1_1_renderer_1_1_c_lighting_stage" prot="public">Bvr::Renderer::CLightingStage</innerclass>
-    <innerclass refid="class_bvr_1_1_renderer_1_1_c_s_s_a_o_stage" prot="public">Bvr::Renderer::CSSAOStage</innerclass>
-    <innerclass refid="class_bvr_1_1_renderer_1_1_c_fog_stage" prot="public">Bvr::Renderer::CFogStage</innerclass>
-    <innerclass refid="class_bvr_1_1_renderer_1_1_c_sky_generation" prot="public">Bvr::Renderer::CSkyGeneration</innerclass>
-    <innerclass refid="class_bvr_1_1_renderer_1_1_c_sky_stage" prot="public">Bvr::Renderer::CSkyStage</innerclass>
-    <innerclass refid="class_bvr_1_1_renderer_1_1_c_list_upload_pass" prot="public">Bvr::Renderer::CListUploadPass</innerclass>
-    <innerclass refid="class_bvr_1_1_renderer_1_1_c_cull_pass" prot="public">Bvr::Renderer::CCullPass</innerclass>
-    <innerclass refid="class_bvr_1_1_renderer_1_1_c_sort_pass" prot="public">Bvr::Renderer::CSortPass</innerclass>
-    <innerclass refid="class_bvr_1_1_renderer_1_1_c_g_buffer_pass" prot="public">Bvr::Renderer::CGBufferPass</innerclass>
-    <innerclass refid="class_bvr_1_1_renderer_1_1_c_forward_pass" prot="public">Bvr::Renderer::CForwardPass</innerclass>
-    <innerclass refid="class_bvr_1_1_renderer_1_1_c_h_u_d_pass" prot="public">Bvr::Renderer::CHUDPass</innerclass>
-    <innerclass refid="class_bvr_1_1_renderer_1_1_c_raytracing_stage" prot="public">Bvr::Renderer::CRaytracingStage</innerclass>
-    <innerclass refid="class_bvr_1_1_renderer_1_1_c_restir_g_i_stage" prot="public">Bvr::Renderer::CRestirGIStage</innerclass>
-    <innerclass refid="class_bvr_1_1_renderer_1_1_c_shadow_map_pass" prot="public">Bvr::Renderer::CShadowMapPass</innerclass>
-    <innerclass refid="class_bvr_1_1_renderer_1_1_c_shadow_mask_stage" prot="public">Bvr::Renderer::CShadowMaskStage</innerclass>
-    <innerclass refid="class_bvr_1_1_renderer_1_1_c_depth_stage" prot="public">Bvr::Renderer::CDepthStage</innerclass>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_s_gauss_blur_pass" prot="public">Bvr::Renderer::SGaussBlurPass</innerclass>
     <innerclass refid="class_bvr_1_1_renderer_1_1_c_luminance_pass" prot="public">Bvr::Renderer::CLuminancePass</innerclass>
     <innerclass refid="class_bvr_1_1_renderer_1_1_c_post_effects_pass" prot="public">Bvr::Renderer::CPostEffectsPass</innerclass>
-    <innerclass refid="class_bvr_1_1_renderer_1_1_c_bloom_stage" prot="public">Bvr::Renderer::CBloomStage</innerclass>
+    <innerclass refid="class_bvr_1_1_renderer_1_1_c_shadow_map_pass" prot="public">Bvr::Renderer::CShadowMapPass</innerclass>
+    <innerclass refid="class_bvr_1_1_renderer_1_1_c_shadow_mask_stage" prot="public">Bvr::Renderer::CShadowMaskStage</innerclass>
+    <innerclass refid="class_bvr_1_1_renderer_1_1_c_fog_stage" prot="public">Bvr::Renderer::CFogStage</innerclass>
+    <innerclass refid="class_bvr_1_1_renderer_1_1_c_sky_generation" prot="public">Bvr::Renderer::CSkyGeneration</innerclass>
+    <innerclass refid="class_bvr_1_1_renderer_1_1_c_sky_stage" prot="public">Bvr::Renderer::CSkyStage</innerclass>
     <innerclass refid="class_bvr_1_1_renderer_1_1_c_light_clustering_stage" prot="public">Bvr::Renderer::CLightClusteringStage</innerclass>
-    <innerclass refid="class_bvr_1_1_renderer_1_1_c_shader_parser" prot="public">Bvr::Renderer::CShaderParser</innerclass>
-    <innerclass refid="class_bvr_1_1_renderer_1_1_c_shader_reflection" prot="public">Bvr::Renderer::CShaderReflection</innerclass>
+    <innerclass refid="class_bvr_1_1_renderer_1_1_c_g_buffer_pass" prot="public">Bvr::Renderer::CGBufferPass</innerclass>
+    <innerclass refid="class_bvr_1_1_renderer_1_1_c_forward_pass" prot="public">Bvr::Renderer::CForwardPass</innerclass>
+    <innerclass refid="class_bvr_1_1_renderer_1_1_c_h_u_d_pass" prot="public">Bvr::Renderer::CHUDPass</innerclass>
+    <innerclass refid="class_bvr_1_1_renderer_1_1_c_bloom_stage" prot="public">Bvr::Renderer::CBloomStage</innerclass>
+    <innerclass refid="class_bvr_1_1_renderer_1_1_c_lighting_stage" prot="public">Bvr::Renderer::CLightingStage</innerclass>
+    <innerclass refid="class_bvr_1_1_renderer_1_1_c_s_s_a_o_stage" prot="public">Bvr::Renderer::CSSAOStage</innerclass>
+    <innerclass refid="class_bvr_1_1_renderer_1_1_c_list_upload_pass" prot="public">Bvr::Renderer::CListUploadPass</innerclass>
+    <innerclass refid="class_bvr_1_1_renderer_1_1_c_cull_pass" prot="public">Bvr::Renderer::CCullPass</innerclass>
+    <innerclass refid="class_bvr_1_1_renderer_1_1_c_sort_pass" prot="public">Bvr::Renderer::CSortPass</innerclass>
+    <innerclass refid="class_bvr_1_1_renderer_1_1_c_raytracing_stage" prot="public">Bvr::Renderer::CRaytracingStage</innerclass>
+    <innerclass refid="class_bvr_1_1_renderer_1_1_c_restir_g_i_stage" prot="public">Bvr::Renderer::CRestirGIStage</innerclass>
+    <innerclass refid="class_bvr_1_1_renderer_1_1_c_depth_stage" prot="public">Bvr::Renderer::CDepthStage</innerclass>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_s_parsed_technique_info" prot="public">Bvr::Renderer::SParsedTechniqueInfo</innerclass>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_s_parsed_include_info" prot="public">Bvr::Renderer::SParsedIncludeInfo</innerclass>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_s_shader_gen_params" prot="public">Bvr::Renderer::SShaderGenParams</innerclass>
     <innerclass refid="class_bvr_1_1_renderer_1_1_c_shader_source" prot="public">Bvr::Renderer::CShaderSource</innerclass>
     <innerclass refid="class_bvr_1_1_renderer_1_1_c_shader_compiler" prot="public">Bvr::Renderer::CShaderCompiler</innerclass>
+    <innerclass refid="class_bvr_1_1_renderer_1_1_c_shader_parser" prot="public">Bvr::Renderer::CShaderParser</innerclass>
+    <innerclass refid="class_bvr_1_1_renderer_1_1_c_shader_reflection" prot="public">Bvr::Renderer::CShaderReflection</innerclass>
     <innernamespace refid="namespace_bvr_1_1_renderer_1_1_attr">Bvr::Renderer::Attr</innernamespace>
     <innernamespace refid="namespace_bvr_1_1_renderer_1_1_detail">Bvr::Renderer::Detail</innernamespace>
     <innernamespace refid="namespace_bvr_1_1_renderer_1_1_device">Bvr::Renderer::Device</innernamespace>
@@ -1683,6 +1683,35 @@
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="16" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" bodystart="16" bodyend="21"/>
       </memberdef>
+      <memberdef kind="enum" id="_frame_graph_defs_8hpp_1adcbe218e839b2ca1212077d1c73d64d2" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>ERelativeTo</name>
+        <enumvalue id="_frame_graph_defs_8hpp_1adcbe218e839b2ca1212077d1c73d64d2ad54af574777e6c4c965d0e8651a6c866" prot="public">
+          <name>GraphicsPipeline</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Relative to frame graph resolution. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_frame_graph_defs_8hpp_1adcbe218e839b2ca1212077d1c73d64d2a90589c47f06eb971d548591f23c285af" prot="public">
+          <name>Custom</name>
+          <briefdescription>
+<para>Cutom resolution in pixels. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Frame graph resource dimension point of reference. Values are either described relatively to a target in percents, Or in pixels. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/FrameGraphDefs.hpp" line="35" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/FrameGraphDefs.hpp" bodystart="35" bodyend="38"/>
+      </memberdef>
       <memberdef kind="enum" id="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4" prot="public" static="no" strong="yes">
         <type>uint8</type>
         <name>ETextureUsage</name>
@@ -1955,34 +1984,37 @@
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/BvrFormats.hpp" line="40" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/BvrFormats.hpp" bodystart="40" bodyend="52"/>
       </memberdef>
-      <memberdef kind="enum" id="_frame_graph_defs_8hpp_1adcbe218e839b2ca1212077d1c73d64d2" prot="public" static="no" strong="yes">
+      <memberdef kind="enum" id="_ray_tracing_acceleration_structure_8hpp_1a2671f181a24d71d62cd44ffc12377b05" prot="public" static="no" strong="yes">
         <type></type>
-        <name>ERelativeTo</name>
-        <enumvalue id="_frame_graph_defs_8hpp_1adcbe218e839b2ca1212077d1c73d64d2ad54af574777e6c4c965d0e8651a6c866" prot="public">
-          <name>GraphicsPipeline</name>
-          <initializer>= 0</initializer>
+        <name>EAccelerationStructureType</name>
+        <enumvalue id="_ray_tracing_acceleration_structure_8hpp_1a2671f181a24d71d62cd44ffc12377b05af0c2cf06f9a01bc3a3ef50b116b18b51" prot="public">
+          <name>BLAS</name>
           <briefdescription>
-<para>Relative to frame graph resolution. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="_frame_graph_defs_8hpp_1adcbe218e839b2ca1212077d1c73d64d2a90589c47f06eb971d548591f23c285af" prot="public">
-          <name>Custom</name>
+        <enumvalue id="_ray_tracing_acceleration_structure_8hpp_1a2671f181a24d71d62cd44ffc12377b05a76f4c6aede139c265f747d185346ddc2" prot="public">
+          <name>TLAS</name>
           <briefdescription>
-<para>Cutom resolution in pixels. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_ray_tracing_acceleration_structure_8hpp_1a2671f181a24d71d62cd44ffc12377b05ae93f994f01c537c4e2f7d8528c3eb5e9" prot="public">
+          <name>Count</name>
+          <briefdescription>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
         <briefdescription>
-<para>Frame graph resource dimension point of reference. Values are either described relatively to a target in percents, Or in pixels. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/FrameGraphDefs.hpp" line="34" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/FrameGraphDefs.hpp" bodystart="34" bodyend="37"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/RayTracingAccelerationStructure.hpp" line="14" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/RayTracingAccelerationStructure.hpp" bodystart="14" bodyend="19"/>
       </memberdef>
       <memberdef kind="enum" id="_resources_common_8hpp_1a77abf409edb2445965d2f8bb2aed32f4" prot="public" static="no" strong="yes">
         <type>uint8</type>
@@ -2015,6 +2047,48 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/ResourcesCommon.hpp" line="4" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/ResourcesCommon.hpp" bodystart="4" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="enum" id="_render_list_8hpp_1a79dd3c4425c21378b489b2a4892c165a" prot="public" static="no" strong="yes">
+        <type>uint8</type>
+        <name>ERenderListSortingOptions</name>
+        <enumvalue id="_render_list_8hpp_1a79dd3c4425c21378b489b2a4892c165aa6adf97f83acf6453d4a6a4b1070f3754" prot="public">
+          <name>None</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_render_list_8hpp_1a79dd3c4425c21378b489b2a4892c165aacf3fb1ff52ea1eed3347ac5401ee7f0c" prot="public">
+          <name>Ascending</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_render_list_8hpp_1a79dd3c4425c21378b489b2a4892c165aae3cf5ac19407b1a62c6fccaff675a53b" prot="public">
+          <name>Descending</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_render_list_8hpp_1a79dd3c4425c21378b489b2a4892c165aae93f994f01c537c4e2f7d8528c3eb5e9" prot="public">
+          <name>Count</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/RenderList.hpp" line="63" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/RenderList.hpp" bodystart="63" bodyend="69"/>
       </memberdef>
       <memberdef kind="enum" id="_g_p_u_pipeline_defs_8hpp_1a95fccb0d6e3806ed5a3db9a631923648" prot="public" static="no" strong="yes">
         <type>uint32</type>
@@ -2059,218 +2133,8 @@
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/GPUPipelineDefs.hpp" line="52" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/GPUPipelineDefs.hpp" bodystart="52" bodyend="59"/>
       </memberdef>
-      <memberdef kind="enum" id="_render_list_8hpp_1a79dd3c4425c21378b489b2a4892c165a" prot="public" static="no" strong="yes">
-        <type>uint8</type>
-        <name>ERenderListSortingOptions</name>
-        <enumvalue id="_render_list_8hpp_1a79dd3c4425c21378b489b2a4892c165aa6adf97f83acf6453d4a6a4b1070f3754" prot="public">
-          <name>None</name>
-          <initializer>= 0</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="_render_list_8hpp_1a79dd3c4425c21378b489b2a4892c165aacf3fb1ff52ea1eed3347ac5401ee7f0c" prot="public">
-          <name>Ascending</name>
-          <initializer>= 1</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="_render_list_8hpp_1a79dd3c4425c21378b489b2a4892c165aae3cf5ac19407b1a62c6fccaff675a53b" prot="public">
-          <name>Descending</name>
-          <initializer>= 2</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="_render_list_8hpp_1a79dd3c4425c21378b489b2a4892c165aae93f994f01c537c4e2f7d8528c3eb5e9" prot="public">
-          <name>Count</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/RenderList.hpp" line="63" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/RenderList.hpp" bodystart="63" bodyend="69"/>
-      </memberdef>
-      <memberdef kind="enum" id="_ray_tracing_acceleration_structure_8hpp_1a2671f181a24d71d62cd44ffc12377b05" prot="public" static="no" strong="yes">
-        <type></type>
-        <name>EAccelerationStructureType</name>
-        <enumvalue id="_ray_tracing_acceleration_structure_8hpp_1a2671f181a24d71d62cd44ffc12377b05af0c2cf06f9a01bc3a3ef50b116b18b51" prot="public">
-          <name>BLAS</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="_ray_tracing_acceleration_structure_8hpp_1a2671f181a24d71d62cd44ffc12377b05a76f4c6aede139c265f747d185346ddc2" prot="public">
-          <name>TLAS</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="_ray_tracing_acceleration_structure_8hpp_1a2671f181a24d71d62cd44ffc12377b05ae93f994f01c537c4e2f7d8528c3eb5e9" prot="public">
-          <name>Count</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/RayTracingAccelerationStructure.hpp" line="14" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/RayTracingAccelerationStructure.hpp" bodystart="14" bodyend="19"/>
-      </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
-      <memberdef kind="typedef" id="_common_shaders_8hpp_1acc697c11e8f0e8638efa519c0e894d07" prot="public" static="no">
-        <type>std::vector&lt; uint32, std::allocator&lt; uint32 &gt; &gt;</type>
-        <definition>using Bvr::Renderer::TShaderBlob = typedef std::vector&lt;uint32, std::allocator&lt;uint32&gt; &gt;</definition>
-        <argsstring></argsstring>
-        <name>TShaderBlob</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonShaders.hpp" line="29" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonShaders.hpp" bodystart="29" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="_render_mesh_8hpp_1ab7e68c2e7e71d166c07fb53c4d9cb5c8" prot="public" static="no">
-        <type>std::unordered_map&lt; AssetId, class <ref refid="class_bvr_1_1_renderer_1_1_c_render_mesh" kindref="compound">CRenderMesh</ref> &gt;</type>
-        <definition>using Bvr::Renderer::RenderMeshes = typedef std::unordered_map&lt;AssetId, class CRenderMesh&gt;</definition>
-        <argsstring></argsstring>
-        <name>RenderMeshes</name>
-        <briefdescription>
-<para>Extracted render mesh asset. </para>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderMesh.hpp" line="52" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderMesh.hpp" bodystart="52" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="_frame_graph_defs_8hpp_1a4014e2f2fc7c7a9fbb80d5cfe54adaf5" prot="public" static="no">
-        <type>uint16</type>
-        <definition>using Bvr::Renderer::TFGId = typedef uint16</definition>
-        <argsstring></argsstring>
-        <name>TFGId</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/FrameGraphDefs.hpp" line="8" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/FrameGraphDefs.hpp" bodystart="8" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="_frame_graph_defs_8hpp_1a18223a594e678fe655795d5f555044c2" prot="public" static="no">
-        <templateparamlist>
-          <param>
-            <type>typename T</type>
-          </param>
-        </templateparamlist>
-        <type><ref refid="class_bvr_1_1_renderer_1_1_t_f_g_handle" kindref="compound">TFGHandle</ref>&lt; T, TFGId &gt;</type>
-        <definition>using Bvr::Renderer::TFGHandleBase = typedef TFGHandle&lt;T, TFGId&gt;</definition>
-        <argsstring></argsstring>
-        <name>TFGHandleBase</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/FrameGraphDefs.hpp" line="20" column="13" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/FrameGraphDefs.hpp" bodystart="20" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="_frame_graph_defs_8hpp_1a2c9035fd823861ede96fec842fbabb93" prot="public" static="no">
-        <type><ref refid="class_bvr_1_1_renderer_1_1_t_f_g_objects" kindref="compound">TFGObjects</ref>&lt; <ref refid="class_bvr_1_1_renderer_1_1_c_f_g_node" kindref="compound">CFGNode</ref>, TFGId &gt;</type>
-        <definition>using Bvr::Renderer::TFGNodes = typedef TFGObjects&lt;CFGNode, TFGId&gt;</definition>
-        <argsstring></argsstring>
-        <name>TFGNodes</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/FrameGraphDefs.hpp" line="22" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/FrameGraphDefs.hpp" bodystart="22" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="_frame_graph_defs_8hpp_1a52e13c590b79eb83d0408e3a76394576" prot="public" static="no">
-        <type><ref refid="class_bvr_1_1_renderer_1_1_t_f_g_handle" kindref="compound">TFGHandleBase</ref>&lt; <ref refid="class_bvr_1_1_renderer_1_1_c_f_g_node" kindref="compound">CFGNode</ref> &gt;</type>
-        <definition>using Bvr::Renderer::HFGNode = typedef TFGHandleBase&lt;CFGNode&gt;</definition>
-        <argsstring></argsstring>
-        <name>HFGNode</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/FrameGraphDefs.hpp" line="23" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/FrameGraphDefs.hpp" bodystart="23" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="_frame_graph_defs_8hpp_1aea7da2fc1148ec262ae6e19e199cc5fb" prot="public" static="no">
-        <type><ref refid="class_bvr_1_1_renderer_1_1_t_f_g_objects" kindref="compound">TFGObjects</ref>&lt; <ref refid="class_bvr_1_1_renderer_1_1_c_frame_graph_image" kindref="compound">CFrameGraphImage</ref>, TFGId &gt;</type>
-        <definition>using Bvr::Renderer::TFGImages = typedef TFGObjects&lt;CFrameGraphImage, TFGId&gt;</definition>
-        <argsstring></argsstring>
-        <name>TFGImages</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/FrameGraphDefs.hpp" line="25" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/FrameGraphDefs.hpp" bodystart="25" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="_frame_graph_defs_8hpp_1a90961d69608f042e52c1c1f912faa61c" prot="public" static="no">
-        <type><ref refid="class_bvr_1_1_renderer_1_1_t_f_g_handle" kindref="compound">TFGHandleBase</ref>&lt; <ref refid="class_bvr_1_1_renderer_1_1_c_frame_graph_image" kindref="compound">CFrameGraphImage</ref> &gt;</type>
-        <definition>using Bvr::Renderer::HFGImage = typedef TFGHandleBase&lt;CFrameGraphImage&gt;</definition>
-        <argsstring></argsstring>
-        <name>HFGImage</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/FrameGraphDefs.hpp" line="26" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/FrameGraphDefs.hpp" bodystart="26" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="_frame_graph_defs_8hpp_1a07a70c0447fd25c0a34e7e7881b8a4e9" prot="public" static="no">
-        <type><ref refid="class_bvr_1_1_renderer_1_1_t_f_g_objects" kindref="compound">TFGObjects</ref>&lt; <ref refid="class_bvr_1_1_renderer_1_1_c_frame_graph_buffer" kindref="compound">CFrameGraphBuffer</ref>, TFGId &gt;</type>
-        <definition>using Bvr::Renderer::TFGBuffers = typedef TFGObjects&lt;CFrameGraphBuffer, TFGId&gt;</definition>
-        <argsstring></argsstring>
-        <name>TFGBuffers</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/FrameGraphDefs.hpp" line="28" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/FrameGraphDefs.hpp" bodystart="28" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="_frame_graph_defs_8hpp_1a041fef251c95d9c406c7386663be3abb" prot="public" static="no">
-        <type><ref refid="class_bvr_1_1_renderer_1_1_t_f_g_handle" kindref="compound">TFGHandleBase</ref>&lt; <ref refid="class_bvr_1_1_renderer_1_1_c_frame_graph_buffer" kindref="compound">CFrameGraphBuffer</ref> &gt;</type>
-        <definition>using Bvr::Renderer::HFGBuffer = typedef TFGHandleBase&lt;CFrameGraphBuffer&gt;</definition>
-        <argsstring></argsstring>
-        <name>HFGBuffer</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/FrameGraphDefs.hpp" line="29" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/FrameGraphDefs.hpp" bodystart="29" bodyend="-1"/>
-      </memberdef>
       <memberdef kind="typedef" id="_material_8hpp_1a720345ae7a9376acf9a379f3bfaf0aa9" prot="public" static="no">
         <type>std::unordered_map&lt; AssetId, <ref refid="struct_bvr_1_1_t_handle" kindref="compound">THandle</ref>&lt; <ref refid="struct_bvr_1_1_renderer_1_1_texture" kindref="compound">Texture</ref> &gt; &gt;</type>
         <definition>using Bvr::Renderer::RenderTextures = typedef std::unordered_map&lt;AssetId, THandle&lt;Texture&gt; &gt;</definition>
@@ -2315,18 +2179,141 @@
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/Material.hpp" line="340" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/Material.hpp" bodystart="340" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="_g_p_u_pipeline_defs_8hpp_1a0c0acbafd6e2a24b8be6ff3714db2524" prot="public" static="no">
-        <type>std::pair&lt; std::vector&lt; const <ref refid="class_bvr_1_1_renderer_1_1_device_1_1_c_buffer" kindref="compound">Device::CBuffer</ref> * &gt;, std::vector&lt; uint64 &gt; &gt;</type>
-        <definition>using Bvr::Renderer::StreamList = typedef std::pair&lt;std::vector&lt;const Device::CBuffer*&gt;, std::vector&lt;uint64&gt; &gt;</definition>
+      <memberdef kind="typedef" id="_common_shaders_8hpp_1acc697c11e8f0e8638efa519c0e894d07" prot="public" static="no">
+        <type>std::vector&lt; uint32, std::allocator&lt; uint32 &gt; &gt;</type>
+        <definition>using Bvr::Renderer::TShaderBlob = typedef std::vector&lt;uint32, std::allocator&lt;uint32&gt; &gt;</definition>
         <argsstring></argsstring>
-        <name>StreamList</name>
+        <name>TShaderBlob</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/GPUPipelineDefs.hpp" line="108" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/GPUPipelineDefs.hpp" bodystart="109" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonShaders.hpp" line="29" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonShaders.hpp" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_render_mesh_8hpp_1ab7e68c2e7e71d166c07fb53c4d9cb5c8" prot="public" static="no">
+        <type>std::unordered_map&lt; AssetId, class <ref refid="class_bvr_1_1_renderer_1_1_c_render_mesh" kindref="compound">CRenderMesh</ref> &gt;</type>
+        <definition>using Bvr::Renderer::RenderMeshes = typedef std::unordered_map&lt;AssetId, class CRenderMesh&gt;</definition>
+        <argsstring></argsstring>
+        <name>RenderMeshes</name>
+        <briefdescription>
+<para>Extracted render mesh asset. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderMesh.hpp" line="52" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderMesh.hpp" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_frame_graph_defs_8hpp_1a4014e2f2fc7c7a9fbb80d5cfe54adaf5" prot="public" static="no">
+        <type>uint16</type>
+        <definition>using Bvr::Renderer::TFGId = typedef uint16</definition>
+        <argsstring></argsstring>
+        <name>TFGId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/FrameGraphDefs.hpp" line="9" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/FrameGraphDefs.hpp" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_frame_graph_defs_8hpp_1a18223a594e678fe655795d5f555044c2" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="class_bvr_1_1_renderer_1_1_t_f_g_handle" kindref="compound">TFGHandle</ref>&lt; T, TFGId &gt;</type>
+        <definition>using Bvr::Renderer::TFGHandleBase = typedef TFGHandle&lt;T, TFGId&gt;</definition>
+        <argsstring></argsstring>
+        <name>TFGHandleBase</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/FrameGraphDefs.hpp" line="21" column="13" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/FrameGraphDefs.hpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_frame_graph_defs_8hpp_1a2c9035fd823861ede96fec842fbabb93" prot="public" static="no">
+        <type><ref refid="class_bvr_1_1_renderer_1_1_t_f_g_objects" kindref="compound">TFGObjects</ref>&lt; <ref refid="class_bvr_1_1_renderer_1_1_c_f_g_node" kindref="compound">CFGNode</ref>, TFGId &gt;</type>
+        <definition>using Bvr::Renderer::TFGNodes = typedef TFGObjects&lt;CFGNode, TFGId&gt;</definition>
+        <argsstring></argsstring>
+        <name>TFGNodes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/FrameGraphDefs.hpp" line="23" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/FrameGraphDefs.hpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_frame_graph_defs_8hpp_1a52e13c590b79eb83d0408e3a76394576" prot="public" static="no">
+        <type><ref refid="class_bvr_1_1_renderer_1_1_t_f_g_handle" kindref="compound">TFGHandleBase</ref>&lt; <ref refid="class_bvr_1_1_renderer_1_1_c_f_g_node" kindref="compound">CFGNode</ref> &gt;</type>
+        <definition>using Bvr::Renderer::HFGNode = typedef TFGHandleBase&lt;CFGNode&gt;</definition>
+        <argsstring></argsstring>
+        <name>HFGNode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/FrameGraphDefs.hpp" line="24" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/FrameGraphDefs.hpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_frame_graph_defs_8hpp_1aea7da2fc1148ec262ae6e19e199cc5fb" prot="public" static="no">
+        <type><ref refid="class_bvr_1_1_renderer_1_1_t_f_g_objects" kindref="compound">TFGObjects</ref>&lt; <ref refid="class_bvr_1_1_renderer_1_1_c_frame_graph_image" kindref="compound">CFrameGraphImage</ref>, TFGId &gt;</type>
+        <definition>using Bvr::Renderer::TFGImages = typedef TFGObjects&lt;CFrameGraphImage, TFGId&gt;</definition>
+        <argsstring></argsstring>
+        <name>TFGImages</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/FrameGraphDefs.hpp" line="26" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/FrameGraphDefs.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_frame_graph_defs_8hpp_1a90961d69608f042e52c1c1f912faa61c" prot="public" static="no">
+        <type><ref refid="class_bvr_1_1_renderer_1_1_t_f_g_handle" kindref="compound">TFGHandleBase</ref>&lt; <ref refid="class_bvr_1_1_renderer_1_1_c_frame_graph_image" kindref="compound">CFrameGraphImage</ref> &gt;</type>
+        <definition>using Bvr::Renderer::HFGImage = typedef TFGHandleBase&lt;CFrameGraphImage&gt;</definition>
+        <argsstring></argsstring>
+        <name>HFGImage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/FrameGraphDefs.hpp" line="27" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/FrameGraphDefs.hpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_frame_graph_defs_8hpp_1a07a70c0447fd25c0a34e7e7881b8a4e9" prot="public" static="no">
+        <type><ref refid="class_bvr_1_1_renderer_1_1_t_f_g_objects" kindref="compound">TFGObjects</ref>&lt; <ref refid="class_bvr_1_1_renderer_1_1_c_frame_graph_buffer" kindref="compound">CFrameGraphBuffer</ref>, TFGId &gt;</type>
+        <definition>using Bvr::Renderer::TFGBuffers = typedef TFGObjects&lt;CFrameGraphBuffer, TFGId&gt;</definition>
+        <argsstring></argsstring>
+        <name>TFGBuffers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/FrameGraphDefs.hpp" line="29" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/FrameGraphDefs.hpp" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_frame_graph_defs_8hpp_1a041fef251c95d9c406c7386663be3abb" prot="public" static="no">
+        <type><ref refid="class_bvr_1_1_renderer_1_1_t_f_g_handle" kindref="compound">TFGHandleBase</ref>&lt; <ref refid="class_bvr_1_1_renderer_1_1_c_frame_graph_buffer" kindref="compound">CFrameGraphBuffer</ref> &gt;</type>
+        <definition>using Bvr::Renderer::HFGBuffer = typedef TFGHandleBase&lt;CFrameGraphBuffer&gt;</definition>
+        <argsstring></argsstring>
+        <name>HFGBuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/FrameGraphDefs.hpp" line="30" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/FrameGraphDefs.hpp" bodystart="30" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_render_list_8hpp_1a71ad54cff84129d758aeb6a95eea8b7c" prot="public" static="no">
         <type><ref refid="struct_bvr_1_1_renderer_1_1_s_g_p_u_draw_data" kindref="compound">SGPUDrawData</ref></type>
@@ -2340,6 +2327,19 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/RenderList.hpp" line="11" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/RenderList.hpp" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_g_p_u_pipeline_defs_8hpp_1a0c0acbafd6e2a24b8be6ff3714db2524" prot="public" static="no">
+        <type>std::pair&lt; std::vector&lt; const <ref refid="class_bvr_1_1_renderer_1_1_device_1_1_c_buffer" kindref="compound">Device::CBuffer</ref> * &gt;, std::vector&lt; uint64 &gt; &gt;</type>
+        <definition>using Bvr::Renderer::StreamList = typedef std::pair&lt;std::vector&lt;const Device::CBuffer*&gt;, std::vector&lt;uint64&gt; &gt;</definition>
+        <argsstring></argsstring>
+        <name>StreamList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/GPUPipelineDefs.hpp" line="108" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/GPUPipelineDefs.hpp" bodystart="109" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="var">
@@ -2390,6 +2390,150 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
+      <memberdef kind="function" id="_common_renderer_8hpp_1a2ec06b66a838b4cfc38cf7cd6c263b3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Bvr::Renderer::BVR_ENUM_OPERATORS</definition>
+        <argsstring>(EPushConstants)</argsstring>
+        <name>BVR_ENUM_OPERATORS</name>
+        <param>
+          <type>EPushConstants</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonRenderer.hpp" line="38" column="1" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonRenderer.hpp" declline="38" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_common_renderer_8hpp_1afd738799da8b1f0559c393d054279e79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Bvr::Renderer::BVR_ENUM_OPERATORS</definition>
+        <argsstring>(ERenderList)</argsstring>
+        <name>BVR_ENUM_OPERATORS</name>
+        <param>
+          <type>ERenderList</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonRenderer.hpp" line="52" column="1" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonRenderer.hpp" declline="52" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_common_renderer_8hpp_1a318ba30327ec82c81704f44301f7a4eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Bvr::Renderer::BVR_ENUM_OPERATORS</definition>
+        <argsstring>(EPipelineType)</argsstring>
+        <name>BVR_ENUM_OPERATORS</name>
+        <param>
+          <type>EPipelineType</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonRenderer.hpp" line="61" column="1" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonRenderer.hpp" declline="61" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_common_renderer_8hpp_1ac26e11d9f2e6756b2700a592291d137a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Bvr::Renderer::BVR_ENUM_OPERATORS</definition>
+        <argsstring>(EPrimitiveTopology)</argsstring>
+        <name>BVR_ENUM_OPERATORS</name>
+        <param>
+          <type>EPrimitiveTopology</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonRenderer.hpp" line="74" column="1" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonRenderer.hpp" declline="74" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_material_8hpp_1ae87fd53e2cd7c0367f821c11f8701441" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void Bvr::Renderer::ExtractMaterialsSystem</definition>
+        <argsstring>(App &amp;app, RenderTextures &amp;textures, const Assets&lt; T &gt; &amp;srcMaterials, TRetryNextFrame&lt; T &gt; &amp;retries, const Events&lt; AssetEvent&lt; T &gt;&gt; &amp;srcEvents, RenderMaterials &amp;dstMaterials)</argsstring>
+        <name>ExtractMaterialsSystem</name>
+        <param>
+          <type>App &amp;</type>
+          <declname>app</declname>
+        </param>
+        <param>
+          <type>RenderTextures &amp;</type>
+          <declname>textures</declname>
+        </param>
+        <param>
+          <type>const Assets&lt; T &gt; &amp;</type>
+          <declname>srcMaterials</declname>
+        </param>
+        <param>
+          <type>TRetryNextFrame&lt; T &gt; &amp;</type>
+          <declname>retries</declname>
+        </param>
+        <param>
+          <type>const Events&lt; AssetEvent&lt; T &gt;&gt; &amp;</type>
+          <declname>srcEvents</declname>
+        </param>
+        <param>
+          <type>RenderMaterials &amp;</type>
+          <declname>dstMaterials</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/Material.hpp" line="343" column="6" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/Material.hpp" bodystart="343" bodyend="386"/>
+      </memberdef>
+      <memberdef kind="function" id="_material_8hpp_1a52c728bafbb6823379f33de092287902" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void Bvr::Renderer::RetryCreating</definition>
+        <argsstring>(App &amp;app, RenderTextures &amp;textures, TRetryNextFrame&lt; T &gt; &amp;retries, const Assets&lt; T &gt; &amp;srcMaterials, RenderMaterials &amp;dstMaterials)</argsstring>
+        <name>RetryCreating</name>
+        <param>
+          <type>App &amp;</type>
+          <declname>app</declname>
+        </param>
+        <param>
+          <type>RenderTextures &amp;</type>
+          <declname>textures</declname>
+        </param>
+        <param>
+          <type>TRetryNextFrame&lt; T &gt; &amp;</type>
+          <declname>retries</declname>
+        </param>
+        <param>
+          <type>const Assets&lt; T &gt; &amp;</type>
+          <declname>srcMaterials</declname>
+        </param>
+        <param>
+          <type>RenderMaterials &amp;</type>
+          <declname>dstMaterials</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/Material.hpp" line="389" column="6" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/Material.hpp" bodystart="389" bodyend="412"/>
+      </memberdef>
       <memberdef kind="function" id="_bind_group_meta_8hpp_1af82027d9e1e44b1a15f5abc7f3060ee0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
@@ -2542,70 +2686,6 @@
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/BindGroupMeta.hpp" line="104" column="6" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/BindGroupMeta.hpp" declline="104" declcolumn="6"/>
       </memberdef>
-      <memberdef kind="function" id="_common_renderer_8hpp_1a2ec06b66a838b4cfc38cf7cd6c263b3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type></type>
-        <definition>Bvr::Renderer::BVR_ENUM_OPERATORS</definition>
-        <argsstring>(EPushConstants)</argsstring>
-        <name>BVR_ENUM_OPERATORS</name>
-        <param>
-          <type>EPushConstants</type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonRenderer.hpp" line="38" column="1" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonRenderer.hpp" declline="38" declcolumn="1"/>
-      </memberdef>
-      <memberdef kind="function" id="_common_renderer_8hpp_1afd738799da8b1f0559c393d054279e79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type></type>
-        <definition>Bvr::Renderer::BVR_ENUM_OPERATORS</definition>
-        <argsstring>(ERenderList)</argsstring>
-        <name>BVR_ENUM_OPERATORS</name>
-        <param>
-          <type>ERenderList</type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonRenderer.hpp" line="52" column="1" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonRenderer.hpp" declline="52" declcolumn="1"/>
-      </memberdef>
-      <memberdef kind="function" id="_common_renderer_8hpp_1a318ba30327ec82c81704f44301f7a4eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type></type>
-        <definition>Bvr::Renderer::BVR_ENUM_OPERATORS</definition>
-        <argsstring>(EPipelineType)</argsstring>
-        <name>BVR_ENUM_OPERATORS</name>
-        <param>
-          <type>EPipelineType</type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonRenderer.hpp" line="61" column="1" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonRenderer.hpp" declline="61" declcolumn="1"/>
-      </memberdef>
-      <memberdef kind="function" id="_common_renderer_8hpp_1ac26e11d9f2e6756b2700a592291d137a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type></type>
-        <definition>Bvr::Renderer::BVR_ENUM_OPERATORS</definition>
-        <argsstring>(EPrimitiveTopology)</argsstring>
-        <name>BVR_ENUM_OPERATORS</name>
-        <param>
-          <type>EPrimitiveTopology</type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonRenderer.hpp" line="74" column="1" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonRenderer.hpp" declline="74" declcolumn="1"/>
-      </memberdef>
       <memberdef kind="function" id="_common_shaders_8hpp_1ab1ff1d0bc1427b8743fe1a730f3bd55c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>Bvr::Renderer::BVR_ENUM_OPERATORS</definition>
@@ -2645,23 +2725,6 @@
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="26" column="13" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" declline="26" declcolumn="13"/>
       </memberdef>
-      <memberdef kind="function" id="_graphics_pipeline_8hpp_1ac0d372e9816a27ad878781d5fe0c1738" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void Bvr::Renderer::BuildDefaultPipelineStages</definition>
-        <argsstring>(App &amp;app)</argsstring>
-        <name>BuildDefaultPipelineStages</name>
-        <param>
-          <type>App &amp;</type>
-          <declname>app</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/GraphicsPipeline.hpp" line="55" column="6" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/GraphicsPipeline.hpp" declline="55" declcolumn="6"/>
-      </memberdef>
       <memberdef kind="function" id="_bvr_formats_8hpp_1a41121d3d0bfa3bdf4dc7b6e773bd1603" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>Bvr::Renderer::BVR_ENUM_OPERATORS</definition>
@@ -2694,39 +2757,14 @@
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/BvrFormats.hpp" line="38" column="1" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/BvrFormats.hpp" declline="38" declcolumn="1"/>
       </memberdef>
-      <memberdef kind="function" id="_material_8hpp_1ae87fd53e2cd7c0367f821c11f8701441" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>typename T</type>
-          </param>
-        </templateparamlist>
+      <memberdef kind="function" id="_graphics_pipeline_8hpp_1ac0d372e9816a27ad878781d5fe0c1738" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void Bvr::Renderer::ExtractMaterialsSystem</definition>
-        <argsstring>(App &amp;app, RenderTextures &amp;textures, const Assets&lt; T &gt; &amp;srcMaterials, TRetryNextFrame&lt; T &gt; &amp;retries, const Events&lt; AssetEvent&lt; T &gt;&gt; &amp;srcEvents, RenderMaterials &amp;dstMaterials)</argsstring>
-        <name>ExtractMaterialsSystem</name>
+        <definition>void Bvr::Renderer::BuildDefaultPipelineStages</definition>
+        <argsstring>(App &amp;app)</argsstring>
+        <name>BuildDefaultPipelineStages</name>
         <param>
           <type>App &amp;</type>
           <declname>app</declname>
-        </param>
-        <param>
-          <type>RenderTextures &amp;</type>
-          <declname>textures</declname>
-        </param>
-        <param>
-          <type>const Assets&lt; T &gt; &amp;</type>
-          <declname>srcMaterials</declname>
-        </param>
-        <param>
-          <type>TRetryNextFrame&lt; T &gt; &amp;</type>
-          <declname>retries</declname>
-        </param>
-        <param>
-          <type>const Events&lt; AssetEvent&lt; T &gt;&gt; &amp;</type>
-          <declname>srcEvents</declname>
-        </param>
-        <param>
-          <type>RenderMaterials &amp;</type>
-          <declname>dstMaterials</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -2734,45 +2772,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/Material.hpp" line="343" column="6" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/Material.hpp" bodystart="343" bodyend="386"/>
-      </memberdef>
-      <memberdef kind="function" id="_material_8hpp_1a52c728bafbb6823379f33de092287902" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>typename T</type>
-          </param>
-        </templateparamlist>
-        <type>void</type>
-        <definition>void Bvr::Renderer::RetryCreating</definition>
-        <argsstring>(App &amp;app, RenderTextures &amp;textures, TRetryNextFrame&lt; T &gt; &amp;retries, const Assets&lt; T &gt; &amp;srcMaterials, RenderMaterials &amp;dstMaterials)</argsstring>
-        <name>RetryCreating</name>
-        <param>
-          <type>App &amp;</type>
-          <declname>app</declname>
-        </param>
-        <param>
-          <type>RenderTextures &amp;</type>
-          <declname>textures</declname>
-        </param>
-        <param>
-          <type>TRetryNextFrame&lt; T &gt; &amp;</type>
-          <declname>retries</declname>
-        </param>
-        <param>
-          <type>const Assets&lt; T &gt; &amp;</type>
-          <declname>srcMaterials</declname>
-        </param>
-        <param>
-          <type>RenderMaterials &amp;</type>
-          <declname>dstMaterials</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/Material.hpp" line="389" column="6" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/Material.hpp" bodystart="389" bodyend="412"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/GraphicsPipeline.hpp" line="55" column="6" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/GraphicsPipeline.hpp" declline="55" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="_frame_graph_8hpp_1a3d9f4b64d278f7a58687c6c3020a1281" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -2845,6 +2845,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/BindGroupMeta.hpp" line="10" column="1"/>
+    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/CommonRenderer.hpp" line="10" column="1"/>
   </compounddef>
 </doxygen>
