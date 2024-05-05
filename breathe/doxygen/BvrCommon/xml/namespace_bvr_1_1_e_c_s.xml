@@ -2,6 +2,8 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="namespace_bvr_1_1_e_c_s" kind="namespace" language="C++">
     <compoundname>Bvr::ECS</compoundname>
+    <innerclass refid="class_bvr_1_1_e_c_s_1_1_t_sparse_set_traits" prot="public">Bvr::ECS::TSparseSetTraits</innerclass>
+    <innerclass refid="struct_bvr_1_1_e_c_s_1_1_t_null" prot="public">Bvr::ECS::TNull</innerclass>
     <innerclass refid="struct_bvr_1_1_e_c_s_1_1_t_component_traits" prot="public">Bvr::ECS::TComponentTraits</innerclass>
     <innerclass refid="class_bvr_1_1_e_c_s_1_1_t_basic_dense_storage_iterator" prot="public">Bvr::ECS::TBasicDenseStorageIterator</innerclass>
     <innerclass refid="class_bvr_1_1_e_c_s_1_1_t_basic_dense_storage_validating_iterator" prot="public">Bvr::ECS::TBasicDenseStorageValidatingIterator</innerclass>
@@ -18,8 +20,6 @@
     <innerclass refid="struct_bvr_1_1_e_c_s_1_1_t_query_helper" prot="public">Bvr::ECS::TQueryHelper</innerclass>
     <innerclass refid="class_bvr_1_1_e_c_s_1_1_t_query_3_01_with_3_01_t_00_01_inc_8_8_8_01_4_00_01_with_out_3_01_filter_8_8_8_01_4_01_4" prot="public">Bvr::ECS::TQuery&lt; With&lt; T, Inc... &gt;, WithOut&lt; Filter... &gt; &gt;</innerclass>
     <innerclass refid="class_bvr_1_1_e_c_s_1_1_reg" prot="public">Bvr::ECS::Reg</innerclass>
-    <innerclass refid="class_bvr_1_1_e_c_s_1_1_t_sparse_set_traits" prot="public">Bvr::ECS::TSparseSetTraits</innerclass>
-    <innerclass refid="struct_bvr_1_1_e_c_s_1_1_t_null" prot="public">Bvr::ECS::TNull</innerclass>
     <innerclass refid="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set_iterator" prot="public">Bvr::ECS::TBasicSparseSetIterator</innerclass>
     <innerclass refid="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set" prot="public">Bvr::ECS::TBasicSparseSet</innerclass>
     <innerclass refid="class_bvr_1_1_e_c_s_1_1_t_sparse_set_traits_3_01_asset_id_01_4" prot="public">Bvr::ECS::TSparseSetTraits&lt; AssetId &gt;</innerclass>
@@ -38,19 +38,6 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
-      <memberdef kind="typedef" id="_registry_8hpp_1a65cefc0ce1977a99253b2e1dc2ae13c9" prot="public" static="no">
-        <type>std::function&lt; void(<ref refid="class_bvr_1_1_e_c_s_1_1_reg" kindref="compound">Reg</ref> &amp;, const TEntity)&gt;</type>
-        <definition>using Bvr::ECS::TSignalFn = typedef std::function&lt;void(Reg&amp;, const TEntity)&gt;</definition>
-        <argsstring></argsstring>
-        <name>TSignalFn</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="13" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="13" bodyend="-1"/>
-      </memberdef>
       <memberdef kind="typedef" id="_entity_handle_8hpp_1a9c6529c9c34ce78f77f4ebc07b205e95" prot="public" static="no">
         <type><ref refid="class_bvr_1_1_e_c_s_1_1_t_sparse_set_traits" kindref="compound">TSparseSetTraits</ref>&lt; TEntity &gt;</type>
         <definition>using Bvr::ECS::TEntityTraits = typedef TSparseSetTraits&lt;TEntity&gt;</definition>
@@ -64,8 +51,35 @@
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/EntityHandle.hpp" line="114" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/EntityHandle.hpp" bodystart="114" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="typedef" id="_registry_8hpp_1a65cefc0ce1977a99253b2e1dc2ae13c9" prot="public" static="no">
+        <type>std::function&lt; void(<ref refid="class_bvr_1_1_e_c_s_1_1_reg" kindref="compound">Reg</ref> &amp;, const TEntity)&gt;</type>
+        <definition>using Bvr::ECS::TSignalFn = typedef std::function&lt;void(Reg&amp;, const TEntity)&gt;</definition>
+        <argsstring></argsstring>
+        <name>TSignalFn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" line="13" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Registry.hpp" bodystart="13" bodyend="-1"/>
+      </memberdef>
       </sectiondef>
       <sectiondef kind="var">
+      <memberdef kind="variable" id="_entity_handle_8hpp_1a4d07a311f06a5684d12491ee0d4810e4" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr static <ref refid="struct_bvr_1_1_e_c_s_1_1_t_null" kindref="compound">TNull</ref></type>
+        <definition>constexpr static TNull Bvr::ECS::Null</definition>
+        <argsstring></argsstring>
+        <name>Null</name>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/EntityHandle.hpp" line="111" column="24" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/EntityHandle.hpp" bodystart="111" bodyend="-1"/>
+      </memberdef>
       <memberdef kind="variable" id="_dense_storage_8hpp_1ae529857cc82ab0cc797b469f4b4f05f1" prot="public" static="no" mutable="no">
         <templateparamlist>
           <param>
@@ -84,20 +98,6 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/DenseStorage.hpp" line="196" column="9" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/DenseStorage.hpp" bodystart="196" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="_entity_handle_8hpp_1a4d07a311f06a5684d12491ee0d4810e4" prot="public" static="yes" constexpr="yes" mutable="no">
-        <type>constexpr static <ref refid="struct_bvr_1_1_e_c_s_1_1_t_null" kindref="compound">TNull</ref></type>
-        <definition>constexpr static TNull Bvr::ECS::Null</definition>
-        <argsstring></argsstring>
-        <name>Null</name>
-        <initializer>{}</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/EntityHandle.hpp" line="111" column="24" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/EntityHandle.hpp" bodystart="111" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -158,6 +158,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/DenseStorage.hpp" line="5" column="1"/>
+    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/EntityHandle.hpp" line="5" column="1"/>
   </compounddef>
 </doxygen>
