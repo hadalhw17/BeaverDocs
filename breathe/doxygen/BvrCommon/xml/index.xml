@@ -796,7 +796,9 @@
     <member refid="class_bvr_1_1_m_t_1_1_c_thread_pool_1a6f351f762f33efcd6faf3d0d5dabb434" kind="function"><name>IsBusy</name></member>
     <member refid="class_bvr_1_1_m_t_1_1_c_thread_pool_1ae5765f204ae4ced13e4dbd775d24b995" kind="function"><name>GetThreadCount</name></member>
     <member refid="class_bvr_1_1_m_t_1_1_c_thread_pool_1af145ef7c5f68d230d6eb036dbac01fd6" kind="function"><name>Dispatch</name></member>
+    <member refid="class_bvr_1_1_m_t_1_1_c_thread_pool_1aa42063b26f39c920aa85bde4bd2d7bb4" kind="function"><name>AddBatch</name></member>
     <member refid="class_bvr_1_1_m_t_1_1_c_thread_pool_1a290127f2c181e5519a3e010eff79700a" kind="function"><name>PushWork</name></member>
+    <member refid="class_bvr_1_1_m_t_1_1_c_thread_pool_1ada841858275f7c47f64de89c211693ad" kind="function"><name>PushBatch</name></member>
   </compound>
   <compound refid="class_bvr_1_1_c_time" kind="class"><name>Bvr::CTime</name>
     <member refid="class_bvr_1_1_c_time_1a1d45c1f8090bb364437af8eb99a962ed" kind="function"><name>~CTime</name></member>
@@ -1079,7 +1081,7 @@
   <compound refid="struct_bvr_1_1_i_assets" kind="struct"><name>Bvr::IAssets</name>
     <member refid="struct_bvr_1_1_i_assets_1a6cd18b31d0ca11663326bd27f40356fc" kind="function"><name>ReserveHandle</name></member>
     <member refid="struct_bvr_1_1_i_assets_1a710e5206471dacc47ffafbe0b25f4c6f" kind="function"><name>Emplace</name></member>
-    <member refid="struct_bvr_1_1_i_assets_1abff2b32f130b6789d04118d5e5c365df" kind="function"><name>GetLifetimeInterface</name></member>
+    <member refid="struct_bvr_1_1_i_assets_1a6a0964119d2d5bbbc38d9974aa2d2459" kind="function"><name>GetLifetimeInterface</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_i_asset_saver" kind="struct"><name>Bvr::IAssetSaver</name>
     <member refid="struct_bvr_1_1_i_asset_saver_1ac895eddba6582b4a40e469ebffb0fb32" kind="function"><name>~IAssetSaver</name></member>
@@ -1136,9 +1138,14 @@
     <member refid="class_bvr_1_1_meta_1_1_instance_1a764e80725783dace3cf621f54e0a13e1" kind="function"><name>TryGet</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_asset_lifetime_event_1_1_interface" kind="struct"><name>Bvr::AssetLifetimeEvent::Interface</name>
-    <member refid="struct_bvr_1_1_asset_lifetime_event_1_1_interface_1ac84f72b1c3084e2f559c6dc9967ea741" kind="variable"><name>Create</name></member>
-    <member refid="struct_bvr_1_1_asset_lifetime_event_1_1_interface_1a6f1f4a51064d0259c202c04825465920" kind="variable"><name>Free</name></member>
-    <member refid="struct_bvr_1_1_asset_lifetime_event_1_1_interface_1a412ec848c4bd0ea5c74c766aee66e1cb" kind="variable"><name>Alive</name></member>
+    <member refid="struct_bvr_1_1_asset_lifetime_event_1_1_interface_1a6e1397c868e72f74803ae4040c74521b" kind="typedef"><name>TFunction</name></member>
+    <member refid="struct_bvr_1_1_asset_lifetime_event_1_1_interface_1a08515b33eddc8b2efa287ac7f2bc052f" kind="variable"><name>m_create</name></member>
+    <member refid="struct_bvr_1_1_asset_lifetime_event_1_1_interface_1a2ea57eae13eb1bef0b37c92a9ac45d3a" kind="variable"><name>m_free</name></member>
+    <member refid="struct_bvr_1_1_asset_lifetime_event_1_1_interface_1abf6e78875c903a77bf91d753fd7a093a" kind="variable"><name>m_alive</name></member>
+    <member refid="struct_bvr_1_1_asset_lifetime_event_1_1_interface_1ad9695d0d831e9f955e613af5aebd9c09" kind="variable"><name>m_instance</name></member>
+    <member refid="struct_bvr_1_1_asset_lifetime_event_1_1_interface_1a45c2d9850eff5c0268a52632cda81c32" kind="function"><name>Create</name></member>
+    <member refid="struct_bvr_1_1_asset_lifetime_event_1_1_interface_1a1bc6045b3c1d1e24f5d1d4eb139e5587" kind="function"><name>Free</name></member>
+    <member refid="struct_bvr_1_1_asset_lifetime_event_1_1_interface_1a85576f3b134be140279ebf79f93d410a" kind="function"><name>Alive</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_meta_1_1_detail_1_1_invalid_wrapped_type" kind="struct"><name>Bvr::Meta::Detail::InvalidWrappedType</name>
   </compound>
@@ -1514,7 +1521,7 @@
     <member refid="struct_bvr_1_1_s_asset_ref_counter_1aa2ad5b9e16bb4edccd63bc7ddd39cab2" kind="typedef"><name>SendFnT</name></member>
     <member refid="struct_bvr_1_1_s_asset_ref_counter_1aff778757bdaac88ecba9d8d250dd4636" kind="variable"><name>m_events</name></member>
     <member refid="struct_bvr_1_1_s_asset_ref_counter_1a9f244fdb6c104940238500fe00b3c4e9" kind="variable"><name>m_refCounts</name></member>
-    <member refid="struct_bvr_1_1_s_asset_ref_counter_1a2221ab1e2380e16b777e1136c10253c1" kind="function"><name>ProcessEvents</name></member>
+    <member refid="struct_bvr_1_1_s_asset_ref_counter_1a0d6748b8ae922908474104957dc52acc" kind="function"><name>ProcessEvents</name></member>
     <member refid="struct_bvr_1_1_s_asset_ref_counter_1a76e63b4ec60e8361598cebff5768c3e7" kind="function"><name>Send</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_event_1_1_system_1_1_s_char_enter" kind="struct"><name>Bvr::Event::System::SCharEnter</name>
@@ -1727,6 +1734,7 @@
   <compound refid="struct_bvr_1_1_m_t_1_1_task_context" kind="struct"><name>Bvr::MT::TaskContext</name>
     <member refid="struct_bvr_1_1_m_t_1_1_task_context_1a56367a4f5490414c546c27971314b4ed" kind="variable"><name>State</name></member>
     <member refid="struct_bvr_1_1_m_t_1_1_task_context_1a32e4bed34f4aac362bef466226ea2f79" kind="variable"><name>Dependencies</name></member>
+    <member refid="struct_bvr_1_1_m_t_1_1_task_context_1a2e0829a0044a13748ab1a7144c8e3047" kind="variable"><name>Work</name></member>
     <member refid="struct_bvr_1_1_m_t_1_1_task_context_1a70b8a1bae49b17e38b711aaff60d7a90" kind="function"><name>WaitOnTask</name></member>
     <member refid="struct_bvr_1_1_m_t_1_1_task_context_1a0df397a253021261a541d620a49658b6" kind="function"><name>WaitOnDependencies</name></member>
     <member refid="struct_bvr_1_1_m_t_1_1_task_context_1a2e34adccca7c2e223892617de40cdb10" kind="function"><name>IsDone</name></member>
@@ -1776,7 +1784,6 @@
     <member refid="class_bvr_1_1_t_assets_1a4b7a48d596b6c2235501fc6fae4cd303" kind="variable"><name>TAssetIterator&lt; TAssets &gt;</name></member>
     <member refid="class_bvr_1_1_t_assets_1a5c561c20c8f0d72544cdc2040c2ecce6" kind="variable"><name>m_lifetimeEvents</name></member>
     <member refid="class_bvr_1_1_t_assets_1adc93fe61060d19284aa496c55cd8b885" kind="variable"><name>m_tempAssetEventQueue</name></member>
-    <member refid="class_bvr_1_1_t_assets_1ab4720a3564c819312dba4ed4b76d9b0a" kind="variable"><name>m_lifetimeInterface</name></member>
     <member refid="class_bvr_1_1_t_assets_1afe76c13891111e6599d4082e6f7555da" kind="variable"><name>m_entities</name></member>
     <member refid="class_bvr_1_1_t_assets_1a5db64100d446dd7da0f52e8127f05261" kind="variable"><name>m_freeList</name></member>
     <member refid="class_bvr_1_1_t_assets_1a19437e6595abb040662b336fb18722fb" kind="variable"><name>Null</name></member>
@@ -1798,7 +1805,7 @@
     <member refid="class_bvr_1_1_t_assets_1a2b3cfcd5641adb0a19b1580dbd7574fe" kind="function"><name>Get</name></member>
     <member refid="class_bvr_1_1_t_assets_1a4ac949cf8377edce45a1f19654c12899" kind="function"><name>Contains</name></member>
     <member refid="class_bvr_1_1_t_assets_1a0aea0a3b9cb583649ebdf73e629af0a0" kind="function"><name>Contains</name></member>
-    <member refid="class_bvr_1_1_t_assets_1a85a20b32c3545c6f3a8fbb271275c9e4" kind="function"><name>GetLifetimeInterface</name></member>
+    <member refid="class_bvr_1_1_t_assets_1a24cf5faf3a457e1d46a1a01a15cbd66d" kind="function"><name>GetLifetimeInterface</name></member>
     <member refid="class_bvr_1_1_t_assets_1af9b9545da0ebbb75b74c0259228970fc" kind="function"><name>Size</name></member>
     <member refid="class_bvr_1_1_t_assets_1a83b1840e1f24e8fde5de913ac99ed484" kind="function"><name>begin</name></member>
     <member refid="class_bvr_1_1_t_assets_1a4432068dba5de8c667461aa5fcd43a48" kind="function"><name>end</name></member>

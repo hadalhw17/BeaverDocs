@@ -972,7 +972,7 @@
     <member refid="class_bvr_1_1_renderer_1_1_c_shader_compiler_1aa0a90e3f5d822eb1d5c70fb9e8d3b746" kind="variable"><name>s_pShaderModel</name></member>
     <member refid="class_bvr_1_1_renderer_1_1_c_shader_compiler_1a5cc9881e7b1ba687ebe107426514b96b" kind="variable"><name>m_cacheFolderName</name></member>
     <member refid="class_bvr_1_1_renderer_1_1_c_shader_compiler_1a95254a051476af8882aad83d7bdca0f0" kind="variable"><name>m_includePath</name></member>
-    <member refid="class_bvr_1_1_renderer_1_1_c_shader_compiler_1a22bc9f6a08dac7dec0e1c8a8424d4e7a" kind="variable"><name>m_isLocalCompiler</name></member>
+    <member refid="class_bvr_1_1_renderer_1_1_c_shader_compiler_1ad93037024db57948c0597b5f47938c79" kind="variable"><name>m_pDXC</name></member>
     <member refid="class_bvr_1_1_renderer_1_1_c_shader_compiler_1a451a11b8a0f8c76b9b8e5ceb10755ebf" kind="function"><name>CShaderCompiler</name></member>
     <member refid="class_bvr_1_1_renderer_1_1_c_shader_compiler_1a0cab9fb56adf259bece130ba8b4dae44" kind="function"><name>~CShaderCompiler</name></member>
     <member refid="class_bvr_1_1_renderer_1_1_c_shader_compiler_1a2919e830fb253d38f5b6b191e4550aa2" kind="function"><name>Init</name></member>
@@ -1142,6 +1142,7 @@
   <compound refid="struct_bvr_1_1_renderer_1_1_window_1_1_extracted" kind="struct"><name>Bvr::Renderer::Window::Extracted</name>
     <member refid="struct_bvr_1_1_renderer_1_1_window_1_1_extracted_1a45db98cde88a5480957b2a57eb0d7044" kind="variable"><name>m_surface</name></member>
     <member refid="struct_bvr_1_1_renderer_1_1_window_1_1_extracted_1a0bc690337a6cc9b58830cc367b14f34a" kind="variable"><name>m_pSwapchain</name></member>
+    <member refid="struct_bvr_1_1_renderer_1_1_window_1_1_extracted_1a0a741b537c52e758f8bff21573ba84e7" kind="variable"><name>m_osWindow</name></member>
     <member refid="struct_bvr_1_1_renderer_1_1_window_1_1_extracted_1a5ed7546d556234c6d3484e33a11dc33c" kind="function"><name>~Extracted</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_renderer_1_1_window_1_1_extracted_windows" kind="struct"><name>Bvr::Renderer::Window::ExtractedWindows</name>
@@ -2509,9 +2510,12 @@
   <compound refid="namespace_bvr_1_1_renderer_1_1_device_1_1_detail" kind="namespace"><name>Bvr::Renderer::Device::Detail</name>
   </compound>
   <compound refid="namespace_bvr_1_1_renderer_1_1_d_x_c" kind="namespace"><name>Bvr::Renderer::DXC</name>
-    <member refid="_d_x_c_wrapper_8hpp_1a703e58782c17c1b1246496af7d269dae" kind="function"><name>Create</name></member>
-    <member refid="_d_x_c_wrapper_8hpp_1a939570f5c03e3ce602b909383a985bd8" kind="function"><name>Release</name></member>
-    <member refid="_d_x_c_wrapper_8hpp_1a05f6a8cc23bf71d791d6e560f102dfcd" kind="function"><name>Compile</name></member>
+    <member refid="_shader_compiler_8hpp_1ae3985fa3857f459b09adca3e843ff3ae" kind="typedef"><name>TCompilerPtr</name></member>
+    <member refid="_d_x_c_wrapper_8hpp_1ad83326eeb0e1340a920449053990ef5f" kind="function"><name>Create</name></member>
+    <member refid="_d_x_c_wrapper_8hpp_1ad7f80c55dd65fce12d3eb89791fbc1b5" kind="function"><name>Release</name></member>
+    <member refid="_d_x_c_wrapper_8hpp_1aeaab956131c087d35ae8db830e2f69b1" kind="function"><name>Compile</name></member>
+  </compound>
+  <compound refid="namespace_bvr_1_1_renderer_1_1_d_x_c_1_1_detail" kind="namespace"><name>Bvr::Renderer::DXC::Detail</name>
   </compound>
   <compound refid="namespace_bvr_1_1_renderer_1_1_extensions" kind="namespace"><name>Bvr::Renderer::Extensions</name>
     <member refid="_extensions_8hpp_1af5fad6e465da9824bc3c265910dc7231" kind="variable"><name>vkCmdSetCheckpoint</name></member>
@@ -2577,7 +2581,7 @@
     <member refid="_vulkan_utils_8hpp_1a1072fa0da1a689e8754d7333bbb2d24e" kind="function"><name>Convert</name></member>
     <member refid="_vulkan_utils_8hpp_1a035dc33b73181e9a121e17ee9a05aa9b" kind="function"><name>Convert</name></member>
     <member refid="_vulkan_utils_8hpp_1a36f5f0f1ddce516e398b7f7487e039e2" kind="function"><name>SetObjectName</name></member>
-    <member refid="_vulkan_utils_8hpp_1a15592fe3e42fce9d07b06e4ce0e29a4f" kind="function"><name>ResultFail</name></member>
+    <member refid="_vulkan_utils_8hpp_1a37e262b9fd8d2be293e4e570f55e0346" kind="function"><name>ResultFail</name></member>
     <member refid="_vulkan_utils_8hpp_1aaf0483ae0db0f1f3ab7a18fd06b9b7aa" kind="function"><name>CmdPipelineBarrier2</name></member>
   </compound>
   <compound refid="namespace_bvr_1_1_renderer_1_1_window" kind="namespace"><name>Bvr::Renderer::Window</name>
