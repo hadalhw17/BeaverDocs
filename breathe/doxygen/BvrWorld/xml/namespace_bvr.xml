@@ -9,9 +9,9 @@
     <innerclass refid="struct_bvr_1_1_single_component_archive_3_01_uuid_component_00_01_arch_01_4" prot="public">Bvr::SingleComponentArchive&lt; UuidComponent, Arch &gt;</innerclass>
     <innerclass refid="struct_bvr_1_1_single_component_archive_r_t" prot="public">Bvr::SingleComponentArchiveRT</innerclass>
     <innerclass refid="struct_bvr_1_1_multi_component_archive" prot="public">Bvr::MultiComponentArchive</innerclass>
-    <innerclass refid="struct_bvr_1_1_multi_component_archive_3_01_arch_00_01_list_3_01_component_ts_8_8_8_01_4_01_4" prot="public">Bvr::MultiComponentArchive&lt; Arch, List&lt; ComponentTs... &gt; &gt;</innerclass>
+    <innerclass refid="struct_bvr_1_1_multi_component_archive_3_01_arch_00_01_list_3_01_component_ts_8_8_8_01_4_00_01_entity_set_01_4" prot="public">Bvr::MultiComponentArchive&lt; Arch, List&lt; ComponentTs... &gt;, EntitySet &gt;</innerclass>
     <innerclass refid="struct_bvr_1_1_entity_node_archive_multi" prot="public">Bvr::EntityNodeArchiveMulti</innerclass>
-    <innerclass refid="struct_bvr_1_1_entity_node_archive_multi_3_01_arch_00_01_list_3_01_component_ts_8_8_8_01_4_01_4" prot="public">Bvr::EntityNodeArchiveMulti&lt; Arch, List&lt; ComponentTs... &gt; &gt;</innerclass>
+    <innerclass refid="struct_bvr_1_1_entity_node_archive_multi_3_01_multi_component_archive_3_01_arch_00_01_list_3_01_b3a340ebd57bff5ac7c7745e5fcfbc2e" prot="public">Bvr::EntityNodeArchiveMulti&lt; MultiComponentArchive&lt; Arch, List&lt; ComponentTs... &gt;, EntitySet &gt; &gt;</innerclass>
     <innerclass refid="struct_bvr_1_1_scene" prot="public">Bvr::Scene</innerclass>
     <innerclass refid="struct_bvr_1_1_scene_remap" prot="public">Bvr::SceneRemap</innerclass>
     <innerclass refid="struct_bvr_1_1_scene_id" prot="public">Bvr::SceneId</innerclass>
@@ -48,6 +48,43 @@
     <innernamespace refid="namespace_bvr_1_1_e_c_s">Bvr::ECS</innernamespace>
     <innernamespace refid="namespace_bvr_1_1_meta">Bvr::Meta</innernamespace>
     <innernamespace refid="namespace_bvr_1_1_tags">Bvr::Tags</innernamespace>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_scene_8hpp_1a2f0a37fc56eb5034eb4f6ae0b94a677a" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>ESceneSpawnFlags</name>
+        <enumvalue id="_scene_8hpp_1a2f0a37fc56eb5034eb4f6ae0b94a677aa6adf97f83acf6453d4a6a4b1070f3754" prot="public">
+          <name>None</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_scene_8hpp_1a2f0a37fc56eb5034eb4f6ae0b94a677aa2011adaff6cbe8f7c51bd2f0f7a942bc" prot="public">
+          <name>KeepUUIDs</name>
+          <initializer>= Bit32(0)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_scene_8hpp_1a2f0a37fc56eb5034eb4f6ae0b94a677aa7a1920d61156abc05a60135aefe8bc67" prot="public">
+          <name>Default</name>
+          <initializer>= None</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/Scene.hpp" line="11" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/Scene.hpp" bodystart="11" bodyend="16"/>
+      </memberdef>
+      </sectiondef>
       <sectiondef kind="typedef">
       <memberdef kind="typedef" id="_default_component_lists_8hpp_1a0c2a69b8a623266e0edc1588b94776d2" prot="public" static="no">
         <type>TypeList&lt; <ref refid="struct_bvr_1_1_tags_1_1_transform2_d" kindref="compound">Tags::Transform2D</ref>, <ref refid="struct_bvr_1_1_tags_1_1_no_copy" kindref="compound">Tags::NoCopy</ref>, <ref refid="struct_bvr_1_1_tags_1_1_no_serialise" kindref="compound">Tags::NoSerialise</ref> &gt;</type>
@@ -75,9 +112,9 @@
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/DefaultComponentLists.hpp" line="13" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/DefaultComponentLists.hpp" bodystart="14" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="_default_component_lists_8hpp_1a5444ecd39b0fccde38308944e09e8cf0" prot="public" static="no">
-        <type>TypeListCatT&lt; TypeList&lt; <ref refid="struct_bvr_1_1_uuid_component" kindref="compound">UuidComponent</ref> &gt;, CommonComponentList &gt;</type>
-        <definition>using Bvr::DefaultSerialisedComponents = typedef TypeListCatT&lt;TypeList&lt;UuidComponent&gt;, CommonComponentList&gt;</definition>
+      <memberdef kind="typedef" id="_default_component_lists_8hpp_1af2043d7fa0ff6f0a5bfc9d08bdd20b91" prot="public" static="no">
+        <type>CommonComponentList</type>
+        <definition>using Bvr::DefaultSerialisedComponents = typedef CommonComponentList</definition>
         <argsstring></argsstring>
         <name>DefaultSerialisedComponents</name>
         <briefdescription>
@@ -86,7 +123,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/DefaultComponentLists.hpp" line="18" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/DefaultComponentLists.hpp" bodystart="19" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/DefaultComponentLists.hpp" line="18" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/DefaultComponentLists.hpp" bodystart="18" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_world_defs_8hpp_1ace878fef90b4147e3d8825c07c4fa743" prot="public" static="no">
         <type><ref refid="class_bvr_1_1_e_c_s_1_1_t_basic_sparse_set" kindref="compound">ECS::TBasicSparseSet</ref>&lt; ECS::TEntity, std::allocator&lt; ECS::TEntity &gt; &gt;</type>
@@ -147,7 +184,7 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
-      <memberdef kind="function" id="_world_archive_8hpp_1a43c292040b889f99bbeee3b8ac8e56e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="_world_archive_8hpp_1ab5f088362f0c637cef3326045f400e01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>Archiver</type>
@@ -164,17 +201,20 @@
             <declname>ComponentTs</declname>
             <defname>ComponentTs</defname>
           </param>
+          <param>
+            <type>typename EntitySet</type>
+          </param>
         </templateparamlist>
         <type>Arch &amp;</type>
         <definition>Arch&amp; Bvr::operator&amp;</definition>
-        <argsstring>(Arch &amp;arch, MultiComponentArchive&lt; Arch, List&lt; ComponentTs... &gt;&gt; &amp;storage)</argsstring>
+        <argsstring>(Arch &amp;arch, MultiComponentArchive&lt; Arch, List&lt; ComponentTs... &gt;, EntitySet &gt; &amp;storage)</argsstring>
         <name>operator&amp;</name>
         <param>
           <type>Arch &amp;</type>
           <declname>arch</declname>
         </param>
         <param>
-          <type><ref refid="struct_bvr_1_1_multi_component_archive" kindref="compound">MultiComponentArchive</ref>&lt; Arch, List&lt; ComponentTs... &gt;&gt; &amp;</type>
+          <type><ref refid="struct_bvr_1_1_multi_component_archive" kindref="compound">MultiComponentArchive</ref>&lt; Arch, List&lt; ComponentTs... &gt;, EntitySet &gt; &amp;</type>
           <declname>storage</declname>
         </param>
         <briefdescription>
@@ -183,9 +223,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/WorldArchive.hpp" line="552" column="6" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/WorldArchive.hpp" bodystart="552" bodyend="560"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/WorldArchive.hpp" line="743" column="6" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/WorldArchive.hpp" bodystart="743" bodyend="752"/>
       </memberdef>
-      <memberdef kind="function" id="_world_archive_8hpp_1ae0ba6750cba6f61df1f84b7432581cd3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="_world_archive_8hpp_1a64599dd739bd6ac070a90e7386b09400" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>Archiver</type>
@@ -193,26 +233,19 @@
             <defname>Arch</defname>
           </param>
           <param>
-            <type>template&lt; class... &gt; class</type>
-            <declname>List</declname>
-            <defname>List</defname>
-          </param>
-          <param>
-            <type>class...</type>
-            <declname>ComponentTs</declname>
-            <defname>ComponentTs</defname>
+            <type>typename ComponentArchive</type>
           </param>
         </templateparamlist>
         <type>Arch &amp;</type>
         <definition>Arch&amp; Bvr::operator&amp;</definition>
-        <argsstring>(Arch &amp;arch, EntityNodeArchiveMulti&lt; Arch, List&lt; ComponentTs... &gt;&gt; &amp;storage)</argsstring>
+        <argsstring>(Arch &amp;arch, EntityNodeArchiveMulti&lt; ComponentArchive &gt; &amp;storage)</argsstring>
         <name>operator&amp;</name>
         <param>
           <type>Arch &amp;</type>
           <declname>arch</declname>
         </param>
         <param>
-          <type><ref refid="struct_bvr_1_1_entity_node_archive_multi" kindref="compound">EntityNodeArchiveMulti</ref>&lt; Arch, List&lt; ComponentTs... &gt;&gt; &amp;</type>
+          <type><ref refid="struct_bvr_1_1_entity_node_archive_multi" kindref="compound">EntityNodeArchiveMulti</ref>&lt; ComponentArchive &gt; &amp;</type>
           <declname>storage</declname>
         </param>
         <briefdescription>
@@ -221,7 +254,51 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/WorldArchive.hpp" line="563" column="6" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/WorldArchive.hpp" bodystart="563" bodyend="571"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/WorldArchive.hpp" line="755" column="6" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/WorldArchive.hpp" bodystart="755" bodyend="763"/>
+      </memberdef>
+      <memberdef kind="function" id="_scene_8hpp_1a5335beec62bf11981d9cee48b4455166" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Bvr::BVR_ENUM_OPERATORS</definition>
+        <argsstring>(ESceneSpawnFlags)</argsstring>
+        <name>BVR_ENUM_OPERATORS</name>
+        <param>
+          <type>ESceneSpawnFlags</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/Scene.hpp" line="17" column="1" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/Scene.hpp" declline="17" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_default_component_lists_8hpp_1a16648cc3758bcd89d5b9b288fea49bc6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>Archiver</type>
+            <declname>Arch</declname>
+            <defname>Arch</defname>
+          </param>
+        </templateparamlist>
+        <type>Arch &amp;</type>
+        <definition>Arch&amp; Bvr::operator&amp;</definition>
+        <argsstring>(Arch &amp;archiver, Utils::uuid &amp;uuid)</argsstring>
+        <name>operator&amp;</name>
+        <param>
+          <type>Arch &amp;</type>
+          <declname>archiver</declname>
+        </param>
+        <param>
+          <type>Utils::uuid &amp;</type>
+          <declname>uuid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/DefaultComponentLists.hpp" line="23" column="18" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/DefaultComponentLists.hpp" bodystart="23" bodyend="33"/>
       </memberdef>
       <memberdef kind="function" id="_default_component_lists_8hpp_1af22b56d72cc65730eb449717ec31a897" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -249,7 +326,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/DefaultComponentLists.hpp" line="24" column="18" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/DefaultComponentLists.hpp" bodystart="24" bodyend="37"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/DefaultComponentLists.hpp" line="35" column="18" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/DefaultComponentLists.hpp" bodystart="35" bodyend="37"/>
       </memberdef>
       <memberdef kind="function" id="_default_component_lists_8hpp_1a26992d9966eb2de68879cf9cc621ecff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
