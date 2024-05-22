@@ -3885,11 +3885,13 @@
     <member refid="d3/da5/classBvr_1_1CUndoStack_1aa5a05f6cb9be2f1abe5b5921b420df15" kind="typedef"><name>CommandStackT</name></member>
     <member refid="d3/da5/classBvr_1_1CUndoStack_1ab43386e5e70357969e17066741cbe1e8" kind="variable"><name>m_undoStack</name></member>
     <member refid="d3/da5/classBvr_1_1CUndoStack_1aa3a2ae96cad60fc763013052a0c65eeb" kind="variable"><name>m_redoStack</name></member>
+    <member refid="d3/da5/classBvr_1_1CUndoStack_1a1f059090f20a7fb29162d3ffd7f209e3" kind="variable"><name>m_mergeSince</name></member>
     <member refid="d3/da5/classBvr_1_1CUndoStack_1ad8650c3880da3315f68478ee9721eefe" kind="function"><name>CUndoStack</name></member>
     <member refid="d3/da5/classBvr_1_1CUndoStack_1a11f1985da3e84e6a8a15637362245419" kind="function"><name>~CUndoStack</name></member>
     <member refid="d3/da5/classBvr_1_1CUndoStack_1ae27eae6e9dcf9cff4d8c53696d8df144" kind="function"><name>Do</name></member>
     <member refid="d3/da5/classBvr_1_1CUndoStack_1aaa458167c53be42f3f52d897d5d01e7b" kind="function"><name>Redo</name></member>
     <member refid="d3/da5/classBvr_1_1CUndoStack_1a9935b99356b077fbc2fbe1c6366b98b3" kind="function"><name>Undo</name></member>
+    <member refid="d3/da5/classBvr_1_1CUndoStack_1ae2df9ff6626b6bd42f451f319a23a538" kind="function"><name>AdvanceMergeSince</name></member>
   </compound>
   <compound refid="de/df0/structBvr_1_1Window_1_1Event_1_1CursorEnter" kind="struct"><name>Bvr::Window::Event::CursorEnter</name>
     <member refid="de/df0/structBvr_1_1Window_1_1Event_1_1CursorEnter_1a829e74326da7039b00d2e465acf4ca57" kind="variable"><name>m_hFocused</name></member>
@@ -4284,7 +4286,8 @@
     <member refid="da/d12/structBvr_1_1EditorSystem_1a78780bd201a691830efaf4dda6253b79" kind="function"><name>Init</name></member>
     <member refid="da/d12/structBvr_1_1EditorSystem_1aecdbd4ac747801009af6303494049e27" kind="function"><name>BeginFrame</name></member>
     <member refid="da/d12/structBvr_1_1EditorSystem_1a3614f6deed730a8bddab68e644b363e2" kind="function"><name>EndFrame</name></member>
-    <member refid="da/d12/structBvr_1_1EditorSystem_1a714ed2e05197236844dd45453bbd3f24" kind="function"><name>OnKeyPress</name></member>
+    <member refid="da/d12/structBvr_1_1EditorSystem_1a7526a90a18db8a9d51808d429d021620" kind="function"><name>OnKeyPress</name></member>
+    <member refid="da/d12/structBvr_1_1EditorSystem_1af553b588289207337cce59e5771358df" kind="function"><name>OnMousePress</name></member>
     <member refid="da/d12/structBvr_1_1EditorSystem_1a03888a2219aeafbc91b393018b085f70" kind="function"><name>SetUpEditorWorld</name></member>
   </compound>
   <compound refid="d4/d75/structBvr_1_1EditorViewportPlugin" kind="struct"><name>Bvr::EditorViewportPlugin</name>
@@ -5157,9 +5160,14 @@
     <member refid="d5/dd4/structBvr_1_1ICVarManager_1aeba25816c84f30a652cdac83e0d36e96" kind="function"><name>Get</name></member>
   </compound>
   <compound refid="df/d12/structBvr_1_1IEditorCommand" kind="struct"><name>Bvr::IEditorCommand</name>
+    <member refid="df/d12/structBvr_1_1IEditorCommand_1ae7d38e5c48da7493b54fd9b5ed20c720" kind="variable"><name>m_type</name></member>
+    <member refid="df/d12/structBvr_1_1IEditorCommand_1afb63b5b9c92ad1ba57f536277c2ea7e4" kind="function"><name>IEditorCommand</name></member>
     <member refid="df/d12/structBvr_1_1IEditorCommand_1aefcc88a39e9aeefaaadec77a67384d67" kind="function"><name>~IEditorCommand</name></member>
+    <member refid="df/d12/structBvr_1_1IEditorCommand_1a8b191c89a80defd81d1cb29c60dd7ddb" kind="function"><name>GetType</name></member>
     <member refid="df/d12/structBvr_1_1IEditorCommand_1a6cf1a08c1748212fde000d0ff8bf3465" kind="function"><name>Do</name></member>
     <member refid="df/d12/structBvr_1_1IEditorCommand_1a2ceed78bebf620eb4183b772c7c10259" kind="function"><name>Undo</name></member>
+    <member refid="df/d12/structBvr_1_1IEditorCommand_1aceb42295db1023121151e2c8d00fd4eb" kind="function"><name>MergeIfCan</name></member>
+    <member refid="df/d12/structBvr_1_1IEditorCommand_1a424d0a23dce0cc398007bc4f4c396148" kind="function"><name>TryMerge</name></member>
   </compound>
   <compound refid="de/df9/structBvr_1_1EditorUI_1_1IEditorTool" kind="struct"><name>Bvr::EditorUI::IEditorTool</name>
     <member refid="de/df9/structBvr_1_1EditorUI_1_1IEditorTool_1a4dd10cfaf85dd73afdb75ef219cf87a7" kind="function"><name>~IEditorTool</name></member>
@@ -7372,6 +7380,19 @@
     <member refid="db/d9b/structBvr_1_1SComponentModifiedCommand_1a90887b1c7e2c6c9ef7a74eab4110cea8" kind="function"><name>SComponentModifiedCommand</name></member>
     <member refid="db/d9b/structBvr_1_1SComponentModifiedCommand_1a4319be6232faad81788bc03cc6314744" kind="function"><name>Do</name></member>
     <member refid="db/d9b/structBvr_1_1SComponentModifiedCommand_1a55895b6b5298f104829eccc7c1c232b4" kind="function"><name>Undo</name></member>
+    <member refid="db/d9b/structBvr_1_1SComponentModifiedCommand_1a6e51b52dd0d9435276e2533f73506cc9" kind="function"><name>MergeIfCan</name></member>
+  </compound>
+  <compound refid="d9/db0/structBvr_1_1SComponentModifiedCommand_3_01Meta_1_1Variant_01_4" kind="struct"><name>Bvr::SComponentModifiedCommand&lt; Meta::Variant &gt;</name>
+    <member refid="d9/db0/structBvr_1_1SComponentModifiedCommand_3_01Meta_1_1Variant_01_4_1abbe96b036cd39605a6c92f94bd18beb9" kind="typedef"><name>ComponentT</name></member>
+    <member refid="d9/db0/structBvr_1_1SComponentModifiedCommand_3_01Meta_1_1Variant_01_4_1abbe96b036cd39605a6c92f94bd18beb9" kind="typedef"><name>ComponentT</name></member>
+    <member refid="d9/db0/structBvr_1_1SComponentModifiedCommand_3_01Meta_1_1Variant_01_4_1a074a7235b2e14643dbd96395368cc248" kind="variable"><name>originalValue</name></member>
+    <member refid="d9/db0/structBvr_1_1SComponentModifiedCommand_3_01Meta_1_1Variant_01_4_1afbf0ade4fa7c0abd4d1104b278ddb9a1" kind="variable"><name>targetValue</name></member>
+    <member refid="d9/db0/structBvr_1_1SComponentModifiedCommand_3_01Meta_1_1Variant_01_4_1a2c100cde2785c1c8ed4ae130995be1fb" kind="variable"><name>entity</name></member>
+    <member refid="d9/db0/structBvr_1_1SComponentModifiedCommand_3_01Meta_1_1Variant_01_4_1a6804f2a9ed4c90cc8c93756e89cf28e4" kind="function"><name>SComponentModifiedCommand</name></member>
+    <member refid="d9/db0/structBvr_1_1SComponentModifiedCommand_3_01Meta_1_1Variant_01_4_1a6a5f675679ada39b84be29372f72ca61" kind="function"><name>Do</name></member>
+    <member refid="d9/db0/structBvr_1_1SComponentModifiedCommand_3_01Meta_1_1Variant_01_4_1acec0e505cf564627d26c7a87136415fd" kind="function"><name>Undo</name></member>
+    <member refid="d9/db0/structBvr_1_1SComponentModifiedCommand_3_01Meta_1_1Variant_01_4_1a8ad443b9b32cbde4f68004b556cd3069" kind="function"><name>MergeIfCan</name></member>
+    <member refid="d9/db0/structBvr_1_1SComponentModifiedCommand_3_01Meta_1_1Variant_01_4_1a2fb9d6c2b1a11516bee62b580835b11a" kind="function"><name>DoImpl</name></member>
   </compound>
   <compound refid="d8/dc4/structBvr_1_1SComponentRemoveCommand" kind="struct"><name>Bvr::SComponentRemoveCommand</name>
     <member refid="d8/dc4/structBvr_1_1SComponentRemoveCommand_1ab11be622fb375700b61aa3cb1b08abe2" kind="typedef"><name>ComponentT</name></member>
@@ -8206,6 +8227,7 @@
     <member refid="d3/d37/structBvr_1_1Detail_1_1SKeyframeMoveCommand_1a509aeb5e25a1e13d7e93a06c9e5303d5" kind="function"><name>SKeyframeMoveCommand</name></member>
     <member refid="d3/d37/structBvr_1_1Detail_1_1SKeyframeMoveCommand_1a351b414f0e0bd0faaf4a0cf13da7aed5" kind="function"><name>Do</name></member>
     <member refid="d3/d37/structBvr_1_1Detail_1_1SKeyframeMoveCommand_1abc660d6f7068337bc69db4da09b012e1" kind="function"><name>Undo</name></member>
+    <member refid="d3/d37/structBvr_1_1Detail_1_1SKeyframeMoveCommand_1a147f8e93627c5abff2411cb6165e4f90" kind="function"><name>MergeIfCan</name></member>
   </compound>
   <compound refid="df/db2/structBvr_1_1Event_1_1System_1_1SKeyPress" kind="struct"><name>Bvr::Event::System::SKeyPress</name>
     <member refid="df/db2/structBvr_1_1Event_1_1System_1_1SKeyPress_1ab3e0456775700065c65ddc5e511761d6" kind="variable"><name>ePressedKey</name></member>
@@ -12045,6 +12067,9 @@
     <member refid="d2/db3/LevelEditor_8cpp_1a50bc9b6e249d544258cdd1bda6655189" kind="typedef"><name>TDeferredLoads</name></member>
     <member refid="dd/de1/LevelEditor_8hpp_1a2925b7b39be7804da826d27070e6d6c1" kind="typedef"><name>TOnKeyFrameInsertFn</name></member>
     <member refid="dd/d33/ResourceMetaIO_8hpp_1aecf75dc2ba2bef5496d054b01b0ac7e2" kind="typedef"><name>TMetaFilePtr</name></member>
+    <member refid="d2/da2/EditorMetaAttributes_8hpp_1abd7d7c244d7a93f38e1ce4b795d8cd6e" kind="typedef"><name>TGetRangeFn</name></member>
+    <member refid="d2/da2/EditorMetaAttributes_8hpp_1a9de2f1be6d70c5798f21c05844ec554d" kind="typedef"><name>TGetRangesHelperFn</name></member>
+    <member refid="d2/da2/EditorMetaAttributes_8hpp_1aae8eeff832da1c97d73a2b7f59e740ba" kind="typedef"><name>TVisualiserFn</name></member>
     <member refid="d2/dc0/EditorToolController_8hpp_1a8c94d1e194e69c2868d7dd9b185a4c28" kind="typedef"><name>TViewportClick</name></member>
     <member refid="d2/dc0/EditorToolController_8hpp_1aa3e6d28546ce4a8c600dd758b0fd2e8c" kind="typedef"><name>TViewportMove</name></member>
     <member refid="d2/dc0/EditorToolController_8hpp_1a06a57affd9b1b47a5cb88e1928951803" kind="typedef"><name>TViewportScroll</name></member>
@@ -12259,6 +12284,9 @@
     <member refid="d3/d09/SelectionToolController_8cpp_1abb20343d4136cf06871a01edf70796ad" kind="function"><name>SelectEntity</name></member>
     <member refid="dc/dad/EditorTool_8cpp_1a60bef27a2b18a932d9b017652a3644ed" kind="function"><name>ShowTool</name></member>
     <member refid="dc/dad/EditorTool_8cpp_1a55f9a1ea3c9bed84bfd171aa6ff6ee28" kind="function"><name>ShowTools</name></member>
+    <member refid="d3/d50/Widgets_8cpp_1a85ca23e255e78490e76fba654c0d5f32" kind="function"><name>ComputeDragSpeed</name></member>
+    <member refid="d2/da2/EditorMetaAttributes_8hpp_1a27f3e931333649b71f9936391d699e5c" kind="function"><name>GetRangeAttribute</name></member>
+    <member refid="d2/da2/EditorMetaAttributes_8hpp_1aa82b928052f4bc5eda6873f21a6c8658" kind="function"><name>GetRanges</name></member>
     <member refid="df/d93/IniTests_8cpp_1a713db6879939153716a48737eea51646" kind="function"><name>TEST_CASE</name></member>
     <member refid="df/d93/IniTests_8cpp_1ae4f7c14c021bdb9f4e50b847f60a1bba" kind="function"><name>TEST_CASE</name></member>
   </compound>
@@ -12728,6 +12756,7 @@
   </compound>
   <compound refid="dc/d2c/namespaceBvr_1_1EditorWidgets" kind="namespace"><name>Bvr::EditorWidgets</name>
     <member refid="d0/d27/Widgets_8hpp_1a411a81f74f7d564903f347b1945c5c7b" kind="variable"><name>DefaultDrag</name></member>
+    <member refid="d0/d27/Widgets_8hpp_1afa9250d9dd56494887775865f36a7407" kind="variable"><name>DragSpeedDefaultRadio</name></member>
     <member refid="d3/d50/Widgets_8cpp_1a5bc56696d2d77a7bf94da2be1594ce16" kind="function"><name>LabeledWidget</name></member>
     <member refid="d3/d50/Widgets_8cpp_1a05439af603007e071049646b3549373e" kind="function"><name>EditVariable</name></member>
     <member refid="d3/d50/Widgets_8cpp_1acc4cf59c2ac79c5642a0a71dd88646b0" kind="function"><name>EditVariable</name></member>
@@ -12740,7 +12769,7 @@
     <member refid="d3/d50/Widgets_8cpp_1a67435dc1d1d1f620f288e2462babe851" kind="function"><name>EditVariable</name></member>
     <member refid="d3/d50/Widgets_8cpp_1a9e4c537200591b818393fec574d72ea8" kind="function"><name>HandleLoader</name></member>
     <member refid="d3/d50/Widgets_8cpp_1acb2c0c7acc664a7b2c7f63edb7d24eb6" kind="function"><name>EntitySelector</name></member>
-    <member refid="d3/d50/Widgets_8cpp_1a4b5cd391f2b0fbccafa5aa5bcb5d659e" kind="function"><name>DrawVector</name></member>
+    <member refid="d3/d50/Widgets_8cpp_1a559d15ad7c39fe0ca58f63ff81dcd773" kind="function"><name>DrawVector</name></member>
     <member refid="d3/d50/Widgets_8cpp_1a83853ad358adabf7c182adb80282f71c" kind="function"><name>DrawTransform</name></member>
   </compound>
   <compound refid="de/d69/namespaceBvr_1_1Event" kind="namespace"><name>Bvr::Event</name>
@@ -14084,6 +14113,8 @@
     <member refid="dc/d5c/namespaceBvr_1_1SVG_1a187140a3543dd66b49a06497c50acf42" kind="function"><name>BuildRendering</name></member>
     <member refid="dc/d5c/namespaceBvr_1_1SVG_1abfae66ef6cc1f0be3492c5b5560c0077" kind="function"><name>InitPaths</name></member>
     <member refid="dc/d5c/namespaceBvr_1_1SVG_1a1240c758d9ef852e3600cc9e19463602" kind="function"><name>UpdatePaths</name></member>
+    <member refid="dc/d5c/namespaceBvr_1_1SVG_1a3f117152579293ceb419bc1d2db7620a" kind="function"><name>GetLenRange</name></member>
+    <member refid="dc/d5c/namespaceBvr_1_1SVG_1aef27d05d52de731bf3eec9efd68c4a99" kind="function"><name>GetAngRange</name></member>
     <member refid="dc/d5c/namespaceBvr_1_1SVG_1a72be6aac0033da923d510bb32e7b7622" kind="function"><name>ResolvePoint</name></member>
     <member refid="dc/d5c/namespaceBvr_1_1SVG_1a662e9f00bfce8380e71625acb4e66860" kind="function"><name>ResolvePoint</name></member>
     <member refid="dc/d5c/namespaceBvr_1_1SVG_1a04e4e9c2ed5b5794adba3344a781caa8" kind="function"><name>ResolveScalar</name></member>
@@ -15787,6 +15818,8 @@
   <compound refid="d0/d27/Widgets_8hpp" kind="file"><name>Widgets.hpp</name>
   </compound>
   <compound refid="d4/d6d/EditingCommands_8hpp" kind="file"><name>EditingCommands.hpp</name>
+  </compound>
+  <compound refid="d2/da2/EditorMetaAttributes_8hpp" kind="file"><name>EditorMetaAttributes.hpp</name>
   </compound>
   <compound refid="d2/dc0/EditorToolController_8hpp" kind="file"><name>EditorToolController.hpp</name>
   </compound>

@@ -462,11 +462,13 @@
     <member refid="class_bvr_1_1_c_undo_stack_1aa5a05f6cb9be2f1abe5b5921b420df15" kind="typedef"><name>CommandStackT</name></member>
     <member refid="class_bvr_1_1_c_undo_stack_1ab43386e5e70357969e17066741cbe1e8" kind="variable"><name>m_undoStack</name></member>
     <member refid="class_bvr_1_1_c_undo_stack_1aa3a2ae96cad60fc763013052a0c65eeb" kind="variable"><name>m_redoStack</name></member>
+    <member refid="class_bvr_1_1_c_undo_stack_1a1f059090f20a7fb29162d3ffd7f209e3" kind="variable"><name>m_mergeSince</name></member>
     <member refid="class_bvr_1_1_c_undo_stack_1ad8650c3880da3315f68478ee9721eefe" kind="function"><name>CUndoStack</name></member>
     <member refid="class_bvr_1_1_c_undo_stack_1a11f1985da3e84e6a8a15637362245419" kind="function"><name>~CUndoStack</name></member>
     <member refid="class_bvr_1_1_c_undo_stack_1ae27eae6e9dcf9cff4d8c53696d8df144" kind="function"><name>Do</name></member>
     <member refid="class_bvr_1_1_c_undo_stack_1aaa458167c53be42f3f52d897d5d01e7b" kind="function"><name>Redo</name></member>
     <member refid="class_bvr_1_1_c_undo_stack_1a9935b99356b077fbc2fbe1c6366b98b3" kind="function"><name>Undo</name></member>
+    <member refid="class_bvr_1_1_c_undo_stack_1ae2df9ff6626b6bd42f451f319a23a538" kind="function"><name>AdvanceMergeSince</name></member>
   </compound>
   <compound refid="class_bvr_1_1_c_v_box_editor_tool" kind="class"><name>Bvr::CVBoxEditorTool</name>
     <member refid="class_bvr_1_1_c_v_box_editor_tool_1af5eeec83273659c33ae46f81809c2ca3" kind="function"><name>ShowChildren</name></member>
@@ -605,6 +607,19 @@
     <member refid="struct_bvr_1_1_s_component_modified_command_1a90887b1c7e2c6c9ef7a74eab4110cea8" kind="function"><name>SComponentModifiedCommand</name></member>
     <member refid="struct_bvr_1_1_s_component_modified_command_1a4319be6232faad81788bc03cc6314744" kind="function"><name>Do</name></member>
     <member refid="struct_bvr_1_1_s_component_modified_command_1a55895b6b5298f104829eccc7c1c232b4" kind="function"><name>Undo</name></member>
+    <member refid="struct_bvr_1_1_s_component_modified_command_1a6e51b52dd0d9435276e2533f73506cc9" kind="function"><name>MergeIfCan</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_s_component_modified_command_3_01_meta_1_1_variant_01_4" kind="struct"><name>Bvr::SComponentModifiedCommand&lt; Meta::Variant &gt;</name>
+    <member refid="struct_bvr_1_1_s_component_modified_command_3_01_meta_1_1_variant_01_4_1abbe96b036cd39605a6c92f94bd18beb9" kind="typedef"><name>ComponentT</name></member>
+    <member refid="struct_bvr_1_1_s_component_modified_command_3_01_meta_1_1_variant_01_4_1abbe96b036cd39605a6c92f94bd18beb9" kind="typedef"><name>ComponentT</name></member>
+    <member refid="struct_bvr_1_1_s_component_modified_command_3_01_meta_1_1_variant_01_4_1a074a7235b2e14643dbd96395368cc248" kind="variable"><name>originalValue</name></member>
+    <member refid="struct_bvr_1_1_s_component_modified_command_3_01_meta_1_1_variant_01_4_1afbf0ade4fa7c0abd4d1104b278ddb9a1" kind="variable"><name>targetValue</name></member>
+    <member refid="struct_bvr_1_1_s_component_modified_command_3_01_meta_1_1_variant_01_4_1a2c100cde2785c1c8ed4ae130995be1fb" kind="variable"><name>entity</name></member>
+    <member refid="struct_bvr_1_1_s_component_modified_command_3_01_meta_1_1_variant_01_4_1a6804f2a9ed4c90cc8c93756e89cf28e4" kind="function"><name>SComponentModifiedCommand</name></member>
+    <member refid="struct_bvr_1_1_s_component_modified_command_3_01_meta_1_1_variant_01_4_1a6a5f675679ada39b84be29372f72ca61" kind="function"><name>Do</name></member>
+    <member refid="struct_bvr_1_1_s_component_modified_command_3_01_meta_1_1_variant_01_4_1acec0e505cf564627d26c7a87136415fd" kind="function"><name>Undo</name></member>
+    <member refid="struct_bvr_1_1_s_component_modified_command_3_01_meta_1_1_variant_01_4_1a8ad443b9b32cbde4f68004b556cd3069" kind="function"><name>MergeIfCan</name></member>
+    <member refid="struct_bvr_1_1_s_component_modified_command_3_01_meta_1_1_variant_01_4_1ac43bdb9b52833acc957d5afba4600514" kind="function"><name>DoImpl</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_s_component_remove_command" kind="struct"><name>Bvr::SComponentRemoveCommand</name>
     <member refid="struct_bvr_1_1_s_component_remove_command_1ab11be622fb375700b61aa3cb1b08abe2" kind="typedef"><name>ComponentT</name></member>
@@ -881,6 +896,7 @@
   </compound>
   <compound refid="namespace_bvr_1_1_editor_widgets" kind="namespace"><name>Bvr::EditorWidgets</name>
     <member refid="_widgets_8hpp_1a411a81f74f7d564903f347b1945c5c7b" kind="variable"><name>DefaultDrag</name></member>
+    <member refid="_widgets_8hpp_1afa9250d9dd56494887775865f36a7407" kind="variable"><name>DragSpeedDefaultRadio</name></member>
     <member refid="_widgets_8hpp_1a05439af603007e071049646b3549373e" kind="function"><name>EditVariable</name></member>
     <member refid="_widgets_8hpp_1acc4cf59c2ac79c5642a0a71dd88646b0" kind="function"><name>EditVariable</name></member>
     <member refid="_widgets_8hpp_1ae3759ad14fe5068d012451f4712d1524" kind="function"><name>EditVariable</name></member>
