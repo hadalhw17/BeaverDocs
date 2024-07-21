@@ -122,7 +122,7 @@
     <member refid="class_bvr_1_1_renderer_1_1_c_f_g_node_1a934321adf73ed3bf6844e4793f8a11e2" kind="function"><name>SetOutputBuffer</name></member>
     <member refid="class_bvr_1_1_renderer_1_1_c_f_g_node_1ac61eddf0578fed4a5f95db84b8e05a8f" kind="function"><name>SetIndirectCommandBuffer</name></member>
     <member refid="class_bvr_1_1_renderer_1_1_c_f_g_node_1a4e8e5dd2041d590714b2e20d18abc2ab" kind="function"><name>SetIndirectCounterBuffer</name></member>
-    <member refid="class_bvr_1_1_renderer_1_1_c_f_g_node_1a51f1cb3bb18c6707068f33cdc4956644" kind="function"><name>AddOutput</name></member>
+    <member refid="class_bvr_1_1_renderer_1_1_c_f_g_node_1a210dcd7dd91e8ed16dd9bac5f6ccc4a8" kind="function"><name>AddOutput</name></member>
     <member refid="class_bvr_1_1_renderer_1_1_c_f_g_node_1a1e79ea2a22005b9b587954c4d4eb9b43" kind="function"><name>AddStorageOutput</name></member>
     <member refid="class_bvr_1_1_renderer_1_1_c_f_g_node_1ab525e9b341b73ec6a396577662a29ddb" kind="function"><name>SetTexture</name></member>
     <member refid="class_bvr_1_1_renderer_1_1_c_f_g_node_1adc29fc75a5807e155efc3365cdd48ecd" kind="function"><name>GetName</name></member>
@@ -521,7 +521,8 @@
     <member refid="struct_bvr_1_1_i_frame_context_1a698d0b4c1729c0cee16bf8bffc45cc73" kind="function"><name>AddMeshPrimitive</name></member>
     <member refid="struct_bvr_1_1_i_frame_context_1a545817c35d66ea219d974ad872697743" kind="function"><name>AddMeshPrimitives</name></member>
     <member refid="struct_bvr_1_1_i_frame_context_1ab2cdfcaacceffcfc94bcad5753ac0704" kind="function"><name>AddRenderMesh</name></member>
-    <member refid="struct_bvr_1_1_i_frame_context_1a7a4bff457c700f2f4927ea5276be4f46" kind="function"><name>AddPointLight</name></member>
+    <member refid="struct_bvr_1_1_i_frame_context_1a6f27b16e04959bfbaa03246778db8282" kind="function"><name>AddRenderLight</name></member>
+    <member refid="struct_bvr_1_1_i_frame_context_1a56fec8194b0ea5e6a7fcfa0df0c46dba" kind="function"><name>AllocateListsForShadowFrustums</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_i_g_p_u_buffer" kind="struct"><name>Bvr::IGPUBuffer</name>
     <member refid="struct_bvr_1_1_i_g_p_u_buffer_1a0da33eea575426692b6647c2a3fc28ef" kind="function"><name>IGPUBuffer</name></member>
@@ -636,9 +637,7 @@
   </compound>
   <compound refid="struct_bvr_1_1_renderer_1_1_s_accessed_texture_resource" kind="struct"><name>Bvr::Renderer::SAccessedTextureResource</name>
     <member refid="struct_bvr_1_1_renderer_1_1_s_accessed_texture_resource_1a0decbe78de20c6b5f7e6987bf0091323" kind="variable"><name>Image</name></member>
-    <member refid="struct_bvr_1_1_renderer_1_1_s_accessed_texture_resource_1ae6719536fdb8f71ef092ea275ef6ac3c" kind="variable"><name>MipLevel</name></member>
-    <member refid="struct_bvr_1_1_renderer_1_1_s_accessed_texture_resource_1af3019234ccb2a5a105b0e43bab9e366f" kind="variable"><name>ArrayLayer</name></member>
-    <member refid="struct_bvr_1_1_renderer_1_1_s_accessed_texture_resource_1ae9ba1825fb4cce2318796b09b6d22f0a" kind="variable"><name>Sampler</name></member>
+    <member refid="struct_bvr_1_1_renderer_1_1_s_accessed_texture_resource_1a9980744eefceb595b5f3f804adc69ffc" kind="variable"><name>Access</name></member>
     <member refid="struct_bvr_1_1_renderer_1_1_s_accessed_texture_resource_1aaa7c41d32696afd8357283cfc5e40f11" kind="function"><name>Invalid</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_renderer_1_1_c_binding_meta_1_1_s_binding_info" kind="struct"><name>Bvr::Renderer::CBindingMeta::SBindingInfo</name>
@@ -753,6 +752,22 @@
   <compound refid="struct_bvr_1_1_renderer_1_1_t_material_traits_1_1_shader_name" kind="struct"><name>Bvr::Renderer::TMaterialTraits::ShaderName</name>
     <member refid="struct_bvr_1_1_renderer_1_1_t_material_traits_1_1_shader_name_1ac637d68b02b4f5b84ffa6c5da9e6f070" kind="function"><name>Get</name></member>
   </compound>
+  <compound refid="struct_bvr_1_1_shadow_frustum" kind="struct"><name>Bvr::ShadowFrustum</name>
+    <member refid="struct_bvr_1_1_shadow_frustum_1ac4d4aca7a538386f9197dd1a385068c0" kind="variable"><name>CullCam</name></member>
+    <member refid="struct_bvr_1_1_shadow_frustum_1a4817a4b86c291267838357e5f2b2bbe0" kind="variable"><name>Matrix</name></member>
+    <member refid="struct_bvr_1_1_shadow_frustum_1ab56f090e4d47c51ad3b8e3773e9a4c37" kind="variable"><name>Size</name></member>
+    <member refid="struct_bvr_1_1_shadow_frustum_1ab98e23d0e02bd2380bd990d0a179fd24" kind="variable"><name>SampleScale</name></member>
+    <member refid="struct_bvr_1_1_shadow_frustum_1a0a1bb8535f3d4f3f2e580b53ffcb30a1" kind="variable"><name>CascadeSplit</name></member>
+    <member refid="struct_bvr_1_1_shadow_frustum_1aa5494ad7d29529d74f84a7ec105c2020" kind="variable"><name>ConstBias</name></member>
+    <member refid="struct_bvr_1_1_shadow_frustum_1a7fcd9e9fa5bab3d3143edaac1d129ca6" kind="variable"><name>SlopeBias</name></member>
+    <member refid="struct_bvr_1_1_shadow_frustum_1a7a3abe68493f24f9a651310e0f6c8946" kind="variable"><name>BiasClamp</name></member>
+    <member refid="struct_bvr_1_1_shadow_frustum_1ab81f0820576f2bc8afc0b71f3927190c" kind="variable"><name>NormalBias</name></member>
+    <member refid="struct_bvr_1_1_shadow_frustum_1abe9b9d2501c497aa32004cbd29fbc322" kind="variable"><name>ShadowMapSize</name></member>
+    <member refid="struct_bvr_1_1_shadow_frustum_1a46aca80dbc94add76ed31b1ef6445c91" kind="variable"><name>BlendFactor</name></member>
+    <member refid="struct_bvr_1_1_shadow_frustum_1a5a416fe00bd4c0a9e98a733856474a13" kind="variable"><name>ShadowIndex</name></member>
+    <member refid="struct_bvr_1_1_shadow_frustum_1a34bd30d8d2f27cc1b26a2228c89b705b" kind="variable"><name>LightEntity</name></member>
+    <member refid="struct_bvr_1_1_shadow_frustum_1ac85f7c028d414e5434717aa427b7dbb7" kind="variable"><name>FilterType</name></member>
+  </compound>
   <compound refid="struct_bvr_1_1_renderer_1_1_s_shader_item_1_1_s_hash" kind="struct"><name>Bvr::Renderer::SShaderItem::SHash</name>
     <member refid="struct_bvr_1_1_renderer_1_1_s_shader_item_1_1_s_hash_1a2b2995bc29a90aedfde537beb2555740" kind="function"><name>operator()</name></member>
     <member refid="struct_bvr_1_1_renderer_1_1_s_shader_item_1_1_s_hash_1a2644a61714b84222251c99682c610e14" kind="function"><name>operator()</name></member>
@@ -864,6 +879,7 @@
     <member refid="struct_bvr_1_1_renderer_1_1_c_frame_graph_1_1_s_resource_create_info_1a563a24672d34d947f767467b0bc906fd" kind="variable"><name>Width</name></member>
     <member refid="struct_bvr_1_1_renderer_1_1_c_frame_graph_1_1_s_resource_create_info_1ac46fe967debb97ee9e6e838422654bce" kind="variable"><name>Height</name></member>
     <member refid="struct_bvr_1_1_renderer_1_1_c_frame_graph_1_1_s_resource_create_info_1aaab008900bb95b819b0203520e7010af" kind="variable"><name>Depth</name></member>
+    <member refid="struct_bvr_1_1_renderer_1_1_c_frame_graph_1_1_s_resource_create_info_1a44fefdb5629a222a13f6e2689054d5ff" kind="variable"><name>Layers</name></member>
     <member refid="struct_bvr_1_1_renderer_1_1_c_frame_graph_1_1_s_resource_create_info_1a2d22032047f2c715639c920dc9e57e27" kind="variable"><name>Format</name></member>
     <member refid="struct_bvr_1_1_renderer_1_1_c_frame_graph_1_1_s_resource_create_info_1ab80180b73bdbd7052a22a36fb521b50d" kind="variable"><name>Padding0</name></member>
     <member refid="struct_bvr_1_1_renderer_1_1_c_frame_graph_1_1_s_resource_create_info_1acd61ffa49f91aaf570ab79ca8d7aeef3" kind="variable"><name>Usage</name></member>
@@ -913,7 +929,10 @@
     <member refid="struct_bvr_1_1_renderer_1_1_s_shader_item_1adeb11c9f78fa3f634a8cf05dba7180fa" kind="function"><name>operator==</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_s_shadow_pass_info" kind="struct"><name>Bvr::SShadowPassInfo</name>
-    <member refid="struct_bvr_1_1_s_shadow_pass_info_1accd54461ebc27b369f85abf174b2e6dc" kind="variable"><name>SunFrustums</name></member>
+    <member refid="struct_bvr_1_1_s_shadow_pass_info_1a2149f4ca34d328f0b1d663241ed59ca3" kind="typedef"><name>TFrustumList</name></member>
+    <member refid="struct_bvr_1_1_s_shadow_pass_info_1ac6b6149431586f5147e6ec64630d6b23" kind="variable"><name>SunFrustums</name></member>
+    <member refid="struct_bvr_1_1_s_shadow_pass_info_1a1429179896670f738768d38b53b80e61" kind="variable"><name>PointFrustums</name></member>
+    <member refid="struct_bvr_1_1_s_shadow_pass_info_1a80fb425b96a7d50b4631d7b6ce23f3f6" kind="variable"><name>SpotFrustums</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_renderer_1_1_c_frame_graph_1_1_statistics" kind="struct"><name>Bvr::Renderer::CFrameGraph::Statistics</name>
     <member refid="struct_bvr_1_1_renderer_1_1_c_frame_graph_1_1_statistics_1a8b89e8620bbe8f1a13924db5af0e488f" kind="variable"><name>MaxPotentialMemory</name></member>
@@ -927,18 +946,10 @@
     <member refid="struct_bvr_1_1_renderer_1_1_s_technique_desc_1a89455ba7e1c1b7634a55843d7b2568d9" kind="function"><name>operator==</name></member>
     <member refid="struct_bvr_1_1_renderer_1_1_s_technique_desc_1a85e53922d88b380f3e4ff662ab840fbc" kind="function"><name>AddDefine</name></member>
   </compound>
-  <compound refid="struct_bvr_1_1_s_shadow_pass_info_1_1_sun_frustum" kind="struct"><name>Bvr::SShadowPassInfo::SunFrustum</name>
-    <member refid="struct_bvr_1_1_s_shadow_pass_info_1_1_sun_frustum_1a3b5435838d97ebfe565a297038fe01ad" kind="variable"><name>CullCam</name></member>
-    <member refid="struct_bvr_1_1_s_shadow_pass_info_1_1_sun_frustum_1af1c8656e553d7eb0ae24a8a23ea44606" kind="variable"><name>Matrix</name></member>
-    <member refid="struct_bvr_1_1_s_shadow_pass_info_1_1_sun_frustum_1a47ba2c20141d8145611394a980ed5fc9" kind="variable"><name>Size</name></member>
-    <member refid="struct_bvr_1_1_s_shadow_pass_info_1_1_sun_frustum_1a15a2a668d589fcd20ef807656e07bc8a" kind="variable"><name>SampleScale</name></member>
-    <member refid="struct_bvr_1_1_s_shadow_pass_info_1_1_sun_frustum_1a54c7948a3b0ace36ec32304f79d1bc99" kind="variable"><name>CascadeSplit</name></member>
-    <member refid="struct_bvr_1_1_s_shadow_pass_info_1_1_sun_frustum_1aec94075a21710909a8e3972dcb72be15" kind="variable"><name>ConstBias</name></member>
-    <member refid="struct_bvr_1_1_s_shadow_pass_info_1_1_sun_frustum_1a88a1444afa5b9c106fc81f038a17568f" kind="variable"><name>SlopeBias</name></member>
-    <member refid="struct_bvr_1_1_s_shadow_pass_info_1_1_sun_frustum_1a89e01fed4b22c3ea9b9e3704e1f6d25d" kind="variable"><name>BiasClamp</name></member>
-    <member refid="struct_bvr_1_1_s_shadow_pass_info_1_1_sun_frustum_1ac76565720ede0f3b920ad2c73b6e7a10" kind="variable"><name>NormalBias</name></member>
-    <member refid="struct_bvr_1_1_s_shadow_pass_info_1_1_sun_frustum_1a0f0a7457a12f2ceff5fdf8801adb954c" kind="variable"><name>ShadowMapSize</name></member>
-    <member refid="struct_bvr_1_1_s_shadow_pass_info_1_1_sun_frustum_1afc3c6c5797e80f9cda8fe5d8080a95f4" kind="variable"><name>BlendFactor</name></member>
+  <compound refid="struct_bvr_1_1_renderer_1_1_s_texture_access" kind="struct"><name>Bvr::Renderer::STextureAccess</name>
+    <member refid="struct_bvr_1_1_renderer_1_1_s_texture_access_1a04daf4c7e859d1e754c00b2f9a5ca73d" kind="variable"><name>MipLevel</name></member>
+    <member refid="struct_bvr_1_1_renderer_1_1_s_texture_access_1a89690c935f2e68aacf543a6ab951c6af" kind="variable"><name>ArrayLayer</name></member>
+    <member refid="struct_bvr_1_1_renderer_1_1_s_texture_access_1a42bdc9a0ad5eb669dcc88d85b44f7b2d" kind="variable"><name>Sampler</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_renderer_1_1_s_vertex_stream" kind="struct"><name>Bvr::Renderer::SVertexStream</name>
     <member refid="struct_bvr_1_1_renderer_1_1_s_vertex_stream_1a947cdf9bc9e8d26d32885468dc7a5fbf" kind="variable"><name>UNDEFINED</name></member>
@@ -1042,15 +1053,6 @@
     <member refid="struct_bvr_1_1_renderer_1_1_visible_entities_1ace6256d2ece1fcddf4da2b4480f3aa78" kind="variable"><name>Entities</name></member>
   </compound>
   <compound refid="namespace_bvr" kind="namespace"><name>Bvr</name>
-    <member refid="_i_bvr_renderer_8hpp_1acf930d1972f88893e19e8afafa5d5a04" kind="enum"><name>ECoreRenderPhases</name></member>
-    <member refid="_i_bvr_renderer_8hpp_1acf930d1972f88893e19e8afafa5d5a04a628adbb6c98e56748110061187f57243" kind="enumvalue"><name>GBuffer</name></member>
-    <member refid="_i_bvr_renderer_8hpp_1acf930d1972f88893e19e8afafa5d5a04a67d2f6740a8eaebf4d5c6f79be8da481" kind="enumvalue"><name>Forward</name></member>
-    <member refid="_i_bvr_renderer_8hpp_1acf930d1972f88893e19e8afafa5d5a04ad2d84c1fc4f2d5d5f1c43bdb29dc236f" kind="enumvalue"><name>HUD</name></member>
-    <member refid="_i_bvr_renderer_8hpp_1a2105313cd3bfe3156eeea53d34e1b976" kind="enum"><name>EProfilingLevel</name></member>
-    <member refid="_i_bvr_renderer_8hpp_1a2105313cd3bfe3156eeea53d34e1b976a28d0edd045e05cf5af64e35ae0c4c6ef" kind="enumvalue"><name>Low</name></member>
-    <member refid="_i_bvr_renderer_8hpp_1a2105313cd3bfe3156eeea53d34e1b976ad4a9fa383ab700c5bdd6f31cf7df0faf" kind="enumvalue"><name>Verbose</name></member>
-    <member refid="_i_bvr_renderer_8hpp_1a6fa213d583519498ae3a738b73625d78" kind="enum"><name>EDebugProfilingStats</name></member>
-    <member refid="_i_bvr_renderer_8hpp_1a6fa213d583519498ae3a738b73625d78a1a226c2f1347809a185b8567ba1fc5a7" kind="enumvalue"><name>Profiling</name></member>
     <member refid="_render_output_8hpp_1a9e9d7e63fc276b98ee2029d1c193461c" kind="enum"><name>ERenderMode</name></member>
     <member refid="_render_output_8hpp_1a9e9d7e63fc276b98ee2029d1c193461cab2875c3df3ea61206a536bec693e61ac" kind="enumvalue"><name>DefaultLit</name></member>
     <member refid="_render_output_8hpp_1a9e9d7e63fc276b98ee2029d1c193461ca33e42d0f3b166a4c405127e4412fbef2" kind="enumvalue"><name>Wireframe</name></member>
@@ -1062,14 +1064,23 @@
     <member refid="_render_output_8hpp_1a37221e6c217f4b294e8f2f06e26f2b0dace2c8aed9c2fa0cfbed56cbda4d8bf07" kind="enumvalue"><name>Empty</name></member>
     <member refid="_render_output_8hpp_1a37221e6c217f4b294e8f2f06e26f2b0da878fd126d48c11c3ea699b54956958e4" kind="enumvalue"><name>NoClear</name></member>
     <member refid="_render_output_8hpp_1a37221e6c217f4b294e8f2f06e26f2b0da2d4b577236c92efcce69fbefb646cd15" kind="enumvalue"><name>Depth0To1</name></member>
-    <member refid="_i_bvr_renderer_8hpp_1a24e6d557d57a660b74dcb7d57110800f" kind="typedef"><name>ETopology</name></member>
-    <member refid="_i_bvr_renderer_8hpp_1a5b428650fb657340418d5edc3d17fb4f" kind="typedef"><name>ITexture</name></member>
+    <member refid="_i_bvr_renderer_8hpp_1acf930d1972f88893e19e8afafa5d5a04" kind="enum"><name>ECoreRenderPhases</name></member>
+    <member refid="_i_bvr_renderer_8hpp_1acf930d1972f88893e19e8afafa5d5a04a628adbb6c98e56748110061187f57243" kind="enumvalue"><name>GBuffer</name></member>
+    <member refid="_i_bvr_renderer_8hpp_1acf930d1972f88893e19e8afafa5d5a04a67d2f6740a8eaebf4d5c6f79be8da481" kind="enumvalue"><name>Forward</name></member>
+    <member refid="_i_bvr_renderer_8hpp_1acf930d1972f88893e19e8afafa5d5a04ad2d84c1fc4f2d5d5f1c43bdb29dc236f" kind="enumvalue"><name>HUD</name></member>
+    <member refid="_i_bvr_renderer_8hpp_1a2105313cd3bfe3156eeea53d34e1b976" kind="enum"><name>EProfilingLevel</name></member>
+    <member refid="_i_bvr_renderer_8hpp_1a2105313cd3bfe3156eeea53d34e1b976a28d0edd045e05cf5af64e35ae0c4c6ef" kind="enumvalue"><name>Low</name></member>
+    <member refid="_i_bvr_renderer_8hpp_1a2105313cd3bfe3156eeea53d34e1b976ad4a9fa383ab700c5bdd6f31cf7df0faf" kind="enumvalue"><name>Verbose</name></member>
+    <member refid="_i_bvr_renderer_8hpp_1a6fa213d583519498ae3a738b73625d78" kind="enum"><name>EDebugProfilingStats</name></member>
+    <member refid="_i_bvr_renderer_8hpp_1a6fa213d583519498ae3a738b73625d78a1a226c2f1347809a185b8567ba1fc5a7" kind="enumvalue"><name>Profiling</name></member>
+    <member refid="_render_mesh_8hpp_1ae24f1352f49e2c499dfb82b12e1d7644" kind="typedef"><name>SStreamSlice</name></member>
     <member refid="_render_output_8hpp_1a9b8e00f7fbd455286ff5ae411884c888" kind="typedef"><name>TRenderTarget</name></member>
     <member refid="_render_output_8hpp_1a1c5a84ba385c7642df93fbee9f8955c6" kind="typedef"><name>TViewport</name></member>
     <member refid="_render_output_8hpp_1a161a5c1dba3b3ac0514b28fdb44af8c2" kind="typedef"><name>TRenderLayer</name></member>
-    <member refid="_render_mesh_8hpp_1ae24f1352f49e2c499dfb82b12e1d7644" kind="typedef"><name>SStreamSlice</name></member>
-    <member refid="_i_bvr_renderer_8hpp_1a11ecd1cb0eed41195071bbc9ac390d99" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
+    <member refid="_i_bvr_renderer_8hpp_1a24e6d557d57a660b74dcb7d57110800f" kind="typedef"><name>ETopology</name></member>
+    <member refid="_i_bvr_renderer_8hpp_1a5b428650fb657340418d5edc3d17fb4f" kind="typedef"><name>ITexture</name></member>
     <member refid="_render_output_8hpp_1a0cf83f83d594f3dfead3ed7036f10541" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
+    <member refid="_i_bvr_renderer_8hpp_1a11ecd1cb0eed41195071bbc9ac390d99" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
   </compound>
   <compound refid="namespace_bvr_1_1_animation" kind="namespace"><name>Bvr::Animation</name>
   </compound>
@@ -1080,111 +1091,11 @@
     <member refid="_i_bvr_renderer_8hpp_1a953f61d920bf0420852b632acb099781" kind="function"><name>ImageButton</name></member>
   </compound>
   <compound refid="namespace_bvr_1_1_renderer" kind="namespace"><name>Bvr::Renderer</name>
-    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4" kind="enum"><name>ETextureUsage</name></member>
-    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4a6adf97f83acf6453d4a6a4b1070f3754" kind="enumvalue"><name>None</name></member>
-    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4a9b0bffda4bcb312168c0d6537cb04b4d" kind="enumvalue"><name>RenderTarget</name></member>
-    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4a675056ad1441b6375b2c5abd48c27ef1" kind="enumvalue"><name>Depth</name></member>
-    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4ad821e7ccd4d4c25a491ba1a9ea248895" kind="enumvalue"><name>Stencil</name></member>
-    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4a02c9581fe2b85bdad106415fad5a3e65" kind="enumvalue"><name>ShaderInput</name></member>
-    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4a908438103df127428cb9e87573bd996f" kind="enumvalue"><name>RWTexture</name></member>
-    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4ac1b703f2c13fac2fff3e72d3e307d4c0" kind="enumvalue"><name>TransferSrc</name></member>
-    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4afc2b74588602de2090079ac53957dfdd" kind="enumvalue"><name>TransferDst</name></member>
-    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4a13d2ca466e18447a1a05cdaf4c6c1e42" kind="enumvalue"><name>GenMipMaps</name></member>
-    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4a2fa8076285272883c91e14402975a441" kind="enumvalue"><name>DepthStencil</name></member>
-    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977" kind="enum"><name>EBufferType</name></member>
-    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977a6adf97f83acf6453d4a6a4b1070f3754" kind="enumvalue"><name>None</name></member>
-    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977a10461f19cdb5aadba2fc9986be6400bd" kind="enumvalue"><name>VertexBuffer</name></member>
-    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977a7c3895116254ff0417e58b6286de27c0" kind="enumvalue"><name>IndexBuffer</name></member>
-    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977af09d0dd3c08eeabc5b432609f31d0a8c" kind="enumvalue"><name>ConstantBuffer</name></member>
-    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977a8c4aa541ee911e8d80451ef8cc304806" kind="enumvalue"><name>Storage</name></member>
-    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977ac1b703f2c13fac2fff3e72d3e307d4c0" kind="enumvalue"><name>TransferSrc</name></member>
-    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977afc2b74588602de2090079ac53957dfdd" kind="enumvalue"><name>TransferDst</name></member>
-    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977a44b9fced3049ce58beb51494589782e0" kind="enumvalue"><name>AccelerationStructure</name></member>
-    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977a0b5ca9d0c6dbcbb3e299361cd4e4a79c" kind="enumvalue"><name>Indirect</name></member>
-    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977a407f6f57d55c94994442a238690212d8" kind="enumvalue"><name>AccelerationStructureInput</name></member>
-    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977a227097d1f34e7ff4e22511677767a4bb" kind="enumvalue"><name>ShaderBindingTable</name></member>
-    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41" kind="enum"><name>EAttachmentState</name></member>
-    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41aec0fc0100c4fc1ce4eea230c3dc10360" kind="enumvalue"><name>Undefined</name></member>
-    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41a0db377921f4ce762c62526131097968f" kind="enumvalue"><name>General</name></member>
-    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41a5be1237c5a35b2d03703642f334b3396" kind="enumvalue"><name>ColourRead</name></member>
-    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41aade96c9ab87c2c9f09be3fc3b07ab765" kind="enumvalue"><name>ColourWrite</name></member>
-    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41aa7419f15f4d15322a98d29734b8e48b4" kind="enumvalue"><name>DepthStencilRead</name></member>
-    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41aaab1a48a275c112d160f5b28d0d3a123" kind="enumvalue"><name>DepthStencilWrite</name></member>
-    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41ac1b703f2c13fac2fff3e72d3e307d4c0" kind="enumvalue"><name>TransferSrc</name></member>
-    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41afc2b74588602de2090079ac53957dfdd" kind="enumvalue"><name>TransferDst</name></member>
-    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41add058df87f5c88e3285a28ad7406a3c6" kind="enumvalue"><name>Present</name></member>
-    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41ae93f994f01c537c4e2f7d8528c3eb5e9" kind="enumvalue"><name>Count</name></member>
-    <member refid="_common_renderer_8hpp_1a8deac53a17db607dcf02fa758539a245" kind="enum"><name>EQueue</name></member>
-    <member refid="_common_renderer_8hpp_1a8deac53a17db607dcf02fa758539a245ad334dfcea59127bedfcdbe0a3ee7f494" kind="enumvalue"><name>Graphics</name></member>
-    <member refid="_common_renderer_8hpp_1a8deac53a17db607dcf02fa758539a245aa623a8d0366bf079411aa30be45b2d10" kind="enumvalue"><name>Compute</name></member>
-    <member refid="_common_renderer_8hpp_1a8deac53a17db607dcf02fa758539a245a6950810f0d2bba97a6f710c7b965b84e" kind="enumvalue"><name>Transfer</name></member>
-    <member refid="_common_renderer_8hpp_1a8deac53a17db607dcf02fa758539a245add058df87f5c88e3285a28ad7406a3c6" kind="enumvalue"><name>Present</name></member>
-    <member refid="_common_renderer_8hpp_1a8deac53a17db607dcf02fa758539a245ae93f994f01c537c4e2f7d8528c3eb5e9" kind="enumvalue"><name>Count</name></member>
-    <member refid="_common_renderer_8hpp_1a8deac53a17db607dcf02fa758539a245a7fb55ed0b7a30342ba6da306428cae04" kind="enumvalue"><name>First</name></member>
-    <member refid="_common_renderer_8hpp_1a07b6fdf1889730232856e4a364874168" kind="enum"><name>EPushConstants</name></member>
-    <member refid="_common_renderer_8hpp_1a07b6fdf1889730232856e4a364874168a6adf97f83acf6453d4a6a4b1070f3754" kind="enumvalue"><name>None</name></member>
-    <member refid="_common_renderer_8hpp_1a07b6fdf1889730232856e4a364874168af1ad80d56c50121fa67b4653351104ef" kind="enumvalue"><name>IndirectId</name></member>
-    <member refid="_common_renderer_8hpp_1a07b6fdf1889730232856e4a364874168a2b52c40ace3db2ef15c033f0e9eeca6f" kind="enumvalue"><name>ModelId</name></member>
-    <member refid="_common_renderer_8hpp_1a07b6fdf1889730232856e4a364874168a8da292cbeeda6072777ff2bf6449fb5d" kind="enumvalue"><name>MaterialId</name></member>
-    <member refid="_common_renderer_8hpp_1a07b6fdf1889730232856e4a364874168a960926693e52288bf141eab3ab1eaf4e" kind="enumvalue"><name>IndirectOffset</name></member>
-    <member refid="_common_renderer_8hpp_1a1ec3050a087903e41b1a6898d780ff0a" kind="enum"><name>ERenderList</name></member>
-    <member refid="_common_renderer_8hpp_1a1ec3050a087903e41b1a6898d780ff0aa7fb55ed0b7a30342ba6da306428cae04" kind="enumvalue"><name>First</name></member>
-    <member refid="_common_renderer_8hpp_1a1ec3050a087903e41b1a6898d780ff0aa0db377921f4ce762c62526131097968f" kind="enumvalue"><name>General</name></member>
-    <member refid="_common_renderer_8hpp_1a1ec3050a087903e41b1a6898d780ff0aa67d2f6740a8eaebf4d5c6f79be8da481" kind="enumvalue"><name>Forward</name></member>
-    <member refid="_common_renderer_8hpp_1a1ec3050a087903e41b1a6898d780ff0aafc562378b833532c4dccc8815c242c45" kind="enumvalue"><name>SunShadows0</name></member>
-    <member refid="_common_renderer_8hpp_1a1ec3050a087903e41b1a6898d780ff0aaac7de16076f43cb83d3c9446f6b724a7" kind="enumvalue"><name>SunShadows1</name></member>
-    <member refid="_common_renderer_8hpp_1a1ec3050a087903e41b1a6898d780ff0aa232423a6498c1489ffde579837b0674b" kind="enumvalue"><name>SunShadows2</name></member>
-    <member refid="_common_renderer_8hpp_1a1ec3050a087903e41b1a6898d780ff0aa7d1531704dd1dafb2d2de3655db44bfe" kind="enumvalue"><name>SunShadows3</name></member>
-    <member refid="_common_renderer_8hpp_1a1ec3050a087903e41b1a6898d780ff0aad2d84c1fc4f2d5d5f1c43bdb29dc236f" kind="enumvalue"><name>HUD</name></member>
-    <member refid="_common_renderer_8hpp_1a1ec3050a087903e41b1a6898d780ff0aae93f994f01c537c4e2f7d8528c3eb5e9" kind="enumvalue"><name>Count</name></member>
-    <member refid="_common_renderer_8hpp_1a98af207eb11753b232fd9b58f6fb2b4b" kind="enum"><name>EPipelineType</name></member>
-    <member refid="_common_renderer_8hpp_1a98af207eb11753b232fd9b58f6fb2b4bad334dfcea59127bedfcdbe0a3ee7f494" kind="enumvalue"><name>Graphics</name></member>
-    <member refid="_common_renderer_8hpp_1a98af207eb11753b232fd9b58f6fb2b4baa623a8d0366bf079411aa30be45b2d10" kind="enumvalue"><name>Compute</name></member>
-    <member refid="_common_renderer_8hpp_1a98af207eb11753b232fd9b58f6fb2b4ba90e05e9a960962ce73f8d350782dbbd6" kind="enumvalue"><name>RayTracing</name></member>
-    <member refid="_common_renderer_8hpp_1a98af207eb11753b232fd9b58f6fb2b4bae93f994f01c537c4e2f7d8528c3eb5e9" kind="enumvalue"><name>Count</name></member>
-    <member refid="_common_renderer_8hpp_1a2a12be00e9c4ec338a2a3aaf7f3cc548" kind="enum"><name>EPrimitiveTopology</name></member>
-    <member refid="_common_renderer_8hpp_1a2a12be00e9c4ec338a2a3aaf7f3cc548af5beeab7a1f452e5b0e9b03b44f0de92" kind="enumvalue"><name>TriangleList</name></member>
-    <member refid="_common_renderer_8hpp_1a2a12be00e9c4ec338a2a3aaf7f3cc548a1da0b9ead8b051940a89214bae22831c" kind="enumvalue"><name>TriangleStrip</name></member>
-    <member refid="_common_renderer_8hpp_1a2a12be00e9c4ec338a2a3aaf7f3cc548a18d58fde618e4a30e2dfdc122e693047" kind="enumvalue"><name>TriangleFan</name></member>
-    <member refid="_common_renderer_8hpp_1a2a12be00e9c4ec338a2a3aaf7f3cc548a596e1b7afe8925f3f578c716d5af8fef" kind="enumvalue"><name>LineList</name></member>
-    <member refid="_common_renderer_8hpp_1a2a12be00e9c4ec338a2a3aaf7f3cc548ae7f9e73b8edd21f420a63b3ace5768a2" kind="enumvalue"><name>LineStrip</name></member>
-    <member refid="_common_renderer_8hpp_1a2a12be00e9c4ec338a2a3aaf7f3cc548a1a18ff71b3df3e362a2489eef4b30003" kind="enumvalue"><name>PointList</name></member>
-    <member refid="_common_renderer_8hpp_1a2a12be00e9c4ec338a2a3aaf7f3cc548af1b220525e3cc747140a46b7e2d7532e" kind="enumvalue"><name>PatchList</name></member>
-    <member refid="_common_renderer_8hpp_1a2a12be00e9c4ec338a2a3aaf7f3cc548ae93f994f01c537c4e2f7d8528c3eb5e9" kind="enumvalue"><name>Count</name></member>
-    <member refid="_common_renderer_8hpp_1a7433e786279b7639ac9430023439e2b3" kind="enum"><name>ESamplerFilter</name></member>
-    <member refid="_common_renderer_8hpp_1a7433e786279b7639ac9430023439e2b3a2a3cd5946cfd317eb99c3d32e35e2d4c" kind="enumvalue"><name>Point</name></member>
-    <member refid="_common_renderer_8hpp_1a7433e786279b7639ac9430023439e2b3a32a843da6ea40ab3b17a3421ccdf671b" kind="enumvalue"><name>Linear</name></member>
-    <member refid="_common_renderer_8hpp_1a7433e786279b7639ac9430023439e2b3aec6b5414eb175379ff9efc9b3eef5814" kind="enumvalue"><name>Cubic</name></member>
-    <member refid="_common_renderer_8hpp_1a7433e786279b7639ac9430023439e2b3ae93f994f01c537c4e2f7d8528c3eb5e9" kind="enumvalue"><name>Count</name></member>
-    <member refid="_common_renderer_8hpp_1a0d846d0b5ed1d5d285f8880ffb4537e2" kind="enum"><name>ESamplerAddressMode</name></member>
-    <member refid="_common_renderer_8hpp_1a0d846d0b5ed1d5d285f8880ffb4537e2a7020426cfb0a204051be4b3053d2acc8" kind="enumvalue"><name>Repeat</name></member>
-    <member refid="_common_renderer_8hpp_1a0d846d0b5ed1d5d285f8880ffb4537e2a12ce4a5977988214a6b098b8cb0bf695" kind="enumvalue"><name>MirroredRepeat</name></member>
-    <member refid="_common_renderer_8hpp_1a0d846d0b5ed1d5d285f8880ffb4537e2a74556551231333c36debc3d373261134" kind="enumvalue"><name>ClampToEdge</name></member>
-    <member refid="_common_renderer_8hpp_1a0d846d0b5ed1d5d285f8880ffb4537e2afb07f88f6f11cc5ab9c951290716f147" kind="enumvalue"><name>ClampToBorder</name></member>
-    <member refid="_common_renderer_8hpp_1a0d846d0b5ed1d5d285f8880ffb4537e2a01f488e80fc32761aecfbeb3d1c8f26b" kind="enumvalue"><name>MirrorClampToEdge</name></member>
-    <member refid="_common_renderer_8hpp_1a0d846d0b5ed1d5d285f8880ffb4537e2ae93f994f01c537c4e2f7d8528c3eb5e9" kind="enumvalue"><name>Count</name></member>
-    <member refid="_common_renderer_8hpp_1aaf857cada7d273c445078c4a47f5c1f2" kind="enum"><name>ESamplerCompareMode</name></member>
-    <member refid="_common_renderer_8hpp_1aaf857cada7d273c445078c4a47f5c1f2ab9f5c797ebbf55adccdd8539a65a0241" kind="enumvalue"><name>Disabled</name></member>
-    <member refid="_common_renderer_8hpp_1aaf857cada7d273c445078c4a47f5c1f2a6e7b34fa59e1bd229b207892956dc41c" kind="enumvalue"><name>Never</name></member>
-    <member refid="_common_renderer_8hpp_1aaf857cada7d273c445078c4a47f5c1f2a1cfdf0e8d0c87a228c1f40d9bee7888b" kind="enumvalue"><name>Less</name></member>
-    <member refid="_common_renderer_8hpp_1aaf857cada7d273c445078c4a47f5c1f2af5f286e73bda105e538310b3190f75c5" kind="enumvalue"><name>Equal</name></member>
-    <member refid="_common_renderer_8hpp_1aaf857cada7d273c445078c4a47f5c1f2a19bb0af2c3c530538cb41aff7f235b96" kind="enumvalue"><name>NotEqual</name></member>
-    <member refid="_common_renderer_8hpp_1aaf857cada7d273c445078c4a47f5c1f2ad3e6fdac55bb7b0edd7834c968ba1f38" kind="enumvalue"><name>LessEqual</name></member>
-    <member refid="_common_renderer_8hpp_1aaf857cada7d273c445078c4a47f5c1f2a8768a6821cd735aea4f5b0df88c1fc6a" kind="enumvalue"><name>Greater</name></member>
-    <member refid="_common_renderer_8hpp_1aaf857cada7d273c445078c4a47f5c1f2a758b05d899def79c9eb864ad4f96be1f" kind="enumvalue"><name>GreaterEqual</name></member>
-    <member refid="_common_renderer_8hpp_1aaf857cada7d273c445078c4a47f5c1f2a68eec46437c384d8dad18d5464ebc35c" kind="enumvalue"><name>Always</name></member>
-    <member refid="_common_renderer_8hpp_1aaf857cada7d273c445078c4a47f5c1f2ae93f994f01c537c4e2f7d8528c3eb5e9" kind="enumvalue"><name>Count</name></member>
-    <member refid="_common_renderer_8hpp_1a5765aa740795727da2f7500a7022a496" kind="enum"><name>ESamplerBorderColour</name></member>
-    <member refid="_common_renderer_8hpp_1a5765aa740795727da2f7500a7022a496a2c192e68b11165439f906f5c874f741a" kind="enumvalue"><name>FloatBlackTransparent</name></member>
-    <member refid="_common_renderer_8hpp_1a5765aa740795727da2f7500a7022a496aa457d8cb3b5c8dd73a8f715013b73bda" kind="enumvalue"><name>IntBlackTransparent</name></member>
-    <member refid="_common_renderer_8hpp_1a5765aa740795727da2f7500a7022a496a7e5693065bd635ca41e2f94c67101f8e" kind="enumvalue"><name>FloatBlackOpaque</name></member>
-    <member refid="_common_renderer_8hpp_1a5765aa740795727da2f7500a7022a496ade11518beb3709bc84fcb712545c9ce0" kind="enumvalue"><name>IntBlackOpaque</name></member>
-    <member refid="_common_renderer_8hpp_1a5765aa740795727da2f7500a7022a496adac271a77c84b31a113cba7df27fa40b" kind="enumvalue"><name>FloatWhiteOpaque</name></member>
-    <member refid="_common_renderer_8hpp_1a5765aa740795727da2f7500a7022a496abcfc2735fdde87c3761539ce4d2ff82b" kind="enumvalue"><name>IntWhiteOpaque</name></member>
-    <member refid="_common_renderer_8hpp_1a5765aa740795727da2f7500a7022a496ae93f994f01c537c4e2f7d8528c3eb5e9" kind="enumvalue"><name>Count</name></member>
-    <member refid="_frame_graph_defs_8hpp_1adcbe218e839b2ca1212077d1c73d64d2" kind="enum"><name>ERelativeTo</name></member>
-    <member refid="_frame_graph_defs_8hpp_1adcbe218e839b2ca1212077d1c73d64d2ad54af574777e6c4c965d0e8651a6c866" kind="enumvalue"><name>GraphicsPipeline</name></member>
-    <member refid="_frame_graph_defs_8hpp_1adcbe218e839b2ca1212077d1c73d64d2a90589c47f06eb971d548591f23c285af" kind="enumvalue"><name>Custom</name></member>
+    <member refid="_render_pass_scheduler_8hpp_1a490f231e067f83138550ea5fd910ce4a" kind="enum"><name>ERenderPassState</name></member>
+    <member refid="_render_pass_scheduler_8hpp_1a490f231e067f83138550ea5fd910ce4aa087e0ddbfc63bd5a013fde7d8d091edd" kind="enumvalue"><name>eRP_Idle</name></member>
+    <member refid="_render_pass_scheduler_8hpp_1a490f231e067f83138550ea5fd910ce4aae5828782e1e352adbc3f791779a02dbb" kind="enumvalue"><name>eRP_Recording</name></member>
+    <member refid="_render_pass_scheduler_8hpp_1a490f231e067f83138550ea5fd910ce4aacb318944761dcfddd95ac7de264e9fdb" kind="enumvalue"><name>eRP_Scheduling</name></member>
+    <member refid="_render_pass_scheduler_8hpp_1a490f231e067f83138550ea5fd910ce4aa0506f518dfdac6b81ce4bb11714de64e" kind="enumvalue"><name>eRP_Executing</name></member>
     <member refid="_common_shaders_8hpp_1ade834de93adcf90d915c3dde8ed809ea" kind="enum"><name>EShaderType</name></member>
     <member refid="_common_shaders_8hpp_1ade834de93adcf90d915c3dde8ed809eaab22b929ba52471a02d18bb3a4e4472e6" kind="enumvalue"><name>Vertex</name></member>
     <member refid="_common_shaders_8hpp_1ade834de93adcf90d915c3dde8ed809eaaeae639a70006feff484a39363c977e24" kind="enumvalue"><name>Domain</name></member>
@@ -1298,11 +1209,116 @@
     <member refid="_common_shaders_8hpp_1aefdbae3a76639a365ff6152e9ea2dd49abac953e88f6d79514b0b6fc42eb6f3b7" kind="enumvalue"><name>RG</name></member>
     <member refid="_common_shaders_8hpp_1aefdbae3a76639a365ff6152e9ea2dd49a79cba1185463850dedba31f172f1dc5b" kind="enumvalue"><name>GB</name></member>
     <member refid="_common_shaders_8hpp_1aefdbae3a76639a365ff6152e9ea2dd49a5fc810cf62601df84b7923b9964c53e6" kind="enumvalue"><name>BA</name></member>
-    <member refid="_render_pass_scheduler_8hpp_1a490f231e067f83138550ea5fd910ce4a" kind="enum"><name>ERenderPassState</name></member>
-    <member refid="_render_pass_scheduler_8hpp_1a490f231e067f83138550ea5fd910ce4aa087e0ddbfc63bd5a013fde7d8d091edd" kind="enumvalue"><name>eRP_Idle</name></member>
-    <member refid="_render_pass_scheduler_8hpp_1a490f231e067f83138550ea5fd910ce4aae5828782e1e352adbc3f791779a02dbb" kind="enumvalue"><name>eRP_Recording</name></member>
-    <member refid="_render_pass_scheduler_8hpp_1a490f231e067f83138550ea5fd910ce4aacb318944761dcfddd95ac7de264e9fdb" kind="enumvalue"><name>eRP_Scheduling</name></member>
-    <member refid="_render_pass_scheduler_8hpp_1a490f231e067f83138550ea5fd910ce4aa0506f518dfdac6b81ce4bb11714de64e" kind="enumvalue"><name>eRP_Executing</name></member>
+    <member refid="_common_renderer_8hpp_1a8deac53a17db607dcf02fa758539a245" kind="enum"><name>EQueue</name></member>
+    <member refid="_common_renderer_8hpp_1a8deac53a17db607dcf02fa758539a245ad334dfcea59127bedfcdbe0a3ee7f494" kind="enumvalue"><name>Graphics</name></member>
+    <member refid="_common_renderer_8hpp_1a8deac53a17db607dcf02fa758539a245aa623a8d0366bf079411aa30be45b2d10" kind="enumvalue"><name>Compute</name></member>
+    <member refid="_common_renderer_8hpp_1a8deac53a17db607dcf02fa758539a245a6950810f0d2bba97a6f710c7b965b84e" kind="enumvalue"><name>Transfer</name></member>
+    <member refid="_common_renderer_8hpp_1a8deac53a17db607dcf02fa758539a245add058df87f5c88e3285a28ad7406a3c6" kind="enumvalue"><name>Present</name></member>
+    <member refid="_common_renderer_8hpp_1a8deac53a17db607dcf02fa758539a245ae93f994f01c537c4e2f7d8528c3eb5e9" kind="enumvalue"><name>Count</name></member>
+    <member refid="_common_renderer_8hpp_1a8deac53a17db607dcf02fa758539a245a7fb55ed0b7a30342ba6da306428cae04" kind="enumvalue"><name>First</name></member>
+    <member refid="_common_renderer_8hpp_1a07b6fdf1889730232856e4a364874168" kind="enum"><name>EPushConstants</name></member>
+    <member refid="_common_renderer_8hpp_1a07b6fdf1889730232856e4a364874168a6adf97f83acf6453d4a6a4b1070f3754" kind="enumvalue"><name>None</name></member>
+    <member refid="_common_renderer_8hpp_1a07b6fdf1889730232856e4a364874168af1ad80d56c50121fa67b4653351104ef" kind="enumvalue"><name>IndirectId</name></member>
+    <member refid="_common_renderer_8hpp_1a07b6fdf1889730232856e4a364874168a2b52c40ace3db2ef15c033f0e9eeca6f" kind="enumvalue"><name>ModelId</name></member>
+    <member refid="_common_renderer_8hpp_1a07b6fdf1889730232856e4a364874168a8da292cbeeda6072777ff2bf6449fb5d" kind="enumvalue"><name>MaterialId</name></member>
+    <member refid="_common_renderer_8hpp_1a07b6fdf1889730232856e4a364874168a960926693e52288bf141eab3ab1eaf4e" kind="enumvalue"><name>IndirectOffset</name></member>
+    <member refid="_common_renderer_8hpp_1a1ec3050a087903e41b1a6898d780ff0a" kind="enum"><name>ERenderList</name></member>
+    <member refid="_common_renderer_8hpp_1a1ec3050a087903e41b1a6898d780ff0aa7fb55ed0b7a30342ba6da306428cae04" kind="enumvalue"><name>First</name></member>
+    <member refid="_common_renderer_8hpp_1a1ec3050a087903e41b1a6898d780ff0aa0db377921f4ce762c62526131097968f" kind="enumvalue"><name>General</name></member>
+    <member refid="_common_renderer_8hpp_1a1ec3050a087903e41b1a6898d780ff0aa67d2f6740a8eaebf4d5c6f79be8da481" kind="enumvalue"><name>Forward</name></member>
+    <member refid="_common_renderer_8hpp_1a1ec3050a087903e41b1a6898d780ff0aad2d84c1fc4f2d5d5f1c43bdb29dc236f" kind="enumvalue"><name>HUD</name></member>
+    <member refid="_common_renderer_8hpp_1a1ec3050a087903e41b1a6898d780ff0aa1bfbf529edd3e86c7051abd14defcc3d" kind="enumvalue"><name>CountGeneral</name></member>
+    <member refid="_common_renderer_8hpp_1a1ec3050a087903e41b1a6898d780ff0aafef9c5a8fa1622100a59b333fcfe52d8" kind="enumvalue"><name>ShadowsFirst</name></member>
+    <member refid="_common_renderer_8hpp_1a1ec3050a087903e41b1a6898d780ff0aa3347fe44d248902f4b5c4f8480bed00d" kind="enumvalue"><name>ShadowsCount</name></member>
+    <member refid="_common_renderer_8hpp_1a1ec3050a087903e41b1a6898d780ff0aa7742069a31a207fb1a2c519d04db54cd" kind="enumvalue"><name>ShadowsLast</name></member>
+    <member refid="_common_renderer_8hpp_1a1ec3050a087903e41b1a6898d780ff0aabbb93ef26e3c101ff11cdd21cab08a94" kind="enumvalue"><name>Null</name></member>
+    <member refid="_common_renderer_8hpp_1a98af207eb11753b232fd9b58f6fb2b4b" kind="enum"><name>EPipelineType</name></member>
+    <member refid="_common_renderer_8hpp_1a98af207eb11753b232fd9b58f6fb2b4bad334dfcea59127bedfcdbe0a3ee7f494" kind="enumvalue"><name>Graphics</name></member>
+    <member refid="_common_renderer_8hpp_1a98af207eb11753b232fd9b58f6fb2b4baa623a8d0366bf079411aa30be45b2d10" kind="enumvalue"><name>Compute</name></member>
+    <member refid="_common_renderer_8hpp_1a98af207eb11753b232fd9b58f6fb2b4ba90e05e9a960962ce73f8d350782dbbd6" kind="enumvalue"><name>RayTracing</name></member>
+    <member refid="_common_renderer_8hpp_1a98af207eb11753b232fd9b58f6fb2b4bae93f994f01c537c4e2f7d8528c3eb5e9" kind="enumvalue"><name>Count</name></member>
+    <member refid="_common_renderer_8hpp_1a2a12be00e9c4ec338a2a3aaf7f3cc548" kind="enum"><name>EPrimitiveTopology</name></member>
+    <member refid="_common_renderer_8hpp_1a2a12be00e9c4ec338a2a3aaf7f3cc548af5beeab7a1f452e5b0e9b03b44f0de92" kind="enumvalue"><name>TriangleList</name></member>
+    <member refid="_common_renderer_8hpp_1a2a12be00e9c4ec338a2a3aaf7f3cc548a1da0b9ead8b051940a89214bae22831c" kind="enumvalue"><name>TriangleStrip</name></member>
+    <member refid="_common_renderer_8hpp_1a2a12be00e9c4ec338a2a3aaf7f3cc548a18d58fde618e4a30e2dfdc122e693047" kind="enumvalue"><name>TriangleFan</name></member>
+    <member refid="_common_renderer_8hpp_1a2a12be00e9c4ec338a2a3aaf7f3cc548a596e1b7afe8925f3f578c716d5af8fef" kind="enumvalue"><name>LineList</name></member>
+    <member refid="_common_renderer_8hpp_1a2a12be00e9c4ec338a2a3aaf7f3cc548ae7f9e73b8edd21f420a63b3ace5768a2" kind="enumvalue"><name>LineStrip</name></member>
+    <member refid="_common_renderer_8hpp_1a2a12be00e9c4ec338a2a3aaf7f3cc548a1a18ff71b3df3e362a2489eef4b30003" kind="enumvalue"><name>PointList</name></member>
+    <member refid="_common_renderer_8hpp_1a2a12be00e9c4ec338a2a3aaf7f3cc548af1b220525e3cc747140a46b7e2d7532e" kind="enumvalue"><name>PatchList</name></member>
+    <member refid="_common_renderer_8hpp_1a2a12be00e9c4ec338a2a3aaf7f3cc548ae93f994f01c537c4e2f7d8528c3eb5e9" kind="enumvalue"><name>Count</name></member>
+    <member refid="_common_renderer_8hpp_1a7433e786279b7639ac9430023439e2b3" kind="enum"><name>ESamplerFilter</name></member>
+    <member refid="_common_renderer_8hpp_1a7433e786279b7639ac9430023439e2b3a2a3cd5946cfd317eb99c3d32e35e2d4c" kind="enumvalue"><name>Point</name></member>
+    <member refid="_common_renderer_8hpp_1a7433e786279b7639ac9430023439e2b3a32a843da6ea40ab3b17a3421ccdf671b" kind="enumvalue"><name>Linear</name></member>
+    <member refid="_common_renderer_8hpp_1a7433e786279b7639ac9430023439e2b3aec6b5414eb175379ff9efc9b3eef5814" kind="enumvalue"><name>Cubic</name></member>
+    <member refid="_common_renderer_8hpp_1a7433e786279b7639ac9430023439e2b3ae93f994f01c537c4e2f7d8528c3eb5e9" kind="enumvalue"><name>Count</name></member>
+    <member refid="_common_renderer_8hpp_1a0d846d0b5ed1d5d285f8880ffb4537e2" kind="enum"><name>ESamplerAddressMode</name></member>
+    <member refid="_common_renderer_8hpp_1a0d846d0b5ed1d5d285f8880ffb4537e2a7020426cfb0a204051be4b3053d2acc8" kind="enumvalue"><name>Repeat</name></member>
+    <member refid="_common_renderer_8hpp_1a0d846d0b5ed1d5d285f8880ffb4537e2a12ce4a5977988214a6b098b8cb0bf695" kind="enumvalue"><name>MirroredRepeat</name></member>
+    <member refid="_common_renderer_8hpp_1a0d846d0b5ed1d5d285f8880ffb4537e2a74556551231333c36debc3d373261134" kind="enumvalue"><name>ClampToEdge</name></member>
+    <member refid="_common_renderer_8hpp_1a0d846d0b5ed1d5d285f8880ffb4537e2afb07f88f6f11cc5ab9c951290716f147" kind="enumvalue"><name>ClampToBorder</name></member>
+    <member refid="_common_renderer_8hpp_1a0d846d0b5ed1d5d285f8880ffb4537e2a01f488e80fc32761aecfbeb3d1c8f26b" kind="enumvalue"><name>MirrorClampToEdge</name></member>
+    <member refid="_common_renderer_8hpp_1a0d846d0b5ed1d5d285f8880ffb4537e2ae93f994f01c537c4e2f7d8528c3eb5e9" kind="enumvalue"><name>Count</name></member>
+    <member refid="_common_renderer_8hpp_1aaf857cada7d273c445078c4a47f5c1f2" kind="enum"><name>ESamplerCompareMode</name></member>
+    <member refid="_common_renderer_8hpp_1aaf857cada7d273c445078c4a47f5c1f2ab9f5c797ebbf55adccdd8539a65a0241" kind="enumvalue"><name>Disabled</name></member>
+    <member refid="_common_renderer_8hpp_1aaf857cada7d273c445078c4a47f5c1f2a6e7b34fa59e1bd229b207892956dc41c" kind="enumvalue"><name>Never</name></member>
+    <member refid="_common_renderer_8hpp_1aaf857cada7d273c445078c4a47f5c1f2a1cfdf0e8d0c87a228c1f40d9bee7888b" kind="enumvalue"><name>Less</name></member>
+    <member refid="_common_renderer_8hpp_1aaf857cada7d273c445078c4a47f5c1f2af5f286e73bda105e538310b3190f75c5" kind="enumvalue"><name>Equal</name></member>
+    <member refid="_common_renderer_8hpp_1aaf857cada7d273c445078c4a47f5c1f2a19bb0af2c3c530538cb41aff7f235b96" kind="enumvalue"><name>NotEqual</name></member>
+    <member refid="_common_renderer_8hpp_1aaf857cada7d273c445078c4a47f5c1f2ad3e6fdac55bb7b0edd7834c968ba1f38" kind="enumvalue"><name>LessEqual</name></member>
+    <member refid="_common_renderer_8hpp_1aaf857cada7d273c445078c4a47f5c1f2a8768a6821cd735aea4f5b0df88c1fc6a" kind="enumvalue"><name>Greater</name></member>
+    <member refid="_common_renderer_8hpp_1aaf857cada7d273c445078c4a47f5c1f2a758b05d899def79c9eb864ad4f96be1f" kind="enumvalue"><name>GreaterEqual</name></member>
+    <member refid="_common_renderer_8hpp_1aaf857cada7d273c445078c4a47f5c1f2a68eec46437c384d8dad18d5464ebc35c" kind="enumvalue"><name>Always</name></member>
+    <member refid="_common_renderer_8hpp_1aaf857cada7d273c445078c4a47f5c1f2ae93f994f01c537c4e2f7d8528c3eb5e9" kind="enumvalue"><name>Count</name></member>
+    <member refid="_common_renderer_8hpp_1a5765aa740795727da2f7500a7022a496" kind="enum"><name>ESamplerBorderColour</name></member>
+    <member refid="_common_renderer_8hpp_1a5765aa740795727da2f7500a7022a496a2c192e68b11165439f906f5c874f741a" kind="enumvalue"><name>FloatBlackTransparent</name></member>
+    <member refid="_common_renderer_8hpp_1a5765aa740795727da2f7500a7022a496aa457d8cb3b5c8dd73a8f715013b73bda" kind="enumvalue"><name>IntBlackTransparent</name></member>
+    <member refid="_common_renderer_8hpp_1a5765aa740795727da2f7500a7022a496a7e5693065bd635ca41e2f94c67101f8e" kind="enumvalue"><name>FloatBlackOpaque</name></member>
+    <member refid="_common_renderer_8hpp_1a5765aa740795727da2f7500a7022a496ade11518beb3709bc84fcb712545c9ce0" kind="enumvalue"><name>IntBlackOpaque</name></member>
+    <member refid="_common_renderer_8hpp_1a5765aa740795727da2f7500a7022a496adac271a77c84b31a113cba7df27fa40b" kind="enumvalue"><name>FloatWhiteOpaque</name></member>
+    <member refid="_common_renderer_8hpp_1a5765aa740795727da2f7500a7022a496abcfc2735fdde87c3761539ce4d2ff82b" kind="enumvalue"><name>IntWhiteOpaque</name></member>
+    <member refid="_common_renderer_8hpp_1a5765aa740795727da2f7500a7022a496ae93f994f01c537c4e2f7d8528c3eb5e9" kind="enumvalue"><name>Count</name></member>
+    <member refid="_frame_graph_defs_8hpp_1adcbe218e839b2ca1212077d1c73d64d2" kind="enum"><name>ERelativeTo</name></member>
+    <member refid="_frame_graph_defs_8hpp_1adcbe218e839b2ca1212077d1c73d64d2ad54af574777e6c4c965d0e8651a6c866" kind="enumvalue"><name>GraphicsPipeline</name></member>
+    <member refid="_frame_graph_defs_8hpp_1adcbe218e839b2ca1212077d1c73d64d2a90589c47f06eb971d548591f23c285af" kind="enumvalue"><name>Custom</name></member>
+    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4" kind="enum"><name>ETextureUsage</name></member>
+    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4a6adf97f83acf6453d4a6a4b1070f3754" kind="enumvalue"><name>None</name></member>
+    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4a9b0bffda4bcb312168c0d6537cb04b4d" kind="enumvalue"><name>RenderTarget</name></member>
+    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4a675056ad1441b6375b2c5abd48c27ef1" kind="enumvalue"><name>Depth</name></member>
+    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4ad821e7ccd4d4c25a491ba1a9ea248895" kind="enumvalue"><name>Stencil</name></member>
+    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4a02c9581fe2b85bdad106415fad5a3e65" kind="enumvalue"><name>ShaderInput</name></member>
+    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4a908438103df127428cb9e87573bd996f" kind="enumvalue"><name>RWTexture</name></member>
+    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4ac1b703f2c13fac2fff3e72d3e307d4c0" kind="enumvalue"><name>TransferSrc</name></member>
+    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4afc2b74588602de2090079ac53957dfdd" kind="enumvalue"><name>TransferDst</name></member>
+    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4a13d2ca466e18447a1a05cdaf4c6c1e42" kind="enumvalue"><name>GenMipMaps</name></member>
+    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4a2fa8076285272883c91e14402975a441" kind="enumvalue"><name>DepthStencil</name></member>
+    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977" kind="enum"><name>EBufferType</name></member>
+    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977a6adf97f83acf6453d4a6a4b1070f3754" kind="enumvalue"><name>None</name></member>
+    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977a10461f19cdb5aadba2fc9986be6400bd" kind="enumvalue"><name>VertexBuffer</name></member>
+    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977a7c3895116254ff0417e58b6286de27c0" kind="enumvalue"><name>IndexBuffer</name></member>
+    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977af09d0dd3c08eeabc5b432609f31d0a8c" kind="enumvalue"><name>ConstantBuffer</name></member>
+    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977a8c4aa541ee911e8d80451ef8cc304806" kind="enumvalue"><name>Storage</name></member>
+    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977ac1b703f2c13fac2fff3e72d3e307d4c0" kind="enumvalue"><name>TransferSrc</name></member>
+    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977afc2b74588602de2090079ac53957dfdd" kind="enumvalue"><name>TransferDst</name></member>
+    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977a44b9fced3049ce58beb51494589782e0" kind="enumvalue"><name>AccelerationStructure</name></member>
+    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977a0b5ca9d0c6dbcbb3e299361cd4e4a79c" kind="enumvalue"><name>Indirect</name></member>
+    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977a407f6f57d55c94994442a238690212d8" kind="enumvalue"><name>AccelerationStructureInput</name></member>
+    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977a227097d1f34e7ff4e22511677767a4bb" kind="enumvalue"><name>ShaderBindingTable</name></member>
+    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41" kind="enum"><name>EAttachmentState</name></member>
+    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41aec0fc0100c4fc1ce4eea230c3dc10360" kind="enumvalue"><name>Undefined</name></member>
+    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41a0db377921f4ce762c62526131097968f" kind="enumvalue"><name>General</name></member>
+    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41a5be1237c5a35b2d03703642f334b3396" kind="enumvalue"><name>ColourRead</name></member>
+    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41aade96c9ab87c2c9f09be3fc3b07ab765" kind="enumvalue"><name>ColourWrite</name></member>
+    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41aa7419f15f4d15322a98d29734b8e48b4" kind="enumvalue"><name>DepthStencilRead</name></member>
+    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41aaab1a48a275c112d160f5b28d0d3a123" kind="enumvalue"><name>DepthStencilWrite</name></member>
+    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41ac1b703f2c13fac2fff3e72d3e307d4c0" kind="enumvalue"><name>TransferSrc</name></member>
+    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41afc2b74588602de2090079ac53957dfdd" kind="enumvalue"><name>TransferDst</name></member>
+    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41add058df87f5c88e3285a28ad7406a3c6" kind="enumvalue"><name>Present</name></member>
+    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41ae93f994f01c537c4e2f7d8528c3eb5e9" kind="enumvalue"><name>Count</name></member>
+    <member refid="_render_mesh_8hpp_1ab7e68c2e7e71d166c07fb53c4d9cb5c8" kind="typedef"><name>RenderMeshes</name></member>
+    <member refid="_material_8hpp_1a720345ae7a9376acf9a379f3bfaf0aa9" kind="typedef"><name>RenderTextures</name></member>
+    <member refid="_material_8hpp_1a4b4a4ba48a4d5f98f550a58d773c710e" kind="typedef"><name>RenderMaterials</name></member>
+    <member refid="_material_8hpp_1ab16bdc5d94db2eacda24f1bb2a119ad9" kind="typedef"><name>TRetryNextFrame</name></member>
+    <member refid="_common_shaders_8hpp_1acc697c11e8f0e8638efa519c0e894d07" kind="typedef"><name>TShaderBlob</name></member>
     <member refid="_frame_graph_defs_8hpp_1a4014e2f2fc7c7a9fbb80d5cfe54adaf5" kind="typedef"><name>TFGId</name></member>
     <member refid="_frame_graph_defs_8hpp_1a18223a594e678fe655795d5f555044c2" kind="typedef"><name>TFGHandleBase</name></member>
     <member refid="_frame_graph_defs_8hpp_1a2c9035fd823861ede96fec842fbabb93" kind="typedef"><name>TFGNodes</name></member>
@@ -1311,16 +1327,14 @@
     <member refid="_frame_graph_defs_8hpp_1a90961d69608f042e52c1c1f912faa61c" kind="typedef"><name>HFGImage</name></member>
     <member refid="_frame_graph_defs_8hpp_1a07a70c0447fd25c0a34e7e7881b8a4e9" kind="typedef"><name>TFGBuffers</name></member>
     <member refid="_frame_graph_defs_8hpp_1a041fef251c95d9c406c7386663be3abb" kind="typedef"><name>HFGBuffer</name></member>
-    <member refid="_common_shaders_8hpp_1acc697c11e8f0e8638efa519c0e894d07" kind="typedef"><name>TShaderBlob</name></member>
-    <member refid="_material_8hpp_1a720345ae7a9376acf9a379f3bfaf0aa9" kind="typedef"><name>RenderTextures</name></member>
-    <member refid="_material_8hpp_1a4b4a4ba48a4d5f98f550a58d773c710e" kind="typedef"><name>RenderMaterials</name></member>
-    <member refid="_material_8hpp_1ab16bdc5d94db2eacda24f1bb2a119ad9" kind="typedef"><name>TRetryNextFrame</name></member>
-    <member refid="_render_mesh_8hpp_1ab7e68c2e7e71d166c07fb53c4d9cb5c8" kind="typedef"><name>RenderMeshes</name></member>
-    <member refid="_common_renderer_8hpp_1ac980437fb8ce4bcde02d18420643a70a" kind="variable"><name>MaxPassRenderTargets</name></member>
     <member refid="_common_shaders_8hpp_1ac9533961e1f518f17755efbffe51d3d7" kind="variable"><name>MaxBindGroups</name></member>
     <member refid="_common_shaders_8hpp_1a1241c2556d655f6d94e327570c6754ba" kind="variable"><name>MaxPushConstantMemory</name></member>
-    <member refid="_bvr_formats_8hpp_1a41121d3d0bfa3bdf4dc7b6e773bd1603" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
-    <member refid="_bvr_formats_8hpp_1af1e92a48cc763ddbfa161cf074e00c1d" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
+    <member refid="_common_renderer_8hpp_1ac980437fb8ce4bcde02d18420643a70a" kind="variable"><name>MaxPassRenderTargets</name></member>
+    <member refid="_frame_graph_8hpp_1a3d9f4b64d278f7a58687c6c3020a1281" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
+    <member refid="_render_pass_scheduler_8hpp_1aff1f9d38ed746d05c13333df85680f2a" kind="function"><name>SVisitor</name></member>
+    <member refid="_material_8hpp_1ae87fd53e2cd7c0367f821c11f8701441" kind="function"><name>ExtractMaterialsSystem</name></member>
+    <member refid="_material_8hpp_1a52c728bafbb6823379f33de092287902" kind="function"><name>RetryCreating</name></member>
+    <member refid="_common_shaders_8hpp_1ab1ff1d0bc1427b8743fe1a730f3bd55c" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
     <member refid="_common_renderer_8hpp_1a2ec06b66a838b4cfc38cf7cd6c263b3d" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
     <member refid="_common_renderer_8hpp_1afd738799da8b1f0559c393d054279e79" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
     <member refid="_common_renderer_8hpp_1a318ba30327ec82c81704f44301f7a4eb" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
@@ -1329,12 +1343,9 @@
     <member refid="_bind_group_meta_8hpp_1a2d769488d410fa0749c23d945d43d8a6" kind="function"><name>ScheduleFullScreenPass</name></member>
     <member refid="_bind_group_meta_8hpp_1a3738b8e13a9b58a64745643fffe493ea" kind="function"><name>ConvertToFGNodeCS</name></member>
     <member refid="_bind_group_meta_8hpp_1a86ac8ac982c2603dbadd30fd94014531" kind="function"><name>ConvertToFGNodeFullScreen</name></member>
-    <member refid="_common_shaders_8hpp_1ab1ff1d0bc1427b8743fe1a730f3bd55c" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
-    <member refid="_frame_graph_8hpp_1a3d9f4b64d278f7a58687c6c3020a1281" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
-    <member refid="_material_8hpp_1ae87fd53e2cd7c0367f821c11f8701441" kind="function"><name>ExtractMaterialsSystem</name></member>
-    <member refid="_material_8hpp_1a52c728bafbb6823379f33de092287902" kind="function"><name>RetryCreating</name></member>
     <member refid="_graphics_pipeline_8hpp_1ac0d372e9816a27ad878781d5fe0c1738" kind="function"><name>BuildDefaultPipelineStages</name></member>
-    <member refid="_render_pass_scheduler_8hpp_1aff1f9d38ed746d05c13333df85680f2a" kind="function"><name>SVisitor</name></member>
+    <member refid="_bvr_formats_8hpp_1a41121d3d0bfa3bdf4dc7b6e773bd1603" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
+    <member refid="_bvr_formats_8hpp_1af1e92a48cc763ddbfa161cf074e00c1d" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
   </compound>
   <compound refid="namespace_bvr_1_1_renderer_1_1_attr" kind="namespace"><name>Bvr::Renderer::Attr</name>
     <member refid="_bind_group_meta_8hpp_1a1afc1e01f5db8b30997354472e055ccb" kind="function"><name>Binding</name></member>
@@ -1349,9 +1360,6 @@
     <member refid="_bind_group_meta_8hpp_1aa1cfc739ed55a83fe29f3e6b2002c95b" kind="function"><name>Permutation</name></member>
   </compound>
   <compound refid="namespace_bvr_1_1_renderer_1_1_detail" kind="namespace"><name>Bvr::Renderer::Detail</name>
-    <member refid="_material_8hpp_1a8762976d23bf9859286d6783e721bc9a" kind="function"><name>ComputeMaterialMetaPropertiesFromTypeInfo</name></member>
-    <member refid="_material_8hpp_1ae13bbeb18dad1d2b8f2899cae168cb5b" kind="function"><name>GetMaterialMetaProperties</name></member>
-    <member refid="_material_8hpp_1a2300fe352009ae65c61f2f3faad0728d" kind="function"><name>MeshMaterialSystem</name></member>
     <member refid="_render_pass_scheduler_8hpp_1a6440a7e1e22abfc19452564b76149f9a" kind="function"><name>GetShader</name></member>
     <member refid="_render_pass_scheduler_8hpp_1a469dd01b8b89fdbc1ed1f9d32e55ef6a" kind="function"><name>SetRayTracingResources</name></member>
     <member refid="_render_pass_scheduler_8hpp_1a703657da44993df17ec1f49cc26375a2" kind="function"><name>SetShaderResources</name></member>
@@ -1367,6 +1375,9 @@
     <member refid="_render_pass_scheduler_8hpp_1a20c6ab918d6db452bbebef60b5338e2e" kind="function"><name>SetVertexBuffers</name></member>
     <member refid="_render_pass_scheduler_8hpp_1a45336e153364cbf03739648be7f82809" kind="function"><name>SetIndexBuffer</name></member>
     <member refid="_render_pass_scheduler_8hpp_1a1f978c7d5389184ea31f3bc0d4ad727e" kind="function"><name>DrawList</name></member>
+    <member refid="_material_8hpp_1a8762976d23bf9859286d6783e721bc9a" kind="function"><name>ComputeMaterialMetaPropertiesFromTypeInfo</name></member>
+    <member refid="_material_8hpp_1ae13bbeb18dad1d2b8f2899cae168cb5b" kind="function"><name>GetMaterialMetaProperties</name></member>
+    <member refid="_material_8hpp_1a2300fe352009ae65c61f2f3faad0728d" kind="function"><name>MeshMaterialSystem</name></member>
   </compound>
   <compound refid="namespace_bvr_1_1_renderer_1_1_device" kind="namespace"><name>Bvr::Renderer::Device</name>
   </compound>
