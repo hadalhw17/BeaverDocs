@@ -2,6 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler" kind="class" language="C++" prot="public">
     <compoundname>Bvr::Renderer::CRenderPassScheduler</compoundname>
+    <innerclass refid="struct_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1_1_execution_unit" prot="private">Bvr::Renderer::CRenderPassScheduler::ExecutionUnit</innerclass>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1a179ca32fab736994e59c032e59988223" prot="private" static="no" mutable="no">
         <type>uint32</type>
@@ -15,21 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="113" column="34" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" bodystart="113" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1aff763d361a0eda9dd238593f854c2c81" prot="private" static="no" mutable="no">
-        <type>uint32</type>
-        <definition>uint32 Bvr::Renderer::CRenderPassScheduler::m_schedulingCounter</definition>
-        <argsstring></argsstring>
-        <name>m_schedulingCounter</name>
-        <initializer>= 0</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="114" column="34" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" bodystart="114" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="109" column="49" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" bodystart="109" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1ad075b0d873fc230de7db6fd133481579" prot="private" static="no" mutable="no">
         <type>ERenderPassState</type>
@@ -43,11 +30,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="115" column="34" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" bodystart="115" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="110" column="49" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" bodystart="110" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1a5dc921b23801566c2ca677bbea4165c0" prot="private" static="no" mutable="no">
-        <type>std::vector&lt; <ref refid="class_bvr_1_1_renderer_1_1_t_f_g_handle" kindref="compound">HFGNode</ref> &gt;</type>
-        <definition>std::vector&lt;HFGNode&gt; Bvr::Renderer::CRenderPassScheduler::m_pScheduledPasses</definition>
+      <memberdef kind="variable" id="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1ad4ddb15256c5ec42791d52a8c04fb984" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; ExecutionUnit &gt;</type>
+        <definition>std::vector&lt;ExecutionUnit&gt; Bvr::Renderer::CRenderPassScheduler::m_pScheduledPasses</definition>
         <argsstring></argsstring>
         <name>m_pScheduledPasses</name>
         <briefdescription>
@@ -56,7 +43,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="116" column="25" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" bodystart="116" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="111" column="34" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" bodystart="111" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1aeaba02a6e91ef7502b898ed3c8d99b40" prot="private" static="no" mutable="no">
         <type>std::unique_ptr&lt; <ref refid="class_bvr_1_1_renderer_1_1_c_frame_graph" kindref="compound">CFrameGraph</ref> &gt;</type>
@@ -69,7 +56,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="117" column="21" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" bodystart="117" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="112" column="36" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" bodystart="112" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1aefcd057405e4329e0d54454e273a18ee" prot="private" static="no" mutable="no">
         <type><ref refid="class_bvr_1_1_renderer_1_1_c_graphics_pipeline" kindref="compound">CGraphicsPipeline</ref> &amp;</type>
@@ -82,7 +69,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="119" column="33" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" bodystart="119" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="114" column="48" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" bodystart="114" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -106,7 +93,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="35" column="5"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="34" column="5"/>
       </memberdef>
       <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1a06a414b73db5693fae85c9dcbba8c8d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -119,7 +106,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="37" column="5"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="36" column="5"/>
       </memberdef>
       <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1ac441caf714c00b5cdd67d3fa70cb41f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -136,7 +123,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="39" column="10"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="38" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1aaba9a7510804fe7f73f5008fe3914a51" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -149,7 +136,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="40" column="10"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="39" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1ace9b10cc6ab1e9828be54e5826c412bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -162,7 +149,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="41" column="10"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="40" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1a9e231842290d8c500340a32586875485" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -175,7 +162,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="42" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" bodystart="42" bodyend="42"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="41" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" bodystart="41" bodyend="41"/>
       </memberdef>
       <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1a974501aa9f1f912be7d2ce3cef7f03ea" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -188,7 +175,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="43" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" bodystart="43" bodyend="43"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="42" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" bodystart="42" bodyend="42"/>
       </memberdef>
       <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1af00fb56d033c9ce55ac1dd4aab23885f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -201,7 +188,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="44" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" bodystart="44" bodyend="44"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="43" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" bodystart="43" bodyend="43"/>
       </memberdef>
       <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1af0a0d02558d7f0cd5422341581877d37" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -214,7 +201,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="45" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" bodystart="45" bodyend="45"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="44" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" bodystart="44" bodyend="44"/>
       </memberdef>
       <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1a2a702da7a6f1115f8db2614d937f6660" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -236,7 +223,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="47" column="22" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" bodystart="47" bodyend="51"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="46" column="22" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" bodystart="46" bodyend="50"/>
       </memberdef>
       <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1a97cc7086bd1026842e54531f8f725ba0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -266,51 +253,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="54" column="13" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" bodystart="54" bodyend="61"/>
-      </memberdef>
-      <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1a213e1fb4c700f74e9819b6504f3462dd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>typename T</type>
-          </param>
-        </templateparamlist>
-        <type>T &amp;</type>
-        <definition>T&amp; Bvr::Renderer::CRenderPassScheduler::GetNodeCache</definition>
-        <argsstring>(const uint32 cacheIdx)</argsstring>
-        <name>GetNodeCache</name>
-        <param>
-          <type>const uint32</type>
-          <declname>cacheIdx</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="63" column="19" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" bodystart="63" bodyend="65"/>
-      </memberdef>
-      <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1ab0b4bea9ed575477a1299a24ef1d48b1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>typename T</type>
-          </param>
-        </templateparamlist>
-        <type>const T &amp;</type>
-        <definition>const T&amp; Bvr::Renderer::CRenderPassScheduler::GetNodeCache</definition>
-        <argsstring>(const uint32 cacheIdx) const</argsstring>
-        <name>GetNodeCache</name>
-        <param>
-          <type>const uint32</type>
-          <declname>cacheIdx</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="67" column="25" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" bodystart="67" bodyend="69"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="53" column="13" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" bodystart="53" bodyend="59"/>
       </memberdef>
       <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1a775e6bf14d052f04bd0f2b09f3f2a049" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -327,7 +270,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="71" column="20"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="61" column="20"/>
       </memberdef>
       <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1a4c97f1dcef8e54d35a295a48755df0a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -340,20 +283,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="73" column="20"/>
-      </memberdef>
-      <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1a3b795d33134357f7e089b0068185a3c5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type>const <ref refid="class_bvr_1_1_renderer_1_1_t_f_g_handle" kindref="compound">HFGNode</ref> &amp;</type>
-        <definition>const HFGNode&amp; Bvr::Renderer::CRenderPassScheduler::GetActivePass</definition>
-        <argsstring>() const</argsstring>
-        <name>GetActivePass</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="75" column="19" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" bodystart="75" bodyend="77"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="63" column="20"/>
       </memberdef>
       <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1a81a521df0eb9930de14fe69a56fd2d33" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>const <ref refid="class_bvr_1_1_renderer_1_1_c_frame_graph" kindref="compound">CFrameGraph</ref> &amp;</type>
@@ -366,7 +296,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="79" column="23" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" bodystart="79" bodyend="79"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="65" column="23" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" bodystart="65" bodyend="65"/>
       </memberdef>
       <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1afc21a470d073908e9ed8fe578e319820" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_bvr_1_1_renderer_1_1_c_frame_graph" kindref="compound">CFrameGraph</ref> &amp;</type>
@@ -379,7 +309,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="80" column="23" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" bodystart="80" bodyend="80"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="66" column="23" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" bodystart="66" bodyend="66"/>
       </memberdef>
       <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1ae8bcfea4d5869aa9012fc5b247c4b357" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="class_bvr_1_1_renderer_1_1_c_f_g_allocator" kindref="compound">CFGAllocator</ref> &amp;</type>
@@ -392,7 +322,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="81" column="23"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="67" column="23"/>
       </memberdef>
       <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1a65e46c154222018113797744571c0f96" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -409,7 +339,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="83" column="11"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="69" column="11"/>
       </memberdef>
       <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1aee59432984dcd345c51450fd7d11bf63" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="struct_bvr_1_1_renderer_1_1_s_image_description" kindref="compound">SImageDescription</ref></type>
@@ -426,7 +356,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="85" column="25"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="71" column="25"/>
       </memberdef>
       <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1a0bc570400215f13461d36c3c45b71476" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>uint3</type>
@@ -443,7 +373,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="86" column="12"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="72" column="12"/>
       </memberdef>
       <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1a828a4a0806f46991f378dee8ecf004d6" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type><ref refid="class_bvr_1_1_renderer_1_1_t_f_g_handle" kindref="compound">HFGImage</ref></type>
@@ -464,7 +394,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="88" column="16"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="74" column="16"/>
       </memberdef>
       <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1a08f6283b6ec3633c9d77b481a8d34442" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>bool</type>
@@ -481,7 +411,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="90" column="16"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="76" column="16"/>
       </memberdef>
       <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1accd5b8d7052f4525a322162c87d57480" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type><ref refid="class_bvr_1_1_renderer_1_1_t_f_g_handle" kindref="compound">HFGImage</ref></type>
@@ -498,7 +428,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="91" column="16"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="77" column="16"/>
       </memberdef>
       <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1a6f3a9aa77fbd4f7b230505c5c2322acd" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type><ref refid="class_bvr_1_1_renderer_1_1_t_f_g_handle" kindref="compound">HFGBuffer</ref></type>
@@ -515,7 +445,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="92" column="16"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="78" column="16"/>
       </memberdef>
       <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1afb21861c149ef3d5a645cd958d1c87fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="struct_bvr_1_1_t_handle" kindref="compound">THandle</ref>&lt; <ref refid="struct_bvr_1_1_renderer_1_1_buffer_view" kindref="compound">BufferView</ref> &gt;</type>
@@ -536,7 +466,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="94" column="14"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="80" column="14"/>
       </memberdef>
       <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1af9dc4ca3bd3641f1f5e5a6bcd1024196" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -558,7 +488,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="98" column="14" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" bodystart="98" bodyend="100"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="84" column="14" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" bodystart="84" bodyend="86"/>
       </memberdef>
       <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1ab20fcde45116e3cf3999a6737a009777" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="class_bvr_1_1_renderer_1_1_c_frame_context" kindref="compound">CFrameContext</ref> &amp;</type>
@@ -571,7 +501,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="102" column="23"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="88" column="23"/>
       </memberdef>
       <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1a1706e669c8901fdbdd67afa22beec0f5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="class_bvr_1_1_renderer_1_1_c_graphics_pipeline" kindref="compound">CGraphicsPipeline</ref> &amp;</type>
@@ -584,7 +514,37 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="103" column="29"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="89" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1a6b50b01ebd826e1360057324f4736041" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::Renderer::CRenderPassScheduler::PushProfileMarker</definition>
+        <argsstring>(std::string_view pMarkerName)</argsstring>
+        <name>PushProfileMarker</name>
+        <param>
+          <type>std::string_view</type>
+          <declname>pMarkerName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="91" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1aeccdd4b657b71d9f130d1af0e95127cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::Renderer::CRenderPassScheduler::PopProfilerMarker</definition>
+        <argsstring>()</argsstring>
+        <name>PopProfilerMarker</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="92" column="10"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -615,7 +575,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="106" column="17"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="94" column="17"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-static-func">
@@ -642,14 +602,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="109" column="17"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="97" column="17"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="33" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" bodystart="33" bodyend="120"/>
+    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" line="32" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderPassScheduler.hpp" bodystart="32" bodyend="115"/>
     <listofallmembers>
       <member refid="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1ac441caf714c00b5cdd67d3fa70cb41f4" prot="public" virt="non-virtual"><scope>Bvr::Renderer::CRenderPassScheduler</scope><name>AddRenderPassNode</name></member>
       <member refid="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1afb21861c149ef3d5a645cd958d1c87fb" prot="public" virt="non-virtual"><scope>Bvr::Renderer::CRenderPassScheduler</scope><name>AllocateConstans</name></member>
@@ -666,11 +626,8 @@
       <member refid="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1ab20fcde45116e3cf3999a6737a009777" prot="public" virt="non-virtual"><scope>Bvr::Renderer::CRenderPassScheduler</scope><name>FrameContext</name></member>
       <member refid="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1a81a521df0eb9930de14fe69a56fd2d33" prot="public" virt="non-virtual"><scope>Bvr::Renderer::CRenderPassScheduler</scope><name>FrameGraph</name></member>
       <member refid="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1afc21a470d073908e9ed8fe578e319820" prot="public" virt="non-virtual"><scope>Bvr::Renderer::CRenderPassScheduler</scope><name>FrameGraph</name></member>
-      <member refid="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1a3b795d33134357f7e089b0068185a3c5" prot="public" virt="non-virtual"><scope>Bvr::Renderer::CRenderPassScheduler</scope><name>GetActivePass</name></member>
       <member refid="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1a0bc570400215f13461d36c3c45b71476" prot="public" virt="non-virtual"><scope>Bvr::Renderer::CRenderPassScheduler</scope><name>GetImageDimensions</name></member>
       <member refid="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1aee59432984dcd345c51450fd7d11bf63" prot="public" virt="non-virtual"><scope>Bvr::Renderer::CRenderPassScheduler</scope><name>GetImageGescription</name></member>
-      <member refid="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1a213e1fb4c700f74e9819b6504f3462dd" prot="public" virt="non-virtual"><scope>Bvr::Renderer::CRenderPassScheduler</scope><name>GetNodeCache</name></member>
-      <member refid="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1ab0b4bea9ed575477a1299a24ef1d48b1" prot="public" virt="non-virtual"><scope>Bvr::Renderer::CRenderPassScheduler</scope><name>GetNodeCache</name></member>
       <member refid="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1a08f6283b6ec3633c9d77b481a8d34442" prot="public" virt="non-virtual"><scope>Bvr::Renderer::CRenderPassScheduler</scope><name>HasImage</name></member>
       <member refid="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1af0a0d02558d7f0cd5422341581877d37" prot="public" virt="non-virtual"><scope>Bvr::Renderer::CRenderPassScheduler</scope><name>IsExecuting</name></member>
       <member refid="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1a9e231842290d8c500340a32586875485" prot="public" virt="non-virtual"><scope>Bvr::Renderer::CRenderPassScheduler</scope><name>IsIdle</name></member>
@@ -680,11 +637,12 @@
       <member refid="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1a179ca32fab736994e59c032e59988223" prot="private" virt="non-virtual"><scope>Bvr::Renderer::CRenderPassScheduler</scope><name>m_executionConuter</name></member>
       <member refid="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1aefcd057405e4329e0d54454e273a18ee" prot="private" virt="non-virtual"><scope>Bvr::Renderer::CRenderPassScheduler</scope><name>m_ownerPipeline</name></member>
       <member refid="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1aeaba02a6e91ef7502b898ed3c8d99b40" prot="private" virt="non-virtual"><scope>Bvr::Renderer::CRenderPassScheduler</scope><name>m_pFrameGraph</name></member>
-      <member refid="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1a5dc921b23801566c2ca677bbea4165c0" prot="private" virt="non-virtual"><scope>Bvr::Renderer::CRenderPassScheduler</scope><name>m_pScheduledPasses</name></member>
-      <member refid="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1aff763d361a0eda9dd238593f854c2c81" prot="private" virt="non-virtual"><scope>Bvr::Renderer::CRenderPassScheduler</scope><name>m_schedulingCounter</name></member>
+      <member refid="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1ad4ddb15256c5ec42791d52a8c04fb984" prot="private" virt="non-virtual"><scope>Bvr::Renderer::CRenderPassScheduler</scope><name>m_pScheduledPasses</name></member>
       <member refid="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1adbf39daca9cbc4e542038f606e69d6ad" prot="private" virt="non-virtual"><scope>Bvr::Renderer::CRenderPassScheduler</scope><name>NodeToPassDesc</name></member>
       <member refid="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1a1706e669c8901fdbdd67afa22beec0f5" prot="public" virt="non-virtual"><scope>Bvr::Renderer::CRenderPassScheduler</scope><name>OwnerPipeline</name></member>
+      <member refid="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1aeccdd4b657b71d9f130d1af0e95127cf" prot="public" virt="non-virtual"><scope>Bvr::Renderer::CRenderPassScheduler</scope><name>PopProfilerMarker</name></member>
       <member refid="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1a0917971138b578f0d09c93976443b868" prot="private" virt="non-virtual"><scope>Bvr::Renderer::CRenderPassScheduler</scope><name>PrepareResourcesForUse</name></member>
+      <member refid="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1a6b50b01ebd826e1360057324f4736041" prot="public" virt="non-virtual"><scope>Bvr::Renderer::CRenderPassScheduler</scope><name>PushProfileMarker</name></member>
       <member refid="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1a97cc7086bd1026842e54531f8f725ba0" prot="public" virt="non-virtual"><scope>Bvr::Renderer::CRenderPassScheduler</scope><name>QueuePass</name></member>
       <member refid="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1a4c97f1dcef8e54d35a295a48755df0a4" prot="public" virt="non-virtual"><scope>Bvr::Renderer::CRenderPassScheduler</scope><name>Resize</name></member>
       <member refid="class_bvr_1_1_renderer_1_1_c_render_pass_scheduler_1a65e46c154222018113797744571c0f96" prot="public" virt="non-virtual"><scope>Bvr::Renderer::CRenderPassScheduler</scope><name>WasImageWritten</name></member>
