@@ -738,6 +738,7 @@
     <member refid="struct_bvr_1_1_renderer_1_1_s_graphics_pipeline_resources_1a8afcb2f23354fe4f0d8841f915c34841" kind="variable"><name>EmissiveTarget</name></member>
     <member refid="struct_bvr_1_1_renderer_1_1_s_graphics_pipeline_resources_1a75349f2bbb1093716c156dfe3ea94ff8" kind="variable"><name>MetalRoughtnessTarget</name></member>
     <member refid="struct_bvr_1_1_renderer_1_1_s_graphics_pipeline_resources_1aa181627b0d1a74c50e10392502999cc9" kind="variable"><name>AmbientOcclusionTarget</name></member>
+    <member refid="struct_bvr_1_1_renderer_1_1_s_graphics_pipeline_resources_1a7b5fa096d65942fa9d3af99c266a33a7" kind="variable"><name>VelocityTarget</name></member>
     <member refid="struct_bvr_1_1_renderer_1_1_s_graphics_pipeline_resources_1ac721df1be8f7eb4e77b95f5d44e9fb31" kind="variable"><name>ShadowMask</name></member>
     <member refid="struct_bvr_1_1_renderer_1_1_s_graphics_pipeline_resources_1a9869de6a086d6a3debb8a8aa17eeb4c5" kind="variable"><name>LinearDepth</name></member>
     <member refid="struct_bvr_1_1_renderer_1_1_s_graphics_pipeline_resources_1ac2899e4bcf268fe4fce7bbb465addf5b" kind="variable"><name>DownscaledDepth</name></member>
@@ -839,6 +840,11 @@
     <member refid="struct_bvr_1_1_renderer_1_1_s_push_constant_range_1aa9abcabbba3c766cd6e31d9aa65e7ee7" kind="variable"><name>Size</name></member>
     <member refid="struct_bvr_1_1_renderer_1_1_s_push_constant_range_1aec1f6e5c718299a557db28b7532aba71" kind="variable"><name>Stages</name></member>
     <member refid="struct_bvr_1_1_renderer_1_1_s_push_constant_range_1ab5045cbefd9f727dbcfe36100aaee4a4" kind="variable"><name>Padding0</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_renderer_1_1_s_queue_fence" kind="struct"><name>Bvr::Renderer::SQueueFence</name>
+    <member refid="struct_bvr_1_1_renderer_1_1_s_queue_fence_1a7d951c6ad13d048de8a7a31b1f06f894" kind="variable"><name>FenceValue</name></member>
+    <member refid="struct_bvr_1_1_renderer_1_1_s_queue_fence_1a7cfc35d8316b40528173e66b8637c65c" kind="variable"><name>QueueType</name></member>
+    <member refid="struct_bvr_1_1_renderer_1_1_s_queue_fence_1adf647076fec9f6498fa89a44cfa134bc" kind="function"><name>operator bool</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_renderer_1_1_s_raytracing_p_s_o_desc" kind="struct"><name>Bvr::Renderer::SRaytracingPSODesc</name>
     <member refid="struct_bvr_1_1_renderer_1_1_s_raytracing_p_s_o_desc_1a465034b38aa261b9fdb7a3f303ed61e3" kind="variable"><name>Shader</name></member>
@@ -1080,12 +1086,12 @@
     <member refid="_i_bvr_renderer_8hpp_1a2105313cd3bfe3156eeea53d34e1b976ad4a9fa383ab700c5bdd6f31cf7df0faf" kind="enumvalue"><name>Verbose</name></member>
     <member refid="_i_bvr_renderer_8hpp_1a6fa213d583519498ae3a738b73625d78" kind="enum"><name>EDebugProfilingStats</name></member>
     <member refid="_i_bvr_renderer_8hpp_1a6fa213d583519498ae3a738b73625d78a1a226c2f1347809a185b8567ba1fc5a7" kind="enumvalue"><name>Profiling</name></member>
-    <member refid="_render_mesh_8hpp_1ae24f1352f49e2c499dfb82b12e1d7644" kind="typedef"><name>SStreamSlice</name></member>
     <member refid="_render_output_8hpp_1a9b8e00f7fbd455286ff5ae411884c888" kind="typedef"><name>TRenderTarget</name></member>
     <member refid="_render_output_8hpp_1a1c5a84ba385c7642df93fbee9f8955c6" kind="typedef"><name>TViewport</name></member>
     <member refid="_render_output_8hpp_1a161a5c1dba3b3ac0514b28fdb44af8c2" kind="typedef"><name>TRenderLayer</name></member>
     <member refid="_i_bvr_renderer_8hpp_1a24e6d557d57a660b74dcb7d57110800f" kind="typedef"><name>ETopology</name></member>
     <member refid="_i_bvr_renderer_8hpp_1a5b428650fb657340418d5edc3d17fb4f" kind="typedef"><name>ITexture</name></member>
+    <member refid="_render_mesh_8hpp_1ae24f1352f49e2c499dfb82b12e1d7644" kind="typedef"><name>SStreamSlice</name></member>
     <member refid="_render_output_8hpp_1a0cf83f83d594f3dfead3ed7036f10541" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
     <member refid="_i_bvr_renderer_8hpp_1a11ecd1cb0eed41195071bbc9ac390d99" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
   </compound>
@@ -1103,6 +1109,40 @@
     <member refid="_render_pass_scheduler_8hpp_1a490f231e067f83138550ea5fd910ce4aae5828782e1e352adbc3f791779a02dbb" kind="enumvalue"><name>eRP_Recording</name></member>
     <member refid="_render_pass_scheduler_8hpp_1a490f231e067f83138550ea5fd910ce4aacb318944761dcfddd95ac7de264e9fdb" kind="enumvalue"><name>eRP_Scheduling</name></member>
     <member refid="_render_pass_scheduler_8hpp_1a490f231e067f83138550ea5fd910ce4aa0506f518dfdac6b81ce4bb11714de64e" kind="enumvalue"><name>eRP_Executing</name></member>
+    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4" kind="enum"><name>ETextureUsage</name></member>
+    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4a6adf97f83acf6453d4a6a4b1070f3754" kind="enumvalue"><name>None</name></member>
+    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4a9b0bffda4bcb312168c0d6537cb04b4d" kind="enumvalue"><name>RenderTarget</name></member>
+    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4a675056ad1441b6375b2c5abd48c27ef1" kind="enumvalue"><name>Depth</name></member>
+    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4ad821e7ccd4d4c25a491ba1a9ea248895" kind="enumvalue"><name>Stencil</name></member>
+    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4a02c9581fe2b85bdad106415fad5a3e65" kind="enumvalue"><name>ShaderInput</name></member>
+    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4a908438103df127428cb9e87573bd996f" kind="enumvalue"><name>RWTexture</name></member>
+    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4ac1b703f2c13fac2fff3e72d3e307d4c0" kind="enumvalue"><name>TransferSrc</name></member>
+    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4afc2b74588602de2090079ac53957dfdd" kind="enumvalue"><name>TransferDst</name></member>
+    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4a13d2ca466e18447a1a05cdaf4c6c1e42" kind="enumvalue"><name>GenMipMaps</name></member>
+    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4a2fa8076285272883c91e14402975a441" kind="enumvalue"><name>DepthStencil</name></member>
+    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977" kind="enum"><name>EBufferType</name></member>
+    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977a6adf97f83acf6453d4a6a4b1070f3754" kind="enumvalue"><name>None</name></member>
+    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977a10461f19cdb5aadba2fc9986be6400bd" kind="enumvalue"><name>VertexBuffer</name></member>
+    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977a7c3895116254ff0417e58b6286de27c0" kind="enumvalue"><name>IndexBuffer</name></member>
+    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977af09d0dd3c08eeabc5b432609f31d0a8c" kind="enumvalue"><name>ConstantBuffer</name></member>
+    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977a8c4aa541ee911e8d80451ef8cc304806" kind="enumvalue"><name>Storage</name></member>
+    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977ac1b703f2c13fac2fff3e72d3e307d4c0" kind="enumvalue"><name>TransferSrc</name></member>
+    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977afc2b74588602de2090079ac53957dfdd" kind="enumvalue"><name>TransferDst</name></member>
+    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977a44b9fced3049ce58beb51494589782e0" kind="enumvalue"><name>AccelerationStructure</name></member>
+    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977a0b5ca9d0c6dbcbb3e299361cd4e4a79c" kind="enumvalue"><name>Indirect</name></member>
+    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977a407f6f57d55c94994442a238690212d8" kind="enumvalue"><name>AccelerationStructureInput</name></member>
+    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977a227097d1f34e7ff4e22511677767a4bb" kind="enumvalue"><name>ShaderBindingTable</name></member>
+    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41" kind="enum"><name>EAttachmentState</name></member>
+    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41aec0fc0100c4fc1ce4eea230c3dc10360" kind="enumvalue"><name>Undefined</name></member>
+    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41a0db377921f4ce762c62526131097968f" kind="enumvalue"><name>General</name></member>
+    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41a5be1237c5a35b2d03703642f334b3396" kind="enumvalue"><name>ColourRead</name></member>
+    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41aade96c9ab87c2c9f09be3fc3b07ab765" kind="enumvalue"><name>ColourWrite</name></member>
+    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41aa7419f15f4d15322a98d29734b8e48b4" kind="enumvalue"><name>DepthStencilRead</name></member>
+    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41aaab1a48a275c112d160f5b28d0d3a123" kind="enumvalue"><name>DepthStencilWrite</name></member>
+    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41ac1b703f2c13fac2fff3e72d3e307d4c0" kind="enumvalue"><name>TransferSrc</name></member>
+    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41afc2b74588602de2090079ac53957dfdd" kind="enumvalue"><name>TransferDst</name></member>
+    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41add058df87f5c88e3285a28ad7406a3c6" kind="enumvalue"><name>Present</name></member>
+    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41ae93f994f01c537c4e2f7d8528c3eb5e9" kind="enumvalue"><name>Count</name></member>
     <member refid="_common_shaders_8hpp_1ade834de93adcf90d915c3dde8ed809ea" kind="enum"><name>EShaderType</name></member>
     <member refid="_common_shaders_8hpp_1ade834de93adcf90d915c3dde8ed809eaab22b929ba52471a02d18bb3a4e4472e6" kind="enumvalue"><name>Vertex</name></member>
     <member refid="_common_shaders_8hpp_1ade834de93adcf90d915c3dde8ed809eaaeae639a70006feff484a39363c977e24" kind="enumvalue"><name>Domain</name></member>
@@ -1287,44 +1327,10 @@
     <member refid="_frame_graph_defs_8hpp_1adcbe218e839b2ca1212077d1c73d64d2" kind="enum"><name>ERelativeTo</name></member>
     <member refid="_frame_graph_defs_8hpp_1adcbe218e839b2ca1212077d1c73d64d2ad54af574777e6c4c965d0e8651a6c866" kind="enumvalue"><name>GraphicsPipeline</name></member>
     <member refid="_frame_graph_defs_8hpp_1adcbe218e839b2ca1212077d1c73d64d2a90589c47f06eb971d548591f23c285af" kind="enumvalue"><name>Custom</name></member>
-    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4" kind="enum"><name>ETextureUsage</name></member>
-    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4a6adf97f83acf6453d4a6a4b1070f3754" kind="enumvalue"><name>None</name></member>
-    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4a9b0bffda4bcb312168c0d6537cb04b4d" kind="enumvalue"><name>RenderTarget</name></member>
-    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4a675056ad1441b6375b2c5abd48c27ef1" kind="enumvalue"><name>Depth</name></member>
-    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4ad821e7ccd4d4c25a491ba1a9ea248895" kind="enumvalue"><name>Stencil</name></member>
-    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4a02c9581fe2b85bdad106415fad5a3e65" kind="enumvalue"><name>ShaderInput</name></member>
-    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4a908438103df127428cb9e87573bd996f" kind="enumvalue"><name>RWTexture</name></member>
-    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4ac1b703f2c13fac2fff3e72d3e307d4c0" kind="enumvalue"><name>TransferSrc</name></member>
-    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4afc2b74588602de2090079ac53957dfdd" kind="enumvalue"><name>TransferDst</name></member>
-    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4a13d2ca466e18447a1a05cdaf4c6c1e42" kind="enumvalue"><name>GenMipMaps</name></member>
-    <member refid="_bvr_formats_8hpp_1a0e3b72edd0ca288c04a0f5b1cd35b3e4a2fa8076285272883c91e14402975a441" kind="enumvalue"><name>DepthStencil</name></member>
-    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977" kind="enum"><name>EBufferType</name></member>
-    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977a6adf97f83acf6453d4a6a4b1070f3754" kind="enumvalue"><name>None</name></member>
-    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977a10461f19cdb5aadba2fc9986be6400bd" kind="enumvalue"><name>VertexBuffer</name></member>
-    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977a7c3895116254ff0417e58b6286de27c0" kind="enumvalue"><name>IndexBuffer</name></member>
-    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977af09d0dd3c08eeabc5b432609f31d0a8c" kind="enumvalue"><name>ConstantBuffer</name></member>
-    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977a8c4aa541ee911e8d80451ef8cc304806" kind="enumvalue"><name>Storage</name></member>
-    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977ac1b703f2c13fac2fff3e72d3e307d4c0" kind="enumvalue"><name>TransferSrc</name></member>
-    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977afc2b74588602de2090079ac53957dfdd" kind="enumvalue"><name>TransferDst</name></member>
-    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977a44b9fced3049ce58beb51494589782e0" kind="enumvalue"><name>AccelerationStructure</name></member>
-    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977a0b5ca9d0c6dbcbb3e299361cd4e4a79c" kind="enumvalue"><name>Indirect</name></member>
-    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977a407f6f57d55c94994442a238690212d8" kind="enumvalue"><name>AccelerationStructureInput</name></member>
-    <member refid="_bvr_formats_8hpp_1af3733e57f20f2a83901fbe35db3ee977a227097d1f34e7ff4e22511677767a4bb" kind="enumvalue"><name>ShaderBindingTable</name></member>
-    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41" kind="enum"><name>EAttachmentState</name></member>
-    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41aec0fc0100c4fc1ce4eea230c3dc10360" kind="enumvalue"><name>Undefined</name></member>
-    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41a0db377921f4ce762c62526131097968f" kind="enumvalue"><name>General</name></member>
-    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41a5be1237c5a35b2d03703642f334b3396" kind="enumvalue"><name>ColourRead</name></member>
-    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41aade96c9ab87c2c9f09be3fc3b07ab765" kind="enumvalue"><name>ColourWrite</name></member>
-    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41aa7419f15f4d15322a98d29734b8e48b4" kind="enumvalue"><name>DepthStencilRead</name></member>
-    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41aaab1a48a275c112d160f5b28d0d3a123" kind="enumvalue"><name>DepthStencilWrite</name></member>
-    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41ac1b703f2c13fac2fff3e72d3e307d4c0" kind="enumvalue"><name>TransferSrc</name></member>
-    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41afc2b74588602de2090079ac53957dfdd" kind="enumvalue"><name>TransferDst</name></member>
-    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41add058df87f5c88e3285a28ad7406a3c6" kind="enumvalue"><name>Present</name></member>
-    <member refid="_bvr_formats_8hpp_1ad0234c8c2b46167ea5b5b62e83872d41ae93f994f01c537c4e2f7d8528c3eb5e9" kind="enumvalue"><name>Count</name></member>
-    <member refid="_render_mesh_8hpp_1ab7e68c2e7e71d166c07fb53c4d9cb5c8" kind="typedef"><name>RenderMeshes</name></member>
     <member refid="_material_8hpp_1a720345ae7a9376acf9a379f3bfaf0aa9" kind="typedef"><name>RenderTextures</name></member>
     <member refid="_material_8hpp_1a4b4a4ba48a4d5f98f550a58d773c710e" kind="typedef"><name>RenderMaterials</name></member>
     <member refid="_material_8hpp_1ab16bdc5d94db2eacda24f1bb2a119ad9" kind="typedef"><name>TRetryNextFrame</name></member>
+    <member refid="_render_mesh_8hpp_1ab7e68c2e7e71d166c07fb53c4d9cb5c8" kind="typedef"><name>RenderMeshes</name></member>
     <member refid="_common_shaders_8hpp_1acc697c11e8f0e8638efa519c0e894d07" kind="typedef"><name>TShaderBlob</name></member>
     <member refid="_frame_graph_defs_8hpp_1a4014e2f2fc7c7a9fbb80d5cfe54adaf5" kind="typedef"><name>TFGId</name></member>
     <member refid="_frame_graph_defs_8hpp_1a18223a594e678fe655795d5f555044c2" kind="typedef"><name>TFGHandleBase</name></member>
@@ -1341,18 +1347,18 @@
     <member refid="_render_pass_scheduler_8hpp_1aff1f9d38ed746d05c13333df85680f2a" kind="function"><name>SVisitor</name></member>
     <member refid="_material_8hpp_1ae87fd53e2cd7c0367f821c11f8701441" kind="function"><name>ExtractMaterialsSystem</name></member>
     <member refid="_material_8hpp_1a52c728bafbb6823379f33de092287902" kind="function"><name>RetryCreating</name></member>
-    <member refid="_common_shaders_8hpp_1ab1ff1d0bc1427b8743fe1a730f3bd55c" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
-    <member refid="_common_renderer_8hpp_1a2ec06b66a838b4cfc38cf7cd6c263b3d" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
-    <member refid="_common_renderer_8hpp_1afd738799da8b1f0559c393d054279e79" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
-    <member refid="_common_renderer_8hpp_1a318ba30327ec82c81704f44301f7a4eb" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
-    <member refid="_common_renderer_8hpp_1ac26e11d9f2e6756b2700a592291d137a" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
     <member refid="_bind_group_meta_8hpp_1af82027d9e1e44b1a15f5abc7f3060ee0" kind="function"><name>ScheduleComputePass</name></member>
     <member refid="_bind_group_meta_8hpp_1a2d769488d410fa0749c23d945d43d8a6" kind="function"><name>ScheduleFullScreenPass</name></member>
     <member refid="_bind_group_meta_8hpp_1a3738b8e13a9b58a64745643fffe493ea" kind="function"><name>ConvertToFGNodeCS</name></member>
     <member refid="_bind_group_meta_8hpp_1a86ac8ac982c2603dbadd30fd94014531" kind="function"><name>ConvertToFGNodeFullScreen</name></member>
-    <member refid="_graphics_pipeline_8hpp_1ac0d372e9816a27ad878781d5fe0c1738" kind="function"><name>BuildDefaultPipelineStages</name></member>
     <member refid="_bvr_formats_8hpp_1a41121d3d0bfa3bdf4dc7b6e773bd1603" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
     <member refid="_bvr_formats_8hpp_1af1e92a48cc763ddbfa161cf074e00c1d" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
+    <member refid="_common_shaders_8hpp_1ab1ff1d0bc1427b8743fe1a730f3bd55c" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
+    <member refid="_graphics_pipeline_8hpp_1ac0d372e9816a27ad878781d5fe0c1738" kind="function"><name>BuildDefaultPipelineStages</name></member>
+    <member refid="_common_renderer_8hpp_1a2ec06b66a838b4cfc38cf7cd6c263b3d" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
+    <member refid="_common_renderer_8hpp_1afd738799da8b1f0559c393d054279e79" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
+    <member refid="_common_renderer_8hpp_1a318ba30327ec82c81704f44301f7a4eb" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
+    <member refid="_common_renderer_8hpp_1ac26e11d9f2e6756b2700a592291d137a" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
   </compound>
   <compound refid="namespace_bvr_1_1_renderer_1_1_attr" kind="namespace"><name>Bvr::Renderer::Attr</name>
     <member refid="_bind_group_meta_8hpp_1a1afc1e01f5db8b30997354472e055ccb" kind="function"><name>Binding</name></member>
