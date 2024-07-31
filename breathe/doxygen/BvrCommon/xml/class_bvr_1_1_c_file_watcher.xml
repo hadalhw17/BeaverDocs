@@ -2,6 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="class_bvr_1_1_c_file_watcher" kind="class" language="C++" prot="public">
     <compoundname>Bvr::CFileWatcher</compoundname>
+    <innerclass refid="struct_bvr_1_1_c_file_watcher_1_1_cached_file_info" prot="public">Bvr::CFileWatcher::CachedFileInfo</innerclass>
     <innerclass refid="struct_bvr_1_1_c_file_watcher_1_1_event" prot="public">Bvr::CFileWatcher::Event</innerclass>
       <sectiondef kind="public-type">
       <memberdef kind="typedef" id="class_bvr_1_1_c_file_watcher_1ad5b5e78608a0a0825e3c31525e8ca43e" prot="public" static="no">
@@ -28,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" line="25" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" bodystart="25" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" line="34" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" bodystart="34" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="class_bvr_1_1_c_file_watcher_1a6ce228ebbc4a7632fc1871a66937d082" prot="public" static="no">
         <type>std::function&lt; void(const <ref refid="struct_bvr_1_1_c_file_watcher_1_1_event" kindref="compound">Event</ref> &amp;)&gt;</type>
@@ -41,13 +42,29 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" line="27" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" bodystart="27" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" line="36" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_bvr_1_1_c_file_watcher_1adef235fb698be57e300aecd98123793f" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr static auto</type>
+        <definition>constexpr static auto Bvr::CFileWatcher::DefaultTimeout</definition>
+        <argsstring></argsstring>
+        <name>DefaultTimeout</name>
+        <initializer>= TimestepT::FromSeconds(1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" line="16" column="27" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" bodystart="16" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="class_bvr_1_1_c_file_watcher_1aa4edc18c434daeaf5c7480e9568d2665" prot="private" static="no" mutable="no">
-        <type>std::unordered_map&lt; std::string, <ref refid="class_bvr_1_1_t_timestep" kindref="compound">TimestepT</ref> &gt;</type>
-        <definition>std::unordered_map&lt;std::string, TimestepT&gt; Bvr::CFileWatcher::m_paths</definition>
+      <memberdef kind="variable" id="class_bvr_1_1_c_file_watcher_1adc740f030f578f71b12542d58ec0132b" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, <ref refid="struct_bvr_1_1_c_file_watcher_1_1_cached_file_info" kindref="compound">CachedFileInfo</ref> &gt;</type>
+        <definition>std::unordered_map&lt;std::string, CachedFileInfo&gt; Bvr::CFileWatcher::m_paths</definition>
         <argsstring></argsstring>
         <name>m_paths</name>
         <briefdescription>
@@ -56,7 +73,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" line="45" column="24" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" bodystart="45" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" line="54" column="24" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" bodystart="54" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_bvr_1_1_c_file_watcher_1a3da47c29ebddfbfefb4fba3bdf567d67" prot="private" static="no" mutable="no">
         <type>std::vector&lt; std::pair&lt; std::string, bool &gt; &gt;</type>
@@ -69,7 +86,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" line="46" column="18" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" bodystart="46" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" line="55" column="23" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" bodystart="55" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_bvr_1_1_c_file_watcher_1a8a1e1d8c3d1730f1df7b95665bcf1cd2" prot="private" static="no" mutable="no">
         <type>std::unordered_set&lt; std::string &gt;</type>
@@ -82,31 +99,33 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" line="47" column="35" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" bodystart="47" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" line="56" column="40" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" bodystart="56" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-func">
-      <memberdef kind="function" id="class_bvr_1_1_c_file_watcher_1a55f64f8053eed3e089305948c7645c0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type></type>
-        <definition>Bvr::CFileWatcher::CFileWatcher</definition>
-        <argsstring>()=default</argsstring>
-        <name>CFileWatcher</name>
+      <memberdef kind="variable" id="class_bvr_1_1_c_file_watcher_1afc944b547f4b04365237bd6efe6d4640" prot="private" static="no" mutable="no">
+        <type><ref refid="class_bvr_1_1_t_timestep" kindref="compound">TimestepT</ref></type>
+        <definition>TimestepT Bvr::CFileWatcher::m_timeout</definition>
+        <argsstring></argsstring>
+        <name>m_timeout</name>
+        <initializer>= {}</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" line="29" column="5"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" line="57" column="53" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" bodystart="57" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="function" id="class_bvr_1_1_c_file_watcher_1ac77212ff8bcab4ceea38901b2debaf62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_bvr_1_1_c_file_watcher_1a641caad9d256849a84fa3574da7d8737" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>Bvr::CFileWatcher::CFileWatcher</definition>
-        <argsstring>(const char *pPath)</argsstring>
+        <argsstring>(TimestepT timeout=DefaultTimeout)</argsstring>
         <name>CFileWatcher</name>
         <param>
-          <type>const char *</type>
-          <declname>pPath</declname>
+          <type><ref refid="class_bvr_1_1_t_timestep" kindref="compound">TimestepT</ref></type>
+          <declname>timeout</declname>
+          <defval>DefaultTimeout</defval>
         </param>
         <briefdescription>
         </briefdescription>
@@ -114,7 +133,29 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" line="30" column="5"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" line="38" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" bodystart="38" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_file_watcher_1a2c2d7a0ce1816d190952de737cd60add" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Bvr::CFileWatcher::CFileWatcher</definition>
+        <argsstring>(const char *pPath, TimestepT timeout=DefaultTimeout)</argsstring>
+        <name>CFileWatcher</name>
+        <param>
+          <type>const char *</type>
+          <declname>pPath</declname>
+        </param>
+        <param>
+          <type><ref refid="class_bvr_1_1_t_timestep" kindref="compound">TimestepT</ref></type>
+          <declname>timeout</declname>
+          <defval>DefaultTimeout</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" line="39" column="5"/>
       </memberdef>
       <memberdef kind="function" id="class_bvr_1_1_c_file_watcher_1ae848d31c2096f8e97fe0d7a94a565e9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -127,7 +168,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" line="31" column="5"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" line="40" column="5"/>
       </memberdef>
       <memberdef kind="function" id="class_bvr_1_1_c_file_watcher_1acc982d820534c9752a997e637c464779" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -149,7 +190,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" line="33" column="22" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" bodystart="33" bodyend="33"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" line="42" column="22" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" bodystart="42" bodyend="42"/>
       </memberdef>
       <memberdef kind="function" id="class_bvr_1_1_c_file_watcher_1a7cfc03e70fc86b7b1da3cb5b8c05c75c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -166,7 +207,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" line="35" column="19"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" line="44" column="19"/>
       </memberdef>
       <memberdef kind="function" id="class_bvr_1_1_c_file_watcher_1a9d07ed27615ef08a39ab4a22ef0e2654" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -183,7 +224,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" line="37" column="32"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" line="46" column="32"/>
       </memberdef>
       <memberdef kind="function" id="class_bvr_1_1_c_file_watcher_1a30adaecfb061743c48d1998bd0055944" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -200,7 +241,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" line="38" column="32"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" line="47" column="32"/>
       </memberdef>
       <memberdef kind="function" id="class_bvr_1_1_c_file_watcher_1a7c4317fb19a40d79fe49815f25f93f3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -213,7 +254,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" line="39" column="32"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" line="48" column="32"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -232,21 +273,23 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" line="42" column="10"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" line="51" column="10"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" line="10" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" bodystart="10" bodyend="48"/>
+    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" line="10" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/FileWatcher.hpp" bodystart="10" bodyend="58"/>
     <listofallmembers>
       <member refid="class_bvr_1_1_c_file_watcher_1a6ce228ebbc4a7632fc1871a66937d082" prot="public" virt="non-virtual"><scope>Bvr::CFileWatcher</scope><name>CallbackT</name></member>
-      <member refid="class_bvr_1_1_c_file_watcher_1a55f64f8053eed3e089305948c7645c0c" prot="public" virt="non-virtual"><scope>Bvr::CFileWatcher</scope><name>CFileWatcher</name></member>
-      <member refid="class_bvr_1_1_c_file_watcher_1ac77212ff8bcab4ceea38901b2debaf62" prot="public" virt="non-virtual"><scope>Bvr::CFileWatcher</scope><name>CFileWatcher</name></member>
+      <member refid="class_bvr_1_1_c_file_watcher_1a641caad9d256849a84fa3574da7d8737" prot="public" virt="non-virtual"><scope>Bvr::CFileWatcher</scope><name>CFileWatcher</name></member>
+      <member refid="class_bvr_1_1_c_file_watcher_1a2c2d7a0ce1816d190952de737cd60add" prot="public" virt="non-virtual"><scope>Bvr::CFileWatcher</scope><name>CFileWatcher</name></member>
+      <member refid="class_bvr_1_1_c_file_watcher_1adef235fb698be57e300aecd98123793f" prot="public" virt="non-virtual"><scope>Bvr::CFileWatcher</scope><name>DefaultTimeout</name></member>
       <member refid="class_bvr_1_1_c_file_watcher_1a7cfc03e70fc86b7b1da3cb5b8c05c75c" prot="public" virt="non-virtual"><scope>Bvr::CFileWatcher</scope><name>IsWatching</name></member>
       <member refid="class_bvr_1_1_c_file_watcher_1a3da47c29ebddfbfefb4fba3bdf567d67" prot="private" virt="non-virtual"><scope>Bvr::CFileWatcher</scope><name>m_commands</name></member>
-      <member refid="class_bvr_1_1_c_file_watcher_1aa4edc18c434daeaf5c7480e9568d2665" prot="private" virt="non-virtual"><scope>Bvr::CFileWatcher</scope><name>m_paths</name></member>
+      <member refid="class_bvr_1_1_c_file_watcher_1adc740f030f578f71b12542d58ec0132b" prot="private" virt="non-virtual"><scope>Bvr::CFileWatcher</scope><name>m_paths</name></member>
+      <member refid="class_bvr_1_1_c_file_watcher_1afc944b547f4b04365237bd6efe6d4640" prot="private" virt="non-virtual"><scope>Bvr::CFileWatcher</scope><name>m_timeout</name></member>
       <member refid="class_bvr_1_1_c_file_watcher_1a8a1e1d8c3d1730f1df7b95665bcf1cd2" prot="private" virt="non-virtual"><scope>Bvr::CFileWatcher</scope><name>m_trackedPaths</name></member>
       <member refid="class_bvr_1_1_c_file_watcher_1a7e02c20751955d2c879559729a2e0636" prot="public" virt="non-virtual"><scope>Bvr::CFileWatcher</scope><name>Op</name></member>
       <member refid="class_bvr_1_1_c_file_watcher_1a7c4317fb19a40d79fe49815f25f93f3a" prot="public" virt="non-virtual"><scope>Bvr::CFileWatcher</scope><name>Reset</name></member>
