@@ -2,44 +2,21 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="namespace_bvr_1_1_path_utils" kind="namespace" language="C++">
     <compoundname>Bvr::PathUtils</compoundname>
-      <sectiondef kind="var">
-      <memberdef kind="variable" id="_path_utils_8hpp_1add087851df14497e6332c06121c2f4dc" prot="public" static="no" constexpr="yes" mutable="no">
-        <type>constexpr auto</type>
-        <definition>constexpr auto Bvr::PathUtils::PathSeparators</definition>
-        <argsstring></argsstring>
-        <name>PathSeparators</name>
-        <initializer>= &quot;/\\&quot;</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/PathUtils.hpp" line="5" column="23" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/PathUtils.hpp" bodystart="5" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="_path_utils_8hpp_1a0c419d7990624a71ca21541db153a151" prot="public" static="no" constexpr="yes" mutable="no">
-        <type>constexpr auto</type>
-        <definition>constexpr auto Bvr::PathUtils::ExtDelimiters</definition>
-        <argsstring></argsstring>
-        <name>ExtDelimiters</name>
-        <initializer>= &apos;.&apos;</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/PathUtils.hpp" line="6" column="23" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/PathUtils.hpp" bodystart="6" bodyend="-1"/>
-      </memberdef>
-      </sectiondef>
+    <innerclass refid="struct_bvr_1_1_path_utils_1_1_path_traits" prot="public">Bvr::PathUtils::PathTraits</innerclass>
+    <innerclass refid="struct_bvr_1_1_path_utils_1_1_path_traits_3_01wchar__t_01_4" prot="public">Bvr::PathUtils::PathTraits&lt; wchar_t &gt;</innerclass>
       <sectiondef kind="func">
-      <memberdef kind="function" id="_path_utils_8hpp_1a13cd453494bae44f4a5588decfcb430d" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>constexpr std::string_view</type>
-        <definition>constexpr std::string_view Bvr::PathUtils::GetParentPath</definition>
-        <argsstring>(const std::string_view path)</argsstring>
+      <memberdef kind="function" id="_path_utils_8hpp_1a0bb25aac17e9833d3cac2103d3c17b5a" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>constexpr std::basic_string_view&lt; T &gt;</type>
+        <definition>constexpr std::basic_string_view&lt;T&gt; Bvr::PathUtils::GetParentPath</definition>
+        <argsstring>(std::basic_string_view&lt; T &gt; path)</argsstring>
         <name>GetParentPath</name>
         <param>
-          <type>const std::string_view</type>
+          <type>std::basic_string_view&lt; T &gt;</type>
           <declname>path</declname>
         </param>
         <briefdescription>
@@ -60,15 +37,67 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/PathUtils.hpp" line="12" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/PathUtils.hpp" bodystart="12" bodyend="17"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/PathUtils.hpp" line="20" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/PathUtils.hpp" bodystart="20" bodyend="26"/>
       </memberdef>
-      <memberdef kind="function" id="_path_utils_8hpp_1ab91f4c00973e69bb1d2506ecb295974d" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>constexpr std::string_view</type>
-        <definition>constexpr std::string_view Bvr::PathUtils::GetFileName</definition>
-        <argsstring>(const std::string_view path, const bool withExt=true)</argsstring>
+      <memberdef kind="function" id="_path_utils_8hpp_1a5b9e26b851c674b3cc2d2791f176007d" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+            <defval>char</defval>
+          </param>
+        </templateparamlist>
+        <type>constexpr std::basic_string_view&lt; T &gt;</type>
+        <definition>constexpr std::basic_string_view&lt;T&gt; Bvr::PathUtils::GetParentPath</definition>
+        <argsstring>(const T *path)</argsstring>
+        <name>GetParentPath</name>
+        <param>
+          <type>const T *</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/PathUtils.hpp" line="29" column="35" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/PathUtils.hpp" bodystart="29" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="_path_utils_8hpp_1a968062b08dda9d30d9f53ab8370bfc66" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+            <defval>char</defval>
+          </param>
+        </templateparamlist>
+        <type>constexpr std::basic_string_view&lt; T &gt;</type>
+        <definition>constexpr std::basic_string_view&lt;T&gt; Bvr::PathUtils::GetParentPath</definition>
+        <argsstring>(const std::basic_string&lt; T &gt; &amp;path)</argsstring>
+        <name>GetParentPath</name>
+        <param>
+          <type>const std::basic_string&lt; T &gt; &amp;</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/PathUtils.hpp" line="35" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/PathUtils.hpp" bodystart="35" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="_path_utils_8hpp_1ab8ce5b8ee562e0b48e274292b40f4324" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+            <defval>char</defval>
+          </param>
+        </templateparamlist>
+        <type>constexpr std::basic_string_view&lt; T &gt;</type>
+        <definition>constexpr std::basic_string_view&lt;T&gt; Bvr::PathUtils::GetFileName</definition>
+        <argsstring>(std::basic_string_view&lt; T &gt; path, const bool withExt=true)</argsstring>
         <name>GetFileName</name>
         <param>
-          <type>const std::string_view</type>
+          <type>std::basic_string_view&lt; T &gt;</type>
           <declname>path</declname>
         </param>
         <param>
@@ -100,15 +129,77 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/PathUtils.hpp" line="23" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/PathUtils.hpp" bodystart="23" bodyend="30"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/PathUtils.hpp" line="44" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/PathUtils.hpp" bodystart="44" bodyend="55"/>
       </memberdef>
-      <memberdef kind="function" id="_path_utils_8hpp_1a67aa1f93570ba9149fd40ef0b8b11fd1" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>constexpr std::string_view</type>
-        <definition>constexpr std::string_view Bvr::PathUtils::GetExtension</definition>
-        <argsstring>(const std::string_view path)</argsstring>
+      <memberdef kind="function" id="_path_utils_8hpp_1ae5348e450c9f44d677b16150b404e6e8" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+            <defval>char</defval>
+          </param>
+        </templateparamlist>
+        <type>constexpr std::basic_string_view&lt; T &gt;</type>
+        <definition>constexpr std::basic_string_view&lt;T&gt; Bvr::PathUtils::GetFileName</definition>
+        <argsstring>(const T *path, const bool withExt=true)</argsstring>
+        <name>GetFileName</name>
+        <param>
+          <type>const T *</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>withExt</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/PathUtils.hpp" line="59" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/PathUtils.hpp" bodystart="59" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="_path_utils_8hpp_1a8256aa55dd5e6a885052ff702dd72adf" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+            <defval>char</defval>
+          </param>
+        </templateparamlist>
+        <type>constexpr std::basic_string_view&lt; T &gt;</type>
+        <definition>constexpr std::basic_string_view&lt;T&gt; Bvr::PathUtils::GetFileName</definition>
+        <argsstring>(const std::basic_string&lt; T &gt; &amp;path, const bool withExt=true)</argsstring>
+        <name>GetFileName</name>
+        <param>
+          <type>const std::basic_string&lt; T &gt; &amp;</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>withExt</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/PathUtils.hpp" line="64" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/PathUtils.hpp" bodystart="64" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="_path_utils_8hpp_1adfd74ed90ed91c4f13d742e1391411fb" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+            <defval>char</defval>
+          </param>
+        </templateparamlist>
+        <type>constexpr std::basic_string_view&lt; T &gt;</type>
+        <definition>constexpr std::basic_string_view&lt;T&gt; Bvr::PathUtils::GetExtension</definition>
+        <argsstring>(std::basic_string_view&lt; T &gt; path)</argsstring>
         <name>GetExtension</name>
         <param>
-          <type>const std::string_view</type>
+          <type>std::basic_string_view&lt; T &gt;</type>
           <declname>path</declname>
         </param>
         <briefdescription>
@@ -127,7 +218,53 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/PathUtils.hpp" line="35" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/PathUtils.hpp" bodystart="35" bodyend="43"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/PathUtils.hpp" line="72" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/PathUtils.hpp" bodystart="72" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="_path_utils_8hpp_1ada8fbf0dd5a1fc0a7235f0653b55fd12" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+            <defval>char</defval>
+          </param>
+        </templateparamlist>
+        <type>constexpr std::basic_string_view&lt; T &gt;</type>
+        <definition>constexpr std::basic_string_view&lt;T&gt; Bvr::PathUtils::GetExtension</definition>
+        <argsstring>(const T *path)</argsstring>
+        <name>GetExtension</name>
+        <param>
+          <type>const T *</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/PathUtils.hpp" line="85" column="35" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/PathUtils.hpp" bodystart="85" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="_path_utils_8hpp_1aaf3ec1258dfc2d7efca54912504b665f" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+            <defval>char</defval>
+          </param>
+        </templateparamlist>
+        <type>constexpr std::basic_string_view&lt; T &gt;</type>
+        <definition>constexpr std::basic_string_view&lt;T&gt; Bvr::PathUtils::GetExtension</definition>
+        <argsstring>(const std::basic_string&lt; T &gt; &amp;path)</argsstring>
+        <name>GetExtension</name>
+        <param>
+          <type>const std::basic_string&lt; T &gt; &amp;</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/PathUtils.hpp" line="90" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/PathUtils.hpp" bodystart="90" bodyend="92"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
