@@ -340,6 +340,7 @@
     <member refid="class_bvr_1_1_c_level_editor_1a7127191249a73ed2aaf36191cdca2cde" kind="function"><name>ToggleSimulate</name></member>
     <member refid="class_bvr_1_1_c_level_editor_1a71db7adab212efd5884a6f9f840e1ace" kind="function"><name>CreateViewport</name></member>
     <member refid="class_bvr_1_1_c_level_editor_1a17a3f6aa19a8a57be45ffef23448849b" kind="function"><name>GetViewports</name></member>
+    <member refid="class_bvr_1_1_c_level_editor_1a43e22942818131516e0f002a66841261" kind="function"><name>FocusEntityInSceneTree</name></member>
     <member refid="class_bvr_1_1_c_level_editor_1a01d12ed927c074b630ba0bbda5cf7d3f" kind="function"><name>OnKeyPress</name></member>
     <member refid="class_bvr_1_1_c_level_editor_1a6b76743bd2e783ec8327f6f96f973a40" kind="function"><name>OnMouseMove</name></member>
     <member refid="class_bvr_1_1_c_level_editor_1a86eeb893e46f80c2dcc3365babf20726" kind="function"><name>OnMousePress</name></member>
@@ -348,6 +349,7 @@
     <member refid="class_bvr_1_1_c_level_editor_1a2370dbaccf7bdeb13b084da6971f14ed" kind="function"><name>DoEditScene</name></member>
     <member refid="class_bvr_1_1_c_level_editor_1a7b5c16b14c034e2468c3d2d32171c5d2" kind="function"><name>ProcessCameraInput</name></member>
     <member refid="class_bvr_1_1_c_level_editor_1a8c04f6260598c84065d803e547b63452" kind="function"><name>ActivateTool</name></member>
+    <member refid="class_bvr_1_1_c_level_editor_1a6c742e72f8f6b9413f28e675d9cf5fa1" kind="function"><name>GetScenePanel</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_c_level_editors" kind="struct"><name>Bvr::CLevelEditors</name>
     <member refid="struct_bvr_1_1_c_level_editors_1a481dedbe1997b9b5c20302bd0f150478" kind="function"><name>CLevelEditors</name></member>
@@ -661,9 +663,6 @@
     <member refid="struct_bvr_1_1_s_editor_viewport_event_1a5206f7fdb7ddeac4115ad032ececde56" kind="variable"><name>pViewport</name></member>
     <member refid="struct_bvr_1_1_s_editor_viewport_event_1a10f29b01dba92290893575798d4eebb0" kind="function"><name>SEditorViewportEvent</name></member>
   </compound>
-  <compound refid="struct_bvr_1_1_selection_1_1_selected_entity" kind="struct"><name>Bvr::Selection::SelectedEntity</name>
-    <member refid="struct_bvr_1_1_selection_1_1_selected_entity_1aee272737ae81148a35783e4666d9e958" kind="variable"><name>SelectedBy</name></member>
-  </compound>
   <compound refid="struct_bvr_1_1_selection_1_1_selection_callbacks" kind="struct"><name>Bvr::Selection::SelectionCallbacks</name>
     <member refid="struct_bvr_1_1_selection_1_1_selection_callbacks_1aedea1d78e8d8792aef742eca4982a5e4" kind="variable"><name>OnSelected</name></member>
   </compound>
@@ -700,11 +699,17 @@
   </compound>
   <compound refid="struct_bvr_1_1_s_scene_panel" kind="struct"><name>Bvr::SScenePanel</name>
     <member refid="struct_bvr_1_1_s_scene_panel_1a7e52c97f42050d6821e3f149042dfd74" kind="variable"><name>m_pOwningEditor</name></member>
+    <member refid="struct_bvr_1_1_s_scene_panel_1ad51bbaad24842d96cdd1bf4a2e6514b7" kind="variable"><name>m_focusedEntity</name></member>
+    <member refid="struct_bvr_1_1_s_scene_panel_1a7c467744d5dde5ccebb119c018d1709c" kind="variable"><name>m_prevSelected</name></member>
+    <member refid="struct_bvr_1_1_s_scene_panel_1af493e57bc8461bc96aad0ec399c2c0eb" kind="variable"><name>m_currentDragPayload</name></member>
     <member refid="struct_bvr_1_1_s_scene_panel_1aba3bc019404e1a83255dc83776c8b585" kind="function"><name>SScenePanel</name></member>
-    <member refid="struct_bvr_1_1_s_scene_panel_1a54fe2970345e812f6c4339787a9be05b" kind="function"><name>Build</name></member>
+    <member refid="struct_bvr_1_1_s_scene_panel_1a8b9d9e46eaf9b94de755b2f13cf40d00" kind="function"><name>FocusEntity</name></member>
     <member refid="struct_bvr_1_1_s_scene_panel_1ab3f3137201074f65176a0b7c09bb647a" kind="function"><name>ShowImpl</name></member>
     <member refid="struct_bvr_1_1_s_scene_panel_1adf0aefe97b2b79d74554df32f3785057" kind="function"><name>DrawUI</name></member>
     <member refid="struct_bvr_1_1_s_scene_panel_1a80cc6f0ba16bba503892f728ad41b900" kind="function"><name>DrawUIImpl</name></member>
+    <member refid="struct_bvr_1_1_s_scene_panel_1a54fe2970345e812f6c4339787a9be05b" kind="function"><name>Build</name></member>
+    <member refid="struct_bvr_1_1_s_scene_panel_1a8b1c0fc25082ebdcc28052b15a2d72e8" kind="function"><name>EntityDropTarget</name></member>
+    <member refid="struct_bvr_1_1_s_scene_panel_1a122144e70d89bf4ee91e7c66a9e22bc4" kind="function"><name>EntityDropSource</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_editor_u_i_1_1_detail_1_1_s_scoped_i_d_push" kind="struct"><name>Bvr::EditorUI::Detail::SScopedIDPush</name>
     <member refid="struct_bvr_1_1_editor_u_i_1_1_detail_1_1_s_scoped_i_d_push_1a162e835ef293c3c629a068124f7ae360" kind="function"><name>SScopedIDPush</name></member>
