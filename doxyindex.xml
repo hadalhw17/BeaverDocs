@@ -91,6 +91,7 @@
     <member refid="d6/df4/structBvr_1_1App_1a41360306fe67dd16cfb44e9240682702" kind="function"><name>AddAsset</name></member>
     <member refid="d6/df4/structBvr_1_1App_1a831a4e4c0c7d96b9f3f23d1dae66d318" kind="function"><name>AddLoader</name></member>
     <member refid="d6/df4/structBvr_1_1App_1a330594f85b2183f596a4768f58f18643" kind="function"><name>AddComponent</name></member>
+    <member refid="d6/df4/structBvr_1_1App_1adbb52e8b4ca46d5bde9ad5ea12ede5b7" kind="function"><name>AddWResource</name></member>
     <member refid="d6/df4/structBvr_1_1App_1a3bee23c2f7e0c0588e5636d08004b802" kind="function"><name>AddState</name></member>
     <member refid="d6/df4/structBvr_1_1App_1ac319c462aefedfcd39c7cde6118ba5e0" kind="function"><name>Get</name></member>
     <member refid="d6/df4/structBvr_1_1App_1a4e6523dc1121e4899982b0487286cef0" kind="function"><name>Set</name></member>
@@ -883,6 +884,7 @@
     <member refid="df/dfa/classBvr_1_1Renderer_1_1CBindlessSetContainer_1aa65ae2d2621df5c5005b3bd945831ad1" kind="function"><name>GetBindlessSet</name></member>
     <member refid="df/dfa/classBvr_1_1Renderer_1_1CBindlessSetContainer_1ad402997090c12c3068d3a216b8d35ee7" kind="function"><name>RegisterResource</name></member>
     <member refid="df/dfa/classBvr_1_1Renderer_1_1CBindlessSetContainer_1a1ea3e09662fc8a54fdbc46217edd2185" kind="function"><name>UnregisterResource</name></member>
+    <member refid="df/dfa/classBvr_1_1Renderer_1_1CBindlessSetContainer_1a81833b6d9dd2048932914c867c2946e2" kind="function"><name>IsRegistered</name></member>
     <member refid="df/dfa/classBvr_1_1Renderer_1_1CBindlessSetContainer_1a711a4ae9239629bc956ed6f4b780ea05" kind="function"><name>SetResourceAt</name></member>
     <member refid="df/dfa/classBvr_1_1Renderer_1_1CBindlessSetContainer_1a45bf0527b8dd70cd586bcc6adda14f62" kind="function"><name>HashResource</name></member>
   </compound>
@@ -1788,19 +1790,18 @@
     <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1a51f0267e7056df34c5b1280555cb8ef3ac5657dc3694b5dea2a3726da8772d8b9" kind="enumvalue"><name>Transfer</name></member>
     <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1a51f0267e7056df34c5b1280555cb8ef3af0f5c52ec6c5896e50f289983e01bcf6" kind="enumvalue"><name>Overlay</name></member>
     <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1a51f0267e7056df34c5b1280555cb8ef3a904018fafd37c5192de9a130a5971365" kind="enumvalue"><name>ForceClear</name></member>
+    <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1a51f0267e7056df34c5b1280555cb8ef3aa47ffc0173839f3bfa83d978bb76c7a2" kind="enumvalue"><name>UsesBindless</name></member>
     <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1a1501818f0cdbf46819f37debfddb7a76" kind="variable"><name>m_frameGraph</name></member>
     <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1a4315fa767d4c481f3eb5727f86d029f1" kind="variable"><name>m_inputImages</name></member>
     <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1a0fce1ec4691f8f9385fb772807eb9156" kind="variable"><name>m_outputStorageImages</name></member>
     <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1aa5800f4570c5da93d3f245eecdf181fa" kind="variable"><name>m_outputImages</name></member>
+    <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1a65f1dc5ab6107e91bf16696aa47ca0c2" kind="variable"><name>m_allAccessedImages</name></member>
     <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1ace1d1e7223f4896241801fe5869aba18" kind="variable"><name>m_depthStencilOutput</name></member>
     <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1a6560f72f3b0be167ca80e531298f1baa" kind="variable"><name>m_constantBuffers</name></member>
     <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1ad98ab9109f9330f8beced007ccaa767c" kind="variable"><name>m_inputStorageBuffers</name></member>
     <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1a0c5fe7845983dc837db2b7e3411ea87b" kind="variable"><name>m_outputBuffers</name></member>
     <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1abb60a93b71fcf8dd895c161c44a80b50" kind="variable"><name>m_pIndirectCommandBuffer</name></member>
     <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1a23b1c4f1cb98ffafb93feebb77d9db56" kind="variable"><name>m_pIndirectCounterBuffer</name></member>
-    <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1a5f026dfd747e5517b7d5939f237d9384" kind="variable"><name>m_inputBarriers</name></member>
-    <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1aa253239936a723cf13095538768d33a9" kind="variable"><name>m_outputBarriers</name></member>
-    <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1a40f7f8ed43f4b45b7efc8cf5e8b75c5c" kind="variable"><name>m_fakeBarriers</name></member>
     <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1ab78b15767536ef1d4bf147c54cc1a053" kind="variable"><name>m_name</name></member>
     <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1a123f918b3da24eecb428f92e44dbb239" kind="variable"><name>m_hSelf</name></member>
     <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1af2f4b18199a0798eb3f7263ceecf2f2c" kind="variable"><name>m_flags</name></member>
@@ -1826,6 +1827,7 @@
     <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1aedee0e4bf0d0c727600ce5e743a9a313" kind="function"><name>GetOutputStorageImages</name></member>
     <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1af95bccf6cd2703b927d21def56b7e76f" kind="function"><name>GetOutputImages</name></member>
     <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1a09c9b062b9aec5458622cd36058043a9" kind="function"><name>GetDepthStencilOutput</name></member>
+    <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1ad483e4539e645e6dd5ff8afc35361fe9" kind="function"><name>GetAllAccessedImages</name></member>
     <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1a7f4d6c45b9ab6baf784de6f8d1d6c8e9" kind="function"><name>SetDepthStencilOutput</name></member>
     <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1ad280ab9c4d58e1c2892b642ae45ced1b" kind="function"><name>AddOutput</name></member>
     <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1a65104012db64976a78206eb51b184f57" kind="function"><name>AddStorageOutput</name></member>
@@ -1852,13 +1854,7 @@
     <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1a2d0ad862eb621c0802db95d5c5d9f5cc" kind="function"><name>SetFlags</name></member>
     <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1a94bdcb3e800570b27757f4bc2cad174f" kind="function"><name>SetSelf</name></member>
     <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1af4a20eb659fc23921e34dba53cad2328" kind="function"><name>GetSelf</name></member>
-    <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1a578508dc4bc507cae0e8896e116eaf4c" kind="function"><name>GetInputBarriers</name></member>
-    <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1a61a67d2f600895433b7da31423dcddd1" kind="function"><name>GetOutputBarriers</name></member>
-    <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1acf6487c6fee4d2173de3d78fc26bdcf8" kind="function"><name>GetFakeBarriers</name></member>
     <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1a434c714f35f783463e431df0140e7c7b" kind="function"><name>GetFlags</name></member>
-    <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1aa42754cb02226b729df78d7874fc8f43" kind="function"><name>AddInputBarrier</name></member>
-    <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1a6cbbf936a6f6eb803c712bcad7b6cd8e" kind="function"><name>AddOutputBarrier</name></member>
-    <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1aad508ad7048a86830ceb2c4dd9a69c84" kind="function"><name>AddFakeBarrier</name></member>
     <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1a61ef23bc9cbb8de20d34c8a76ef9c139" kind="function"><name>Execute</name></member>
     <member refid="d4/d95/classBvr_1_1Renderer_1_1CFGNode_1aaa01b26ebd13e9ed036525075d3c3e17" kind="function"><name>SetParentGraph</name></member>
   </compound>
@@ -2007,7 +2003,7 @@
     <member refid="d1/db5/classBvr_1_1Renderer_1_1CFrameGraph_1a56eed30e2b226ba78eb8f1d961355b38" kind="function"><name>CreateImage</name></member>
     <member refid="d1/db5/classBvr_1_1Renderer_1_1CFrameGraph_1a47c69c50c0ac55d96296b0f94db2b198" kind="function"><name>HasImage</name></member>
     <member refid="d1/db5/classBvr_1_1Renderer_1_1CFrameGraph_1a75bff6f7152545ddd0748f1deff62757" kind="function"><name>FindImageHandle</name></member>
-    <member refid="d1/db5/classBvr_1_1Renderer_1_1CFrameGraph_1af9aef918c843d322e310aa733e48915f" kind="function"><name>BeginFrame</name></member>
+    <member refid="d1/db5/classBvr_1_1Renderer_1_1CFrameGraph_1a827e0f0fca76a8d0bcb4db794577b180" kind="function"><name>EndFrame</name></member>
     <member refid="d1/db5/classBvr_1_1Renderer_1_1CFrameGraph_1a594351870e34bd0c27e65aaaa7d207f1" kind="function"><name>Allocator</name></member>
     <member refid="d1/db5/classBvr_1_1Renderer_1_1CFrameGraph_1ab0c35882e5ab6bcaaed35b0049126e52" kind="function"><name>GetRelativeResolution</name></member>
     <member refid="d1/db5/classBvr_1_1Renderer_1_1CFrameGraph_1aeffea39c7f072659684246aab274462e" kind="function"><name>FindImage</name></member>
@@ -2063,8 +2059,8 @@
     <member refid="d5/da0/classBvr_1_1Renderer_1_1CFrameGraphImage_1a696dd761d0575dfbaf213ab72c497509" kind="function"><name>GetUsageFlags</name></member>
     <member refid="d5/da0/classBvr_1_1Renderer_1_1CFrameGraphImage_1aa76edcc2600e14eb76cc3f88200247b1" kind="function"><name>GetDescription</name></member>
     <member refid="d5/da0/classBvr_1_1Renderer_1_1CFrameGraphImage_1ad383cfaf5d8aecbe7893424e807e0780" kind="function"><name>SetDescription</name></member>
-    <member refid="d5/da0/classBvr_1_1Renderer_1_1CFrameGraphImage_1ad5f1c14a67ea8783f4570a3a8988533c" kind="function"><name>GetPreviousUsage</name></member>
-    <member refid="d5/da0/classBvr_1_1Renderer_1_1CFrameGraphImage_1ac67e103351a4237322f8f884b4ca12e0" kind="function"><name>GetNextUsage</name></member>
+    <member refid="d5/da0/classBvr_1_1Renderer_1_1CFrameGraphImage_1a8888a3c62b579c3be153d4f266fc4636" kind="function"><name>GetPreviousUsage</name></member>
+    <member refid="d5/da0/classBvr_1_1Renderer_1_1CFrameGraphImage_1aaf24c834413d681e893341a49c70e51c" kind="function"><name>GetNextUsage</name></member>
     <member refid="d5/da0/classBvr_1_1Renderer_1_1CFrameGraphImage_1a66c5873b1b2e777b112853be4cc5461c" kind="function"><name>HasDepthUsage</name></member>
   </compound>
   <compound refid="d4/dc1/classBvr_1_1Renderer_1_1CFrameGraphResource" kind="class"><name>Bvr::Renderer::CFrameGraphResource</name>
@@ -2073,8 +2069,8 @@
     <member refid="d4/dc1/classBvr_1_1Renderer_1_1CFrameGraphResource_1a99ece6bb3213ae02ce6b9bf9191c22c1a203c3e6e480df4ff0efd2110a01becc0" kind="enumvalue"><name>External</name></member>
     <member refid="d4/dc1/classBvr_1_1Renderer_1_1CFrameGraphResource_1a99ece6bb3213ae02ce6b9bf9191c22c1ac9a147d5ffee9c80f5813c3d8d5bda65" kind="enumvalue"><name>History</name></member>
     <member refid="d4/dc1/classBvr_1_1Renderer_1_1CFrameGraphResource_1a46b029c8ff0c5582241028845c457f2e" kind="friend"><name>CFrameGraph</name></member>
-    <member refid="d4/dc1/classBvr_1_1Renderer_1_1CFrameGraphResource_1a32ea5a0e809b25f7d9b66237bc83114f" kind="variable"><name>m_readInPasses</name></member>
-    <member refid="d4/dc1/classBvr_1_1Renderer_1_1CFrameGraphResource_1ad96d08f6e22d1999005f59520002d079" kind="variable"><name>m_writtenInPasses</name></member>
+    <member refid="d4/dc1/classBvr_1_1Renderer_1_1CFrameGraphResource_1a58d29c5fbaefc6de920b8f33689ca2da" kind="variable"><name>m_readInPasses</name></member>
+    <member refid="d4/dc1/classBvr_1_1Renderer_1_1CFrameGraphResource_1a9952289eb950e0bfebede2e0c5542ec1" kind="variable"><name>m_writtenInPasses</name></member>
     <member refid="d4/dc1/classBvr_1_1Renderer_1_1CFrameGraphResource_1add6aa0ee7c1ffdbb068e094d78880b75" kind="variable"><name>m_name</name></member>
     <member refid="d4/dc1/classBvr_1_1Renderer_1_1CFrameGraphResource_1ab5a05499c99fc18163409a3561188b6a" kind="variable"><name>m_hSelf</name></member>
     <member refid="d4/dc1/classBvr_1_1Renderer_1_1CFrameGraphResource_1aeccab4fa9a6db5eaf56a22ff9901bb64" kind="variable"><name>m_hCreatedResource</name></member>
@@ -2082,16 +2078,16 @@
     <member refid="d4/dc1/classBvr_1_1Renderer_1_1CFrameGraphResource_1a2f2a20c078c942b2e7f4b9c244ed7f31" kind="function"><name>CFrameGraphResource</name></member>
     <member refid="d4/dc1/classBvr_1_1Renderer_1_1CFrameGraphResource_1a6c69a3601a48236a53ff7a28e33b2d8a" kind="function"><name>CFrameGraphResource</name></member>
     <member refid="d4/dc1/classBvr_1_1Renderer_1_1CFrameGraphResource_1aaecf8fce8230b01a093d2612e0b330aa" kind="function"><name>~CFrameGraphResource</name></member>
-    <member refid="d4/dc1/classBvr_1_1Renderer_1_1CFrameGraphResource_1af7505fba92c0b30aec0383d115702d3e" kind="function"><name>ReadInPass</name></member>
-    <member refid="d4/dc1/classBvr_1_1Renderer_1_1CFrameGraphResource_1aa4b331b76a03685a525f3d2a468c8b28" kind="function"><name>WriteInPass</name></member>
+    <member refid="d4/dc1/classBvr_1_1Renderer_1_1CFrameGraphResource_1ad0128174373646266746af362a9e1b09" kind="function"><name>ReadInPass</name></member>
+    <member refid="d4/dc1/classBvr_1_1Renderer_1_1CFrameGraphResource_1a903f4a1927e597cfe100d4de0bb76d97" kind="function"><name>WriteInPass</name></member>
     <member refid="d4/dc1/classBvr_1_1Renderer_1_1CFrameGraphResource_1a3f0883aed7234fa06ba1a0ebd981ea6c" kind="function"><name>IsLastUsage</name></member>
     <member refid="d4/dc1/classBvr_1_1Renderer_1_1CFrameGraphResource_1aa076a10552c57820f45eb29576d90fa9" kind="function"><name>IsFirstUsage</name></member>
     <member refid="d4/dc1/classBvr_1_1Renderer_1_1CFrameGraphResource_1a6ae9593daf8cbb5e519eced48f2cd82b" kind="function"><name>IsFirstRead</name></member>
     <member refid="d4/dc1/classBvr_1_1Renderer_1_1CFrameGraphResource_1ae0eb227b819b49e6b6e7b3b2da4a64b3" kind="function"><name>IsLastRead</name></member>
     <member refid="d4/dc1/classBvr_1_1Renderer_1_1CFrameGraphResource_1a980d7d38827afee973f5cd04a0565619" kind="function"><name>IsFirstWrite</name></member>
     <member refid="d4/dc1/classBvr_1_1Renderer_1_1CFrameGraphResource_1ac4990234b7465cac373957d4a9ab9d62" kind="function"><name>IsLastWrite</name></member>
-    <member refid="d4/dc1/classBvr_1_1Renderer_1_1CFrameGraphResource_1a653a11b4aecb0e5e9aa7058d9671a5b2" kind="function"><name>GetReadPasses</name></member>
-    <member refid="d4/dc1/classBvr_1_1Renderer_1_1CFrameGraphResource_1a8ec44cf298a5e3f1d0009332c6b4efd4" kind="function"><name>GetWritenPasses</name></member>
+    <member refid="d4/dc1/classBvr_1_1Renderer_1_1CFrameGraphResource_1a61f8c39bf37b96246ddb77a815fe5803" kind="function"><name>GetReadPasses</name></member>
+    <member refid="d4/dc1/classBvr_1_1Renderer_1_1CFrameGraphResource_1aa61842eee995e5bd58e541bbd0d503ea" kind="function"><name>GetWritenPasses</name></member>
     <member refid="d4/dc1/classBvr_1_1Renderer_1_1CFrameGraphResource_1ac12e130d5fe880b471de08ee68b1bbc4" kind="function"><name>IsReadInPass</name></member>
     <member refid="d4/dc1/classBvr_1_1Renderer_1_1CFrameGraphResource_1a0e606e8c293e33e3a585de0d4c161cfe" kind="function"><name>IsWrittenInPass</name></member>
     <member refid="d4/dc1/classBvr_1_1Renderer_1_1CFrameGraphResource_1a60b26499e5403d95bec57ab45403e65c" kind="function"><name>GetCreatedResource</name></member>
@@ -2357,10 +2353,10 @@
     <member refid="d0/dc4/classBvr_1_1Renderer_1_1Device_1_1CImage_1a0a9bcdbe826847f67b1464b4e238f868" kind="variable"><name>m_imageViews</name></member>
     <member refid="d0/dc4/classBvr_1_1Renderer_1_1Device_1_1CImage_1a3aabc16985fd457d5c7f31adfc773555" kind="variable"><name>m_memoryRequirements</name></member>
     <member refid="d0/dc4/classBvr_1_1Renderer_1_1Device_1_1CImage_1ac04bc3143af265277bd97b1e890daf51" kind="variable"><name>m_deviceImage</name></member>
-    <member refid="d0/dc4/classBvr_1_1Renderer_1_1Device_1_1CImage_1a3cb162c7b8d968828308fa0fbc0a96b4" kind="variable"><name>m_oldLayout</name></member>
-    <member refid="d0/dc4/classBvr_1_1Renderer_1_1Device_1_1CImage_1a91e70fb0ce7065f435e3e3b283680fd1" kind="variable"><name>m_newLayout</name></member>
+    <member refid="d0/dc4/classBvr_1_1Renderer_1_1Device_1_1CImage_1a94cf182b3d702f3a2695109a6da488ae" kind="variable"><name>m_formatAspect</name></member>
+    <member refid="d0/dc4/classBvr_1_1Renderer_1_1Device_1_1CImage_1aa8c4036dcd951570ea7c406a4a8ca94d" kind="variable"><name>m_layoutStorage</name></member>
     <member refid="d0/dc4/classBvr_1_1Renderer_1_1Device_1_1CImage_1a4121a9f7c541bb6e2d72b1d3c551e6a8" kind="variable"><name>m_isExternalMemory</name></member>
-    <member refid="d0/dc4/classBvr_1_1Renderer_1_1Device_1_1CImage_1a9e0a22fd6589bf704a85f58756e4e5c5" kind="function"><name>CImage</name></member>
+    <member refid="d0/dc4/classBvr_1_1Renderer_1_1Device_1_1CImage_1aaf3a961037abce4b8678cd4bc53dd40d" kind="function"><name>CImage</name></member>
     <member refid="d0/dc4/classBvr_1_1Renderer_1_1Device_1_1CImage_1aaaf296e43b32088ef211cee510d3436d" kind="function"><name>~CImage</name></member>
     <member refid="d0/dc4/classBvr_1_1Renderer_1_1Device_1_1CImage_1a87c680b80125338bbd2c9d820f5b26c6" kind="function"><name>Init</name></member>
     <member refid="d0/dc4/classBvr_1_1Renderer_1_1Device_1_1CImage_1a68e83128b27a37ea2940ca6bfb5d9e4d" kind="function"><name>Release</name></member>
@@ -2371,14 +2367,16 @@
     <member refid="d0/dc4/classBvr_1_1Renderer_1_1Device_1_1CImage_1ad52ba4eb5b37bf19f80cddfc2b13666a" kind="function"><name>BindMemory</name></member>
     <member refid="d0/dc4/classBvr_1_1Renderer_1_1Device_1_1CImage_1ae35e08861b22994ee507d327bc2aaa56" kind="function"><name>ImageBarrier</name></member>
     <member refid="d0/dc4/classBvr_1_1Renderer_1_1Device_1_1CImage_1ac60ade17938c68d108f9919a3a0dbad8" kind="function"><name>HasPendingBarriers</name></member>
-    <member refid="d0/dc4/classBvr_1_1Renderer_1_1Device_1_1CImage_1a95e19cc5ee2548da283ff732a0779977" kind="function"><name>RequestTransition</name></member>
-    <member refid="d0/dc4/classBvr_1_1Renderer_1_1Device_1_1CImage_1a792dc460fe627358f0404cc4ce3d25ea" kind="function"><name>GetCurrentLayout</name></member>
+    <member refid="d0/dc4/classBvr_1_1Renderer_1_1Device_1_1CImage_1a887fcc97bb00e43897cfc78aec9a2b00" kind="function"><name>RequestTransition</name></member>
+    <member refid="d0/dc4/classBvr_1_1Renderer_1_1Device_1_1CImage_1a75b34cfeab5e2a33ac154f4e16d28ce3" kind="function"><name>GetCurrentLayout</name></member>
     <member refid="d0/dc4/classBvr_1_1Renderer_1_1Device_1_1CImage_1a5303d81d0b9456c0688f6cf6bcf0b401" kind="function"><name>GetAspectFlags</name></member>
     <member refid="d0/dc4/classBvr_1_1Renderer_1_1Device_1_1CImage_1a75e76f819d490c22ed513fcf652f4567" kind="function"><name>GetMemoryRequirements</name></member>
     <member refid="d0/dc4/classBvr_1_1Renderer_1_1Device_1_1CImage_1abbc5f9303a1d997cf84d7a07e3166be2" kind="function"><name>Upload</name></member>
     <member refid="d0/dc4/classBvr_1_1Renderer_1_1Device_1_1CImage_1a2a54f7b3dcfa768116b711558eecc712" kind="function"><name>Download</name></member>
     <member refid="d0/dc4/classBvr_1_1Renderer_1_1Device_1_1CImage_1a7c266a778b7d665c8e434f28917743b7" kind="function"><name>GenerateMipMaps</name></member>
-    <member refid="d0/dc4/classBvr_1_1Renderer_1_1Device_1_1CImage_1a49e14e77455b247384df68272b65a35d" kind="function"><name>FlushBarrierWithRenderPass</name></member>
+    <member refid="d0/dc4/classBvr_1_1Renderer_1_1Device_1_1CImage_1a5acd5fcae3dd0cf85e96e6e79e9efc55" kind="function"><name>FlushBarrierWithRenderPass</name></member>
+    <member refid="d0/dc4/classBvr_1_1Renderer_1_1Device_1_1CImage_1af3f599297c3340b9d7080848602f923f" kind="function"><name>CalcSubresourceId</name></member>
+    <member refid="d0/dc4/classBvr_1_1Renderer_1_1Device_1_1CImage_1ab6ea73fb41ce5b71c0debfbf945da48b" kind="function"><name>DecodeSubresourceId</name></member>
   </compound>
   <compound refid="dd/df8/classBvr_1_1CImageLoader" kind="class"><name>Bvr::CImageLoader</name>
     <member refid="dd/df8/classBvr_1_1CImageLoader_1ad3df34731c8cf26c37fdb058bbb04874" kind="typedef"><name>AssetT</name></member>
@@ -3100,7 +3098,8 @@
     <member refid="d8/d56/classBvr_1_1Renderer_1_1CQueue_1a96bcd66978a53dc7cc16f6074300301f" kind="function"><name>CompleteFenceValue</name></member>
     <member refid="d8/d56/classBvr_1_1Renderer_1_1CQueue_1a2fb6340146f1188c4141146bf4898186" kind="function"><name>IsFenceComplete</name></member>
     <member refid="d8/d56/classBvr_1_1Renderer_1_1CQueue_1a117da32f1fa8797bd0411552a909738f" kind="function"><name>WaitForFence</name></member>
-    <member refid="d8/d56/classBvr_1_1Renderer_1_1CQueue_1a76e3b0ca21f3f8361fd0c5705b71d3e9" kind="function"><name>GetLastQueuedFenceValue</name></member>
+    <member refid="d8/d56/classBvr_1_1Renderer_1_1CQueue_1a469d568e4b33f062a225bb1f80640017" kind="function"><name>GetLastQueuedFenceValue</name></member>
+    <member refid="d8/d56/classBvr_1_1Renderer_1_1CQueue_1a0419eff90401c7fe30c0f84158c6d11b" kind="function"><name>GetLastCompletedFenceValue</name></member>
     <member refid="d8/d56/classBvr_1_1Renderer_1_1CQueue_1aa7725415592d7b504b6794a8eef24fba" kind="function"><name>TrackCommandBuffer</name></member>
     <member refid="d8/d56/classBvr_1_1Renderer_1_1CQueue_1a8fcff247da0e045a40f67363f7a27138" kind="function"><name>UntrackCommandBuffer</name></member>
   </compound>
@@ -3265,6 +3264,7 @@
     <member refid="dd/d6e/classBvr_1_1Renderer_1_1CRenderPassScheduler_1a179ca32fab736994e59c032e59988223" kind="variable"><name>m_executionConuter</name></member>
     <member refid="dd/d6e/classBvr_1_1Renderer_1_1CRenderPassScheduler_1ad075b0d873fc230de7db6fd133481579" kind="variable"><name>m_eState</name></member>
     <member refid="dd/d6e/classBvr_1_1Renderer_1_1CRenderPassScheduler_1ad4ddb15256c5ec42791d52a8c04fb984" kind="variable"><name>m_pScheduledPasses</name></member>
+    <member refid="dd/d6e/classBvr_1_1Renderer_1_1CRenderPassScheduler_1a4459e28edf0ef390096be18485e87d7a" kind="variable"><name>m_flushOnNextBindlessUsage</name></member>
     <member refid="dd/d6e/classBvr_1_1Renderer_1_1CRenderPassScheduler_1aeaba02a6e91ef7502b898ed3c8d99b40" kind="variable"><name>m_pFrameGraph</name></member>
     <member refid="dd/d6e/classBvr_1_1Renderer_1_1CRenderPassScheduler_1aefcd057405e4329e0d54454e273a18ee" kind="variable"><name>m_ownerPipeline</name></member>
     <member refid="dd/d6e/classBvr_1_1Renderer_1_1CRenderPassScheduler_1a0d7374c1b9eaac7c7867d7729687eb07" kind="function"><name>CRenderPassScheduler</name></member>
@@ -3835,6 +3835,7 @@
     <member refid="de/dc8/classBvr_1_1Renderer_1_1CTexture_1a3cb92c05719734e8cec3666bfaee4bd5" kind="variable"><name>m_heigth</name></member>
     <member refid="de/dc8/classBvr_1_1Renderer_1_1CTexture_1a213ce4fee7729968e7d0e3b6f1981923" kind="variable"><name>m_depth</name></member>
     <member refid="de/dc8/classBvr_1_1Renderer_1_1CTexture_1a6a214d643d840b281b31d5c2b7556fbf" kind="variable"><name>m_slices</name></member>
+    <member refid="de/dc8/classBvr_1_1Renderer_1_1CTexture_1a46f0b0b534fb68d8a55b4c45e3dac06b" kind="variable"><name>m_bindlessUsage</name></member>
     <member refid="de/dc8/classBvr_1_1Renderer_1_1CTexture_1aa0cf0203817bab35bde6677102a81327" kind="variable"><name>m_textureFormat</name></member>
     <member refid="de/dc8/classBvr_1_1Renderer_1_1CTexture_1a986fda02e8cefc97cd3c2331a2f9f26e" kind="variable"><name>m_usageFlags</name></member>
     <member refid="de/dc8/classBvr_1_1Renderer_1_1CTexture_1a41e38076913b030441e483035e446ffb" kind="variable"><name>m_eTextureDimension</name></member>
@@ -3842,6 +3843,9 @@
     <member refid="de/dc8/classBvr_1_1Renderer_1_1CTexture_1abe4bf03acdf3f24639f99f20711e4736" kind="variable"><name>ResourceViewT</name></member>
     <member refid="de/dc8/classBvr_1_1Renderer_1_1CTexture_1adbf61a9b1ca03b82783124596cf2f7c2" kind="function"><name>CTexture</name></member>
     <member refid="de/dc8/classBvr_1_1Renderer_1_1CTexture_1aa3963182641ad25e0dca8516aeffc086" kind="function"><name>~CTexture</name></member>
+    <member refid="de/dc8/classBvr_1_1Renderer_1_1CTexture_1a8fe60acbbe71d167808ab27bfcff9a6c" kind="function"><name>AddBindlessRef</name></member>
+    <member refid="de/dc8/classBvr_1_1Renderer_1_1CTexture_1a7716597a73e107090503a53d4ceeff83" kind="function"><name>RemoveBindlessRef</name></member>
+    <member refid="de/dc8/classBvr_1_1Renderer_1_1CTexture_1a2244f6c57956add8469eaca203c60255" kind="function"><name>IsRegisteredInBindless</name></member>
     <member refid="de/dc8/classBvr_1_1Renderer_1_1CTexture_1a96ea56576ce3275422da72db9485722e" kind="function"><name>GetWidth</name></member>
     <member refid="de/dc8/classBvr_1_1Renderer_1_1CTexture_1a7083220bb8668a170617d9bfbb75c4eb" kind="function"><name>GetHeight</name></member>
     <member refid="de/dc8/classBvr_1_1Renderer_1_1CTexture_1a284082353cbcdd5c2e778d82037e2431" kind="function"><name>GetDepth</name></member>
@@ -3853,9 +3857,8 @@
     <member refid="de/dc8/classBvr_1_1Renderer_1_1CTexture_1ada4b8156a298d9d85c239fbf99540839" kind="function"><name>GetDims</name></member>
     <member refid="de/dc8/classBvr_1_1Renderer_1_1CTexture_1a103d7a2a4c33ebb54cb1d0a6a3ac6a72" kind="function"><name>GetUsageFlags</name></member>
     <member refid="de/dc8/classBvr_1_1Renderer_1_1CTexture_1abdb7c17e0d19a294a243a66bd30f0880" kind="function"><name>GetTextureFormat</name></member>
-    <member refid="de/dc8/classBvr_1_1Renderer_1_1CTexture_1ac815b534a05a6e345feca02989089927" kind="function"><name>FlushBarrierWithRenderPass</name></member>
     <member refid="de/dc8/classBvr_1_1Renderer_1_1CTexture_1a4dfc41b32abcead5a6989c8ee1dc7ef3" kind="function"><name>ImageBarrier</name></member>
-    <member refid="de/dc8/classBvr_1_1Renderer_1_1CTexture_1a8d032cccbb713c2eb7412be4b74fe3aa" kind="function"><name>RequestTransition</name></member>
+    <member refid="de/dc8/classBvr_1_1Renderer_1_1CTexture_1a2f12851ed598861ca7e83ce4c35bf2e2" kind="function"><name>RequestTransition</name></member>
     <member refid="de/dc8/classBvr_1_1Renderer_1_1CTexture_1aee27f97636f7a3bb5347c4de3c7b817b" kind="function"><name>UploadDataThroughStaging</name></member>
     <member refid="de/dc8/classBvr_1_1Renderer_1_1CTexture_1aa29a941e7d9db7052448bd4aa45ea548" kind="function"><name>UploadDataThroughStaging</name></member>
     <member refid="de/dc8/classBvr_1_1Renderer_1_1CTexture_1a1c347c7c339c8c4c94136980fb97ac0d" kind="function"><name>SetDeviceTexture</name></member>
@@ -7070,6 +7073,16 @@
     <member refid="d8/dd6/structBvr_1_1SystemDesc_1_1ResourceAccess_1ac918341f9d6d87eec47c69cc8cf65739" kind="variable"><name>IsRead</name></member>
     <member refid="d8/dd6/structBvr_1_1SystemDesc_1_1ResourceAccess_1affe0c20bbcf7765972581fd505790e5f" kind="function"><name>IsValid</name></member>
   </compound>
+  <compound refid="d0/dbd/structBvr_1_1Renderer_1_1CFrameGraphResource_1_1ResourceUsageRef" kind="struct"><name>Bvr::Renderer::CFrameGraphResource::ResourceUsageRef</name>
+    <member refid="d0/dbd/structBvr_1_1Renderer_1_1CFrameGraphResource_1_1ResourceUsageRef_1a1ca14fa56eb710a37ede65f2f989d423" kind="variable"><name>Node</name></member>
+    <member refid="d0/dbd/structBvr_1_1Renderer_1_1CFrameGraphResource_1_1ResourceUsageRef_1adc4dd78640a33e18027d8ce9a7dd2f61" kind="variable"><name>UsageId</name></member>
+    <member refid="d0/dbd/structBvr_1_1Renderer_1_1CFrameGraphResource_1_1ResourceUsageRef_1a331d8414b40c39267e49298bc1148e2e" kind="function"><name>operator==</name></member>
+    <member refid="d0/dbd/structBvr_1_1Renderer_1_1CFrameGraphResource_1_1ResourceUsageRef_1a557837ec12a9d2ee0d6d90532b005ebb" kind="function"><name>operator==</name></member>
+    <member refid="d0/dbd/structBvr_1_1Renderer_1_1CFrameGraphResource_1_1ResourceUsageRef_1a90f4de809fe9bc1a7438ba8b5cbe9d4f" kind="function"><name>operator&gt;</name></member>
+    <member refid="d0/dbd/structBvr_1_1Renderer_1_1CFrameGraphResource_1_1ResourceUsageRef_1a9bef325f6f568f802f5283b8d7099c68" kind="function"><name>operator&lt;</name></member>
+    <member refid="d0/dbd/structBvr_1_1Renderer_1_1CFrameGraphResource_1_1ResourceUsageRef_1a9a5a04d88e1f12eaebdb7d24397173df" kind="function"><name>operator&gt;</name></member>
+    <member refid="d0/dbd/structBvr_1_1Renderer_1_1CFrameGraphResource_1_1ResourceUsageRef_1a1daa61af34c1adb27d4c6826220f5123" kind="function"><name>operator&lt;</name></member>
+  </compound>
   <compound refid="d7/d5c/structBvr_1_1Detail_1_1ReturnFn" kind="struct"><name>Bvr::Detail::ReturnFn</name>
     <member refid="d7/d5c/structBvr_1_1Detail_1_1ReturnFn_1aa258b143cf4fdf7cb7b32d585722b301" kind="typedef"><name>Type</name></member>
   </compound>
@@ -8003,11 +8016,6 @@
   <compound refid="d4/dc8/structBvr_1_1Renderer_1_1Device_1_1CBufferRangePool_1_1SFenceHash" kind="struct"><name>Bvr::Renderer::Device::CBufferRangePool::SFenceHash</name>
     <member refid="d4/dc8/structBvr_1_1Renderer_1_1Device_1_1CBufferRangePool_1_1SFenceHash_1ad104813b8436cedb30e174846cd50cb7" kind="function"><name>operator()</name></member>
     <member refid="d4/dc8/structBvr_1_1Renderer_1_1Device_1_1CBufferRangePool_1_1SFenceHash_1a6d030f51267777e4b485520f1bd8a04e" kind="function"><name>operator()</name></member>
-  </compound>
-  <compound refid="de/d69/structBvr_1_1Renderer_1_1SFGBarrier" kind="struct"><name>Bvr::Renderer::SFGBarrier</name>
-    <member refid="de/d69/structBvr_1_1Renderer_1_1SFGBarrier_1a2484af97bf8f44319cf8ec04361b50b5" kind="variable"><name>eSrcState</name></member>
-    <member refid="de/d69/structBvr_1_1Renderer_1_1SFGBarrier_1ae14fe53dd29b05a2d757e861e0a21455" kind="variable"><name>eDstState</name></member>
-    <member refid="de/d69/structBvr_1_1Renderer_1_1SFGBarrier_1a4626cf6a14f7d333d060a150d9996f34" kind="variable"><name>hImage</name></member>
   </compound>
   <compound refid="dc/d55/structBvr_1_1Event_1_1System_1_1SFileDropEvent" kind="struct"><name>Bvr::Event::System::SFileDropEvent</name>
     <member refid="dc/d55/structBvr_1_1Event_1_1System_1_1SFileDropEvent_1a42bab7e5af4b4d2a951f2129facd3915" kind="variable"><name>m_paths</name></member>
@@ -8958,6 +8966,7 @@
   <compound refid="dc/d95/structBvr_1_1Renderer_1_1SQueueFence" kind="struct"><name>Bvr::Renderer::SQueueFence</name>
     <member refid="dc/d95/structBvr_1_1Renderer_1_1SQueueFence_1a7d951c6ad13d048de8a7a31b1f06f894" kind="variable"><name>FenceValue</name></member>
     <member refid="dc/d95/structBvr_1_1Renderer_1_1SQueueFence_1a7cfc35d8316b40528173e66b8637c65c" kind="variable"><name>QueueType</name></member>
+    <member refid="dc/d95/structBvr_1_1Renderer_1_1SQueueFence_1a523a92a49a106deb01f5e46e3dedcd6f" kind="variable"><name>Padding0</name></member>
     <member refid="dc/d95/structBvr_1_1Renderer_1_1SQueueFence_1adf647076fec9f6498fa89a44cfa134bc" kind="function"><name>operator bool</name></member>
   </compound>
   <compound refid="da/d5f/structBvr_1_1Renderer_1_1SRayMarchFog" kind="struct"><name>Bvr::Renderer::SRayMarchFog</name>
@@ -9386,6 +9395,19 @@
     <member refid="dc/dd2/structBvr_1_1Sprite_1_1SSprite_1a8bff7de36ca19dc24cccd8ed0985c173" kind="variable"><name>customSize</name></member>
     <member refid="dc/dd2/structBvr_1_1Sprite_1_1SSprite_1acff961b245d3bbb5c7ae71d334018003" kind="variable"><name>hImg</name></member>
   </compound>
+  <compound refid="d0/d0f/structBvr_1_1Renderer_1_1Device_1_1Details_1_1SSubresourceLayoutStorage" kind="struct"><name>Bvr::Renderer::Device::Details::SSubresourceLayoutStorage</name>
+    <member refid="d0/d0f/structBvr_1_1Renderer_1_1Device_1_1Details_1_1SSubresourceLayoutStorage_1a47468381e755eed93f0a0178f19e1b76" kind="typedef"><name>TRangeTransition</name></member>
+    <member refid="d0/d0f/structBvr_1_1Renderer_1_1Device_1_1Details_1_1SSubresourceLayoutStorage_1aada7c9a0ef825ddb1f417bdcdceb34e6" kind="variable"><name>GlobalState</name></member>
+    <member refid="d0/d0f/structBvr_1_1Renderer_1_1Device_1_1Details_1_1SSubresourceLayoutStorage_1aaba6c93db6c0da4ad38a55805ef1b6a7" kind="variable"><name>SubresourceStates</name></member>
+    <member refid="d0/d0f/structBvr_1_1Renderer_1_1Device_1_1Details_1_1SSubresourceLayoutStorage_1acbcab3f51c8ff81b85f7dfed3ffc5412" kind="variable"><name>HasSubresourceTransitions</name></member>
+    <member refid="d0/d0f/structBvr_1_1Renderer_1_1Device_1_1Details_1_1SSubresourceLayoutStorage_1a9ca16371518c47b5bfd186457184f553" kind="function"><name>SSubresourceLayoutStorage</name></member>
+    <member refid="d0/d0f/structBvr_1_1Renderer_1_1Device_1_1Details_1_1SSubresourceLayoutStorage_1ad30b69098f93662c0de4e55368331b71" kind="function"><name>HasPendingBarriers</name></member>
+    <member refid="d0/d0f/structBvr_1_1Renderer_1_1Device_1_1Details_1_1SSubresourceLayoutStorage_1ad190c6c70d397c1e1b58193d3f60f012" kind="function"><name>AddTransition</name></member>
+    <member refid="d0/d0f/structBvr_1_1Renderer_1_1Device_1_1Details_1_1SSubresourceLayoutStorage_1abe13addd7ff3d93325113afd39a8ecb2" kind="function"><name>TransitionWhole</name></member>
+    <member refid="d0/d0f/structBvr_1_1Renderer_1_1Device_1_1Details_1_1SSubresourceLayoutStorage_1a9f305679e5264cff48f9c866b0ce9af0" kind="function"><name>FindRange</name></member>
+    <member refid="d0/d0f/structBvr_1_1Renderer_1_1Device_1_1Details_1_1SSubresourceLayoutStorage_1a8ed757b74da9732a3c1d0f727373a898" kind="function"><name>GetCurrentLayout</name></member>
+    <member refid="d0/d0f/structBvr_1_1Renderer_1_1Device_1_1Details_1_1SSubresourceLayoutStorage_1aff0e681ef5ee40d8c63f940ac9a7ba99" kind="function"><name>Flush</name></member>
+  </compound>
   <compound refid="d0/d04/structBvr_1_1SSystemResource" kind="struct"><name>Bvr::SSystemResource</name>
     <member refid="d0/d04/structBvr_1_1SSystemResource_1a428ef60ede62355e000fe9e525c477e5" kind="variable"><name>InvalidAccess</name></member>
     <member refid="d0/d04/structBvr_1_1SSystemResource_1a89ecb9a2532eb4c98cb75c5d5087a481" kind="variable"><name>ResourceAccess</name></member>
@@ -9474,6 +9496,10 @@
     <member refid="d4/dfe/structBvr_1_1Meta_1_1StaticMethodWrapper_1a003566f3fc2bc45f4b001155ef51eefd" kind="function"><name>GetReturnType</name></member>
     <member refid="d4/dfe/structBvr_1_1Meta_1_1StaticMethodWrapper_1abc63e229c0b720830da81a9a8c3a148a" kind="function"><name>GetArgumentTypes</name></member>
     <member refid="d4/dfe/structBvr_1_1Meta_1_1StaticMethodWrapper_1aca76de76ddd017c3541e3567ee9d0eb4" kind="function"><name>Invoke</name></member>
+  </compound>
+  <compound refid="d5/df5/structBvr_1_1StaticWorldResourceMap" kind="struct"><name>Bvr::StaticWorldResourceMap</name>
+    <member refid="d5/df5/structBvr_1_1StaticWorldResourceMap_1a43f60e3d42a9082a52eb2350fddc3803" kind="variable"><name>KnownResources</name></member>
+    <member refid="d5/df5/structBvr_1_1StaticWorldResourceMap_1ab9a8dc77d9da3434d7a41edaa36fd616" kind="function"><name>CreateResource</name></member>
   </compound>
   <compound refid="d9/dc9/structBvr_1_1Renderer_1_1CFrameGraph_1_1Statistics" kind="struct"><name>Bvr::Renderer::CFrameGraph::Statistics</name>
     <member refid="d9/dc9/structBvr_1_1Renderer_1_1CFrameGraph_1_1Statistics_1a8b89e8620bbe8f1a13924db5af0e488f" kind="variable"><name>MaxPotentialMemory</name></member>
@@ -9653,6 +9679,14 @@
     <member refid="d5/d09/structBvr_1_1Renderer_1_1CQueue_1_1SubmitCommandListCommand_1aa2d52dc5318264938f0c891caaaf9bbf" kind="variable"><name>ShouldGC</name></member>
     <member refid="d5/d09/structBvr_1_1Renderer_1_1CQueue_1_1SubmitCommandListCommand_1a3426d37576019bd6376352faf3e6d9ed" kind="function"><name>Submit</name></member>
   </compound>
+  <compound refid="da/db5/structBvr_1_1Renderer_1_1Device_1_1Details_1_1SSubresourceLayoutStorage_1_1SubresourceRange" kind="struct"><name>Bvr::Renderer::Device::Details::SSubresourceLayoutStorage::SubresourceRange</name>
+    <member refid="da/db5/structBvr_1_1Renderer_1_1Device_1_1Details_1_1SSubresourceLayoutStorage_1_1SubresourceRange_1afb9fb9b13f311d3f95ca920de9b02404" kind="variable"><name>First</name></member>
+    <member refid="da/db5/structBvr_1_1Renderer_1_1Device_1_1Details_1_1SSubresourceLayoutStorage_1_1SubresourceRange_1a2e905f30591c6ada83c1cd25b50e26a1" kind="variable"><name>Last</name></member>
+    <member refid="da/db5/structBvr_1_1Renderer_1_1Device_1_1Details_1_1SSubresourceLayoutStorage_1_1SubresourceRange_1a94d57e646828c857d28e1b81a74adb1c" kind="function"><name>Overlaps</name></member>
+    <member refid="da/db5/structBvr_1_1Renderer_1_1Device_1_1Details_1_1SSubresourceLayoutStorage_1_1SubresourceRange_1afebe84b2e85f3b9070f69515bdb62e28" kind="function"><name>operator==</name></member>
+    <member refid="da/db5/structBvr_1_1Renderer_1_1Device_1_1Details_1_1SSubresourceLayoutStorage_1_1SubresourceRange_1aa85a998fc340286ea1153f79002fcad8" kind="function"><name>operator&gt;</name></member>
+    <member refid="da/db5/structBvr_1_1Renderer_1_1Device_1_1Details_1_1SSubresourceLayoutStorage_1_1SubresourceRange_1ad842dbddbd74b533a5fad5fa37c3409f" kind="function"><name>operator&lt;</name></member>
+  </compound>
   <compound refid="d8/d55/structBvr_1_1SUIAction" kind="struct"><name>Bvr::SUIAction</name>
     <member refid="d8/d55/structBvr_1_1SUIAction_1ac55c184c38b08f82dce8c9ed19bd8cc2" kind="variable"><name>m_executeAction</name></member>
     <member refid="d8/d55/structBvr_1_1SUIAction_1af94b60e45743109e957b7a8cc3c2ce7a" kind="variable"><name>m_canExecuteAction</name></member>
@@ -9786,8 +9820,6 @@
     <member refid="dd/de6/structBvr_1_1SViewportResizeEvent_1af37b21bb0b316d4ceca1bfa4646d9bd4" kind="variable"><name>newHeight</name></member>
     <member refid="dd/de6/structBvr_1_1SViewportResizeEvent_1a47bd6ecf68ac2ee09f4cdadbce2373c8" kind="function"><name>SViewportResizeEvent</name></member>
     <member refid="dd/de6/structBvr_1_1SViewportResizeEvent_1a86ae9fb7e596acd121f34c56cd0067c0" kind="function"><name>GetName</name></member>
-  </compound>
-  <compound refid="d8/d13/structBvr_1_1Renderer_1_1SVisitor" kind="struct"><name>Bvr::Renderer::SVisitor</name>
   </compound>
   <compound refid="db/dfe/structBvr_1_1Renderer_1_1SVolFogCompose" kind="struct"><name>Bvr::Renderer::SVolFogCompose</name>
     <member refid="db/dfe/structBvr_1_1Renderer_1_1SVolFogCompose_1afe89993d1224b33ff2e7ff68eef2d16b" kind="variable"><name>ComposeTarget</name></member>
@@ -11182,6 +11214,15 @@
     <member refid="de/de8/structBvr_1_1State_1_1Transition_1aea17d730a433f85f77412e373d9e3d73" kind="function"><name>Resume</name></member>
     <member refid="de/de8/structBvr_1_1State_1_1Transition_1aa742bdcd7d84b5ff268ab7f5b81e03f8" kind="function"><name>Label</name></member>
   </compound>
+  <compound refid="d5/dcf/structBvr_1_1Renderer_1_1Device_1_1Details_1_1SSubresourceLayoutStorage_1_1TransitionPair" kind="struct"><name>Bvr::Renderer::Device::Details::SSubresourceLayoutStorage::TransitionPair</name>
+    <member refid="d5/dcf/structBvr_1_1Renderer_1_1Device_1_1Details_1_1SSubresourceLayoutStorage_1_1TransitionPair_1acb22535a7bd8655214f248fef0aa8e0f" kind="variable"><name>m_oldLayout</name></member>
+    <member refid="d5/dcf/structBvr_1_1Renderer_1_1Device_1_1Details_1_1SSubresourceLayoutStorage_1_1TransitionPair_1adfee8c33721c029b4b99c3fb94ed9697" kind="variable"><name>m_newLayout</name></member>
+    <member refid="d5/dcf/structBvr_1_1Renderer_1_1Device_1_1Details_1_1SSubresourceLayoutStorage_1_1TransitionPair_1a2dc12d850154cdd2935bd2133490f98e" kind="function"><name>TransitionPair</name></member>
+    <member refid="d5/dcf/structBvr_1_1Renderer_1_1Device_1_1Details_1_1SSubresourceLayoutStorage_1_1TransitionPair_1a036ed0e3545dd68b1e1c130d3429cd23" kind="function"><name>TransitionPair</name></member>
+    <member refid="d5/dcf/structBvr_1_1Renderer_1_1Device_1_1Details_1_1SSubresourceLayoutStorage_1_1TransitionPair_1ab9dff722556026bddfdbd6510ec87213" kind="function"><name>operator==</name></member>
+    <member refid="d5/dcf/structBvr_1_1Renderer_1_1Device_1_1Details_1_1SSubresourceLayoutStorage_1_1TransitionPair_1ad74b6b5d8260a6c7fc21beeb5ba677b3" kind="function"><name>HasPendingBarriers</name></member>
+    <member refid="d5/dcf/structBvr_1_1Renderer_1_1Device_1_1Details_1_1SSubresourceLayoutStorage_1_1TransitionPair_1adc9725d64affc409ae94c3333155cc1f" kind="function"><name>Flush</name></member>
+  </compound>
   <compound refid="d3/dc7/structBvr_1_1Tests_1_1TransitionRecorder" kind="struct"><name>Bvr::Tests::TransitionRecorder</name>
     <member refid="d3/dc7/structBvr_1_1Tests_1_1TransitionRecorder_1a4bbbaa4a1cd9b49024d0d4fd7400d224" kind="typedef"><name>TransitionT</name></member>
     <member refid="d3/dc7/structBvr_1_1Tests_1_1TransitionRecorder_1ae9b8f694dd55044f60fd810f52e9f015" kind="variable"><name>expectedSeq</name></member>
@@ -12379,11 +12420,10 @@
     <member refid="df/daa/ShadowRenderSystems_8cpp_1a2987bd2cc1927695fcb7db3cc10ce791" kind="function"><name>ExtractSunFrustum</name></member>
     <member refid="df/daa/ShadowRenderSystems_8cpp_1a11bf97c8ac7b9a0f4dbcda5ad12ab413" kind="function"><name>ExtractSunFrustums</name></member>
     <member refid="df/daa/ShadowRenderSystems_8cpp_1ac647a0d3bfbae11e17b6fc49df8b9e0e" kind="function"><name>ExtractShadowFrustums</name></member>
-    <member refid="df/daa/ShadowRenderSystems_8cpp_1aebc7c32e38d1cb46663b980eba6ae3ab" kind="function"><name>EnsureDynFrustums</name></member>
+    <member refid="df/daa/ShadowRenderSystems_8cpp_1ae4fb5d5f633aaa3c4a385b957bf9f7cc" kind="function"><name>CleanUpFrustums</name></member>
     <member refid="d4/d70/VoxelManager_8cpp_1ac0f8c5574201148ca8c1729ed5833d72" kind="function"><name>Noise</name></member>
-    <member refid="d4/d70/VoxelManager_8cpp_1a2892de23861056133a013ff16c3d6a78" kind="function"><name>InitManager</name></member>
-    <member refid="d4/d70/VoxelManager_8cpp_1a3a446fb9c1f5c76bf4fd3a395fc336a8" kind="function"><name>GenerateMesh</name></member>
-    <member refid="d4/d70/VoxelManager_8cpp_1ab7f74dacf9169a5071be0c2725f87270" kind="function"><name>ProcessComponents</name></member>
+    <member refid="d4/d70/VoxelManager_8cpp_1a7181eccdf5744843436fd0e10de45cad" kind="function"><name>GenerateMesh</name></member>
+    <member refid="d4/d70/VoxelManager_8cpp_1a7ca1567a9c8f295a00b6958eb6307d35" kind="function"><name>ProcessComponents</name></member>
     <member refid="d8/d07/AppLifetime_8cpp_1a2b2eab5b2e5f67b958287d2c2cfcdcc7" kind="function"><name>PollSensors</name></member>
     <member refid="d8/d07/AppLifetime_8cpp_1ab2b7bd54076ecb3bbfb0a95d1555daea" kind="function"><name>onAppCmd</name></member>
     <member refid="d8/d07/AppLifetime_8cpp_1ac018f0a09a6464c0eea1b8324cb757cd" kind="function"><name>AppRun_Android</name></member>
@@ -12497,7 +12537,7 @@
     <member refid="de/d15/Scene_8cpp_1acc9a10f7130058b54f8959c1d50ccb18" kind="function"><name>SpawnScenes</name></member>
     <member refid="de/d15/Scene_8cpp_1a6a792243c674a22ca23ebbe03f6e8ac7" kind="function"><name>DeSpawnScenes</name></member>
     <member refid="db/de8/Scene_8hpp_1a5335beec62bf11981d9cee48b4455166" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
-    <member refid="d7/dfe/World_8cpp_1aed1531d85242dbe29ab52ddc63c3be82" kind="function"><name>EnsureWorldCtx</name></member>
+    <member refid="d7/dfe/World_8cpp_1a84bba802ee8427398735b8d8deb98c3e" kind="function"><name>CreateStaticResources</name></member>
     <member refid="d2/d26/WorldArchive_8hpp_1ab5f088362f0c637cef3326045f400e01" kind="function"><name>operator&amp;</name></member>
     <member refid="d2/d26/WorldArchive_8hpp_1a64599dd739bd6ac070a90e7386b09400" kind="function"><name>operator&amp;</name></member>
     <member refid="d6/d0d/WorldLoader_8cpp_1a7d8accaef2ee6697c3ab96d2d8cf7459" kind="function"><name>CollectImpl</name></member>
@@ -12546,11 +12586,11 @@
   </compound>
   <compound refid="df/d9b/namespaceBvr_1_1_0d173" kind="namespace"><name>Bvr::@173</name>
   </compound>
-  <compound refid="d4/dc2/namespaceBvr_1_1_0d368" kind="namespace"><name>Bvr::@368</name>
+  <compound refid="da/d61/namespaceBvr_1_1_0d371" kind="namespace"><name>Bvr::@371</name>
   </compound>
-  <compound refid="dd/d87/namespaceBvr_1_1_0d382" kind="namespace"><name>Bvr::@382</name>
+  <compound refid="d0/d43/namespaceBvr_1_1_0d385" kind="namespace"><name>Bvr::@385</name>
   </compound>
-  <compound refid="d3/d63/namespaceBvr_1_1_0d451" kind="namespace"><name>Bvr::@451</name>
+  <compound refid="d1/d40/namespaceBvr_1_1_0d454" kind="namespace"><name>Bvr::@454</name>
   </compound>
   <compound refid="de/d29/namespaceBvr_1_1Animation" kind="namespace"><name>Bvr::Animation</name>
     <member refid="d5/d42/AnimationSystem_8hpp_1a1a346d07b65ff164f2fa070966ee4f52" kind="enum"><name>EInterpolationMode</name></member>
@@ -12562,7 +12602,6 @@
     <member refid="d6/da7/AnimationSystem_8cpp_1a725361e6e36b20ecafc4e19cd633cc65" kind="typedef"><name>TInterpFn</name></member>
     <member refid="d5/d42/AnimationSystem_8hpp_1aca5f2f219a2fef1a7e68a8d2e883393f" kind="typedef"><name>TStorage</name></member>
     <member refid="d6/da7/AnimationSystem_8cpp_1af655697c58d8f093ab3e63b28f3ec93e" kind="function"><name>MakeInterpFn</name></member>
-    <member refid="d6/da7/AnimationSystem_8cpp_1a5cf19b41e029a3ec33d1d12299d7363d" kind="function"><name>InitEvaluatedProperties</name></member>
     <member refid="d6/da7/AnimationSystem_8cpp_1a6f36dc798f1c08ad8d0e6b173353cb19" kind="function"><name>GetProperty</name></member>
     <member refid="d6/da7/AnimationSystem_8cpp_1ae62902b5f19d1ad46b06badc402ed3ba" kind="function"><name>SetPropertyImpl</name></member>
     <member refid="d6/da7/AnimationSystem_8cpp_1a2a344cbb93ffeee1b1133da1e7508222" kind="function"><name>SetProperty</name></member>
@@ -14067,12 +14106,11 @@
     <member refid="d2/d13/IPrimitiveDrawCollector_8hpp_1a5b7665f50a138c79d7cf127b88ff7777" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
     <member refid="d0/d70/Material_8hpp_1ae87fd53e2cd7c0367f821c11f8701441" kind="function"><name>ExtractMaterialsSystem</name></member>
     <member refid="d0/d70/Material_8hpp_1a52c728bafbb6823379f33de092287902" kind="function"><name>RetryCreating</name></member>
-    <member refid="d9/d66/RenderPassScheduler_8hpp_1aff1f9d38ed746d05c13333df85680f2a" kind="function"><name>SVisitor</name></member>
     <member refid="d0/d76/Tests_8cpp_1a30d59199947414b15449a0776a123b0b" kind="function"><name>TEST_CASE</name></member>
     <member refid="d0/d76/Tests_8cpp_1a3531c9624545efe2340fe038f967a949" kind="function"><name>TEST_CASE</name></member>
     <member refid="d0/d76/Tests_8cpp_1af14475ef7ac558f96e5c3e5275ee9649" kind="function"><name>TEST_CASE</name></member>
   </compound>
-  <compound refid="d0/dc5/namespaceBvr_1_1Renderer_1_1_0d321" kind="namespace"><name>Bvr::Renderer::@321</name>
+  <compound refid="d9/d93/namespaceBvr_1_1Renderer_1_1_0d323" kind="namespace"><name>Bvr::Renderer::@323</name>
   </compound>
   <compound refid="d3/d2b/namespaceBvr_1_1Renderer_1_1Attr" kind="namespace"><name>Bvr::Renderer::Attr</name>
     <member refid="d3/d9a/BindGroupMeta_8cpp_1a1afc1e01f5db8b30997354472e055ccb" kind="function"><name>Binding</name></member>
@@ -14123,6 +14161,7 @@
     <member refid="d4/df1/RenderMesh_8cpp_1a6e754434b6fd264b15b8d4ebcfd2b54b" kind="function"><name>GetStreamFormat</name></member>
     <member refid="dc/d83/RenderOutput_8cpp_1a9cc5b3b82bdee4c23289743443c76c5c" kind="function"><name>AreViewportsOverlapping</name></member>
     <member refid="d1/de2/RenderPassScheduler_8cpp_1a7083f980c9084ed83a7550a92ee5eeb6" kind="function"><name>GetShader</name></member>
+    <member refid="d1/de2/RenderPassScheduler_8cpp_1a9bf226a829557882b60dd14481deb992" kind="function"><name>ShaderNodeFlags</name></member>
     <member refid="d1/de2/RenderPassScheduler_8cpp_1a1119cebf739dbb20c7ff72eb61447b30" kind="function"><name>FillPushConstantBufer</name></member>
     <member refid="d1/de2/RenderPassScheduler_8cpp_1a38b6a083e2a7d4416ddeb0883ee1b269" kind="function"><name>SetDefaultShaderResources</name></member>
     <member refid="d1/de2/RenderPassScheduler_8cpp_1aade3510694fb6bad222a9fb8ca23095d" kind="function"><name>ResourceSetFromNode</name></member>
@@ -14155,16 +14194,17 @@
     <member refid="d0/d70/Material_8hpp_1ae13bbeb18dad1d2b8f2899cae168cb5b" kind="function"><name>GetMaterialMetaProperties</name></member>
     <member refid="d0/d70/Material_8hpp_1a2300fe352009ae65c61f2f3faad0728d" kind="function"><name>MeshMaterialSystem</name></member>
   </compound>
-  <compound refid="d0/d5e/namespaceBvr_1_1Renderer_1_1Detail_1_1_0d256" kind="namespace"><name>Bvr::Renderer::Detail::@256</name>
+  <compound refid="d9/d60/namespaceBvr_1_1Renderer_1_1Detail_1_1_0d258" kind="namespace"><name>Bvr::Renderer::Detail::@258</name>
   </compound>
-  <compound refid="de/d70/namespaceBvr_1_1Renderer_1_1Detail_1_1_0d261" kind="namespace"><name>Bvr::Renderer::Detail::@261</name>
+  <compound refid="dd/d66/namespaceBvr_1_1Renderer_1_1Detail_1_1_0d263" kind="namespace"><name>Bvr::Renderer::Detail::@263</name>
   </compound>
-  <compound refid="dd/d41/namespaceBvr_1_1Renderer_1_1Detail_1_1_0d300" kind="namespace"><name>Bvr::Renderer::Detail::@300</name>
+  <compound refid="d1/deb/namespaceBvr_1_1Renderer_1_1Detail_1_1_0d302" kind="namespace"><name>Bvr::Renderer::Detail::@302</name>
   </compound>
   <compound refid="dd/df9/namespaceBvr_1_1Renderer_1_1Device" kind="namespace"><name>Bvr::Renderer::Device</name>
     <member refid="dc/daf/BufferView_8cpp_1ae5a735abd83e1afc9a6c87e6e6c153b5" kind="variable"><name>s_bufferViewPool</name></member>
     <member refid="dc/daf/BufferView_8cpp_1a2b097e1a4ea07cdcac4e2811ea97b9f8" kind="variable"><name>ViewLock</name></member>
     <member refid="da/dc9/DeviceLayer_8cpp_1a0a520d688a89f3de5b60ccee76e2a90a" kind="variable"><name>MemoryPoolSize</name></member>
+    <member refid="d1/d7e/DeviceTexture_8cpp_1a77a4d018779d99619baab4ff001c1cc9" kind="function"><name>GetAspectFromFormat</name></member>
     <member refid="de/d9a/PipelineState_8cpp_1ae8432354e7e84d8e4d21e37455bd1b39" kind="function"><name>ConfigurePipelineProperties</name></member>
     <member refid="de/d9a/PipelineState_8cpp_1ad683d11420ede2de065706801a2ef534" kind="function"><name>KeyToCreateInfo</name></member>
     <member refid="de/d9a/PipelineState_8cpp_1ade31f88c354717f67fc5b433c92d48b4" kind="function"><name>Convert</name></member>
@@ -14174,7 +14214,6 @@
   <compound refid="df/de4/namespaceBvr_1_1Renderer_1_1Device_1_1Detail" kind="namespace"><name>Bvr::Renderer::Device::Detail</name>
     <member refid="df/d57/ImageView_8cpp_1aca86ae94d821b108ce27a7f1109fbb30" kind="variable"><name>Pool</name></member>
     <member refid="da/dc9/DeviceLayer_8cpp_1aa2f276cfdbf0dc0a9066ce0e778c12d2" kind="function"><name>AttachmentCompatHash</name></member>
-    <member refid="df/d57/ImageView_8cpp_1a35b3c9cc54b891ec83a8df46b2370275" kind="function"><name>GetAspectFromFormat</name></member>
     <member refid="d8/dcc/Memory_8cpp_1abb99b4ca6edebed0fdcf100322486c9e" kind="function"><name>GetMemoryIndex</name></member>
     <member refid="d8/dcc/Memory_8cpp_1a1102e24f01402530093ae0945943084e" kind="function"><name>AllocatePool</name></member>
     <member refid="d1/dfe/Sampler_8cpp_1aea65b7d1dc2e1a0001f2f69fce187f83" kind="function"><name>Convert</name></member>
@@ -14182,6 +14221,9 @@
     <member refid="d1/dfe/Sampler_8cpp_1a805c868ebba2ad2c213ab989b6bf65fb" kind="function"><name>Convert</name></member>
     <member refid="d1/dfe/Sampler_8cpp_1a3c290d82c0889fde607d9c011ad14cc9" kind="function"><name>Convert</name></member>
     <member refid="d1/dfe/Sampler_8cpp_1a000b05997cf900780ace1f314d8d4218" kind="function"><name>CreateSampler</name></member>
+  </compound>
+  <compound refid="d3/db3/namespaceBvr_1_1Renderer_1_1Device_1_1Details" kind="namespace"><name>Bvr::Renderer::Device::Details</name>
+    <member refid="d1/d47/LayoutManager_8inl_1aa61f82f702798300a1fe7c31babbad40" kind="function"><name>SplitRange</name></member>
   </compound>
   <compound refid="d5/d90/namespaceBvr_1_1Renderer_1_1DXC" kind="namespace"><name>Bvr::Renderer::DXC</name>
     <member refid="d0/df7/DXCWrapper_8hpp_1ae3985fa3857f459b09adca3e843ff3ae" kind="typedef"><name>TCompilerPtr</name></member>
@@ -14242,6 +14284,8 @@
     <member refid="d2/d2b/FrameGraphTests_8cpp_1a71d3ed2d1be3f5bd73e90cc55b92361a" kind="typedef"><name>AllocMedium</name></member>
     <member refid="d2/d2b/FrameGraphTests_8cpp_1a74477cb00c823bd786c5b234915e9a0a" kind="typedef"><name>AllocLarge</name></member>
     <member refid="d2/d2b/FrameGraphTests_8cpp_1a785ca77ae69f1b965a5897b6be1b01bc" kind="typedef"><name>AllocHuge</name></member>
+    <member refid="d1/dbb/LayoutManagerTests_8cpp_1aa58621e601e5592898d449ab817c8373" kind="typedef"><name>TStorage</name></member>
+    <member refid="d1/dbb/LayoutManagerTests_8cpp_1a4657ddb1992fa3ad2ae5250d823f3bd1" kind="typedef"><name>TRange</name></member>
     <member refid="df/d00/BlockAllocatorTests_8cpp_1a695700ff523ab710924bca383fcab2de" kind="function"><name>TEST_CASE</name></member>
     <member refid="df/d00/BlockAllocatorTests_8cpp_1a38dcc2e316230cc8854ac3f6fea42dcd" kind="function"><name>TEST_CASE</name></member>
     <member refid="df/d00/BlockAllocatorTests_8cpp_1afc079369bdef485d9229f8597aae3544" kind="function"><name>TEST_CASE</name></member>
@@ -14250,6 +14294,7 @@
     <member refid="d2/d2b/FrameGraphTests_8cpp_1a58584a9248d702bccc675d021a8762a0" kind="function"><name>TEST_CASE</name></member>
     <member refid="d2/d2b/FrameGraphTests_8cpp_1ae3183e09e477542de1f52b5a3da64a0e" kind="function"><name>TEST_CASE</name></member>
     <member refid="d2/d2b/FrameGraphTests_8cpp_1a1cff2850de7b9a579e6d9f74bde61552" kind="function"><name>TEST_CASE</name></member>
+    <member refid="d1/dbb/LayoutManagerTests_8cpp_1a528fd290c4a9e30bc51d192dbe0fe050" kind="function"><name>TEST_CASE</name></member>
   </compound>
   <compound refid="d0/d7b/namespaceBvr_1_1Renderer_1_1TextureUtils" kind="namespace"><name>Bvr::Renderer::TextureUtils</name>
     <member refid="de/ddb/TextureFormats_8hpp_1af7c975531c87e0f6652ea00e82fe958c" kind="function"><name>IsDepthOnlyFormat</name></member>
@@ -14338,7 +14383,6 @@
   <compound refid="d7/d63/namespaceBvr_1_1Sprite" kind="namespace"><name>Bvr::Sprite</name>
     <member refid="da/da5/Sprite_8hpp_1a54f56d11012570b77847bc8abc6202b8" kind="typedef"><name>TRect</name></member>
     <member refid="d0/dff/Sprite_8cpp_1ac4c5dc12c717561087c5a5c7161f9b19" kind="function"><name>EvaluateHierarchySortOrder</name></member>
-    <member refid="d0/dff/Sprite_8cpp_1a2b362a44018941df6a6a4896b1ea42b6" kind="function"><name>InitSpriteCache</name></member>
     <member refid="d0/dff/Sprite_8cpp_1a8f89645e91ed47633970dc28412b5b3a" kind="function"><name>HasSpritesToSubmit</name></member>
     <member refid="d0/dff/Sprite_8cpp_1aa96a56210d50901020bb5f6039aee125" kind="function"><name>ClearCache</name></member>
     <member refid="d0/dff/Sprite_8cpp_1a2e15a8ebfad13f813051cbf0b9b60ca5" kind="function"><name>GenerateSpriteGeometry</name></member>
@@ -14423,7 +14467,6 @@
     <member refid="dc/d5c/namespaceBvr_1_1SVG_1a48416dbbd75f80360ee51330ef63933c" kind="function"><name>ExtractPolyLines</name></member>
     <member refid="dc/d5c/namespaceBvr_1_1SVG_1a88ced526dcef3523566a19d369e456f9" kind="function"><name>ExtractPolygons</name></member>
     <member refid="dc/d5c/namespaceBvr_1_1SVG_1a36b1551da94051c4ae6adc5fff794c5b" kind="function"><name>ExtractPaths</name></member>
-    <member refid="dc/d5c/namespaceBvr_1_1SVG_1ad3bf1d6a3786ad6cfe0b25b930747b43" kind="function"><name>InitMeshCache</name></member>
     <member refid="dc/d5c/namespaceBvr_1_1SVG_1a023d661a687c2f280c06df8921157803" kind="function"><name>HasElementsToSubmit</name></member>
     <member refid="dc/d5c/namespaceBvr_1_1SVG_1a446863a804ddc9d154c68c7a2c7beef4" kind="function"><name>ClearCache</name></member>
     <member refid="dc/d5c/namespaceBvr_1_1SVG_1a1191d8bd8d4384e6e4abd7a5eed3536b" kind="function"><name>GenerateSVGGeom</name></member>
@@ -14672,7 +14715,6 @@
     <member refid="db/d1b/BvrUI_2Rendering_8cpp_1a1933f8ea183001b17d514064ac65dd7c" kind="function"><name>HasUIToSubmit</name></member>
     <member refid="db/d1b/BvrUI_2Rendering_8cpp_1a18855cad04bc1a06e5313bdc89adcd42" kind="function"><name>ClearUICache</name></member>
     <member refid="db/d1b/BvrUI_2Rendering_8cpp_1af74d2237f689b66d028e3b410a7a1677" kind="function"><name>GenerateUIGeometry</name></member>
-    <member refid="db/d1b/BvrUI_2Rendering_8cpp_1af146412c0b1199dce23388a0c7255057" kind="function"><name>PrepareCache</name></member>
     <member refid="db/d1b/BvrUI_2Rendering_8cpp_1a94642c8b57d24c82bfcfed72871011d3" kind="function"><name>ExtractNodes</name></member>
     <member refid="db/d1b/BvrUI_2Rendering_8cpp_1a1cf1242f158775558e40832ea4ad5b09" kind="function"><name>ExtractTextNodes</name></member>
     <member refid="db/d1b/BvrUI_2Rendering_8cpp_1a2023f9cd8115c008c54d62871a46866d" kind="function"><name>ExtractImageNodes</name></member>
@@ -15554,6 +15596,10 @@
   </compound>
   <compound refid="db/dba/ImageView_8hpp" kind="file"><name>ImageView.hpp</name>
   </compound>
+  <compound refid="d0/db6/LayoutManager_8hpp" kind="file"><name>LayoutManager.hpp</name>
+  </compound>
+  <compound refid="d1/d47/LayoutManager_8inl" kind="file"><name>LayoutManager.inl</name>
+  </compound>
   <compound refid="d8/dcc/Memory_8cpp" kind="file"><name>Memory.cpp</name>
     <member refid="d8/dcc/Memory_8cpp_1a0b0114bc26f593e9ac26c2f4399f90f8" kind="define"><name>RESOURCE_MANAGER_VERBOSE</name></member>
     <member refid="d8/dcc/Memory_8cpp_1ab87e60d41d92c781ae86f50e1281b193" kind="define"><name>ALLOCATOR_LOG</name></member>
@@ -15784,6 +15830,9 @@
   </compound>
   <compound refid="d2/d2b/FrameGraphTests_8cpp" kind="file"><name>FrameGraphTests.cpp</name>
     <member refid="d2/d2b/FrameGraphTests_8cpp_1ae03732ccf501e4e8a9fcf26f84d0f140" kind="define"><name>DISABLE_ASSERTS</name></member>
+  </compound>
+  <compound refid="d1/dbb/LayoutManagerTests_8cpp" kind="file"><name>LayoutManagerTests.cpp</name>
+    <member refid="d1/dbb/LayoutManagerTests_8cpp_1ae03732ccf501e4e8a9fcf26f84d0f140" kind="define"><name>DISABLE_ASSERTS</name></member>
   </compound>
   <compound refid="d0/d76/Tests_8cpp" kind="file"><name>Tests.cpp</name>
     <member refid="d0/d76/Tests_8cpp_1aa889bc5dbe96af3be628fe2f6f3f29d1" kind="function"><name>METHOD_AS_TEST_CASE</name></member>
