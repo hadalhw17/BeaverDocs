@@ -16,6 +16,10 @@
     <innerclass refid="struct_bvr_1_1_s_v_g_1_1_arc_to_command" prot="public">Bvr::SVG::ArcToCommand</innerclass>
     <innerclass refid="struct_bvr_1_1_s_v_g_1_1_close_path_command" prot="public">Bvr::SVG::ClosePathCommand</innerclass>
     <innerclass refid="struct_bvr_1_1_s_v_g_1_1_path" prot="public">Bvr::SVG::Path</innerclass>
+    <innerclass refid="struct_bvr_1_1_s_v_g_1_1_i_paint_server" prot="public">Bvr::SVG::IPaintServer</innerclass>
+    <innerclass refid="struct_bvr_1_1_s_v_g_1_1_linear_paint_server" prot="public">Bvr::SVG::LinearPaintServer</innerclass>
+    <innerclass refid="struct_bvr_1_1_s_v_g_1_1_radial_paint_server" prot="public">Bvr::SVG::RadialPaintServer</innerclass>
+    <innerclass refid="struct_bvr_1_1_s_v_g_1_1_hole_connector" prot="public">Bvr::SVG::HoleConnector</innerclass>
     <innerclass refid="struct_bvr_1_1_s_v_g_1_1_view_box" prot="public">Bvr::SVG::ViewBox</innerclass>
     <innerclass refid="struct_bvr_1_1_s_v_g_1_1_root" prot="public">Bvr::SVG::Root</innerclass>
     <innerclass refid="struct_bvr_1_1_s_v_g_1_1_element" prot="public">Bvr::SVG::Element</innerclass>
@@ -25,33 +29,37 @@
     <innerclass refid="struct_bvr_1_1_s_v_g_1_1_material" prot="public">Bvr::SVG::Material</innerclass>
     <innerclass refid="struct_bvr_1_1_s_v_g_1_1_rend_poly" prot="public">Bvr::SVG::RendPoly</innerclass>
     <innerclass refid="struct_bvr_1_1_s_v_g_1_1_render_node" prot="public">Bvr::SVG::RenderNode</innerclass>
+    <innerclass refid="struct_bvr_1_1_s_v_g_1_1_path_drawer" prot="public">Bvr::SVG::PathDrawer</innerclass>
     <innerclass refid="struct_bvr_1_1_s_v_g_1_1_number" prot="public">Bvr::SVG::Number</innerclass>
     <innerclass refid="struct_bvr_1_1_s_v_g_1_1_length" prot="public">Bvr::SVG::Length</innerclass>
     <innerclass refid="struct_bvr_1_1_s_v_g_1_1_angle" prot="public">Bvr::SVG::Angle</innerclass>
     <innerclass refid="struct_bvr_1_1_s_v_g_1_1_point" prot="public">Bvr::SVG::Point</innerclass>
+    <innerclass refid="struct_bvr_1_1_s_v_g_1_1_brush_base" prot="public">Bvr::SVG::BrushBase</innerclass>
+    <innerclass refid="struct_bvr_1_1_s_v_g_1_1_ear_clipper" prot="public">Bvr::SVG::EarClipper</innerclass>
+    <innerclass refid="struct_bvr_1_1_s_v_g_1_1_stroke_brush" prot="public">Bvr::SVG::StrokeBrush</innerclass>
     <innerclass refid="struct_bvr_1_1_s_v_g_1_1_gradient_stop" prot="public">Bvr::SVG::GradientStop</innerclass>
     <innerclass refid="struct_bvr_1_1_s_v_g_1_1_linear_gradient" prot="public">Bvr::SVG::LinearGradient</innerclass>
     <innerclass refid="struct_bvr_1_1_s_v_g_1_1_radial_gradient" prot="public">Bvr::SVG::RadialGradient</innerclass>
     <innernamespace refid="namespace_bvr_1_1_s_v_g_1_1_geom">Bvr::SVG::Geom</innernamespace>
       <sectiondef kind="enum">
-      <memberdef kind="enum" id="namespace_bvr_1_1_s_v_g_1a6b3e9061fdd37a126611cdcc4b72edac" prot="public" static="no" strong="no">
-        <type></type>
+      <memberdef kind="enum" id="namespace_bvr_1_1_s_v_g_1a621b1f5b93e3261dc3720c8eceb45d9b" prot="public" static="no" strong="yes">
+        <type>uint32</type>
         <name>EStrokeLineCap</name>
-        <enumvalue id="namespace_bvr_1_1_s_v_g_1a6b3e9061fdd37a126611cdcc4b72edaca5e0c8e294cac822731ae319c830d7a18" prot="public">
+        <enumvalue id="namespace_bvr_1_1_s_v_g_1a621b1f5b93e3261dc3720c8eceb45d9bab2635ed1075287dea1eb1598a90df1fe" prot="public">
           <name>Butt</name>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="namespace_bvr_1_1_s_v_g_1a6b3e9061fdd37a126611cdcc4b72edaca24a5d62c2fdf3786367f27d4465c7080" prot="public">
+        <enumvalue id="namespace_bvr_1_1_s_v_g_1a621b1f5b93e3261dc3720c8eceb45d9bab7f41fc1412ad2ee75e9b2635d3b9d5c" prot="public">
           <name>Round</name>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="namespace_bvr_1_1_s_v_g_1a6b3e9061fdd37a126611cdcc4b72edaca31c78b5a8c37af7bba6ad3db50bfd3e3" prot="public">
+        <enumvalue id="namespace_bvr_1_1_s_v_g_1a621b1f5b93e3261dc3720c8eceb45d9baceb46ca115d05c51aa5a16a8867c3304" prot="public">
           <name>Square</name>
           <briefdescription>
           </briefdescription>
@@ -204,7 +212,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/Rendering.hpp" line="14" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/Rendering.hpp" bodystart="14" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/Rendering.hpp" line="18" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/Rendering.hpp" bodystart="18" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespace_bvr_1_1_s_v_g_1a04744c1b0e2753ce0df4c11cc40b7744" prot="public" static="no">
         <type>double</type>
@@ -217,98 +225,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/Rendering.hpp" line="15" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/Rendering.hpp" bodystart="15" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="namespace_bvr_1_1_s_v_g_1aa4367e587a37f50f0a02b5e3140723d2" prot="public" static="no">
-        <type>glm::vec&lt; 2, Float &gt;</type>
-        <definition>using Bvr::SVG::float2 = typedef glm::vec&lt;2, Float&gt;</definition>
-        <argsstring></argsstring>
-        <name>float2</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/Rendering.hpp" line="16" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/Rendering.hpp" bodystart="16" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="namespace_bvr_1_1_s_v_g_1a6034a21cc8957bfacb649365eb94ac7b" prot="public" static="no">
-        <type>glm::vec&lt; 3, Float &gt;</type>
-        <definition>using Bvr::SVG::float3 = typedef glm::vec&lt;3, Float&gt;</definition>
-        <argsstring></argsstring>
-        <name>float3</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/Rendering.hpp" line="17" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/Rendering.hpp" bodystart="17" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="namespace_bvr_1_1_s_v_g_1a930cdf7c91495e888ab878eae0d89b56" prot="public" static="no">
-        <type>glm::vec&lt; 4, Float &gt;</type>
-        <definition>using Bvr::SVG::float4 = typedef glm::vec&lt;4, Float&gt;</definition>
-        <argsstring></argsstring>
-        <name>float4</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/Rendering.hpp" line="18" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/Rendering.hpp" bodystart="18" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="namespace_bvr_1_1_s_v_g_1adaecf469b4c2a0410d48ae7190deb634" prot="public" static="no">
-        <type>glm::mat&lt; 4, 4, Float &gt;</type>
-        <definition>using Bvr::SVG::mat4 = typedef glm::mat&lt;4, 4, Float&gt;</definition>
-        <argsstring></argsstring>
-        <name>mat4</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/Rendering.hpp" line="19" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/Rendering.hpp" bodystart="19" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="namespace_bvr_1_1_s_v_g_1af7322efddd3000f71ad61a0accae9d7c" prot="public" static="no">
-        <type>glm::mat&lt; 3, 3, Float &gt;</type>
-        <definition>using Bvr::SVG::mat3 = typedef glm::mat&lt;3, 3, Float&gt;</definition>
-        <argsstring></argsstring>
-        <name>mat3</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/Rendering.hpp" line="20" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/Rendering.hpp" bodystart="20" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="namespace_bvr_1_1_s_v_g_1a5cb5afe3568e6e5b419d92bea64a28d6" prot="public" static="no">
-        <type>glm::mat&lt; 2, 2, Float &gt;</type>
-        <definition>using Bvr::SVG::mat2 = typedef glm::mat&lt;2, 2, Float&gt;</definition>
-        <argsstring></argsstring>
-        <name>mat2</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/Rendering.hpp" line="21" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/Rendering.hpp" bodystart="21" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="namespace_bvr_1_1_s_v_g_1a79a73345e8e42a314e68d0bf35d7a5e5" prot="public" static="no">
-        <type>TAABB&lt; float2 &gt;</type>
-        <definition>using Bvr::SVG::TBounds = typedef TAABB&lt;float2&gt;</definition>
-        <argsstring></argsstring>
-        <name>TBounds</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/Rendering.hpp" line="22" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/Rendering.hpp" bodystart="22" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/BaseDataTypes.hpp" line="6" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/BaseDataTypes.hpp" bodystart="6" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespace_bvr_1_1_s_v_g_1acef83b5075a1cbf156bc5c8ed89ff36c" prot="public" static="no">
         <templateparamlist>
@@ -367,6 +284,183 @@
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/BaseDataTypes.hpp" line="95" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/BaseDataTypes.hpp" bodystart="95" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="typedef" id="namespace_bvr_1_1_s_v_g_1aa4367e587a37f50f0a02b5e3140723d2" prot="public" static="no">
+        <type>glm::vec&lt; 2, Float &gt;</type>
+        <definition>using Bvr::SVG::float2 = typedef glm::vec&lt;2, Float&gt;</definition>
+        <argsstring></argsstring>
+        <name>float2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/MathTypesInternal.hpp" line="8" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/MathTypesInternal.hpp" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespace_bvr_1_1_s_v_g_1a6034a21cc8957bfacb649365eb94ac7b" prot="public" static="no">
+        <type>glm::vec&lt; 3, Float &gt;</type>
+        <definition>using Bvr::SVG::float3 = typedef glm::vec&lt;3, Float&gt;</definition>
+        <argsstring></argsstring>
+        <name>float3</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/MathTypesInternal.hpp" line="9" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/MathTypesInternal.hpp" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespace_bvr_1_1_s_v_g_1a930cdf7c91495e888ab878eae0d89b56" prot="public" static="no">
+        <type>glm::vec&lt; 4, Float &gt;</type>
+        <definition>using Bvr::SVG::float4 = typedef glm::vec&lt;4, Float&gt;</definition>
+        <argsstring></argsstring>
+        <name>float4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/MathTypesInternal.hpp" line="10" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/MathTypesInternal.hpp" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespace_bvr_1_1_s_v_g_1adaecf469b4c2a0410d48ae7190deb634" prot="public" static="no">
+        <type>glm::mat&lt; 4, 4, Float &gt;</type>
+        <definition>using Bvr::SVG::mat4 = typedef glm::mat&lt;4, 4, Float&gt;</definition>
+        <argsstring></argsstring>
+        <name>mat4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/MathTypesInternal.hpp" line="11" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/MathTypesInternal.hpp" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespace_bvr_1_1_s_v_g_1af7322efddd3000f71ad61a0accae9d7c" prot="public" static="no">
+        <type>glm::mat&lt; 3, 3, Float &gt;</type>
+        <definition>using Bvr::SVG::mat3 = typedef glm::mat&lt;3, 3, Float&gt;</definition>
+        <argsstring></argsstring>
+        <name>mat3</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/MathTypesInternal.hpp" line="12" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/MathTypesInternal.hpp" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespace_bvr_1_1_s_v_g_1a5cb5afe3568e6e5b419d92bea64a28d6" prot="public" static="no">
+        <type>glm::mat&lt; 2, 2, Float &gt;</type>
+        <definition>using Bvr::SVG::mat2 = typedef glm::mat&lt;2, 2, Float&gt;</definition>
+        <argsstring></argsstring>
+        <name>mat2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/MathTypesInternal.hpp" line="13" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/MathTypesInternal.hpp" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespace_bvr_1_1_s_v_g_1a79a73345e8e42a314e68d0bf35d7a5e5" prot="public" static="no">
+        <type>TAABB&lt; float2 &gt;</type>
+        <definition>using Bvr::SVG::TBounds = typedef TAABB&lt;float2&gt;</definition>
+        <argsstring></argsstring>
+        <name>TBounds</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/MathTypesInternal.hpp" line="14" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/MathTypesInternal.hpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespace_bvr_1_1_s_v_g_1acd9f41b9a12765d87a858289994db532" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>constexpr Float</type>
+        <definition>constexpr Float Bvr::SVG::Pi</definition>
+        <argsstring></argsstring>
+        <name>Pi</name>
+        <initializer>= MathConstants::pi_v&lt;Float&gt;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/MathTypesInternal.hpp" line="16" column="18" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/MathTypesInternal.hpp" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_bvr_1_1_s_v_g_1a5c55f60dc97019665cf87af325e96d27" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>constexpr Float</type>
+        <definition>constexpr Float Bvr::SVG::Tau</definition>
+        <argsstring></argsstring>
+        <name>Tau</name>
+        <initializer>= Pi * Float(2)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/MathTypesInternal.hpp" line="17" column="18" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/MathTypesInternal.hpp" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_bvr_1_1_s_v_g_1a100252609d5690bfc3e47ed2edc82ef0" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>constexpr uint32</type>
+        <definition>constexpr uint32 Bvr::SVG::TessMult</definition>
+        <argsstring></argsstring>
+        <name>TessMult</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/EarClipper.hpp" line="6" column="18" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/EarClipper.hpp" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_bvr_1_1_s_v_g_1acf04b5f6dd7cca0e7a406c2f2bc4b8f8" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>constexpr uint32</type>
+        <definition>constexpr uint32 Bvr::SVG::PointsPerCircle</definition>
+        <argsstring></argsstring>
+        <name>PointsPerCircle</name>
+        <initializer>= 36</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/EarClipper.hpp" line="7" column="18" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/EarClipper.hpp" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_bvr_1_1_s_v_g_1a48b78622e6ade1a0516b09d098437077" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>constexpr uint32</type>
+        <definition>constexpr uint32 Bvr::SVG::PointsPerCurve</definition>
+        <argsstring></argsstring>
+        <name>PointsPerCurve</name>
+        <initializer>= 8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/EarClipper.hpp" line="8" column="18" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/EarClipper.hpp" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_bvr_1_1_s_v_g_1acc6e1e2aa90493e9d6489be1e7562f86" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>constexpr uint32</type>
+        <definition>constexpr uint32 Bvr::SVG::RoundCapsTess</definition>
+        <argsstring></argsstring>
+        <name>RoundCapsTess</name>
+        <initializer>= PointsPerCircle / 2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/EarClipper.hpp" line="10" column="18" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/EarClipper.hpp" bodystart="10" bodyend="-1"/>
+      </memberdef>
       </sectiondef>
       <sectiondef kind="func">
       <memberdef kind="function" id="namespace_bvr_1_1_s_v_g_1a8069cdf2cd4e05f417cc39639c7e4e7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -386,7 +480,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/Rendering.hpp" line="52" column="8" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/Rendering.hpp" declline="52" declcolumn="8"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/Rendering.hpp" line="44" column="8" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/Rendering.hpp" declline="44" declcolumn="8"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
