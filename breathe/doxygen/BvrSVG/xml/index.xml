@@ -46,6 +46,7 @@
   <compound refid="struct_bvr_1_1_s_v_g_1_1_ear_clipper" kind="struct"><name>Bvr::SVG::EarClipper</name>
     <member refid="struct_bvr_1_1_s_v_g_1_1_ear_clipper_1a600c9dbca56c70a6073fe817bd7e748d" kind="variable"><name>Points</name></member>
     <member refid="struct_bvr_1_1_s_v_g_1_1_ear_clipper_1aafac9b9a5398afefed28fd35abac545e" kind="variable"><name>Colour</name></member>
+    <member refid="struct_bvr_1_1_s_v_g_1_1_ear_clipper_1a7d6ae7018dacc05f8f11ef0f1d7b2a7d" kind="variable"><name>pTree</name></member>
     <member refid="struct_bvr_1_1_s_v_g_1_1_ear_clipper_1aa87fe3c323556b191ab8582aa636e59f" kind="function"><name>EarClipper</name></member>
     <member refid="struct_bvr_1_1_s_v_g_1_1_ear_clipper_1a59642c28e52bf9a6926ca1612aa83ce7" kind="function"><name>IsEar</name></member>
     <member refid="struct_bvr_1_1_s_v_g_1_1_ear_clipper_1a5b416e0f3cf5c2486240f63ba632f9b2" kind="function"><name>EnsureCounterClockwise</name></member>
@@ -76,8 +77,15 @@
     <member refid="struct_bvr_1_1_s_v_g_1_1_hole_connector_1a928b5b038114b77e53e07e4de08d68ec" kind="function"><name>Process</name></member>
     <member refid="struct_bvr_1_1_s_v_g_1_1_hole_connector_1a6fb482178935c13973c355b5578b9358" kind="function"><name>InsertHoleToBound</name></member>
     <member refid="struct_bvr_1_1_s_v_g_1_1_hole_connector_1ac4f5fa69e128c72a1a69420668426741" kind="function"><name>FindConnectionPoints_Distance</name></member>
+    <member refid="struct_bvr_1_1_s_v_g_1_1_hole_connector_1aad6962e63a065d684514073c59cf0e7d" kind="function"><name>QuadTreeIsLineIntersecting</name></member>
+    <member refid="struct_bvr_1_1_s_v_g_1_1_hole_connector_1a906cc870d9f115f07b58bef4f2cab2f9" kind="function"><name>IntersectPoly</name></member>
     <member refid="struct_bvr_1_1_s_v_g_1_1_hole_connector_1a3de371692bbf370a2e0195edf70bc806" kind="function"><name>FindConnectionPoints_Intersection</name></member>
     <member refid="struct_bvr_1_1_s_v_g_1_1_hole_connector_1ab73737d73f015303564f252eed64df5a" kind="function"><name>FindConnectionPoints</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_s_v_g_1_1_quad_tree_1_1_interval" kind="struct"><name>Bvr::SVG::QuadTree::Interval</name>
+    <member refid="struct_bvr_1_1_s_v_g_1_1_quad_tree_1_1_interval_1a1e8f8c8d1bd9a59682ff55c87cf98abb" kind="variable"><name>Start</name></member>
+    <member refid="struct_bvr_1_1_s_v_g_1_1_quad_tree_1_1_interval_1a56c243d6e492e30e0368c1be71740ee7" kind="variable"><name>End</name></member>
+    <member refid="struct_bvr_1_1_s_v_g_1_1_quad_tree_1_1_interval_1a6c138ab185f124bc86790daaff2eeaac" kind="function"><name>operator==</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_s_v_g_1_1_i_paint_server" kind="struct"><name>Bvr::SVG::IPaintServer</name>
     <member refid="struct_bvr_1_1_s_v_g_1_1_i_paint_server_1a3356405c582b92f98b15f81e9e589923" kind="variable"><name>Elem</name></member>
@@ -149,6 +157,15 @@
     <member refid="struct_bvr_1_1_s_v_g_1_1_move_to_command_1a43bb2f0f5117c2df525a66e5279384ac" kind="variable"><name>P</name></member>
     <member refid="struct_bvr_1_1_s_v_g_1_1_move_to_command_1a93ac67b1798b0f8cdbcbcc8bab3f7264" kind="variable"><name>IsRelative</name></member>
   </compound>
+  <compound refid="struct_bvr_1_1_s_v_g_1_1_quad_tree_1_1_node" kind="struct"><name>Bvr::SVG::QuadTree::Node</name>
+    <member refid="struct_bvr_1_1_s_v_g_1_1_quad_tree_1_1_node_1a07c4d26cdec92d4bdd2a86aec1afe7cf" kind="variable"><name>Bounds</name></member>
+    <member refid="struct_bvr_1_1_s_v_g_1_1_quad_tree_1_1_node_1ae76d809b06f44272d7683bec2f560e47" kind="variable"><name>Intervals</name></member>
+    <member refid="struct_bvr_1_1_s_v_g_1_1_quad_tree_1_1_node_1a77a72db9cd6bc2f0cb9ac17d6da61cdc" kind="variable"><name>Children</name></member>
+    <member refid="struct_bvr_1_1_s_v_g_1_1_quad_tree_1_1_node_1a61163a095b6ea98005fd2e8c8f5995df" kind="function"><name>~Node</name></member>
+    <member refid="struct_bvr_1_1_s_v_g_1_1_quad_tree_1_1_node_1adf8377fe0128e32f65c698a860f78e32" kind="function"><name>Subdivide</name></member>
+    <member refid="struct_bvr_1_1_s_v_g_1_1_quad_tree_1_1_node_1a1adab17ce5d95d8215b7d29a9a30893f" kind="function"><name>Insert</name></member>
+    <member refid="struct_bvr_1_1_s_v_g_1_1_quad_tree_1_1_node_1a924e2f1bdbe41c65f3dbc43d28150b1a" kind="function"><name>IsLeaf</name></member>
+  </compound>
   <compound refid="struct_bvr_1_1_s_v_g_1_1_number" kind="struct"><name>Bvr::SVG::Number</name>
     <member refid="struct_bvr_1_1_s_v_g_1_1_number_1a86fa33df547694c6264fb5986c61d524" kind="variable"><name>Value</name></member>
     <member refid="struct_bvr_1_1_s_v_g_1_1_number_1ad06a960f670c7482233cf4aa55a520bd" kind="function"><name>operator==</name></member>
@@ -164,6 +181,8 @@
     <member refid="struct_bvr_1_1_s_v_g_1_1_path_drawer_1ae44cf9f725f96e4808e71154f81900d1" kind="function"><name>MoveTo</name></member>
     <member refid="struct_bvr_1_1_s_v_g_1_1_path_drawer_1ad697919423912c3d54a6badcf7aafe9b" kind="function"><name>LineCommmand</name></member>
     <member refid="struct_bvr_1_1_s_v_g_1_1_path_drawer_1af812e828dce07586a7877c5be179278f" kind="function"><name>LineToCommand</name></member>
+    <member refid="struct_bvr_1_1_s_v_g_1_1_path_drawer_1a3b988dab90ecdbb33a8b073899161fae" kind="function"><name>EstimateCurvature</name></member>
+    <member refid="struct_bvr_1_1_s_v_g_1_1_path_drawer_1a5b04968ad1cc6e51624a0d67def1c109" kind="function"><name>TesselateCurveRecursive</name></member>
     <member refid="struct_bvr_1_1_s_v_g_1_1_path_drawer_1af1bf4019c3c5e94a787fb260b8adb4b1" kind="function"><name>CurveToCommand</name></member>
     <member refid="struct_bvr_1_1_s_v_g_1_1_path_drawer_1a674a6841df09f8653f130cb8b78b7fc7" kind="function"><name>QuadraticCurveToCommand</name></member>
     <member refid="struct_bvr_1_1_s_v_g_1_1_path_drawer_1ab2e8c83da3fe01b0403290e5d43ada12" kind="function"><name>ArcToCommand</name></member>
@@ -193,6 +212,28 @@
     <member refid="struct_bvr_1_1_s_v_g_1_1_quadratic_curve_to_command_1aac717bf9ea0d335cc08f481c28461911" kind="variable"><name>PEnd</name></member>
     <member refid="struct_bvr_1_1_s_v_g_1_1_quadratic_curve_to_command_1a73cc47b2308c81c2e96e65ba4bc071b7" kind="variable"><name>IsRelative</name></member>
     <member refid="struct_bvr_1_1_s_v_g_1_1_quadratic_curve_to_command_1ac6337df97223687b183199bfd5a78b9c" kind="variable"><name>IsSmooth</name></member>
+  </compound>
+  <compound refid="class_bvr_1_1_s_v_g_1_1_quad_tree" kind="class"><name>Bvr::SVG::QuadTree</name>
+    <member refid="class_bvr_1_1_s_v_g_1_1_quad_tree_1a3370e7034ea5a8f96286bfc7a555fdb7" kind="typedef"><name>TPositions</name></member>
+    <member refid="class_bvr_1_1_s_v_g_1_1_quad_tree_1a3684ba624d4de9680cc9cff7f08134cf" kind="variable"><name>MaxPointsPerNode</name></member>
+    <member refid="class_bvr_1_1_s_v_g_1_1_quad_tree_1ac546e58384ac288ce6298a573b0413e1" kind="variable"><name>MaxDepth</name></member>
+    <member refid="class_bvr_1_1_s_v_g_1_1_quad_tree_1a7b81ff8ca532909af4283a8e43b63fbb" kind="variable"><name>Positions</name></member>
+    <member refid="class_bvr_1_1_s_v_g_1_1_quad_tree_1a6620e06813190dbed67218001e41a7b9" kind="variable"><name>Root</name></member>
+    <member refid="class_bvr_1_1_s_v_g_1_1_quad_tree_1ae055f7bed7153f0c67f648d925852bcc" kind="function"><name>QuadTree</name></member>
+    <member refid="class_bvr_1_1_s_v_g_1_1_quad_tree_1a2030dcaca9e0ab8a3f661c0402f3b233" kind="function"><name>IterateNodes</name></member>
+    <member refid="class_bvr_1_1_s_v_g_1_1_quad_tree_1adb62fade84c17af1ec7f903b57ba6d31" kind="function"><name>IterateBounds</name></member>
+    <member refid="class_bvr_1_1_s_v_g_1_1_quad_tree_1a2fc5b2d792c125127ca1d56a6dc6a7ba" kind="function"><name>QueryRange</name></member>
+    <member refid="class_bvr_1_1_s_v_g_1_1_quad_tree_1afb1cfcb4943b393f99132e041109b57f" kind="function"><name>Clone</name></member>
+    <member refid="class_bvr_1_1_s_v_g_1_1_quad_tree_1a1253aa6e189893875fc2d6b81d3943a8" kind="function"><name>Remove</name></member>
+    <member refid="class_bvr_1_1_s_v_g_1_1_quad_tree_1a0cb2af8c9df881631683c6b27f88943d" kind="function"><name>Insert</name></member>
+    <member refid="class_bvr_1_1_s_v_g_1_1_quad_tree_1a3e2ba2bf67d365c35b5c2f597fd59c75" kind="function"><name>QuadTree</name></member>
+    <member refid="class_bvr_1_1_s_v_g_1_1_quad_tree_1a13097608cbfeaf71b34b58e56576f9d3" kind="function"><name>Clone</name></member>
+    <member refid="class_bvr_1_1_s_v_g_1_1_quad_tree_1a089240a027a13580b1a1e4be67f6e103" kind="function"><name>IterateNodes</name></member>
+    <member refid="class_bvr_1_1_s_v_g_1_1_quad_tree_1a18deeccb4399f09662497ab0d0eb77c9" kind="function"><name>IterateNodes</name></member>
+    <member refid="class_bvr_1_1_s_v_g_1_1_quad_tree_1afc576bc00a94c8b282879c7e040b575c" kind="function"><name>QueryRange</name></member>
+    <member refid="class_bvr_1_1_s_v_g_1_1_quad_tree_1a6a83b910b3868eb4d7d9bf1550ce4079" kind="function"><name>QueryRange</name></member>
+    <member refid="class_bvr_1_1_s_v_g_1_1_quad_tree_1aacba90bbe1838a9f3c27eb772f9cd29f" kind="function"><name>RayBoxIntersection</name></member>
+    <member refid="class_bvr_1_1_s_v_g_1_1_quad_tree_1a36261a0fda2d1c43987341d6dfc48212" kind="function"><name>IntersectsSegment</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_s_v_g_1_1_radial_gradient" kind="struct"><name>Bvr::SVG::RadialGradient</name>
     <member refid="struct_bvr_1_1_s_v_g_1_1_radial_gradient_1a1b2c8d9434b0222cc309c3203616404b" kind="variable"><name>CenterPoint</name></member>
@@ -235,6 +276,8 @@
     <member refid="struct_bvr_1_1_s_v_g_1_1_rend_poly_1a480b6a3fee4458dfa32f7bfd71101ed4" kind="variable"><name>IsClosed</name></member>
     <member refid="struct_bvr_1_1_s_v_g_1_1_rend_poly_1a30123874759571601975ff10590421ec" kind="variable"><name>IsHole</name></member>
     <member refid="struct_bvr_1_1_s_v_g_1_1_rend_poly_1a443a7140b9110d2647d46ca7c8fececb" kind="variable"><name>IsCCW</name></member>
+    <member refid="struct_bvr_1_1_s_v_g_1_1_rend_poly_1a809397023823bb429f0d38d598e39dad" kind="variable"><name>QuadTree</name></member>
+    <member refid="struct_bvr_1_1_s_v_g_1_1_rend_poly_1a1bd41b2470aaf87e96058e5e900dcbe5" kind="function"><name>~RendPoly</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_s_v_g_1_1_root" kind="struct"><name>Bvr::SVG::Root</name>
     <member refid="struct_bvr_1_1_s_v_g_1_1_root_1ab1876e46f2d1d17ac7c71252c50e1200" kind="variable"><name>Width</name></member>
@@ -317,8 +360,6 @@
     <member refid="namespace_bvr_1_1_s_v_g_1acd9f41b9a12765d87a858289994db532" kind="variable"><name>Pi</name></member>
     <member refid="namespace_bvr_1_1_s_v_g_1a5c55f60dc97019665cf87af325e96d27" kind="variable"><name>Tau</name></member>
     <member refid="namespace_bvr_1_1_s_v_g_1a100252609d5690bfc3e47ed2edc82ef0" kind="variable"><name>TessMult</name></member>
-    <member refid="namespace_bvr_1_1_s_v_g_1acf04b5f6dd7cca0e7a406c2f2bc4b8f8" kind="variable"><name>PointsPerCircle</name></member>
-    <member refid="namespace_bvr_1_1_s_v_g_1a48b78622e6ade1a0516b09d098437077" kind="variable"><name>PointsPerCurve</name></member>
     <member refid="namespace_bvr_1_1_s_v_g_1acc6e1e2aa90493e9d6489be1e7562f86" kind="variable"><name>RoundCapsTess</name></member>
     <member refid="namespace_bvr_1_1_s_v_g_1a8069cdf2cd4e05f417cc39639c7e4e7c" kind="function"><name>CombineTransforms</name></member>
   </compound>
@@ -353,6 +394,8 @@
   <compound refid="_paint_servers_8hpp" kind="file"><name>PaintServers.hpp</name>
   </compound>
   <compound refid="_path_drawer_8hpp" kind="file"><name>PathDrawer.hpp</name>
+  </compound>
+  <compound refid="_quad_tree_8hpp" kind="file"><name>QuadTree.hpp</name>
   </compound>
   <compound refid="_rendering_8hpp" kind="file"><name>Rendering.hpp</name>
   </compound>
