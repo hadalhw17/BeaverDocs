@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_entity_editor_commands_8hpp" kind="file" language="C++">
+    <compoundname>EntityEditorCommands.hpp</compoundname>
+    <includes local="yes">BvrEditor/IEditorCommand.hpp</includes>
+    <includes local="yes">BvrWorld/Entity.hpp</includes>
+    <includes local="yes">Scene.hpp</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>BvrEditor/IEditorCommand.hpp</label>
+      </node>
+      <node id="4">
+        <label>Scene.hpp</label>
+      </node>
+      <node id="3">
+        <label>BvrWorld/Entity.hpp</label>
+      </node>
+      <node id="1">
+        <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Core/EntityEditorCommands.hpp</label>
+        <link refid="_entity_editor_commands_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="class_bvr_1_1_t_entity_command_base" prot="public">Bvr::TEntityCommandBase</innerclass>
+    <innerclass refid="class_bvr_1_1_c_entity_added_command" prot="public">Bvr::CEntityAddedCommand</innerclass>
+    <innerclass refid="class_bvr_1_1_c_entity_removed_command" prot="public">Bvr::CEntityRemovedCommand</innerclass>
+    <innerclass refid="class_bvr_1_1_c_entity_set_parent_command" prot="public">Bvr::CEntitySetParentCommand</innerclass>
+    <innernamespace refid="namespace_bvr">Bvr</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;BvrEditor/IEditorCommand.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;BvrWorld/Entity.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Scene.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Bvr<sp/>{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="9" refid="class_bvr_1_1_t_entity_command_base" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_bvr_1_1_t_entity_command_base" kindref="compound">TEntityCommandBase</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>TEditorCommand&lt;T&gt;<sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="class_bvr_1_1_c_entity_added_command" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_bvr_1_1_c_entity_added_command" kindref="compound">CEntityAddedCommand</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>TEditorCommand&lt;CEntityAddedCommand&gt;<sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="16" refid="class_bvr_1_1_c_entity_added_command_1a4826d5d219f0fa8df4020d0ad62e815f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bvr_1_1_c_entity_added_command_1a4826d5d219f0fa8df4020d0ad62e815f" kindref="member">CEntityAddedCommand</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>CEntity&amp;<sp/>createdEntity);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Do()<sp/>final;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Undo()<sp/>final;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">private:</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>Handle&lt;CWorld&gt;<sp/>DstWorld;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>Utils::uuid<sp/><sp/><sp/><sp/>ParentId;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>Utils::uuid<sp/><sp/><sp/><sp/>Uuid;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>Name;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SkipFirst<sp/>=<sp/>true;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="class_bvr_1_1_c_entity_removed_command" refkind="compound"><highlight class="normal">class<sp/><ref refid="class_bvr_1_1_c_entity_removed_command" kindref="compound">CEntityRemovedCommand</ref><sp/>:<sp/>public<sp/>TEditorCommand&lt;<ref refid="class_bvr_1_1_c_entity_removed_command" kindref="compound">CEntityRemovedCommand</ref>&gt;<sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bvr_1_1_c_entity_removed_command" kindref="compound">CEntityRemovedCommand</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>CEntity&amp;<sp/>ent);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Do()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Undo()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>World<sp/>in<sp/>which<sp/>we<sp/>operate</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>Handle&lt;CWorld&gt;<sp/>World;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Temporary<sp/>world<sp/>and<sp/>entity<sp/>to<sp/>which<sp/>we<sp/>serialize<sp/>the<sp/>entity<sp/>to<sp/>remove</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>CWorld<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TmpWorld;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>TEntity<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TmpEntity{};</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>Utils::uuid<sp/><sp/><sp/><sp/>ToRemoveId{};</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>Utils::uuid<sp/><sp/><sp/><sp/>ParentId{};</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="class_bvr_1_1_c_entity_set_parent_command" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_bvr_1_1_c_entity_set_parent_command" kindref="compound">CEntitySetParentCommand</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>TEditorCommand&lt;CEntitySetParentCommand&gt;<sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bvr_1_1_c_entity_set_parent_command" kindref="compound">CEntitySetParentCommand</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>CEntity&amp;<sp/>ent,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>CEntity&amp;<sp/>newParent);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Do()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Undo()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>Utils::uuid<sp/>DoImpl(Utils::uuid<sp/>newEnt);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>Handle&lt;CWorld&gt;<sp/>World;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>Utils::uuid<sp/><sp/><sp/><sp/>EntityId{};</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>Utils::uuid<sp/><sp/><sp/><sp/>OldParentId{};</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>Utils::uuid<sp/><sp/><sp/><sp/>NewParentId{};</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Bvr</highlight></codeline>
+    </programlisting>
+    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Core/EntityEditorCommands.hpp"/>
+  </compounddef>
+</doxygen>
