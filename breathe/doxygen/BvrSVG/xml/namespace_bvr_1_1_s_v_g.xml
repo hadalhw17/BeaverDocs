@@ -5,7 +5,6 @@
     <innerclass refid="struct_bvr_1_1_s_v_g_1_1_gradient_stop" prot="public">Bvr::SVG::GradientStop</innerclass>
     <innerclass refid="struct_bvr_1_1_s_v_g_1_1_linear_gradient" prot="public">Bvr::SVG::LinearGradient</innerclass>
     <innerclass refid="struct_bvr_1_1_s_v_g_1_1_radial_gradient" prot="public">Bvr::SVG::RadialGradient</innerclass>
-    <innerclass refid="struct_bvr_1_1_s_v_g_1_1_hole_connector" prot="public">Bvr::SVG::HoleConnector</innerclass>
     <innerclass refid="struct_bvr_1_1_s_v_g_1_1_material" prot="public">Bvr::SVG::Material</innerclass>
     <innerclass refid="struct_bvr_1_1_s_v_g_1_1_rend_poly" prot="public">Bvr::SVG::RendPoly</innerclass>
     <innerclass refid="struct_bvr_1_1_s_v_g_1_1_render_node" prot="public">Bvr::SVG::RenderNode</innerclass>
@@ -38,9 +37,6 @@
     <innerclass refid="struct_bvr_1_1_s_v_g_1_1_arc_to_command" prot="public">Bvr::SVG::ArcToCommand</innerclass>
     <innerclass refid="struct_bvr_1_1_s_v_g_1_1_close_path_command" prot="public">Bvr::SVG::ClosePathCommand</innerclass>
     <innerclass refid="struct_bvr_1_1_s_v_g_1_1_path" prot="public">Bvr::SVG::Path</innerclass>
-    <innerclass refid="struct_bvr_1_1_s_v_g_1_1_brush_base" prot="public">Bvr::SVG::BrushBase</innerclass>
-    <innerclass refid="struct_bvr_1_1_s_v_g_1_1_ear_clipper" prot="public">Bvr::SVG::EarClipper</innerclass>
-    <innerclass refid="struct_bvr_1_1_s_v_g_1_1_stroke_brush" prot="public">Bvr::SVG::StrokeBrush</innerclass>
     <innernamespace refid="namespace_bvr_1_1_s_v_g_1_1_geom">Bvr::SVG::Geom</innernamespace>
       <sectiondef kind="enum">
       <memberdef kind="enum" id="namespace_bvr_1_1_s_v_g_1a0d5262e6d1e0a6287d1e40a176a15bfb" prot="public" static="no" strong="yes">
@@ -150,6 +146,19 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespace_bvr_1_1_s_v_g_1ac6520b39a0839e0660c097588c1d55a2" prot="public" static="no">
+        <type>std::vector&lt; <ref refid="struct_bvr_1_1_s_v_g_1_1_rend_poly" kindref="compound">RendPoly</ref> &gt;</type>
+        <definition>typedef std::vector&lt; RendPoly &gt; Bvr::SVG::TPolygonList</definition>
+        <argsstring></argsstring>
+        <name>TPolygonList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/HoleConnector.hpp" line="5" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/HoleConnector.hpp" bodystart="5" bodyend="-1"/>
+      </memberdef>
       <memberdef kind="typedef" id="namespace_bvr_1_1_s_v_g_1a35f410e2bdcaf8fc21198e744688c107" prot="public" static="no">
         <type><ref refid="struct_bvr_1_1_s_v_g_1_1_material" kindref="compound">SVG::Material</ref></type>
         <definition>using Bvr::SVG::TMaterial = typedef SVG::Material</definition>
@@ -406,20 +415,6 @@
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/MathTypesInternal.hpp" line="17" column="18" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/MathTypesInternal.hpp" bodystart="17" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespace_bvr_1_1_s_v_g_1a100252609d5690bfc3e47ed2edc82ef0" prot="public" static="no" constexpr="yes" mutable="no">
-        <type>constexpr uint32</type>
-        <definition>constexpr uint32 Bvr::SVG::TessMult</definition>
-        <argsstring></argsstring>
-        <name>TessMult</name>
-        <initializer>= 1</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/EarClipper.hpp" line="6" column="18" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/EarClipper.hpp" bodystart="6" bodyend="-1"/>
-      </memberdef>
       <memberdef kind="variable" id="namespace_bvr_1_1_s_v_g_1acc6e1e2aa90493e9d6489be1e7562f86" prot="public" static="no" constexpr="yes" mutable="no">
         <type>constexpr uint32</type>
         <definition>constexpr uint32 Bvr::SVG::RoundCapsTess</definition>
@@ -436,6 +431,23 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
+      <memberdef kind="function" id="namespace_bvr_1_1_s_v_g_1a9db17dfae432878432a80edf7f133eb2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::SVG::ConnectHoles</definition>
+        <argsstring>(TPolygonList &amp;polygonList)</argsstring>
+        <name>ConnectHoles</name>
+        <param>
+          <type>TPolygonList &amp;</type>
+          <declname>polygonList</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/HoleConnector.hpp" line="6" column="6" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/HoleConnector.hpp" declline="6" declcolumn="6"/>
+      </memberdef>
       <memberdef kind="function" id="namespace_bvr_1_1_s_v_g_1a8069cdf2cd4e05f417cc39639c7e4e7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Matrix</type>
         <definition>Matrix Bvr::SVG::CombineTransforms</definition>
@@ -453,7 +465,117 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/Rendering.hpp" line="50" column="8" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/Rendering.hpp" declline="50" declcolumn="8"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/Rendering.hpp" line="56" column="8" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/Rendering.hpp" declline="56" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="namespace_bvr_1_1_s_v_g_1ac0142f9556f34e18775586577e1ab515" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>enum EStrokeLineCap uint32 std::pair&lt; uint32, uint32 &gt;</type>
+        <definition>enum EStrokeLineCap uint32 std::pair&lt;uint32, uint32&gt; Bvr::SVG::FillMesh</definition>
+        <argsstring>(std::span&lt; Bvr::float2 &gt; p, std::span&lt; Bvr::float2 &gt; tc, std::span&lt; Bvr::float4 &gt; col, std::span&lt; uint32 &gt; idx, uint32 &amp;vtxIdx, uint32 &amp;idxIdx, std::vector&lt; float2 &gt; &amp;points, SColourF fillCol, class QuadTree *pTree)</argsstring>
+        <name>FillMesh</name>
+        <param>
+          <type>std::span&lt; Bvr::float2 &gt;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>std::span&lt; Bvr::float2 &gt;</type>
+          <declname>tc</declname>
+        </param>
+        <param>
+          <type>std::span&lt; Bvr::float4 &gt;</type>
+          <declname>col</declname>
+        </param>
+        <param>
+          <type>std::span&lt; uint32 &gt;</type>
+          <declname>idx</declname>
+        </param>
+        <param>
+          <type>uint32 &amp;</type>
+          <declname>vtxIdx</declname>
+        </param>
+        <param>
+          <type>uint32 &amp;</type>
+          <declname>idxIdx</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; float2 &gt; &amp;</type>
+          <declname>points</declname>
+        </param>
+        <param>
+          <type>SColourF</type>
+          <declname>fillCol</declname>
+        </param>
+        <param>
+          <type>class <ref refid="class_bvr_1_1_s_v_g_1_1_quad_tree" kindref="compound">QuadTree</ref> *</type>
+          <declname>pTree</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/EarClipper.hpp" line="10" column="11" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/EarClipper.hpp" declline="10" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="namespace_bvr_1_1_s_v_g_1aaa89018c51392a7257845afc8a2397af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::pair&lt; uint32, uint32 &gt;</type>
+        <definition>std::pair&lt;uint32, uint32&gt; Bvr::SVG::DrawStroke</definition>
+        <argsstring>(std::span&lt; Bvr::float2 &gt; p, std::span&lt; Bvr::float2 &gt; tc, std::span&lt; Bvr::float4 &gt; col, std::span&lt; uint32 &gt; idx, uint32 &amp;vtxIdx, uint32 &amp;idxIdx, std::vector&lt; float2 &gt; &amp;points, std::vector&lt; std::vector&lt; uint32 &gt;&gt; &amp;strokeIndices, SColourF strokeCol, Float strokeWidth, EStrokeLineCap caps, bool isClosed)</argsstring>
+        <name>DrawStroke</name>
+        <param>
+          <type>std::span&lt; Bvr::float2 &gt;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>std::span&lt; Bvr::float2 &gt;</type>
+          <declname>tc</declname>
+        </param>
+        <param>
+          <type>std::span&lt; Bvr::float4 &gt;</type>
+          <declname>col</declname>
+        </param>
+        <param>
+          <type>std::span&lt; uint32 &gt;</type>
+          <declname>idx</declname>
+        </param>
+        <param>
+          <type>uint32 &amp;</type>
+          <declname>vtxIdx</declname>
+        </param>
+        <param>
+          <type>uint32 &amp;</type>
+          <declname>idxIdx</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; float2 &gt; &amp;</type>
+          <declname>points</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; std::vector&lt; uint32 &gt;&gt; &amp;</type>
+          <declname>strokeIndices</declname>
+        </param>
+        <param>
+          <type>SColourF</type>
+          <declname>strokeCol</declname>
+        </param>
+        <param>
+          <type>Float</type>
+          <declname>strokeWidth</declname>
+        </param>
+        <param>
+          <type>EStrokeLineCap</type>
+          <declname>caps</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isClosed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/EarClipper.hpp" line="18" column="1" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/EarClipper.hpp" declline="18" declcolumn="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
