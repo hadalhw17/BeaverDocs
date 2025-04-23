@@ -1,0 +1,597 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="class_bvr_1_1_animation_1_1_i_r_builder" kind="class" language="C++" prot="public">
+    <compoundname>Bvr::Animation::IRBuilder</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_bvr_1_1_animation_1_1_i_r_builder_1ae4d5a83ac179e6e24e5cf17459fdddaa" prot="private" static="no" mutable="no">
+        <type><ref refid="class_bvr_1_1_animation_1_1_c_graph_i_r" kindref="compound">CGraphIR</ref> *</type>
+        <definition>CGraphIR* Bvr::Animation::IRBuilder::m_ir</definition>
+        <argsstring></argsstring>
+        <name>m_ir</name>
+        <qualifiedname>Bvr::Animation::IRBuilder::m_ir</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" line="58" column="47" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_animation_1_1_i_r_builder_1afa0c41b457e7a7ab6712f2db31821491" prot="private" static="no" mutable="no">
+        <type>const <ref refid="struct_bvr_1_1_animation_1_1_animation_graph" kindref="compound">AnimationGraph</ref> *</type>
+        <definition>const AnimationGraph* Bvr::Animation::IRBuilder::m_pGraph</definition>
+        <argsstring></argsstring>
+        <name>m_pGraph</name>
+        <qualifiedname>Bvr::Animation::IRBuilder::m_pGraph</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" line="59" column="47" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_animation_1_1_i_r_builder_1afe94c5dcf709768ae06146a35b8b473c" prot="private" static="no" mutable="no">
+        <type>const <ref refid="struct_bvr_1_1_animation_1_1_animation_graph_1_1_node" kindref="compound">AnimationGraph::Node</ref> *</type>
+        <definition>const AnimationGraph::Node* Bvr::Animation::IRBuilder::m_pCurrentNode</definition>
+        <argsstring></argsstring>
+        <name>m_pCurrentNode</name>
+        <qualifiedname>Bvr::Animation::IRBuilder::m_pCurrentNode</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" line="60" column="47" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_animation_1_1_i_r_builder_1aeb09737b6fab2a725713dc08c84b8c7d" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; uint32, IRVarId &gt;</type>
+        <definition>std::unordered_map&lt;uint32, IRVarId&gt; Bvr::Animation::IRBuilder::m_pinToVarRemap</definition>
+        <argsstring></argsstring>
+        <name>m_pinToVarRemap</name>
+        <qualifiedname>Bvr::Animation::IRBuilder::m_pinToVarRemap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" line="61" column="31" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_animation_1_1_i_r_builder_1ab418b32079ed7cda74f8bfcbc6222d7d" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Bvr::Animation::IRBuilder::m_error</definition>
+        <argsstring></argsstring>
+        <name>m_error</name>
+        <qualifiedname>Bvr::Animation::IRBuilder::m_error</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" line="63" column="48" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" bodystart="63" bodyend="63"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_bvr_1_1_animation_1_1_i_r_builder_1afbbc2b3ee4f08124f6aa68ad6eaf8cd8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Bvr::Animation::IRBuilder::IRBuilder</definition>
+        <argsstring>(const AnimationGraph *pGraph, CGraphIR *pDstIr)</argsstring>
+        <name>IRBuilder</name>
+        <qualifiedname>Bvr::Animation::IRBuilder::IRBuilder</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_bvr_1_1_animation_1_1_animation_graph" kindref="compound">AnimationGraph</ref> *</type>
+          <declname>pGraph</declname>
+        </param>
+        <param>
+          <type><ref refid="class_bvr_1_1_animation_1_1_c_graph_i_r" kindref="compound">CGraphIR</ref> *</type>
+          <declname>pDstIr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" line="10" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_animation_1_1_i_r_builder_1a011c6e59d31d27423adb6cbb482fa779" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Bvr::Animation::IRBuilder::~IRBuilder</definition>
+        <argsstring>()=default</argsstring>
+        <name>~IRBuilder</name>
+        <qualifiedname>Bvr::Animation::IRBuilder::~IRBuilder</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" line="11" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_animation_1_1_i_r_builder_1a400a09d3753ee5e1edb42ce86c8080a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Bvr::Animation::IRBuilder::EmitIR</definition>
+        <argsstring>()</argsstring>
+        <name>EmitIR</name>
+        <qualifiedname>Bvr::Animation::IRBuilder::EmitIR</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" line="13" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_animation_1_1_i_r_builder_1a75a93ef95ed1dadecf832482a850145a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>IRVarId</type>
+        <definition>IRVarId Bvr::Animation::IRBuilder::InputPinToVar</definition>
+        <argsstring>(uint32 localPinId)</argsstring>
+        <name>InputPinToVar</name>
+        <qualifiedname>Bvr::Animation::IRBuilder::InputPinToVar</qualifiedname>
+        <param>
+          <type>uint32</type>
+          <declname>localPinId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" line="17" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_animation_1_1_i_r_builder_1ac34ee29ddd8c37e05817103967af9473" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>IRVarId</type>
+        <definition>IRVarId Bvr::Animation::IRBuilder::OutputPinToVar</definition>
+        <argsstring>(uint32 localPinId)</argsstring>
+        <name>OutputPinToVar</name>
+        <qualifiedname>Bvr::Animation::IRBuilder::OutputPinToVar</qualifiedname>
+        <param>
+          <type>uint32</type>
+          <declname>localPinId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" line="19" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_animation_1_1_i_r_builder_1a44fdb44e3ffc49cc004348faa36fccf3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::Animation::IRBuilder::Return</definition>
+        <argsstring>(std::span&lt; IRVarId const &gt; args)</argsstring>
+        <name>Return</name>
+        <qualifiedname>Bvr::Animation::IRBuilder::Return</qualifiedname>
+        <param>
+          <type>std::span&lt; IRVarId const &gt;</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" line="21" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_animation_1_1_i_r_builder_1ab6bc168946b0186f5f8a101ef366daf6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::Animation::IRBuilder::Assign</definition>
+        <argsstring>(IRVarId lhs, IRVarId rhs)</argsstring>
+        <name>Assign</name>
+        <qualifiedname>Bvr::Animation::IRBuilder::Assign</qualifiedname>
+        <param>
+          <type>IRVarId</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>IRVarId</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" line="22" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_animation_1_1_i_r_builder_1a8c6ec6d5fefc5f99322fa94e62a5a46e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::Animation::IRBuilder::Call</definition>
+        <argsstring>(Meta::Method meth, std::initializer_list&lt; IRVarId &gt; args)</argsstring>
+        <name>Call</name>
+        <qualifiedname>Bvr::Animation::IRBuilder::Call</qualifiedname>
+        <param>
+          <type>Meta::Method</type>
+          <declname>meth</declname>
+        </param>
+        <param>
+          <type>std::initializer_list&lt; IRVarId &gt;</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" line="23" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_animation_1_1_i_r_builder_1ae9e10bd9ad9d12bd1cec0663637eb5e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::Animation::IRBuilder::Call</definition>
+        <argsstring>(Meta::Method meth, IRVarId result, std::initializer_list&lt; IRVarId &gt; args)</argsstring>
+        <name>Call</name>
+        <qualifiedname>Bvr::Animation::IRBuilder::Call</qualifiedname>
+        <param>
+          <type>Meta::Method</type>
+          <declname>meth</declname>
+        </param>
+        <param>
+          <type>IRVarId</type>
+          <declname>result</declname>
+        </param>
+        <param>
+          <type>std::initializer_list&lt; IRVarId &gt;</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" line="24" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_animation_1_1_i_r_builder_1afe6e017e4df1b65f80b348f43467dcd9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::Animation::IRBuilder::Call</definition>
+        <argsstring>(Meta::Method meth, std::span&lt; IRVarId const &gt; args)</argsstring>
+        <name>Call</name>
+        <qualifiedname>Bvr::Animation::IRBuilder::Call</qualifiedname>
+        <param>
+          <type>Meta::Method</type>
+          <declname>meth</declname>
+        </param>
+        <param>
+          <type>std::span&lt; IRVarId const &gt;</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" line="26" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_animation_1_1_i_r_builder_1a126423489ea22832b707a0d0bac0bb5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::Animation::IRBuilder::Call</definition>
+        <argsstring>(Meta::Method meth, IRVarId result, std::span&lt; IRVarId const &gt; args)</argsstring>
+        <name>Call</name>
+        <qualifiedname>Bvr::Animation::IRBuilder::Call</qualifiedname>
+        <param>
+          <type>Meta::Method</type>
+          <declname>meth</declname>
+        </param>
+        <param>
+          <type>IRVarId</type>
+          <declname>result</declname>
+        </param>
+        <param>
+          <type>std::span&lt; IRVarId const &gt;</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" line="27" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_animation_1_1_i_r_builder_1a198ecad941c71c68ba65fa5c18c0e6f7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::Animation::IRBuilder::SetError</definition>
+        <argsstring>(std::string_view error)</argsstring>
+        <name>SetError</name>
+        <qualifiedname>Bvr::Animation::IRBuilder::SetError</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" line="30" column="22" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" bodystart="30" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_animation_1_1_i_r_builder_1ae6ec7dc71e4618fe8432aa480591d209" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string_view</type>
+        <definition>std::string_view Bvr::Animation::IRBuilder::GetError</definition>
+        <argsstring>() const</argsstring>
+        <name>GetError</name>
+        <qualifiedname>Bvr::Animation::IRBuilder::GetError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" line="31" column="22" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" bodystart="31" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_animation_1_1_i_r_builder_1a8545a4a74c42ce61cd8888a0ad6f368b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>IRVarId</type>
+        <definition>IRVarId Bvr::Animation::IRBuilder::RegisterVar</definition>
+        <argsstring>(std::string_view name, Meta::Type type)</argsstring>
+        <name>RegisterVar</name>
+        <qualifiedname>Bvr::Animation::IRBuilder::RegisterVar</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>Meta::Type</type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" line="33" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_animation_1_1_i_r_builder_1ad2eb85782460000da84b7263727497a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>IRVarId</type>
+        <definition>IRVarId Bvr::Animation::IRBuilder::RegisterVar</definition>
+        <argsstring>(std::string_view name, EDataType type)</argsstring>
+        <name>RegisterVar</name>
+        <qualifiedname>Bvr::Animation::IRBuilder::RegisterVar</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>EDataType</type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" line="34" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_animation_1_1_i_r_builder_1ac4f6a401680e2b5fd7fa19bd4a44cfae" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>IRVarId</type>
+        <definition>IRVarId Bvr::Animation::IRBuilder::GetVarId</definition>
+        <argsstring>(std::string_view name) const</argsstring>
+        <name>GetVarId</name>
+        <qualifiedname>Bvr::Animation::IRBuilder::GetVarId</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" line="36" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_animation_1_1_i_r_builder_1af782ebfe07adafae152218a039ff2e80" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::Animation::IRBuilder::CallGetProp</definition>
+        <argsstring>(IRVarId destination, IRVarId owner, Meta::Property prop)</argsstring>
+        <name>CallGetProp</name>
+        <qualifiedname>Bvr::Animation::IRBuilder::CallGetProp</qualifiedname>
+        <param>
+          <type>IRVarId</type>
+          <declname>destination</declname>
+        </param>
+        <param>
+          <type>IRVarId</type>
+          <declname>owner</declname>
+        </param>
+        <param>
+          <type>Meta::Property</type>
+          <declname>prop</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" line="38" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_animation_1_1_i_r_builder_1ab1bf456398fa64b36f649e6d6685f144" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::Animation::IRBuilder::AddConstant</definition>
+        <argsstring>(IRVarId varId, const Meta::Variant &amp;var)</argsstring>
+        <name>AddConstant</name>
+        <qualifiedname>Bvr::Animation::IRBuilder::AddConstant</qualifiedname>
+        <param>
+          <type>IRVarId</type>
+          <declname>varId</declname>
+        </param>
+        <param>
+          <type>const Meta::Variant &amp;</type>
+          <declname>var</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" line="40" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_animation_1_1_i_r_builder_1a5fa176cdf4321e3c8181e5ecc4e95480" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::unordered_map&lt; IRVarId, Meta::Variant &gt; &amp;</type>
+        <definition>const std::unordered_map&lt; IRVarId, Meta::Variant &gt; &amp; Bvr::Animation::IRBuilder::GetConstants</definition>
+        <argsstring>() const</argsstring>
+        <name>GetConstants</name>
+        <qualifiedname>Bvr::Animation::IRBuilder::GetConstants</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" line="42" column="30" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" bodystart="42" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_animation_1_1_i_r_builder_1a627f3e2c2de3ad4d5ada8e585a0df928" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="struct_bvr_1_1_animation_1_1_animation_graph_1_1_node" kindref="compound">AnimationGraph::Node</ref> *</type>
+        <definition>const AnimationGraph::Node * Bvr::Animation::IRBuilder::CurrentNode</definition>
+        <argsstring>() const</argsstring>
+        <name>CurrentNode</name>
+        <qualifiedname>Bvr::Animation::IRBuilder::CurrentNode</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" line="46" column="32" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" bodystart="46" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_animation_1_1_i_r_builder_1a35d9b2a8cb8ea5f754c6ab94ee77eac1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="struct_bvr_1_1_animation_1_1_animation_graph" kindref="compound">AnimationGraph</ref> *</type>
+        <definition>const AnimationGraph * Bvr::Animation::IRBuilder::Graph</definition>
+        <argsstring>() const</argsstring>
+        <name>Graph</name>
+        <qualifiedname>Bvr::Animation::IRBuilder::Graph</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" line="47" column="32" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" bodystart="47" bodyend="47"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_bvr_1_1_animation_1_1_i_r_builder_1ab4ad92a94f1a22371fc5a43f500db182" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::Animation::IRBuilder::EmitNode</definition>
+        <argsstring>(const AnimationGraph::Node *pNode)</argsstring>
+        <name>EmitNode</name>
+        <qualifiedname>Bvr::Animation::IRBuilder::EmitNode</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_bvr_1_1_animation_1_1_animation_graph_1_1_node" kindref="compound">AnimationGraph::Node</ref> *</type>
+          <declname>pNode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" line="50" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_animation_1_1_i_r_builder_1a8123ca7c85d3c32d670f8f9edcb60615" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>PinId</type>
+        <definition>PinId Bvr::Animation::IRBuilder::GetInputPinId</definition>
+        <argsstring>(uint32 localId) const</argsstring>
+        <name>GetInputPinId</name>
+        <qualifiedname>Bvr::Animation::IRBuilder::GetInputPinId</qualifiedname>
+        <param>
+          <type>uint32</type>
+          <declname>localId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" line="52" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_animation_1_1_i_r_builder_1ab8e8494c67bd5ad4d549f70ec025a24d" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>PinId</type>
+        <definition>PinId Bvr::Animation::IRBuilder::GetOutputPinId</definition>
+        <argsstring>(uint32 localId) const</argsstring>
+        <name>GetOutputPinId</name>
+        <qualifiedname>Bvr::Animation::IRBuilder::GetOutputPinId</qualifiedname>
+        <param>
+          <type>uint32</type>
+          <declname>localId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" line="53" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_animation_1_1_i_r_builder_1a34a20be566fb1d2ea804e3a191776fa8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::Animation::IRBuilder::RegisterFunctionInputs</definition>
+        <argsstring>()</argsstring>
+        <name>RegisterFunctionInputs</name>
+        <qualifiedname>Bvr::Animation::IRBuilder::RegisterFunctionInputs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" line="55" column="13"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" line="8" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp" bodystart="8" bodyend="64"/>
+    <listofallmembers>
+      <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1ab1bf456398fa64b36f649e6d6685f144" prot="public" virt="non-virtual"><scope>Bvr::Animation::IRBuilder</scope><name>AddConstant</name></member>
+      <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1ab6bc168946b0186f5f8a101ef366daf6" prot="public" virt="non-virtual"><scope>Bvr::Animation::IRBuilder</scope><name>Assign</name></member>
+      <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1a8c6ec6d5fefc5f99322fa94e62a5a46e" prot="public" virt="non-virtual"><scope>Bvr::Animation::IRBuilder</scope><name>Call</name></member>
+      <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1ae9e10bd9ad9d12bd1cec0663637eb5e3" prot="public" virt="non-virtual"><scope>Bvr::Animation::IRBuilder</scope><name>Call</name></member>
+      <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1afe6e017e4df1b65f80b348f43467dcd9" prot="public" virt="non-virtual"><scope>Bvr::Animation::IRBuilder</scope><name>Call</name></member>
+      <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1a126423489ea22832b707a0d0bac0bb5a" prot="public" virt="non-virtual"><scope>Bvr::Animation::IRBuilder</scope><name>Call</name></member>
+      <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1af782ebfe07adafae152218a039ff2e80" prot="public" virt="non-virtual"><scope>Bvr::Animation::IRBuilder</scope><name>CallGetProp</name></member>
+      <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1a627f3e2c2de3ad4d5ada8e585a0df928" prot="public" virt="non-virtual"><scope>Bvr::Animation::IRBuilder</scope><name>CurrentNode</name></member>
+      <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1a400a09d3753ee5e1edb42ce86c8080a9" prot="public" virt="non-virtual"><scope>Bvr::Animation::IRBuilder</scope><name>EmitIR</name></member>
+      <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1ab4ad92a94f1a22371fc5a43f500db182" prot="private" virt="non-virtual"><scope>Bvr::Animation::IRBuilder</scope><name>EmitNode</name></member>
+      <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1a5fa176cdf4321e3c8181e5ecc4e95480" prot="public" virt="non-virtual"><scope>Bvr::Animation::IRBuilder</scope><name>GetConstants</name></member>
+      <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1ae6ec7dc71e4618fe8432aa480591d209" prot="public" virt="non-virtual"><scope>Bvr::Animation::IRBuilder</scope><name>GetError</name></member>
+      <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1a8123ca7c85d3c32d670f8f9edcb60615" prot="private" virt="non-virtual"><scope>Bvr::Animation::IRBuilder</scope><name>GetInputPinId</name></member>
+      <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1ab8e8494c67bd5ad4d549f70ec025a24d" prot="private" virt="non-virtual"><scope>Bvr::Animation::IRBuilder</scope><name>GetOutputPinId</name></member>
+      <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1ac4f6a401680e2b5fd7fa19bd4a44cfae" prot="public" virt="non-virtual"><scope>Bvr::Animation::IRBuilder</scope><name>GetVarId</name></member>
+      <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1a35d9b2a8cb8ea5f754c6ab94ee77eac1" prot="public" virt="non-virtual"><scope>Bvr::Animation::IRBuilder</scope><name>Graph</name></member>
+      <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1a75a93ef95ed1dadecf832482a850145a" prot="public" virt="non-virtual"><scope>Bvr::Animation::IRBuilder</scope><name>InputPinToVar</name></member>
+      <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1afbbc2b3ee4f08124f6aa68ad6eaf8cd8" prot="public" virt="non-virtual"><scope>Bvr::Animation::IRBuilder</scope><name>IRBuilder</name></member>
+      <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1ab418b32079ed7cda74f8bfcbc6222d7d" prot="private" virt="non-virtual"><scope>Bvr::Animation::IRBuilder</scope><name>m_error</name></member>
+      <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1ae4d5a83ac179e6e24e5cf17459fdddaa" prot="private" virt="non-virtual"><scope>Bvr::Animation::IRBuilder</scope><name>m_ir</name></member>
+      <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1afe94c5dcf709768ae06146a35b8b473c" prot="private" virt="non-virtual"><scope>Bvr::Animation::IRBuilder</scope><name>m_pCurrentNode</name></member>
+      <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1afa0c41b457e7a7ab6712f2db31821491" prot="private" virt="non-virtual"><scope>Bvr::Animation::IRBuilder</scope><name>m_pGraph</name></member>
+      <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1aeb09737b6fab2a725713dc08c84b8c7d" prot="private" virt="non-virtual"><scope>Bvr::Animation::IRBuilder</scope><name>m_pinToVarRemap</name></member>
+      <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1ac34ee29ddd8c37e05817103967af9473" prot="public" virt="non-virtual"><scope>Bvr::Animation::IRBuilder</scope><name>OutputPinToVar</name></member>
+      <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1a34a20be566fb1d2ea804e3a191776fa8" prot="private" virt="non-virtual"><scope>Bvr::Animation::IRBuilder</scope><name>RegisterFunctionInputs</name></member>
+      <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1a8545a4a74c42ce61cd8888a0ad6f368b" prot="public" virt="non-virtual"><scope>Bvr::Animation::IRBuilder</scope><name>RegisterVar</name></member>
+      <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1ad2eb85782460000da84b7263727497a9" prot="public" virt="non-virtual"><scope>Bvr::Animation::IRBuilder</scope><name>RegisterVar</name></member>
+      <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1a44fdb44e3ffc49cc004348faa36fccf3" prot="public" virt="non-virtual"><scope>Bvr::Animation::IRBuilder</scope><name>Return</name></member>
+      <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1a198ecad941c71c68ba65fa5c18c0e6f7" prot="public" virt="non-virtual"><scope>Bvr::Animation::IRBuilder</scope><name>SetError</name></member>
+      <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1a011c6e59d31d27423adb6cbb482fa779" prot="public" virt="non-virtual"><scope>Bvr::Animation::IRBuilder</scope><name>~IRBuilder</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

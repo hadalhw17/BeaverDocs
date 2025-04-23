@@ -1,18 +1,18 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="_intersection_functions_8hpp" kind="file" language="C++">
     <compoundname>IntersectionFunctions.hpp</compoundname>
     <includedby refid="_raycasting_8hpp" local="yes">/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Bvr3DEngine/Raycasting/Raycasting.hpp</includedby>
     <invincdepgraph>
-      <node id="2">
-        <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Bvr3DEngine/Raycasting/Raycasting.hpp</label>
-        <link refid="_raycasting_8hpp_source"/>
-      </node>
       <node id="1">
         <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Bvr3DEngine/Raycasting/IntersectionFunctions.hpp</label>
         <link refid="_intersection_functions_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
+      </node>
+      <node id="2">
+        <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Bvr3DEngine/Raycasting/Raycasting.hpp</label>
+        <link refid="_raycasting_8hpp_source"/>
       </node>
     </invincdepgraph>
     <innernamespace refid="namespace_bvr">Bvr</innernamespace>
@@ -45,7 +45,7 @@
 <codeline lineno="21"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Detail</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight></codeline>
 <codeline lineno="24"><highlight class="comment">//<sp/>Ray-box<sp/>intersection</highlight></codeline>
-<codeline lineno="32"><highlight class="comment"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>RayAABB(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>float3&amp;<sp/>rayOrig,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>float3&amp;<sp/>rayDir,</highlight></codeline>
+<codeline lineno="32"><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>RayAABB(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>float3&amp;<sp/>rayOrig,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>float3&amp;<sp/>rayDir,</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>AABB&amp;<sp/>bbox,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">&amp;<sp/>tNear,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">&amp;<sp/>tFar)<sp/>{</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><sp/><sp/>transformed<sp/>=<sp/>bbox.Translate(-rayOrig);</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>float3<sp/>dirfrac<sp/><sp/><sp/><sp/><sp/>=<sp/>1.f<sp/>/<sp/>rayDir;</highlight></codeline>
@@ -74,7 +74,7 @@
 <codeline lineno="67"><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>RayTriangle(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>float3&amp;<sp/>rayOrig,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>float3&amp;<sp/>rayDir,</highlight></codeline>
 <codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>float3&amp;<sp/>v0,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>float3&amp;<sp/>v1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>float3&amp;<sp/>v2,</highlight></codeline>
 <codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">&amp;<sp/>t,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">&amp;<sp/>u,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">&amp;<sp/>v)<sp/>{</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>EPSILON<sp/>=<sp/>std::numeric_limits&lt;float&gt;::epsilon();</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>EPSILON<sp/>=<sp/>std::numeric_limits&lt;float&gt;::epsilon();</highlight></codeline>
 <codeline lineno="71"><highlight class="normal"></highlight></codeline>
 <codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>float3<sp/>e1<sp/>=<sp/>v1<sp/>-<sp/>v0;</highlight></codeline>
 <codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>float3<sp/>e2<sp/>=<sp/>v2<sp/>-<sp/>v0;</highlight></codeline>

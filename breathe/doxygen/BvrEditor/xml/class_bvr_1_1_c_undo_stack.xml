@@ -1,13 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="class_bvr_1_1_c_undo_stack" kind="class" language="C++" prot="public">
     <compoundname>Bvr::CUndoStack</compoundname>
-      <sectiondef kind="private-type">
+    <sectiondef kind="private-type">
       <memberdef kind="typedef" id="class_bvr_1_1_c_undo_stack_1a74154a4b8519fff1abb437679006c397" prot="private" static="no">
         <type>IEditorCommand</type>
         <definition>using Bvr::CUndoStack::CommandT =  IEditorCommand</definition>
         <argsstring></argsstring>
         <name>CommandT</name>
+        <qualifiedname>Bvr::CUndoStack::CommandT</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -16,11 +17,12 @@
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/UndoStack.hpp" line="9" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/UndoStack.hpp" bodystart="9" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="class_bvr_1_1_c_undo_stack_1aa5a05f6cb9be2f1abe5b5921b420df15" prot="private" static="no">
-        <type>std::stack&lt; std::shared_ptr&lt; CommandT &gt; &gt;</type>
-        <definition>using Bvr::CUndoStack::CommandStackT =  std::stack&lt;std::shared_ptr&lt;CommandT&gt; &gt;</definition>
+      <memberdef kind="typedef" id="class_bvr_1_1_c_undo_stack_1a714bf58e8b688fbcb49960dd2010c15f" prot="private" static="no">
+        <type>std::vector&lt; std::shared_ptr&lt; CommandT &gt; &gt;</type>
+        <definition>using Bvr::CUndoStack::CommandStackT =  std::vector&lt;std::shared_ptr&lt;CommandT&gt; &gt;</definition>
         <argsstring></argsstring>
         <name>CommandStackT</name>
+        <qualifiedname>Bvr::CUndoStack::CommandStackT</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -29,40 +31,14 @@
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/UndoStack.hpp" line="10" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/UndoStack.hpp" bodystart="10" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="private-attrib">
+    </sectiondef>
+    <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="class_bvr_1_1_c_undo_stack_1ab43386e5e70357969e17066741cbe1e8" prot="private" static="no" mutable="no">
         <type>CommandStackT</type>
         <definition>CommandStackT Bvr::CUndoStack::m_undoStack</definition>
         <argsstring></argsstring>
         <name>m_undoStack</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/UndoStack.hpp" line="23" column="19" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/UndoStack.hpp" bodystart="23" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_bvr_1_1_c_undo_stack_1aa3a2ae96cad60fc763013052a0c65eeb" prot="private" static="no" mutable="no">
-        <type>CommandStackT</type>
-        <definition>CommandStackT Bvr::CUndoStack::m_redoStack</definition>
-        <argsstring></argsstring>
-        <name>m_redoStack</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/UndoStack.hpp" line="24" column="19" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/UndoStack.hpp" bodystart="24" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_bvr_1_1_c_undo_stack_1a1f059090f20a7fb29162d3ffd7f209e3" prot="private" static="no" mutable="no">
-        <type>size_t</type>
-        <definition>size_t Bvr::CUndoStack::m_mergeSince</definition>
-        <argsstring></argsstring>
-        <name>m_mergeSince</name>
-        <initializer>= 0</initializer>
+        <qualifiedname>Bvr::CUndoStack::m_undoStack</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -71,13 +47,57 @@
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/UndoStack.hpp" line="25" column="19" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/UndoStack.hpp" bodystart="25" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-func">
+      <memberdef kind="variable" id="class_bvr_1_1_c_undo_stack_1aa3a2ae96cad60fc763013052a0c65eeb" prot="private" static="no" mutable="no">
+        <type>CommandStackT</type>
+        <definition>CommandStackT Bvr::CUndoStack::m_redoStack</definition>
+        <argsstring></argsstring>
+        <name>m_redoStack</name>
+        <qualifiedname>Bvr::CUndoStack::m_redoStack</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/UndoStack.hpp" line="26" column="19" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/UndoStack.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_undo_stack_1a1f059090f20a7fb29162d3ffd7f209e3" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t Bvr::CUndoStack::m_mergeSince</definition>
+        <argsstring></argsstring>
+        <name>m_mergeSince</name>
+        <qualifiedname>Bvr::CUndoStack::m_mergeSince</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/UndoStack.hpp" line="27" column="19" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/UndoStack.hpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_undo_stack_1a8e3a18c6ac4c25b35606abcde1bb059b" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; <ref refid="struct_bvr_1_1_i_undoer" kindref="compound">IUndoer</ref> *, std::vector&lt; std::weak_ptr&lt; IEditorCommand &gt; &gt; &gt;</type>
+        <definition>std::unordered_map&lt;IUndoer*, std::vector&lt;std::weak_ptr&lt;IEditorCommand&gt; &gt; &gt; Bvr::CUndoStack::m_undoers</definition>
+        <argsstring></argsstring>
+        <name>m_undoers</name>
+        <qualifiedname>Bvr::CUndoStack::m_undoers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/UndoStack.hpp" line="30" column="9" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/UndoStack.hpp" bodystart="30" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="class_bvr_1_1_c_undo_stack_1ad8650c3880da3315f68478ee9721eefe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>Bvr::CUndoStack::CUndoStack</definition>
         <argsstring>()=default</argsstring>
         <name>CUndoStack</name>
+        <qualifiedname>Bvr::CUndoStack::CUndoStack</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -91,6 +111,7 @@
         <definition>Bvr::CUndoStack::~CUndoStack</definition>
         <argsstring>()=default</argsstring>
         <name>~CUndoStack</name>
+        <qualifiedname>Bvr::CUndoStack::~CUndoStack</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -99,11 +120,16 @@
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/UndoStack.hpp" line="14" column="5"/>
       </memberdef>
-      <memberdef kind="function" id="class_bvr_1_1_c_undo_stack_1ae27eae6e9dcf9cff4d8c53696d8df144" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_bvr_1_1_c_undo_stack_1abc9562557b08b46425fe2290fed8b2bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void Bvr::CUndoStack::Do</definition>
-        <argsstring>(std::shared_ptr&lt; CommandT &gt; pCommand)</argsstring>
+        <argsstring>(IUndoer *pUndoer, std::shared_ptr&lt; CommandT &gt; pCommand)</argsstring>
         <name>Do</name>
+        <qualifiedname>Bvr::CUndoStack::Do</qualifiedname>
+        <param>
+          <type><ref refid="struct_bvr_1_1_i_undoer" kindref="compound">IUndoer</ref> *</type>
+          <declname>pUndoer</declname>
+        </param>
         <param>
           <type>std::shared_ptr&lt; CommandT &gt;</type>
           <declname>pCommand</declname>
@@ -121,6 +147,7 @@
         <definition>void Bvr::CUndoStack::Redo</definition>
         <argsstring>()</argsstring>
         <name>Redo</name>
+        <qualifiedname>Bvr::CUndoStack::Redo</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -134,6 +161,7 @@
         <definition>void Bvr::CUndoStack::Undo</definition>
         <argsstring>()</argsstring>
         <name>Undo</name>
+        <qualifiedname>Bvr::CUndoStack::Undo</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -147,6 +175,7 @@
         <definition>void Bvr::CUndoStack::AdvanceMergeSince</definition>
         <argsstring>()</argsstring>
         <name>AdvanceMergeSince</name>
+        <qualifiedname>Bvr::CUndoStack::AdvanceMergeSince</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -155,23 +184,43 @@
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/UndoStack.hpp" line="20" column="10"/>
       </memberdef>
-      </sectiondef>
+      <memberdef kind="function" id="class_bvr_1_1_c_undo_stack_1a60173837bdc1a8a47e190b8ed665fb0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CUndoStack::UnregisterUndoer</definition>
+        <argsstring>(IUndoer *pUndoer)</argsstring>
+        <name>UnregisterUndoer</name>
+        <qualifiedname>Bvr::CUndoStack::UnregisterUndoer</qualifiedname>
+        <param>
+          <type><ref refid="struct_bvr_1_1_i_undoer" kindref="compound">IUndoer</ref> *</type>
+          <declname>pUndoer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/UndoStack.hpp" line="22" column="10"/>
+      </memberdef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/UndoStack.hpp" line="8" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/UndoStack.hpp" bodystart="8" bodyend="26"/>
+    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/UndoStack.hpp" line="8" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/UndoStack.hpp" bodystart="8" bodyend="31"/>
     <listofallmembers>
       <member refid="class_bvr_1_1_c_undo_stack_1ae2df9ff6626b6bd42f451f319a23a538" prot="public" virt="non-virtual"><scope>Bvr::CUndoStack</scope><name>AdvanceMergeSince</name></member>
-      <member refid="class_bvr_1_1_c_undo_stack_1aa5a05f6cb9be2f1abe5b5921b420df15" prot="private" virt="non-virtual"><scope>Bvr::CUndoStack</scope><name>CommandStackT</name></member>
+      <member refid="class_bvr_1_1_c_undo_stack_1a714bf58e8b688fbcb49960dd2010c15f" prot="private" virt="non-virtual"><scope>Bvr::CUndoStack</scope><name>CommandStackT</name></member>
       <member refid="class_bvr_1_1_c_undo_stack_1a74154a4b8519fff1abb437679006c397" prot="private" virt="non-virtual"><scope>Bvr::CUndoStack</scope><name>CommandT</name></member>
       <member refid="class_bvr_1_1_c_undo_stack_1ad8650c3880da3315f68478ee9721eefe" prot="public" virt="non-virtual"><scope>Bvr::CUndoStack</scope><name>CUndoStack</name></member>
-      <member refid="class_bvr_1_1_c_undo_stack_1ae27eae6e9dcf9cff4d8c53696d8df144" prot="public" virt="non-virtual"><scope>Bvr::CUndoStack</scope><name>Do</name></member>
+      <member refid="class_bvr_1_1_c_undo_stack_1abc9562557b08b46425fe2290fed8b2bd" prot="public" virt="non-virtual"><scope>Bvr::CUndoStack</scope><name>Do</name></member>
       <member refid="class_bvr_1_1_c_undo_stack_1a1f059090f20a7fb29162d3ffd7f209e3" prot="private" virt="non-virtual"><scope>Bvr::CUndoStack</scope><name>m_mergeSince</name></member>
       <member refid="class_bvr_1_1_c_undo_stack_1aa3a2ae96cad60fc763013052a0c65eeb" prot="private" virt="non-virtual"><scope>Bvr::CUndoStack</scope><name>m_redoStack</name></member>
+      <member refid="class_bvr_1_1_c_undo_stack_1a8e3a18c6ac4c25b35606abcde1bb059b" prot="private" virt="non-virtual"><scope>Bvr::CUndoStack</scope><name>m_undoers</name></member>
       <member refid="class_bvr_1_1_c_undo_stack_1ab43386e5e70357969e17066741cbe1e8" prot="private" virt="non-virtual"><scope>Bvr::CUndoStack</scope><name>m_undoStack</name></member>
       <member refid="class_bvr_1_1_c_undo_stack_1aaa458167c53be42f3f52d897d5d01e7b" prot="public" virt="non-virtual"><scope>Bvr::CUndoStack</scope><name>Redo</name></member>
       <member refid="class_bvr_1_1_c_undo_stack_1a9935b99356b077fbc2fbe1c6366b98b3" prot="public" virt="non-virtual"><scope>Bvr::CUndoStack</scope><name>Undo</name></member>
+      <member refid="class_bvr_1_1_c_undo_stack_1a60173837bdc1a8a47e190b8ed665fb0f" prot="public" virt="non-virtual"><scope>Bvr::CUndoStack</scope><name>UnregisterUndoer</name></member>
       <member refid="class_bvr_1_1_c_undo_stack_1a11f1985da3e84e6a8a15637362245419" prot="public" virt="non-virtual"><scope>Bvr::CUndoStack</scope><name>~CUndoStack</name></member>
     </listofallmembers>
   </compounddef>

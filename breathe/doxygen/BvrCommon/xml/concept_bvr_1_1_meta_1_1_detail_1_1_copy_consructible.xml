@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="concept_bvr_1_1_meta_1_1_detail_1_1_copy_consructible" kind="concept">
+    <compoundname>Bvr::Meta::Detail::CopyConsructible</compoundname>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+    <initializer>template&lt;class T&gt;
+concept <ref refid="concept_bvr_1_1_meta_1_1_detail_1_1_copy_consructible" kindref="compound">Bvr::Meta::Detail::CopyConsructible</ref> = 
+        !IsSequentialContainer&lt;T&gt;::value &amp;&amp; !IsAssociativeContainer&lt;T&gt;::value &amp;&amp;
+        std::copy_constructible&lt;T&gt; &amp;&amp; requires(void* src, void* dst) {
+            {
+                *reinterpret_cast&lt;T*&gt;(dst) = T(*reinterpret_cast&lt;const T*&gt;(src))
+            } -&gt; std::same_as&lt;T&amp;&gt;;
+        }    </initializer>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/TypeDesc.hpp" line="212" column="5"/>
+  </compounddef>
+</doxygen>

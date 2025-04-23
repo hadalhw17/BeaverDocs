@@ -1,10 +1,22 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="_system_events_8hpp" kind="file" language="C++">
     <compoundname>SystemEvents.hpp</compoundname>
     <includes refid="_event_base_8hpp" local="yes">EventBase.hpp</includes>
     <includes refid="_key_codes_8hpp" local="yes">KeyCodes.hpp</includes>
     <incdepgraph>
+      <node id="7">
+        <label>BaseTypes.hpp</label>
+        <link refid="_base_types_8hpp_source"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>EventBase.hpp</label>
+        <link refid="_event_base_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
       <node id="1">
         <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Events/SystemEvents.hpp</label>
         <link refid="_system_events_8hpp"/>
@@ -13,8 +25,11 @@
         <childnode refid="4" relation="include">
         </childnode>
       </node>
-      <node id="8">
-        <label>cstdint</label>
+      <node id="4">
+        <label>KeyCodes.hpp</label>
+        <link refid="_key_codes_8hpp_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
       </node>
       <node id="5">
         <label>Meta/Enums.hpp</label>
@@ -24,29 +39,14 @@
         <childnode refid="7" relation="include">
         </childnode>
       </node>
+      <node id="8">
+        <label>cstdint</label>
+      </node>
       <node id="3">
         <label>string</label>
       </node>
-      <node id="7">
-        <label>BaseTypes.hpp</label>
-        <link refid="_base_types_8hpp_source"/>
-        <childnode refid="8" relation="include">
-        </childnode>
-      </node>
       <node id="6">
         <label>type_traits</label>
-      </node>
-      <node id="4">
-        <label>KeyCodes.hpp</label>
-        <link refid="_key_codes_8hpp_source"/>
-        <childnode refid="5" relation="include">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>EventBase.hpp</label>
-        <link refid="_event_base_8hpp_source"/>
-        <childnode refid="3" relation="include">
-        </childnode>
       </node>
     </incdepgraph>
     <innerclass refid="struct_bvr_1_1_event_1_1_system_1_1_s_window_resize" prot="public">Bvr::Event::System::SWindowResize</innerclass>
@@ -72,7 +72,7 @@
 <codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Bvr::Event::System<sp/>{</highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight></codeline>
 <codeline lineno="8" refid="struct_bvr_1_1_event_1_1_system_1_1_s_window_resize" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_event_1_1_system_1_1_s_window_resize" kindref="compound">SWindowResize</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_bvr_1_1_event_1_1_c_event_base" kindref="compound">CEventBase</ref><sp/>{</highlight></codeline>
-<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_event_1_1_system_1_1_s_window_resize" kindref="compound">SWindowResize</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>w,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>h)<sp/>:<sp/>newWidth(w),<sp/>newHeight(h)<sp/>{}</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_event_1_1_system_1_1_s_window_resize" kindref="compound">SWindowResize</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_bvr_1_1_events" kindref="compound">w</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_bvr_1_1_events" kindref="compound">h</ref>)<sp/>:<sp/>newWidth(<ref refid="struct_bvr_1_1_events" kindref="compound">w</ref>),<sp/>newHeight(<ref refid="struct_bvr_1_1_events" kindref="compound">h</ref>)<sp/>{}</highlight></codeline>
 <codeline lineno="10"><highlight class="normal"></highlight></codeline>
 <codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>GetName()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::format(</highlight><highlight class="stringliteral">&quot;Window<sp/>Resize:<sp/>width<sp/>{}<sp/>height<sp/>{}&quot;</highlight><highlight class="normal">,<sp/>newWidth,</highlight></codeline>
@@ -85,13 +85,13 @@
 <codeline lineno="19"><highlight class="normal"></highlight></codeline>
 <codeline lineno="20" refid="struct_bvr_1_1_event_1_1_system_1_1_s_key_press" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_event_1_1_system_1_1_s_key_press" kindref="compound">SKeyPress</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_bvr_1_1_event_1_1_c_event_base" kindref="compound">CEventBase</ref><sp/>{</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_event_1_1_system_1_1_s_key_press" kindref="compound">SKeyPress</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_event_1_1_system_1_1_s_key_press" kindref="compound">SKeyPress</ref>(Bvr::EKeyAction<sp/>action,<sp/>Bvr::EKey<sp/>key,<sp/>Bvr::EModKey<sp/>mods,</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>scancode)</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>ePressedKey(key),<sp/>eKeyAction(action),<sp/>eModKeys(mods),</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scanCode(scancode)<sp/>{}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_event_1_1_system_1_1_s_key_press" kindref="compound">SKeyPress</ref>(Bvr::EKeyAction<sp/><ref refid="struct_bvr_1_1_events" kindref="compound">action</ref>,<sp/>Bvr::EKey<sp/><ref refid="struct_bvr_1_1_events" kindref="compound">key</ref>,<sp/>Bvr::EModKey<sp/><ref refid="struct_bvr_1_1_events" kindref="compound">mods</ref>,</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_bvr_1_1_events" kindref="compound">scancode</ref>)</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>ePressedKey(<ref refid="struct_bvr_1_1_events" kindref="compound">key</ref>),<sp/>eKeyAction(<ref refid="struct_bvr_1_1_events" kindref="compound">action</ref>),<sp/>eModKeys(<ref refid="struct_bvr_1_1_events" kindref="compound">mods</ref>),</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scanCode(<ref refid="struct_bvr_1_1_events" kindref="compound">scancode</ref>)<sp/>{}</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"></highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>AreModsPressed(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Bvr::EModKey<sp/>key)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(eModKeys<sp/>&amp;<sp/>key)<sp/>!=<sp/>Bvr::EModKey::None;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>AreModsPressed(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Bvr::EModKey<sp/><ref refid="struct_bvr_1_1_events" kindref="compound">key</ref>)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(eModKeys<sp/>&amp;<sp/><ref refid="struct_bvr_1_1_events" kindref="compound">key</ref>)<sp/>!=<sp/>Bvr::EModKey::None;</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"></highlight></codeline>
 <codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>GetName()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal"><sp/>{</highlight></codeline>
@@ -107,7 +107,7 @@
 <codeline lineno="41"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="42"><highlight class="normal"></highlight></codeline>
 <codeline lineno="43" refid="struct_bvr_1_1_event_1_1_system_1_1_s_char_enter" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_event_1_1_system_1_1_s_char_enter" kindref="compound">SCharEnter</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_bvr_1_1_event_1_1_c_event_base" kindref="compound">CEventBase</ref><sp/>{</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_event_1_1_system_1_1_s_char_enter" kindref="compound">SCharEnter</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>c)<sp/>:<sp/>Char(c)<sp/>{}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_event_1_1_system_1_1_s_char_enter" kindref="compound">SCharEnter</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="struct_bvr_1_1_events" kindref="compound">c</ref>)<sp/>:<sp/>Char(<ref refid="struct_bvr_1_1_events" kindref="compound">c</ref>)<sp/>{}</highlight></codeline>
 <codeline lineno="45"><highlight class="normal"></highlight></codeline>
 <codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>GetName()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::format(</highlight><highlight class="stringliteral">&quot;Char<sp/>Enter:<sp/>{}&quot;</highlight><highlight class="normal">,<sp/>Char);</highlight></codeline>
@@ -118,8 +118,8 @@
 <codeline lineno="52"><highlight class="normal"></highlight></codeline>
 <codeline lineno="53" refid="struct_bvr_1_1_event_1_1_system_1_1_s_mouse_btn_press" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_event_1_1_system_1_1_s_mouse_btn_press" kindref="compound">SMouseBtnPress</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_bvr_1_1_event_1_1_c_event_base" kindref="compound">CEventBase</ref><sp/>{</highlight></codeline>
 <codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_event_1_1_system_1_1_s_mouse_btn_press" kindref="compound">SMouseBtnPress</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_event_1_1_system_1_1_s_mouse_btn_press" kindref="compound">SMouseBtnPress</ref>(Bvr::EKeyAction<sp/>action,<sp/>Bvr::EMouseBtn<sp/>btn)</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>ePressedBtn(btn),<sp/>eKeyAction(action)<sp/>{}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_event_1_1_system_1_1_s_mouse_btn_press" kindref="compound">SMouseBtnPress</ref>(Bvr::EKeyAction<sp/><ref refid="struct_bvr_1_1_events" kindref="compound">action</ref>,<sp/>Bvr::EMouseBtn<sp/><ref refid="struct_bvr_1_1_events" kindref="compound">btn</ref>)</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>ePressedBtn(<ref refid="struct_bvr_1_1_events" kindref="compound">btn</ref>),<sp/>eKeyAction(<ref refid="struct_bvr_1_1_events" kindref="compound">action</ref>)<sp/>{}</highlight></codeline>
 <codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>GetName()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::format(</highlight><highlight class="stringliteral">&quot;[{}]<sp/>Mouse<sp/>Button:<sp/>{}&quot;</highlight><highlight class="normal">,</highlight></codeline>
 <codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>KeyActionToString(eKeyAction),</highlight></codeline>
@@ -132,7 +132,7 @@
 <codeline lineno="66"><highlight class="normal"></highlight></codeline>
 <codeline lineno="67" refid="struct_bvr_1_1_event_1_1_system_1_1_s_mouse_move" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_event_1_1_system_1_1_s_mouse_move" kindref="compound">SMouseMove</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_bvr_1_1_event_1_1_c_event_base" kindref="compound">CEventBase</ref><sp/>{</highlight></codeline>
 <codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_event_1_1_system_1_1_s_mouse_move" kindref="compound">SMouseMove</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_event_1_1_system_1_1_s_mouse_move" kindref="compound">SMouseMove</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>y)<sp/>:<sp/>newPosX(x),<sp/>newPosY(y)<sp/>{}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_event_1_1_system_1_1_s_mouse_move" kindref="compound">SMouseMove</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="struct_bvr_1_1_events" kindref="compound">x</ref>,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="struct_bvr_1_1_events" kindref="compound">y</ref>)<sp/>:<sp/>newPosX(<ref refid="struct_bvr_1_1_events" kindref="compound">x</ref>),<sp/>newPosY(<ref refid="struct_bvr_1_1_events" kindref="compound">y</ref>)<sp/>{}</highlight></codeline>
 <codeline lineno="70"><highlight class="normal"></highlight></codeline>
 <codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>GetName()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::format(</highlight><highlight class="stringliteral">&quot;Mouse<sp/>Move:<sp/>new<sp/>x<sp/>{}<sp/>new<sp/>y<sp/>{}&quot;</highlight><highlight class="normal">,<sp/>newPosX,<sp/>newPosY);</highlight></codeline>
@@ -144,7 +144,7 @@
 <codeline lineno="78"><highlight class="normal"></highlight></codeline>
 <codeline lineno="79" refid="struct_bvr_1_1_event_1_1_system_1_1_s_mouse_scroll" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_event_1_1_system_1_1_s_mouse_scroll" kindref="compound">SMouseScroll</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_bvr_1_1_event_1_1_c_event_base" kindref="compound">CEventBase</ref><sp/>{</highlight></codeline>
 <codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_event_1_1_system_1_1_s_mouse_scroll" kindref="compound">SMouseScroll</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_event_1_1_system_1_1_s_mouse_scroll" kindref="compound">SMouseScroll</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>y)<sp/>:<sp/>xOffset(x),<sp/>yOffset(y)<sp/>{}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_event_1_1_system_1_1_s_mouse_scroll" kindref="compound">SMouseScroll</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="struct_bvr_1_1_events" kindref="compound">x</ref>,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="struct_bvr_1_1_events" kindref="compound">y</ref>)<sp/>:<sp/>xOffset(<ref refid="struct_bvr_1_1_events" kindref="compound">x</ref>),<sp/>yOffset(<ref refid="struct_bvr_1_1_events" kindref="compound">y</ref>)<sp/>{}</highlight></codeline>
 <codeline lineno="82"><highlight class="normal"></highlight></codeline>
 <codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>GetName()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::format(</highlight><highlight class="stringliteral">&quot;Mouse<sp/>Scroll:<sp/>x<sp/>offset<sp/>{}<sp/>y<sp/>offset<sp/>{}&quot;</highlight><highlight class="normal">,<sp/>xOffset,</highlight></codeline>

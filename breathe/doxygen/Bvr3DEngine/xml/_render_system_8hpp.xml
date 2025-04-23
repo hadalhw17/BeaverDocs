@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="_render_system_8hpp" kind="file" language="C++">
     <compoundname>RenderSystem.hpp</compoundname>
     <includes local="no">BvrWindow/Window.hpp</includes>
@@ -8,21 +8,6 @@
     <includes local="no">BvrWorld/TransformComponent.hpp</includes>
     <includes local="no">IBvrSystem.hpp</includes>
     <incdepgraph>
-      <node id="6">
-        <label>IBvrSystem.hpp</label>
-      </node>
-      <node id="2">
-        <label>BvrWindow/Window.hpp</label>
-      </node>
-      <node id="3">
-        <label>BvrRenderer/RenderOutput.hpp</label>
-      </node>
-      <node id="4">
-        <label>BvrImage/Image.hpp</label>
-      </node>
-      <node id="5">
-        <label>BvrWorld/TransformComponent.hpp</label>
-      </node>
       <node id="1">
         <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Bvr3DEngine/RenderSystem.hpp</label>
         <link refid="_render_system_8hpp"/>
@@ -36,6 +21,21 @@
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
+      </node>
+      <node id="4">
+        <label>BvrImage/Image.hpp</label>
+      </node>
+      <node id="3">
+        <label>BvrRenderer/RenderOutput.hpp</label>
+      </node>
+      <node id="2">
+        <label>BvrWindow/Window.hpp</label>
+      </node>
+      <node id="5">
+        <label>BvrWorld/TransformComponent.hpp</label>
+      </node>
+      <node id="6">
+        <label>IBvrSystem.hpp</label>
       </node>
     </incdepgraph>
     <innerclass refid="struct_bvr_1_1_world_rendering_1_1_plugin" prot="public">Bvr::WorldRendering::Plugin</innerclass>
@@ -183,19 +183,19 @@
 <codeline lineno="135"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="136"><highlight class="normal"></highlight></codeline>
 <codeline lineno="137" refid="struct_bvr_1_1_world_rendering_1_1_plugin" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_world_rendering_1_1_plugin" kindref="compound">Plugin</ref><sp/>{</highlight></codeline>
-<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Build(App&amp;<sp/>app)<sp/>{</highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>app.AddSystem(DefaultStages::PRE_UPDATE,<sp/>&amp;UpdateCameraProjection)</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Build(<ref refid="struct_bvr_1_1_raycast_source" kindref="compound">App</ref>&amp;<sp/><ref refid="struct_bvr_1_1_raycast_source" kindref="compound">app</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_raycast_source" kindref="compound">app</ref>.AddSystem(DefaultStages::PRE_UPDATE,<sp/>&amp;UpdateCameraProjection)</highlight></codeline>
 <codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.AddSystem(DefaultStages::PRE_UPDATE,<sp/>&amp;UpdateCameraView)</highlight></codeline>
 <codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.AddSystem(</highlight></codeline>
 <codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DefaultStages::POST_UPDATE,</highlight></codeline>
-<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SystemDesc(&amp;ResetVisibility).Label(</highlight><highlight class="stringliteral">&quot;ResetVisibility&quot;</highlight><highlight class="normal">_lbl))</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_raycast_source" kindref="compound">SystemDesc</ref>(&amp;ResetVisibility).Label(</highlight><highlight class="stringliteral">&quot;ResetVisibility&quot;</highlight><highlight class="normal"><ref refid="struct_bvr_1_1_raycast_source" kindref="compound">_lbl</ref>))</highlight></codeline>
 <codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.AddSystem(DefaultStages::POST_UPDATE,</highlight></codeline>
-<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SystemDesc(&amp;UpdateVisibility)</highlight></codeline>
-<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.Label(</highlight><highlight class="stringliteral">&quot;UpdateVisibility&quot;</highlight><highlight class="normal">_lbl)</highlight></codeline>
-<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.After(</highlight><highlight class="stringliteral">&quot;ResetVisibility&quot;</highlight><highlight class="normal">_lbl))</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_raycast_source" kindref="compound">SystemDesc</ref>(&amp;UpdateVisibility)</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.Label(</highlight><highlight class="stringliteral">&quot;UpdateVisibility&quot;</highlight><highlight class="normal"><ref refid="struct_bvr_1_1_raycast_source" kindref="compound">_lbl</ref>)</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.<ref refid="struct_bvr_1_1_raycast_source" kindref="compound">After</ref>(</highlight><highlight class="stringliteral">&quot;ResetVisibility&quot;</highlight><highlight class="normal"><ref refid="struct_bvr_1_1_raycast_source" kindref="compound">_lbl</ref>))</highlight></codeline>
 <codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.AddSystem(Renderer::Stages::EXTRACT,</highlight></codeline>
-<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SystemDesc(&amp;ExtractRenderInfos)</highlight></codeline>
-<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.Label(</highlight><highlight class="stringliteral">&quot;ExtractRenderCameras&quot;</highlight><highlight class="normal">_lbl));</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_raycast_source" kindref="compound">SystemDesc</ref>(&amp;ExtractRenderInfos)</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.Label(</highlight><highlight class="stringliteral">&quot;ExtractRenderCameras&quot;</highlight><highlight class="normal"><ref refid="struct_bvr_1_1_raycast_source" kindref="compound">_lbl</ref>));</highlight></codeline>
 <codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="152"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="153"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Bvr::WorldRendering</highlight></codeline>

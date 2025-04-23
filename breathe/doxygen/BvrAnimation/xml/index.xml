@@ -1,69 +1,582 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.1" xml:lang="en-US">
-  <compound refid="struct_bvr_1_1_animation_1_1_channel" kind="struct"><name>Bvr::Animation::Channel</name>
-    <member refid="struct_bvr_1_1_animation_1_1_channel_1a78e3164cd9dd9a03e623cd8791c63a37" kind="variable"><name>m_keyframes</name></member>
-    <member refid="struct_bvr_1_1_animation_1_1_channel_1a5b38dfcdebf4d72922ddc3c3c77bbd72" kind="variable"><name>m_targetEntity</name></member>
-    <member refid="struct_bvr_1_1_animation_1_1_channel_1a6f2b982e670db17d6f5f2867bef1fb79" kind="variable"><name>m_property</name></member>
-    <member refid="struct_bvr_1_1_animation_1_1_channel_1a75a9e572ec6d7a162f4ebae70e4cde2a" kind="variable"><name>m_samplerIndex</name></member>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.8" xml:lang="en-US">
+  <compound refid="struct_bvr_1_1_animation_1_1_animation_graph" kind="struct"><name>Bvr::Animation::AnimationGraph</name>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1a88a04637894bb233f2c3128bb97756ee" kind="typedef"><name>TNodeId</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1aecd9e0a7dd0d3bc80f7acd21fb2b55a3" kind="typedef"><name>NodeLbl</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1a1f610b5d49714097289ab631f0e46645" kind="typedef"><name>EdgeId</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1a26f95ae426f038052cbd550108dfebb4" kind="typedef"><name>PinId</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1a29454c22f635033fb4f09d00a0571daf" kind="variable"><name>m_nodes</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1a32fadd55c3ef2b38e11784d57624a9c9" kind="variable"><name>m_pins</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1aae88e6b336f475052a758779a5a5c067" kind="variable"><name>m_edges</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1a63918924f2e5d886764c55f76b909cb5" kind="variable"><name>m_pinIdGen</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1ad405d11f10fd7216ba3ce79e51ed6d6a" kind="variable"><name>m_inputNode</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1a0b898081eb8f06c90271d8171d7a6d76" kind="variable"><name>m_outputNode</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1a775f558a947699fac0abd8d3273f5c96" kind="variable"><name>m_nextFreeEdge</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1af1b061c6fa29ca9a2498c2bf47853620" kind="variable"><name>m_isFunctionGraph</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1a46399eaf2246b85b8a6e933c3c38202b" kind="variable"><name>m_pinVariables</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1a64cae1fc7989c5aeb8919b3813ac9250" kind="function"><name>AnimationGraph</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1a8b9e0bbbd1303ca7fd721549b8e58c48" kind="function"><name>~AnimationGraph</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1a6168b3a7f8d4ea075f37e270383a7f26" kind="function"><name>SetInputNode</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1ae7357725be727403cfd0a11ff2c45aa4" kind="function"><name>SetOutputNode</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1ad3aef6c25149942365b96f4a6e2961d1" kind="function"><name>AddNode</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1afcb16988e014b8479ac6f78ede4b65ce" kind="function"><name>AddEdge</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1a7e75fc3d6e8d05f248f84aa4d4f2104c" kind="function"><name>RemoveEdge</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1a723189eca71e089d2c4a176de39ba582" kind="function"><name>ResetPinConnections</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1a348bf14be68212f3a052b50aea5580b8" kind="function"><name>RenameNode</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1a80c7b2885bd2545b6fc137f3c3406901" kind="function"><name>CreatePin</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1ab7f4e5b0036a92e2251f1cd24ee16c51" kind="function"><name>RemoveNode</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1a3ad2b64431fff31a0107b5ac3603c5d1" kind="function"><name>RemovePin</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1a568eb4de42998e81af61ed38b816686c" kind="function"><name>IterateEdges</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1a57da2de5ca0d895c455e935688939546" kind="function"><name>GetNode</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1a57c3cb839291c9910ca87543b843791a" kind="function"><name>GetInputLbl</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1ab787d77dc90c38337ccecc39c40dd1be" kind="function"><name>GetOutputLbl</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1ac34ff29c31c40337a7ba425bb801cf0d" kind="function"><name>GetNodeCount</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1a56f91ddec8ad6a9f7a56af8be5ef699e" kind="function"><name>AddNode</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1a103f11ffe0bcfd4cac562798b239f22c" kind="function"><name>Serialise</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1aed1535ecd6eefd97ceab6e2db41e78de" kind="function"><name>IsFunctionGraph</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1a35b372bf79f64635ce2bf7a47aec1d5a" kind="function"><name>GetNode</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1a39a53031fc563e1dc33ca3f0b9b314b9" kind="function"><name>GetEdge</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1a464d229da20ff320a4d1cdd2a815091a" kind="function"><name>GetEdge</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1a8502501ef6d6a5f6b5d48bb188c3ed91" kind="function"><name>GetPin</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1a7ad80d77b28ff156db1743e05ba58ffd" kind="function"><name>GetPin</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1a3b8a803da34cb922d5fd6eeeeb33d603" kind="function"><name>RegisterData</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1a4edbb90569daf6cc6114f887124f0a43" kind="function"><name>GetOrCreateEdge</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1a3d0f58b2dbfa1057c45a882fdadd0283" kind="function"><name>AddEdgeToPin</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1a4dbc61d5888df8b73d687ce98e1114fa" kind="function"><name>RemoveEdgeFromPin</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1aeaf24616f51b99b36c4d9382c9f4b8fa" kind="function"><name>FindEdgeBetweenPins</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1a1ef7ca9e3380bc939acc1f25dad71819" kind="function"><name>ReleaseEdge</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_animation_node_factory" kind="struct"><name>Bvr::Animation::AnimationNodeFactory</name>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_node_factory_1a2393501ffe71f01b370d855ca9a41d46" kind="variable"><name>m_nodes</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_node_factory_1a3b1ab6ee04c38c86ef45c4f1913851c0" kind="variable"><name>m_globalMethods</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_node_factory_1aa402fdd575229da2a845fb0c5ff5166f" kind="variable"><name>m_graphTypeList</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_node_factory_1a5fdb3e945a7ef11ce632da485d9142e7" kind="variable"><name>m_graphTypes</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_node_factory_1aaa5133d5a4544b4347cf38cf7bcacfd7" kind="variable"><name>m_compiledTypes</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_node_factory_1af66e4bce9bcc9157ce7166286baf4094" kind="function"><name>AnimationNodeFactory</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_node_factory_1ada5ab20d935e8a258d68c7f6b4e360c7" kind="function"><name>~AnimationNodeFactory</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_node_factory_1a1905a5a212a54f2e7744e86cc1c16e0f" kind="function"><name>AnimationNodeFactory</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_node_factory_1a8272b2ef89261e741b38f375f5e5de0f" kind="function"><name>operator=</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_node_factory_1a2e521b7d0e7e9740d6fa3fb40f25b134" kind="function"><name>MakeNode</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_node_factory_1aa2e702120acb0913509da83d9cd9ccc4" kind="function"><name>RegisterNode</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_node_factory_1a2203a436c27a531184af40ad7ba61661" kind="function"><name>ForEachType</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_node_factory_1ac44994da5e95e45d6abeec9d292fc228" kind="function"><name>FindGraphType</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_node_factory_1a26772d4338519f9c6a02861111109d4d" kind="function"><name>DiscoverNodes</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_node_factory_1a1ceca9cf188f5b512795ac578813a6e4" kind="function"><name>FindCompiledType</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_node_factory_1a14067f5ed8218aecc1bfaa925faa15e5" kind="function"><name>CompileGraph</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_node_factory_1a21e4c4957b9a23632eeff36ed69e8365" kind="function"><name>FindNodesInTypeRegistry</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_node_factory_1a09531f4f6c477f1ffaebc0ea3fca53ab" kind="function"><name>RegisterType</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_blend_node" kind="struct"><name>Bvr::Animation::BlendNode</name>
+    <member refid="struct_bvr_1_1_animation_1_1_blend_node_1abc5f1eb1e36594c95fe41783013435ed" kind="function"><name>GetInputPins</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_blend_node_1a80d0b87087cf478cccc68860ae1b4c6a" kind="function"><name>GetOutputPins</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_blend_node_1a6852978db4e4b7ab0f8d893b1d313a1d" kind="function"><name>EmitIR</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_blend_param" kind="struct"><name>Bvr::Animation::BlendParam</name>
+    <member refid="struct_bvr_1_1_animation_1_1_blend_param_1ac934da64c0c5276477a3d632e2429257" kind="variable"><name>Name</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_blend_param_1ac204e86f5486911c1d3455d9fcb1e609" kind="variable"><name>MinValue</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_blend_param_1acf3c150a62668390ce1fd322001e33e2" kind="variable"><name>MaxValue</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_blend_point" kind="struct"><name>Bvr::Animation::BlendPoint</name>
+    <member refid="struct_bvr_1_1_animation_1_1_blend_point_1a7a42649ca102e4c7da3fc2b6584813f8" kind="variable"><name>Track</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_blend_point_1a2e11f2080f2de2bbf4ce800f8de1538b" kind="variable"><name>Point</name></member>
+  </compound>
+  <compound refid="class_bvr_1_1_animation_1_1_blend_space" kind="class"><name>Bvr::Animation::BlendSpace</name>
+    <member refid="class_bvr_1_1_animation_1_1_blend_space_1a1ce8287086350c1064c95e0882aec6bc" kind="variable"><name>m_points</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_blend_space_1ad669bdc75bd5c464b49fff520bfa03f7" kind="variable"><name>m_triangles</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_blend_space_1af79e9a61c05bdd8630ede3068efabf54" kind="variable"><name>m_paramX</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_blend_space_1ac8964c44501564a1577998218117e3ff" kind="variable"><name>m_paramY</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_blend_space_1a6f2f803157c86b527a94d90004202996" kind="function"><name>AddTrack</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_blend_space_1a9b3adaf5b086b9d8d4baf65fa44f68d4" kind="function"><name>RemovePoint</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_blend_space_1a9867c9f2e94325c6c4d9d34f827823bb" kind="function"><name>GetTriangles</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_blend_space_1a54befc61c3e40e61d845bac767cb5c24" kind="function"><name>GetPoints</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_blend_space_1a9b4c823600d8165d146a0471778ec47b" kind="function"><name>GetPoints</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_blend_space_1a174ae2a4e8a3cab37d62d787caf9224c" kind="function"><name>GetParamX</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_blend_space_1a260ad934dc8f5dc301c33db725d64c82" kind="function"><name>GetParamY</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_blend_space_1a3c7b88ea5df8784739cc0b10a508889a" kind="function"><name>GetParamX</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_blend_space_1a58e0657ebf4c17310d1b856ea1da3432" kind="function"><name>GetParamY</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_blend_space_1aa45d2d808213b8828ae649cb253a9b4b" kind="function"><name>EvaluateWeights</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_blend_space_1a0f1140e4da4ea852b4d3427a42ec816e" kind="function"><name>Triangulate</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_blend_space_1a946431882319cf26bc621b7ff92e9756" kind="function"><name>Serialise</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_blend_space_loader" kind="struct"><name>Bvr::Animation::BlendSpaceLoader</name>
+    <member refid="struct_bvr_1_1_animation_1_1_blend_space_loader_1aa10870a81d1faad064cfec57f42572bd" kind="typedef"><name>AssetT</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_blend_space_loader_1af5b38a2c0c8244d43065e38ae57f2a29" kind="function"><name>Load</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_blend_space_loader_1a7091fd01a82c4fb1953f8a733782b5d5" kind="function"><name>GetSupportedFormats</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_blend_space_node" kind="struct"><name>Bvr::Animation::BlendSpaceNode</name>
+    <member refid="struct_bvr_1_1_animation_1_1_blend_space_node_1a59997e61c6ea4f38e9a5a1761d5c3970" kind="variable"><name>Space</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_blend_space_node_1a250f724115fec8750ccc5f2f8161278e" kind="function"><name>BlendSpaceNode</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_blend_space_node_1a5a8b5bd32ecbc6b420aa698f5749957b" kind="function"><name>BlendSpaceNode</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_blend_space_node_1aaa40177e6e46edd8528798ffcf887f8d" kind="function"><name>GetInputPins</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_blend_space_node_1a141c81e135a1de2d10e300da346d3aa9" kind="function"><name>GetOutputPins</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_blend_space_node_1af26b382848108a40b2ec0a7fe7cfe9eb" kind="function"><name>EmitIR</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_blend_space_saver" kind="struct"><name>Bvr::Animation::BlendSpaceSaver</name>
+    <member refid="struct_bvr_1_1_animation_1_1_blend_space_saver_1acbb7485ebcc8ed67274b41fd2411e4b7" kind="function"><name>Save</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_blend_space_saver_1acc0d418e487480467411a2511d1b37d3" kind="function"><name>GetSupportedFormats</name></member>
+  </compound>
+  <compound refid="class_bvr_1_1_animation_1_1_c_graph_i_r" kind="class"><name>Bvr::Animation::CGraphIR</name>
+    <member refid="class_bvr_1_1_animation_1_1_c_graph_i_r_1aea94a84a09cfaa2214be4d3ff1a40318" kind="variable"><name>m_constants</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_c_graph_i_r_1a0fdadbfbf0ef1ae3c91e177cf8d08d69" kind="variable"><name>m_expressions</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_c_graph_i_r_1adb4a834a578c98c4710a9a9f04b6028b" kind="variable"><name>m_vars</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_c_graph_i_r_1a20b238303937cfc252a648de4a693546" kind="variable"><name>m_funs</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_c_graph_i_r_1ab46f5810a5104156ceea64ea287058af" kind="variable"><name>m_props</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_c_graph_i_r_1aa315d122be35154df6864b55d6ab4a9f" kind="variable"><name>m_argumentTypes</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_c_graph_i_r_1ace8180666b78985b817794b380090dac" kind="variable"><name>m_returnType</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_c_graph_i_r_1a7270ee1b88b7aa206de347c9e0e30874" kind="function"><name>RegisterProperty</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_c_graph_i_r_1a7d9e83192c03d907ba5e5b23884cea73" kind="function"><name>RegisterProperty</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_c_graph_i_r_1ae8c2db2f5261a028f4a332cf92715e9e" kind="function"><name>RegisterVariable</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_c_graph_i_r_1a2b94aebc5e362431bc7aa211f702f73d" kind="function"><name>RegisterFunction</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_c_graph_i_r_1ad97a905a01e4803764187fa9c0a04ee5" kind="function"><name>GetVarId</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_c_graph_i_r_1ac3d3c90f7a1f1cae3b77264e6823bd5a" kind="function"><name>GetFunId</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_c_graph_i_r_1a75d79055891c97635dd1ddb096203040" kind="function"><name>GetPropId</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_c_graph_i_r_1add38873d1f0584a963385ae9a3af328c" kind="function"><name>AddExpression</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_c_graph_i_r_1a4492db3f1f8da028074bc5c9594c51e5" kind="function"><name>GetExpressions</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_c_graph_i_r_1a9f9ac8152074a9990b7aba7a69e9950c" kind="function"><name>GetFunction</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_c_graph_i_r_1a524dd41dea9eb6f04122703529e35931" kind="function"><name>GetVariable</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_c_graph_i_r_1ac0c8f326af7083d962a9e62f7b1ea93a" kind="function"><name>GetProperty</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_c_graph_i_r_1aadd588c2a16c6536c13f0740567f4853" kind="function"><name>SetReturnType</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_c_graph_i_r_1a2cff7e861d0852bc5d01b64a0c90053b" kind="function"><name>AddArgumentType</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_c_graph_i_r_1a680a5e6cdf39a574359a5c359fb1d9a4" kind="function"><name>GetArgumentTypes</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_c_graph_i_r_1a0b8ee789bdca869c0c15fd7c53d2e621" kind="function"><name>GetReturnType</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_c_graph_i_r_1af75f5c5f38b36c27fdc8d2bece5dc49f" kind="function"><name>AddConstant</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_c_graph_i_r_1ab86883389614c420cfdf55f0f9c34113" kind="function"><name>GetConstants</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_clip_loader" kind="struct"><name>Bvr::Animation::ClipLoader</name>
+    <member refid="struct_bvr_1_1_animation_1_1_clip_loader_1ae464958ceefcfaaf67b3d23cec8b10ef" kind="typedef"><name>AssetT</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_clip_loader_1aa9f953d3aacdd88d11203407bc0275b6" kind="function"><name>Load</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_clip_loader_1acae80966b21fe7e00b5f49a938224ca2" kind="function"><name>GetSupportedFormats</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_clip_saver" kind="struct"><name>Bvr::Animation::ClipSaver</name>
+    <member refid="struct_bvr_1_1_animation_1_1_clip_saver_1a65ec3472d250be026d02600000f10078" kind="function"><name>Save</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_clip_saver_1ac7db98f1ce3aef45fb251bdf6712405c" kind="function"><name>GetSupportedFormats</name></member>
   </compound>
   <compound refid="class_bvr_1_1_c_skin" kind="class"><name>Bvr::CSkin</name>
     <member refid="class_bvr_1_1_c_skin_1ae2d0c33bdc2fae6278d52eb229ed8e89" kind="variable"><name>m_name</name></member>
     <member refid="class_bvr_1_1_c_skin_1ac91b34f7f978800dbee6379a736dc837" kind="variable"><name>m_inverseBindMatrices</name></member>
     <member refid="class_bvr_1_1_c_skin_1a62062964064ef43f7e56cb03e63cfdad" kind="function"><name>CSkin</name></member>
-    <member refid="class_bvr_1_1_c_skin_1a52b33cb500a0159a5820fa7ada57c5c6" kind="function"><name>SetName</name></member>
+    <member refid="class_bvr_1_1_c_skin_1a79632dca2240dca38832716f9700878f" kind="function"><name>SetName</name></member>
     <member refid="class_bvr_1_1_c_skin_1ac2b85429f46b8ae5b69c7ef6ab257fb3" kind="function"><name>GetName</name></member>
-    <member refid="class_bvr_1_1_c_skin_1abfca65b18acd66ad061431f42f7627a8" kind="function"><name>SetInverseBindMatrices</name></member>
-    <member refid="class_bvr_1_1_c_skin_1a2c844b917375bbb65bd70a21385b72b0" kind="function"><name>GetInverseBindMatrices</name></member>
+    <member refid="class_bvr_1_1_c_skin_1a055099fa4e2a75970ef1cf03f0d126e2" kind="function"><name>SetInverseBindMatrices</name></member>
+    <member refid="class_bvr_1_1_c_skin_1aa292235836ae7973c5e34bebb1b2f056" kind="function"><name>GetInverseBindMatrices</name></member>
   </compound>
-  <compound refid="struct_bvr_1_1_animation_1_1_graph" kind="struct"><name>Bvr::Animation::Graph</name>
-    <member refid="struct_bvr_1_1_animation_1_1_graph_1ab5070c1e96d5ed815f585ada5e4a0830" kind="variable"><name>Nodes</name></member>
-    <member refid="struct_bvr_1_1_animation_1_1_graph_1a84b1bc7d566d183dd5979ff786652e5a" kind="variable"><name>NodeMap</name></member>
-    <member refid="struct_bvr_1_1_animation_1_1_graph_1adcbaf8bd38adb4921a26d320004ef9cc" kind="function"><name>AddNode</name></member>
-    <member refid="struct_bvr_1_1_animation_1_1_graph_1a5c7c1e95922b31c8550e1a67a66571f1" kind="function"><name>AddEdge</name></member>
+  <compound refid="struct_bvr_1_1_animation_1_1_animation_graph_1_1_edge" kind="struct"><name>Bvr::Animation::AnimationGraph::Edge</name>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1_1_edge_1a3fc91067a4be24b4778e61270d102872" kind="variable"><name>From</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1_1_edge_1a2b8d18e41aca3ba3352e9c3ff5f47dd3" kind="variable"><name>To</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1_1_edge_1a26b641bf752ce9d23127042b979ddb9f" kind="variable"><name>Next</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1_1_edge_1a7624badc60492bf42824ae3354f1b589" kind="function"><name>IsValid</name></member>
   </compound>
-  <compound refid="struct_bvr_1_1_animation_1_1_graph_edge" kind="struct"><name>Bvr::Animation::GraphEdge</name>
-    <member refid="struct_bvr_1_1_animation_1_1_graph_edge_1a7106d492f22a7975c4f430cd4951f025" kind="variable"><name>DstNode</name></member>
+  <compound refid="struct_bvr_1_1_animation_1_1_evaluated_properties" kind="struct"><name>Bvr::Animation::EvaluatedProperties</name>
+    <member refid="struct_bvr_1_1_animation_1_1_evaluated_properties_1a88413962d9f1bcc4d54357a3fa825afb" kind="variable"><name>EvaluatedTargets</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_evaluated_properties_1acafcad62ba20eaa0ebcd85a618419fdb" kind="variable"><name>Allocator</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_evaluated_properties_1a5ec496f408977587301e4460bde0fdd3" kind="function"><name>EvaluatedProperties</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_evaluated_properties_1afe4cbf13ce55dc54fd03cd97521cebce" kind="function"><name>~EvaluatedProperties</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_evaluated_properties_1a7d893da346590a2a25d47cf12f26fbf8" kind="function"><name>clear</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_evaluated_properties_1aaaefc289caa369e07f9419083208501f" kind="function"><name>reset</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_evaluated_properties_1a9af6dfbaadad9aecc8f9c0cdebf5a8cb" kind="function"><name>Alloc</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_evaluated_properties_1acf12efec6aae3fc05d80f80676ec2d76" kind="function"><name>Alloc</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_evaluated_properties_1ae6d2b269ec4c104bb0efd8049b6c35c9" kind="function"><name>GetStorageForTarget</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_evaluated_properties_1ad8728fdeecbdea3320109b0f6d6aaa56" kind="function"><name>GetStorageForPath</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_float3_node" kind="struct"><name>Bvr::Animation::Float3Node</name>
+    <member refid="struct_bvr_1_1_animation_1_1_float3_node_1ac01e9735f7a0d68a6eeebbb31a1e098f" kind="variable"><name>DefaultValue</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_float3_node_1aeb594939878cb156cf9ff15d4824f910" kind="function"><name>Float3Node</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_float3_node_1aa1c91ec93f73f6374072aa8e21814269" kind="function"><name>GetInputPins</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_float3_node_1afa0483517e6a0d55d8fa566fa9c4bd68" kind="function"><name>GetOutputPins</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_float3_node_1a2646cf0002598e9a75ba8a239885bef8" kind="function"><name>EmitIR</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_function_entry_node" kind="struct"><name>Bvr::Animation::FunctionEntryNode</name>
+    <member refid="struct_bvr_1_1_animation_1_1_function_entry_node_1a29ac18ff93291a29503b9a68b661117c" kind="function"><name>GetInputPins</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_function_entry_node_1adec827c90d2f416a81bd90d05972056c" kind="function"><name>GetOutputPins</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_function_entry_node_1a85a2ce25625cd91deec14fa58129a7c2" kind="function"><name>EmitIR</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_function_return_node" kind="struct"><name>Bvr::Animation::FunctionReturnNode</name>
+    <member refid="struct_bvr_1_1_animation_1_1_function_return_node_1a46999562f3bca1b702f66973ef558731" kind="function"><name>GetInputPins</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_function_return_node_1a6c1d1c42925c054fbec1a1fdce1bcbc5" kind="function"><name>GetOutputPins</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_function_return_node_1ab5770e60f746b2bcc37692719eea5d49" kind="function"><name>EmitIR</name></member>
+  </compound>
+  <compound refid="class_bvr_1_1_animation_1_1_get_component_node" kind="class"><name>Bvr::Animation::GetComponentNode</name>
+    <member refid="class_bvr_1_1_animation_1_1_get_component_node_1a4462a15b77385bd2b1aae9b2bfc8139e" kind="variable"><name>m_type</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_get_component_node_1a6d6161cc49063f55cb91d11f1563c1f7" kind="function"><name>GetComponentNode</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_get_component_node_1a4b2ece53b20eca83488a618bb98dd15b" kind="function"><name>GetInputPins</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_get_component_node_1a0f85530784d104904ddac9750a8301a0" kind="function"><name>GetOutputPins</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_get_component_node_1ab02e9aae349dd75bc97a3f66f10f80eb" kind="function"><name>EmitIR</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_get_component_node_1ac8718022544480b894d5dd102f65c3e1" kind="function"><name>GetType</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_get_component_node_1ab92c8be6ac5413c54f8f13c88a813e14" kind="function"><name>FactoryTypeName</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_get_component_node_1a7a55cbb4994b2c583ed93c98d4e12f9a" kind="function"><name>Serialise</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_get_component_node_1a0f9d9c07d2ad487503eb6401de58be71" kind="function"><name>MakeFactoryInterface</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_get_component_node_1ae5e6432d1e0577aac0c9db7b9929d96d" kind="function"><name>DoMakeMetaNode</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_graph_function_call" kind="struct"><name>Bvr::Animation::GraphFunctionCall</name>
+    <member refid="struct_bvr_1_1_animation_1_1_graph_function_call_1a92217d27fe744d88cd958b5de5010e21" kind="variable"><name>Function</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_graph_function_call_1a93556d27909a696ff79c0079629be0f1" kind="function"><name>GetInputPins</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_graph_function_call_1a32c1ce7e6ff6aa92d079d9717ff3215f" kind="function"><name>GetOutputPins</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_graph_function_call_1a2c8ca87a39ad972a187d3bfe39c0e65b" kind="function"><name>EmitIR</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_graph_loader" kind="struct"><name>Bvr::Animation::GraphLoader</name>
+    <member refid="struct_bvr_1_1_animation_1_1_graph_loader_1a91ac66fb0e5c53b20cc49bb282b2ad96" kind="typedef"><name>AssetT</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_graph_loader_1aeb690481a99f3d129966ef1a8292805f" kind="function"><name>Load</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_graph_loader_1a988d49855bbe1c09a7119b12135cce80" kind="function"><name>GetSupportedFormats</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_animation_1_1_graph_node" kind="struct"><name>Bvr::Animation::GraphNode</name>
     <member refid="struct_bvr_1_1_animation_1_1_graph_node_1a2383b7cc011f75fde1e94abe7fd57687" kind="variable"><name>Name</name></member>
-    <member refid="struct_bvr_1_1_animation_1_1_graph_node_1a3147dad771b9cef30e2f11e6e7b9ddc3" kind="variable"><name>AnimationClip</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_graph_node_base" kind="struct"><name>Bvr::Animation::GraphNodeBase</name>
+    <member refid="struct_bvr_1_1_animation_1_1_graph_node_base_1a439d125c25234419aa465574d060727d" kind="function"><name>GraphNodeBase</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_graph_saver" kind="struct"><name>Bvr::Animation::GraphSaver</name>
+    <member refid="struct_bvr_1_1_animation_1_1_graph_saver_1a5afa0df14e564354522d5bfa96794f32" kind="function"><name>Save</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_graph_saver_1ab0d02412dbee35ad56d6d3fd7cff3140" kind="function"><name>GetSupportedFormats</name></member>
+  </compound>
+  <compound refid="class_bvr_1_1_animation_1_1_graph_type" kind="class"><name>Bvr::Animation::GraphType</name>
+    <member refid="class_bvr_1_1_animation_1_1_graph_type_1aa9e26ba77e8ec163aa08cb972de8c4b8" kind="variable"><name>m_classType</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_graph_type_1aa7aa5ade8d20cfc0f47a88a1470ff5f0" kind="variable"><name>m_interfaces</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_graph_type_1a00896e1fe0ccffd2c3a4602ad42c3f60" kind="variable"><name>m_methods</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_graph_type_1a50844957afd645ad080a5da943178f19" kind="variable"><name>m_getters</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_graph_type_1ae178084225f521816e3121d98cc757d3" kind="variable"><name>m_setters</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_graph_type_1afd03e0ddc4cea726ee85bb0aa546e726" kind="function"><name>GraphType</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_graph_type_1aa2ec7d4a87fb12c14b203930f5b5e2c7" kind="function"><name>~GraphType</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_graph_type_1af2841447333e23023eed8022e791c513" kind="function"><name>MakeMethodNode</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_graph_type_1a7e100d1197cbc970a50becbe51d94588" kind="function"><name>MakeGetterNode</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_graph_type_1a36ef2940f2df6a9d6c5cdd935d2b8b78" kind="function"><name>MakeSetterNode</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_graph_type_1a28161a7f437b1bb10296303829220d2a" kind="function"><name>ForEachMethod</name></member>
+  </compound>
+  <compound refid="structstd_1_1hash_3_01_bvr_1_1_animation_1_1_property_01_4" kind="struct"><name>std::hash&lt; Bvr::Animation::Property &gt;</name>
+    <member refid="structstd_1_1hash_3_01_bvr_1_1_animation_1_1_property_01_4_1a370d17ed7c1aa4f78827645799ae2f69" kind="function"><name>operator()</name></member>
+  </compound>
+  <compound refid="structstd_1_1hash_3_01_bvr_1_1_animation_1_1_property_1_1_path_01_4" kind="struct"><name>std::hash&lt; Bvr::Animation::Property::Path &gt;</name>
+    <member refid="structstd_1_1hash_3_01_bvr_1_1_animation_1_1_property_1_1_path_01_4_1aa7609ac226b5010ec5c252e4d73a695f" kind="function"><name>operator()</name></member>
+  </compound>
+  <compound refid="structstd_1_1hash_3_01_bvr_1_1_animation_1_1_target_01_4" kind="struct"><name>std::hash&lt; Bvr::Animation::Target &gt;</name>
+    <member refid="structstd_1_1hash_3_01_bvr_1_1_animation_1_1_target_01_4_1a47cc01ebc689569ee7decfc1edae6855" kind="function"><name>operator()</name></member>
+  </compound>
+  <compound refid="structstd_1_1hash_3_01_bvr_1_1_animation_1_1_target_id_01_4" kind="struct"><name>std::hash&lt; Bvr::Animation::TargetId &gt;</name>
+    <member refid="structstd_1_1hash_3_01_bvr_1_1_animation_1_1_target_id_01_4_1a38b002772117832906eb53f7cc6d0ae3" kind="function"><name>operator()</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_animation_graph_1_1_id_generator" kind="struct"><name>Bvr::Animation::AnimationGraph::IdGenerator</name>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1_1_id_generator_1a3ce5b67396066288cd9a3a76be4bb23f" kind="variable"><name>m_next</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1_1_id_generator_1a8461caa3d2b11a0fca070a9455dbd4fe" kind="function"><name>Next</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_i_graph_node" kind="struct"><name>Bvr::Animation::IGraphNode</name>
+    <member refid="struct_bvr_1_1_animation_1_1_i_graph_node_1a86cf11e9b7cbb9a79bb558cb589c8f87" kind="function"><name>~IGraphNode</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_i_graph_node_1ab8af3cda25cf2c7dbec2bb69c64b5999" kind="function"><name>GetInputPins</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_i_graph_node_1a93bf79975102bf98f59a563b625414b8" kind="function"><name>GetOutputPins</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_i_graph_node_1abc0d11f01cf811bcb22b6cc731565a09" kind="function"><name>EmitIR</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_i_graph_node_1a4010b6b1c0da9e4e507f9e6c0ef337d5" kind="function"><name>GetType</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_i_graph_node_1a4fda94815b055d26a5e4b8cd516d76b0" kind="function"><name>FactoryTypeName</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_i_graph_node_1a466c76dc59a1371abba840c3c1fd6a62" kind="function"><name>Serialise</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_interpolation_interface" kind="struct"><name>Bvr::Animation::InterpolationInterface</name>
+    <member refid="struct_bvr_1_1_animation_1_1_interpolation_interface_1a61a0c71d5c9688850364556402d3612a" kind="typedef"><name>TLinearFn</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_interpolation_interface_1a57505c7b1aa58800c98bf4654485d6c2" kind="typedef"><name>TCubicFn</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_interpolation_interface_1a0575c591ed1424390c7b5eb4579cf3b7" kind="typedef"><name>TGetKeyFn</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_interpolation_interface_1adb8a0b36ec89e84f3cda25958cc57256" kind="typedef"><name>TSetValFn</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_interpolation_interface_1a6729c45fa4526b9861d1b9dbd8f8ba95" kind="variable"><name>Linear</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_interpolation_interface_1a12e0d000035c36f19bfd25fa509e5330" kind="variable"><name>Cubic</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_interpolation_interface_1a34b4ca7bb0d32c085e3d9340b8930932" kind="variable"><name>GetKey</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_interpolation_interface_1a4ffbb0596c929ee8453305b6b1c77486" kind="variable"><name>Set</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_interpolation_interface_1a4ff3e58cfb099c17e3af61aab67a7f77" kind="function"><name>IsValid</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_interpolator" kind="struct"><name>Bvr::Animation::Interpolator</name>
+    <member refid="struct_bvr_1_1_animation_1_1_interpolator_1a003c0bc012fce52e135b912abc49b19f" kind="typedef"><name>KeyStorage</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_interpolator_1a5f82bd9b8dfea05f6e3d9fa7ecd1976f" kind="typedef"><name>KeyTime</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_interpolator_1a3e036a611921dc1495ed6ef88e26c05e" kind="variable"><name>Interface</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_interpolator_1a2ecb062cecdf524f7ad1e396133e18e9" kind="variable"><name>Keys</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_interpolator_1a6a812875c04469eec88e542a5da311bb" kind="variable"><name>Lower</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_interpolator_1aceeb7c31684f955a8aa45eade1638ae8" kind="variable"><name>Current</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_interpolator_1a444736a73ad382167a1dd96fc249b2be" kind="variable"><name>Upper</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_interpolator_1a91eed1d7a3f438b2e1efaeebf48507d6" kind="function"><name>Point</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_interpolator_1a39865507f62685ea98a3b05c0aee548c" kind="function"><name>Lerp</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_interpolator_1aaf0bc74abb0488c4a7a1c0bf549f5fdd" kind="function"><name>Cubic</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_interpolator_1af142dab10f579645377ffbfa64620519" kind="function"><name>InterpVal</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_interpolator_1a58543691d6b482416f84f9fc4501fb41" kind="function"><name>Interpolate</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_interpolator_1a3fc06a1283174b7c5472c651dc19a0c8" kind="function"><name>Do</name></member>
+  </compound>
+  <compound refid="class_bvr_1_1_animation_1_1_i_r_builder" kind="class"><name>Bvr::Animation::IRBuilder</name>
+    <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1ae4d5a83ac179e6e24e5cf17459fdddaa" kind="variable"><name>m_ir</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1afa0c41b457e7a7ab6712f2db31821491" kind="variable"><name>m_pGraph</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1afe94c5dcf709768ae06146a35b8b473c" kind="variable"><name>m_pCurrentNode</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1aeb09737b6fab2a725713dc08c84b8c7d" kind="variable"><name>m_pinToVarRemap</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1ab418b32079ed7cda74f8bfcbc6222d7d" kind="variable"><name>m_error</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1afbbc2b3ee4f08124f6aa68ad6eaf8cd8" kind="function"><name>IRBuilder</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1a011c6e59d31d27423adb6cbb482fa779" kind="function"><name>~IRBuilder</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1a400a09d3753ee5e1edb42ce86c8080a9" kind="function"><name>EmitIR</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1a75a93ef95ed1dadecf832482a850145a" kind="function"><name>InputPinToVar</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1ac34ee29ddd8c37e05817103967af9473" kind="function"><name>OutputPinToVar</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1a44fdb44e3ffc49cc004348faa36fccf3" kind="function"><name>Return</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1ab6bc168946b0186f5f8a101ef366daf6" kind="function"><name>Assign</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1a8c6ec6d5fefc5f99322fa94e62a5a46e" kind="function"><name>Call</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1ae9e10bd9ad9d12bd1cec0663637eb5e3" kind="function"><name>Call</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1afe6e017e4df1b65f80b348f43467dcd9" kind="function"><name>Call</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1a126423489ea22832b707a0d0bac0bb5a" kind="function"><name>Call</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1a198ecad941c71c68ba65fa5c18c0e6f7" kind="function"><name>SetError</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1ae6ec7dc71e4618fe8432aa480591d209" kind="function"><name>GetError</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1a8545a4a74c42ce61cd8888a0ad6f368b" kind="function"><name>RegisterVar</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1ad2eb85782460000da84b7263727497a9" kind="function"><name>RegisterVar</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1ac4f6a401680e2b5fd7fa19bd4a44cfae" kind="function"><name>GetVarId</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1af782ebfe07adafae152218a039ff2e80" kind="function"><name>CallGetProp</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1ab1bf456398fa64b36f649e6d6685f144" kind="function"><name>AddConstant</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1a5fa176cdf4321e3c8181e5ecc4e95480" kind="function"><name>GetConstants</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1a627f3e2c2de3ad4d5ada8e585a0df928" kind="function"><name>CurrentNode</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1a35d9b2a8cb8ea5f754c6ab94ee77eac1" kind="function"><name>Graph</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1ab4ad92a94f1a22371fc5a43f500db182" kind="function"><name>EmitNode</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1a8123ca7c85d3c32d670f8f9edcb60615" kind="function"><name>GetInputPinId</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1ab8e8494c67bd5ad4d549f70ec025a24d" kind="function"><name>GetOutputPinId</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_i_r_builder_1a34a20be566fb1d2ea804e3a191776fa8" kind="function"><name>RegisterFunctionInputs</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_i_r_expression" kind="struct"><name>Bvr::Animation::IRExpression</name>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_expression_1a7e4f0f5e5537ad7aeacfdda9597f23b5" kind="variable"><name>Args</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_expression_1aa902e6c5de52d2675afada9550713d2d" kind="variable"><name>OpCode</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_expression_1a7cecbd4b6e27e1cd978fb22bf0b8b4a8" kind="variable"><name>Function</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_expression_1a94a6339bedfd7a28aca6806c823d47df" kind="variable"><name>Result</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_i_r_function" kind="struct"><name>Bvr::Animation::IRFunction</name>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_function_1ad109d29be9c9339baea6cd8d3b22a75f" kind="variable"><name>Name</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_function_1a5fa52ba07da59c74fc6ab83e3d69aa8f" kind="variable"><name>Invokable</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_function_1a7b6da4db434dff671d015808f2aca182" kind="variable"><name>Id</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_i_r_method_wrapper" kind="struct"><name>Bvr::Animation::IRMethodWrapper</name>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_method_wrapper_1aef1e233ec87c89a9d48d5e1f61156d07" kind="variable"><name>m_argTypes</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_method_wrapper_1a767cd6020530fca90c1c315070a3dca9" kind="function"><name>IRMethodWrapper</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_method_wrapper_1afc000720112d295e24ffe763200dd14e" kind="function"><name>IsValid</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_method_wrapper_1a2e22b5ce4d109ec3c36acf1d824546e7" kind="function"><name>GetType</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_method_wrapper_1a0627bcf22b0696a1754bf7188bd40e3e" kind="function"><name>GetReturnType</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_method_wrapper_1a73024c06fbc82d83074eb3380b920876" kind="function"><name>GetArgumentTypes</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_method_wrapper_1adcb2f7118c59c82761520ecde13dee6c" kind="function"><name>GetArgumentNames</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_method_wrapper_1a6445e86e98aa7cce59ac49cbaa9d7eed" kind="function"><name>GetAttribute</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_method_wrapper_1abb89d074bab7c041ac3ecf5859dbe8d6" kind="function"><name>GetAttributeCount</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_method_wrapper_1a7252e01f2ecb84d72e12bd341b171bd2" kind="function"><name>Invoke</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_method_wrapper_1a8a91552fbd08b6051705a7f5712dfbe1" kind="function"><name>GetIR</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_method_wrapper_1ab6901fb453eeb647b1da3a9d11bcbe27" kind="function"><name>Init</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_i_r_property" kind="struct"><name>Bvr::Animation::IRProperty</name>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_property_1ae1339cddf45ec136e0abdff0591c1b97" kind="variable"><name>OwnerType</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_property_1a89fdda73d0f0a1743264995d9a3cbc4e" kind="variable"><name>Name</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_property_1a6f376d15c08c6b2bd1f7eab230573b67" kind="variable"><name>Id</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_i_r_property_wrapper" kind="struct"><name>Bvr::Animation::IRPropertyWrapper</name>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_property_wrapper_1a1637708ff41436b224707f79b03519fc" kind="variable"><name>m_varId</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_property_wrapper_1afbdba0d312d32f85557741e3d2b4f3d3" kind="function"><name>IRPropertyWrapper</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_property_wrapper_1ac7a95f41e883400362df17528528d637" kind="function"><name>GetType</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_property_wrapper_1a13bb17196ebd463bd3f10a2d34804961" kind="function"><name>IsValid</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_property_wrapper_1a5fec08148ab8e16e7b977bd97d715708" kind="function"><name>SetValue</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_property_wrapper_1ab923668ff71a2d59b7267fee6a240ad7" kind="function"><name>OffsetOf</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_property_wrapper_1a3f6a83e63d390b58799e6fa29c6fd2bc" kind="function"><name>GetValue</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_property_wrapper_1a950634ea1a0566d4eb71bf44ce389c73" kind="function"><name>GetReference</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_property_wrapper_1a6e6ae7038723031a821d5c2708c2214d" kind="function"><name>GetAttribute</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_property_wrapper_1a72435631910ffc2da7d0a9e0e7de0905" kind="function"><name>GetAttributeCount</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_property_wrapper_1a6d0bcc98530eeacdb31a43789ccaf074" kind="function"><name>GetIR</name></member>
+  </compound>
+  <compound refid="class_bvr_1_1_animation_1_1_i_r_runner" kind="class"><name>Bvr::Animation::IRRunner</name>
+    <member refid="class_bvr_1_1_animation_1_1_i_r_runner_1a103636aff02ad153fc22e41520bc6e26" kind="variable"><name>m_ir</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_i_r_runner_1aaff533e93a06768a0a1b84afa9503c22" kind="variable"><name>m_globalVars</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_i_r_runner_1a9b20c98150d652e567e9a386904b8c5c" kind="function"><name>IRRunner</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_i_r_runner_1a1be8dc2c85ca501cc8250eeeb81af0bf" kind="function"><name>Run</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_i_r_runner_1a8caa2dfe1e58ce12987fdd166d86c30a" kind="function"><name>SetUpVariables</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_i_r_runner_1ad754b31cbdab2e275f1f1942b9f88121" kind="function"><name>SetUpVariables</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_i_r_runner_1a19cd2739723ee3b71b4c07e1e941395c" kind="function"><name>SetGlobalVariable</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_i_r_runner_1a92446621669ff2ac4032aebd1b47539d" kind="function"><name>SetGlobalVariable</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_i_r_runner_1ac1125c2578be1673fe81a8775accb7a2" kind="function"><name>GetGlobalVariable</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_i_r_type_wrapper" kind="struct"><name>Bvr::Animation::IRTypeWrapper</name>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_type_wrapper_1aa9fe69c3de9a1b629ba9ecb182eff501" kind="variable"><name>m_ir</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_type_wrapper_1a2e2103d0ee49f7da3861d94ec7865154" kind="variable"><name>m_meths</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_type_wrapper_1a18b5b6d0fdfa3e655b029cc62ecf6721" kind="variable"><name>m_props</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_type_wrapper_1a2764ece5eed4f5284bec68c7769451d1" kind="variable"><name>m_name</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_type_wrapper_1a3480a5b075ea3349687023654e5e43f0" kind="function"><name>IRTypeWrapper</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_type_wrapper_1a8c04e0c0a0d5ba2054a31e0c1f4b3355" kind="function"><name>Refresh</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_i_r_variable" kind="struct"><name>Bvr::Animation::IRVariable</name>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_variable_1a5b9556493d9da31d17a2ddd152e27d78" kind="variable"><name>Name</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_variable_1a660f0757caa409b71c9d4e90e1f82627" kind="variable"><name>Type</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_i_r_variable_1ad5f66800b8342cbed5b668e376da6793" kind="variable"><name>Id</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_detail_1_1_key_accessor" kind="struct"><name>Bvr::Animation::Detail::KeyAccessor</name>
+    <member refid="struct_bvr_1_1_animation_1_1_detail_1_1_key_accessor_1a405ba0138463ef9b8bb8f2831d65d2e0" kind="function"><name>Get</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_detail_1_1_key_accessor_1ad21abc0a017dee6fe8e21c31189b72ac" kind="function"><name>Get</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_traverse_context_1_1_merged_pose" kind="struct"><name>Bvr::Animation::TraverseContext::MergedPose</name>
+    <member refid="struct_bvr_1_1_animation_1_1_traverse_context_1_1_merged_pose_1ab5d3f48ac62eee4ad78049febb92e85c" kind="variable"><name>Poses</name></member>
+  </compound>
+  <compound refid="class_bvr_1_1_animation_1_1_meta_getter_node" kind="class"><name>Bvr::Animation::MetaGetterNode</name>
+    <member refid="class_bvr_1_1_animation_1_1_meta_getter_node_1a37bcd6b3bfb3de1c1ac811eaa2ee54d1" kind="variable"><name>m_prop</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_meta_getter_node_1a3a0670694c7a39ac97388c5a06b4deda" kind="function"><name>MetaGetterNode</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_meta_getter_node_1a627641702f6e60420298335b49385d8f" kind="function"><name>GetInputPins</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_meta_getter_node_1a61177034b5c16a1d611049d80100b87c" kind="function"><name>GetOutputPins</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_meta_getter_node_1a880dd3099a95ecc994cf7b3cd3e9bf02" kind="function"><name>EmitIR</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_meta_getter_node_1aa452301dcb55f1be0c125ecbec6cfa0f" kind="function"><name>GetType</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_meta_getter_node_1a3470cfd6de0f3fd4dcd1deb7bc6498d2" kind="function"><name>FactoryTypeName</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_meta_getter_node_1a0f24af6a930c63616d18232d65e1c700" kind="function"><name>Serialise</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_meta_getter_node_1a140b1bb44e6e0ff2f92a0234c2aac308" kind="function"><name>MakeFactoryInterface</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_meta_getter_node_1a9e0249f30c771f448085c482c3d9777a" kind="function"><name>DoMakeMetaNode</name></member>
+  </compound>
+  <compound refid="class_bvr_1_1_animation_1_1_meta_global_method_node" kind="class"><name>Bvr::Animation::MetaGlobalMethodNode</name>
+    <member refid="class_bvr_1_1_animation_1_1_meta_global_method_node_1a9b1238e3f484dd63e04ce1d59a27c80f" kind="variable"><name>m_meth</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_meta_global_method_node_1a86b9c438d37ef78a03082264de5f2f9f" kind="function"><name>MetaGlobalMethodNode</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_meta_global_method_node_1a688fb630c6b4d72643b04cc26fc62f4f" kind="function"><name>GetInputPins</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_meta_global_method_node_1ada1764c1f81078793cdb75727caf53c9" kind="function"><name>GetOutputPins</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_meta_global_method_node_1a723f9691190ef5fc0a0758b91d37cbc7" kind="function"><name>EmitIR</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_meta_global_method_node_1a1956b597427654bd074f2aa5828f7679" kind="function"><name>GetType</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_meta_global_method_node_1a8621defbadd403a5de0246ff2134b1b4" kind="function"><name>FactoryTypeName</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_meta_global_method_node_1a74ba2820fd74327ac9c34b07733bd0cc" kind="function"><name>Serialise</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_meta_global_method_node_1aeae699ca6ac7a1d8b72d337a10d47693" kind="function"><name>MakeFactoryInterface</name></member>
+    <member refid="class_bvr_1_1_animation_1_1_meta_global_method_node_1a64c6cd418d83bba224804e2161a4cd93" kind="function"><name>DoMakeMetaNode</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_animation_graph_1_1_node" kind="struct"><name>Bvr::Animation::AnimationGraph::Node</name>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1_1_node_1a40b145217df11a4f4760dadb6b393160" kind="variable"><name>Desc</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1_1_node_1ab7c02d1f29669675277c233a613036b1" kind="variable"><name>State</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_animation_graph_1_1_node_desc" kind="struct"><name>Bvr::Animation::AnimationGraph::NodeDesc</name>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1_1_node_desc_1aec43b04338257c5e1778cf3ba4805c1a" kind="variable"><name>Node</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1_1_node_desc_1a89cc973636a17ea24560fb799548451b" kind="variable"><name>Impl</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_node_interface" kind="struct"><name>Bvr::Animation::NodeInterface</name>
+    <member refid="struct_bvr_1_1_animation_1_1_node_interface_1a2e909c83465b58e97da98fb785dc5e75" kind="typedef"><name>TMakeFn</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_node_interface_1adc24a4748ee84fc0f79149c74f93deb0" kind="variable"><name>m_make</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_node_interface_1a49cc2bfc97daa33c0b909a03e725e25e" kind="variable"><name>m_userData</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_node_interface_1a0bb68a301be2c3d8be3f6a97de7667d0" kind="function"><name>Make</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_animation_graph_1_1_node_state" kind="struct"><name>Bvr::Animation::AnimationGraph::NodeState</name>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1_1_node_state_1a139b7750e03474cdce25fb3de955f218" kind="variable"><name>Pos</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1_1_node_state_1a74ecec6a782787794c772a9958dad9dd" kind="variable"><name>InPins</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1_1_node_state_1af841404517e1339e157d1b67c45ed4b9" kind="variable"><name>OutPins</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1_1_node_state_1a07cc9a7f46c4aa94dac6a7a72c3c8070" kind="variable"><name>DisplayRenamed</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_number_node" kind="struct"><name>Bvr::Animation::NumberNode</name>
+    <member refid="struct_bvr_1_1_animation_1_1_number_node_1a18c9b7cd76b96ae21c9d95fb6f8ed022" kind="variable"><name>DefaultValue</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_number_node_1a5d28ff8dea010c9c0f5ccfad2b28e15b" kind="function"><name>NumberNode</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_number_node_1ade1c45fc2d35c7b00ac94f07d1be11c7" kind="function"><name>GetInputPins</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_number_node_1ad19fac5a2e86c008f99976722653bcaf" kind="function"><name>GetOutputPins</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_number_node_1a0474bfddd89d15f46acdf9ca9a303a49" kind="function"><name>EmitIR</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_traverse_context_1_1_param" kind="struct"><name>Bvr::Animation::TraverseContext::Param</name>
+    <member refid="struct_bvr_1_1_animation_1_1_traverse_context_1_1_param_1aeaf22bf954b8bc775ab00d8a100aab4c" kind="variable"><name>pData</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_traverse_context_1_1_param_1a842ad3c324c87117effb890300e02338" kind="variable"><name>Type</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_animation_1_1_property_1_1_path" kind="struct"><name>Bvr::Animation::Property::Path</name>
     <member refid="struct_bvr_1_1_animation_1_1_property_1_1_path_1a8936504f2a0f07273e19ed44eb502536" kind="variable"><name>ComponentType</name></member>
     <member refid="struct_bvr_1_1_animation_1_1_property_1_1_path_1aebaa469d5ab9a827a47a7ccf25431bad" kind="variable"><name>PropertyName</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_property_1_1_path_1afd81e82928e3c33ddc35cc83e8fb3870" kind="function"><name>operator==</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_evaluated_properties_1_1_path_storage" kind="struct"><name>Bvr::Animation::EvaluatedProperties::PathStorage</name>
+    <member refid="struct_bvr_1_1_animation_1_1_evaluated_properties_1_1_path_storage_1aa822a74e90bb7e8bc9834d81d400cb4b" kind="variable"><name>m_path</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_evaluated_properties_1_1_path_storage_1a9f01926cf0be1d2419be7a7e59c38d85" kind="variable"><name>m_mixFn</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_evaluated_properties_1_1_path_storage_1a7f62e18fde26d3c9a196e766a78ae8ef" kind="variable"><name>m_targets</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_animation_graph_1_1_pin" kind="struct"><name>Bvr::Animation::AnimationGraph::Pin</name>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1_1_pin_1a221614a6f40bb079d727aa8c86471b1b" kind="variable"><name>Desc</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1_1_pin_1a516b0b10d3ea4f3457dc7b73a8cdfc30" kind="variable"><name>State</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1_1_pin_1a5c6d9f6a84e9d3239f34e3535b48a3b1" kind="function"><name>Pin</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1_1_pin_1aedda8d64fe5f9507415623ac2ad48695" kind="function"><name>Pin</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1_1_pin_1a844f87196da3848521b12bb28838cc25" kind="function"><name>HasConnection</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1_1_pin_1a430774770e11068593cfb26101e6921e" kind="function"><name>FirstEdge</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1_1_pin_1ae24cfeae19b39d426e317facc873efbf" kind="function"><name>NodeId</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1_1_pin_1ac04c331a1cdb82484e2a2a55eaa7ecea" kind="function"><name>IsInput</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_pin_desc" kind="struct"><name>Bvr::Animation::PinDesc</name>
+    <member refid="struct_bvr_1_1_animation_1_1_pin_desc_1a13d2e609c1ed2f097af81d491440e86c" kind="variable"><name>Name</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_pin_desc_1af4ca9fa9818b01190bb0a98dc899cc2f" kind="variable"><name>Type</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_pin_desc_1a5fdba442df65d4d42da71eff970f5cb4" kind="function"><name>PinDesc</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_pin_desc_1afc0e1bed31a8774d68b2f82ebb41d60a" kind="function"><name>PinDesc</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_pin_desc_1ad4ee90f57da5b57ee2bc6de948e18d5f" kind="function"><name>PinDesc</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_pin_desc_1abc9c92ad2fbc808a845bd3d570ca28b0" kind="function"><name>PinDesc</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_pin_desc_1a8b68858fd17fbe0b08743ab1e66287c5" kind="function"><name>PinDesc</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_pin_desc_1a220412904c8f1c106616df70c7e22da7" kind="function"><name>operator==</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_animation_graph_1_1_pin_state" kind="struct"><name>Bvr::Animation::AnimationGraph::PinState</name>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1_1_pin_state_1a0c66d65bbbc737de661fdffea965bc5a" kind="variable"><name>NodeId</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1_1_pin_state_1a2d3251450565645aaa883aa85ae35203" kind="variable"><name>Pos</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1_1_pin_state_1aa22fdc63de5e376841a35c90ed3f2f9d" kind="variable"><name>FirstEdge</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1_1_pin_state_1a52b783884d8af82367e9dbb79df9eb51" kind="variable"><name>IsInput</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1_1_pin_state_1a1bd067ed37c713788a976d6c2acc3ff0" kind="function"><name>PinState</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1_1_pin_state_1af96918929032de6e112ee9ec502cb228" kind="function"><name>PinState</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_animation_graph_1_1_pin_state_1a97d1fc0a3d4a7617fed5aac352bfdcd5" kind="function"><name>HasConnection</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_pin_type" kind="struct"><name>Bvr::Animation::PinType</name>
+    <member refid="struct_bvr_1_1_animation_1_1_pin_type_1a8e1e3cc262373574f2ba5b3e2e646649" kind="variable"><name>Name</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_pin_type_1ac353939d56163e72a901ad3c83f14b06" kind="variable"><name>Type</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_pin_type_1a0f35276f4f708c232d88a4b529cb0cf6" kind="function"><name>operator==</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_pin_type_1a19345b7536dad6b0853012a6714d6537" kind="function"><name>operator!=</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_playback_state" kind="struct"><name>Bvr::Animation::PlaybackState</name>
+    <member refid="struct_bvr_1_1_animation_1_1_playback_state_1a1301a80015c7e96cb2329dcb4f981b4d" kind="variable"><name>m_currentTime</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_playback_state_1a8203286ba27d40c01a80362dafe88993" kind="variable"><name>m_isPlaying</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_playback_state_1a8d0b53c885b2614123a2dfd19d774df8" kind="variable"><name>m_isLooping</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_playback_state_1a0cc1e6ff553da4177ba7ee0d84bc15c2" kind="variable"><name>m_weight</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_playback_state_1aa8fb39c58b70fab418fc34b1abc9991a" kind="variable"><name>m_speed</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_playback_state_1ac5ecca203ec9d4d9059420f63c0d6dc4" kind="variable"><name>m_evaluatedWeight</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_playback_state_1a79fdc1bdc0b5db3b3a560d97215bfa23" kind="variable"><name>m_poseId</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_playback_state_1a9c3bbd1e194dc17e1d5176d27a595c50" kind="function"><name>SetTime</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_playback_state_1adc0a571caf2d315921177ff069cf40c5" kind="function"><name>AddTime</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_playback_state_1a369b48b31b8dbdcdbddde70b97d826ef" kind="function"><name>SetPlaying</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_playback_state_1a595cb4227fe940912d8b014f59a85c8d" kind="function"><name>Pause</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_playback_state_1a4b7d3bf830c3b81c1ddf00f24e431efd" kind="function"><name>Play</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_playback_state_1a8bdc1747791eb6edb0756b507300f080" kind="function"><name>Stop</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_playback_state_1ab39d8a80ab08c35dff2ada52964907cf" kind="function"><name>Start</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_playback_state_1a78eb7650e18a71cd9b4aaa90e13c8e70" kind="function"><name>Repeated</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_playback_state_1af19dcc697aa4a4ea80d0784671d48107" kind="function"><name>WithWeight</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_playback_state_1a9f78fe01386ac237627d13dfa867fe03" kind="function"><name>WithSpeed</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_playback_state_1a148b289b966df3c0ebfd04d870bdd079" kind="function"><name>SetEvaluatedWeight</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_playback_state_1ab0010ff0d1c4aa67ec2f72bc408df42f" kind="function"><name>EvaluatedWeight</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_playback_state_1abcaaea9e4aa94d9125b54b008d2723b1" kind="function"><name>CurrentTime</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_playback_state_1ab3feae6774e96759307c7a8daf94a901" kind="function"><name>IsPlaying</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_playback_state_1a3090777574f41e6c4d4cf367714c4404" kind="function"><name>IsLooping</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_playback_state_1a1e972cad8d6de83d25907ad051b88ea2" kind="function"><name>Weight</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_playback_state_1a5a132cefcf2d535c974a1347fa2d4da7" kind="function"><name>Speed</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_animation_1_1_player" kind="struct"><name>Bvr::Animation::Player</name>
-    <member refid="struct_bvr_1_1_animation_1_1_player_1a55670c3a2b3f30a339a3820785911fdf" kind="variable"><name>m_channels</name></member>
-    <member refid="struct_bvr_1_1_animation_1_1_player_1a5ef0c5118440193faa903d174484dbe1" kind="variable"><name>m_samplers</name></member>
-    <member refid="struct_bvr_1_1_animation_1_1_player_1a757f236f938d19747b973456c23383f7" kind="variable"><name>m_name</name></member>
-    <member refid="struct_bvr_1_1_animation_1_1_player_1aa35cd3dac336ddcaf4b70e80693147e7" kind="variable"><name>m_currentTime</name></member>
-    <member refid="struct_bvr_1_1_animation_1_1_player_1aa25938fb0140a0cf9c3a4169db385c7e" kind="variable"><name>m_minTime</name></member>
-    <member refid="struct_bvr_1_1_animation_1_1_player_1a41940b1f4f6457e5379e615e01d70504" kind="variable"><name>m_maxTime</name></member>
-    <member refid="struct_bvr_1_1_animation_1_1_player_1afa8c62cf1db253b5f7798d4025f9965c" kind="variable"><name>m_bPlaying</name></member>
-    <member refid="struct_bvr_1_1_animation_1_1_player_1aac029850dbd7e0c20a5b7c72807a6040" kind="variable"><name>m_bLooping</name></member>
-    <member refid="struct_bvr_1_1_animation_1_1_player_1a194fb8498b49824c9883249ec2cf7840" kind="function"><name>SetTime</name></member>
-    <member refid="struct_bvr_1_1_animation_1_1_player_1ac9e96d598a65e1a98e63c2c3faf1c1f7" kind="function"><name>AddTime</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_player_1a86254a4453d30e7fab67a7030480b2f2" kind="variable"><name>TrackNode</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_player_1af277e6fb895800f27582c0cf00cf51da" kind="variable"><name>GraphNode</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_player_1adbe276c6d1af865272d41cff3215ac8b" kind="variable"><name>ActiveTracks</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_player_1a840c49aa037bbbfb86cb03ad8f6e9a81" kind="variable"><name>NodeBlends</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_player_1a79857d9ab6e20aed07cfae058b903d30" kind="variable"><name>Variables</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_player_1a6a114731d6159fc6e3380815ff97081f" kind="function"><name>Exists</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_player_1afbd09fabd1713994d241d7be13986f9b" kind="function"><name>SetTime</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_player_1a2581cb7b05c419f1c932e6b31d861292" kind="function"><name>AddTime</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_player_1a2cd431a5cc8131a13cc3b11d96f527f6" kind="function"><name>Add</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_player_1a8b1e727baf9e4ce33ee9c45ba458b94d" kind="function"><name>Remove</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_player_1a9ce7d4f9c16bf02d8aedbb72f34bb01f" kind="function"><name>Start</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_player_1a90c7e00ae8aff5f3c9c9168a53bda4d3" kind="function"><name>Play</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_player_1ad0a3faa84f2378af98e84652c78b9b52" kind="function"><name>Stop</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_player_1ad9c7397bd5568ccf4b5e669bbe0e6cfd" kind="function"><name>Pause</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_player_1a27aa82dfcf35de9a7783b037bd58f8c7" kind="function"><name>IsPlaying</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_player_1a82d2a36c11c7274033bf7a4fe89bbcef" kind="function"><name>SetTime</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_player_1a20f2cdd10987c4bc77e7734a262b4d73" kind="function"><name>AddTime</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_player_1afde964864a909c67492a854455797873" kind="function"><name>Start</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_player_1aa2de5fbcf1c37a0c2c65abb182ec13bf" kind="function"><name>Play</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_player_1a97e447c9afc38bc92a092be752e7c3c0" kind="function"><name>Stop</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_player_1a77ce9403a1adfaa8b8675837aec8f9ee" kind="function"><name>Pause</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_player_1a4f712438b542d5c7fed768d4dd2dd3cd" kind="function"><name>IsPlaying</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_player_1a48771981025ea771abdd37d2daeb46e8" kind="function"><name>SetPlaying</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_player_1a2d5b7bce377a1472d910988715addd7a" kind="function"><name>CurrentTime</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_player_1a67980ff20bb5bf4511593149160c4f49" kind="function"><name>IsLooping</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_player_1a6bc7d80ab4a6782e6ae197bbf5245869" kind="function"><name>GetVariable</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_player_1a2bd0c4f10a023fd177689345d4caa97d" kind="function"><name>SetVariable</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_animation_1_1_plugin" kind="struct"><name>Bvr::Animation::Plugin</name>
-    <member refid="struct_bvr_1_1_animation_1_1_plugin_1aa8f518f8c3e3bdebcc35ea63ab5426b3" kind="function"><name>Build</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_plugin_1a4e622aed76cf31bb045ff88b9cf71bb5" kind="function"><name>Build</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_traverse_context_1_1_pose_proxy" kind="struct"><name>Bvr::Animation::TraverseContext::PoseProxy</name>
+    <member refid="struct_bvr_1_1_animation_1_1_traverse_context_1_1_pose_proxy_1ac0b3b3964311a8512eec0b353fa8bcb7" kind="variable"><name>Node</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_traverse_context_1_1_pose_proxy_1afddf9c373c4440ea881b5da8f180c573" kind="variable"><name>Track</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_animation_1_1_property" kind="struct"><name>Bvr::Animation::Property</name>
-    <member refid="struct_bvr_1_1_animation_1_1_property_1a5de53de591b1431dd18d47f4eefb9ad3" kind="enum"><name>EType</name></member>
-    <member refid="struct_bvr_1_1_animation_1_1_property_1a5de53de591b1431dd18d47f4eefb9ad3a6adf97f83acf6453d4a6a4b1070f3754" kind="enumvalue"><name>None</name></member>
-    <member refid="struct_bvr_1_1_animation_1_1_property_1a5de53de591b1431dd18d47f4eefb9ad3a22ae0e2b89e5e3d477f988cc36d3272b" kind="enumvalue"><name>Float</name></member>
-    <member refid="struct_bvr_1_1_animation_1_1_property_1a5de53de591b1431dd18d47f4eefb9ad3a6694430a2b471b5d2de071f2ef1fdc57" kind="enumvalue"><name>Float2</name></member>
-    <member refid="struct_bvr_1_1_animation_1_1_property_1a5de53de591b1431dd18d47f4eefb9ad3a8a8a1d211464d4bdee46db3c75bfa121" kind="enumvalue"><name>Float3</name></member>
-    <member refid="struct_bvr_1_1_animation_1_1_property_1a5de53de591b1431dd18d47f4eefb9ad3a33116adc6690289da9b82ea736864eeb" kind="enumvalue"><name>Float4</name></member>
-    <member refid="struct_bvr_1_1_animation_1_1_property_1a5de53de591b1431dd18d47f4eefb9ad3a28d9441d82aad409ba4bbbe4c0830930" kind="enumvalue"><name>Quat</name></member>
-    <member refid="struct_bvr_1_1_animation_1_1_property_1a5de53de591b1431dd18d47f4eefb9ad3ae93f994f01c537c4e2f7d8528c3eb5e9" kind="enumvalue"><name>Count</name></member>
     <member refid="struct_bvr_1_1_animation_1_1_property_1a14a32dea3f505f0c06e444eb9856855d" kind="variable"><name>m_path</name></member>
-    <member refid="struct_bvr_1_1_animation_1_1_property_1a4f772c41b2b3347abbbfe6e763f28fb2" kind="variable"><name>m_type</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_property_1a13e250e201c96d3e94d93dec65a78a72" kind="variable"><name>m_type</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_property_1a8825e624b124fc32ffe98920d27e65f8" kind="function"><name>operator==</name></member>
   </compound>
-  <compound refid="struct_bvr_1_1_animation_1_1_sampler" kind="struct"><name>Bvr::Animation::Sampler</name>
-    <member refid="struct_bvr_1_1_animation_1_1_sampler_1a7ab1fd1598d3f14454d1c8df59d3e34a" kind="variable"><name>m_times</name></member>
-    <member refid="struct_bvr_1_1_animation_1_1_sampler_1aa339781f13cd1f9c1caf3a589cceb519" kind="variable"><name>m_min</name></member>
-    <member refid="struct_bvr_1_1_animation_1_1_sampler_1ab161f26840fd30d8c76ea471d3f50f0a" kind="variable"><name>m_max</name></member>
-    <member refid="struct_bvr_1_1_animation_1_1_sampler_1a98c6c5acc5c99ea45b908d685e0392ac" kind="variable"><name>m_eMode</name></member>
+  <compound refid="struct_bvr_1_1_animation_1_1_property_curve" kind="struct"><name>Bvr::Animation::PropertyCurve</name>
+    <member refid="struct_bvr_1_1_animation_1_1_property_curve_1a1df233267a1bff1ba712c71b31f043de" kind="variable"><name>Keyframes</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_property_curve_1aefbbc2ea1d17edb3a208d20bfe3b0686" kind="variable"><name>Times</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_property_curve_1a332bc0fd759d7645d4c00000150ab3f1" kind="variable"><name>TargetProp</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_property_curve_1ab76ea918c7dd56f008936a67ea69e614" kind="variable"><name>Mode</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_property_curve_1a1ed6ad38e850f527cf91e2c76d79e6ef" kind="function"><name>operator==</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_property_curve_1a7da915c584f325254f7e58a9159231ab" kind="function"><name>TimeRange</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_root_node" kind="struct"><name>Bvr::Animation::RootNode</name>
+    <member refid="struct_bvr_1_1_animation_1_1_root_node_1ab637b958d3a7d0abd6c6fc58a36f9140" kind="function"><name>GetInputPins</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_root_node_1a31aab878753e101e72f06889bb441496" kind="function"><name>GetOutputPins</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_root_node_1a6f591f364a7a92b807aefa7bb8f5d9ce" kind="function"><name>EmitIR</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_animation_1_1_skin_component" kind="struct"><name>Bvr::Animation::SkinComponent</name>
     <member refid="struct_bvr_1_1_animation_1_1_skin_component_1a5f7e1d952d5d0da62e6dad09c3ec0142" kind="variable"><name>Skin</name></member>
@@ -73,22 +586,259 @@
   <compound refid="struct_bvr_1_1_animation_1_1_skin_mesh_ref" kind="struct"><name>Bvr::Animation::SkinMeshRef</name>
     <member refid="struct_bvr_1_1_animation_1_1_skin_mesh_ref_1ab27cb264cdccab6516c7af90ebe8a015" kind="variable"><name>SkinEntity</name></member>
   </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_speed_node" kind="struct"><name>Bvr::Animation::SpeedNode</name>
+    <member refid="struct_bvr_1_1_animation_1_1_speed_node_1a40df8ab2acf32ac586394aba56bbd08d" kind="function"><name>GetInputPins</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_speed_node_1a5a931049f1587219d6a0e823fec27194" kind="function"><name>GetOutputPins</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_speed_node_1aded256837e783231c481d7ccbbd25a56" kind="function"><name>EmitIR</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_evaluated_properties_1_1_target" kind="struct"><name>Bvr::Animation::EvaluatedProperties::Target</name>
+    <member refid="struct_bvr_1_1_animation_1_1_evaluated_properties_1_1_target_1a955c5e2dd5d4ae8c0ef6dc8ea3bc494e" kind="variable"><name>Weight</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_evaluated_properties_1_1_target_1a825e3de47b9c4b7ad3e144ca816189a0" kind="function"><name>GetPropertyData</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_target" kind="struct"><name>Bvr::Animation::Target</name>
+    <member refid="struct_bvr_1_1_animation_1_1_target_1ab4665af5bbe04f07948479b656675f81" kind="variable"><name>Id</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_target_1a1eaa14302bf2474ee7b5c501a2723d6d" kind="variable"><name>PlayerEnt</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_target_1a2d5e4f13279a11e64ce1fdcce22c00b1" kind="function"><name>operator==</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_target_id" kind="struct"><name>Bvr::Animation::TargetId</name>
+    <member refid="struct_bvr_1_1_animation_1_1_target_id_1aebd19bb98dbc1378c55093598d31b952" kind="variable"><name>Uuid</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_target_id_1a85b43caa290657a92a5c9358731a4a46" kind="function"><name>operator Utils::uuid</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_target_id_1a314c29059cf6a0bb384208c64fad6130" kind="function"><name>operator bool</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_target_id_1a2c744de20935c68c4c39e6bcbabc71b4" kind="function"><name>operator==</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_target_id_1aefa3f74bca289d77f5809d617e5d4234" kind="function"><name>Generate</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_target_id_1af5d215bfb1ce62b800095e6a3180fc3d" kind="function"><name>FromName</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_target_id_1ad849491b7e99f3cce21b9537cbe537e3" kind="function"><name>FromChain</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_evaluated_properties_1_1_target_storage" kind="struct"><name>Bvr::Animation::EvaluatedProperties::TargetStorage</name>
+    <member refid="struct_bvr_1_1_animation_1_1_evaluated_properties_1_1_target_storage_1a15a71e77c600a84e372e419386ae6966" kind="variable"><name>PathStorage</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_t_col_interp_base" kind="struct"><name>Bvr::Animation::TColInterpBase</name>
+    <member refid="struct_bvr_1_1_animation_1_1_t_col_interp_base_1a5b89432b25129489fd24d011e997d59c" kind="function"><name>Linear</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_t_col_interp_base_1a344125c89856ebe6e237a2ef5b847c05" kind="function"><name>Cubic</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_t_interpolator" kind="struct"><name>Bvr::Animation::TInterpolator</name>
+    <member refid="struct_bvr_1_1_animation_1_1_t_interpolator_1acf6ac3ba340311bf45df87e72d040992" kind="function"><name>Linear</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_t_interpolator_1ad8fecfa6481f8fb5a15f8b25a636f90b" kind="function"><name>Cubic</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_t_interpolator_3_01_colour_1_1_linear_r_g_ba_01_4" kind="struct"><name>Bvr::Animation::TInterpolator&lt; Colour::LinearRGBa &gt;</name>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_t_interpolator_3_01_colour_1_1_s_r_g_ba_01_4" kind="struct"><name>Bvr::Animation::TInterpolator&lt; Colour::SRGBa &gt;</name>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_t_interpolator_3_01double_01_4" kind="struct"><name>Bvr::Animation::TInterpolator&lt; double &gt;</name>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_t_interpolator_3_01double2_01_4" kind="struct"><name>Bvr::Animation::TInterpolator&lt; double2 &gt;</name>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_t_interpolator_3_01double3_01_4" kind="struct"><name>Bvr::Animation::TInterpolator&lt; double3 &gt;</name>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_t_interpolator_3_01double4_01_4" kind="struct"><name>Bvr::Animation::TInterpolator&lt; double4 &gt;</name>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_t_interpolator_3_01float_01_4" kind="struct"><name>Bvr::Animation::TInterpolator&lt; float &gt;</name>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_t_interpolator_3_01float2_01_4" kind="struct"><name>Bvr::Animation::TInterpolator&lt; float2 &gt;</name>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_t_interpolator_3_01float3_01_4" kind="struct"><name>Bvr::Animation::TInterpolator&lt; float3 &gt;</name>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_t_interpolator_3_01float4_01_4" kind="struct"><name>Bvr::Animation::TInterpolator&lt; float4 &gt;</name>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_t_interpolator_3_01quat_01_4" kind="struct"><name>Bvr::Animation::TInterpolator&lt; quat &gt;</name>
+    <member refid="struct_bvr_1_1_animation_1_1_t_interpolator_3_01quat_01_4_1a55651f6655c3f1355d8ab0887bc63966" kind="function"><name>Linear</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_t_interpolator_3_01quat_01_4_1a7b47e658aa52253369672c081af1def6" kind="function"><name>Cubic</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_t_interpolator_3_01_s_colour_f_01_4" kind="struct"><name>Bvr::Animation::TInterpolator&lt; SColourF &gt;</name>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_detail_1_1_t_interpolator_base" kind="struct"><name>Bvr::Animation::Detail::TInterpolatorBase</name>
+    <member refid="struct_bvr_1_1_animation_1_1_detail_1_1_t_interpolator_base_1a64c15f1314515f6603fe22a27cce60be" kind="function"><name>Linear</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_detail_1_1_t_interpolator_base_1a45e8cf8d001ee2a3c140474721914948" kind="function"><name>Cubic</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_detail_1_1_t_interpolator_invoker" kind="struct"><name>Bvr::Animation::Detail::TInterpolatorInvoker</name>
+    <member refid="struct_bvr_1_1_animation_1_1_detail_1_1_t_interpolator_invoker_1ab5a23bf79b97304f5661b106d12e1924" kind="typedef"><name>TInt</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_detail_1_1_t_interpolator_invoker_1adbc0129ccbb31b499cb90c1c1f1cfb4a" kind="typedef"><name>TAcc</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_detail_1_1_t_interpolator_invoker_1a2b06b6e2f34d04c28855bc3444c05b4d" kind="function"><name>Linear</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_detail_1_1_t_interpolator_invoker_1a4df6606a258edd5984a6ca303d5f44e9" kind="function"><name>Cubic</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_detail_1_1_t_interpolator_invoker_1aa181da62f67622f19f3f8bd5e10d0ce5" kind="function"><name>GetKey</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_detail_1_1_t_interpolator_invoker_1a938ff86a970ecf4b0b1026f0f322bb73" kind="function"><name>SetVal</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_track" kind="struct"><name>Bvr::Animation::Track</name>
+    <member refid="struct_bvr_1_1_animation_1_1_track_1aac7edb38f32724862aa3e98e4b56590f" kind="variable"><name>Curves</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_track_1a12c20af6cd367978bdae9b657aed9bdb" kind="variable"><name>TimeRange</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_track_1ae3b74d82a7e89085be782cfa2e64c399" kind="function"><name>AddCurve</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_track_1a82beb9ab13a7108f8800458590713162" kind="function"><name>operator==</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_track_node" kind="struct"><name>Bvr::Animation::TrackNode</name>
+    <member refid="struct_bvr_1_1_animation_1_1_track_node_1aef86c71d98df8d5e9137b9339f33f956" kind="variable"><name>Track</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_track_node_1a1308ba7d3cd6c33ad0e2d5f4813695d6" kind="function"><name>TrackNode</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_track_node_1a89847bbb39c46e0eadf0afeadfbc1bf1" kind="function"><name>TrackNode</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_track_node_1ab84942e23ed7e62a4104f65dcffcc434" kind="function"><name>GetInputPins</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_track_node_1afea1ce62936fee0eda13ca2d56de4099" kind="function"><name>GetOutputPins</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_track_node_1a4e1d22456f8279fa188932d70fa3b018" kind="function"><name>EmitIR</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_traverse_context" kind="struct"><name>Bvr::Animation::TraverseContext</name>
+    <member refid="struct_bvr_1_1_animation_1_1_traverse_context_1ab59c9fbff145d1bd497dd6482110ad1a" kind="typedef"><name>TPose</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_traverse_context_1a4a8fdfe05618ee1f337666f1ce6a5feb" kind="variable"><name>hCurrentPlayer</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_traverse_context_1acce2a40157a483cc75d300dc15fa097a" kind="variable"><name>pCurrentPlayer</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_traverse_context_1ab3ba02fadc63d1bebfec476f1afec9c8" kind="variable"><name>pUsedPlayers</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_traverse_context_1a544c49081141f7c5b5ac5175432fa0ab" kind="variable"><name>pEvaluatedProperties</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_traverse_context_1a5d6a24481bbc58332e9c6e9d202a539a" kind="variable"><name>pTracks</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_traverse_context_1a67b736f2624e8f95456594ddd35849e3" kind="variable"><name>pBlendSpaces</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_traverse_context_1a0324237616540910f2ff1f527d858fd5" kind="variable"><name>CurrentWorld</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_traverse_context_1ae1ed39c917470c372d048cd98724767d" kind="variable"><name>Poses</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_traverse_context_1ace5f669b0d6f5b0ec9bda798c6ea865f" kind="variable"><name>CurrentDeltaTime</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_traverse_context_1ac45b1619350e09ba4dec06a5ac6a1860" kind="function"><name>SetUp</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_traverse_context_1ad49c4dca4fd4be48dea01fdca3bada60" kind="function"><name>GetGraphTime</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_traverse_context_1ab94f698e1f612bf43c268fc6f8e6d1c7" kind="function"><name>RegisterPose</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_traverse_context_1a76de4e04fe6f41e17fde02eee6365c85" kind="function"><name>RegisterMergedPose</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_traverse_context_1a8d6b008adf1b74de1e8edb0d1378995e" kind="function"><name>MulWeight</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_traverse_context_1a05a19d3dbac742b0725c77d8cda6631d" kind="function"><name>VisitPose</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_traverser" kind="struct"><name>Bvr::Animation::Traverser</name>
+    <member refid="struct_bvr_1_1_animation_1_1_traverser_1a5a637bb765109cd7ed1063b41cba9524" kind="variable"><name>Graph</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_traverser_1a4ff7e8326d0488a923a23cf9abbda50a" kind="variable"><name>ToProcess</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_traverser_1a1b01544e62bff08f2bb6ca5a6e0bd8be" kind="variable"><name>Weights</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_traverser_1a63bfb4a421f90b3028bcd1814b6c0593" kind="variable"><name>VisitedNodes</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_traverser_1a9fe2474979bc5984776aa30194f965a2" kind="function"><name>Traverser</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_traverser_1ac92ca8543fa4cc30b43c80a0eeda4ae7" kind="function"><name>ResolveOrder</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_traverser_1aebd418d2bdc214531fc440dbd045ef47" kind="function"><name>SetUp</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_traverser_1aeb2d8eb58bec4caf2260a7129b471a18" kind="function"><name>MarkDisconnectedNodes</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_traverser_1ab855251b585db90e72a9ab506ae28b9d" kind="function"><name>ValidateConnections</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_triangle" kind="struct"><name>Bvr::Animation::Triangle</name>
+    <member refid="struct_bvr_1_1_animation_1_1_triangle_1aff602a076f1ef824bc0d0e0548a14b97" kind="variable"><name>Vertices</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_triangle_1a6ec0c88dd7d6aee9764eeb29d1ab3ac2" kind="variable"><name>Indices</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_triangle_1a04d36b18105b1fd277ad19c8b6fb3d87" kind="function"><name>GetBary</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_triangle_1a0d0dff7f035fc9c4a5934b98b84da4ab" kind="function"><name>ContainsPoint</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_triangle_1a588f572b0bfcdb547b4ad2c56efc3e8d" kind="function"><name>PointInCircumcircle</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_typed_node_base" kind="struct"><name>Bvr::Animation::TypedNodeBase</name>
+    <member refid="struct_bvr_1_1_animation_1_1_typed_node_base_1a51df957d64de2dd973ddbb81bf2588ed" kind="variable"><name>m_type</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_typed_node_base_1afff91204e716481a290e3e11df448255" kind="function"><name>TypedNodeBase</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_typed_node_base_1ab6187403ef73316bfb5769e8c0022d1e" kind="function"><name>FactoryTypeName</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_typed_node_base_1af7d0805793ba2aa84cf55f9c1e35d6c9" kind="function"><name>GetType</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_typed_node_base_1aedb1a4c1040c9a30846088b2f3ff9a4a" kind="function"><name>Serialise</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_animation_1_1_weight_node" kind="struct"><name>Bvr::Animation::WeightNode</name>
+    <member refid="struct_bvr_1_1_animation_1_1_weight_node_1a6a1bc26093e5a6ffe78961096fa1526f" kind="function"><name>GetInputPins</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_weight_node_1a67f9b8888554b791f67aa0ead828101b" kind="function"><name>GetOutputPins</name></member>
+    <member refid="struct_bvr_1_1_animation_1_1_weight_node_1a9c64ea9802ddb98b384b9132c8ddbd51" kind="function"><name>EmitIR</name></member>
+  </compound>
   <compound refid="namespace_bvr" kind="namespace"><name>Bvr</name>
   </compound>
   <compound refid="namespace_bvr_1_1_animation" kind="namespace"><name>Bvr::Animation</name>
-    <member refid="_animation_system_8hpp_1a1a346d07b65ff164f2fa070966ee4f52" kind="enum"><name>EInterpolationMode</name></member>
-    <member refid="_animation_system_8hpp_1a1a346d07b65ff164f2fa070966ee4f52a6adf97f83acf6453d4a6a4b1070f3754" kind="enumvalue"><name>None</name></member>
-    <member refid="_animation_system_8hpp_1a1a346d07b65ff164f2fa070966ee4f52a48c7c41b72e1d678923ce3571aa65b2d" kind="enumvalue"><name>Step</name></member>
-    <member refid="_animation_system_8hpp_1a1a346d07b65ff164f2fa070966ee4f52a32a843da6ea40ab3b17a3421ccdf671b" kind="enumvalue"><name>Linear</name></member>
-    <member refid="_animation_system_8hpp_1a1a346d07b65ff164f2fa070966ee4f52aec6b5414eb175379ff9efc9b3eef5814" kind="enumvalue"><name>Cubic</name></member>
-    <member refid="_animation_system_8hpp_1a1a346d07b65ff164f2fa070966ee4f52ae93f994f01c537c4e2f7d8528c3eb5e9" kind="enumvalue"><name>Count</name></member>
-    <member refid="_animation_system_8hpp_1aca5f2f219a2fef1a7e68a8d2e883393f" kind="typedef"><name>TStorage</name></member>
-    <member refid="_animation_system_8hpp_1aa265e0a96623d0f73e11444f0fd7c296" kind="function"><name>GetProperty</name></member>
-    <member refid="_animation_system_8hpp_1afdcb149c0190af5c2f6d4f70e1d1df21" kind="function"><name>SetProperty</name></member>
+    <member refid="namespace_bvr_1_1_animation_1a1a346d07b65ff164f2fa070966ee4f52" kind="enum"><name>EInterpolationMode</name></member>
+    <member refid="namespace_bvr_1_1_animation_1a1a346d07b65ff164f2fa070966ee4f52a6adf97f83acf6453d4a6a4b1070f3754" kind="enumvalue"><name>None</name></member>
+    <member refid="namespace_bvr_1_1_animation_1a1a346d07b65ff164f2fa070966ee4f52a48c7c41b72e1d678923ce3571aa65b2d" kind="enumvalue"><name>Step</name></member>
+    <member refid="namespace_bvr_1_1_animation_1a1a346d07b65ff164f2fa070966ee4f52a32a843da6ea40ab3b17a3421ccdf671b" kind="enumvalue"><name>Linear</name></member>
+    <member refid="namespace_bvr_1_1_animation_1a1a346d07b65ff164f2fa070966ee4f52aec6b5414eb175379ff9efc9b3eef5814" kind="enumvalue"><name>Cubic</name></member>
+    <member refid="namespace_bvr_1_1_animation_1a1a346d07b65ff164f2fa070966ee4f52ae93f994f01c537c4e2f7d8528c3eb5e9" kind="enumvalue"><name>Count</name></member>
+    <member refid="namespace_bvr_1_1_animation_1a098cecb3e9ce9306dd0fe318d48c1dac" kind="enum"><name>EDataType</name></member>
+    <member refid="namespace_bvr_1_1_animation_1a098cecb3e9ce9306dd0fe318d48c1daca8109c9c9d6a2ca3bec3e006fe51a5f3e" kind="enumvalue"><name>Pose</name></member>
+    <member refid="namespace_bvr_1_1_animation_1a098cecb3e9ce9306dd0fe318d48c1daca22ae0e2b89e5e3d477f988cc36d3272b" kind="enumvalue"><name>Float</name></member>
+    <member refid="namespace_bvr_1_1_animation_1a098cecb3e9ce9306dd0fe318d48c1daca8a8a1d211464d4bdee46db3c75bfa121" kind="enumvalue"><name>Float3</name></member>
+    <member refid="namespace_bvr_1_1_animation_1a098cecb3e9ce9306dd0fe318d48c1daca1a434befae3f49ae09347ded52032f6f" kind="enumvalue"><name>Entity</name></member>
+    <member refid="namespace_bvr_1_1_animation_1a098cecb3e9ce9306dd0fe318d48c1daca497031794414a552435f90151ac3b54b" kind="enumvalue"><name>Object</name></member>
+    <member refid="namespace_bvr_1_1_animation_1a098cecb3e9ce9306dd0fe318d48c1daca953feeff1e20f40677fb7f77c073b3be" kind="enumvalue"><name>Exec</name></member>
+    <member refid="namespace_bvr_1_1_animation_1a098cecb3e9ce9306dd0fe318d48c1dacae93f994f01c537c4e2f7d8528c3eb5e9" kind="enumvalue"><name>Count</name></member>
+    <member refid="namespace_bvr_1_1_animation_1a505f217598ba4e2b707687712d8aa5da" kind="enum"><name>EIROpCode</name></member>
+    <member refid="namespace_bvr_1_1_animation_1a505f217598ba4e2b707687712d8aa5daa60832e2e4bbebccf26555b9ba658bad5" kind="enumvalue"><name>NoOp</name></member>
+    <member refid="namespace_bvr_1_1_animation_1a505f217598ba4e2b707687712d8aa5daacae6404c4aecf46684930fe2a86676a6" kind="enumvalue"><name>Let</name></member>
+    <member refid="namespace_bvr_1_1_animation_1a505f217598ba4e2b707687712d8aa5daac3755e61202abd74da5885d2e9c9160e" kind="enumvalue"><name>Call</name></member>
+    <member refid="namespace_bvr_1_1_animation_1a505f217598ba4e2b707687712d8aa5daa185b7133db22230701a857c059360cc2" kind="enumvalue"><name>Assign</name></member>
+    <member refid="namespace_bvr_1_1_animation_1a505f217598ba4e2b707687712d8aa5daa142ea9f4b0630aa47dd158b48a8de958" kind="enumvalue"><name>GetProp</name></member>
+    <member refid="namespace_bvr_1_1_animation_1a505f217598ba4e2b707687712d8aa5daa988fd738de9c6d177440c5dcf69e73ce" kind="enumvalue"><name>Return</name></member>
+    <member refid="namespace_bvr_1_1_animation_1a505f217598ba4e2b707687712d8aa5daae93f994f01c537c4e2f7d8528c3eb5e9" kind="enumvalue"><name>Count</name></member>
+    <member refid="namespace_bvr_1_1_animation_1a20a69b77264b6edc0524493b64091fbc" kind="enum"><name>IRVarId</name></member>
+    <member refid="namespace_bvr_1_1_animation_1a20a69b77264b6edc0524493b64091fbcabbb93ef26e3c101ff11cdd21cab08a94" kind="enumvalue"><name>Null</name></member>
+    <member refid="namespace_bvr_1_1_animation_1af4d97ded868531c2e01ba637680d6ddc" kind="enum"><name>IRFunId</name></member>
+    <member refid="namespace_bvr_1_1_animation_1af4d97ded868531c2e01ba637680d6ddcabbb93ef26e3c101ff11cdd21cab08a94" kind="enumvalue"><name>Null</name></member>
+    <member refid="namespace_bvr_1_1_animation_1af3294814102a366b4fd800c275fcb4f1" kind="enum"><name>IRPropId</name></member>
+    <member refid="namespace_bvr_1_1_animation_1af3294814102a366b4fd800c275fcb4f1abbb93ef26e3c101ff11cdd21cab08a94" kind="enumvalue"><name>Null</name></member>
+    <member refid="namespace_bvr_1_1_animation_1a1df7b4e928c98f70e9e755585c6376d3" kind="typedef"><name>double2</name></member>
+    <member refid="namespace_bvr_1_1_animation_1a608507d7c1326202ab52ae1b2a8e29f8" kind="typedef"><name>double3</name></member>
+    <member refid="namespace_bvr_1_1_animation_1a07900c9db72d1f0d15f787871b0fa80e" kind="typedef"><name>double4</name></member>
+    <member refid="namespace_bvr_1_1_animation_1acc40117d5cb8ce30edfce7f5ce31c4b7" kind="typedef"><name>TBaseInterp</name></member>
+    <member refid="namespace_bvr_1_1_animation_1a86048b2ed5320872430a675971ce77d3" kind="typedef"><name>TMixFn</name></member>
+    <member refid="namespace_bvr_1_1_animation_1a9b76bc957da56e356f89427fca5474b9" kind="typedef"><name>NodeLbl</name></member>
+    <member refid="namespace_bvr_1_1_animation_1afe7ea98f39038de8b93fde2ae5531f8f" kind="typedef"><name>NodeId</name></member>
+    <member refid="namespace_bvr_1_1_animation_1a7e1a414c5cdac8a8909c7ee3780adae8" kind="typedef"><name>EdgeId</name></member>
+    <member refid="namespace_bvr_1_1_animation_1aeb85c483a7e2fbc5c92bcd9c61bd5de4" kind="typedef"><name>PinId</name></member>
+    <member refid="namespace_bvr_1_1_animation_1a792212650ba11cfa6ef6c826bee264aa" kind="typedef"><name>TPoseId</name></member>
+    <member refid="namespace_bvr_1_1_animation_1aaaaa6ce616f4225a002cef0e07b9dfe8" kind="typedef"><name>IGraphNodePtr</name></member>
+    <member refid="namespace_bvr_1_1_animation_1ae5f1321913a3f1cbcd9f19ebb57fb60e" kind="variable"><name>NullInterpolator</name></member>
+    <member refid="namespace_bvr_1_1_animation_1a8715ce50ef89251c33d423fa3ca9c239" kind="variable"><name>InterpolatorAttributeName</name></member>
+    <member refid="namespace_bvr_1_1_animation_1aaf75f969c966b78fbe82f35747249a42" kind="variable"><name>AnimTargetUUID</name></member>
+    <member refid="namespace_bvr_1_1_animation_1abf65d69ef4ee7358ab083eaa7df0b2c7" kind="variable"><name>NullPose</name></member>
+    <member refid="namespace_bvr_1_1_animation_1a1c6c6eaedaa06291f301f7e0711c1a96" kind="function"><name>RegisterDefaultInterpolators</name></member>
+    <member refid="namespace_bvr_1_1_animation_1a1d02c579e8dc19523b078348478e399d" kind="function"><name>MakeInterpolatorInterface</name></member>
+    <member refid="namespace_bvr_1_1_animation_1ae6ec0175b0f7a93a6b5d21070243263a" kind="function"><name>InterpolatorAttr</name></member>
+    <member refid="namespace_bvr_1_1_animation_1ab5473ea7734d7d0892f3034860fc7c45" kind="function"><name>GetInterpolator</name></member>
+    <member refid="namespace_bvr_1_1_animation_1a376953985d29d20fa3ce209e097b3a80" kind="function"><name>RegisterTypeInterpolator</name></member>
+    <member refid="namespace_bvr_1_1_animation_1a19f28b5d745859cdad1616e806df160a" kind="function"><name>GetProperty</name></member>
+    <member refid="namespace_bvr_1_1_animation_1afdcb149c0190af5c2f6d4f70e1d1df21" kind="function"><name>SetProperty</name></member>
+    <member refid="namespace_bvr_1_1_animation_1ae2e66a19c2fc9f77bcf41c1bdfc1eab6" kind="function"><name>EvaluateCurves</name></member>
+    <member refid="namespace_bvr_1_1_animation_1a5ea584c279d02aa81c9ed358f65aa13c" kind="function"><name>WrapIRType</name></member>
+    <member refid="namespace_bvr_1_1_animation_1a90016b83d8b28b6bd9ba6d2efba5dbb6" kind="function"><name>MetaRegisterOperators</name></member>
+    <member refid="namespace_bvr_1_1_animation_1a0b2378a2353f6c858c9b5368d7b51947" kind="function"><name>RegisterGraphNodeFactory</name></member>
+  </compound>
+  <compound refid="namespace_bvr_1_1_animation_1_1_detail" kind="namespace"><name>Bvr::Animation::Detail</name>
+    <member refid="_interpolator_interface_8hpp_1a5b43048c5063d6b9ccdf297de0350a03" kind="function"><name>MakeInterpolatorInterface</name></member>
+    <member refid="_interpolator_interface_8hpp_1a498deeabcf6a70b0122be7a0cfb61627" kind="function"><name>MakeNullInterface</name></member>
+    <member refid="_graph_utils_8hpp_1ab9821da438796d961b7ee5f8d614f4af" kind="function"><name>ExtractNodeInstance</name></member>
+    <member refid="_graph_utils_8hpp_1af04a6cc0255f9c9a8834071286472e12" kind="function"><name>AddTrackNode</name></member>
+    <member refid="_graph_utils_8hpp_1a6797835cf07ee7d61624bbc97a75cf65" kind="function"><name>AddFnEntryNode</name></member>
+    <member refid="_graph_utils_8hpp_1aa506a48641f59e1e365b437c1cd9e9b1" kind="function"><name>AddFnReturnNode</name></member>
+    <member refid="_math_nodes_8hpp_1aea16e3526197c55c1b8a14047c9fa906" kind="function"><name>RegisterMathOperators</name></member>
+  </compound>
+  <compound refid="namespace_bvr_1_1_animation_1_1_registrator_helper" kind="namespace"><name>Bvr::Animation::RegistratorHelper</name>
+    <member refid="_graph_node_8hpp_1a81a06a3654c4e8c536b227f9b366d821" kind="function"><name>DoMakeNode</name></member>
+  </compound>
+  <compound refid="namespace_meta" kind="namespace"><name>Meta</name>
+  </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="_animation_system_8hpp" kind="file"><name>AnimationSystem.hpp</name>
   </compound>
   <compound refid="_animation_graph_8hpp" kind="file"><name>AnimationGraph.hpp</name>
   </compound>
-  <compound refid="_animation_system_8hpp" kind="file"><name>AnimationSystem.hpp</name>
+  <compound refid="_blend_space_8hpp" kind="file"><name>BlendSpace.hpp</name>
+  </compound>
+  <compound refid="_blend_space_loader_8hpp" kind="file"><name>BlendSpaceLoader.hpp</name>
+  </compound>
+  <compound refid="_graph_i_o_8hpp" kind="file"><name>GraphIO.hpp</name>
+  </compound>
+  <compound refid="_graph_i_r_8hpp" kind="file"><name>GraphIR.hpp</name>
+  </compound>
+  <compound refid="_graph_node_8hpp" kind="file"><name>GraphNode.hpp</name>
+  </compound>
+  <compound refid="_graph_node_factory_8hpp" kind="file"><name>GraphNodeFactory.hpp</name>
+  </compound>
+  <compound refid="_graph_nodes_8hpp" kind="file"><name>GraphNodes.hpp</name>
+  </compound>
+  <compound refid="_graph_traverser_8hpp" kind="file"><name>GraphTraverser.hpp</name>
+  </compound>
+  <compound refid="_graph_utils_8hpp" kind="file"><name>GraphUtils.hpp</name>
+  </compound>
+  <compound refid="_i_r_builder_8hpp" kind="file"><name>IRBuilder.hpp</name>
+  </compound>
+  <compound refid="_i_r_meta_interop_8hpp" kind="file"><name>IRMetaInterop.hpp</name>
+  </compound>
+  <compound refid="_i_r_runner_8hpp" kind="file"><name>IRRunner.hpp</name>
+  </compound>
+  <compound refid="_math_nodes_8hpp" kind="file"><name>MathNodes.hpp</name>
+  </compound>
+  <compound refid="_traverse_context_8hpp" kind="file"><name>TraverseContext.hpp</name>
+  </compound>
+  <compound refid="_clip_loader_8hpp" kind="file"><name>ClipLoader.hpp</name>
+  </compound>
+  <compound refid="_evaluated_properties_8hpp" kind="file"><name>EvaluatedProperties.hpp</name>
+  </compound>
+  <compound refid="_interpolator_8hpp" kind="file"><name>Interpolator.hpp</name>
+  </compound>
+  <compound refid="_interpolator_impls_8hpp" kind="file"><name>InterpolatorImpls.hpp</name>
+  </compound>
+  <compound refid="_interpolator_interface_8hpp" kind="file"><name>InterpolatorInterface.hpp</name>
+  </compound>
+  <compound refid="_plugin_8hpp" kind="file"><name>Plugin.hpp</name>
+  </compound>
+  <compound refid="dir_efd43bac3d6576ef8c613cdc4382f3eb" kind="dir"><name>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph</name>
   </compound>
   <compound refid="dir_bf191f2946e9ec8ff3e25d32364701e1" kind="dir"><name>/home/runner/work/BeaverEngine/BeaverEngine/Beaver</name>
   </compound>

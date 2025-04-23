@@ -1,0 +1,331 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="class_bvr_1_1_util_1_1_c_temporary_memory_pool" kind="class" language="C++" prot="public">
+    <compoundname>Bvr::Util::CTemporaryMemoryPool</compoundname>
+    <includes refid="_bump_allocator_8hpp" local="no">BumpAllocator.hpp</includes>
+    <innerclass refid="struct_bvr_1_1_util_1_1_c_temporary_memory_pool_1_1_s_page" prot="private">Bvr::Util::CTemporaryMemoryPool::SPage</innerclass>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="class_bvr_1_1_util_1_1_c_temporary_memory_pool_1a27220d1a0fbb02391354f015375f0593" prot="private" static="no">
+        <type>std::allocator&lt; uint8 &gt;</type>
+        <definition>using Bvr::Util::CTemporaryMemoryPool::AllocatorT =  std::allocator&lt;uint8&gt;</definition>
+        <argsstring></argsstring>
+        <name>AllocatorT</name>
+        <qualifiedname>Bvr::Util::CTemporaryMemoryPool::AllocatorT</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/BumpAllocator.hpp" line="11" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/BumpAllocator.hpp" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="class_bvr_1_1_util_1_1_c_temporary_memory_pool_1ab336d24cbc2fc71b194cb65f25390f88" prot="private" static="no">
+        <type>std::allocator_traits&lt; AllocatorT &gt;</type>
+        <definition>using Bvr::Util::CTemporaryMemoryPool::AllocTraitsT =  std::allocator_traits&lt;AllocatorT&gt;</definition>
+        <argsstring></argsstring>
+        <name>AllocTraitsT</name>
+        <qualifiedname>Bvr::Util::CTemporaryMemoryPool::AllocTraitsT</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/BumpAllocator.hpp" line="12" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/BumpAllocator.hpp" bodystart="12" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="class_bvr_1_1_util_1_1_c_temporary_memory_pool_1aee192d3dbb12169f68a7a6c2a4b29204" prot="public" static="no">
+        <type><ref refid="struct_bvr_1_1_events" kindref="compound">typename</ref> AllocTraitsT::pointer</type>
+        <definition>using Bvr::Util::CTemporaryMemoryPool::MemoryT =  typename AllocTraitsT::pointer</definition>
+        <argsstring></argsstring>
+        <name>MemoryT</name>
+        <qualifiedname>Bvr::Util::CTemporaryMemoryPool::MemoryT</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/BumpAllocator.hpp" line="14" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/BumpAllocator.hpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_bvr_1_1_util_1_1_c_temporary_memory_pool_1ab6a0223db54570fa55d81f137371f367" prot="private" static="no" mutable="no">
+        <type>AllocatorT</type>
+        <definition>AllocatorT Bvr::Util::CTemporaryMemoryPool::Allocator</definition>
+        <argsstring></argsstring>
+        <name>Allocator</name>
+        <qualifiedname>Bvr::Util::CTemporaryMemoryPool::Allocator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/BumpAllocator.hpp" line="105" column="18" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/BumpAllocator.hpp" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_util_1_1_c_temporary_memory_pool_1aabf5dc12e40a70e8e5c6ffe2a9ce5e48" prot="private" static="no" mutable="no">
+        <type>SPage *</type>
+        <definition>SPage* Bvr::Util::CTemporaryMemoryPool::RootPage</definition>
+        <argsstring></argsstring>
+        <name>RootPage</name>
+        <qualifiedname>Bvr::Util::CTemporaryMemoryPool::RootPage</qualifiedname>
+        <initializer>= <ref refid="struct_bvr_1_1_events" kindref="compound">nullptr</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/BumpAllocator.hpp" line="106" column="17" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/BumpAllocator.hpp" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_util_1_1_c_temporary_memory_pool_1acd9548f19ca6f24a1e3ae9b0a90814df" prot="private" static="no" mutable="no">
+        <type>SPage *</type>
+        <definition>SPage* Bvr::Util::CTemporaryMemoryPool::CurrentPage</definition>
+        <argsstring></argsstring>
+        <name>CurrentPage</name>
+        <qualifiedname>Bvr::Util::CTemporaryMemoryPool::CurrentPage</qualifiedname>
+        <initializer>= <ref refid="struct_bvr_1_1_events" kindref="compound">nullptr</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/BumpAllocator.hpp" line="107" column="17" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/BumpAllocator.hpp" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_util_1_1_c_temporary_memory_pool_1a0d7b846898c32b30528e13ab997393ca" prot="private" static="no" mutable="no">
+        <type>MemoryT</type>
+        <definition>MemoryT Bvr::Util::CTemporaryMemoryPool::Ptr</definition>
+        <argsstring></argsstring>
+        <name>Ptr</name>
+        <qualifiedname>Bvr::Util::CTemporaryMemoryPool::Ptr</qualifiedname>
+        <initializer>= <ref refid="struct_bvr_1_1_events" kindref="compound">nullptr</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/BumpAllocator.hpp" line="108" column="18" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/BumpAllocator.hpp" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_util_1_1_c_temporary_memory_pool_1a796a7fb00bd89ee4ac300a97ad84e884" prot="private" static="no" mutable="no">
+        <type><ref refid="struct_bvr_1_1_events" kindref="compound">const</ref> size_t</type>
+        <definition>const size_t Bvr::Util::CTemporaryMemoryPool::PageSize</definition>
+        <argsstring></argsstring>
+        <name>PageSize</name>
+        <qualifiedname>Bvr::Util::CTemporaryMemoryPool::PageSize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/BumpAllocator.hpp" line="109" column="18" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/BumpAllocator.hpp" bodystart="109" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_bvr_1_1_util_1_1_c_temporary_memory_pool_1ad72857f7462f86d829be498542a67759" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Bvr::Util::CTemporaryMemoryPool::CTemporaryMemoryPool</definition>
+        <argsstring>(size_t pageSize)</argsstring>
+        <name>CTemporaryMemoryPool</name>
+        <qualifiedname>Bvr::Util::CTemporaryMemoryPool::CTemporaryMemoryPool</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>pageSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/BumpAllocator.hpp" line="16" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/BumpAllocator.hpp" bodystart="16" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_util_1_1_c_temporary_memory_pool_1a759f053e64f08b288a7fc5bb5ff71121" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Bvr::Util::CTemporaryMemoryPool::~CTemporaryMemoryPool</definition>
+        <argsstring>()</argsstring>
+        <name>~CTemporaryMemoryPool</name>
+        <qualifiedname>Bvr::Util::CTemporaryMemoryPool::~CTemporaryMemoryPool</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/BumpAllocator.hpp" line="17" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/BumpAllocator.hpp" bodystart="17" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_util_1_1_c_temporary_memory_pool_1a5b09542052d3a80711ebb4d7cc49085b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="struct_bvr_1_1_events" kindref="compound">void</ref> *</type>
+        <definition>void * Bvr::Util::CTemporaryMemoryPool::Allocate</definition>
+        <argsstring>(const size_t size, const size_t align)</argsstring>
+        <name>Allocate</name>
+        <qualifiedname>Bvr::Util::CTemporaryMemoryPool::Allocate</qualifiedname>
+        <param>
+          <type><ref refid="struct_bvr_1_1_events" kindref="compound">const</ref> size_t</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_bvr_1_1_events" kindref="compound">const</ref> size_t</type>
+          <declname>align</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/BumpAllocator.hpp" line="19" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/BumpAllocator.hpp" bodystart="19" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_util_1_1_c_temporary_memory_pool_1af9d5b16099d0d1b93b87e2faa4bb416b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="struct_bvr_1_1_events" kindref="compound">void</ref></type>
+        <definition>void Bvr::Util::CTemporaryMemoryPool::BeginFrame</definition>
+        <argsstring>()</argsstring>
+        <name>BeginFrame</name>
+        <qualifiedname>Bvr::Util::CTemporaryMemoryPool::BeginFrame</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/BumpAllocator.hpp" line="25" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/BumpAllocator.hpp" bodystart="25" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_util_1_1_c_temporary_memory_pool_1a9baa1f65faf7a0c7294d0327d40af00f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="struct_bvr_1_1_events" kindref="compound">void</ref></type>
+        <definition>void Bvr::Util::CTemporaryMemoryPool::Clear</definition>
+        <argsstring>()</argsstring>
+        <name>Clear</name>
+        <qualifiedname>Bvr::Util::CTemporaryMemoryPool::Clear</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/BumpAllocator.hpp" line="36" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/BumpAllocator.hpp" bodystart="36" bodyend="50"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_bvr_1_1_util_1_1_c_temporary_memory_pool_1ae0d8ec3bcdedf7eedf9b6fd0fa911e06" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>SPage *</type>
+        <definition>SPage * Bvr::Util::CTemporaryMemoryPool::AllocatePage</definition>
+        <argsstring>(size_t size)</argsstring>
+        <name>AllocatePage</name>
+        <qualifiedname>Bvr::Util::CTemporaryMemoryPool::AllocatePage</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/BumpAllocator.hpp" line="61" column="11" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/BumpAllocator.hpp" bodystart="61" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_util_1_1_c_temporary_memory_pool_1a2d4dca9595b95a4fc0e1de9c83f268d5" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="struct_bvr_1_1_events" kindref="compound">void</ref></type>
+        <definition>void Bvr::Util::CTemporaryMemoryPool::FreePage</definition>
+        <argsstring>(SPage *pPage)</argsstring>
+        <name>FreePage</name>
+        <qualifiedname>Bvr::Util::CTemporaryMemoryPool::FreePage</qualifiedname>
+        <param>
+          <type>SPage *</type>
+          <declname>pPage</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/BumpAllocator.hpp" line="77" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/BumpAllocator.hpp" bodystart="77" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_util_1_1_c_temporary_memory_pool_1a9fe4b2698cbd8f9d35aa1b74621f23e1" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>MemoryT</type>
+        <definition>MemoryT Bvr::Util::CTemporaryMemoryPool::Assure</definition>
+        <argsstring>(const size_t allocation, const size_t alignment)</argsstring>
+        <name>Assure</name>
+        <qualifiedname>Bvr::Util::CTemporaryMemoryPool::Assure</qualifiedname>
+        <param>
+          <type><ref refid="struct_bvr_1_1_events" kindref="compound">const</ref> size_t</type>
+          <declname>allocation</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_bvr_1_1_events" kindref="compound">const</ref> size_t</type>
+          <declname>alignment</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/BumpAllocator.hpp" line="83" column="13" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/BumpAllocator.hpp" bodystart="83" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_util_1_1_c_temporary_memory_pool_1ac9fc19f696145d2e2f244d20d2c633a6" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="struct_bvr_1_1_events" kindref="compound">bool</ref></type>
+        <definition>bool Bvr::Util::CTemporaryMemoryPool::AllocationFits</definition>
+        <argsstring>(const size_t size)</argsstring>
+        <name>AllocationFits</name>
+        <qualifiedname>Bvr::Util::CTemporaryMemoryPool::AllocationFits</qualifiedname>
+        <param>
+          <type><ref refid="struct_bvr_1_1_events" kindref="compound">const</ref> size_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/BumpAllocator.hpp" line="98" column="17" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/BumpAllocator.hpp" bodystart="98" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_util_1_1_c_temporary_memory_pool_1a00b09dc9e2e18bb21e160301061ab90d" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="struct_bvr_1_1_events" kindref="compound">bool</ref></type>
+        <definition>bool Bvr::Util::CTemporaryMemoryPool::ShouldAllocateNew</definition>
+        <argsstring>() const</argsstring>
+        <name>ShouldAllocateNew</name>
+        <qualifiedname>Bvr::Util::CTemporaryMemoryPool::ShouldAllocateNew</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/BumpAllocator.hpp" line="102" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/BumpAllocator.hpp" bodystart="102" bodyend="102"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Bump allocator for frame graph that is recycled every frame. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/BumpAllocator.hpp" line="10" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/BumpAllocator.hpp" bodystart="10" bodyend="110"/>
+    <listofallmembers>
+      <member refid="class_bvr_1_1_util_1_1_c_temporary_memory_pool_1a5b09542052d3a80711ebb4d7cc49085b" prot="public" virt="non-virtual"><scope>Bvr::Util::CTemporaryMemoryPool</scope><name>Allocate</name></member>
+      <member refid="class_bvr_1_1_util_1_1_c_temporary_memory_pool_1ae0d8ec3bcdedf7eedf9b6fd0fa911e06" prot="private" virt="non-virtual"><scope>Bvr::Util::CTemporaryMemoryPool</scope><name>AllocatePage</name></member>
+      <member refid="class_bvr_1_1_util_1_1_c_temporary_memory_pool_1ac9fc19f696145d2e2f244d20d2c633a6" prot="private" virt="non-virtual"><scope>Bvr::Util::CTemporaryMemoryPool</scope><name>AllocationFits</name></member>
+      <member refid="class_bvr_1_1_util_1_1_c_temporary_memory_pool_1ab6a0223db54570fa55d81f137371f367" prot="private" virt="non-virtual"><scope>Bvr::Util::CTemporaryMemoryPool</scope><name>Allocator</name></member>
+      <member refid="class_bvr_1_1_util_1_1_c_temporary_memory_pool_1a27220d1a0fbb02391354f015375f0593" prot="private" virt="non-virtual"><scope>Bvr::Util::CTemporaryMemoryPool</scope><name>AllocatorT</name></member>
+      <member refid="class_bvr_1_1_util_1_1_c_temporary_memory_pool_1ab336d24cbc2fc71b194cb65f25390f88" prot="private" virt="non-virtual"><scope>Bvr::Util::CTemporaryMemoryPool</scope><name>AllocTraitsT</name></member>
+      <member refid="class_bvr_1_1_util_1_1_c_temporary_memory_pool_1a9fe4b2698cbd8f9d35aa1b74621f23e1" prot="private" virt="non-virtual"><scope>Bvr::Util::CTemporaryMemoryPool</scope><name>Assure</name></member>
+      <member refid="class_bvr_1_1_util_1_1_c_temporary_memory_pool_1af9d5b16099d0d1b93b87e2faa4bb416b" prot="public" virt="non-virtual"><scope>Bvr::Util::CTemporaryMemoryPool</scope><name>BeginFrame</name></member>
+      <member refid="class_bvr_1_1_util_1_1_c_temporary_memory_pool_1a9baa1f65faf7a0c7294d0327d40af00f" prot="public" virt="non-virtual"><scope>Bvr::Util::CTemporaryMemoryPool</scope><name>Clear</name></member>
+      <member refid="class_bvr_1_1_util_1_1_c_temporary_memory_pool_1ad72857f7462f86d829be498542a67759" prot="public" virt="non-virtual"><scope>Bvr::Util::CTemporaryMemoryPool</scope><name>CTemporaryMemoryPool</name></member>
+      <member refid="class_bvr_1_1_util_1_1_c_temporary_memory_pool_1acd9548f19ca6f24a1e3ae9b0a90814df" prot="private" virt="non-virtual"><scope>Bvr::Util::CTemporaryMemoryPool</scope><name>CurrentPage</name></member>
+      <member refid="class_bvr_1_1_util_1_1_c_temporary_memory_pool_1a2d4dca9595b95a4fc0e1de9c83f268d5" prot="private" virt="non-virtual"><scope>Bvr::Util::CTemporaryMemoryPool</scope><name>FreePage</name></member>
+      <member refid="class_bvr_1_1_util_1_1_c_temporary_memory_pool_1aee192d3dbb12169f68a7a6c2a4b29204" prot="public" virt="non-virtual"><scope>Bvr::Util::CTemporaryMemoryPool</scope><name>MemoryT</name></member>
+      <member refid="class_bvr_1_1_util_1_1_c_temporary_memory_pool_1a796a7fb00bd89ee4ac300a97ad84e884" prot="private" virt="non-virtual"><scope>Bvr::Util::CTemporaryMemoryPool</scope><name>PageSize</name></member>
+      <member refid="class_bvr_1_1_util_1_1_c_temporary_memory_pool_1a0d7b846898c32b30528e13ab997393ca" prot="private" virt="non-virtual"><scope>Bvr::Util::CTemporaryMemoryPool</scope><name>Ptr</name></member>
+      <member refid="class_bvr_1_1_util_1_1_c_temporary_memory_pool_1aabf5dc12e40a70e8e5c6ffe2a9ce5e48" prot="private" virt="non-virtual"><scope>Bvr::Util::CTemporaryMemoryPool</scope><name>RootPage</name></member>
+      <member refid="class_bvr_1_1_util_1_1_c_temporary_memory_pool_1a00b09dc9e2e18bb21e160301061ab90d" prot="private" virt="non-virtual"><scope>Bvr::Util::CTemporaryMemoryPool</scope><name>ShouldAllocateNew</name></member>
+      <member refid="class_bvr_1_1_util_1_1_c_temporary_memory_pool_1a759f053e64f08b288a7fc5bb5ff71121" prot="public" virt="non-virtual"><scope>Bvr::Util::CTemporaryMemoryPool</scope><name>~CTemporaryMemoryPool</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,730 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="class_bvr_1_1_diff_1_1_diff_reader" kind="class" language="C++" prot="public" final="yes">
+    <compoundname>Bvr::Diff::DiffReader</compoundname>
+    <basecompoundref refid="struct_bvr_1_1_i_archiver_stream" prot="public" virt="non-virtual">Bvr::IArchiverStream</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_bvr_1_1_diff_1_1_diff_reader_1adca39956ef132b88ae012b222610ef70" prot="private" static="no" mutable="no">
+        <type><ref refid="struct_bvr_1_1_diff_1_1_diff_map" kindref="compound">DiffMap</ref> *</type>
+        <definition>DiffMap* Bvr::Diff::DiffReader::Map</definition>
+        <argsstring></argsstring>
+        <name>Map</name>
+        <qualifiedname>Bvr::Diff::DiffReader::Map</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" line="293" column="23" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" bodystart="293" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_diff_1_1_diff_reader_1a94fc86b6dccde2bfa4bcfbae7396d407" prot="private" static="no" mutable="no">
+        <type><ref refid="class_bvr_1_1_c_archive_base" kindref="compound">CArchiveBase</ref> *</type>
+        <definition>CArchiveBase* Bvr::Diff::DiffReader::Owner</definition>
+        <argsstring></argsstring>
+        <name>Owner</name>
+        <qualifiedname>Bvr::Diff::DiffReader::Owner</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" line="294" column="23" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" bodystart="294" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_diff_1_1_diff_reader_1aa968b97647db358f6c74bc9b2dcc30c5" prot="private" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 Bvr::Diff::DiffReader::ObjectCount</definition>
+        <argsstring></argsstring>
+        <name>ObjectCount</name>
+        <qualifiedname>Bvr::Diff::DiffReader::ObjectCount</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" line="295" column="24" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" bodystart="295" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_diff_1_1_diff_reader_1a1f1d915dbf3c2080a648ebee560585b2" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Bvr::Diff::DiffReader::IsSetNewState</definition>
+        <argsstring></argsstring>
+        <name>IsSetNewState</name>
+        <qualifiedname>Bvr::Diff::DiffReader::IsSetNewState</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" line="296" column="24" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" bodystart="296" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_diff_1_1_diff_reader_1a398f592609f3bc43d421731d26aec0eb" prot="private" static="no" mutable="no">
+        <type>std::stack&lt; <ref refid="struct_bvr_1_1_diff_1_1_delta" kindref="compound">Delta</ref> * &gt;</type>
+        <definition>std::stack&lt;Delta*&gt; Bvr::Diff::DiffReader::DeltaStack</definition>
+        <argsstring></argsstring>
+        <name>DeltaStack</name>
+        <qualifiedname>Bvr::Diff::DiffReader::DeltaStack</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" line="297" column="16" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" bodystart="297" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_bvr_1_1_diff_1_1_diff_reader_1ac3a41516ed9bfbf98a9981ba4c9741fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Bvr::Diff::DiffReader::DiffReader</definition>
+        <argsstring>(DiffMap *diffMap, bool setNewState)</argsstring>
+        <name>DiffReader</name>
+        <qualifiedname>Bvr::Diff::DiffReader::DiffReader</qualifiedname>
+        <param>
+          <type><ref refid="struct_bvr_1_1_diff_1_1_diff_map" kindref="compound">DiffMap</ref> *</type>
+          <declname>diffMap</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>setNewState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" line="247" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_diff_1_1_diff_reader_1a95947bd72d4f539534a8b2b733484553" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Bvr::Diff::DiffReader::~DiffReader</definition>
+        <argsstring>()=default</argsstring>
+        <name>~DiffReader</name>
+        <qualifiedname>Bvr::Diff::DiffReader::~DiffReader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" line="248" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_diff_1_1_diff_reader_1a18c34823fdc2e59b55cd6f66fddc974d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void Bvr::Diff::DiffReader::Reset</definition>
+        <argsstring>() override</argsstring>
+        <name>Reset</name>
+        <qualifiedname>Bvr::Diff::DiffReader::Reset</qualifiedname>
+        <reimplements refid="struct_bvr_1_1_i_archiver_stream_1adacb30479d51cb53ba8db9a629ff62f8">Reset</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" line="250" column="22" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" bodystart="250" bodyend="250"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_diff_1_1_diff_reader_1aceb04e1ab68e61d3b72d9dc770fced63" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::string_view</type>
+        <definition>std::string_view Bvr::Diff::DiffReader::GetString</definition>
+        <argsstring>() const override</argsstring>
+        <name>GetString</name>
+        <qualifiedname>Bvr::Diff::DiffReader::GetString</qualifiedname>
+        <reimplements refid="struct_bvr_1_1_i_archiver_stream_1ad683d582603e0d9e8f43a8556da74ed5">GetString</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" line="251" column="22" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" bodystart="251" bodyend="251"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_diff_1_1_diff_reader_1a57723ce95baea88a713ed8e586484615" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Bvr::Diff::DiffReader::operator bool</definition>
+        <argsstring>() const</argsstring>
+        <name>operator bool</name>
+        <qualifiedname>Bvr::Diff::DiffReader::operator bool</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" line="253" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" bodystart="253" bodyend="253"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_diff_1_1_diff_reader_1adec9a8ccb14d24fefabce80840f79c86" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool Bvr::Diff::DiffReader::StartObject</definition>
+        <argsstring>() override</argsstring>
+        <name>StartObject</name>
+        <qualifiedname>Bvr::Diff::DiffReader::StartObject</qualifiedname>
+        <reimplements refid="struct_bvr_1_1_i_archiver_stream_1ada872903d0718d34ca78ed30b5f11a92">StartObject</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" line="255" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_diff_1_1_diff_reader_1a4383781c9da12e60ccb06fe718291780" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool Bvr::Diff::DiffReader::Member</definition>
+        <argsstring>(std::string_view name) override</argsstring>
+        <name>Member</name>
+        <qualifiedname>Bvr::Diff::DiffReader::Member</qualifiedname>
+        <reimplements refid="struct_bvr_1_1_i_archiver_stream_1a0f1ae1d0aa94e9e1f71eb4dc268a1dcb">Member</reimplements>
+        <param>
+          <type>std::string_view</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" line="256" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_diff_1_1_diff_reader_1a0db28a8ea2e91c18e76d52b3155c9c8a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool Bvr::Diff::DiffReader::HasMember</definition>
+        <argsstring>(std::string_view name) const override</argsstring>
+        <name>HasMember</name>
+        <qualifiedname>Bvr::Diff::DiffReader::HasMember</qualifiedname>
+        <reimplements refid="struct_bvr_1_1_i_archiver_stream_1a357f6f32f9942f5f616b44a0c9c1504a">HasMember</reimplements>
+        <param>
+          <type>std::string_view</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" line="257" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_diff_1_1_diff_reader_1a7530568de7813b619a496f2aebb33313" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool Bvr::Diff::DiffReader::IsObject</definition>
+        <argsstring>() const override</argsstring>
+        <name>IsObject</name>
+        <qualifiedname>Bvr::Diff::DiffReader::IsObject</qualifiedname>
+        <reimplements refid="struct_bvr_1_1_i_archiver_stream_1a9671a7789d13efaef5f6bbce3704c1eb">IsObject</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" line="258" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_diff_1_1_diff_reader_1a6296b7d07caf892a88a64d1fe34c51c0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool Bvr::Diff::DiffReader::IsString</definition>
+        <argsstring>() const override</argsstring>
+        <name>IsString</name>
+        <qualifiedname>Bvr::Diff::DiffReader::IsString</qualifiedname>
+        <reimplements refid="struct_bvr_1_1_i_archiver_stream_1a73ee220177ceafeed180a8485bce687c">IsString</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" line="259" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_diff_1_1_diff_reader_1a82462c8c186d7d95fe118601f3ecb293" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool Bvr::Diff::DiffReader::IsArray</definition>
+        <argsstring>() const override</argsstring>
+        <name>IsArray</name>
+        <qualifiedname>Bvr::Diff::DiffReader::IsArray</qualifiedname>
+        <reimplements refid="struct_bvr_1_1_i_archiver_stream_1ab77fe09e3942f3a281853d2a92fb1308">IsArray</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" line="260" column="35"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_diff_1_1_diff_reader_1a8c3057e82c7e0753028da39d95e6737c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool Bvr::Diff::DiffReader::EndObject</definition>
+        <argsstring>() override</argsstring>
+        <name>EndObject</name>
+        <qualifiedname>Bvr::Diff::DiffReader::EndObject</qualifiedname>
+        <reimplements refid="struct_bvr_1_1_i_archiver_stream_1aabac513cef03fe99f6c51f1a9c792b34">EndObject</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" line="261" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_diff_1_1_diff_reader_1ac9568853abacfe6411e22ba730d7a089" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool Bvr::Diff::DiffReader::StartArray</definition>
+        <argsstring>(size_t *size=0) override</argsstring>
+        <name>StartArray</name>
+        <qualifiedname>Bvr::Diff::DiffReader::StartArray</qualifiedname>
+        <reimplements refid="struct_bvr_1_1_i_archiver_stream_1af4c3f9fbf93022a696d60d4b53808d3c">StartArray</reimplements>
+        <param>
+          <type>size_t *</type>
+          <declname>size</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" line="263" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_diff_1_1_diff_reader_1a5cdc7d318836798802cf2d565b2c6d05" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool Bvr::Diff::DiffReader::EndArray</definition>
+        <argsstring>() override</argsstring>
+        <name>EndArray</name>
+        <qualifiedname>Bvr::Diff::DiffReader::EndArray</qualifiedname>
+        <reimplements refid="struct_bvr_1_1_i_archiver_stream_1afc92c00f8aee2d2e2f61bedf03618c42">EndArray</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" line="264" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_diff_1_1_diff_reader_1a871f1f81af6df4ebd38cc37ad49f2fd1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool Bvr::Diff::DiffReader::operator&amp;</definition>
+        <argsstring>(bool &amp;b) override</argsstring>
+        <name>operator&amp;</name>
+        <qualifiedname>Bvr::Diff::DiffReader::operator&amp;</qualifiedname>
+        <reimplements refid="struct_bvr_1_1_i_archiver_stream_1a3d3ce9109e59be7d44d106d676293a91">operator&amp;</reimplements>
+        <param>
+          <type>bool &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" line="266" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_diff_1_1_diff_reader_1a1785fab7c2a01e5365020314658e7017" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool Bvr::Diff::DiffReader::operator&amp;</definition>
+        <argsstring>(int32 &amp;i) override</argsstring>
+        <name>operator&amp;</name>
+        <qualifiedname>Bvr::Diff::DiffReader::operator&amp;</qualifiedname>
+        <reimplements refid="struct_bvr_1_1_i_archiver_stream_1ac54d3d87866707694da5521542163852">operator&amp;</reimplements>
+        <param>
+          <type>int32 &amp;</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" line="267" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_diff_1_1_diff_reader_1a9832761568f92d84d32f209b2a3733bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool Bvr::Diff::DiffReader::operator&amp;</definition>
+        <argsstring>(int64 &amp;i) override</argsstring>
+        <name>operator&amp;</name>
+        <qualifiedname>Bvr::Diff::DiffReader::operator&amp;</qualifiedname>
+        <reimplements refid="struct_bvr_1_1_i_archiver_stream_1a819c67c002ddf51f449019db0e703b0d">operator&amp;</reimplements>
+        <param>
+          <type>int64 &amp;</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" line="268" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_diff_1_1_diff_reader_1a53ebb35c93ccb71f9ec9ffa39b2d15d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool Bvr::Diff::DiffReader::operator&amp;</definition>
+        <argsstring>(double &amp;d) override</argsstring>
+        <name>operator&amp;</name>
+        <qualifiedname>Bvr::Diff::DiffReader::operator&amp;</qualifiedname>
+        <reimplements refid="struct_bvr_1_1_i_archiver_stream_1a11591306103c589883abf97cd659e6aa">operator&amp;</reimplements>
+        <param>
+          <type>double &amp;</type>
+          <declname>d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" line="269" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_diff_1_1_diff_reader_1ab1c27574ed78718a0a5eeb721bb4a03d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool Bvr::Diff::DiffReader::operator&amp;</definition>
+        <argsstring>(float &amp;s) override</argsstring>
+        <name>operator&amp;</name>
+        <qualifiedname>Bvr::Diff::DiffReader::operator&amp;</qualifiedname>
+        <reimplements refid="struct_bvr_1_1_i_archiver_stream_1a21623cca47069cd9dd7f484279bdd525">operator&amp;</reimplements>
+        <param>
+          <type>float &amp;</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" line="270" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_diff_1_1_diff_reader_1af28db86b0168d74d57368509656821a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool Bvr::Diff::DiffReader::operator&amp;</definition>
+        <argsstring>(uint32 &amp;s) override</argsstring>
+        <name>operator&amp;</name>
+        <qualifiedname>Bvr::Diff::DiffReader::operator&amp;</qualifiedname>
+        <reimplements refid="struct_bvr_1_1_i_archiver_stream_1a4ab5afdc610b0f91148b81b28f73aa13">operator&amp;</reimplements>
+        <param>
+          <type>uint32 &amp;</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" line="271" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_diff_1_1_diff_reader_1a615ba13e0059e94c8d5b426bff35b32e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool Bvr::Diff::DiffReader::operator&amp;</definition>
+        <argsstring>(uint64 &amp;s) override</argsstring>
+        <name>operator&amp;</name>
+        <qualifiedname>Bvr::Diff::DiffReader::operator&amp;</qualifiedname>
+        <reimplements refid="struct_bvr_1_1_i_archiver_stream_1ad55b46f0fc42b958ea062df4696dd525">operator&amp;</reimplements>
+        <param>
+          <type>uint64 &amp;</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" line="272" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_diff_1_1_diff_reader_1a9460aaf10bdcea7abedfcd048a91318e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool Bvr::Diff::DiffReader::operator&amp;</definition>
+        <argsstring>(std::string &amp;s) override</argsstring>
+        <name>operator&amp;</name>
+        <qualifiedname>Bvr::Diff::DiffReader::operator&amp;</qualifiedname>
+        <reimplements refid="struct_bvr_1_1_i_archiver_stream_1afd3e51eb8b77db62deeaf74326d85bb4">operator&amp;</reimplements>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" line="273" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_diff_1_1_diff_reader_1a91ebf8ab47a8c2e63a1e47ff83b3cbc9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>bool</type>
+        <definition>bool Bvr::Diff::DiffReader::IsReader</definition>
+        <argsstring>() const override</argsstring>
+        <name>IsReader</name>
+        <qualifiedname>Bvr::Diff::DiffReader::IsReader</qualifiedname>
+        <reimplements refid="struct_bvr_1_1_i_archiver_stream_1ac2aeaf925d1ac96a89dee3916d98f95e">IsReader</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" line="275" column="35" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" bodystart="275" bodyend="275"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_diff_1_1_diff_reader_1ab59784ccfc03c3632253551bc306d9bb" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>bool</type>
+        <definition>bool Bvr::Diff::DiffReader::IsWriter</definition>
+        <argsstring>() const override</argsstring>
+        <name>IsWriter</name>
+        <qualifiedname>Bvr::Diff::DiffReader::IsWriter</qualifiedname>
+        <reimplements refid="struct_bvr_1_1_i_archiver_stream_1a0e2d9f4c59919a9429ac41fb550f4f60">IsWriter</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" line="276" column="35" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" bodystart="276" bodyend="276"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_diff_1_1_diff_reader_1a3568eb448995ae005122b99c79073bd2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>bool</type>
+        <definition>bool Bvr::Diff::DiffReader::HasError</definition>
+        <argsstring>() const override</argsstring>
+        <name>HasError</name>
+        <qualifiedname>Bvr::Diff::DiffReader::HasError</qualifiedname>
+        <reimplements refid="struct_bvr_1_1_i_archiver_stream_1a5e017d6d47a324059946258989728269">HasError</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" line="277" column="35" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" bodystart="277" bodyend="277"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_diff_1_1_diff_reader_1a170c3890bc935f7afa2a77ed217c6920" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::Diff::DiffReader::SetOwner</definition>
+        <argsstring>(CArchiveBase *pOwner)</argsstring>
+        <name>SetOwner</name>
+        <qualifiedname>Bvr::Diff::DiffReader::SetOwner</qualifiedname>
+        <param>
+          <type><ref refid="class_bvr_1_1_c_archive_base" kindref="compound">CArchiveBase</ref> *</type>
+          <declname>pOwner</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" line="279" column="35"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_diff_1_1_diff_reader_1a5dc90791ac29d75735efe9e520151b44" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::vector&lt; std::string_view &gt;</type>
+        <definition>std::vector&lt; std::string_view &gt; Bvr::Diff::DiffReader::GetMemberNames</definition>
+        <argsstring>() const override</argsstring>
+        <name>GetMemberNames</name>
+        <qualifiedname>Bvr::Diff::DiffReader::GetMemberNames</qualifiedname>
+        <reimplements refid="struct_bvr_1_1_i_archiver_stream_1a4e5ebf33887f34858a47bd3966a2b402">GetMemberNames</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" line="280" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_diff_1_1_diff_reader_1acb4e0ff22ea69ed0036bed5d9601adb2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::Diff::DiffReader::NewObject</definition>
+        <argsstring>()</argsstring>
+        <name>NewObject</name>
+        <qualifiedname>Bvr::Diff::DiffReader::NewObject</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" line="282" column="35"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_bvr_1_1_diff_1_1_diff_reader_1a01c906a8e51a73e02dab913c8e28e185" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Bvr::Diff::DiffReader::DiffReader</definition>
+        <argsstring>(const DiffReader &amp;)=delete</argsstring>
+        <name>DiffReader</name>
+        <qualifiedname>Bvr::Diff::DiffReader::DiffReader</qualifiedname>
+        <param>
+          <type>const <ref refid="class_bvr_1_1_diff_1_1_diff_reader" kindref="compound">DiffReader</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" line="284" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_diff_1_1_diff_reader_1a51362a9539bd606d0b2d3525f52dd361" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_bvr_1_1_diff_1_1_diff_reader" kindref="compound">DiffReader</ref> &amp;</type>
+        <definition>DiffReader &amp; Bvr::Diff::DiffReader::operator=</definition>
+        <argsstring>(const DiffReader &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Bvr::Diff::DiffReader::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="class_bvr_1_1_diff_1_1_diff_reader" kindref="compound">DiffReader</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" line="285" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_diff_1_1_diff_reader_1ab2f1aa91706154fd84822035cd7da0db" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void Bvr::Diff::DiffReader::CastAndSet</definition>
+        <argsstring>(T &amp;value)</argsstring>
+        <name>CastAndSet</name>
+        <qualifiedname>Bvr::Diff::DiffReader::CastAndSet</qualifiedname>
+        <param>
+          <type>T &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" line="287" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_diff_1_1_diff_reader_1a0fae7d36131caa53dd20dbfb53ccf07f" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>EDiffDataType</type>
+        <definition>EDiffDataType Bvr::Diff::DiffReader::CheckType</definition>
+        <argsstring>() const</argsstring>
+        <name>CheckType</name>
+        <qualifiedname>Bvr::Diff::DiffReader::CheckType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" line="288" column="32"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_diff_1_1_diff_reader_1a3d8b53dfe4f648e0d5e5e4b150804e56" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>EDeltaOperation</type>
+        <definition>EDeltaOperation Bvr::Diff::DiffReader::MaskOp</definition>
+        <argsstring>() const</argsstring>
+        <name>MaskOp</name>
+        <qualifiedname>Bvr::Diff::DiffReader::MaskOp</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" line="289" column="32"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_diff_1_1_diff_reader_1a09325000644361797f6757e646c0cf4c" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_bvr_1_1_diff_1_1_delta" kindref="compound">Delta</ref> *</type>
+        <definition>Delta * Bvr::Diff::DiffReader::Top</definition>
+        <argsstring>() const</argsstring>
+        <name>Top</name>
+        <qualifiedname>Bvr::Diff::DiffReader::Top</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" line="290" column="31"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>Bvr::Diff::DiffReader</label>
+        <link refid="class_bvr_1_1_diff_1_1_diff_reader"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Bvr::IArchiverStream</label>
+        <link refid="struct_bvr_1_1_i_archiver_stream"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>Bvr::Diff::DiffReader</label>
+        <link refid="class_bvr_1_1_diff_1_1_diff_reader"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Bvr::IArchiverStream</label>
+        <link refid="struct_bvr_1_1_i_archiver_stream"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" line="245" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrArchive/DiffArchive.hpp" bodystart="245" bodyend="298"/>
+    <listofallmembers>
+      <member refid="class_bvr_1_1_diff_1_1_diff_reader_1ab2f1aa91706154fd84822035cd7da0db" prot="private" virt="non-virtual"><scope>Bvr::Diff::DiffReader</scope><name>CastAndSet</name></member>
+      <member refid="class_bvr_1_1_diff_1_1_diff_reader_1a0fae7d36131caa53dd20dbfb53ccf07f" prot="private" virt="non-virtual"><scope>Bvr::Diff::DiffReader</scope><name>CheckType</name></member>
+      <member refid="class_bvr_1_1_diff_1_1_diff_reader_1a398f592609f3bc43d421731d26aec0eb" prot="private" virt="non-virtual"><scope>Bvr::Diff::DiffReader</scope><name>DeltaStack</name></member>
+      <member refid="class_bvr_1_1_diff_1_1_diff_reader_1ac3a41516ed9bfbf98a9981ba4c9741fd" prot="public" virt="non-virtual"><scope>Bvr::Diff::DiffReader</scope><name>DiffReader</name></member>
+      <member refid="class_bvr_1_1_diff_1_1_diff_reader_1a01c906a8e51a73e02dab913c8e28e185" prot="private" virt="non-virtual"><scope>Bvr::Diff::DiffReader</scope><name>DiffReader</name></member>
+      <member refid="class_bvr_1_1_diff_1_1_diff_reader_1a5cdc7d318836798802cf2d565b2c6d05" prot="public" virt="virtual"><scope>Bvr::Diff::DiffReader</scope><name>EndArray</name></member>
+      <member refid="class_bvr_1_1_diff_1_1_diff_reader_1a8c3057e82c7e0753028da39d95e6737c" prot="public" virt="virtual"><scope>Bvr::Diff::DiffReader</scope><name>EndObject</name></member>
+      <member refid="class_bvr_1_1_diff_1_1_diff_reader_1a5dc90791ac29d75735efe9e520151b44" prot="public" virt="virtual"><scope>Bvr::Diff::DiffReader</scope><name>GetMemberNames</name></member>
+      <member refid="class_bvr_1_1_diff_1_1_diff_reader_1aceb04e1ab68e61d3b72d9dc770fced63" prot="public" virt="virtual"><scope>Bvr::Diff::DiffReader</scope><name>GetString</name></member>
+      <member refid="class_bvr_1_1_diff_1_1_diff_reader_1a3568eb448995ae005122b99c79073bd2" prot="public" virt="virtual"><scope>Bvr::Diff::DiffReader</scope><name>HasError</name></member>
+      <member refid="class_bvr_1_1_diff_1_1_diff_reader_1a0db28a8ea2e91c18e76d52b3155c9c8a" prot="public" virt="virtual"><scope>Bvr::Diff::DiffReader</scope><name>HasMember</name></member>
+      <member refid="class_bvr_1_1_diff_1_1_diff_reader_1a82462c8c186d7d95fe118601f3ecb293" prot="public" virt="virtual"><scope>Bvr::Diff::DiffReader</scope><name>IsArray</name></member>
+      <member refid="class_bvr_1_1_diff_1_1_diff_reader_1a7530568de7813b619a496f2aebb33313" prot="public" virt="virtual"><scope>Bvr::Diff::DiffReader</scope><name>IsObject</name></member>
+      <member refid="class_bvr_1_1_diff_1_1_diff_reader_1a91ebf8ab47a8c2e63a1e47ff83b3cbc9" prot="public" virt="virtual"><scope>Bvr::Diff::DiffReader</scope><name>IsReader</name></member>
+      <member refid="class_bvr_1_1_diff_1_1_diff_reader_1a1f1d915dbf3c2080a648ebee560585b2" prot="private" virt="non-virtual"><scope>Bvr::Diff::DiffReader</scope><name>IsSetNewState</name></member>
+      <member refid="class_bvr_1_1_diff_1_1_diff_reader_1a6296b7d07caf892a88a64d1fe34c51c0" prot="public" virt="virtual"><scope>Bvr::Diff::DiffReader</scope><name>IsString</name></member>
+      <member refid="class_bvr_1_1_diff_1_1_diff_reader_1ab59784ccfc03c3632253551bc306d9bb" prot="public" virt="virtual"><scope>Bvr::Diff::DiffReader</scope><name>IsWriter</name></member>
+      <member refid="class_bvr_1_1_diff_1_1_diff_reader_1adca39956ef132b88ae012b222610ef70" prot="private" virt="non-virtual"><scope>Bvr::Diff::DiffReader</scope><name>Map</name></member>
+      <member refid="class_bvr_1_1_diff_1_1_diff_reader_1a3d8b53dfe4f648e0d5e5e4b150804e56" prot="private" virt="non-virtual"><scope>Bvr::Diff::DiffReader</scope><name>MaskOp</name></member>
+      <member refid="class_bvr_1_1_diff_1_1_diff_reader_1a4383781c9da12e60ccb06fe718291780" prot="public" virt="virtual"><scope>Bvr::Diff::DiffReader</scope><name>Member</name></member>
+      <member refid="class_bvr_1_1_diff_1_1_diff_reader_1acb4e0ff22ea69ed0036bed5d9601adb2" prot="public" virt="non-virtual"><scope>Bvr::Diff::DiffReader</scope><name>NewObject</name></member>
+      <member refid="class_bvr_1_1_diff_1_1_diff_reader_1aa968b97647db358f6c74bc9b2dcc30c5" prot="private" virt="non-virtual"><scope>Bvr::Diff::DiffReader</scope><name>ObjectCount</name></member>
+      <member refid="class_bvr_1_1_diff_1_1_diff_reader_1a57723ce95baea88a713ed8e586484615" prot="public" virt="non-virtual"><scope>Bvr::Diff::DiffReader</scope><name>operator bool</name></member>
+      <member refid="class_bvr_1_1_diff_1_1_diff_reader_1a871f1f81af6df4ebd38cc37ad49f2fd1" prot="public" virt="virtual"><scope>Bvr::Diff::DiffReader</scope><name>operator&amp;</name></member>
+      <member refid="class_bvr_1_1_diff_1_1_diff_reader_1a1785fab7c2a01e5365020314658e7017" prot="public" virt="virtual"><scope>Bvr::Diff::DiffReader</scope><name>operator&amp;</name></member>
+      <member refid="class_bvr_1_1_diff_1_1_diff_reader_1a9832761568f92d84d32f209b2a3733bb" prot="public" virt="virtual"><scope>Bvr::Diff::DiffReader</scope><name>operator&amp;</name></member>
+      <member refid="class_bvr_1_1_diff_1_1_diff_reader_1a53ebb35c93ccb71f9ec9ffa39b2d15d2" prot="public" virt="virtual"><scope>Bvr::Diff::DiffReader</scope><name>operator&amp;</name></member>
+      <member refid="class_bvr_1_1_diff_1_1_diff_reader_1ab1c27574ed78718a0a5eeb721bb4a03d" prot="public" virt="virtual"><scope>Bvr::Diff::DiffReader</scope><name>operator&amp;</name></member>
+      <member refid="class_bvr_1_1_diff_1_1_diff_reader_1af28db86b0168d74d57368509656821a0" prot="public" virt="virtual"><scope>Bvr::Diff::DiffReader</scope><name>operator&amp;</name></member>
+      <member refid="class_bvr_1_1_diff_1_1_diff_reader_1a615ba13e0059e94c8d5b426bff35b32e" prot="public" virt="virtual"><scope>Bvr::Diff::DiffReader</scope><name>operator&amp;</name></member>
+      <member refid="class_bvr_1_1_diff_1_1_diff_reader_1a9460aaf10bdcea7abedfcd048a91318e" prot="public" virt="virtual"><scope>Bvr::Diff::DiffReader</scope><name>operator&amp;</name></member>
+      <member refid="class_bvr_1_1_diff_1_1_diff_reader_1a51362a9539bd606d0b2d3525f52dd361" prot="private" virt="non-virtual"><scope>Bvr::Diff::DiffReader</scope><name>operator=</name></member>
+      <member refid="class_bvr_1_1_diff_1_1_diff_reader_1a94fc86b6dccde2bfa4bcfbae7396d407" prot="private" virt="non-virtual"><scope>Bvr::Diff::DiffReader</scope><name>Owner</name></member>
+      <member refid="class_bvr_1_1_diff_1_1_diff_reader_1a18c34823fdc2e59b55cd6f66fddc974d" prot="public" virt="virtual"><scope>Bvr::Diff::DiffReader</scope><name>Reset</name></member>
+      <member refid="class_bvr_1_1_diff_1_1_diff_reader_1a170c3890bc935f7afa2a77ed217c6920" prot="public" virt="non-virtual"><scope>Bvr::Diff::DiffReader</scope><name>SetOwner</name></member>
+      <member refid="class_bvr_1_1_diff_1_1_diff_reader_1ac9568853abacfe6411e22ba730d7a089" prot="public" virt="virtual"><scope>Bvr::Diff::DiffReader</scope><name>StartArray</name></member>
+      <member refid="class_bvr_1_1_diff_1_1_diff_reader_1adec9a8ccb14d24fefabce80840f79c86" prot="public" virt="virtual"><scope>Bvr::Diff::DiffReader</scope><name>StartObject</name></member>
+      <member refid="struct_bvr_1_1_i_archiver_stream_1a748a1d04715049fd877bad311d18c56e" prot="public" virt="non-virtual"><scope>Bvr::Diff::DiffReader</scope><name>TMemberNameList</name></member>
+      <member refid="class_bvr_1_1_diff_1_1_diff_reader_1a09325000644361797f6757e646c0cf4c" prot="private" virt="non-virtual"><scope>Bvr::Diff::DiffReader</scope><name>Top</name></member>
+      <member refid="class_bvr_1_1_diff_1_1_diff_reader_1a95947bd72d4f539534a8b2b733484553" prot="public" virt="non-virtual"><scope>Bvr::Diff::DiffReader</scope><name>~DiffReader</name></member>
+      <member refid="struct_bvr_1_1_i_archiver_stream_1a8d7492a86ae3bfd6c27f270b3b6c5be0" prot="public" virt="virtual"><scope>Bvr::Diff::DiffReader</scope><name>~IArchiverStream</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,19 +1,25 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="namespace_bvr" kind="namespace" language="C++">
     <compoundname>Bvr</compoundname>
-    <innerclass refid="struct_bvr_1_1_terrain_layer_material" prot="public">Bvr::TerrainLayerMaterial</innerclass>
+    <innerclass refid="class_bvr_1_1_c_terrain" prot="public">Bvr::CTerrain</innerclass>
+    <innerclass refid="struct_bvr_1_1_foliage_layer" prot="public">Bvr::FoliageLayer</innerclass>
+    <innerclass refid="struct_bvr_1_1_interaction_list" prot="public">Bvr::InteractionList</innerclass>
+    <innerclass refid="struct_bvr_1_1_layer_interaction" prot="public">Bvr::LayerInteraction</innerclass>
+    <innerclass refid="struct_bvr_1_1_object_prototype" prot="public">Bvr::ObjectPrototype</innerclass>
     <innerclass refid="struct_bvr_1_1_s_noise_params" prot="public">Bvr::SNoiseParams</innerclass>
-    <innerclass refid="struct_bvr_1_1_terrain_layer" prot="public">Bvr::TerrainLayer</innerclass>
-    <innerclass refid="struct_bvr_1_1_terrain_object_layer" prot="public">Bvr::TerrainObjectLayer</innerclass>
     <innerclass refid="struct_bvr_1_1_terrain_editor" prot="public">Bvr::TerrainEditor</innerclass>
     <innerclass refid="struct_bvr_1_1_terrain_editor_plugin" prot="public">Bvr::TerrainEditorPlugin</innerclass>
-    <innerclass refid="class_bvr_1_1_c_terrain" prot="public">Bvr::CTerrain</innerclass>
+    <innerclass refid="struct_bvr_1_1_terrain_heightmap_layer" prot="public">Bvr::TerrainHeightmapLayer</innerclass>
+    <innerclass refid="struct_bvr_1_1_terrain_layer" prot="public">Bvr::TerrainLayer</innerclass>
+    <innerclass refid="struct_bvr_1_1_terrain_layer_material" prot="public">Bvr::TerrainLayerMaterial</innerclass>
+    <innerclass refid="struct_bvr_1_1_terrain_object_layer" prot="public">Bvr::TerrainObjectLayer</innerclass>
     <innerclass refid="struct_bvr_1_1_terrain_plugin" prot="public">Bvr::TerrainPlugin</innerclass>
-      <sectiondef kind="enum">
+    <sectiondef kind="enum">
       <memberdef kind="enum" id="_terrain_editor_8hpp_1af5102a9143cecdc7d439d5a79b83dcf2" prot="public" static="no" strong="yes">
         <type></type>
         <name>EBrushType</name>
+        <qualifiedname>Bvr::EBrushType</qualifiedname>
         <enumvalue id="_terrain_editor_8hpp_1af5102a9143cecdc7d439d5a79b83dcf2a36ec8dc76bf55896199b1276242944af" prot="public">
           <name>Raise</name>
           <briefdescription>
@@ -41,15 +47,59 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/TerrainEditor.hpp" line="55" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/TerrainEditor.hpp" bodystart="55" bodyend="60"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/TerrainEditor.hpp" line="7" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/TerrainEditor.hpp" bodystart="7" bodyend="12"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="func">
+      <memberdef kind="enum" id="_layers_8hpp_1a4bd77a35c5a8259ba90039c6bc286759" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>ELayerInteraction</name>
+        <qualifiedname>Bvr::ELayerInteraction</qualifiedname>
+        <enumvalue id="_layers_8hpp_1a4bd77a35c5a8259ba90039c6bc286759a38f6cf1514d0eca1f7357240a0bf0e4e" prot="public">
+          <name>Supress</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_layers_8hpp_1a4bd77a35c5a8259ba90039c6bc286759ab025c6872d6cb5a6ce77404474331c4d" prot="public">
+          <name>Ehance</name>
+          <briefdescription>
+<para>Lower layer presense. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_layers_8hpp_1a4bd77a35c5a8259ba90039c6bc286759abe2b3ab06369e5df2d0b9ecab46d1bea" prot="public">
+          <name>Exlude</name>
+          <briefdescription>
+<para>Increase layer presense. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_layers_8hpp_1a4bd77a35c5a8259ba90039c6bc286759ae93f994f01c537c4e2f7d8528c3eb5e9" prot="public">
+          <name>Count</name>
+          <briefdescription>
+<para>Mask the layer based on distance. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Layers.hpp" line="10" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Layers.hpp" bodystart="10" bodyend="16"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
       <memberdef kind="function" id="_noise_8hpp_1aa9f360cee3b68a19a73fdb98a638f03e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>float</type>
         <definition>float Bvr::PerlinNoise</definition>
         <argsstring>(float2 P)</argsstring>
         <name>PerlinNoise</name>
+        <qualifiedname>Bvr::PerlinNoise</qualifiedname>
         <param>
           <type>float2</type>
           <declname>P</declname>
@@ -67,6 +117,7 @@
         <definition>float2 Bvr::Noised</definition>
         <argsstring>(float2 x)</argsstring>
         <name>Noised</name>
+        <qualifiedname>Bvr::Noised</qualifiedname>
         <param>
           <type>float2</type>
           <declname>x</declname>
@@ -84,6 +135,7 @@
         <definition>float Bvr::FBM</definition>
         <argsstring>(float2 x, const float octaves)</argsstring>
         <name>FBM</name>
+        <qualifiedname>Bvr::FBM</qualifiedname>
         <param>
           <type>float2</type>
           <declname>x</declname>
@@ -105,6 +157,7 @@
         <definition>float Bvr::HybridMultifractal</definition>
         <argsstring>(float2 pos, float H, float lacunarity, float octaves, float offset)</argsstring>
         <name>HybridMultifractal</name>
+        <qualifiedname>Bvr::HybridMultifractal</qualifiedname>
         <param>
           <type>float2</type>
           <declname>pos</declname>
@@ -138,6 +191,7 @@
         <definition>float Bvr::TerrainNoise</definition>
         <argsstring>(float2 pos, float2 tiling, float H, float lacunarity, float octaves, float offset)</argsstring>
         <name>TerrainNoise</name>
+        <qualifiedname>Bvr::TerrainNoise</qualifiedname>
         <param>
           <type>float2</type>
           <declname>pos</declname>
@@ -175,6 +229,7 @@
         <definition>float Bvr::FBMHeight</definition>
         <argsstring>(const float2 &amp;pos, const float2 &amp;tiling, const float lacunarity, const float octaves)</argsstring>
         <name>FBMHeight</name>
+        <qualifiedname>Bvr::FBMHeight</qualifiedname>
         <param>
           <type>const float2 &amp;</type>
           <declname>pos</declname>
@@ -199,7 +254,7 @@
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Noise.hpp" line="14" column="7" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Noise.hpp" declline="14" declcolumn="7"/>
       </memberdef>
-      </sectiondef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

@@ -1,20 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="_viewport_8hpp" kind="file" language="C++">
     <compoundname>Viewport.hpp</compoundname>
     <includes local="yes">BvrMath.hpp</includes>
     <includes local="no">BvrWindow/Window.hpp</includes>
     <includes local="no">Entity.hpp</includes>
     <includes local="no">memory</includes>
-    <includedby refid="_editor_events_8hpp" local="yes">/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/EditorEvents.hpp</includedby>
     <includedby refid="_editor_viewport_8hpp" local="yes">/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Core/EditorViewport.hpp</includedby>
+    <includedby refid="_editor_events_8hpp" local="yes">/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/EditorEvents.hpp</includedby>
     <incdepgraph>
-      <node id="2">
-        <label>BvrMath.hpp</label>
-      </node>
-      <node id="3">
-        <label>BvrWindow/Window.hpp</label>
-      </node>
       <node id="1">
         <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Viewport.hpp</label>
         <link refid="_viewport_8hpp"/>
@@ -27,6 +21,12 @@
         <childnode refid="5" relation="include">
         </childnode>
       </node>
+      <node id="2">
+        <label>BvrMath.hpp</label>
+      </node>
+      <node id="3">
+        <label>BvrWindow/Window.hpp</label>
+      </node>
       <node id="4">
         <label>Entity.hpp</label>
       </node>
@@ -35,9 +35,13 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="3">
+      <node id="2">
         <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Core/EditorViewport.hpp</label>
         <link refid="_editor_viewport_8hpp_source"/>
+      </node>
+      <node id="3">
+        <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/EditorEvents.hpp</label>
+        <link refid="_editor_events_8hpp_source"/>
       </node>
       <node id="1">
         <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Viewport.hpp</label>
@@ -46,10 +50,6 @@
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
-      </node>
-      <node id="2">
-        <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/EditorEvents.hpp</label>
-        <link refid="_editor_events_8hpp_source"/>
       </node>
     </invincdepgraph>
     <innerclass refid="class_bvr_1_1_i_viewport" prot="public">Bvr::IViewport</innerclass>
@@ -73,7 +73,7 @@
 <codeline lineno="11" refid="class_bvr_1_1_i_viewport" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_bvr_1_1_i_viewport" kindref="compound">IViewport</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>std::enable_shared_from_this&lt;IViewport&gt;<sp/>{</highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bvr_1_1_i_viewport" kindref="compound">IViewport</ref>()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>~<ref refid="class_bvr_1_1_i_viewport" kindref="compound">IViewport</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="class_bvr_1_1_i_viewport" kindref="compound">~IViewport</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight></codeline>
 <codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Show();</highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight></codeline>
@@ -105,7 +105,7 @@
 <codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><sp/><sp/><sp/>GetName()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal"><sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_name.c_str();<sp/>}</highlight></codeline>
 <codeline lineno="45"><highlight class="normal"></highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>Handle&lt;CImage&gt;<sp/>OutputImage()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_hOutput;<sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_handle" kindref="compound">Handle&lt;CImage&gt;</ref><sp/>OutputImage()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_hOutput;<sp/>}</highlight></codeline>
 <codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>GetFocused()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal"><sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_bFocused;<sp/>}</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"></highlight></codeline>
 <codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>Window::Id<sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_windowId{};</highlight></codeline>
@@ -119,7 +119,7 @@
 <codeline lineno="57"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>uint2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_offset;</highlight></codeline>
 <codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>uint2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_dimensions;</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>Handle&lt;CImage&gt;<sp/><sp/><sp/>m_hOutput;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_handle" kindref="compound">Handle&lt;CImage&gt;</ref><sp/><sp/><sp/>m_hOutput;</highlight></codeline>
 <codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><sp/><sp/><sp/><sp/><sp/>m_name;</highlight></codeline>
 <codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_bFocused;</highlight></codeline>
 <codeline lineno="63"><highlight class="normal">};</highlight></codeline>

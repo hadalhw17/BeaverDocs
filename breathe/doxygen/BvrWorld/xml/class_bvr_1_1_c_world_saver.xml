@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="class_bvr_1_1_c_world_saver" kind="class" language="C++" prot="public">
     <compoundname>Bvr::CWorldSaver</compoundname>
     <basecompoundref prot="public" virt="non-virtual">IAssetSaver</basecompoundref>
-      <sectiondef kind="public-func">
+    <sectiondef kind="public-func">
       <memberdef kind="function" id="class_bvr_1_1_c_world_saver_1ab54a2f37ec2917e2f8ad50a7211bbb44" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="non-virtual">
         <type>void</type>
         <definition>void Bvr::CWorldSaver::GetSupportedFormats</definition>
         <argsstring>(std::vector&lt; std::string_view &gt; &amp;out) final</argsstring>
         <name>GetSupportedFormats</name>
+        <qualifiedname>Bvr::CWorldSaver::GetSupportedFormats</qualifiedname>
         <param>
           <type>std::vector&lt; std::string_view &gt; &amp;</type>
           <declname>out</declname>
@@ -19,13 +20,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/WorldLoader.hpp" line="32" column="10"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/WorldLoader.hpp" line="35" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_bvr_1_1_c_world_saver_1ac37a0b1b5ed3c0941f6b54e20634d307" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="non-virtual">
         <type>bool</type>
         <definition>bool Bvr::CWorldSaver::Save</definition>
         <argsstring>(App &amp;app, const HandleUntyped &amp;hResource, std::string_view dstPath) final</argsstring>
         <name>Save</name>
+        <qualifiedname>Bvr::CWorldSaver::Save</qualifiedname>
         <param>
           <type>App &amp;</type>
           <declname>app</declname>
@@ -44,15 +46,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/WorldLoader.hpp" line="33" column="10"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/WorldLoader.hpp" line="36" column="10"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-static-func">
-      <memberdef kind="function" id="class_bvr_1_1_c_world_saver_1a94b69772ee1658f59769afc8610dea35" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_bvr_1_1_c_world_saver_1a4f0b16924c31008c9de1d11fe3ece3d5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::string</type>
         <definition>static std::string Bvr::CWorldSaver::SaveToMemory</definition>
-        <argsstring>(App &amp;app, const CWorld &amp;world, std::vector&lt; TEntity &gt; &amp;ents, bool forceAddParents, bool forceAddChildren, std::unordered_map&lt; uint64, HandleUntyped &gt; *pHandleRemap=nullptr, JsonWriter *pSaver=nullptr)</argsstring>
+        <argsstring>(App &amp;app, const CWorld &amp;world, std::vector&lt; TEntity &gt; &amp;ents, bool forceAddParents, bool forceAddChildren, std::unordered_map&lt; uint64, HandleUntyped &gt; *pHandleRemap=nullptr, CArchiveBase *pSaver=nullptr)</argsstring>
         <name>SaveToMemory</name>
+        <qualifiedname>Bvr::CWorldSaver::SaveToMemory</qualifiedname>
         <param>
           <type>App &amp;</type>
           <declname>app</declname>
@@ -79,7 +82,7 @@
           <defval>nullptr</defval>
         </param>
         <param>
-          <type>JsonWriter *</type>
+          <type>CArchiveBase *</type>
           <declname>pSaver</declname>
           <defval>nullptr</defval>
         </param>
@@ -89,40 +92,59 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/WorldLoader.hpp" line="35" column="24"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/WorldLoader.hpp" line="38" column="24"/>
       </memberdef>
-      </sectiondef>
+      <memberdef kind="function" id="class_bvr_1_1_c_world_saver_1a77cc3d4e5a525da9070fa4a3a1c876cd" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; CArchiveBase &gt;</type>
+        <definition>static std::shared_ptr&lt; CArchiveBase &gt; Bvr::CWorldSaver::MakeArchive</definition>
+        <argsstring>(CWorld *pWorld)</argsstring>
+        <name>MakeArchive</name>
+        <qualifiedname>Bvr::CWorldSaver::MakeArchive</qualifiedname>
+        <param>
+          <type><ref refid="class_bvr_1_1_c_world" kindref="compound">CWorld</ref> *</type>
+          <declname>pWorld</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/WorldLoader.hpp" line="45" column="5"/>
+      </memberdef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="2">
-        <label>IAssetSaver</label>
-      </node>
       <node id="1">
         <label>Bvr::CWorldSaver</label>
         <link refid="class_bvr_1_1_c_world_saver"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
+      </node>
+      <node id="2">
+        <label>IAssetSaver</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="2">
-        <label>IAssetSaver</label>
-      </node>
       <node id="1">
         <label>Bvr::CWorldSaver</label>
         <link refid="class_bvr_1_1_c_world_saver"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="2">
+        <label>IAssetSaver</label>
+      </node>
     </collaborationgraph>
-    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/WorldLoader.hpp" line="30" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/WorldLoader.hpp" bodystart="30" bodyend="40"/>
+    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/WorldLoader.hpp" line="33" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/WorldLoader.hpp" bodystart="33" bodyend="46"/>
     <listofallmembers>
       <member refid="class_bvr_1_1_c_world_saver_1ab54a2f37ec2917e2f8ad50a7211bbb44" prot="public" virt="non-virtual"><scope>Bvr::CWorldSaver</scope><name>GetSupportedFormats</name></member>
+      <member refid="class_bvr_1_1_c_world_saver_1a77cc3d4e5a525da9070fa4a3a1c876cd" prot="public" virt="non-virtual"><scope>Bvr::CWorldSaver</scope><name>MakeArchive</name></member>
       <member refid="class_bvr_1_1_c_world_saver_1ac37a0b1b5ed3c0941f6b54e20634d307" prot="public" virt="non-virtual"><scope>Bvr::CWorldSaver</scope><name>Save</name></member>
-      <member refid="class_bvr_1_1_c_world_saver_1a94b69772ee1658f59769afc8610dea35" prot="public" virt="non-virtual"><scope>Bvr::CWorldSaver</scope><name>SaveToMemory</name></member>
+      <member refid="class_bvr_1_1_c_world_saver_1a4f0b16924c31008c9de1d11fe3ece3d5" prot="public" virt="non-virtual"><scope>Bvr::CWorldSaver</scope><name>SaveToMemory</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>
