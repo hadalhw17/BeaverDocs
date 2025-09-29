@@ -1,0 +1,990 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="class_bvr_1_1_c_image" kind="class" language="C++" prot="public">
+    <compoundname>Bvr::CImage</compoundname>
+    <innerclass refid="struct_bvr_1_1_c_image_1_1_load_params" prot="public">Bvr::CImage::LoadParams</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_bvr_1_1_c_image_1a4ded69fa222f0352b95bbc10553a4661" prot="public" static="no" strong="yes">
+        <type>uint8</type>
+        <name>EUsage</name>
+        <qualifiedname>Bvr::CImage::EUsage</qualifiedname>
+        <enumvalue id="class_bvr_1_1_c_image_1a4ded69fa222f0352b95bbc10553a4661aa3e8ae43188ae76d38f414b2bdb0077b" prot="public">
+          <name>Texture</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_bvr_1_1_c_image_1a4ded69fa222f0352b95bbc10553a4661a9b0bffda4bcb312168c0d6537cb04b4d" prot="public">
+          <name>RenderTarget</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_bvr_1_1_c_image_1a4ded69fa222f0352b95bbc10553a4661af3c010256266268271a563d8363d4594" prot="public">
+          <name>ComputeOutput</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>How image can be used by GPU. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="22" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" bodystart="22" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="typedef" id="class_bvr_1_1_c_image_1ab58e95e287559a33fb8b05b897f31fe2" prot="public" static="no">
+        <type>std::vector&lt; uint8, Util::TSIMDAlignedAlocator&lt; uint8 &gt; &gt;</type>
+        <definition>using Bvr::CImage::TAlignedStorage =  std::vector&lt;uint8, Util::TSIMDAlignedAlocator&lt;uint8&gt; &gt;</definition>
+        <argsstring></argsstring>
+        <name>TAlignedStorage</name>
+        <qualifiedname>Bvr::CImage::TAlignedStorage</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="13" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_bvr_1_1_c_image_1ada23679c810a0d773f7f9a8255197f3f" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr bool</type>
+        <definition>constexpr bool Bvr::CImage::InPlaceRelease</definition>
+        <argsstring></argsstring>
+        <name>InPlaceRelease</name>
+        <qualifiedname>Bvr::CImage::InPlaceRelease</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="20" column="27" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_bvr_1_1_c_image_1a4d1a14155d884d0ecfe763079a624a4c" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Bvr::CImage::m_name</definition>
+        <argsstring></argsstring>
+        <name>m_name</name>
+        <qualifiedname>Bvr::CImage::m_name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="147" column="30" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_image_1aea08e3dc75cb6d49fd19e4d71ce876da" prot="private" static="no" mutable="no">
+        <type>TAlignedStorage</type>
+        <definition>TAlignedStorage Bvr::CImage::m_data</definition>
+        <argsstring></argsstring>
+        <name>m_data</name>
+        <qualifiedname>Bvr::CImage::m_data</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="148" column="30" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_image_1a9be0fd15b374a1acb6458fa968493e3b" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Bvr::CImage::m_width</definition>
+        <argsstring></argsstring>
+        <name>m_width</name>
+        <qualifiedname>Bvr::CImage::m_width</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="149" column="30" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_image_1ac17fcb212a4c26afedff60fc78b843ed" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Bvr::CImage::m_height</definition>
+        <argsstring></argsstring>
+        <name>m_height</name>
+        <qualifiedname>Bvr::CImage::m_height</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="150" column="30" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_image_1ad78acfb6704062b5e4e8ad350645c244" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Bvr::CImage::m_depth</definition>
+        <argsstring></argsstring>
+        <name>m_depth</name>
+        <qualifiedname>Bvr::CImage::m_depth</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="151" column="30" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_image_1a85cd8de824157d114093439a51e572f1" prot="private" static="no" mutable="no">
+        <type><ref refid="struct_bvr_1_1_renderer_1_1_s_texture_format" kindref="compound">Renderer::STextureFormat</ref></type>
+        <definition>Renderer::STextureFormat Bvr::CImage::m_format</definition>
+        <argsstring></argsstring>
+        <name>m_format</name>
+        <qualifiedname>Bvr::CImage::m_format</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="152" column="30" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" bodystart="152" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_image_1aa4475b1f213fa98ea8457794f5c84cf2" prot="private" static="no" mutable="no">
+        <type>Renderer::ETextureDim</type>
+        <definition>Renderer::ETextureDim Bvr::CImage::m_eDimension</definition>
+        <argsstring></argsstring>
+        <name>m_eDimension</name>
+        <qualifiedname>Bvr::CImage::m_eDimension</qualifiedname>
+        <initializer>= Renderer::ETextureDim::D2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="153" column="30" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_image_1a9f79eb2f23745ceeb71af77529dbba81" prot="private" static="no" mutable="no">
+        <type><ref refid="class_bvr_1_1_c_image_1a4ded69fa222f0352b95bbc10553a4661" kindref="member">CImage::EUsage</ref></type>
+        <definition>CImage::EUsage Bvr::CImage::m_eUsage</definition>
+        <argsstring></argsstring>
+        <name>m_eUsage</name>
+        <qualifiedname>Bvr::CImage::m_eUsage</qualifiedname>
+        <initializer>= EUsage::Texture</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="154" column="30" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_image_1a04cf289764dc564bfd8d6768f4942909" prot="private" static="no" mutable="no">
+        <type>Renderer::ESamplerType</type>
+        <definition>Renderer::ESamplerType Bvr::CImage::m_defaultSampler</definition>
+        <argsstring></argsstring>
+        <name>m_defaultSampler</name>
+        <qualifiedname>Bvr::CImage::m_defaultSampler</qualifiedname>
+        <initializer>= Renderer::ESamplerType::Default</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="155" column="30" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" bodystart="155" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_bvr_1_1_c_image_1a346b9b4bd7b174d0307d3f3f92cc5be7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Bvr::CImage::CImage</definition>
+        <argsstring>()=default</argsstring>
+        <name>CImage</name>
+        <qualifiedname>Bvr::CImage::CImage</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="27" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_image_1a5e207a30a7da9df460a85745f2bdbb90" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Bvr::CImage::CImage</definition>
+        <argsstring>(int width, int height, Renderer::STextureFormat format, const EUsage eUsage=EUsage::Texture)</argsstring>
+        <name>CImage</name>
+        <qualifiedname>Bvr::CImage::CImage</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_bvr_1_1_renderer_1_1_s_texture_format" kindref="compound">Renderer::STextureFormat</ref></type>
+          <declname>format</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_bvr_1_1_c_image_1a4ded69fa222f0352b95bbc10553a4661" kindref="member">EUsage</ref></type>
+          <declname>eUsage</declname>
+          <defval>EUsage::Texture</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="28" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" bodystart="28" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_image_1ad2990950b1b43668092045cbe51baf4f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Bvr::CImage::CImage</definition>
+        <argsstring>(int width, int height, Renderer::STextureFormat format, Span&lt; const uint8 &gt; data, const EUsage eUsage=EUsage::Texture)</argsstring>
+        <name>CImage</name>
+        <qualifiedname>Bvr::CImage::CImage</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_bvr_1_1_renderer_1_1_s_texture_format" kindref="compound">Renderer::STextureFormat</ref></type>
+          <declname>format</declname>
+        </param>
+        <param>
+          <type><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">Span</ref>&lt; const uint8 &gt;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_bvr_1_1_c_image_1a4ded69fa222f0352b95bbc10553a4661" kindref="member">EUsage</ref></type>
+          <declname>eUsage</declname>
+          <defval>EUsage::Texture</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="33" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" bodystart="33" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_image_1aa3033a91f8dedb2628bbc657b11ab7b4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Bvr::CImage::CImage</definition>
+        <argsstring>(int width, int height, int depth, Renderer::ETextureDim eDim, Renderer::STextureFormat format, const EUsage eUsage=EUsage::Texture)</argsstring>
+        <name>CImage</name>
+        <qualifiedname>Bvr::CImage::CImage</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>depth</declname>
+        </param>
+        <param>
+          <type>Renderer::ETextureDim</type>
+          <declname>eDim</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_bvr_1_1_renderer_1_1_s_texture_format" kindref="compound">Renderer::STextureFormat</ref></type>
+          <declname>format</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_bvr_1_1_c_image_1a4ded69fa222f0352b95bbc10553a4661" kindref="member">EUsage</ref></type>
+          <declname>eUsage</declname>
+          <defval>EUsage::Texture</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="39" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" bodystart="39" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_image_1a2a72d13a4203ceac1c30eaa136f51192" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>Bvr::CImage::CImage</definition>
+        <argsstring>(CImage &amp;&amp;) noexcept=default</argsstring>
+        <name>CImage</name>
+        <qualifiedname>Bvr::CImage::CImage</qualifiedname>
+        <param>
+          <type><ref refid="class_bvr_1_1_c_image" kindref="compound">CImage</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="45" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_image_1ae051fa5b93fc3c82bd57f191754854e5" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>Bvr::CImage::CImage</definition>
+        <argsstring>(const CImage &amp;) noexcept=default</argsstring>
+        <name>CImage</name>
+        <qualifiedname>Bvr::CImage::CImage</qualifiedname>
+        <param>
+          <type>const <ref refid="class_bvr_1_1_c_image" kindref="compound">CImage</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="46" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_image_1a631483b21bc644a861f55225746a9ce2" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="class_bvr_1_1_c_image" kindref="compound">CImage</ref> &amp;</type>
+        <definition>CImage &amp; Bvr::CImage::operator=</definition>
+        <argsstring>(CImage &amp;&amp;) noexcept=default</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Bvr::CImage::operator=</qualifiedname>
+        <param>
+          <type><ref refid="class_bvr_1_1_c_image" kindref="compound">CImage</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="47" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_image_1addf159f1ff991f290c7535f3af179fc1" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="class_bvr_1_1_c_image" kindref="compound">CImage</ref> &amp;</type>
+        <definition>CImage &amp; Bvr::CImage::operator=</definition>
+        <argsstring>(const CImage &amp;) noexcept=default</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Bvr::CImage::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="class_bvr_1_1_c_image" kindref="compound">CImage</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="48" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_image_1a9c3e08053a5929b4af0642d2508f944c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Bvr::CImage::~CImage</definition>
+        <argsstring>()=default</argsstring>
+        <name>~CImage</name>
+        <qualifiedname>Bvr::CImage::~CImage</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="50" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_image_1ad759df961f84fb4b8244a77fa99e34a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CImage::Resize</definition>
+        <argsstring>(const int newWidth, const int newHeight, const int newDepth=1)</argsstring>
+        <name>Resize</name>
+        <qualifiedname>Bvr::CImage::Resize</qualifiedname>
+        <param>
+          <type>const int</type>
+          <declname>newWidth</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>newHeight</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>newDepth</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Resize underlying buffer and its GPU representation Image contents are not going to be preserved <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>newWidth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>destination width </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>newHeight</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>destination height </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="97" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_image_1ab0add0f2400546283bc6f8cf7590ab26" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_bvr_1_1_c_image" kindref="compound">CImage</ref> &amp;</type>
+        <definition>CImage &amp; Bvr::CImage::SetName</definition>
+        <argsstring>(std::string_view name)</argsstring>
+        <name>SetName</name>
+        <qualifiedname>Bvr::CImage::SetName</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="100" column="12" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" bodystart="100" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_image_1ae5970f8cb3d1c8c0e9b0b443d8b78643" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string_view</type>
+        <definition>const std::string_view Bvr::CImage::GetName</definition>
+        <argsstring>() const</argsstring>
+        <name>GetName</name>
+        <qualifiedname>Bvr::CImage::GetName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="105" column="36" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" bodystart="105" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_image_1ac913afe8bf42102f0041c9e813327d86" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int Bvr::CImage::GetWidth</definition>
+        <argsstring>() const</argsstring>
+        <name>GetWidth</name>
+        <qualifiedname>Bvr::CImage::GetWidth</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="109" column="17" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" bodystart="109" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_image_1aedb47c800bc720701bf7325d4950df39" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int Bvr::CImage::GetHeight</definition>
+        <argsstring>() const</argsstring>
+        <name>GetHeight</name>
+        <qualifiedname>Bvr::CImage::GetHeight</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="110" column="17" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" bodystart="110" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_image_1a9b31c41849bd2a7236d4f599b1db7dba" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int Bvr::CImage::GetDepth</definition>
+        <argsstring>() const</argsstring>
+        <name>GetDepth</name>
+        <qualifiedname>Bvr::CImage::GetDepth</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="111" column="17" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" bodystart="111" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_image_1a3f399b4990c1f2c519c1b8a7febba68c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="struct_bvr_1_1_renderer_1_1_s_texture_format" kindref="compound">Renderer::STextureFormat</ref></type>
+        <definition>Renderer::STextureFormat Bvr::CImage::GetFormat</definition>
+        <argsstring>() const</argsstring>
+        <name>GetFormat</name>
+        <qualifiedname>Bvr::CImage::GetFormat</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="113" column="38" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" bodystart="113" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_image_1a4ff2937a71960d67d1937d23b66b6a9d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">Span</ref>&lt; uint8 const &gt;</type>
+        <definition>Span&lt; uint8 const  &gt; Bvr::CImage::GetData</definition>
+        <argsstring>() const</argsstring>
+        <name>GetData</name>
+        <qualifiedname>Bvr::CImage::GetData</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="116" column="18" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" bodystart="116" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_image_1ac7265991aa6ca66a7941a90a2d42c72b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">Span</ref>&lt; uint8 &gt;</type>
+        <definition>Span&lt; uint8 &gt; Bvr::CImage::GetData</definition>
+        <argsstring>()</argsstring>
+        <name>GetData</name>
+        <qualifiedname>Bvr::CImage::GetData</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="118" column="24" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" bodystart="118" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_image_1a9fc127cc3109cb3a0efe3e58c900d1a3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_bvr_1_1_c_image_1a4ded69fa222f0352b95bbc10553a4661" kindref="member">EUsage</ref></type>
+        <definition>EUsage Bvr::CImage::GetUsage</definition>
+        <argsstring>() const</argsstring>
+        <name>GetUsage</name>
+        <qualifiedname>Bvr::CImage::GetUsage</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="120" column="31" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" bodystart="120" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_image_1ad784211dc1ba4b831f5a7293d71e62f2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CImage::SetUsage</definition>
+        <argsstring>(const EUsage eUsage)</argsstring>
+        <name>SetUsage</name>
+        <qualifiedname>Bvr::CImage::SetUsage</qualifiedname>
+        <param>
+          <type>const <ref refid="class_bvr_1_1_c_image_1a4ded69fa222f0352b95bbc10553a4661" kindref="member">EUsage</ref></type>
+          <declname>eUsage</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="121" column="17" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" bodystart="121" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_image_1a3c1c2769bd8402dcdecc7acb53edad78" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CImage::ClearData</definition>
+        <argsstring>()</argsstring>
+        <name>ClearData</name>
+        <qualifiedname>Bvr::CImage::ClearData</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="123" column="17" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" bodystart="123" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_image_1ab96ceee2b99a9ae3330091aa97fb8f48" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>Renderer::ETextureDim</type>
+        <definition>Renderer::ETextureDim Bvr::CImage::GetTextureDimesnions</definition>
+        <argsstring>() const</argsstring>
+        <name>GetTextureDimesnions</name>
+        <qualifiedname>Bvr::CImage::GetTextureDimesnions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="125" column="28" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" bodystart="125" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_image_1ad3ff014e659f5012ac259ecfa421b154" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>Renderer::ESamplerType</type>
+        <definition>Renderer::ESamplerType Bvr::CImage::GetDefaultSampler</definition>
+        <argsstring>() const</argsstring>
+        <name>GetDefaultSampler</name>
+        <qualifiedname>Bvr::CImage::GetDefaultSampler</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="129" column="29" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" bodystart="129" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_image_1a9cd0bf7fb48cf5cb3b7183e7f93002ad" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_bvr_1_1_c_image" kindref="compound">CImage</ref> &amp;</type>
+        <definition>CImage &amp; Bvr::CImage::DefaultSampler</definition>
+        <argsstring>(Renderer::ESamplerType sampler)</argsstring>
+        <name>DefaultSampler</name>
+        <qualifiedname>Bvr::CImage::DefaultSampler</qualifiedname>
+        <param>
+          <type>Renderer::ESamplerType</type>
+          <declname>sampler</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="133" column="12" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" bodystart="133" bodyend="136"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_bvr_1_1_c_image_1a973b83d3ea9ebbd3b8c61e02d9752f6e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_bvr_1_1_c_image" kindref="compound">CImage</ref></type>
+        <definition>static CImage Bvr::CImage::RenderTarget</definition>
+        <argsstring>(const int width, const int height, const bool isHDR=false)</argsstring>
+        <name>RenderTarget</name>
+        <qualifiedname>Bvr::CImage::RenderTarget</qualifiedname>
+        <param>
+          <type>const int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>isHDR</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create image to be used as render target <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>image width </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>image height </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isHDR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if true, then image is RGBA16F, RGB8sRGB otherwise </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>constructed image </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="58" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" bodystart="58" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_image_1a2ddb7cd4d51b97a6132c6a1e355d14c3" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_bvr_1_1_c_image" kindref="compound">CImage</ref></type>
+        <definition>static CImage Bvr::CImage::ComputeOutput</definition>
+        <argsstring>(const int width, const int height, const Renderer::STextureFormat fmt)</argsstring>
+        <name>ComputeOutput</name>
+        <qualifiedname>Bvr::CImage::ComputeOutput</qualifiedname>
+        <param>
+          <type>const int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_bvr_1_1_renderer_1_1_s_texture_format" kindref="compound">Renderer::STextureFormat</ref></type>
+          <declname>fmt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create image to be used as compute output(with storage/UAV flags) <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>image width </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>image height </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fmt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>image format </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>constructed image </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="74" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" bodystart="74" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_image_1ae3973526aec7cd3aab40958d1a26601a" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_bvr_1_1_c_image" kindref="compound">CImage</ref></type>
+        <definition>static CImage Bvr::CImage::CubeMap</definition>
+        <argsstring>(const int width, const int height, const Renderer::STextureFormat fmt, EUsage usage=EUsage::Texture)</argsstring>
+        <name>CubeMap</name>
+        <qualifiedname>Bvr::CImage::CubeMap</qualifiedname>
+        <param>
+          <type>const int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_bvr_1_1_renderer_1_1_s_texture_format" kindref="compound">Renderer::STextureFormat</ref></type>
+          <declname>fmt</declname>
+        </param>
+        <param>
+          <type><ref refid="class_bvr_1_1_c_image_1a4ded69fa222f0352b95bbc10553a4661" kindref="member">EUsage</ref></type>
+          <declname>usage</declname>
+          <defval>EUsage::Texture</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a cubemap image <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>image width </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>image height </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fmt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>image format </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>usage</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>image usage flags </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>constructed image </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="86" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" bodystart="86" bodyend="91"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_bvr_1_1_c_image_1a34365c3219ca8e8681b26fdaeffc1281" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CImage::Initialise</definition>
+        <argsstring>(int width, int height, int depth, Renderer::STextureFormat format)</argsstring>
+        <name>Initialise</name>
+        <qualifiedname>Bvr::CImage::Initialise</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>depth</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_bvr_1_1_renderer_1_1_s_texture_format" kindref="compound">Renderer::STextureFormat</ref></type>
+          <declname>format</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="139" column="33"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_image_1aefb70c3d16837d28da4c383e5e0968d1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CImage::Initialise</definition>
+        <argsstring>(int width, int height, int depth, Renderer::STextureFormat format, Span&lt; const uint8 &gt; data)</argsstring>
+        <name>Initialise</name>
+        <qualifiedname>Bvr::CImage::Initialise</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>depth</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_bvr_1_1_renderer_1_1_s_texture_format" kindref="compound">Renderer::STextureFormat</ref></type>
+          <declname>format</declname>
+        </param>
+        <param>
+          <type><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">Span</ref>&lt; const uint8 &gt;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="141" column="33"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_bvr_1_1_c_image_1a3efdeed505612f95e5019e0b89d88087" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>static size_t Bvr::CImage::CalculateImageSize</definition>
+        <argsstring>(int w, int h, int d, Renderer::STextureFormat f)</argsstring>
+        <name>CalculateImageSize</name>
+        <qualifiedname>Bvr::CImage::CalculateImageSize</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_bvr_1_1_renderer_1_1_s_texture_format" kindref="compound">Renderer::STextureFormat</ref></type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="143" column="20"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" line="11" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrImage/Image.hpp" bodystart="11" bodyend="156"/>
+    <listofallmembers>
+      <member refid="class_bvr_1_1_c_image_1a3efdeed505612f95e5019e0b89d88087" prot="private" virt="non-virtual"><scope>Bvr::CImage</scope><name>CalculateImageSize</name></member>
+      <member refid="class_bvr_1_1_c_image_1a346b9b4bd7b174d0307d3f3f92cc5be7" prot="public" virt="non-virtual"><scope>Bvr::CImage</scope><name>CImage</name></member>
+      <member refid="class_bvr_1_1_c_image_1a5e207a30a7da9df460a85745f2bdbb90" prot="public" virt="non-virtual"><scope>Bvr::CImage</scope><name>CImage</name></member>
+      <member refid="class_bvr_1_1_c_image_1ad2990950b1b43668092045cbe51baf4f" prot="public" virt="non-virtual"><scope>Bvr::CImage</scope><name>CImage</name></member>
+      <member refid="class_bvr_1_1_c_image_1aa3033a91f8dedb2628bbc657b11ab7b4" prot="public" virt="non-virtual"><scope>Bvr::CImage</scope><name>CImage</name></member>
+      <member refid="class_bvr_1_1_c_image_1a2a72d13a4203ceac1c30eaa136f51192" prot="public" virt="non-virtual"><scope>Bvr::CImage</scope><name>CImage</name></member>
+      <member refid="class_bvr_1_1_c_image_1ae051fa5b93fc3c82bd57f191754854e5" prot="public" virt="non-virtual"><scope>Bvr::CImage</scope><name>CImage</name></member>
+      <member refid="class_bvr_1_1_c_image_1a3c1c2769bd8402dcdecc7acb53edad78" prot="public" virt="non-virtual"><scope>Bvr::CImage</scope><name>ClearData</name></member>
+      <member refid="class_bvr_1_1_c_image_1a2ddb7cd4d51b97a6132c6a1e355d14c3" prot="public" virt="non-virtual"><scope>Bvr::CImage</scope><name>ComputeOutput</name></member>
+      <member refid="class_bvr_1_1_c_image_1ae3973526aec7cd3aab40958d1a26601a" prot="public" virt="non-virtual"><scope>Bvr::CImage</scope><name>CubeMap</name></member>
+      <member refid="class_bvr_1_1_c_image_1a9cd0bf7fb48cf5cb3b7183e7f93002ad" prot="public" virt="non-virtual"><scope>Bvr::CImage</scope><name>DefaultSampler</name></member>
+      <member refid="class_bvr_1_1_c_image_1a4ded69fa222f0352b95bbc10553a4661" prot="public" virt="non-virtual"><scope>Bvr::CImage</scope><name>EUsage</name></member>
+      <member refid="class_bvr_1_1_c_image_1a4ff2937a71960d67d1937d23b66b6a9d" prot="public" virt="non-virtual"><scope>Bvr::CImage</scope><name>GetData</name></member>
+      <member refid="class_bvr_1_1_c_image_1ac7265991aa6ca66a7941a90a2d42c72b" prot="public" virt="non-virtual"><scope>Bvr::CImage</scope><name>GetData</name></member>
+      <member refid="class_bvr_1_1_c_image_1ad3ff014e659f5012ac259ecfa421b154" prot="public" virt="non-virtual"><scope>Bvr::CImage</scope><name>GetDefaultSampler</name></member>
+      <member refid="class_bvr_1_1_c_image_1a9b31c41849bd2a7236d4f599b1db7dba" prot="public" virt="non-virtual"><scope>Bvr::CImage</scope><name>GetDepth</name></member>
+      <member refid="class_bvr_1_1_c_image_1a3f399b4990c1f2c519c1b8a7febba68c" prot="public" virt="non-virtual"><scope>Bvr::CImage</scope><name>GetFormat</name></member>
+      <member refid="class_bvr_1_1_c_image_1aedb47c800bc720701bf7325d4950df39" prot="public" virt="non-virtual"><scope>Bvr::CImage</scope><name>GetHeight</name></member>
+      <member refid="class_bvr_1_1_c_image_1ae5970f8cb3d1c8c0e9b0b443d8b78643" prot="public" virt="non-virtual"><scope>Bvr::CImage</scope><name>GetName</name></member>
+      <member refid="class_bvr_1_1_c_image_1ab96ceee2b99a9ae3330091aa97fb8f48" prot="public" virt="non-virtual"><scope>Bvr::CImage</scope><name>GetTextureDimesnions</name></member>
+      <member refid="class_bvr_1_1_c_image_1a9fc127cc3109cb3a0efe3e58c900d1a3" prot="public" virt="non-virtual"><scope>Bvr::CImage</scope><name>GetUsage</name></member>
+      <member refid="class_bvr_1_1_c_image_1ac913afe8bf42102f0041c9e813327d86" prot="public" virt="non-virtual"><scope>Bvr::CImage</scope><name>GetWidth</name></member>
+      <member refid="class_bvr_1_1_c_image_1a34365c3219ca8e8681b26fdaeffc1281" prot="private" virt="non-virtual"><scope>Bvr::CImage</scope><name>Initialise</name></member>
+      <member refid="class_bvr_1_1_c_image_1aefb70c3d16837d28da4c383e5e0968d1" prot="private" virt="non-virtual"><scope>Bvr::CImage</scope><name>Initialise</name></member>
+      <member refid="class_bvr_1_1_c_image_1ada23679c810a0d773f7f9a8255197f3f" prot="public" virt="non-virtual"><scope>Bvr::CImage</scope><name>InPlaceRelease</name></member>
+      <member refid="class_bvr_1_1_c_image_1aea08e3dc75cb6d49fd19e4d71ce876da" prot="private" virt="non-virtual"><scope>Bvr::CImage</scope><name>m_data</name></member>
+      <member refid="class_bvr_1_1_c_image_1a04cf289764dc564bfd8d6768f4942909" prot="private" virt="non-virtual"><scope>Bvr::CImage</scope><name>m_defaultSampler</name></member>
+      <member refid="class_bvr_1_1_c_image_1ad78acfb6704062b5e4e8ad350645c244" prot="private" virt="non-virtual"><scope>Bvr::CImage</scope><name>m_depth</name></member>
+      <member refid="class_bvr_1_1_c_image_1aa4475b1f213fa98ea8457794f5c84cf2" prot="private" virt="non-virtual"><scope>Bvr::CImage</scope><name>m_eDimension</name></member>
+      <member refid="class_bvr_1_1_c_image_1a9f79eb2f23745ceeb71af77529dbba81" prot="private" virt="non-virtual"><scope>Bvr::CImage</scope><name>m_eUsage</name></member>
+      <member refid="class_bvr_1_1_c_image_1a85cd8de824157d114093439a51e572f1" prot="private" virt="non-virtual"><scope>Bvr::CImage</scope><name>m_format</name></member>
+      <member refid="class_bvr_1_1_c_image_1ac17fcb212a4c26afedff60fc78b843ed" prot="private" virt="non-virtual"><scope>Bvr::CImage</scope><name>m_height</name></member>
+      <member refid="class_bvr_1_1_c_image_1a4d1a14155d884d0ecfe763079a624a4c" prot="private" virt="non-virtual"><scope>Bvr::CImage</scope><name>m_name</name></member>
+      <member refid="class_bvr_1_1_c_image_1a9be0fd15b374a1acb6458fa968493e3b" prot="private" virt="non-virtual"><scope>Bvr::CImage</scope><name>m_width</name></member>
+      <member refid="class_bvr_1_1_c_image_1a631483b21bc644a861f55225746a9ce2" prot="public" virt="non-virtual"><scope>Bvr::CImage</scope><name>operator=</name></member>
+      <member refid="class_bvr_1_1_c_image_1addf159f1ff991f290c7535f3af179fc1" prot="public" virt="non-virtual"><scope>Bvr::CImage</scope><name>operator=</name></member>
+      <member refid="class_bvr_1_1_c_image_1a973b83d3ea9ebbd3b8c61e02d9752f6e" prot="public" virt="non-virtual"><scope>Bvr::CImage</scope><name>RenderTarget</name></member>
+      <member refid="class_bvr_1_1_c_image_1ad759df961f84fb4b8244a77fa99e34a5" prot="public" virt="non-virtual"><scope>Bvr::CImage</scope><name>Resize</name></member>
+      <member refid="class_bvr_1_1_c_image_1ab0add0f2400546283bc6f8cf7590ab26" prot="public" virt="non-virtual"><scope>Bvr::CImage</scope><name>SetName</name></member>
+      <member refid="class_bvr_1_1_c_image_1ad784211dc1ba4b831f5a7293d71e62f2" prot="public" virt="non-virtual"><scope>Bvr::CImage</scope><name>SetUsage</name></member>
+      <member refid="class_bvr_1_1_c_image_1ab58e95e287559a33fb8b05b897f31fe2" prot="public" virt="non-virtual"><scope>Bvr::CImage</scope><name>TAlignedStorage</name></member>
+      <member refid="class_bvr_1_1_c_image_1a9c3e08053a5929b4af0642d2508f944c" prot="public" virt="non-virtual"><scope>Bvr::CImage</scope><name>~CImage</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

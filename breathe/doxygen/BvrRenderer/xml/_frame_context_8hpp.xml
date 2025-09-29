@@ -2,110 +2,28 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="_frame_context_8hpp" kind="file" language="C++">
     <compoundname>FrameContext.hpp</compoundname>
-    <includes refid="_common_renderer_8hpp" local="yes">CommonRenderer.hpp</includes>
-    <includes refid="_i_bvr_renderer_8hpp" local="yes">IBvrRenderer.hpp</includes>
+    <includes local="yes">CommonRenderer.hpp</includes>
+    <includes local="yes">IBvrRenderer.hpp</includes>
+    <includes local="no">IO/AssetHandle.hpp</includes>
     <incdepgraph>
       <node id="1">
         <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/FrameContext.hpp</label>
         <link refid="_frame_context_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-      </node>
-      <node id="12">
-        <label>BvrFormats.hpp</label>
-        <link refid="_bvr_formats_8hpp_source"/>
-        <childnode refid="13" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>CommonRenderer.hpp</label>
-        <link refid="_common_renderer_8hpp_source"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
       </node>
-      <node id="11">
-        <label>BvrRenderer/CommonShaders.hpp</label>
-        <link refid="_common_shaders_8hpp_source"/>
-        <childnode refid="12" relation="include">
-        </childnode>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="14" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="16" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-        <childnode refid="18" relation="include">
-        </childnode>
-      </node>
-      <node id="10">
-        <label>IBvrRenderer.hpp</label>
-        <link refid="_i_bvr_renderer_8hpp_source"/>
-        <childnode refid="11" relation="include">
-        </childnode>
-        <childnode refid="19" relation="include">
-        </childnode>
-      </node>
-      <node id="4">
-        <label>BvrCommon/BaseTypes.hpp</label>
-      </node>
-      <node id="18">
-        <label>BvrCommon/Handle.hpp</label>
-      </node>
-      <node id="13">
-        <label>BvrCommon/TextureFormats.hpp</label>
-      </node>
-      <node id="14">
-        <label>BvrCommon/Utils.hpp</label>
-      </node>
-      <node id="19">
-        <label>BvrMath/BvrMath.hpp</label>
-      </node>
-      <node id="7">
-        <label>BvrRenderer/BvrRendererExport.hpp</label>
-      </node>
-      <node id="17">
-        <label>Hash.h</label>
-      </node>
-      <node id="5">
-        <label>Meta/Enums.hpp</label>
+      <node id="2">
+        <label>CommonRenderer.hpp</label>
       </node>
       <node id="3">
-        <label>Platform/CompilerSettings.hpp</label>
+        <label>IBvrRenderer.hpp</label>
       </node>
-      <node id="9">
-        <label>TextureFormats.hpp</label>
-      </node>
-      <node id="6">
-        <label>Utils/Assert.hpp</label>
-      </node>
-      <node id="16">
-        <label>array</label>
-      </node>
-      <node id="15">
-        <label>set</label>
-      </node>
-      <node id="8">
-        <label>vector</label>
+      <node id="4">
+        <label>IO/AssetHandle.hpp</label>
       </node>
     </incdepgraph>
     <innerclass refid="class_bvr_1_1_renderer_1_1_c_frame_context" prot="public">Bvr::Renderer::CFrameContext</innerclass>
@@ -118,115 +36,116 @@
     <programlisting>
 <codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;CommonRenderer.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;IBvrRenderer.hpp&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>IFrameContext</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Bvr<sp/>{</highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">SLightRenderItem;</highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">SRenderInfo;</highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">SRenderMesh;</highlight></codeline>
-<codeline lineno="10"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Bvr</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Bvr::Renderer<sp/>{</highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">CGraphicsPipeline;</highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">CDebugRenderer;</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">CMaterial;</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">SPerViewCB;</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">SResourceSet;</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">SDescriptorSetLibrary;</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">SRendPrimitive;</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">SGPUDrawData;</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">SRenderList;</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">CIndirectDrawList;</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">CCommandList;</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">CGPUScene;</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">CBufferBumpAllocator;</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight></codeline>
-<codeline lineno="28" refid="class_bvr_1_1_renderer_1_1_c_frame_context" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_bvr_1_1_renderer_1_1_c_frame_context" kindref="compound">CFrameContext</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="struct_bvr_1_1_i_frame_context" kindref="compound">IFrameContext</ref><sp/>{</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">Impl;</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"></highlight></codeline>
-<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">TRenderLists<sp/>=<sp/>std::pair&lt;SRenderList,<sp/>CIndirectDrawList&gt;;</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"></highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Clustered<sp/>lights<sp/>global<sp/>static<sp/>settings</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>uint32<sp/>PixelsPerTile<sp/><sp/><sp/>=<sp/>8;</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>uint32<sp/>DepthSliceCount<sp/>=<sp/>512;</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>uint32<sp/>MaxLights<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>256;</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bvr_1_1_renderer_1_1_c_frame_context" kindref="compound">CFrameContext</ref>();</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bvr_1_1_renderer_1_1_c_frame_context" kindref="compound">~CFrameContext</ref>();</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bvr_1_1_renderer_1_1_c_graphics_pipeline" kindref="compound">CGraphicsPipeline</ref>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetGraphicsPipeline()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetRenderListCount();</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TRenderLists&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetRenderLists(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ERenderList<sp/>list)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>TRenderLists&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetRenderLists(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ERenderList<sp/>list);</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IsListEmpty(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ERenderList<sp/>list)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_s_render_info" kindref="compound">SRenderInfo</ref>&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetRenderInfo()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_bvr_1_1_s_render_info" kindref="compound">SRenderInfo</ref>&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetRenderInfo()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>CCamera&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetCamera()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_t_handle" kindref="compound">THandle&lt;BufferView&gt;</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetLightBuffer()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Time()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>TEntity<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetCamEntity()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SResourceSet&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetPerViewResourceSet()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>SResourceSet&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetPerViewResourceSet();</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_renderer_1_1_i_primitive_draw_collector" kindref="compound">IPrimitiveDrawCollector</ref>*<sp/><sp/><sp/><sp/><sp/><sp/>GetIPDC()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>CDebugRenderer*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetPDC();</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_bvr_1_1_renderer_1_1_c_g_p_u_scene" kindref="compound">CGPUScene</ref>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetGPUScene()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bvr_1_1_renderer_1_1_c_buffer_bump_allocator" kindref="compound">CBufferBumpAllocator</ref>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ConstantAllocator();</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>CWorld&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>World()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"></highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetGraphicsPipeline(<ref refid="class_bvr_1_1_renderer_1_1_c_graphics_pipeline" kindref="compound">CGraphicsPipeline</ref>*<sp/>pGraphicsPipeline);</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetRenderInfo(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_bvr_1_1_s_render_info" kindref="compound">SRenderInfo</ref>&amp;<sp/>renderInfo)<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetWorld(CWorld&amp;<sp/>world)<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"></highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>FinaliseContext(CCommandList*<sp/>pCmd);</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>EndFrame(CCommandList*<sp/>pCmd);</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"></highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Inherited<sp/>from<sp/>IFrameContext</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>AddMeshPrimitive(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SRenderMesh&amp;<sp/>mesh,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32<sp/>submeshIdx,</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>HandleUntyped&amp;<sp/><sp/><sp/><sp/>material,</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ECoreRenderPhases<sp/>ePhase)<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"></highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>AddMeshPrimitives(</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SRenderMesh&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mesh,</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::span&lt;std::pair&lt;uint32,<sp/>HandleUntyped&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&gt;<sp/>materialOverrides,</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ECoreRenderPhases<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ePhase)<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"></highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>AddRenderMesh(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SRenderMesh&amp;<sp/><sp/><sp/><sp/><sp/><sp/>mesh,</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ECoreRenderPhases<sp/>ePhase)<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"></highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>AddRenderLight(TEntity<sp/>hEnt,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SLightRenderItem&amp;<sp/>light)<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"></highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>AllocateListsForShadowFrustums()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"></highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>mat4<sp/>GetPreviousViewProjection()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_previousViewProj;<sp/>}</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"></highlight></codeline>
-<codeline lineno="87"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Clear();</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>UpdateTime();</highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bvr_1_1_renderer_1_1_c_g_p_u_scene" kindref="compound">CGPUScene</ref>*<sp/>GetGPUScene();</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GeneratePerViewCB(<ref refid="struct_bvr_1_1_renderer_1_1_s_per_view_c_b" kindref="compound">SPerViewCB</ref>&amp;<sp/>dst);</highlight></codeline>
-<codeline lineno="92"><highlight class="normal"></highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/>std::pair&lt;SGPUDrawData*,<sp/>uint32&gt;</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>AllocateDrawData(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_bvr_1_1_renderer_1_1_c_material" kindref="compound">CMaterial</ref>*<sp/>pMat,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_bvr_1_1_renderer_1_1_s_rend_primitive" kindref="compound">SRendPrimitive</ref>&amp;<sp/>prim,</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>mat4&amp;<sp/>xform);</highlight></codeline>
-<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>&quot;CommonRenderer.hpp&quot;;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>&quot;IBvrRenderer.hpp&quot;;<sp/></highlight><highlight class="comment">//<sp/>IFrameContext</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>&lt;IO/AssetHandle.hpp&gt;;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Bvr<sp/>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">SLightRenderItem;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">SRenderInfo;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">SRenderMesh;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Bvr</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Bvr::Renderer<sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">CGraphicsPipeline;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">CDebugRenderer;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">CMaterial;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">SPerViewCB;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">SResourceSet;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">SDescriptorSetLibrary;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">SRendPrimitive;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">SGPUDrawData;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">SRenderList;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">CIndirectDrawList;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">CCommandList;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">CGPUScene;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">CBufferBumpAllocator;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="class_bvr_1_1_renderer_1_1_c_frame_context" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_bvr_1_1_renderer_1_1_c_frame_context" kindref="compound">CFrameContext</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>IFrameContext<sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">Impl;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">TRenderLists<sp/>=<sp/>std::pair&lt;SRenderList,<sp/>CIndirectDrawList&gt;;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Clustered<sp/>lights<sp/>global<sp/>static<sp/>settings</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>uint32<sp/>PixelsPerTile<sp/><sp/><sp/>=<sp/>8;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>uint32<sp/>DepthSliceCount<sp/>=<sp/>512;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>uint32<sp/>MaxLights<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>256;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bvr_1_1_renderer_1_1_c_frame_context" kindref="compound">CFrameContext</ref>();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bvr_1_1_renderer_1_1_c_frame_context" kindref="compound">~CFrameContext</ref>();</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>CGraphicsPipeline*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetGraphicsPipeline()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetRenderListCount();</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TRenderLists&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetRenderLists(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ERenderList<sp/>list)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>TRenderLists&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetRenderLists(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ERenderList<sp/>list);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IsListEmpty(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ERenderList<sp/>list)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>SRenderInfo&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetRenderInfo()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SRenderInfo&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetRenderInfo()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>CCamera&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetCamera()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_t_handle" kindref="compound">THandle&lt;BufferView&gt;</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetLightBuffer()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Time()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>TEntity<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetCamEntity()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SResourceSet&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetPerViewResourceSet()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>SResourceSet&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetPerViewResourceSet();</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>IPrimitiveDrawCollector*<sp/><sp/><sp/><sp/><sp/><sp/>GetIPDC()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>CDebugRenderer*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetPDC();</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_bvr_1_1_renderer_1_1_c_g_p_u_scene" kindref="compound">CGPUScene</ref>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetGPUScene()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bvr_1_1_renderer_1_1_c_buffer_bump_allocator" kindref="compound">CBufferBumpAllocator</ref>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ConstantAllocator();</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>CWorld&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>World()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetGraphicsPipeline(CGraphicsPipeline*<sp/>pGraphicsPipeline);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetRenderInfo(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SRenderInfo&amp;<sp/>renderInfo)<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetWorld(CWorld&amp;<sp/>world)<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>FinaliseContext(CCommandList*<sp/>pCmd);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>EndFrame(CCommandList*<sp/>pCmd);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Inherited<sp/>from<sp/>IFrameContext</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>AddMeshPrimitive(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SRenderMesh&amp;<sp/>mesh,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32<sp/>submeshIdx,</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>HandleUntyped&amp;<sp/><sp/><sp/><sp/>material,</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ECoreRenderPhases<sp/>ePhase)<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>AddMeshPrimitives(</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SRenderMesh&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mesh,</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Span&lt;std::pair&lt;uint32,<sp/>HandleUntyped&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&gt;<sp/>materialOverrides,</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ECoreRenderPhases<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ePhase)<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>AddRenderMesh(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SRenderMesh&amp;<sp/><sp/><sp/><sp/><sp/><sp/>mesh,</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ECoreRenderPhases<sp/>ePhase)<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>AddRenderLight(TEntity<sp/>hEnt,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SLightRenderItem&amp;<sp/>light)<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>AllocateListsForShadowFrustums()<sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>mat4<sp/>GetPreviousViewProjection()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_previousViewProj;<sp/>}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Clear();</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>UpdateTime();</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bvr_1_1_renderer_1_1_c_g_p_u_scene" kindref="compound">CGPUScene</ref>*<sp/>GetGPUScene();</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GeneratePerViewCB(<ref refid="struct_bvr_1_1_renderer_1_1_s_per_view_c_b" kindref="compound">SPerViewCB</ref>&amp;<sp/>dst);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/>std::pair&lt;SGPUDrawData*,<sp/>uint32&gt;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>AllocateDrawData(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>CMaterial*<sp/>pMat,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SRendPrimitive&amp;<sp/>prim,</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>mat4&amp;<sp/>xform);</highlight></codeline>
 <codeline lineno="97"><highlight class="normal"></highlight></codeline>
-<codeline lineno="98"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>time<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_frameIdx<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bvr_1_1_renderer_1_1_c_graphics_pipeline" kindref="compound">CGraphicsPipeline</ref>*<sp/><sp/>m_pGraphicsPipeline<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_t_handle" kindref="compound">THandle&lt;BufferView&gt;</ref><sp/>m_hLightListViewCB{};</highlight></codeline>
-<codeline lineno="103"><highlight class="normal"></highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bvr_1_1_renderer_1_1_c_g_p_u_scene" kindref="compound">CGPUScene</ref>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_pGPUScene<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_handle" kindref="compound">Handle&lt;CWorld&gt;</ref><sp/><sp/><sp/><sp/><sp/><sp/>m_hParentWorld{};</highlight></codeline>
-<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_pImpl<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>CWorld*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_pParentWorld<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>mat4<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_previousViewProj;</highlight></codeline>
-<codeline lineno="109"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="110"><highlight class="normal"></highlight></codeline>
-<codeline lineno="111"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Bvr::Renderer</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>time<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_frameIdx<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>CGraphicsPipeline*<sp/><sp/>m_pGraphicsPipeline<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_t_handle" kindref="compound">THandle&lt;BufferView&gt;</ref><sp/>m_hLightListViewCB{};</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bvr_1_1_renderer_1_1_c_g_p_u_scene" kindref="compound">CGPUScene</ref>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_pGPUScene<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_handle" kindref="compound">Handle&lt;CWorld&gt;</ref><sp/><sp/><sp/><sp/><sp/><sp/>m_hParentWorld{};</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>Impl*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_pImpl<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>CWorld*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_pParentWorld<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>mat4<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_previousViewProj;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Bvr::Renderer</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/FrameContext.hpp"/>
   </compounddef>

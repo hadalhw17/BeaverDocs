@@ -4,20 +4,21 @@
     <compoundname>GraphIR.hpp</compoundname>
     <includes refid="_graph_node_8hpp" local="yes">GraphNode.hpp</includes>
     <includes refid="_animation_graph_8hpp" local="yes">AnimationGraph.hpp</includes>
-    <includedby refid="_i_r_builder_8hpp" local="yes">/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp</includedby>
     <includedby refid="_i_r_meta_interop_8hpp" local="yes">/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRMetaInterop.hpp</includedby>
     <includedby refid="_i_r_runner_8hpp" local="yes">/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRRunner.hpp</includedby>
     <incdepgraph>
-      <node id="6">
+      <node id="5">
         <label>AnimationGraph.hpp</label>
         <link refid="_animation_graph_8hpp_source"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="2" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
         <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
         </childnode>
       </node>
       <node id="1">
@@ -25,7 +26,7 @@
         <link refid="_graph_i_r_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="6" relation="include">
+        <childnode refid="5" relation="include">
         </childnode>
       </node>
       <node id="2">
@@ -35,17 +36,18 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
+      </node>
+      <node id="6">
+        <label>Bvr.Math</label>
       </node>
       <node id="3">
         <label>BvrAnimation/BvrAnimationExport.hpp</label>
       </node>
       <node id="4">
-        <label>BvrMath/BvrMath.hpp</label>
-      </node>
-      <node id="5">
         <label>Meta/Type.hpp</label>
+      </node>
+      <node id="8">
+        <label>Meta/TypeInfo.hpp</label>
       </node>
       <node id="7">
         <label>unordered_map</label>
@@ -57,26 +59,14 @@
         <link refid="_graph_i_r_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-      </node>
-      <node id="3">
-        <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/GraphNodes.hpp</label>
-        <link refid="_graph_nodes_8hpp_source"/>
-      </node>
-      <node id="2">
-        <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRBuilder.hpp</label>
-        <link refid="_i_r_builder_8hpp_source"/>
         <childnode refid="3" relation="include">
         </childnode>
       </node>
-      <node id="4">
+      <node id="2">
         <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRMetaInterop.hpp</label>
         <link refid="_i_r_meta_interop_8hpp_source"/>
       </node>
-      <node id="5">
+      <node id="3">
         <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrAnimation/AnimGraph/IRRunner.hpp</label>
         <link refid="_i_r_runner_8hpp_source"/>
       </node>
@@ -95,8 +85,8 @@
     <programlisting>
 <codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;GraphNode.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;AnimationGraph.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>&quot;GraphNode.hpp&quot;;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>&quot;AnimationGraph.hpp&quot;;</highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_bvr_1_1_animation" kindref="compound">Bvr::Animation</ref>{</highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/>EIROpCode<sp/>:<sp/>uint32<sp/>{</highlight></codeline>
@@ -207,7 +197,7 @@
 <codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_expressions.emplace_back(std::move(expr));</highlight></codeline>
 <codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="114"><highlight class="normal"></highlight></codeline>
-<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>std::span&lt;IRExpression<sp/>const&gt;<sp/>GetExpressions()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>Span&lt;IRExpression<sp/>const&gt;<sp/>GetExpressions()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_expressions;</highlight></codeline>
 <codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="118"><highlight class="normal"></highlight></codeline>
@@ -231,7 +221,7 @@
 <codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_argumentTypes.emplace_back(type);</highlight></codeline>
 <codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="138"><highlight class="normal"></highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>std::span&lt;PinType<sp/>const&gt;<sp/>GetArgumentTypes()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>Span&lt;PinType<sp/>const&gt;<sp/>GetArgumentTypes()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_argumentTypes;</highlight></codeline>
 <codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="142"><highlight class="normal"></highlight></codeline>

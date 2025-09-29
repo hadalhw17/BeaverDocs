@@ -2,9 +2,9 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="_command_buffer_8hpp" kind="file" language="C++">
     <compoundname>CommandBuffer.hpp</compoundname>
-    <includes local="no">vector</includes>
+    <includes local="no">std</includes>
     <includes refid="_vulkan_utils_8hpp" local="yes">VulkanUtils.hpp</includes>
-    <includes local="no">span</includes>
+    <includes local="no">Utils/Span.hpp</includes>
     <incdepgraph>
       <node id="1">
         <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/CommandBuffer.hpp</label>
@@ -13,7 +13,7 @@
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="20" relation="include">
+        <childnode refid="7" relation="include">
         </childnode>
       </node>
       <node id="3">
@@ -21,98 +21,24 @@
         <link refid="_vulkan_utils_8hpp_source"/>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="19" relation="include">
-        </childnode>
-      </node>
-      <node id="4">
-        <label>BvrFormats.hpp</label>
-        <link refid="_bvr_formats_8hpp_source"/>
         <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="8">
-        <label>CommonRenderer.hpp</label>
-        <link refid="_common_renderer_8hpp_source"/>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="13" relation="include">
-        </childnode>
-      </node>
-      <node id="7">
-        <label>CommonShaders.hpp</label>
-        <link refid="_common_shaders_8hpp_source"/>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="14" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="16" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-        <childnode refid="18" relation="include">
-        </childnode>
-      </node>
-      <node id="10">
-        <label>BvrCommon/BaseTypes.hpp</label>
-      </node>
-      <node id="18">
-        <label>BvrCommon/Handle.hpp</label>
-      </node>
       <node id="5">
-        <label>BvrCommon/TextureFormats.hpp</label>
-      </node>
-      <node id="14">
-        <label>BvrCommon/Utils.hpp</label>
-      </node>
-      <node id="12">
-        <label>BvrRenderer/BvrRendererExport.hpp</label>
-      </node>
-      <node id="17">
-        <label>Hash.h</label>
+        <label>BvrFormats.hpp</label>
       </node>
       <node id="6">
-        <label>Meta/Enums.hpp</label>
+        <label>CommonShaders.hpp</label>
       </node>
-      <node id="9">
-        <label>Platform/CompilerSettings.hpp</label>
-      </node>
-      <node id="13">
-        <label>TextureFormats.hpp</label>
-      </node>
-      <node id="11">
-        <label>Utils/Assert.hpp</label>
-      </node>
-      <node id="16">
-        <label>array</label>
-      </node>
-      <node id="15">
-        <label>set</label>
-      </node>
-      <node id="20">
-        <label>span</label>
+      <node id="7">
+        <label>Utils/Span.hpp</label>
       </node>
       <node id="2">
-        <label>vector</label>
+        <label>std</label>
       </node>
-      <node id="19">
+      <node id="4">
         <label>volk/volk.h</label>
       </node>
     </incdepgraph>
@@ -128,10 +54,10 @@
     </detaileddescription>
     <programlisting>
 <codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;VulkanUtils.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;span&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>&quot;VulkanUtils.hpp&quot;;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>&lt;Utils/Span.hpp&gt;;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>std;</highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Bvr::Renderer<sp/>{</highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">SCommandListPool;</highlight></codeline>
@@ -200,7 +126,7 @@
 <codeline lineno="71"><highlight class="normal"></highlight></codeline>
 <codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SetGobalFenceValue(uint64<sp/>order)<sp/>{<sp/>m_submitOrder<sp/>=<sp/>order;<sp/>}</highlight></codeline>
 <codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>uint64<sp/><sp/><sp/><sp/><sp/><sp/>GetGlobalFenceValue()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_submitOrder;<sp/>}</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_renderer_1_1_s_queue_fence" kindref="compound">SQueueFence</ref><sp/>GetQueueFence()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>SQueueFence<sp/>GetQueueFence()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>EQueue<sp/><sp/><sp/><sp/><sp/><sp/>GetQueueType()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="76"><highlight class="normal"></highlight></codeline>
 <codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SyncFences();</highlight></codeline>
@@ -240,7 +166,7 @@
 <codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ReleaseCommandBuffer(<ref refid="class_bvr_1_1_renderer_1_1_c_vk_command_buffer" kindref="compound">CVkCommandBuffer</ref>*<sp/>pCmd);</highlight></codeline>
 <codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SignalCommandBuffer(<ref refid="class_bvr_1_1_renderer_1_1_c_vk_command_buffer" kindref="compound">CVkCommandBuffer</ref>*<sp/>pCmd);</highlight></codeline>
 <codeline lineno="113"><highlight class="normal"></highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ResetPools(std::span&lt;SCommandListPool*&gt;<sp/>pools);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ResetPools(Span&lt;SCommandListPool*&gt;<sp/>pools);</highlight></codeline>
 <codeline lineno="115"><highlight class="normal"></highlight></codeline>
 <codeline lineno="116"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bvr_1_1_renderer_1_1_c_vk_command_buffer" kindref="compound">CVkCommandBuffer</ref>*<sp/>AllocateCommandBuffer();</highlight></codeline>

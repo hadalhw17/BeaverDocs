@@ -2,54 +2,72 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="_gradients_8hpp" kind="file" language="C++">
     <compoundname>Gradients.hpp</compoundname>
+    <includes local="no">Bvr.Math</includes>
     <includes refid="_base_data_types_8hpp" local="yes">BvrSVG/BaseDataTypes.hpp</includes>
-    <includes local="yes">BvrMath/BvrMath.hpp</includes>
-    <includes local="yes">BvrMath/Colour.hpp</includes>
-    <includedby refid="_paint_servers_8hpp" local="yes">/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/PaintServers.hpp</includedby>
+    <includes refid="_bvr_s_v_g_8hpp" local="yes">BvrSVG.hpp</includes>
     <incdepgraph>
-      <node id="2">
+      <node id="3">
         <label>BvrSVG/BaseDataTypes.hpp</label>
         <link refid="_base_data_types_8hpp_source"/>
-        <childnode refid="3" relation="include">
-        </childnode>
         <childnode refid="4" relation="include">
-        </childnode>
-      </node>
-      <node id="1">
-        <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/Gradients.hpp</label>
-        <link refid="_gradients_8hpp"/>
-        <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="5">
-        <label>BvrMath/BvrMath.hpp</label>
+      <node id="7">
+        <label>BvrSVG.hpp</label>
+        <link refid="_bvr_s_v_g_8hpp_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
       </node>
-      <node id="6">
-        <label>BvrMath/Colour.hpp</label>
-      </node>
-      <node id="3">
-        <label>Utils/Assert.hpp</label>
-      </node>
-      <node id="4">
-        <label>string</label>
-      </node>
-    </incdepgraph>
-    <invincdepgraph>
       <node id="1">
         <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/Gradients.hpp</label>
         <link refid="_gradients_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>BvrSVG/Shapes.hpp</label>
+        <link refid="_shapes_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
       </node>
       <node id="2">
-        <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/PaintServers.hpp</label>
-        <link refid="_paint_servers_8hpp_source"/>
+        <label>Bvr.Math</label>
       </node>
-    </invincdepgraph>
+      <node id="6">
+        <label>BvrLog/Assert.hpp</label>
+      </node>
+      <node id="11">
+        <label>BvrWorld/WorldDefs.hpp</label>
+      </node>
+      <node id="8">
+        <label>optional</label>
+      </node>
+      <node id="4">
+        <label>string</label>
+      </node>
+      <node id="10">
+        <label>variant</label>
+      </node>
+      <node id="5">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
     <innerclass refid="struct_bvr_1_1_s_v_g_1_1_gradient_stop" prot="public">Bvr::SVG::GradientStop</innerclass>
     <innerclass refid="struct_bvr_1_1_s_v_g_1_1_linear_gradient" prot="public">Bvr::SVG::LinearGradient</innerclass>
     <innerclass refid="struct_bvr_1_1_s_v_g_1_1_radial_gradient" prot="public">Bvr::SVG::RadialGradient</innerclass>
@@ -62,44 +80,45 @@
     <programlisting>
 <codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;BvrSVG/BaseDataTypes.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;BvrMath/BvrMath.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;BvrMath/Colour.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_bvr_1_1_s_v_g" kindref="compound">Bvr::SVG</ref><sp/>{</highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/>ESpreadMethod<sp/>{<sp/>Pad,<sp/>Reflect,<sp/>Repeat,<sp/>Default<sp/>=<sp/>Pad<sp/>};</highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/>EGradientUnits<sp/>{</highlight></codeline>
-<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>ObjectBoundingBox,</highlight></codeline>
-<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>UserSpaceOnUse,</highlight></codeline>
-<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>Default<sp/>=<sp/>ObjectBoundingBox</highlight></codeline>
-<codeline lineno="14"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight></codeline>
-<codeline lineno="16" refid="struct_bvr_1_1_s_v_g_1_1_gradient_stop" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_s_v_g_1_1_gradient_stop" kindref="compound">GradientStop</ref><sp/>{</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>TColour<sp/>StopColour;</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_s_v_g_1_1_length" kindref="compound">Length</ref><sp/><sp/>Offset{};</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/><sp/>StopOpacity<sp/>=<sp/>1.0;</highlight></codeline>
-<codeline lineno="20"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight></codeline>
-<codeline lineno="22" refid="struct_bvr_1_1_s_v_g_1_1_linear_gradient" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_s_v_g_1_1_linear_gradient" kindref="compound">LinearGradient</ref><sp/>{</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_s_v_g_1_1_point" kindref="compound">Point</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>StartPoint;</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_s_v_g_1_1_point" kindref="compound">Point</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EndPoint;</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;GradientStop&gt;<sp/>Stops;</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>EGradientUnits<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GradientUnits<sp/>=<sp/>EGradientUnits::Default;</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>ESpreadMethod<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SpreadMethod<sp/><sp/>=<sp/>ESpreadMethod::Default;</highlight></codeline>
-<codeline lineno="28"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"></highlight></codeline>
-<codeline lineno="30" refid="struct_bvr_1_1_s_v_g_1_1_radial_gradient" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_s_v_g_1_1_radial_gradient" kindref="compound">RadialGradient</ref><sp/>{</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_s_v_g_1_1_point" kindref="compound">Point</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CenterPoint;</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_s_v_g_1_1_point" kindref="compound">Point</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FocalPoint;</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;GradientStop&gt;<sp/>Stops;</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_s_v_g_1_1_length" kindref="compound">Length</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Radius;</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_s_v_g_1_1_length" kindref="compound">Length</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FocalPointRatio;</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>EGradientUnits<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GradientUnits<sp/>=<sp/>EGradientUnits::Default;</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>ESpreadMethod<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SpreadMethod<sp/><sp/>=<sp/>ESpreadMethod::Default;</highlight></codeline>
-<codeline lineno="38"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"></highlight></codeline>
-<codeline lineno="40"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Bvr::SVG</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>&quot;BvrSVG/BaseDataTypes.hpp&quot;;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>Bvr.Math;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>&quot;BvrSVG.hpp&quot;;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="namespace_bvr_1_1_s_v_g" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_bvr_1_1_s_v_g" kindref="compound">Bvr::SVG</ref><sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/>ESpreadMethod<sp/>{<sp/>Pad,<sp/>Reflect,<sp/>Repeat,<sp/>Default<sp/>=<sp/>Pad<sp/>};</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/>EGradientUnits<sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>ObjectBoundingBox,</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>UserSpaceOnUse,</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>Default<sp/>=<sp/>ObjectBoundingBox</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="struct_bvr_1_1_s_v_g_1_1_gradient_stop" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_s_v_g_1_1_gradient_stop" kindref="compound">GradientStop</ref><sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>TColour<sp/>StopColour;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_s_v_g_1_1_length" kindref="compound">Length</ref><sp/><sp/>Offset{};</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><sp/><sp/>StopOpacity<sp/>=<sp/>1.0;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="struct_bvr_1_1_s_v_g_1_1_linear_gradient" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_s_v_g_1_1_linear_gradient" kindref="compound">LinearGradient</ref><sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_s_v_g_1_1_point" kindref="compound">Point</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>StartPoint;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_s_v_g_1_1_point" kindref="compound">Point</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EndPoint;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;GradientStop&gt;<sp/>Stops;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>EGradientUnits<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GradientUnits<sp/>=<sp/>EGradientUnits::Default;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>ESpreadMethod<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SpreadMethod<sp/><sp/>=<sp/>ESpreadMethod::Default;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="struct_bvr_1_1_s_v_g_1_1_radial_gradient" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_s_v_g_1_1_radial_gradient" kindref="compound">RadialGradient</ref><sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_s_v_g_1_1_point" kindref="compound">Point</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CenterPoint;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_s_v_g_1_1_point" kindref="compound">Point</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FocalPoint;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;GradientStop&gt;<sp/>Stops;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_s_v_g_1_1_length" kindref="compound">Length</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Radius;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_s_v_g_1_1_length" kindref="compound">Length</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FocalPointRatio;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>EGradientUnits<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GradientUnits<sp/>=<sp/>EGradientUnits::Default;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>ESpreadMethod<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SpreadMethod<sp/><sp/>=<sp/>ESpreadMethod::Default;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Bvr::SVG</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/Gradients.hpp"/>
   </compounddef>

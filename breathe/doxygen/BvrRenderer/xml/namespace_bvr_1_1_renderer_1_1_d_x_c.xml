@@ -4,7 +4,7 @@
     <compoundname>Bvr::Renderer::DXC</compoundname>
     <innernamespace refid="namespace_bvr_1_1_renderer_1_1_d_x_c_1_1_detail">Bvr::Renderer::DXC::Detail</innernamespace>
     <sectiondef kind="typedef">
-      <memberdef kind="typedef" id="_d_x_c_wrapper_8hpp_1ae3985fa3857f459b09adca3e843ff3ae" prot="public" static="no">
+      <memberdef kind="typedef" id="_shader_compiler_8hpp_1ae3985fa3857f459b09adca3e843ff3ae" prot="public" static="no">
         <type>Detail::Compiler *</type>
         <definition>typedef Detail::Compiler * Bvr::Renderer::DXC::TCompilerPtr</definition>
         <argsstring></argsstring>
@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/Shaders/DXCWrapper.hpp" line="10" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/Shaders/DXCWrapper.hpp" bodystart="10" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/Shaders/ShaderCompiler.hpp" line="20" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/Shaders/ShaderCompiler.hpp" bodystart="20" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="func">
@@ -40,7 +40,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/Shaders/DXCWrapper.hpp" line="13" column="29" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/Shaders/DXCWrapper.hpp" declline="13" declcolumn="29"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/Shaders/DXCWrapper.hpp" line="14" column="29" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/Shaders/DXCWrapper.hpp" declline="14" declcolumn="29"/>
       </memberdef>
       <memberdef kind="function" id="_d_x_c_wrapper_8hpp_1ad7f80c55dd65fce12d3eb89791fbc1b5" prot="public" static="no" extern="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>BVRRENDERER_API void</type>
@@ -58,7 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/Shaders/DXCWrapper.hpp" line="15" column="29" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/Shaders/DXCWrapper.hpp" declline="15" declcolumn="29"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/Shaders/DXCWrapper.hpp" line="16" column="29" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/Shaders/DXCWrapper.hpp" declline="16" declcolumn="29"/>
       </memberdef>
       <memberdef kind="function" id="_d_x_c_wrapper_8hpp_1aeaab956131c087d35ae8db830e2f69b1" prot="public" static="no" extern="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>BVRRENDERER_API TShaderBlob</type>
@@ -91,7 +91,7 @@
           <declname>eShaderType</declname>
         </param>
         <param>
-          <type>const <ref refid="struct_bvr_1_1_renderer_1_1_s_shader_define_map" kindref="compound">SShaderDefineMap</ref> &amp;</type>
+          <type>const SShaderDefineMap &amp;</type>
           <declname>defineMap</declname>
         </param>
         <param>
@@ -104,12 +104,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/Shaders/DXCWrapper.hpp" line="17" column="1" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/Shaders/DXCWrapper.hpp" declline="17" declcolumn="1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/Shaders/DXCWrapper.hpp" line="18" column="1" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/Shaders/DXCWrapper.hpp" declline="18" declcolumn="1"/>
       </memberdef>
-      <memberdef kind="function" id="_d_x_c_wrapper_8hpp_1aa816f3136663eeafeadd412d307edf05" prot="public" static="no" extern="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="_d_x_c_wrapper_8hpp_1a863f3feeb20c5e5ff58b35872fe0cd9f" prot="public" static="no" extern="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>BVRRENDERER_API TShaderBlob</type>
         <definition>BVRRENDERER_API TShaderBlob Bvr::Renderer::DXC::Compile</definition>
-        <argsstring>(const TCompilerPtr &amp;compiler, const char *pSource, size_t sourceSize, std::string_view pShaderName, std::string_view pEntryPoint, const EShaderType eShaderType, const SShaderDefineMap &amp;defineMap, const std::unordered_map&lt; std::string, std::span&lt; char const &gt; &gt; &amp;includeMap)</argsstring>
+        <argsstring>(const TCompilerPtr &amp;compiler, const char *pSource, size_t sourceSize, std::string_view pShaderName, std::string_view pEntryPoint, const EShaderType eShaderType, const SShaderDefineMap &amp;defineMap, const std::unordered_map&lt; std::string, Span&lt; char const &gt; &gt; &amp;includeMap)</argsstring>
         <name>Compile</name>
         <qualifiedname>Bvr::Renderer::DXC::Compile</qualifiedname>
         <param>
@@ -137,11 +137,11 @@
           <declname>eShaderType</declname>
         </param>
         <param>
-          <type>const <ref refid="struct_bvr_1_1_renderer_1_1_s_shader_define_map" kindref="compound">SShaderDefineMap</ref> &amp;</type>
+          <type>const SShaderDefineMap &amp;</type>
           <declname>defineMap</declname>
         </param>
         <param>
-          <type>const std::unordered_map&lt; std::string, std::span&lt; char const &gt; &gt; &amp;</type>
+          <type>const std::unordered_map&lt; std::string, Span&lt; char const &gt; &gt; &amp;</type>
           <declname>includeMap</declname>
         </param>
         <briefdescription>
@@ -150,13 +150,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/Shaders/DXCWrapper.hpp" line="22" column="36" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/Shaders/DXCWrapper.hpp" declline="22" declcolumn="36"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/Shaders/DXCWrapper.hpp" line="23" column="36" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/Shaders/DXCWrapper.hpp" declline="23" declcolumn="36"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/Shaders/DXCWrapper.hpp" line="6" column="1"/>
+    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/Shaders/ShaderCompiler.hpp" line="16" column="1"/>
   </compounddef>
 </doxygen>

@@ -1,0 +1,349 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="class_bvr_1_1_m_t_1_1_c_thread" kind="class" language="C++" prot="public">
+    <compoundname>Bvr::MT::CThread</compoundname>
+    <innerclass refid="struct_bvr_1_1_m_t_1_1_c_thread_1_1_s_c_p_u_info" prot="public">Bvr::MT::CThread::SCPUInfo</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="class_bvr_1_1_m_t_1_1_c_thread_1a410a6cd7c2a412b2ba84f360509e9534" prot="public" static="no">
+        <type>std::thread::id</type>
+        <definition>using Bvr::MT::CThread::Id =  std::thread::id</definition>
+        <argsstring></argsstring>
+        <name>Id</name>
+        <qualifiedname>Bvr::MT::CThread::Id</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Threading/Thread.hpp" line="15" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Threading/Thread.hpp" bodystart="15" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_bvr_1_1_m_t_1_1_c_thread_1a73ec00cd9ebaca26eee2a8a9f0253177" prot="private" static="no" mutable="no">
+        <type>std::condition_variable</type>
+        <definition>std::condition_variable Bvr::MT::CThread::m_wakeCondition</definition>
+        <argsstring></argsstring>
+        <name>m_wakeCondition</name>
+        <qualifiedname>Bvr::MT::CThread::m_wakeCondition</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Threading/Thread.hpp" line="93" column="29" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Threading/Thread.hpp" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_m_t_1_1_c_thread_1ab2580496562e809c67a55e1f208038d4" prot="private" static="no" mutable="no">
+        <type>Id</type>
+        <definition>Id Bvr::MT::CThread::m_id</definition>
+        <argsstring></argsstring>
+        <name>m_id</name>
+        <qualifiedname>Bvr::MT::CThread::m_id</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Threading/Thread.hpp" line="94" column="29" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Threading/Thread.hpp" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_m_t_1_1_c_thread_1a47c9543c073f062b6dda6cd35ed64bbf" prot="private" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex Bvr::MT::CThread::m_wakeMutex</definition>
+        <argsstring></argsstring>
+        <name>m_wakeMutex</name>
+        <qualifiedname>Bvr::MT::CThread::m_wakeMutex</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Threading/Thread.hpp" line="95" column="29" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Threading/Thread.hpp" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_m_t_1_1_c_thread_1a3a5c50b16f841f5027c9bd679a0cdc54" prot="private" static="no" mutable="no">
+        <type>std::atomic_bool</type>
+        <definition>std::atomic_bool Bvr::MT::CThread::m_shouldRun</definition>
+        <argsstring></argsstring>
+        <name>m_shouldRun</name>
+        <qualifiedname>Bvr::MT::CThread::m_shouldRun</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Threading/Thread.hpp" line="96" column="29" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Threading/Thread.hpp" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_m_t_1_1_c_thread_1ad840f0463f83e3540d9fa8e91c71e53a" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; int64 &gt;</type>
+        <definition>std::atomic&lt;int64&gt; Bvr::MT::CThread::m_queuedCount</definition>
+        <argsstring></argsstring>
+        <name>m_queuedCount</name>
+        <qualifiedname>Bvr::MT::CThread::m_queuedCount</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Threading/Thread.hpp" line="97" column="22" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Threading/Thread.hpp" bodystart="97" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_bvr_1_1_m_t_1_1_c_thread_1aa29ed954ba05d8b8c976e6a9126cbcd5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Bvr::MT::CThread::CThread</definition>
+        <argsstring>()=default</argsstring>
+        <name>CThread</name>
+        <qualifiedname>Bvr::MT::CThread::CThread</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Threading/Thread.hpp" line="27" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_m_t_1_1_c_thread_1a8c54799eae4e14357178cf85aa74b961" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>Bvr::MT::CThread::CThread</definition>
+        <argsstring>(T &amp;&amp;fn, const char *name=nullptr)</argsstring>
+        <name>CThread</name>
+        <qualifiedname>Bvr::MT::CThread::CThread</qualifiedname>
+        <param>
+          <type>T &amp;&amp;</type>
+          <declname>fn</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Threading/Thread.hpp" line="29" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Threading/Thread.hpp" bodystart="29" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_m_t_1_1_c_thread_1abad253ad9a66362488b798f9eb230368" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Bvr::MT::CThread::~CThread</definition>
+        <argsstring>()</argsstring>
+        <name>~CThread</name>
+        <qualifiedname>Bvr::MT::CThread::~CThread</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Threading/Thread.hpp" line="55" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Threading/Thread.hpp" bodystart="55" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_m_t_1_1_c_thread_1ae0925bb874b29a516d69d824dcd056e2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::MT::CThread::SignalFlush</definition>
+        <argsstring>(const uint32 count=1)</argsstring>
+        <name>SignalFlush</name>
+        <qualifiedname>Bvr::MT::CThread::SignalFlush</qualifiedname>
+        <param>
+          <type>const uint32</type>
+          <declname>count</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Threading/Thread.hpp" line="57" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Threading/Thread.hpp" bodystart="57" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_m_t_1_1_c_thread_1a5fe829dffb15364ac10e766160244cba" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::MT::CThread::WaitCompletion</definition>
+        <argsstring>()</argsstring>
+        <name>WaitCompletion</name>
+        <qualifiedname>Bvr::MT::CThread::WaitCompletion</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Threading/Thread.hpp" line="65" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Threading/Thread.hpp" bodystart="65" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_m_t_1_1_c_thread_1a080207c3a8f8b29bea576ee9a35e6252" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Bvr::MT::CThread::IsBusy</definition>
+        <argsstring>() const</argsstring>
+        <name>IsBusy</name>
+        <qualifiedname>Bvr::MT::CThread::IsBusy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Threading/Thread.hpp" line="73" column="11" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Threading/Thread.hpp" bodystart="73" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_m_t_1_1_c_thread_1a60063787af29a0e8416fc30274e209de" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>Id</type>
+        <definition>Id Bvr::MT::CThread::GetId</definition>
+        <argsstring>() const</argsstring>
+        <name>GetId</name>
+        <qualifiedname>Bvr::MT::CThread::GetId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Threading/Thread.hpp" line="74" column="9" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Threading/Thread.hpp" bodystart="74" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_m_t_1_1_c_thread_1a845431a1dae089974a9d307affba285c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::MT::CThread::Stop</definition>
+        <argsstring>()</argsstring>
+        <name>Stop</name>
+        <qualifiedname>Bvr::MT::CThread::Stop</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Threading/Thread.hpp" line="76" column="22" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Threading/Thread.hpp" bodystart="76" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_m_t_1_1_c_thread_1a8accd054f5c3eae9cc039840ee905992" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::MT::CThread::Join</definition>
+        <argsstring>()</argsstring>
+        <name>Join</name>
+        <qualifiedname>Bvr::MT::CThread::Join</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Threading/Thread.hpp" line="78" column="22" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Threading/Thread.hpp" bodystart="78" bodyend="81"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_bvr_1_1_m_t_1_1_c_thread_1a35a964fa3ba8f21756bd3f50654cff26" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Bvr::MT::CThread::SetName</definition>
+        <argsstring>(std::thread &amp;thread, std::string_view name)</argsstring>
+        <name>SetName</name>
+        <qualifiedname>Bvr::MT::CThread::SetName</qualifiedname>
+        <param>
+          <type>std::thread &amp;</type>
+          <declname>thread</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Threading/Thread.hpp" line="83" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_m_t_1_1_c_thread_1adb448f66f362ac451938d08ba4c27c8e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Bvr::MT::CThread::SetAffinity</definition>
+        <argsstring>(std::thread &amp;thread, uint64 i)</argsstring>
+        <name>SetAffinity</name>
+        <qualifiedname>Bvr::MT::CThread::SetAffinity</qualifiedname>
+        <param>
+          <type>std::thread &amp;</type>
+          <declname>thread</declname>
+        </param>
+        <param>
+          <type>uint64</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Threading/Thread.hpp" line="84" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_m_t_1_1_c_thread_1aed90b142b6da39d4c637808d20a9633b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_bvr_1_1_m_t_1_1_c_thread_1_1_s_c_p_u_info" kindref="compound">SCPUInfo</ref> &amp;</type>
+        <definition>static SCPUInfo &amp; Bvr::MT::CThread::CPUInfo</definition>
+        <argsstring>()</argsstring>
+        <name>CPUInfo</name>
+        <qualifiedname>Bvr::MT::CThread::CPUInfo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Threading/Thread.hpp" line="85" column="21"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_bvr_1_1_m_t_1_1_c_thread_1a1ada8330094945d66d60e0a9fc5600f8" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::MT::CThread::WaitFlushCond</definition>
+        <argsstring>(auto &amp;lock)</argsstring>
+        <name>WaitFlushCond</name>
+        <qualifiedname>Bvr::MT::CThread::WaitFlushCond</qualifiedname>
+        <param>
+          <type>auto &amp;</type>
+          <declname>lock</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Threading/Thread.hpp" line="88" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Threading/Thread.hpp" bodystart="88" bodyend="90"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Threading/Thread.hpp" line="13" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Threading/Thread.hpp" bodystart="13" bodyend="98"/>
+    <listofallmembers>
+      <member refid="class_bvr_1_1_m_t_1_1_c_thread_1aed90b142b6da39d4c637808d20a9633b" prot="public" virt="non-virtual"><scope>Bvr::MT::CThread</scope><name>CPUInfo</name></member>
+      <member refid="class_bvr_1_1_m_t_1_1_c_thread_1aa29ed954ba05d8b8c976e6a9126cbcd5" prot="public" virt="non-virtual"><scope>Bvr::MT::CThread</scope><name>CThread</name></member>
+      <member refid="class_bvr_1_1_m_t_1_1_c_thread_1a8c54799eae4e14357178cf85aa74b961" prot="public" virt="non-virtual"><scope>Bvr::MT::CThread</scope><name>CThread</name></member>
+      <member refid="class_bvr_1_1_m_t_1_1_c_thread_1a60063787af29a0e8416fc30274e209de" prot="public" virt="non-virtual"><scope>Bvr::MT::CThread</scope><name>GetId</name></member>
+      <member refid="class_bvr_1_1_m_t_1_1_c_thread_1a410a6cd7c2a412b2ba84f360509e9534" prot="public" virt="non-virtual"><scope>Bvr::MT::CThread</scope><name>Id</name></member>
+      <member refid="class_bvr_1_1_m_t_1_1_c_thread_1a080207c3a8f8b29bea576ee9a35e6252" prot="public" virt="non-virtual"><scope>Bvr::MT::CThread</scope><name>IsBusy</name></member>
+      <member refid="class_bvr_1_1_m_t_1_1_c_thread_1a8accd054f5c3eae9cc039840ee905992" prot="public" virt="non-virtual"><scope>Bvr::MT::CThread</scope><name>Join</name></member>
+      <member refid="class_bvr_1_1_m_t_1_1_c_thread_1ab2580496562e809c67a55e1f208038d4" prot="private" virt="non-virtual"><scope>Bvr::MT::CThread</scope><name>m_id</name></member>
+      <member refid="class_bvr_1_1_m_t_1_1_c_thread_1ad840f0463f83e3540d9fa8e91c71e53a" prot="private" virt="non-virtual"><scope>Bvr::MT::CThread</scope><name>m_queuedCount</name></member>
+      <member refid="class_bvr_1_1_m_t_1_1_c_thread_1a3a5c50b16f841f5027c9bd679a0cdc54" prot="private" virt="non-virtual"><scope>Bvr::MT::CThread</scope><name>m_shouldRun</name></member>
+      <member refid="class_bvr_1_1_m_t_1_1_c_thread_1a73ec00cd9ebaca26eee2a8a9f0253177" prot="private" virt="non-virtual"><scope>Bvr::MT::CThread</scope><name>m_wakeCondition</name></member>
+      <member refid="class_bvr_1_1_m_t_1_1_c_thread_1a47c9543c073f062b6dda6cd35ed64bbf" prot="private" virt="non-virtual"><scope>Bvr::MT::CThread</scope><name>m_wakeMutex</name></member>
+      <member refid="class_bvr_1_1_m_t_1_1_c_thread_1adb448f66f362ac451938d08ba4c27c8e" prot="public" virt="non-virtual"><scope>Bvr::MT::CThread</scope><name>SetAffinity</name></member>
+      <member refid="class_bvr_1_1_m_t_1_1_c_thread_1a35a964fa3ba8f21756bd3f50654cff26" prot="public" virt="non-virtual"><scope>Bvr::MT::CThread</scope><name>SetName</name></member>
+      <member refid="class_bvr_1_1_m_t_1_1_c_thread_1ae0925bb874b29a516d69d824dcd056e2" prot="public" virt="non-virtual"><scope>Bvr::MT::CThread</scope><name>SignalFlush</name></member>
+      <member refid="class_bvr_1_1_m_t_1_1_c_thread_1a845431a1dae089974a9d307affba285c" prot="public" virt="non-virtual"><scope>Bvr::MT::CThread</scope><name>Stop</name></member>
+      <member refid="class_bvr_1_1_m_t_1_1_c_thread_1a5fe829dffb15364ac10e766160244cba" prot="public" virt="non-virtual"><scope>Bvr::MT::CThread</scope><name>WaitCompletion</name></member>
+      <member refid="class_bvr_1_1_m_t_1_1_c_thread_1a1ada8330094945d66d60e0a9fc5600f8" prot="private" virt="non-virtual"><scope>Bvr::MT::CThread</scope><name>WaitFlushCond</name></member>
+      <member refid="class_bvr_1_1_m_t_1_1_c_thread_1abad253ad9a66362488b798f9eb230368" prot="public" virt="non-virtual"><scope>Bvr::MT::CThread</scope><name>~CThread</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

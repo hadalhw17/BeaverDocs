@@ -1,0 +1,851 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="class_bvr_1_1_c_terrain" kind="class" language="C++" prot="public">
+    <compoundname>Bvr::CTerrain</compoundname>
+    <innerclass refid="struct_bvr_1_1_c_terrain_1_1_try_again_later" prot="public">Bvr::CTerrain::TryAgainLater</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_bvr_1_1_c_terrain_1abae47e9e2bea4f6c52a9c4f5442658f2" prot="private" static="no" mutable="no">
+        <type>AABB</type>
+        <definition>AABB Bvr::CTerrain::m_computedBounds</definition>
+        <argsstring></argsstring>
+        <name>m_computedBounds</name>
+        <qualifiedname>Bvr::CTerrain::m_computedBounds</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="86" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" bodystart="86" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_terrain_1a73978d53405f4f754ea957a90e253db6" prot="private" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 Bvr::CTerrain::m_terrainSize</definition>
+        <argsstring></argsstring>
+        <name>m_terrainSize</name>
+        <qualifiedname>Bvr::CTerrain::m_terrainSize</qualifiedname>
+        <initializer>= 4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="88" column="12" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_terrain_1ad0630a46eb1cbffd209836ce14601b89" prot="private" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 Bvr::CTerrain::m_gridResolution</definition>
+        <argsstring></argsstring>
+        <name>m_gridResolution</name>
+        <qualifiedname>Bvr::CTerrain::m_gridResolution</qualifiedname>
+        <initializer>= 4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="90" column="49" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_terrain_1ac717cd8efae1b77e5c58e388e943c3e4" prot="private" static="no" mutable="no">
+        <type><ref refid="struct_bvr_1_1_handle" kindref="compound">Handle</ref>&lt; <ref refid="class_bvr_1_1_c_mesh" kindref="compound">CMesh</ref> &gt;</type>
+        <definition>Handle&lt;CMesh&gt; Bvr::CTerrain::m_hBaseMesh</definition>
+        <argsstring></argsstring>
+        <name>m_hBaseMesh</name>
+        <qualifiedname>Bvr::CTerrain::m_hBaseMesh</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="92" column="42" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" bodystart="92" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_terrain_1ad2784f8d993c02c6b7774e2e7bbf3356" prot="private" static="no" mutable="no">
+        <type><ref refid="struct_bvr_1_1_handle" kindref="compound">Handle</ref>&lt; <ref refid="class_bvr_1_1_c_image" kindref="compound">CImage</ref> &gt;</type>
+        <definition>Handle&lt;CImage&gt; Bvr::CTerrain::m_Heightmap</definition>
+        <argsstring></argsstring>
+        <name>m_Heightmap</name>
+        <qualifiedname>Bvr::CTerrain::m_Heightmap</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="94" column="41" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" bodystart="94" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_terrain_1a7d76c7510f2b8179b2f02503f41b679f" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; <ref refid="class_bvr_1_1_t_entity" kindref="compound">TEntity</ref>, <ref refid="struct_bvr_1_1_handle" kindref="compound">Handle</ref>&lt; <ref refid="class_bvr_1_1_c_image" kindref="compound">CImage</ref> &gt; &gt;</type>
+        <definition>std::unordered_map&lt;TEntity, Handle&lt;CImage&gt; &gt; Bvr::CTerrain::m_layerImages</definition>
+        <argsstring></argsstring>
+        <name>m_layerImages</name>
+        <qualifiedname>Bvr::CTerrain::m_layerImages</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+<para>Computed layer masks. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="97" column="24" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" bodystart="97" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_terrain_1afb166985d2ca5dc306a56c3220733883" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Bvr::CTerrain::MaxAltitude</definition>
+        <argsstring></argsstring>
+        <name>MaxAltitude</name>
+        <qualifiedname>Bvr::CTerrain::MaxAltitude</qualifiedname>
+        <initializer>= 100.f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="99" column="49" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_terrain_1a18a91ce987a23e8992dc74e150e70b24" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Bvr::CTerrain::NeedsUpdate</definition>
+        <argsstring></argsstring>
+        <name>NeedsUpdate</name>
+        <qualifiedname>Bvr::CTerrain::NeedsUpdate</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="100" column="49" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_c_terrain_1aa85b1238b83f9daa781eab7be623abfe" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>Bvr::CTerrain::BVR_REFLECTION_FRIEND</definition>
+        <argsstring></argsstring>
+        <name>BVR_REFLECTION_FRIEND</name>
+        <qualifiedname>Bvr::CTerrain::BVR_REFLECTION_FRIEND</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="102" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" bodystart="102" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_bvr_1_1_c_terrain_1aa19db515009cd85bb9c29ac504d1fdc6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_bvr_1_1_c_terrain" kindref="compound">CTerrain</ref> &amp;</type>
+        <definition>CTerrain &amp; Bvr::CTerrain::operator=</definition>
+        <argsstring>(const CTerrain &amp;)=default</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Bvr::CTerrain::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="class_bvr_1_1_c_terrain" kindref="compound">CTerrain</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="18" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_terrain_1aa199c05d525ba836d4cf853dc058a6e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Bvr::CTerrain::CTerrain</definition>
+        <argsstring>()=default</argsstring>
+        <name>CTerrain</name>
+        <qualifiedname>Bvr::CTerrain::CTerrain</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="19" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_terrain_1a8cc8a5e5f0d4a8235c057ab97a94a074" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Bvr::CTerrain::~CTerrain</definition>
+        <argsstring>()=default</argsstring>
+        <name>~CTerrain</name>
+        <qualifiedname>Bvr::CTerrain::~CTerrain</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="20" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_terrain_1aa0ce0af0ef49f3a35a2268202769c578" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Bvr::CTerrain::IsDirty</definition>
+        <argsstring>() const</argsstring>
+        <name>IsDirty</name>
+        <qualifiedname>Bvr::CTerrain::IsDirty</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="22" column="17" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" bodystart="22" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_terrain_1a24a130d9684fcbb47795eae5ac5550a5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CTerrain::SetIsDirty</definition>
+        <argsstring>(bool dirty)</argsstring>
+        <name>SetIsDirty</name>
+        <qualifiedname>Bvr::CTerrain::SetIsDirty</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>dirty</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="23" column="17" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" bodystart="23" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_terrain_1a65541bc54b373a2819ee6182a94df4f8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CTerrain::SetHeightMapTexture</definition>
+        <argsstring>(Handle&lt; CImage &gt; hMap)</argsstring>
+        <name>SetHeightMapTexture</name>
+        <qualifiedname>Bvr::CTerrain::SetHeightMapTexture</qualifiedname>
+        <param>
+          <type><ref refid="struct_bvr_1_1_handle" kindref="compound">Handle</ref>&lt; <ref refid="class_bvr_1_1_c_image" kindref="compound">CImage</ref> &gt;</type>
+          <declname>hMap</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="24" column="17" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" bodystart="24" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_terrain_1a1b101855b529f2b6d95c682046990c84" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="struct_bvr_1_1_handle" kindref="compound">Handle</ref>&lt; <ref refid="class_bvr_1_1_c_image" kindref="compound">CImage</ref> &gt;</type>
+        <definition>Handle&lt; CImage &gt; Bvr::CTerrain::GetHeightMapTexture</definition>
+        <argsstring>() const</argsstring>
+        <name>GetHeightMapTexture</name>
+        <qualifiedname>Bvr::CTerrain::GetHeightMapTexture</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="25" column="19" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" bodystart="25" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_terrain_1addf692d8b5ebea95b519af3b06dfa1d7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint2</type>
+        <definition>uint2 Bvr::CTerrain::GetDimensions</definition>
+        <argsstring>() const</argsstring>
+        <name>GetDimensions</name>
+        <qualifiedname>Bvr::CTerrain::GetDimensions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="26" column="27" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" bodystart="26" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_terrain_1acb401c98e6d4bdf190b4bd303e0c7c6a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint2</type>
+        <definition>uint2 Bvr::CTerrain::GetGridSize</definition>
+        <argsstring>() const</argsstring>
+        <name>GetGridSize</name>
+        <qualifiedname>Bvr::CTerrain::GetGridSize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="29" column="18" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" bodystart="29" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_terrain_1ac51413f2a5a90503fe3bad0fa83510df" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="struct_bvr_1_1_handle" kindref="compound">Handle</ref>&lt; <ref refid="class_bvr_1_1_c_mesh" kindref="compound">CMesh</ref> &gt;</type>
+        <definition>Handle&lt; CMesh &gt; Bvr::CTerrain::GetMesh</definition>
+        <argsstring>() const</argsstring>
+        <name>GetMesh</name>
+        <qualifiedname>Bvr::CTerrain::GetMesh</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="32" column="19" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" bodystart="32" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_terrain_1af7163da69160bd65eb87d20aac5cbd08" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const AABB &amp;</type>
+        <definition>const AABB &amp; Bvr::CTerrain::GetBounds</definition>
+        <argsstring>() const</argsstring>
+        <name>GetBounds</name>
+        <qualifiedname>Bvr::CTerrain::GetBounds</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="33" column="25" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" bodystart="33" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_terrain_1acb94bdc40e36473f0d61473211249e71" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float Bvr::CTerrain::GetMaxAltitude</definition>
+        <argsstring>() const</argsstring>
+        <name>GetMaxAltitude</name>
+        <qualifiedname>Bvr::CTerrain::GetMaxAltitude</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="34" column="26" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" bodystart="34" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_terrain_1a8ec73389ddfbf77df8b6ba5f49cf0419" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void BVRTERRAIN_API</type>
+        <definition>void BVRTERRAIN_API Bvr::CTerrain::RecomputeBoundsAndNormals</definition>
+        <argsstring>(CImage &amp;hMap)</argsstring>
+        <name>RecomputeBoundsAndNormals</name>
+        <qualifiedname>Bvr::CTerrain::RecomputeBoundsAndNormals</qualifiedname>
+        <param>
+          <type><ref refid="class_bvr_1_1_c_image" kindref="compound">CImage</ref> &amp;</type>
+          <declname>hMap</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="36" column="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_terrain_1a0e40f9f901c59541d2cea0722ba88ce0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>float3 BVRTERRAIN_API</type>
+        <definition>float3 BVRTERRAIN_API Bvr::CTerrain::ReadNormalBilinear</definition>
+        <argsstring>(const CImage &amp;img, float2 pos) const</argsstring>
+        <name>ReadNormalBilinear</name>
+        <qualifiedname>Bvr::CTerrain::ReadNormalBilinear</qualifiedname>
+        <param>
+          <type>const <ref refid="class_bvr_1_1_c_image" kindref="compound">CImage</ref> &amp;</type>
+          <declname>img</declname>
+        </param>
+        <param>
+          <type>float2</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="38" column="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_terrain_1a143f5061aba40782ecc4854262825c04" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>float BVRTERRAIN_API</type>
+        <definition>float BVRTERRAIN_API Bvr::CTerrain::ReadHeightBilinear</definition>
+        <argsstring>(const CImage &amp;img, float2 pos) const</argsstring>
+        <name>ReadHeightBilinear</name>
+        <qualifiedname>Bvr::CTerrain::ReadHeightBilinear</qualifiedname>
+        <param>
+          <type>const <ref refid="class_bvr_1_1_c_image" kindref="compound">CImage</ref> &amp;</type>
+          <declname>img</declname>
+        </param>
+        <param>
+          <type>float2</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="40" column="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_terrain_1a4f952a0f35d5d0c2808ab53e88ffd47a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>float BVRTERRAIN_API</type>
+        <definition>float BVRTERRAIN_API Bvr::CTerrain::ReadHeightValue</definition>
+        <argsstring>(const CImage &amp;img, int2 pos) const</argsstring>
+        <name>ReadHeightValue</name>
+        <qualifiedname>Bvr::CTerrain::ReadHeightValue</qualifiedname>
+        <param>
+          <type>const <ref refid="class_bvr_1_1_c_image" kindref="compound">CImage</ref> &amp;</type>
+          <declname>img</declname>
+        </param>
+        <param>
+          <type>int2</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="42" column="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_terrain_1a59ef958c14d3f652db87a093bbb08550" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>float BVRTERRAIN_API</type>
+        <definition>float BVRTERRAIN_API Bvr::CTerrain::ReadWeightValue</definition>
+        <argsstring>(const CImage &amp;img, int2 pos) const</argsstring>
+        <name>ReadWeightValue</name>
+        <qualifiedname>Bvr::CTerrain::ReadWeightValue</qualifiedname>
+        <param>
+          <type>const <ref refid="class_bvr_1_1_c_image" kindref="compound">CImage</ref> &amp;</type>
+          <declname>img</declname>
+        </param>
+        <param>
+          <type>int2</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="43" column="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_terrain_1ab26519714d1fb8cd631c79343462a880" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>float3 BVRTERRAIN_API</type>
+        <definition>float3 BVRTERRAIN_API Bvr::CTerrain::ReadNormalValue</definition>
+        <argsstring>(const CImage &amp;img, int2 pos) const</argsstring>
+        <name>ReadNormalValue</name>
+        <qualifiedname>Bvr::CTerrain::ReadNormalValue</qualifiedname>
+        <param>
+          <type>const <ref refid="class_bvr_1_1_c_image" kindref="compound">CImage</ref> &amp;</type>
+          <declname>img</declname>
+        </param>
+        <param>
+          <type>int2</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="44" column="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_terrain_1ac53fca34f50e17e8a63373ba0466502e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void BVRTERRAIN_API</type>
+        <definition>void BVRTERRAIN_API Bvr::CTerrain::WriteHeightValue</definition>
+        <argsstring>(CImage &amp;img, int2 pos, float val)</argsstring>
+        <name>WriteHeightValue</name>
+        <qualifiedname>Bvr::CTerrain::WriteHeightValue</qualifiedname>
+        <param>
+          <type><ref refid="class_bvr_1_1_c_image" kindref="compound">CImage</ref> &amp;</type>
+          <declname>img</declname>
+        </param>
+        <param>
+          <type>int2</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="46" column="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_terrain_1a409a599d0df0aa0f14fe4714c10e7b8c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void BVRTERRAIN_API</type>
+        <definition>void BVRTERRAIN_API Bvr::CTerrain::WriteWeightValue</definition>
+        <argsstring>(CImage &amp;img, int2 pos, float val)</argsstring>
+        <name>WriteWeightValue</name>
+        <qualifiedname>Bvr::CTerrain::WriteWeightValue</qualifiedname>
+        <param>
+          <type><ref refid="class_bvr_1_1_c_image" kindref="compound">CImage</ref> &amp;</type>
+          <declname>img</declname>
+        </param>
+        <param>
+          <type>int2</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="47" column="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_terrain_1a3548bc2884e1a9f724ae258a3ed19627" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void BVRTERRAIN_API</type>
+        <definition>void BVRTERRAIN_API Bvr::CTerrain::AddHeightValue</definition>
+        <argsstring>(CImage &amp;img, int2 pos, float val)</argsstring>
+        <name>AddHeightValue</name>
+        <qualifiedname>Bvr::CTerrain::AddHeightValue</qualifiedname>
+        <param>
+          <type><ref refid="class_bvr_1_1_c_image" kindref="compound">CImage</ref> &amp;</type>
+          <declname>img</declname>
+        </param>
+        <param>
+          <type>int2</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="49" column="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_terrain_1a6c10979f6ed7be8f640ccdbb088521a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void BVRTERRAIN_API</type>
+        <definition>void BVRTERRAIN_API Bvr::CTerrain::AddWeightValue</definition>
+        <argsstring>(CImage &amp;img, int2 pos, float val)</argsstring>
+        <name>AddWeightValue</name>
+        <qualifiedname>Bvr::CTerrain::AddWeightValue</qualifiedname>
+        <param>
+          <type><ref refid="class_bvr_1_1_c_image" kindref="compound">CImage</ref> &amp;</type>
+          <declname>img</declname>
+        </param>
+        <param>
+          <type>int2</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="50" column="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_terrain_1a96fc0072e143322d2ea09acd27a37e47" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void BVRTERRAIN_API</type>
+        <definition>void BVRTERRAIN_API Bvr::CTerrain::AddLayerMask</definition>
+        <argsstring>(TEntity hLayer, const Handle&lt; CImage &gt; &amp;hMask)</argsstring>
+        <name>AddLayerMask</name>
+        <qualifiedname>Bvr::CTerrain::AddLayerMask</qualifiedname>
+        <param>
+          <type><ref refid="class_bvr_1_1_t_entity" kindref="compound">TEntity</ref></type>
+          <declname>hLayer</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_bvr_1_1_handle" kindref="compound">Handle</ref>&lt; <ref refid="class_bvr_1_1_c_image" kindref="compound">CImage</ref> &gt; &amp;</type>
+          <declname>hMask</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="68" column="35"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_terrain_1a2d185886a9a20f1cca6c167f5bdff000" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_bvr_1_1_handle" kindref="compound">Handle</ref>&lt; <ref refid="class_bvr_1_1_c_image" kindref="compound">CImage</ref> &gt; BVRTERRAIN_API</type>
+        <definition>Handle&lt; CImage &gt; BVRTERRAIN_API Bvr::CTerrain::FindLayerMask</definition>
+        <argsstring>(TEntity hLayer) const</argsstring>
+        <name>FindLayerMask</name>
+        <qualifiedname>Bvr::CTerrain::FindLayerMask</qualifiedname>
+        <param>
+          <type><ref refid="class_bvr_1_1_t_entity" kindref="compound">TEntity</ref></type>
+          <declname>hLayer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="70" column="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_terrain_1a8123e7ae4ef794b075e43a8cc16b11e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void BVRTERRAIN_API</type>
+        <definition>void BVRTERRAIN_API Bvr::CTerrain::ClearMasks</definition>
+        <argsstring>()</argsstring>
+        <name>ClearMasks</name>
+        <qualifiedname>Bvr::CTerrain::ClearMasks</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="71" column="35"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_bvr_1_1_c_terrain_1a5cd72330b75ff617da7067f28026221b" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>static void Bvr::CTerrain::InitSystem</definition>
+        <argsstring>(CWorld &amp;w, const Query&lt; With&lt; CTerrain, T &gt; &gt; &amp;terrains, Assets&lt; CImage &gt; &amp;images, Assets&lt; CMesh &gt; &amp;meshes, const struct SAssetManager &amp;mgr)</argsstring>
+        <name>InitSystem</name>
+        <qualifiedname>Bvr::CTerrain::InitSystem</qualifiedname>
+        <param>
+          <type><ref refid="class_bvr_1_1_c_world" kindref="compound">CWorld</ref> &amp;</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_bvr_1_1_e_c_s_1_1_t_query" kindref="compound">Query</ref>&lt; <ref refid="struct_bvr_1_1_e_c_s_1_1_with" kindref="compound">With</ref>&lt; <ref refid="class_bvr_1_1_c_terrain" kindref="compound">CTerrain</ref>, T &gt; &gt; &amp;</type>
+          <declname>terrains</declname>
+        </param>
+        <param>
+          <type><ref refid="class_bvr_1_1_t_assets" kindref="compound">Assets</ref>&lt; <ref refid="class_bvr_1_1_c_image" kindref="compound">CImage</ref> &gt; &amp;</type>
+          <declname>images</declname>
+        </param>
+        <param>
+          <type><ref refid="class_bvr_1_1_t_assets" kindref="compound">Assets</ref>&lt; <ref refid="class_bvr_1_1_c_mesh" kindref="compound">CMesh</ref> &gt; &amp;</type>
+          <declname>meshes</declname>
+        </param>
+        <param>
+          <type>const struct <ref refid="struct_bvr_1_1_s_asset_manager" kindref="compound">SAssetManager</ref> &amp;</type>
+          <declname>mgr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="54" column="17" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" bodystart="54" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_terrain_1afa70f996de7fac5d3a763cf5e26e465d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Bvr::CTerrain::SetBoundsSystem</definition>
+        <argsstring>(CWorld &amp;w, const Query&lt; With&lt; CTerrain &gt; &gt; &amp;terrains)</argsstring>
+        <name>SetBoundsSystem</name>
+        <qualifiedname>Bvr::CTerrain::SetBoundsSystem</qualifiedname>
+        <param>
+          <type><ref refid="class_bvr_1_1_c_world" kindref="compound">CWorld</ref> &amp;</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_bvr_1_1_e_c_s_1_1_t_query" kindref="compound">Query</ref>&lt; <ref refid="struct_bvr_1_1_e_c_s_1_1_with" kindref="compound">With</ref>&lt; <ref refid="class_bvr_1_1_c_terrain" kindref="compound">CTerrain</ref> &gt; &gt; &amp;</type>
+          <declname>terrains</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="66" column="17"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_bvr_1_1_c_terrain_1a75d23b417fa5053ace67b94c7bc2e3c3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; uint32 &gt;</type>
+        <definition>std::vector&lt; uint32 &gt; Bvr::CTerrain::GenerateTemplateIndexBuffer</definition>
+        <argsstring>()</argsstring>
+        <name>GenerateTemplateIndexBuffer</name>
+        <qualifiedname>Bvr::CTerrain::GenerateTemplateIndexBuffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="74" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_terrain_1aac216e84e1697da952886c3780ffe63e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; SVertex &gt;</type>
+        <definition>std::vector&lt; SVertex &gt; Bvr::CTerrain::GenerateTemplateVertexBuffer</definition>
+        <argsstring>()</argsstring>
+        <name>GenerateTemplateVertexBuffer</name>
+        <qualifiedname>Bvr::CTerrain::GenerateTemplateVertexBuffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="75" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_terrain_1a624c138f09f55441300560e2fe7edbab" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::CTerrain::WriteNormalValue</definition>
+        <argsstring>(CImage &amp;img, int2 pos, float3 val)</argsstring>
+        <name>WriteNormalValue</name>
+        <qualifiedname>Bvr::CTerrain::WriteNormalValue</qualifiedname>
+        <param>
+          <type><ref refid="class_bvr_1_1_c_image" kindref="compound">CImage</ref> &amp;</type>
+          <declname>img</declname>
+        </param>
+        <param>
+          <type>int2</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>float3</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="77" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_terrain_1a038c9b588686f04cd14ca0a8b02ff15d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Bvr::CTerrain::UpdateConfiguration</definition>
+        <argsstring>(const struct SAssetManager &amp;mgr, Assets&lt; CMesh &gt; &amp;meshes, Assets&lt; CImage &gt; &amp;images)</argsstring>
+        <name>UpdateConfiguration</name>
+        <qualifiedname>Bvr::CTerrain::UpdateConfiguration</qualifiedname>
+        <param>
+          <type>const struct <ref refid="struct_bvr_1_1_s_asset_manager" kindref="compound">SAssetManager</ref> &amp;</type>
+          <declname>mgr</declname>
+        </param>
+        <param>
+          <type><ref refid="class_bvr_1_1_t_assets" kindref="compound">Assets</ref>&lt; <ref refid="class_bvr_1_1_c_mesh" kindref="compound">CMesh</ref> &gt; &amp;</type>
+          <declname>meshes</declname>
+        </param>
+        <param>
+          <type><ref refid="class_bvr_1_1_t_assets" kindref="compound">Assets</ref>&lt; <ref refid="class_bvr_1_1_c_image" kindref="compound">CImage</ref> &gt; &amp;</type>
+          <declname>images</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="79" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_bvr_1_1_c_terrain_1a58421e88deadc71aaa57f82588e05bfc" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Bvr::CTerrain::OnRetryUpdate</definition>
+        <argsstring>(CWorld &amp;w, TEntity hTerrain)</argsstring>
+        <name>OnRetryUpdate</name>
+        <qualifiedname>Bvr::CTerrain::OnRetryUpdate</qualifiedname>
+        <param>
+          <type><ref refid="class_bvr_1_1_c_world" kindref="compound">CWorld</ref> &amp;</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type><ref refid="class_bvr_1_1_t_entity" kindref="compound">TEntity</ref></type>
+          <declname>hTerrain</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="82" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_c_terrain_1a8025902e357e4e2051f504e7e9ac3a7a" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Bvr::CTerrain::OnUpdateSuccess</definition>
+        <argsstring>(CWorld &amp;w, TEntity hTerrain)</argsstring>
+        <name>OnUpdateSuccess</name>
+        <qualifiedname>Bvr::CTerrain::OnUpdateSuccess</qualifiedname>
+        <param>
+          <type><ref refid="class_bvr_1_1_c_world" kindref="compound">CWorld</ref> &amp;</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type><ref refid="class_bvr_1_1_t_entity" kindref="compound">TEntity</ref></type>
+          <declname>hTerrain</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="83" column="17"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" line="15" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Terrain.hpp" bodystart="15" bodyend="103"/>
+    <listofallmembers>
+      <member refid="class_bvr_1_1_c_terrain_1a3548bc2884e1a9f724ae258a3ed19627" prot="public" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>AddHeightValue</name></member>
+      <member refid="class_bvr_1_1_c_terrain_1a96fc0072e143322d2ea09acd27a37e47" prot="public" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>AddLayerMask</name></member>
+      <member refid="class_bvr_1_1_c_terrain_1a6c10979f6ed7be8f640ccdbb088521a3" prot="public" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>AddWeightValue</name></member>
+      <member refid="class_bvr_1_1_c_terrain_1aa85b1238b83f9daa781eab7be623abfe" prot="private" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>BVR_REFLECTION_FRIEND</name></member>
+      <member refid="class_bvr_1_1_c_terrain_1a8123e7ae4ef794b075e43a8cc16b11e1" prot="public" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>ClearMasks</name></member>
+      <member refid="class_bvr_1_1_c_terrain_1aa199c05d525ba836d4cf853dc058a6e5" prot="public" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>CTerrain</name></member>
+      <member refid="class_bvr_1_1_c_terrain_1a2d185886a9a20f1cca6c167f5bdff000" prot="public" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>FindLayerMask</name></member>
+      <member refid="class_bvr_1_1_c_terrain_1a75d23b417fa5053ace67b94c7bc2e3c3" prot="private" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>GenerateTemplateIndexBuffer</name></member>
+      <member refid="class_bvr_1_1_c_terrain_1aac216e84e1697da952886c3780ffe63e" prot="private" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>GenerateTemplateVertexBuffer</name></member>
+      <member refid="class_bvr_1_1_c_terrain_1af7163da69160bd65eb87d20aac5cbd08" prot="public" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>GetBounds</name></member>
+      <member refid="class_bvr_1_1_c_terrain_1addf692d8b5ebea95b519af3b06dfa1d7" prot="public" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>GetDimensions</name></member>
+      <member refid="class_bvr_1_1_c_terrain_1acb401c98e6d4bdf190b4bd303e0c7c6a" prot="public" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>GetGridSize</name></member>
+      <member refid="class_bvr_1_1_c_terrain_1a1b101855b529f2b6d95c682046990c84" prot="public" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>GetHeightMapTexture</name></member>
+      <member refid="class_bvr_1_1_c_terrain_1acb94bdc40e36473f0d61473211249e71" prot="public" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>GetMaxAltitude</name></member>
+      <member refid="class_bvr_1_1_c_terrain_1ac51413f2a5a90503fe3bad0fa83510df" prot="public" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>GetMesh</name></member>
+      <member refid="class_bvr_1_1_c_terrain_1a5cd72330b75ff617da7067f28026221b" prot="public" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>InitSystem</name></member>
+      <member refid="class_bvr_1_1_c_terrain_1aa0ce0af0ef49f3a35a2268202769c578" prot="public" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>IsDirty</name></member>
+      <member refid="class_bvr_1_1_c_terrain_1abae47e9e2bea4f6c52a9c4f5442658f2" prot="private" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>m_computedBounds</name></member>
+      <member refid="class_bvr_1_1_c_terrain_1ad0630a46eb1cbffd209836ce14601b89" prot="private" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>m_gridResolution</name></member>
+      <member refid="class_bvr_1_1_c_terrain_1ac717cd8efae1b77e5c58e388e943c3e4" prot="private" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>m_hBaseMesh</name></member>
+      <member refid="class_bvr_1_1_c_terrain_1ad2784f8d993c02c6b7774e2e7bbf3356" prot="private" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>m_Heightmap</name></member>
+      <member refid="class_bvr_1_1_c_terrain_1a7d76c7510f2b8179b2f02503f41b679f" prot="private" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>m_layerImages</name></member>
+      <member refid="class_bvr_1_1_c_terrain_1a73978d53405f4f754ea957a90e253db6" prot="private" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>m_terrainSize</name></member>
+      <member refid="class_bvr_1_1_c_terrain_1afb166985d2ca5dc306a56c3220733883" prot="private" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>MaxAltitude</name></member>
+      <member refid="class_bvr_1_1_c_terrain_1a18a91ce987a23e8992dc74e150e70b24" prot="private" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>NeedsUpdate</name></member>
+      <member refid="class_bvr_1_1_c_terrain_1a58421e88deadc71aaa57f82588e05bfc" prot="private" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>OnRetryUpdate</name></member>
+      <member refid="class_bvr_1_1_c_terrain_1a8025902e357e4e2051f504e7e9ac3a7a" prot="private" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>OnUpdateSuccess</name></member>
+      <member refid="class_bvr_1_1_c_terrain_1aa19db515009cd85bb9c29ac504d1fdc6" prot="public" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>operator=</name></member>
+      <member refid="class_bvr_1_1_c_terrain_1a143f5061aba40782ecc4854262825c04" prot="public" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>ReadHeightBilinear</name></member>
+      <member refid="class_bvr_1_1_c_terrain_1a4f952a0f35d5d0c2808ab53e88ffd47a" prot="public" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>ReadHeightValue</name></member>
+      <member refid="class_bvr_1_1_c_terrain_1a0e40f9f901c59541d2cea0722ba88ce0" prot="public" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>ReadNormalBilinear</name></member>
+      <member refid="class_bvr_1_1_c_terrain_1ab26519714d1fb8cd631c79343462a880" prot="public" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>ReadNormalValue</name></member>
+      <member refid="class_bvr_1_1_c_terrain_1a59ef958c14d3f652db87a093bbb08550" prot="public" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>ReadWeightValue</name></member>
+      <member refid="class_bvr_1_1_c_terrain_1a8ec73389ddfbf77df8b6ba5f49cf0419" prot="public" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>RecomputeBoundsAndNormals</name></member>
+      <member refid="class_bvr_1_1_c_terrain_1afa70f996de7fac5d3a763cf5e26e465d" prot="public" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>SetBoundsSystem</name></member>
+      <member refid="class_bvr_1_1_c_terrain_1a65541bc54b373a2819ee6182a94df4f8" prot="public" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>SetHeightMapTexture</name></member>
+      <member refid="class_bvr_1_1_c_terrain_1a24a130d9684fcbb47795eae5ac5550a5" prot="public" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>SetIsDirty</name></member>
+      <member refid="class_bvr_1_1_c_terrain_1a038c9b588686f04cd14ca0a8b02ff15d" prot="private" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>UpdateConfiguration</name></member>
+      <member refid="class_bvr_1_1_c_terrain_1ac53fca34f50e17e8a63373ba0466502e" prot="public" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>WriteHeightValue</name></member>
+      <member refid="class_bvr_1_1_c_terrain_1a624c138f09f55441300560e2fe7edbab" prot="private" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>WriteNormalValue</name></member>
+      <member refid="class_bvr_1_1_c_terrain_1a409a599d0df0aa0f14fe4714c10e7b8c" prot="public" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>WriteWeightValue</name></member>
+      <member refid="class_bvr_1_1_c_terrain_1a8cc8a5e5f0d4a8235c057ab97a94a074" prot="public" virt="non-virtual"><scope>Bvr::CTerrain</scope><name>~CTerrain</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

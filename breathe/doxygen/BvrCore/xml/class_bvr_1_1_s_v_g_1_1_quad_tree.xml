@@ -1,0 +1,495 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="class_bvr_1_1_s_v_g_1_1_quad_tree" kind="class" language="C++" prot="public">
+    <compoundname>Bvr::SVG::QuadTree</compoundname>
+    <innerclass refid="struct_bvr_1_1_s_v_g_1_1_quad_tree_1_1_interval" prot="public">Bvr::SVG::QuadTree::Interval</innerclass>
+    <innerclass refid="struct_bvr_1_1_s_v_g_1_1_quad_tree_1_1_node" prot="public">Bvr::SVG::QuadTree::Node</innerclass>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="class_bvr_1_1_s_v_g_1_1_quad_tree_1ad050e860a334003617a7147bc09ecf0a" prot="private" static="no">
+        <type><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">Span</ref>&lt; float2 const  &gt;</type>
+        <definition>using Bvr::SVG::QuadTree::TPositions =  Span&lt;float2 const&gt;</definition>
+        <argsstring></argsstring>
+        <name>TPositions</name>
+        <qualifiedname>Bvr::SVG::QuadTree::TPositions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" line="9" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" bodystart="9" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_bvr_1_1_s_v_g_1_1_quad_tree_1a86da7b48ca7ab49e5b5d77dfc71955f3" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr size_t</type>
+        <definition>constexpr size_t Bvr::SVG::QuadTree::MaxPointsPerNode</definition>
+        <argsstring></argsstring>
+        <name>MaxPointsPerNode</name>
+        <qualifiedname>Bvr::SVG::QuadTree::MaxPointsPerNode</qualifiedname>
+        <initializer>= 4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" line="11" column="29" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_s_v_g_1_1_quad_tree_1a800ddd254965e63d9587ab8903809e37" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr size_t</type>
+        <definition>constexpr size_t Bvr::SVG::QuadTree::MaxDepth</definition>
+        <argsstring></argsstring>
+        <name>MaxDepth</name>
+        <qualifiedname>Bvr::SVG::QuadTree::MaxDepth</qualifiedname>
+        <initializer>= 10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" line="12" column="29" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" bodystart="12" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_bvr_1_1_s_v_g_1_1_quad_tree_1a10712d79c6ec2ef541a82a8fed9e3ce6" prot="public" static="no" mutable="no">
+        <type><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">Span</ref>&lt; float2 const  &gt;</type>
+        <definition>Span&lt;float2 const&gt; Bvr::SVG::QuadTree::Positions</definition>
+        <argsstring></argsstring>
+        <name>Positions</name>
+        <qualifiedname>Bvr::SVG::QuadTree::Positions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" line="127" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" bodystart="127" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_bvr_1_1_s_v_g_1_1_quad_tree_1a6620e06813190dbed67218001e41a7b9" prot="private" static="no" mutable="no">
+        <type><ref refid="struct_bvr_1_1_s_v_g_1_1_quad_tree_1_1_node" kindref="compound">Node</ref> *</type>
+        <definition>Node* Bvr::SVG::QuadTree::Root</definition>
+        <argsstring></argsstring>
+        <name>Root</name>
+        <qualifiedname>Bvr::SVG::QuadTree::Root</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" line="244" column="28" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" bodystart="244" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_bvr_1_1_s_v_g_1_1_quad_tree_1a021782910c0a13864706900d694b9792" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Bvr::SVG::QuadTree::QuadTree</definition>
+        <argsstring>(Span&lt; float2 const &gt; vertices)</argsstring>
+        <name>QuadTree</name>
+        <qualifiedname>Bvr::SVG::QuadTree::QuadTree</qualifiedname>
+        <param>
+          <type><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">Span</ref>&lt; float2 const &gt;</type>
+          <declname>vertices</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" line="76" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" bodystart="76" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_s_v_g_1_1_quad_tree_1a99c05082266f2a1b7a024a9f4efe7c10" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Bvr::SVG::QuadTree::~QuadTree</definition>
+        <argsstring>()</argsstring>
+        <name>~QuadTree</name>
+        <qualifiedname>Bvr::SVG::QuadTree::~QuadTree</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" line="91" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" bodystart="91" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_s_v_g_1_1_quad_tree_1a2030dcaca9e0ab8a3f661c0402f3b233" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Fn</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void Bvr::SVG::QuadTree::IterateNodes</definition>
+        <argsstring>(const Fn &amp;fn) const</argsstring>
+        <name>IterateNodes</name>
+        <qualifiedname>Bvr::SVG::QuadTree::IterateNodes</qualifiedname>
+        <param>
+          <type>const Fn &amp;</type>
+          <declname>fn</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" line="93" column="22" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" bodystart="93" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_s_v_g_1_1_quad_tree_1adb62fade84c17af1ec7f903b57ba6d31" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Fn</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void Bvr::SVG::QuadTree::IterateBounds</definition>
+        <argsstring>(const Fn &amp;fn) const</argsstring>
+        <name>IterateBounds</name>
+        <qualifiedname>Bvr::SVG::QuadTree::IterateBounds</qualifiedname>
+        <param>
+          <type>const Fn &amp;</type>
+          <declname>fn</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" line="97" column="22" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" bodystart="97" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_s_v_g_1_1_quad_tree_1a2fc5b2d792c125127ca1d56a6dc6a7ba" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Fn</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void Bvr::SVG::QuadTree::QueryRange</definition>
+        <argsstring>(const TBounds &amp;range, const Fn &amp;fn) const</argsstring>
+        <name>QueryRange</name>
+        <qualifiedname>Bvr::SVG::QuadTree::QueryRange</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_bvr_1_1_t_a_a_b_b" kindref="compound">TBounds</ref> &amp;</type>
+          <declname>range</declname>
+        </param>
+        <param>
+          <type>const Fn &amp;</type>
+          <declname>fn</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" line="102" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" bodystart="102" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_s_v_g_1_1_quad_tree_1a200bf806c91d30360240a243cb02aded" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_bvr_1_1_s_v_g_1_1_quad_tree" kindref="compound">QuadTree</ref> *</type>
+        <definition>QuadTree * Bvr::SVG::QuadTree::Clone</definition>
+        <argsstring>() const</argsstring>
+        <name>Clone</name>
+        <qualifiedname>Bvr::SVG::QuadTree::Clone</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" line="106" column="14" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" bodystart="106" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_s_v_g_1_1_quad_tree_1a1253aa6e189893875fc2d6b81d3943a8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::SVG::QuadTree::Remove</definition>
+        <argsstring>(const Interval &amp;idx)</argsstring>
+        <name>Remove</name>
+        <qualifiedname>Bvr::SVG::QuadTree::Remove</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_bvr_1_1_s_v_g_1_1_quad_tree_1_1_interval" kindref="compound">Interval</ref> &amp;</type>
+          <declname>idx</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" line="114" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" bodystart="114" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_s_v_g_1_1_quad_tree_1a0cb2af8c9df881631683c6b27f88943d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::SVG::QuadTree::Insert</definition>
+        <argsstring>(const Interval &amp;interval)</argsstring>
+        <name>Insert</name>
+        <qualifiedname>Bvr::SVG::QuadTree::Insert</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_bvr_1_1_s_v_g_1_1_quad_tree_1_1_interval" kindref="compound">Interval</ref> &amp;</type>
+          <declname>interval</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" line="124" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" bodystart="124" bodyend="126"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_bvr_1_1_s_v_g_1_1_quad_tree_1a3e2ba2bf67d365c35b5c2f597fd59c75" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Bvr::SVG::QuadTree::QuadTree</definition>
+        <argsstring>()=default</argsstring>
+        <name>QuadTree</name>
+        <qualifiedname>Bvr::SVG::QuadTree::QuadTree</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" line="130" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_s_v_g_1_1_quad_tree_1a13097608cbfeaf71b34b58e56576f9d3" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::SVG::QuadTree::Clone</definition>
+        <argsstring>(const Node *pNode, Node *clone) const</argsstring>
+        <name>Clone</name>
+        <qualifiedname>Bvr::SVG::QuadTree::Clone</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_bvr_1_1_s_v_g_1_1_quad_tree_1_1_node" kindref="compound">Node</ref> *</type>
+          <declname>pNode</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_bvr_1_1_s_v_g_1_1_quad_tree_1_1_node" kindref="compound">Node</ref> *</type>
+          <declname>clone</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" line="132" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" bodystart="132" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_s_v_g_1_1_quad_tree_1a089240a027a13580b1a1e4be67f6e103" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Fn</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void Bvr::SVG::QuadTree::IterateNodes</definition>
+        <argsstring>(const Fn &amp;fn, const Node *node) const</argsstring>
+        <name>IterateNodes</name>
+        <qualifiedname>Bvr::SVG::QuadTree::IterateNodes</qualifiedname>
+        <param>
+          <type>const Fn &amp;</type>
+          <declname>fn</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_bvr_1_1_s_v_g_1_1_quad_tree_1_1_node" kindref="compound">Node</ref> *</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" line="142" column="22" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" bodystart="142" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_s_v_g_1_1_quad_tree_1a18deeccb4399f09662497ab0d0eb77c9" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Fn</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void Bvr::SVG::QuadTree::IterateNodes</definition>
+        <argsstring>(const Fn &amp;fn, Node *node)</argsstring>
+        <name>IterateNodes</name>
+        <qualifiedname>Bvr::SVG::QuadTree::IterateNodes</qualifiedname>
+        <param>
+          <type>const Fn &amp;</type>
+          <declname>fn</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_bvr_1_1_s_v_g_1_1_quad_tree_1_1_node" kindref="compound">Node</ref> *</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" line="153" column="22" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" bodystart="153" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_s_v_g_1_1_quad_tree_1afc576bc00a94c8b282879c7e040b575c" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Fn</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool Bvr::SVG::QuadTree::QueryRange</definition>
+        <argsstring>(const Fn &amp;fn, const TBounds &amp;range, const Node *node) const</argsstring>
+        <name>QueryRange</name>
+        <qualifiedname>Bvr::SVG::QuadTree::QueryRange</qualifiedname>
+        <param>
+          <type>const Fn &amp;</type>
+          <declname>fn</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_bvr_1_1_t_a_a_b_b" kindref="compound">TBounds</ref> &amp;</type>
+          <declname>range</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_bvr_1_1_s_v_g_1_1_quad_tree_1_1_node" kindref="compound">Node</ref> *</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" line="165" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" bodystart="165" bodyend="179"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_s_v_g_1_1_quad_tree_1a6a83b910b3868eb4d7d9bf1550ce4079" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Fn</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool Bvr::SVG::QuadTree::QueryRange</definition>
+        <argsstring>(const Fn &amp;fn, const TBounds &amp;range, Node *node)</argsstring>
+        <name>QueryRange</name>
+        <qualifiedname>Bvr::SVG::QuadTree::QueryRange</qualifiedname>
+        <param>
+          <type>const Fn &amp;</type>
+          <declname>fn</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_bvr_1_1_t_a_a_b_b" kindref="compound">TBounds</ref> &amp;</type>
+          <declname>range</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_bvr_1_1_s_v_g_1_1_quad_tree_1_1_node" kindref="compound">Node</ref> *</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" line="182" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" bodystart="182" bodyend="196"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_bvr_1_1_s_v_g_1_1_quad_tree_1aacba90bbe1838a9f3c27eb772f9cd29f" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Float</type>
+        <definition>static Float Bvr::SVG::QuadTree::RayBoxIntersection</definition>
+        <argsstring>(const float2 &amp;rayO, const float2 &amp;rayDir, const TBounds &amp;box)</argsstring>
+        <name>RayBoxIntersection</name>
+        <qualifiedname>Bvr::SVG::QuadTree::RayBoxIntersection</qualifiedname>
+        <param>
+          <type>const float2 &amp;</type>
+          <declname>rayO</declname>
+        </param>
+        <param>
+          <type>const float2 &amp;</type>
+          <declname>rayDir</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_bvr_1_1_t_a_a_b_b" kindref="compound">TBounds</ref> &amp;</type>
+          <declname>box</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" line="198" column="18" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" bodystart="198" bodyend="218"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_s_v_g_1_1_quad_tree_1a36261a0fda2d1c43987341d6dfc48212" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool Bvr::SVG::QuadTree::IntersectsSegment</definition>
+        <argsstring>(const TBounds &amp;bounds, const float2 p1, const float2 p2)</argsstring>
+        <name>IntersectsSegment</name>
+        <qualifiedname>Bvr::SVG::QuadTree::IntersectsSegment</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_bvr_1_1_t_a_a_b_b" kindref="compound">TBounds</ref> &amp;</type>
+          <declname>bounds</declname>
+        </param>
+        <param>
+          <type>const float2</type>
+          <declname>p1</declname>
+        </param>
+        <param>
+          <type>const float2</type>
+          <declname>p2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" line="219" column="17" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" bodystart="219" bodyend="241"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>Bvr::SVG::QuadTree</label>
+        <link refid="class_bvr_1_1_s_v_g_1_1_quad_tree"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>Positions</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Bvr::Util::TSpan&lt; float2 const &gt;</label>
+        <link refid="class_bvr_1_1_util_1_1_t_span"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" line="8" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp" bodystart="8" bodyend="245"/>
+    <listofallmembers>
+      <member refid="class_bvr_1_1_s_v_g_1_1_quad_tree_1a200bf806c91d30360240a243cb02aded" prot="public" virt="non-virtual"><scope>Bvr::SVG::QuadTree</scope><name>Clone</name></member>
+      <member refid="class_bvr_1_1_s_v_g_1_1_quad_tree_1a13097608cbfeaf71b34b58e56576f9d3" prot="private" virt="non-virtual"><scope>Bvr::SVG::QuadTree</scope><name>Clone</name></member>
+      <member refid="class_bvr_1_1_s_v_g_1_1_quad_tree_1a0cb2af8c9df881631683c6b27f88943d" prot="public" virt="non-virtual"><scope>Bvr::SVG::QuadTree</scope><name>Insert</name></member>
+      <member refid="class_bvr_1_1_s_v_g_1_1_quad_tree_1a36261a0fda2d1c43987341d6dfc48212" prot="private" virt="non-virtual"><scope>Bvr::SVG::QuadTree</scope><name>IntersectsSegment</name></member>
+      <member refid="class_bvr_1_1_s_v_g_1_1_quad_tree_1adb62fade84c17af1ec7f903b57ba6d31" prot="public" virt="non-virtual"><scope>Bvr::SVG::QuadTree</scope><name>IterateBounds</name></member>
+      <member refid="class_bvr_1_1_s_v_g_1_1_quad_tree_1a2030dcaca9e0ab8a3f661c0402f3b233" prot="public" virt="non-virtual"><scope>Bvr::SVG::QuadTree</scope><name>IterateNodes</name></member>
+      <member refid="class_bvr_1_1_s_v_g_1_1_quad_tree_1a089240a027a13580b1a1e4be67f6e103" prot="private" virt="non-virtual"><scope>Bvr::SVG::QuadTree</scope><name>IterateNodes</name></member>
+      <member refid="class_bvr_1_1_s_v_g_1_1_quad_tree_1a18deeccb4399f09662497ab0d0eb77c9" prot="private" virt="non-virtual"><scope>Bvr::SVG::QuadTree</scope><name>IterateNodes</name></member>
+      <member refid="class_bvr_1_1_s_v_g_1_1_quad_tree_1a800ddd254965e63d9587ab8903809e37" prot="private" virt="non-virtual"><scope>Bvr::SVG::QuadTree</scope><name>MaxDepth</name></member>
+      <member refid="class_bvr_1_1_s_v_g_1_1_quad_tree_1a86da7b48ca7ab49e5b5d77dfc71955f3" prot="private" virt="non-virtual"><scope>Bvr::SVG::QuadTree</scope><name>MaxPointsPerNode</name></member>
+      <member refid="class_bvr_1_1_s_v_g_1_1_quad_tree_1a10712d79c6ec2ef541a82a8fed9e3ce6" prot="public" virt="non-virtual"><scope>Bvr::SVG::QuadTree</scope><name>Positions</name></member>
+      <member refid="class_bvr_1_1_s_v_g_1_1_quad_tree_1a021782910c0a13864706900d694b9792" prot="public" virt="non-virtual"><scope>Bvr::SVG::QuadTree</scope><name>QuadTree</name></member>
+      <member refid="class_bvr_1_1_s_v_g_1_1_quad_tree_1a3e2ba2bf67d365c35b5c2f597fd59c75" prot="private" virt="non-virtual"><scope>Bvr::SVG::QuadTree</scope><name>QuadTree</name></member>
+      <member refid="class_bvr_1_1_s_v_g_1_1_quad_tree_1a2fc5b2d792c125127ca1d56a6dc6a7ba" prot="public" virt="non-virtual"><scope>Bvr::SVG::QuadTree</scope><name>QueryRange</name></member>
+      <member refid="class_bvr_1_1_s_v_g_1_1_quad_tree_1afc576bc00a94c8b282879c7e040b575c" prot="private" virt="non-virtual"><scope>Bvr::SVG::QuadTree</scope><name>QueryRange</name></member>
+      <member refid="class_bvr_1_1_s_v_g_1_1_quad_tree_1a6a83b910b3868eb4d7d9bf1550ce4079" prot="private" virt="non-virtual"><scope>Bvr::SVG::QuadTree</scope><name>QueryRange</name></member>
+      <member refid="class_bvr_1_1_s_v_g_1_1_quad_tree_1aacba90bbe1838a9f3c27eb772f9cd29f" prot="private" virt="non-virtual"><scope>Bvr::SVG::QuadTree</scope><name>RayBoxIntersection</name></member>
+      <member refid="class_bvr_1_1_s_v_g_1_1_quad_tree_1a1253aa6e189893875fc2d6b81d3943a8" prot="public" virt="non-virtual"><scope>Bvr::SVG::QuadTree</scope><name>Remove</name></member>
+      <member refid="class_bvr_1_1_s_v_g_1_1_quad_tree_1a6620e06813190dbed67218001e41a7b9" prot="private" virt="non-virtual"><scope>Bvr::SVG::QuadTree</scope><name>Root</name></member>
+      <member refid="class_bvr_1_1_s_v_g_1_1_quad_tree_1ad050e860a334003617a7147bc09ecf0a" prot="private" virt="non-virtual"><scope>Bvr::SVG::QuadTree</scope><name>TPositions</name></member>
+      <member refid="class_bvr_1_1_s_v_g_1_1_quad_tree_1a99c05082266f2a1b7a024a9f4efe7c10" prot="public" virt="non-virtual"><scope>Bvr::SVG::QuadTree</scope><name>~QuadTree</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

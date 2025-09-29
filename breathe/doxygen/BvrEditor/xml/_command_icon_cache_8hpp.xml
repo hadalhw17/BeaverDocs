@@ -2,16 +2,22 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="_command_icon_cache_8hpp" kind="file" language="C++">
     <compoundname>CommandIconCache.hpp</compoundname>
-    <includes local="no">memory</includes>
+    <includes local="no">std</includes>
+    <includes local="no">IO/AssetHandle.hpp</includes>
     <incdepgraph>
       <node id="1">
         <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Core/CommandIconCache.hpp</label>
         <link refid="_command_icon_cache_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>IO/AssetHandle.hpp</label>
       </node>
       <node id="2">
-        <label>memory</label>
+        <label>std</label>
       </node>
     </incdepgraph>
     <innerclass refid="class_bvr_1_1_c_command_icon_cache" prot="public">Bvr::CCommandIconCache</innerclass>
@@ -22,31 +28,33 @@
     </detaileddescription>
     <programlisting>
 <codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Bvr<sp/>{</highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">CImage;</highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">CUICommandDesc;</highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight></codeline>
-<codeline lineno="8" refid="class_bvr_1_1_c_command_icon_cache" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_bvr_1_1_c_command_icon_cache" kindref="compound">CCommandIconCache</ref><sp/>{</highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bvr_1_1_c_command_icon_cache" kindref="compound">CCommandIconCache</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="class_bvr_1_1_c_command_icon_cache" kindref="compound">CCommandIconCache</ref>&amp;<sp/>Get();</highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>RegisterIcon(std::shared_ptr&lt;CUICommandDesc&gt;<sp/>command);</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>RegisterIcon(std::string_view<sp/>commandId,<sp/>std::string_view<sp/>iconPath);</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_handle" kindref="compound">Handle&lt;CImage&gt;</ref><sp/>GetIcon(std::shared_ptr&lt;CUICommandDesc&gt;<sp/>command);</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_handle" kindref="compound">Handle&lt;CImage&gt;</ref><sp/>GetIcon(std::string_view<sp/>commandId);</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>GetCommandId(std::shared_ptr&lt;CUICommandDesc&gt;<sp/>cmd);</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;HashedString,<sp/>Handle&lt;CImage&gt;&gt;<sp/>m_icons;</highlight></codeline>
-<codeline lineno="24"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Bvr</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>std;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>&lt;IO/AssetHandle.hpp&gt;;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Bvr<sp/>{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">CImage;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">CUICommandDesc;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="class_bvr_1_1_c_command_icon_cache" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_bvr_1_1_c_command_icon_cache" kindref="compound">CCommandIconCache</ref><sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bvr_1_1_c_command_icon_cache" kindref="compound">CCommandIconCache</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="class_bvr_1_1_c_command_icon_cache" kindref="compound">CCommandIconCache</ref>&amp;<sp/>Get();</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>RegisterIcon(std::shared_ptr&lt;CUICommandDesc&gt;<sp/>command);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>RegisterIcon(std::string_view<sp/>commandId,<sp/>std::string_view<sp/>iconPath);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_handle" kindref="compound">Handle&lt;CImage&gt;</ref><sp/>GetIcon(std::shared_ptr&lt;CUICommandDesc&gt;<sp/>command);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_handle" kindref="compound">Handle&lt;CImage&gt;</ref><sp/>GetIcon(std::string_view<sp/>commandId);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>GetCommandId(std::shared_ptr&lt;CUICommandDesc&gt;<sp/>cmd);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;HashedString,<sp/>Handle&lt;CImage&gt;&gt;<sp/>m_icons;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Bvr</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Core/CommandIconCache.hpp"/>
   </compounddef>

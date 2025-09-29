@@ -1,0 +1,521 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="class_bvr_1_1_renderer_1_1_c_queue" kind="class" language="C++" prot="public">
+    <compoundname>Bvr::Renderer::CQueue</compoundname>
+    <innerclass refid="struct_bvr_1_1_renderer_1_1_c_queue_1_1_submit_command_list_command" prot="private">Bvr::Renderer::CQueue::SubmitCommandListCommand</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_bvr_1_1_renderer_1_1_c_queue_1a80cc572ebe8e82761a6c3b77255b7af5" prot="private" static="no" mutable="no">
+        <type>CDevice &amp;</type>
+        <definition>CDevice&amp; Bvr::Renderer::CQueue::m_device</definition>
+        <argsstring></argsstring>
+        <name>m_device</name>
+        <qualifiedname>Bvr::Renderer::CQueue::m_device</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" line="86" column="42" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_renderer_1_1_c_queue_1ad99373223d1dddd51c0ab6297d683600" prot="private" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex Bvr::Renderer::CQueue::m_lock</definition>
+        <argsstring></argsstring>
+        <name>m_lock</name>
+        <qualifiedname>Bvr::Renderer::CQueue::m_lock</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" line="87" column="43" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_renderer_1_1_c_queue_1ab420573132175e4e2375a8be2f3545f3" prot="private" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex Bvr::Renderer::CQueue::m_commandBufferLock</definition>
+        <argsstring></argsstring>
+        <name>m_commandBufferLock</name>
+        <qualifiedname>Bvr::Renderer::CQueue::m_commandBufferLock</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" line="88" column="43" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_renderer_1_1_c_queue_1ad6563583d1e534a2a6212a858012635d" prot="private" static="no" mutable="no">
+        <type>VkQueue</type>
+        <definition>VkQueue Bvr::Renderer::CQueue::m_queue</definition>
+        <argsstring></argsstring>
+        <name>m_queue</name>
+        <qualifiedname>Bvr::Renderer::CQueue::m_queue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" line="89" column="43" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_renderer_1_1_c_queue_1a2728eba15484d383ef0d7f7ab7af3890" prot="private" static="no" mutable="no">
+        <type><ref refid="class_bvr_1_1_renderer_1_1_c_vk_command_buffer" kindref="compound">CVkCommandBuffer</ref> *</type>
+        <definition>CVkCommandBuffer* Bvr::Renderer::CQueue::m_pLastCmd</definition>
+        <argsstring></argsstring>
+        <name>m_pLastCmd</name>
+        <qualifiedname>Bvr::Renderer::CQueue::m_pLastCmd</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" line="90" column="42" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_renderer_1_1_c_queue_1a4ea98d058585bb95e733373c5e2f8eff" prot="private" static="no" mutable="no">
+        <type>uint64</type>
+        <definition>uint64 Bvr::Renderer::CQueue::m_lastFence</definition>
+        <argsstring></argsstring>
+        <name>m_lastFence</name>
+        <qualifiedname>Bvr::Renderer::CQueue::m_lastFence</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" line="91" column="43" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_renderer_1_1_c_queue_1a0bffdf7b44f7f89dc5458a755ecbd242" prot="private" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 Bvr::Renderer::CQueue::m_queueFamily</definition>
+        <argsstring></argsstring>
+        <name>m_queueFamily</name>
+        <qualifiedname>Bvr::Renderer::CQueue::m_queueFamily</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" line="92" column="43" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_renderer_1_1_c_queue_1af0f18f21c5ee4c640c64c37f5cada2b3" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64 &gt;</type>
+        <definition>std::atomic&lt;uint64&gt; Bvr::Renderer::CQueue::m_lastIssuedFenceValue</definition>
+        <argsstring></argsstring>
+        <name>m_lastIssuedFenceValue</name>
+        <qualifiedname>Bvr::Renderer::CQueue::m_lastIssuedFenceValue</qualifiedname>
+        <initializer>= ~0ull</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" line="94" column="35" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_renderer_1_1_c_queue_1a1a91807673d8fb8b38ff37e184b675fe" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; uint64 &gt;</type>
+        <definition>std::atomic&lt;uint64&gt; Bvr::Renderer::CQueue::m_completedFenceValue</definition>
+        <argsstring></argsstring>
+        <name>m_completedFenceValue</name>
+        <qualifiedname>Bvr::Renderer::CQueue::m_completedFenceValue</qualifiedname>
+        <initializer>= ~0ull</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" line="95" column="35" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_renderer_1_1_c_queue_1aa6092c41813eff06099397185363790e" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; SubmitCommandListCommand &gt;</type>
+        <definition>std::vector&lt;SubmitCommandListCommand&gt; Bvr::Renderer::CQueue::m_commandBuffersToSubmit</definition>
+        <argsstring></argsstring>
+        <name>m_commandBuffersToSubmit</name>
+        <qualifiedname>Bvr::Renderer::CQueue::m_commandBuffersToSubmit</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" line="96" column="17" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_renderer_1_1_c_queue_1a7e2b5a4c5a43943c258dccfa9c85abee" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_bvr_1_1_renderer_1_1_c_vk_command_buffer" kindref="compound">CVkCommandBuffer</ref> * &gt;</type>
+        <definition>std::vector&lt;CVkCommandBuffer*&gt; Bvr::Renderer::CQueue::m_registeredCommandBuffers</definition>
+        <argsstring></argsstring>
+        <name>m_registeredCommandBuffers</name>
+        <qualifiedname>Bvr::Renderer::CQueue::m_registeredCommandBuffers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" line="97" column="24" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" bodystart="97" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_queue_1a10c2505858242b6d73d5ea6161c77874" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Bvr::Renderer::CQueue::CQueue</definition>
+        <argsstring>(CDevice &amp;dev, uint32 queueFamily)</argsstring>
+        <name>CQueue</name>
+        <qualifiedname>Bvr::Renderer::CQueue::CQueue</qualifiedname>
+        <param>
+          <type>CDevice &amp;</type>
+          <declname>dev</declname>
+        </param>
+        <param>
+          <type>uint32</type>
+          <declname>queueFamily</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" line="16" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_queue_1abb579aad0b793d21d9f2bc63efb86b10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Bvr::Renderer::CQueue::~CQueue</definition>
+        <argsstring>()=default</argsstring>
+        <name>~CQueue</name>
+        <qualifiedname>Bvr::Renderer::CQueue::~CQueue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" line="17" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_queue_1aa0d3056cce8c97b769ad2481164924ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::Renderer::CQueue::WaitIdle</definition>
+        <argsstring>()</argsstring>
+        <name>WaitIdle</name>
+        <qualifiedname>Bvr::Renderer::CQueue::WaitIdle</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" line="19" column="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_queue_1a004323a2c796d9a56a773538784f8cab" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint32</type>
+        <definition>uint32 Bvr::Renderer::CQueue::GetQueueFamily</definition>
+        <argsstring>() const</argsstring>
+        <name>GetQueueFamily</name>
+        <qualifiedname>Bvr::Renderer::CQueue::GetQueueFamily</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" line="20" column="14" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" bodystart="20" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_queue_1a1d4a6032b53b43ebd23d2e87540743d0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>VkQueue</type>
+        <definition>VkQueue Bvr::Renderer::CQueue::GetQueue</definition>
+        <argsstring>() const</argsstring>
+        <name>GetQueue</name>
+        <qualifiedname>Bvr::Renderer::CQueue::GetQueue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" line="21" column="14" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" bodystart="21" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_queue_1adda37f575271e1f3f1b027d202a22d4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::Renderer::CQueue::Submit</definition>
+        <argsstring>(CCommandList *pCmd, const Span&lt; VkSemaphore const &gt; signalSemaphores={}, bool shouldGC=true)</argsstring>
+        <name>Submit</name>
+        <qualifiedname>Bvr::Renderer::CQueue::Submit</qualifiedname>
+        <param>
+          <type>CCommandList *</type>
+          <declname>pCmd</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">Span</ref>&lt; VkSemaphore const &gt;</type>
+          <declname>signalSemaphores</declname>
+          <defval>{}</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>shouldGC</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" line="23" column="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_queue_1a41a531733a91d49e883782e190eb411f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::Renderer::CQueue::FillFenceInfo</definition>
+        <argsstring>(const CVkCommandBuffer *&amp;pCmd, uint64 &amp;fence)</argsstring>
+        <name>FillFenceInfo</name>
+        <qualifiedname>Bvr::Renderer::CQueue::FillFenceInfo</qualifiedname>
+        <param>
+          <type>const <ref refid="class_bvr_1_1_renderer_1_1_c_vk_command_buffer" kindref="compound">CVkCommandBuffer</ref> *&amp;</type>
+          <declname>pCmd</declname>
+        </param>
+        <param>
+          <type>uint64 &amp;</type>
+          <declname>fence</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" line="27" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" bodystart="27" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_queue_1a469bdb88a13d3095c46d6ef1b4d77952" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::Renderer::CQueue::Present</definition>
+        <argsstring>(Span&lt; VkSwapchainKHR const &gt; swapchains, Span&lt; uint32 const &gt; imageIndices, Span&lt; VkSemaphore const &gt; waitSemaphores)</argsstring>
+        <name>Present</name>
+        <qualifiedname>Bvr::Renderer::CQueue::Present</qualifiedname>
+        <param>
+          <type><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">Span</ref>&lt; VkSwapchainKHR const &gt;</type>
+          <declname>swapchains</declname>
+        </param>
+        <param>
+          <type><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">Span</ref>&lt; uint32 const &gt;</type>
+          <declname>imageIndices</declname>
+        </param>
+        <param>
+          <type><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">Span</ref>&lt; VkSemaphore const &gt;</type>
+          <declname>waitSemaphores</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" line="32" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_queue_1afaf6d13ddc4250e2d22e2c12dfa8eb48" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::Renderer::CQueue::FlushCommands</definition>
+        <argsstring>()</argsstring>
+        <name>FlushCommands</name>
+        <qualifiedname>Bvr::Renderer::CQueue::FlushCommands</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" line="36" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_queue_1afee4359105d35937c851340f0cdce82d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::Renderer::CQueue::CheckCompletion</definition>
+        <argsstring>()</argsstring>
+        <name>CheckCompletion</name>
+        <qualifiedname>Bvr::Renderer::CQueue::CheckCompletion</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" line="37" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_queue_1ac798b8c92f3dc397fedf32b814bb7281" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint64</type>
+        <definition>uint64 Bvr::Renderer::CQueue::AllocateFenceValue</definition>
+        <argsstring>()</argsstring>
+        <name>AllocateFenceValue</name>
+        <qualifiedname>Bvr::Renderer::CQueue::AllocateFenceValue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" line="39" column="12" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" bodystart="39" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_queue_1a96bcd66978a53dc7cc16f6074300301f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint64</type>
+        <definition>uint64 Bvr::Renderer::CQueue::CompleteFenceValue</definition>
+        <argsstring>(uint64 value)</argsstring>
+        <name>CompleteFenceValue</name>
+        <qualifiedname>Bvr::Renderer::CQueue::CompleteFenceValue</qualifiedname>
+        <param>
+          <type>uint64</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" line="41" column="12" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" bodystart="41" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_queue_1a2fb6340146f1188c4141146bf4898186" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Bvr::Renderer::CQueue::IsFenceComplete</definition>
+        <argsstring>(uint64 value) const</argsstring>
+        <name>IsFenceComplete</name>
+        <qualifiedname>Bvr::Renderer::CQueue::IsFenceComplete</qualifiedname>
+        <param>
+          <type>uint64</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" line="52" column="17" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" bodystart="52" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_queue_1a117da32f1fa8797bd0411552a909738f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Bvr::Renderer::CQueue::WaitForFence</definition>
+        <argsstring>(uint64 value, int64 timeNs)</argsstring>
+        <name>WaitForFence</name>
+        <qualifiedname>Bvr::Renderer::CQueue::WaitForFence</qualifiedname>
+        <param>
+          <type>uint64</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>int64</type>
+          <declname>timeNs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" line="56" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" bodystart="56" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_queue_1a469d568e4b33f062a225bb1f80640017" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint64</type>
+        <definition>uint64 Bvr::Renderer::CQueue::GetLastQueuedFenceValue</definition>
+        <argsstring>() const</argsstring>
+        <name>GetLastQueuedFenceValue</name>
+        <qualifiedname>Bvr::Renderer::CQueue::GetLastQueuedFenceValue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" line="68" column="12" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" bodystart="68" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_queue_1a0419eff90401c7fe30c0f84158c6d11b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint64</type>
+        <definition>uint64 Bvr::Renderer::CQueue::GetLastCompletedFenceValue</definition>
+        <argsstring>() const</argsstring>
+        <name>GetLastCompletedFenceValue</name>
+        <qualifiedname>Bvr::Renderer::CQueue::GetLastCompletedFenceValue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" line="71" column="12" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" bodystart="71" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_queue_1aa7725415592d7b504b6794a8eef24fba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::Renderer::CQueue::TrackCommandBuffer</definition>
+        <argsstring>(CVkCommandBuffer *buffer)</argsstring>
+        <name>TrackCommandBuffer</name>
+        <qualifiedname>Bvr::Renderer::CQueue::TrackCommandBuffer</qualifiedname>
+        <param>
+          <type><ref refid="class_bvr_1_1_renderer_1_1_c_vk_command_buffer" kindref="compound">CVkCommandBuffer</ref> *</type>
+          <declname>buffer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" line="75" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_renderer_1_1_c_queue_1a8fcff247da0e045a40f67363f7a27138" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::Renderer::CQueue::UntrackCommandBuffer</definition>
+        <argsstring>(CVkCommandBuffer *buffer)</argsstring>
+        <name>UntrackCommandBuffer</name>
+        <qualifiedname>Bvr::Renderer::CQueue::UntrackCommandBuffer</qualifiedname>
+        <param>
+          <type><ref refid="class_bvr_1_1_renderer_1_1_c_vk_command_buffer" kindref="compound">CVkCommandBuffer</ref> *</type>
+          <declname>buffer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" line="76" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" line="14" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/DeviceLayer/VulkanQueue.hpp" bodystart="14" bodyend="98"/>
+    <listofallmembers>
+      <member refid="class_bvr_1_1_renderer_1_1_c_queue_1ac798b8c92f3dc397fedf32b814bb7281" prot="public" virt="non-virtual"><scope>Bvr::Renderer::CQueue</scope><name>AllocateFenceValue</name></member>
+      <member refid="class_bvr_1_1_renderer_1_1_c_queue_1afee4359105d35937c851340f0cdce82d" prot="public" virt="non-virtual"><scope>Bvr::Renderer::CQueue</scope><name>CheckCompletion</name></member>
+      <member refid="class_bvr_1_1_renderer_1_1_c_queue_1a96bcd66978a53dc7cc16f6074300301f" prot="public" virt="non-virtual"><scope>Bvr::Renderer::CQueue</scope><name>CompleteFenceValue</name></member>
+      <member refid="class_bvr_1_1_renderer_1_1_c_queue_1a10c2505858242b6d73d5ea6161c77874" prot="public" virt="non-virtual"><scope>Bvr::Renderer::CQueue</scope><name>CQueue</name></member>
+      <member refid="class_bvr_1_1_renderer_1_1_c_queue_1a41a531733a91d49e883782e190eb411f" prot="public" virt="non-virtual"><scope>Bvr::Renderer::CQueue</scope><name>FillFenceInfo</name></member>
+      <member refid="class_bvr_1_1_renderer_1_1_c_queue_1afaf6d13ddc4250e2d22e2c12dfa8eb48" prot="public" virt="non-virtual"><scope>Bvr::Renderer::CQueue</scope><name>FlushCommands</name></member>
+      <member refid="class_bvr_1_1_renderer_1_1_c_queue_1a0419eff90401c7fe30c0f84158c6d11b" prot="public" virt="non-virtual"><scope>Bvr::Renderer::CQueue</scope><name>GetLastCompletedFenceValue</name></member>
+      <member refid="class_bvr_1_1_renderer_1_1_c_queue_1a469d568e4b33f062a225bb1f80640017" prot="public" virt="non-virtual"><scope>Bvr::Renderer::CQueue</scope><name>GetLastQueuedFenceValue</name></member>
+      <member refid="class_bvr_1_1_renderer_1_1_c_queue_1a1d4a6032b53b43ebd23d2e87540743d0" prot="public" virt="non-virtual"><scope>Bvr::Renderer::CQueue</scope><name>GetQueue</name></member>
+      <member refid="class_bvr_1_1_renderer_1_1_c_queue_1a004323a2c796d9a56a773538784f8cab" prot="public" virt="non-virtual"><scope>Bvr::Renderer::CQueue</scope><name>GetQueueFamily</name></member>
+      <member refid="class_bvr_1_1_renderer_1_1_c_queue_1a2fb6340146f1188c4141146bf4898186" prot="public" virt="non-virtual"><scope>Bvr::Renderer::CQueue</scope><name>IsFenceComplete</name></member>
+      <member refid="class_bvr_1_1_renderer_1_1_c_queue_1ab420573132175e4e2375a8be2f3545f3" prot="private" virt="non-virtual"><scope>Bvr::Renderer::CQueue</scope><name>m_commandBufferLock</name></member>
+      <member refid="class_bvr_1_1_renderer_1_1_c_queue_1aa6092c41813eff06099397185363790e" prot="private" virt="non-virtual"><scope>Bvr::Renderer::CQueue</scope><name>m_commandBuffersToSubmit</name></member>
+      <member refid="class_bvr_1_1_renderer_1_1_c_queue_1a1a91807673d8fb8b38ff37e184b675fe" prot="private" virt="non-virtual"><scope>Bvr::Renderer::CQueue</scope><name>m_completedFenceValue</name></member>
+      <member refid="class_bvr_1_1_renderer_1_1_c_queue_1a80cc572ebe8e82761a6c3b77255b7af5" prot="private" virt="non-virtual"><scope>Bvr::Renderer::CQueue</scope><name>m_device</name></member>
+      <member refid="class_bvr_1_1_renderer_1_1_c_queue_1a4ea98d058585bb95e733373c5e2f8eff" prot="private" virt="non-virtual"><scope>Bvr::Renderer::CQueue</scope><name>m_lastFence</name></member>
+      <member refid="class_bvr_1_1_renderer_1_1_c_queue_1af0f18f21c5ee4c640c64c37f5cada2b3" prot="private" virt="non-virtual"><scope>Bvr::Renderer::CQueue</scope><name>m_lastIssuedFenceValue</name></member>
+      <member refid="class_bvr_1_1_renderer_1_1_c_queue_1ad99373223d1dddd51c0ab6297d683600" prot="private" virt="non-virtual"><scope>Bvr::Renderer::CQueue</scope><name>m_lock</name></member>
+      <member refid="class_bvr_1_1_renderer_1_1_c_queue_1a2728eba15484d383ef0d7f7ab7af3890" prot="private" virt="non-virtual"><scope>Bvr::Renderer::CQueue</scope><name>m_pLastCmd</name></member>
+      <member refid="class_bvr_1_1_renderer_1_1_c_queue_1ad6563583d1e534a2a6212a858012635d" prot="private" virt="non-virtual"><scope>Bvr::Renderer::CQueue</scope><name>m_queue</name></member>
+      <member refid="class_bvr_1_1_renderer_1_1_c_queue_1a0bffdf7b44f7f89dc5458a755ecbd242" prot="private" virt="non-virtual"><scope>Bvr::Renderer::CQueue</scope><name>m_queueFamily</name></member>
+      <member refid="class_bvr_1_1_renderer_1_1_c_queue_1a7e2b5a4c5a43943c258dccfa9c85abee" prot="private" virt="non-virtual"><scope>Bvr::Renderer::CQueue</scope><name>m_registeredCommandBuffers</name></member>
+      <member refid="class_bvr_1_1_renderer_1_1_c_queue_1a469bdb88a13d3095c46d6ef1b4d77952" prot="public" virt="non-virtual"><scope>Bvr::Renderer::CQueue</scope><name>Present</name></member>
+      <member refid="class_bvr_1_1_renderer_1_1_c_queue_1adda37f575271e1f3f1b027d202a22d4e" prot="public" virt="non-virtual"><scope>Bvr::Renderer::CQueue</scope><name>Submit</name></member>
+      <member refid="class_bvr_1_1_renderer_1_1_c_queue_1aa7725415592d7b504b6794a8eef24fba" prot="public" virt="non-virtual"><scope>Bvr::Renderer::CQueue</scope><name>TrackCommandBuffer</name></member>
+      <member refid="class_bvr_1_1_renderer_1_1_c_queue_1a8fcff247da0e045a40f67363f7a27138" prot="public" virt="non-virtual"><scope>Bvr::Renderer::CQueue</scope><name>UntrackCommandBuffer</name></member>
+      <member refid="class_bvr_1_1_renderer_1_1_c_queue_1a117da32f1fa8797bd0411552a909738f" prot="public" virt="non-virtual"><scope>Bvr::Renderer::CQueue</scope><name>WaitForFence</name></member>
+      <member refid="class_bvr_1_1_renderer_1_1_c_queue_1aa0d3056cce8c97b769ad2481164924ef" prot="public" virt="non-virtual"><scope>Bvr::Renderer::CQueue</scope><name>WaitIdle</name></member>
+      <member refid="class_bvr_1_1_renderer_1_1_c_queue_1abb579aad0b793d21d9f2bc63efb86b10" prot="public" virt="non-virtual"><scope>Bvr::Renderer::CQueue</scope><name>~CQueue</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

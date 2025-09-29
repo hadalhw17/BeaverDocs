@@ -3,11 +3,14 @@
   <compounddef id="_ear_clipper_8hpp" kind="file" language="C++">
     <compoundname>EarClipper.hpp</compoundname>
     <includes refid="_math_types_internal_8hpp" local="yes">MathTypesInternal.hpp</includes>
+    <includes local="no">Utils/Span.hpp</includes>
     <incdepgraph>
       <node id="1">
         <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/EarClipper.hpp</label>
         <link refid="_ear_clipper_8hpp"/>
         <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
         </childnode>
       </node>
       <node id="2">
@@ -17,16 +20,14 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
       </node>
       <node id="3">
-        <label>BvrMath/BvrMath.hpp</label>
-      </node>
-      <node id="4">
-        <label>BvrMath/Colour.hpp</label>
+        <label>Bvr.Math</label>
       </node>
       <node id="5">
+        <label>Utils/Span.hpp</label>
+      </node>
+      <node id="4">
         <label>glm/gtx/matrix_transform_2d.hpp</label>
       </node>
     </incdepgraph>
@@ -39,24 +40,25 @@
     <programlisting>
 <codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;MathTypesInternal.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_bvr_1_1_s_v_g" kindref="compound">Bvr::SVG</ref><sp/>{</highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>uint32<sp/>RoundCapsTess<sp/>=<sp/>18;</highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/>EStrokeLineCap<sp/>:<sp/>uint32;</highlight></codeline>
-<codeline lineno="10"><highlight class="normal">std::pair&lt;uint32,<sp/>uint32&gt;<sp/>FillMesh(std::span&lt;Bvr::float2&gt;<sp/>p,</highlight></codeline>
-<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::span&lt;uint32&gt;<sp/>idx,<sp/>uint32&amp;<sp/>vtxIdx,</highlight></codeline>
-<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32&amp;<sp/>idxIdx,<sp/>std::vector&lt;float2&gt;&amp;<sp/>points,</highlight></codeline>
-<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>QuadTree*<sp/>pTree);</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight></codeline>
-<codeline lineno="15"><highlight class="normal">std::pair&lt;uint32,<sp/>uint32&gt;</highlight></codeline>
-<codeline lineno="16"><highlight class="normal">DrawStroke(std::span&lt;Bvr::float2&gt;<sp/>p,<sp/>std::span&lt;uint32&gt;<sp/>idx,<sp/>uint32&amp;<sp/>vtxIdx,</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32&amp;<sp/>idxIdx,<sp/>std::vector&lt;float2&gt;&amp;<sp/>points,</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;std::vector&lt;uint32&gt;&gt;&amp;<sp/>strokeIndices,<sp/>Float<sp/>strokeWidth,</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EStrokeLineCap<sp/>caps,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isClosed);</highlight></codeline>
-<codeline lineno="20"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Bvr::SVG</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>&quot;MathTypesInternal.hpp&quot;;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>&lt;Utils/Span.hpp&gt;;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_bvr_1_1_s_v_g" kindref="compound">Bvr::SVG</ref><sp/>{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>uint32<sp/>RoundCapsTess<sp/>=<sp/>18;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/>EStrokeLineCap<sp/>:<sp/>uint32;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">std::pair&lt;uint32,<sp/>uint32&gt;<sp/>FillMesh(Span&lt;Bvr::float2&gt;<sp/>p,<sp/>Span&lt;uint32&gt;<sp/>idx,</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32&amp;<sp/>vtxIdx,<sp/>uint32&amp;<sp/>idxIdx,</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;float2&gt;&amp;<sp/>points,</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>QuadTree*<sp/><sp/><sp/><sp/><sp/><sp/>pTree);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">std::pair&lt;uint32,<sp/>uint32&gt;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">DrawStroke(Span&lt;Bvr::float2&gt;<sp/>p,<sp/>Span&lt;uint32&gt;<sp/>idx,<sp/>uint32&amp;<sp/>vtxIdx,</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32&amp;<sp/>idxIdx,<sp/>std::vector&lt;float2&gt;&amp;<sp/>points,</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;std::vector&lt;uint32&gt;&gt;&amp;<sp/>strokeIndices,<sp/>Float<sp/>strokeWidth,</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EStrokeLineCap<sp/>caps,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isClosed);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Bvr::SVG</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/EarClipper.hpp"/>
   </compounddef>
