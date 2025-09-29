@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="class_bvr_1_1_mem_1_1_t_object_pool" kind="class" language="C++" prot="public">
+    <compoundname>Bvr::Mem::TObjectPool</compoundname>
+    <basecompoundref refid="struct_bvr_1_1_no_copy" prot="public" virt="non-virtual">Bvr::NoCopy</basecompoundref>
+    <derivedcompoundref refid="class_bvr_1_1_mem_1_1_t_thread_safe_object_pool" prot="private" virt="non-virtual">Bvr::Mem::TThreadSafeObjectPool&lt; T &gt;</derivedcompoundref>
+    <innerclass refid="struct_bvr_1_1_mem_1_1_t_object_pool_1_1_t_pass_through_memory" prot="private">Bvr::Mem::TObjectPool::TPassThroughMemory</innerclass>
+    <innerclass refid="class_bvr_1_1_mem_1_1_t_object_pool_1_1_t_pool_memory" prot="private">Bvr::Mem::TObjectPool::TPoolMemory</innerclass>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+      <param>
+        <type>bool</type>
+        <declname>IsDebug</declname>
+        <defname>IsDebug</defname>
+        <defval>false</defval>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="class_bvr_1_1_mem_1_1_t_object_pool_1a8b57b72364489ce54f6a1ecca213c6d0" prot="private" static="no">
+        <type><ref refid="struct_bvr_1_1_mem_1_1_t_cache_alligned_allocator" kindref="compound">Mem::TCacheAllignedAllocator</ref>&lt; T &gt;</type>
+        <definition>using Bvr::Mem::TObjectPool&lt; T, IsDebug &gt;::TAllocator =  Mem::TCacheAllignedAllocator&lt;T&gt;</definition>
+        <argsstring></argsstring>
+        <name>TAllocator</name>
+        <qualifiedname>Bvr::Mem::TObjectPool::TAllocator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Memory/ObjectPool.hpp" line="9" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Memory/ObjectPool.hpp" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="class_bvr_1_1_mem_1_1_t_object_pool_1a05a0a51adfb4b010f36178d64bd42afb" prot="private" static="no">
+        <type>std::allocator_traits&lt; <ref refid="struct_bvr_1_1_mem_1_1_t_cache_alligned_allocator" kindref="compound">TAllocator</ref> &gt;</type>
+        <definition>using Bvr::Mem::TObjectPool&lt; T, IsDebug &gt;::TAllocTraits =  std::allocator_traits&lt;TAllocator&gt;</definition>
+        <argsstring></argsstring>
+        <name>TAllocTraits</name>
+        <qualifiedname>Bvr::Mem::TObjectPool::TAllocTraits</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Memory/ObjectPool.hpp" line="10" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Memory/ObjectPool.hpp" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="class_bvr_1_1_mem_1_1_t_object_pool_1ac0fea2d28f18e94f6e77ba924178101a" prot="private" static="no">
+        <type>std::conditional_t&lt; IsDebug, TPassThroughMemory, TPoolMemory &gt;</type>
+        <definition>using Bvr::Mem::TObjectPool&lt; T, IsDebug &gt;::TMemory =  std::conditional_t&lt;IsDebug, TPassThroughMemory, TPoolMemory&gt;</definition>
+        <argsstring></argsstring>
+        <name>TMemory</name>
+        <qualifiedname>Bvr::Mem::TObjectPool::TMemory</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Memory/ObjectPool.hpp" line="90" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Memory/ObjectPool.hpp" bodystart="91" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_bvr_1_1_mem_1_1_t_object_pool_1afc2136a4f90653b28ae5d7338778d175" prot="protected" static="no" mutable="no">
+        <type>TMemory</type>
+        <definition>TMemory Bvr::Mem::TObjectPool&lt; T, IsDebug &gt;::m_memory</definition>
+        <argsstring></argsstring>
+        <name>m_memory</name>
+        <qualifiedname>Bvr::Mem::TObjectPool::m_memory</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Memory/ObjectPool.hpp" line="101" column="13" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Memory/ObjectPool.hpp" bodystart="101" bodyend="101"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_bvr_1_1_mem_1_1_t_object_pool_1a079fc1141ed93c6e12036e3f471c6049" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>TArgs</declname>
+            <defname>TArgs</defname>
+          </param>
+        </templateparamlist>
+        <type>T *</type>
+        <definition>T * Bvr::Mem::TObjectPool&lt; T, IsDebug &gt;::allocate</definition>
+        <argsstring>(TArgs &amp;&amp;... args)</argsstring>
+        <name>allocate</name>
+        <qualifiedname>Bvr::Mem::TObjectPool::allocate</qualifiedname>
+        <param>
+          <type>TArgs &amp;&amp;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Memory/ObjectPool.hpp" line="94" column="19" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Memory/ObjectPool.hpp" bodystart="94" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_mem_1_1_t_object_pool_1a509fe716cff7e438b40da042a177efca" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::Mem::TObjectPool&lt; T, IsDebug &gt;::free</definition>
+        <argsstring>(T *ptr)</argsstring>
+        <name>free</name>
+        <qualifiedname>Bvr::Mem::TObjectPool::free</qualifiedname>
+        <param>
+          <type>T *</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Memory/ObjectPool.hpp" line="97" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Memory/ObjectPool.hpp" bodystart="97" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_mem_1_1_t_object_pool_1ae7eed7f3be9845fa1b35f01ff7af4580" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::Mem::TObjectPool&lt; T, IsDebug &gt;::clear</definition>
+        <argsstring>()</argsstring>
+        <name>clear</name>
+        <qualifiedname>Bvr::Mem::TObjectPool::clear</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Memory/ObjectPool.hpp" line="98" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Memory/ObjectPool.hpp" bodystart="98" bodyend="98"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>Bvr::Mem::TObjectPool&lt; T, IsDebug &gt;</label>
+        <link refid="class_bvr_1_1_mem_1_1_t_object_pool"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Bvr::Mem::TThreadSafeObjectPool&lt; T &gt;</label>
+        <link refid="class_bvr_1_1_mem_1_1_t_thread_safe_object_pool"/>
+        <childnode refid="1" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Bvr::NoCopy</label>
+        <link refid="struct_bvr_1_1_no_copy"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>Bvr::Mem::TObjectPool&lt; T, IsDebug &gt;</label>
+        <link refid="class_bvr_1_1_mem_1_1_t_object_pool"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Bvr::NoCopy</label>
+        <link refid="struct_bvr_1_1_no_copy"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Memory/ObjectPool.hpp" line="8" column="16" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Memory/ObjectPool.hpp" bodystart="8" bodyend="102"/>
+    <listofallmembers>
+      <member refid="class_bvr_1_1_mem_1_1_t_object_pool_1a079fc1141ed93c6e12036e3f471c6049" prot="public" virt="non-virtual"><scope>Bvr::Mem::TObjectPool</scope><name>allocate</name></member>
+      <member refid="class_bvr_1_1_mem_1_1_t_object_pool_1ae7eed7f3be9845fa1b35f01ff7af4580" prot="public" virt="non-virtual"><scope>Bvr::Mem::TObjectPool</scope><name>clear</name></member>
+      <member refid="class_bvr_1_1_mem_1_1_t_object_pool_1a509fe716cff7e438b40da042a177efca" prot="public" virt="non-virtual"><scope>Bvr::Mem::TObjectPool</scope><name>free</name></member>
+      <member refid="class_bvr_1_1_mem_1_1_t_object_pool_1afc2136a4f90653b28ae5d7338778d175" prot="protected" virt="non-virtual"><scope>Bvr::Mem::TObjectPool</scope><name>m_memory</name></member>
+      <member refid="struct_bvr_1_1_no_copy_1a74d3b5fae216cfcafc2fc97d61a3d136" prot="public" virt="non-virtual"><scope>Bvr::Mem::TObjectPool</scope><name>NoCopy</name></member>
+      <member refid="class_bvr_1_1_mem_1_1_t_object_pool_1a8b57b72364489ce54f6a1ecca213c6d0" prot="private" virt="non-virtual"><scope>Bvr::Mem::TObjectPool</scope><name>TAllocator</name></member>
+      <member refid="class_bvr_1_1_mem_1_1_t_object_pool_1a05a0a51adfb4b010f36178d64bd42afb" prot="private" virt="non-virtual"><scope>Bvr::Mem::TObjectPool</scope><name>TAllocTraits</name></member>
+      <member refid="class_bvr_1_1_mem_1_1_t_object_pool_1ac0fea2d28f18e94f6e77ba924178101a" prot="private" virt="non-virtual"><scope>Bvr::Mem::TObjectPool</scope><name>TMemory</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

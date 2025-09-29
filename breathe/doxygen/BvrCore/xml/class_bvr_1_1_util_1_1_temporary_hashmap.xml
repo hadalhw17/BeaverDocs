@@ -1,0 +1,317 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="class_bvr_1_1_util_1_1_temporary_hashmap" kind="class" language="C++" prot="public">
+    <compoundname>Bvr::Util::TemporaryHashmap</compoundname>
+    <innerclass refid="struct_bvr_1_1_util_1_1_temporary_hashmap_1_1_reuse_tag" prot="private">Bvr::Util::TemporaryHashmap::ReuseTag</innerclass>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+      <param>
+        <type>uint32</type>
+        <declname>RingSize</declname>
+        <defname>RingSize</defname>
+        <defval>4</defval>
+      </param>
+      <param>
+        <type>bool</type>
+        <declname>ReuseObjects</declname>
+        <defname>ReuseObjects</defname>
+        <defval>false</defval>
+      </param>
+      <param>
+        <type>bool</type>
+        <declname>LockUsed</declname>
+        <defname>LockUsed</defname>
+        <defval>true</defval>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_bvr_1_1_util_1_1_temporary_hashmap_1aa184fe7f178cb06cf740b0965f36a350" prot="private" static="no" mutable="no">
+        <type><ref refid="class_bvr_1_1_util_1_1_intrusive_list" kindref="compound">IntrusiveList</ref>&lt; T &gt;</type>
+        <definition>IntrusiveList&lt;T&gt; Bvr::Util::TemporaryHashmap&lt; T, RingSize, ReuseObjects, LockUsed &gt;::rings[RingSize]</definition>
+        <argsstring>[RingSize]</argsstring>
+        <name>rings</name>
+        <qualifiedname>Bvr::Util::TemporaryHashmap::rings</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Containers/TemporaryHashMap.hpp" line="96" column="22" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Containers/TemporaryHashMap.hpp" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_util_1_1_temporary_hashmap_1a86a30323324e935b28396820b3aade3b" prot="private" static="no" mutable="no">
+        <type><ref refid="class_bvr_1_1_mem_1_1_t_object_pool" kindref="compound">Mem::TObjectPool</ref>&lt; T &gt;</type>
+        <definition>Mem::TObjectPool&lt;T&gt; Bvr::Util::TemporaryHashmap&lt; T, RingSize, ReuseObjects, LockUsed &gt;::object_pool</definition>
+        <argsstring></argsstring>
+        <name>object_pool</name>
+        <qualifiedname>Bvr::Util::TemporaryHashmap::object_pool</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Containers/TemporaryHashMap.hpp" line="97" column="22" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Containers/TemporaryHashMap.hpp" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_util_1_1_temporary_hashmap_1a5f76e607e6ff6967bfa9f07b65ad80b4" prot="private" static="no" mutable="no">
+        <type>uint32</type>
+        <definition>uint32 Bvr::Util::TemporaryHashmap&lt; T, RingSize, ReuseObjects, LockUsed &gt;::index</definition>
+        <argsstring></argsstring>
+        <name>index</name>
+        <qualifiedname>Bvr::Util::TemporaryHashmap::index</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Containers/TemporaryHashMap.hpp" line="98" column="25" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Containers/TemporaryHashMap.hpp" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_util_1_1_temporary_hashmap_1a903deac906c517d686848ac210a63592" prot="private" static="no" mutable="no">
+        <type><ref refid="class_bvr_1_1_util_1_1_intrusive_hash_map" kindref="compound">IntrusiveHashMap</ref>&lt; <ref refid="struct_bvr_1_1_util_1_1_intrusive_p_o_d_wrapper" kindref="compound">IntrusivePODWrapper</ref>&lt; typename <ref refid="class_bvr_1_1_util_1_1_intrusive_list" kindref="compound">IntrusiveList</ref>&lt; T &gt;::Iterator &gt; &gt;</type>
+        <definition>IntrusiveHashMap&lt;IntrusivePODWrapper&lt;typename IntrusiveList&lt;T&gt;::Iterator&gt; &gt; Bvr::Util::TemporaryHashmap&lt; T, RingSize, ReuseObjects, LockUsed &gt;::hashmap</definition>
+        <argsstring></argsstring>
+        <name>hashmap</name>
+        <qualifiedname>Bvr::Util::TemporaryHashmap::hashmap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Containers/TemporaryHashMap.hpp" line="100" column="54" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Containers/TemporaryHashMap.hpp" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bvr_1_1_util_1_1_temporary_hashmap_1a8cbf57e4d2e9e4ec3d78551b6fbec483" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; typename <ref refid="class_bvr_1_1_util_1_1_intrusive_list" kindref="compound">IntrusiveList</ref>&lt; T &gt;::Iterator &gt;</type>
+        <definition>std::vector&lt;typename IntrusiveList&lt;T&gt;::Iterator&gt; Bvr::Util::TemporaryHashmap&lt; T, RingSize, ReuseObjects, LockUsed &gt;::vacants</definition>
+        <argsstring></argsstring>
+        <name>vacants</name>
+        <qualifiedname>Bvr::Util::TemporaryHashmap::vacants</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Containers/TemporaryHashMap.hpp" line="101" column="18" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Containers/TemporaryHashMap.hpp" bodystart="101" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_bvr_1_1_util_1_1_temporary_hashmap_1a45e80d386550c5d9f5c668e96ec37bef" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Bvr::Util::TemporaryHashmap&lt; T, RingSize, ReuseObjects, LockUsed &gt;::~TemporaryHashmap</definition>
+        <argsstring>()</argsstring>
+        <name>~TemporaryHashmap</name>
+        <qualifiedname>Bvr::Util::TemporaryHashmap::~TemporaryHashmap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Containers/TemporaryHashMap.hpp" line="23" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Containers/TemporaryHashMap.hpp" bodystart="23" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_util_1_1_temporary_hashmap_1a6720757fbeb39d8981900a66c353549e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::Util::TemporaryHashmap&lt; T, RingSize, ReuseObjects, LockUsed &gt;::clear</definition>
+        <argsstring>()</argsstring>
+        <name>clear</name>
+        <qualifiedname>Bvr::Util::TemporaryHashmap::clear</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Containers/TemporaryHashMap.hpp" line="25" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Containers/TemporaryHashMap.hpp" bodystart="25" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_util_1_1_temporary_hashmap_1ad2ac8547e0d960f3b4e82e87d53ae5b7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::Util::TemporaryHashmap&lt; T, RingSize, ReuseObjects, LockUsed &gt;::begin_frame</definition>
+        <argsstring>()</argsstring>
+        <name>begin_frame</name>
+        <qualifiedname>Bvr::Util::TemporaryHashmap::begin_frame</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Containers/TemporaryHashMap.hpp" line="39" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Containers/TemporaryHashMap.hpp" bodystart="39" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_util_1_1_temporary_hashmap_1a4276016d632cb7fc7ba47948c8d7e1b3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T *</type>
+        <definition>T * Bvr::Util::TemporaryHashmap&lt; T, RingSize, ReuseObjects, LockUsed &gt;::request</definition>
+        <argsstring>(Hash hash)</argsstring>
+        <name>request</name>
+        <qualifiedname>Bvr::Util::TemporaryHashmap::request</qualifiedname>
+        <param>
+          <type>Hash</type>
+          <declname>hash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Containers/TemporaryHashMap.hpp" line="53" column="7" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Containers/TemporaryHashMap.hpp" bodystart="53" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_util_1_1_temporary_hashmap_1a275149a22638af1fae591fe22bd68b31" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>P</declname>
+            <defname>P</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void Bvr::Util::TemporaryHashmap&lt; T, RingSize, ReuseObjects, LockUsed &gt;::make_vacant</definition>
+        <argsstring>(P &amp;&amp;... p)</argsstring>
+        <name>make_vacant</name>
+        <qualifiedname>Bvr::Util::TemporaryHashmap::make_vacant</qualifiedname>
+        <param>
+          <type>P &amp;&amp;...</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Containers/TemporaryHashMap.hpp" line="67" column="22" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Containers/TemporaryHashMap.hpp" bodystart="67" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_util_1_1_temporary_hashmap_1aaa9b42fef7c1e0c572e45422deb4314c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T *</type>
+        <definition>T * Bvr::Util::TemporaryHashmap&lt; T, RingSize, ReuseObjects, LockUsed &gt;::request_vacant</definition>
+        <argsstring>(Hash hash)</argsstring>
+        <name>request_vacant</name>
+        <qualifiedname>Bvr::Util::TemporaryHashmap::request_vacant</qualifiedname>
+        <param>
+          <type>Hash</type>
+          <declname>hash</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Containers/TemporaryHashMap.hpp" line="71" column="7" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Containers/TemporaryHashMap.hpp" bodystart="71" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_util_1_1_temporary_hashmap_1a846a8c66aed0b066540df5887987e0e3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>P</declname>
+            <defname>P</defname>
+          </param>
+        </templateparamlist>
+        <type>T *</type>
+        <definition>T * Bvr::Util::TemporaryHashmap&lt; T, RingSize, ReuseObjects, LockUsed &gt;::emplace</definition>
+        <argsstring>(Hash hash, P &amp;&amp;... p)</argsstring>
+        <name>emplace</name>
+        <qualifiedname>Bvr::Util::TemporaryHashmap::emplace</qualifiedname>
+        <param>
+          <type>Hash</type>
+          <declname>hash</declname>
+        </param>
+        <param>
+          <type>P &amp;&amp;...</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Containers/TemporaryHashMap.hpp" line="84" column="19" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Containers/TemporaryHashMap.hpp" bodystart="84" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_util_1_1_temporary_hashmap_1a19e9bdff3b4cab99ec02fd302979a859" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint32</type>
+        <definition>uint32 Bvr::Util::TemporaryHashmap&lt; T, RingSize, ReuseObjects, LockUsed &gt;::get_index</definition>
+        <argsstring>() const</argsstring>
+        <name>get_index</name>
+        <qualifiedname>Bvr::Util::TemporaryHashmap::get_index</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Containers/TemporaryHashMap.hpp" line="93" column="12" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Containers/TemporaryHashMap.hpp" bodystart="93" bodyend="93"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_bvr_1_1_util_1_1_temporary_hashmap_1a949829066c382bd6644180c5b00db0dc" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::Util::TemporaryHashmap&lt; T, RingSize, ReuseObjects, LockUsed &gt;::free_object</definition>
+        <argsstring>(T *object, const ReuseTag&lt; false &gt; &amp;)</argsstring>
+        <name>free_object</name>
+        <qualifiedname>Bvr::Util::TemporaryHashmap::free_object</qualifiedname>
+        <param>
+          <type>T *</type>
+          <declname>object</declname>
+        </param>
+        <param>
+          <type>const ReuseTag&lt; false &gt; &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Containers/TemporaryHashMap.hpp" line="105" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Containers/TemporaryHashMap.hpp" bodystart="105" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bvr_1_1_util_1_1_temporary_hashmap_1a4c32c56008f01a70169b9fcafb772239" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::Util::TemporaryHashmap&lt; T, RingSize, ReuseObjects, LockUsed &gt;::free_object</definition>
+        <argsstring>(T *object, const ReuseTag&lt; true &gt; &amp;)</argsstring>
+        <name>free_object</name>
+        <qualifiedname>Bvr::Util::TemporaryHashmap::free_object</qualifiedname>
+        <param>
+          <type>T *</type>
+          <declname>object</declname>
+        </param>
+        <param>
+          <type>const ReuseTag&lt; true &gt; &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Containers/TemporaryHashMap.hpp" line="109" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Containers/TemporaryHashMap.hpp" bodystart="109" bodyend="111"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Containers/TemporaryHashMap.hpp" line="21" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Containers/TemporaryHashMap.hpp" bodystart="21" bodyend="112"/>
+    <listofallmembers>
+      <member refid="class_bvr_1_1_util_1_1_temporary_hashmap_1ad2ac8547e0d960f3b4e82e87d53ae5b7" prot="public" virt="non-virtual"><scope>Bvr::Util::TemporaryHashmap</scope><name>begin_frame</name></member>
+      <member refid="class_bvr_1_1_util_1_1_temporary_hashmap_1a6720757fbeb39d8981900a66c353549e" prot="public" virt="non-virtual"><scope>Bvr::Util::TemporaryHashmap</scope><name>clear</name></member>
+      <member refid="class_bvr_1_1_util_1_1_temporary_hashmap_1a846a8c66aed0b066540df5887987e0e3" prot="public" virt="non-virtual"><scope>Bvr::Util::TemporaryHashmap</scope><name>emplace</name></member>
+      <member refid="class_bvr_1_1_util_1_1_temporary_hashmap_1a949829066c382bd6644180c5b00db0dc" prot="private" virt="non-virtual"><scope>Bvr::Util::TemporaryHashmap</scope><name>free_object</name></member>
+      <member refid="class_bvr_1_1_util_1_1_temporary_hashmap_1a4c32c56008f01a70169b9fcafb772239" prot="private" virt="non-virtual"><scope>Bvr::Util::TemporaryHashmap</scope><name>free_object</name></member>
+      <member refid="class_bvr_1_1_util_1_1_temporary_hashmap_1a19e9bdff3b4cab99ec02fd302979a859" prot="public" virt="non-virtual"><scope>Bvr::Util::TemporaryHashmap</scope><name>get_index</name></member>
+      <member refid="class_bvr_1_1_util_1_1_temporary_hashmap_1a903deac906c517d686848ac210a63592" prot="private" virt="non-virtual"><scope>Bvr::Util::TemporaryHashmap</scope><name>hashmap</name></member>
+      <member refid="class_bvr_1_1_util_1_1_temporary_hashmap_1a5f76e607e6ff6967bfa9f07b65ad80b4" prot="private" virt="non-virtual"><scope>Bvr::Util::TemporaryHashmap</scope><name>index</name></member>
+      <member refid="class_bvr_1_1_util_1_1_temporary_hashmap_1a275149a22638af1fae591fe22bd68b31" prot="public" virt="non-virtual"><scope>Bvr::Util::TemporaryHashmap</scope><name>make_vacant</name></member>
+      <member refid="class_bvr_1_1_util_1_1_temporary_hashmap_1a86a30323324e935b28396820b3aade3b" prot="private" virt="non-virtual"><scope>Bvr::Util::TemporaryHashmap</scope><name>object_pool</name></member>
+      <member refid="class_bvr_1_1_util_1_1_temporary_hashmap_1a4276016d632cb7fc7ba47948c8d7e1b3" prot="public" virt="non-virtual"><scope>Bvr::Util::TemporaryHashmap</scope><name>request</name></member>
+      <member refid="class_bvr_1_1_util_1_1_temporary_hashmap_1aaa9b42fef7c1e0c572e45422deb4314c" prot="public" virt="non-virtual"><scope>Bvr::Util::TemporaryHashmap</scope><name>request_vacant</name></member>
+      <member refid="class_bvr_1_1_util_1_1_temporary_hashmap_1aa184fe7f178cb06cf740b0965f36a350" prot="private" virt="non-virtual"><scope>Bvr::Util::TemporaryHashmap</scope><name>rings</name></member>
+      <member refid="class_bvr_1_1_util_1_1_temporary_hashmap_1a8cbf57e4d2e9e4ec3d78551b6fbec483" prot="private" virt="non-virtual"><scope>Bvr::Util::TemporaryHashmap</scope><name>vacants</name></member>
+      <member refid="class_bvr_1_1_util_1_1_temporary_hashmap_1a45e80d386550c5d9f5c668e96ec37bef" prot="public" virt="non-virtual"><scope>Bvr::Util::TemporaryHashmap</scope><name>~TemporaryHashmap</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

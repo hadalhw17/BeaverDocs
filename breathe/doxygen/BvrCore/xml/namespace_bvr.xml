@@ -2,7 +2,6 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="namespace_bvr" kind="namespace" language="C++">
     <compoundname>Bvr</compoundname>
-    <innerclass refid="struct_bvr_1_1_allocation_functions" prot="public">Bvr::AllocationFunctions</innerclass>
     <innerclass refid="struct_bvr_1_1_app" prot="public">Bvr::App</innerclass>
     <innerclass refid="struct_bvr_1_1_arguments_base" prot="public">Bvr::ArgumentsBase</innerclass>
     <innerclass refid="struct_bvr_1_1_asset_browser_plugin" prot="public">Bvr::AssetBrowserPlugin</innerclass>
@@ -205,7 +204,6 @@
     <innerclass refid="struct_bvr_1_1_s_editor_tool_description" prot="public">Bvr::SEditorToolDescription</innerclass>
     <innerclass refid="struct_bvr_1_1_s_editor_viewport_commands" prot="public">Bvr::SEditorViewportCommands</innerclass>
     <innerclass refid="struct_bvr_1_1_s_editor_viewport_event" prot="public">Bvr::SEditorViewportEvent</innerclass>
-    <innerclass refid="struct_bvr_1_1_s_engine_startup_params" prot="public">Bvr::SEngineStartupParams</innerclass>
     <innerclass refid="class_bvr_1_1_s_entity_inspector" prot="public">Bvr::SEntityInspector</innerclass>
     <innerclass refid="struct_bvr_1_1_s_entity_selector" prot="public">Bvr::SEntitySelector</innerclass>
     <innerclass refid="class_bvr_1_1_sequencer" prot="public">Bvr::Sequencer</innerclass>
@@ -350,6 +348,7 @@
     <innernamespace refid="namespace_bvr_1_1gl_t_f_helpers">Bvr::glTFHelpers</innernamespace>
     <innernamespace refid="namespace_bvr_1_1_graphics">Bvr::Graphics</innernamespace>
     <innernamespace refid="namespace_bvr_1_1_im_gui_helpers">Bvr::ImGuiHelpers</innernamespace>
+    <innernamespace refid="namespace_bvr_1_1_mem">Bvr::Mem</innernamespace>
     <innernamespace refid="namespace_bvr_1_1_meta">Bvr::Meta</innernamespace>
     <innernamespace refid="namespace_bvr_1_1_m_t">Bvr::MT</innernamespace>
     <innernamespace refid="namespace_bvr_1_1_particles">Bvr::Particles</innernamespace>
@@ -2267,7 +2266,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrInterfaces/IBvr3DEngine.hpp" line="69" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrInterfaces/IBvr3DEngine.hpp" bodystart="69" bodyend="74"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrInterfaces/IBvr3DEngine.hpp" line="68" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrInterfaces/IBvr3DEngine.hpp" bodystart="68" bodyend="73"/>
       </memberdef>
       <memberdef kind="enum" id="_state_8hpp_1adcc5919cf57ed88e482d2e954c8a9a15" prot="public" static="no" strong="yes">
         <type></type>
@@ -2625,9 +2624,9 @@
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/WorldDefs.hpp" line="86" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/WorldDefs.hpp" bodystart="86" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="_i_bvr_renderer_8hpp_1a24e6d557d57a660b74dcb7d57110800f" prot="public" static="no">
+      <memberdef kind="typedef" id="_i_bvr_renderer_8hpp_1aef601a808ed3e9ec99d81e2df57b24f9" prot="public" static="no">
         <type>Renderer::EPrimitiveTopology</type>
-        <definition>using Bvr::ETopology = typedef Renderer::EPrimitiveTopology</definition>
+        <definition>typedef Renderer::EPrimitiveTopology Bvr::ETopology</definition>
         <argsstring></argsstring>
         <name>ETopology</name>
         <qualifiedname>Bvr::ETopology</qualifiedname>
@@ -2895,53 +2894,6 @@
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Timestep.hpp" line="92" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Timestep.hpp" bodystart="92" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="_allocation_functions_8hpp_1a2d910cee822d7aa527ede8e2d2f431c3" prot="public" static="no">
-        <type>void *(*)(size_t size, size_t align)</type>
-        <definition>using Bvr::MallocFn = typedef void* (*)(size_t size, size_t align)</definition>
-        <argsstring></argsstring>
-        <name>MallocFn</name>
-        <qualifiedname>Bvr::MallocFn</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/AllocationFunctions.hpp" line="4" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/AllocationFunctions.hpp" bodystart="4" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="_allocation_functions_8hpp_1ac50047c19ca13f495b431cc4b41d1f36" prot="public" static="no">
-        <type>void(*)(void *)</type>
-        <definition>using Bvr::FreeFn = typedef void (*)(void*)</definition>
-        <argsstring></argsstring>
-        <name>FreeFn</name>
-        <qualifiedname>Bvr::FreeFn</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/AllocationFunctions.hpp" line="5" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/AllocationFunctions.hpp" bodystart="5" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="_bvr_common_8hpp_1a498de8f017e405ababd0b3cbde7bb229" prot="public" static="no">
-        <templateparamlist>
-          <param>
-            <type>typename T</type>
-          </param>
-        </templateparamlist>
-        <type><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">Bvr::Util::TSpan</ref>&lt; T &gt;</type>
-        <definition>using Bvr::Span = typedef Util::TSpan&lt;T&gt;</definition>
-        <argsstring></argsstring>
-        <name>Span</name>
-        <qualifiedname>Bvr::Span</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/BvrCommon.hpp" line="16" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/BvrCommon.hpp" bodystart="16" bodyend="-1"/>
-      </memberdef>
       <memberdef kind="typedef" id="_dynamic_library_8hpp_1a1ee79c09e867e2240e5f61dd5703e22d" prot="public" static="no">
         <type>::HMODULE</type>
         <definition>using Bvr::ModuleHandle = typedef ::HMODULE</definition>
@@ -2983,6 +2935,25 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/StringHash.hpp" line="141" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/StringHash.hpp" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_span_8hpp_1a498de8f017e405ababd0b3cbde7bb229" prot="private" static="no">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">Util::TSpan</ref>&lt; T &gt;</type>
+        <definition>using Bvr::Span = typedef Util::TSpan&lt;T&gt;</definition>
+        <argsstring></argsstring>
+        <name>Span</name>
+        <qualifiedname>Bvr::Span</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Span.hpp" line="289" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Span.hpp" bodystart="289" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_stack_string_8hpp_1acae3a636afcacb93aea71bfb4aaab947" prot="public" static="no">
         <templateparamlist>
@@ -5357,7 +5328,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrInterfaces/IBvr3DEngine.hpp" line="75" column="1" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrInterfaces/IBvr3DEngine.hpp" declline="75" declcolumn="1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrInterfaces/IBvr3DEngine.hpp" line="74" column="1" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrInterfaces/IBvr3DEngine.hpp" declline="74" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="_label_8hpp_1a632617aaf531cb2e25c3489f6aa5eeea" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>

@@ -2,11 +2,82 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="namespace_bvr_1_1_util" kind="namespace" language="C++">
     <compoundname>Bvr::Util</compoundname>
-    <innerclass refid="class_bvr_1_1_util_1_1_c_bump_allocator" prot="public">Bvr::Util::CBumpAllocator</innerclass>
-    <innerclass refid="class_bvr_1_1_util_1_1_c_temporary_memory_pool" prot="public">Bvr::Util::CTemporaryMemoryPool</innerclass>
+    <innerclass refid="class_bvr_1_1_util_1_1_c_multi_thread_counter" prot="public">Bvr::Util::CMultiThreadCounter</innerclass>
+    <innerclass refid="class_bvr_1_1_util_1_1_c_single_thread_counter" prot="public">Bvr::Util::CSingleThreadCounter</innerclass>
+    <innerclass refid="class_bvr_1_1_util_1_1_intrusive_hash_map" prot="public">Bvr::Util::IntrusiveHashMap</innerclass>
+    <innerclass refid="class_bvr_1_1_util_1_1_intrusive_hash_map_enabled" prot="public">Bvr::Util::IntrusiveHashMapEnabled</innerclass>
+    <innerclass refid="class_bvr_1_1_util_1_1_intrusive_hash_map_holder" prot="public">Bvr::Util::IntrusiveHashMapHolder</innerclass>
+    <innerclass refid="class_bvr_1_1_util_1_1_intrusive_list" prot="public">Bvr::Util::IntrusiveList</innerclass>
+    <innerclass refid="struct_bvr_1_1_util_1_1_intrusive_list_enabled" prot="public">Bvr::Util::IntrusiveListEnabled</innerclass>
+    <innerclass refid="struct_bvr_1_1_util_1_1_intrusive_p_o_d_wrapper" prot="public">Bvr::Util::IntrusivePODWrapper</innerclass>
+    <innerclass refid="class_bvr_1_1_util_1_1_intrusive_ptr" prot="public">Bvr::Util::IntrusivePtr</innerclass>
+    <innerclass refid="class_bvr_1_1_util_1_1_intrusive_ptr_enabled" prot="public">Bvr::Util::IntrusivePtrEnabled</innerclass>
+    <innerclass refid="class_bvr_1_1_util_1_1_temporary_hashmap" prot="public">Bvr::Util::TemporaryHashmap</innerclass>
+    <innerclass refid="class_bvr_1_1_util_1_1_temporary_hashmap_enabled" prot="public">Bvr::Util::TemporaryHashmapEnabled</innerclass>
+    <innerclass refid="class_bvr_1_1_util_1_1_thread_safe_intrusive_hash_map" prot="public">Bvr::Util::ThreadSafeIntrusiveHashMap</innerclass>
+    <innerclass refid="class_bvr_1_1_util_1_1_thread_safe_intrusive_hash_map_read_cached" prot="public">Bvr::Util::ThreadSafeIntrusiveHashMapReadCached</innerclass>
     <innerclass refid="class_bvr_1_1_util_1_1_t_span" prot="public">Bvr::Util::TSpan</innerclass>
     <innerclass refid="struct_bvr_1_1_util_1_1uuid" prot="public">Bvr::Util::uuid</innerclass>
     <innernamespace refid="namespace_bvr_1_1_util_1_1_detail">Bvr::Util::Detail</innernamespace>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_intrusive_8hpp_1a6aec80099cc32e7f4c54c6ab9af509e5" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>typename Derived</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="class_bvr_1_1_util_1_1_intrusive_ptr" kindref="compound">IntrusivePtr</ref>&lt; Derived &gt;</type>
+        <definition>using Bvr::Util::DerivedIntrusivePtrType = typedef IntrusivePtr&lt;Derived&gt;</definition>
+        <argsstring></argsstring>
+        <name>DerivedIntrusivePtrType</name>
+        <qualifiedname>Bvr::Util::DerivedIntrusivePtrType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Memory/Intrusive.hpp" line="174" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Memory/Intrusive.hpp" bodystart="174" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_intrusive_8hpp_1acd268b285b6e72a6f027902e96dd41a1" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="class_bvr_1_1_util_1_1_intrusive_ptr_enabled" kindref="compound">IntrusivePtrEnabled</ref>&lt; T, std::default_delete&lt; T &gt;, <ref refid="class_bvr_1_1_util_1_1_c_multi_thread_counter" kindref="compound">CMultiThreadCounter</ref> &gt;</type>
+        <definition>using Bvr::Util::ThreadSafeIntrusivePtrEnabled = typedef IntrusivePtrEnabled&lt;T, std::default_delete&lt;T&gt;, CMultiThreadCounter&gt;</definition>
+        <argsstring></argsstring>
+        <name>ThreadSafeIntrusivePtrEnabled</name>
+        <qualifiedname>Bvr::Util::ThreadSafeIntrusivePtrEnabled</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Memory/Intrusive.hpp" line="187" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Memory/Intrusive.hpp" bodystart="188" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_intrusive_hash_map_8hpp_1a34f2757aa06e2b3fb9af21d208f29ae7" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="class_bvr_1_1_util_1_1_intrusive_hash_map" kindref="compound">IntrusiveHashMap</ref>&lt; <ref refid="struct_bvr_1_1_util_1_1_intrusive_p_o_d_wrapper" kindref="compound">IntrusivePODWrapper</ref>&lt; T &gt; &gt;</type>
+        <definition>using Bvr::Util::IntrusiveHashMapWrapper = typedef IntrusiveHashMap&lt;IntrusivePODWrapper&lt;T&gt; &gt;</definition>
+        <argsstring></argsstring>
+        <name>IntrusiveHashMapWrapper</name>
+        <qualifiedname>Bvr::Util::IntrusiveHashMapWrapper</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Containers/IntrusiveHashMap.hpp" line="309" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Containers/IntrusiveHashMap.hpp" bodystart="309" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
     <sectiondef kind="func">
       <memberdef kind="function" id="_span_8hpp_1a900ebeea74ef555f3637cedf4d824215" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -159,6 +230,65 @@
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Span.hpp" line="282" column="1" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Span.hpp" declline="282" declcolumn="1"/>
       </memberdef>
+      <memberdef kind="function" id="_intrusive_8hpp_1a7c63d903113a19c6d902f31c4c2b1674" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>P</declname>
+            <defname>P</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="class_bvr_1_1_util_1_1_intrusive_ptr" kindref="compound">DerivedIntrusivePtrType</ref>&lt; T &gt;</type>
+        <definition>DerivedIntrusivePtrType&lt; T &gt; Bvr::Util::MakeHandle</definition>
+        <argsstring>(P &amp;&amp;... p)</argsstring>
+        <name>MakeHandle</name>
+        <qualifiedname>Bvr::Util::MakeHandle</qualifiedname>
+        <param>
+          <type>P &amp;&amp;...</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Memory/Intrusive.hpp" line="177" column="25" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Memory/Intrusive.hpp" bodystart="177" bodyend="179"/>
+      </memberdef>
+      <memberdef kind="function" id="_intrusive_8hpp_1ac0e7abc1c32260ef6b06182a3d3a7fe0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Base</type>
+          </param>
+          <param>
+            <type>typename Derived</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>P</declname>
+            <defname>P</defname>
+          </param>
+        </templateparamlist>
+        <type>Base::IntrusivePtrType</type>
+        <definition>Base::IntrusivePtrType Bvr::Util::MakeDerrivedHandle</definition>
+        <argsstring>(P &amp;&amp;... p)</argsstring>
+        <name>MakeDerrivedHandle</name>
+        <qualifiedname>Bvr::Util::MakeDerrivedHandle</qualifiedname>
+        <param>
+          <type>P &amp;&amp;...</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Memory/Intrusive.hpp" line="182" column="33" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Memory/Intrusive.hpp" bodystart="182" bodyend="184"/>
+      </memberdef>
       <memberdef kind="function" id="_enums_8hpp_1a71e340f962bacac37231cdfb013f7bf7" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
@@ -212,6 +342,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/FrameGraphDefs.hpp" line="8" column="1"/>
+    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Span.hpp" line="7" column="1"/>
   </compounddef>
 </doxygen>
