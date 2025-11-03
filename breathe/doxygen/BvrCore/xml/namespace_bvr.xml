@@ -82,6 +82,7 @@
     <innerclass refid="class_bvr_1_1_c_style_sheet" prot="public">Bvr::CStyleSheet</innerclass>
     <innerclass refid="class_bvr_1_1_c_terrain" prot="public">Bvr::CTerrain</innerclass>
     <innerclass refid="class_bvr_1_1_c_time" prot="public">Bvr::CTime</innerclass>
+    <innerclass refid="class_bvr_1_1_c_timer" prot="public">Bvr::CTimer</innerclass>
     <innerclass refid="class_bvr_1_1_c_u_i_command_desc" prot="public">Bvr::CUICommandDesc</innerclass>
     <innerclass refid="class_bvr_1_1_c_u_i_command_list" prot="public">Bvr::CUICommandList</innerclass>
     <innerclass refid="class_bvr_1_1_c_undo" prot="public">Bvr::CUndo</innerclass>
@@ -351,6 +352,7 @@
     <innernamespace refid="namespace_bvr_1_1_mem">Bvr::Mem</innernamespace>
     <innernamespace refid="namespace_bvr_1_1_meta">Bvr::Meta</innernamespace>
     <innernamespace refid="namespace_bvr_1_1_m_t">Bvr::MT</innernamespace>
+    <innernamespace refid="namespace_bvr_1_1_ocean">Bvr::Ocean</innernamespace>
     <innernamespace refid="namespace_bvr_1_1_particles">Bvr::Particles</innernamespace>
     <innernamespace refid="namespace_bvr_1_1_path_aliases">Bvr::PathAliases</innernamespace>
     <innernamespace refid="namespace_bvr_1_1_path_utils">Bvr::PathUtils</innernamespace>
@@ -411,7 +413,6 @@
         </enumvalue>
         <enumvalue id="_entity_duplicator_8hpp_1ab3120409f563d24d1a742720b40a170ea2011adaff6cbe8f7c51bd2f0f7a942bc" prot="public">
           <name>KeepUUIDs</name>
-          <initializer>= Bit32(0)</initializer>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
@@ -419,7 +420,6 @@
         </enumvalue>
         <enumvalue id="_entity_duplicator_8hpp_1ab3120409f563d24d1a742720b40a170ea335aa8fd5ace3855165a2242a21e7428" prot="public">
           <name>ForceAddParents</name>
-          <initializer>= Bit32(1)</initializer>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
@@ -427,15 +427,6 @@
         </enumvalue>
         <enumvalue id="_entity_duplicator_8hpp_1ab3120409f563d24d1a742720b40a170ea95d70fc19c8ce83659da44edb32b7bf3" prot="public">
           <name>ForceAddChildren</name>
-          <initializer>= Bit32(2)</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="_entity_duplicator_8hpp_1ab3120409f563d24d1a742720b40a170ea97980cd374bff46699c753b509fd3d1b" prot="public">
-          <name>ForceAddAll</name>
-          <initializer>= ForceAddParents | ForceAddChildren</initializer>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
@@ -447,7 +438,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/EntityDuplicator.hpp" line="14" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/EntityDuplicator.hpp" bodystart="14" bodyend="21"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/EntityDuplicator.hpp" line="14" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/EntityDuplicator.hpp" bodystart="14" bodyend="19"/>
       </memberdef>
       <memberdef kind="enum" id="_scene_8hpp_1a2f0a37fc56eb5034eb4f6ae0b94a677a" prot="public" static="no" strong="yes">
         <type></type>
@@ -565,7 +556,6 @@
         <qualifiedname>Bvr::EDebugProfilingStats</qualifiedname>
         <enumvalue id="_i_bvr_renderer_8hpp_1a6fa213d583519498ae3a738b73625d78a1a226c2f1347809a185b8567ba1fc5a7" prot="public">
           <name>Profiling</name>
-          <initializer>= Bit32(0)</initializer>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
@@ -2000,7 +1990,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetSystem.hpp" line="20" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetSystem.hpp" bodystart="20" bodyend="24"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetSystem.hpp" line="19" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetSystem.hpp" bodystart="19" bodyend="23"/>
       </memberdef>
       <memberdef kind="enum" id="_asset_handle_8hpp_1ad32e19f1b581203b0995349e37b1a369" prot="public" static="no" strong="yes">
         <type>uint32</type>
@@ -2624,6 +2614,20 @@
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/WorldDefs.hpp" line="86" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/WorldDefs.hpp" bodystart="86" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="typedef" id="_entity_duplicator_8hpp_1a2d40278c7deee9e341179547fa4fc0c7" prot="public" static="no">
+        <type>TFlag&lt; EEntityDuplicateFlags &gt;</type>
+        <definition>using Bvr::TEntityDuplicateFlags = typedef TFlag&lt;EEntityDuplicateFlags&gt;</definition>
+        <argsstring></argsstring>
+        <name>TEntityDuplicateFlags</name>
+        <qualifiedname>Bvr::TEntityDuplicateFlags</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/EntityDuplicator.hpp" line="20" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/EntityDuplicator.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
       <memberdef kind="typedef" id="_i_bvr_renderer_8hpp_1aef601a808ed3e9ec99d81e2df57b24f9" prot="public" static="no">
         <type>Renderer::EPrimitiveTopology</type>
         <definition>typedef Renderer::EPrimitiveTopology Bvr::ETopology</definition>
@@ -2637,6 +2641,20 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="31" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_i_bvr_renderer_8hpp_1a9a960c5e2f2595fcc5f5b43a35a6b76c" prot="public" static="no">
+        <type>TFlag&lt; EDebugProfilingStats &gt;</type>
+        <definition>using Bvr::TDebugProfilingStats = typedef TFlag&lt;EDebugProfilingStats&gt;</definition>
+        <argsstring></argsstring>
+        <name>TDebugProfilingStats</name>
+        <qualifiedname>Bvr::TDebugProfilingStats</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="73" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" bodystart="73" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_i_bvr_renderer_8hpp_1a5b428650fb657340418d5edc3d17fb4f" prot="public" static="no">
         <type><ref refid="struct_bvr_1_1_t_handle" kindref="compound">THandle</ref>&lt; <ref refid="struct_bvr_1_1_renderer_1_1_texture" kindref="compound">Renderer::Texture</ref> &gt;</type>
@@ -2665,7 +2683,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderOutput.hpp" line="209" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderOutput.hpp" bodystart="209" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderOutput.hpp" line="208" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderOutput.hpp" bodystart="208" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_render_output_8hpp_1a1c5a84ba385c7642df93fbee9f8955c6" prot="public" static="no">
         <type><ref refid="struct_bvr_1_1_renderer_1_1_s_viewport" kindref="compound">Renderer::SViewport</ref></type>
@@ -2680,7 +2698,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderOutput.hpp" line="211" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderOutput.hpp" bodystart="211" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderOutput.hpp" line="210" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderOutput.hpp" bodystart="210" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_render_output_8hpp_1a161a5c1dba3b3ac0514b28fdb44af8c2" prot="public" static="no">
         <type><ref refid="struct_bvr_1_1_renderer_1_1_render_layer" kindref="compound">Renderer::RenderLayer</ref></type>
@@ -2695,7 +2713,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderOutput.hpp" line="213" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderOutput.hpp" bodystart="213" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderOutput.hpp" line="212" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderOutput.hpp" bodystart="212" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_render_mesh_8hpp_1a1ce37869099e4c8dfc536d0d655cf1cb" prot="public" static="no">
         <type><ref refid="struct_bvr_1_1_basic_stream_slice" kindref="compound">BasicStreamSlice</ref>&lt; false &gt;</type>
@@ -2711,189 +2729,6 @@
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderMesh.hpp" line="13" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/RenderMesh.hpp" bodystart="13" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="_base_types_8hpp_1a85122361dc992c9c4e34e29f5039faa6" prot="public" static="no">
-        <type>std::int8_t</type>
-        <definition>using Bvr::int8 = typedef std::int8_t</definition>
-        <argsstring></argsstring>
-        <name>int8</name>
-        <qualifiedname>Bvr::int8</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/BaseTypes.hpp" line="6" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/BaseTypes.hpp" bodystart="6" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="_base_types_8hpp_1a35da12c9f700863e4ba808ffa5095b6c" prot="public" static="no">
-        <type>std::int16_t</type>
-        <definition>using Bvr::int16 = typedef std::int16_t</definition>
-        <argsstring></argsstring>
-        <name>int16</name>
-        <qualifiedname>Bvr::int16</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/BaseTypes.hpp" line="7" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/BaseTypes.hpp" bodystart="7" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="_base_types_8hpp_1a8b0605bd42e1405fa7d4b5ad56c65edf" prot="public" static="no">
-        <type>std::uint8_t</type>
-        <definition>using Bvr::uint8 = typedef std::uint8_t</definition>
-        <argsstring></argsstring>
-        <name>uint8</name>
-        <qualifiedname>Bvr::uint8</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/BaseTypes.hpp" line="8" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/BaseTypes.hpp" bodystart="8" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="_base_types_8hpp_1a7960fedff8f6b2f93cdeffc93df2a4ae" prot="public" static="no">
-        <type>std::uint16_t</type>
-        <definition>using Bvr::uint16 = typedef std::uint16_t</definition>
-        <argsstring></argsstring>
-        <name>uint16</name>
-        <qualifiedname>Bvr::uint16</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/BaseTypes.hpp" line="9" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/BaseTypes.hpp" bodystart="9" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="_base_types_8hpp_1a795c2d65f0a9dfb83754fa70626c9c41" prot="public" static="no">
-        <type>std::uint32_t</type>
-        <definition>using Bvr::uint32 = typedef std::uint32_t</definition>
-        <argsstring></argsstring>
-        <name>uint32</name>
-        <qualifiedname>Bvr::uint32</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/BaseTypes.hpp" line="10" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/BaseTypes.hpp" bodystart="10" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="_base_types_8hpp_1a3b36bb557f5c5922ac14a8876d9d8752" prot="public" static="no">
-        <type>std::uint64_t</type>
-        <definition>using Bvr::uint64 = typedef std::uint64_t</definition>
-        <argsstring></argsstring>
-        <name>uint64</name>
-        <qualifiedname>Bvr::uint64</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/BaseTypes.hpp" line="11" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/BaseTypes.hpp" bodystart="11" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="_base_types_8hpp_1a034ab01e2edbf9b6cfe573a286f514de" prot="public" static="no">
-        <type>std::int32_t</type>
-        <definition>using Bvr::int32 = typedef std::int32_t</definition>
-        <argsstring></argsstring>
-        <name>int32</name>
-        <qualifiedname>Bvr::int32</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/BaseTypes.hpp" line="12" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/BaseTypes.hpp" bodystart="12" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="_base_types_8hpp_1a44ea9421c28f24929901e9da15aa8c04" prot="public" static="no">
-        <type>std::int64_t</type>
-        <definition>using Bvr::int64 = typedef std::int64_t</definition>
-        <argsstring></argsstring>
-        <name>int64</name>
-        <qualifiedname>Bvr::int64</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/BaseTypes.hpp" line="13" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/BaseTypes.hpp" bodystart="13" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="_base_types_8hpp_1aa47b353340b6aebf80fe6ef4119f78cf" prot="public" static="no">
-        <type>std::uintptr_t</type>
-        <definition>using Bvr::uintptr_t = typedef std::uintptr_t</definition>
-        <argsstring></argsstring>
-        <name>uintptr_t</name>
-        <qualifiedname>Bvr::uintptr_t</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/BaseTypes.hpp" line="14" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/BaseTypes.hpp" bodystart="14" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="_base_types_8hpp_1a2634d5a8ab1275344bb233ee493f1c13" prot="public" static="no">
-        <type>std::ptrdiff_t</type>
-        <definition>using Bvr::ptrdiff_t = typedef std::ptrdiff_t</definition>
-        <argsstring></argsstring>
-        <name>ptrdiff_t</name>
-        <qualifiedname>Bvr::ptrdiff_t</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/BaseTypes.hpp" line="15" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/BaseTypes.hpp" bodystart="15" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="_base_types_8hpp_1a0ceea976dcc107617053ae3dd3ab1121" prot="public" static="no">
-        <type>std::size_t</type>
-        <definition>using Bvr::size_t = typedef std::size_t</definition>
-        <argsstring></argsstring>
-        <name>size_t</name>
-        <qualifiedname>Bvr::size_t</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/BaseTypes.hpp" line="16" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/BaseTypes.hpp" bodystart="16" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="_base_types_8hpp_1ad293a9a05b8ec5b51189d5f273d9389a" prot="public" static="no">
-        <type>size_t</type>
-        <definition>using Bvr::THash = typedef size_t</definition>
-        <argsstring></argsstring>
-        <name>THash</name>
-        <qualifiedname>Bvr::THash</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/BaseTypes.hpp" line="18" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/BaseTypes.hpp" bodystart="18" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="_timestep_8hpp_1a1d7104aa10cdb4442b742d241d585428" prot="public" static="no">
-        <type><ref refid="class_bvr_1_1_t_timestep" kindref="compound">TTimestep</ref>&lt; float &gt;</type>
-        <definition>using Bvr::CTimestep = typedef TTimestep&lt;float&gt;</definition>
-        <argsstring></argsstring>
-        <name>CTimestep</name>
-        <qualifiedname>Bvr::CTimestep</qualifiedname>
-        <briefdescription>
-<para>Time indicating how long a frame took. </para>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Timestep.hpp" line="92" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Timestep.hpp" bodystart="92" bodyend="-1"/>
-      </memberdef>
       <memberdef kind="typedef" id="_dynamic_library_8hpp_1a1ee79c09e867e2240e5f61dd5703e22d" prot="public" static="no">
         <type>::HMODULE</type>
         <definition>using Bvr::ModuleHandle = typedef ::HMODULE</definition>
@@ -2907,34 +2742,6 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Platform/DynamicLibrary.hpp" line="10" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Platform/DynamicLibrary.hpp" bodystart="10" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="_string_hash_8hpp_1af07785ec4e6b710916a666c2cf8d2eb2" prot="public" static="no">
-        <type><ref refid="class_bvr_1_1_t_basic_hashed_string" kindref="compound">TBasicHashedString</ref>&lt; char &gt;</type>
-        <definition>using Bvr::HashedString = typedef TBasicHashedString&lt;char&gt;</definition>
-        <argsstring></argsstring>
-        <name>HashedString</name>
-        <qualifiedname>Bvr::HashedString</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/StringHash.hpp" line="140" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/StringHash.hpp" bodystart="140" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="_string_hash_8hpp_1a21bcc28e148e9d2ea08c9f722b718bb6" prot="public" static="no">
-        <type><ref refid="class_bvr_1_1_t_basic_hashed_string" kindref="compound">TBasicHashedString</ref>&lt; wchar_t &gt;</type>
-        <definition>using Bvr::HashedWString = typedef TBasicHashedString&lt;wchar_t&gt;</definition>
-        <argsstring></argsstring>
-        <name>HashedWString</name>
-        <qualifiedname>Bvr::HashedWString</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/StringHash.hpp" line="141" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/StringHash.hpp" bodystart="141" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_span_8hpp_1a498de8f017e405ababd0b3cbde7bb229" prot="private" static="no">
         <templateparamlist>
@@ -2953,28 +2760,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Span.hpp" line="289" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Span.hpp" bodystart="289" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="_stack_string_8hpp_1acae3a636afcacb93aea71bfb4aaab947" prot="public" static="no">
-        <templateparamlist>
-          <param>
-            <type>typename...</type>
-            <declname>TArgs</declname>
-            <defname>TArgs</defname>
-          </param>
-        </templateparamlist>
-        <type>std::format_string&lt; TArgs... &gt;</type>
-        <definition>using Bvr::TFormatString = typedef std::format_string&lt;TArgs...&gt;</definition>
-        <argsstring></argsstring>
-        <name>TFormatString</name>
-        <qualifiedname>Bvr::TFormatString</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/StackString.hpp" line="9" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/StackString.hpp" bodystart="9" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Span.hpp" line="294" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Span.hpp" bodystart="294" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_asset_system_8hpp_1a3957eaefc186763629e4c67b57353510" prot="public" static="no">
         <templateparamlist>
@@ -2993,7 +2779,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetSystem.hpp" line="299" column="13" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetSystem.hpp" bodystart="299" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetSystem.hpp" line="298" column="13" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/IO/AssetSystem.hpp" bodystart="298" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_asset_handle_8hpp_1a03159bdb81b0028a9835c3959fa244a2" prot="public" static="no">
         <type><ref refid="struct_bvr_1_1_asset_id" kindref="compound">AssetId</ref></type>
@@ -3036,6 +2822,238 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/TypeInfo.hpp" line="7" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/TypeInfo.hpp" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_base_types_8hpp_1a85122361dc992c9c4e34e29f5039faa6" prot="public" static="no">
+        <type>std::int8_t</type>
+        <definition>using Bvr::int8 = typedef std::int8_t</definition>
+        <argsstring></argsstring>
+        <name>int8</name>
+        <qualifiedname>Bvr::int8</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/BaseTypes.hpp" line="6" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/BaseTypes.hpp" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_base_types_8hpp_1a35da12c9f700863e4ba808ffa5095b6c" prot="public" static="no">
+        <type>std::int16_t</type>
+        <definition>using Bvr::int16 = typedef std::int16_t</definition>
+        <argsstring></argsstring>
+        <name>int16</name>
+        <qualifiedname>Bvr::int16</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/BaseTypes.hpp" line="7" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/BaseTypes.hpp" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_base_types_8hpp_1a8b0605bd42e1405fa7d4b5ad56c65edf" prot="public" static="no">
+        <type>std::uint8_t</type>
+        <definition>using Bvr::uint8 = typedef std::uint8_t</definition>
+        <argsstring></argsstring>
+        <name>uint8</name>
+        <qualifiedname>Bvr::uint8</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/BaseTypes.hpp" line="8" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/BaseTypes.hpp" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_base_types_8hpp_1a7960fedff8f6b2f93cdeffc93df2a4ae" prot="public" static="no">
+        <type>std::uint16_t</type>
+        <definition>using Bvr::uint16 = typedef std::uint16_t</definition>
+        <argsstring></argsstring>
+        <name>uint16</name>
+        <qualifiedname>Bvr::uint16</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/BaseTypes.hpp" line="9" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/BaseTypes.hpp" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_base_types_8hpp_1a795c2d65f0a9dfb83754fa70626c9c41" prot="public" static="no">
+        <type>std::uint32_t</type>
+        <definition>using Bvr::uint32 = typedef std::uint32_t</definition>
+        <argsstring></argsstring>
+        <name>uint32</name>
+        <qualifiedname>Bvr::uint32</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/BaseTypes.hpp" line="10" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/BaseTypes.hpp" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_base_types_8hpp_1a3b36bb557f5c5922ac14a8876d9d8752" prot="public" static="no">
+        <type>std::uint64_t</type>
+        <definition>using Bvr::uint64 = typedef std::uint64_t</definition>
+        <argsstring></argsstring>
+        <name>uint64</name>
+        <qualifiedname>Bvr::uint64</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/BaseTypes.hpp" line="11" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/BaseTypes.hpp" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_base_types_8hpp_1a034ab01e2edbf9b6cfe573a286f514de" prot="public" static="no">
+        <type>std::int32_t</type>
+        <definition>using Bvr::int32 = typedef std::int32_t</definition>
+        <argsstring></argsstring>
+        <name>int32</name>
+        <qualifiedname>Bvr::int32</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/BaseTypes.hpp" line="12" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/BaseTypes.hpp" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_base_types_8hpp_1a44ea9421c28f24929901e9da15aa8c04" prot="public" static="no">
+        <type>std::int64_t</type>
+        <definition>using Bvr::int64 = typedef std::int64_t</definition>
+        <argsstring></argsstring>
+        <name>int64</name>
+        <qualifiedname>Bvr::int64</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/BaseTypes.hpp" line="13" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/BaseTypes.hpp" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_base_types_8hpp_1aa47b353340b6aebf80fe6ef4119f78cf" prot="public" static="no">
+        <type>std::uintptr_t</type>
+        <definition>using Bvr::uintptr_t = typedef std::uintptr_t</definition>
+        <argsstring></argsstring>
+        <name>uintptr_t</name>
+        <qualifiedname>Bvr::uintptr_t</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/BaseTypes.hpp" line="14" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/BaseTypes.hpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_base_types_8hpp_1a2634d5a8ab1275344bb233ee493f1c13" prot="public" static="no">
+        <type>std::ptrdiff_t</type>
+        <definition>using Bvr::ptrdiff_t = typedef std::ptrdiff_t</definition>
+        <argsstring></argsstring>
+        <name>ptrdiff_t</name>
+        <qualifiedname>Bvr::ptrdiff_t</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/BaseTypes.hpp" line="15" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/BaseTypes.hpp" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_base_types_8hpp_1a0ceea976dcc107617053ae3dd3ab1121" prot="public" static="no">
+        <type>std::size_t</type>
+        <definition>using Bvr::size_t = typedef std::size_t</definition>
+        <argsstring></argsstring>
+        <name>size_t</name>
+        <qualifiedname>Bvr::size_t</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/BaseTypes.hpp" line="16" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/BaseTypes.hpp" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_base_types_8hpp_1ad293a9a05b8ec5b51189d5f273d9389a" prot="public" static="no">
+        <type>size_t</type>
+        <definition>using Bvr::THash = typedef size_t</definition>
+        <argsstring></argsstring>
+        <name>THash</name>
+        <qualifiedname>Bvr::THash</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/BaseTypes.hpp" line="18" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/BaseTypes.hpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_string_hash_8hpp_1af07785ec4e6b710916a666c2cf8d2eb2" prot="public" static="no">
+        <type><ref refid="class_bvr_1_1_t_basic_hashed_string" kindref="compound">TBasicHashedString</ref>&lt; char &gt;</type>
+        <definition>using Bvr::HashedString = typedef TBasicHashedString&lt;char&gt;</definition>
+        <argsstring></argsstring>
+        <name>HashedString</name>
+        <qualifiedname>Bvr::HashedString</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/StringHash.hpp" line="140" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/StringHash.hpp" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_string_hash_8hpp_1a21bcc28e148e9d2ea08c9f722b718bb6" prot="public" static="no">
+        <type><ref refid="class_bvr_1_1_t_basic_hashed_string" kindref="compound">TBasicHashedString</ref>&lt; wchar_t &gt;</type>
+        <definition>using Bvr::HashedWString = typedef TBasicHashedString&lt;wchar_t&gt;</definition>
+        <argsstring></argsstring>
+        <name>HashedWString</name>
+        <qualifiedname>Bvr::HashedWString</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/StringHash.hpp" line="141" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/StringHash.hpp" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_timestep_8hpp_1a1d7104aa10cdb4442b742d241d585428" prot="public" static="no">
+        <type><ref refid="class_bvr_1_1_t_timestep" kindref="compound">TTimestep</ref>&lt; float &gt;</type>
+        <definition>using Bvr::CTimestep = typedef TTimestep&lt;float&gt;</definition>
+        <argsstring></argsstring>
+        <name>CTimestep</name>
+        <qualifiedname>Bvr::CTimestep</qualifiedname>
+        <briefdescription>
+<para>Time indicating how long a frame took. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/Timestep.hpp" line="92" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/Timestep.hpp" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_stack_string_8hpp_1acae3a636afcacb93aea71bfb4aaab947" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>TArgs</declname>
+            <defname>TArgs</defname>
+          </param>
+        </templateparamlist>
+        <type>std::format_string&lt; TArgs... &gt;</type>
+        <definition>using Bvr::TFormatString = typedef std::format_string&lt;TArgs...&gt;</definition>
+        <argsstring></argsstring>
+        <name>TFormatString</name>
+        <qualifiedname>Bvr::TFormatString</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/StackString.hpp" line="9" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/StackString.hpp" bodystart="9" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_editor_tool_controller_8hpp_1a8c94d1e194e69c2868d7dd9b185a4c28" prot="public" static="no">
         <type><ref refid="struct_bvr_1_1_editor_tool_1_1_mouse_button_pressed" kindref="compound">EditorTool::MouseButtonPressed</ref></type>
@@ -3133,7 +3151,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Public/BvrEditor/UIAction.hpp" line="5" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Public/BvrEditor/UIAction.hpp" bodystart="5" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Public/BvrEditor/UIAction.hpp" line="6" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Public/BvrEditor/UIAction.hpp" bodystart="6" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_u_i_action_8hpp_1adc3e65e1bc1d07e769c17e72de50e5dd" prot="public" static="no">
         <type><ref refid="class_bvr_1_1_t_invokable" kindref="compound">TInvokable</ref>&lt; bool()&gt;</type>
@@ -3147,7 +3165,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Public/BvrEditor/UIAction.hpp" line="6" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Public/BvrEditor/UIAction.hpp" bodystart="6" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Public/BvrEditor/UIAction.hpp" line="7" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Public/BvrEditor/UIAction.hpp" bodystart="7" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_u_i_action_8hpp_1a3e90adb5b6b4c5ea515e3334246d6541" prot="public" static="no">
         <type><ref refid="class_bvr_1_1_t_invokable" kindref="compound">TInvokable</ref>&lt; bool()&gt;</type>
@@ -3161,7 +3179,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Public/BvrEditor/UIAction.hpp" line="7" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Public/BvrEditor/UIAction.hpp" bodystart="7" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Public/BvrEditor/UIAction.hpp" line="8" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Public/BvrEditor/UIAction.hpp" bodystart="8" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_u_i_action_8hpp_1aea1a4605787e088cf9406af479dc1d95" prot="public" static="no">
         <type><ref refid="class_bvr_1_1_t_invokable" kindref="compound">TInvokable</ref>&lt; bool()&gt;</type>
@@ -3175,7 +3193,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Public/BvrEditor/UIAction.hpp" line="8" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Public/BvrEditor/UIAction.hpp" bodystart="8" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Public/BvrEditor/UIAction.hpp" line="9" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Public/BvrEditor/UIAction.hpp" bodystart="9" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_editor_meta_attributes_8hpp_1aae8eeff832da1c97d73a2b7f59e740ba" prot="public" static="no">
         <type>std::function&lt; void(const <ref refid="class_bvr_1_1_meta_1_1_variant" kindref="compound">Meta::Variant</ref> &amp;, const <ref refid="class_bvr_1_1_meta_1_1_property" kindref="compound">Meta::Property</ref> &amp;)&gt;</type>
@@ -3245,7 +3263,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Core/EditorViewportConsumer.hpp" line="20" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Core/EditorViewportConsumer.hpp" bodystart="20" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Core/EditorViewportConsumer.hpp" line="22" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Core/EditorViewportConsumer.hpp" bodystart="22" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_editor_viewport_consumer_8hpp_1a700c99a1b152164909183c9e52ef7349" prot="public" static="no">
         <type><ref refid="class_bvr_1_1_t_invokable" kindref="compound">TInvokable</ref>&lt; void(<ref refid="class_bvr_1_1_c_world" kindref="compound">CWorld</ref> *, const std::string_view &amp;)&gt;</type>
@@ -3259,7 +3277,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Core/EditorViewportConsumer.hpp" line="22" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Core/EditorViewportConsumer.hpp" bodystart="22" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Core/EditorViewportConsumer.hpp" line="24" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/Core/EditorViewportConsumer.hpp" bodystart="24" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_component_property_editor_8hpp_1adbbba957aab255804e6950ae76b84153" prot="public" static="no">
         <type><ref refid="class_bvr_1_1_t_invokable" kindref="compound">TInvokable</ref>&lt; void(<ref refid="class_bvr_1_1_c_entity" kindref="compound">CEntity</ref> ent, const <ref refid="struct_bvr_1_1_i_component_bind" kindref="compound">IComponentBind</ref> *, std::string_view)&gt;</type>
@@ -3329,7 +3347,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/UI/Style.hpp" line="19" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/UI/Style.hpp" bodystart="19" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/UI/Style.hpp" line="18" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/UI/Style.hpp" bodystart="18" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_style_8hpp_1ac6772c9ee5391184c5cd08e9a91bc3a6" prot="public" static="no">
         <type>std::shared_ptr&lt; <ref refid="struct_bvr_1_1_i_style_class" kindref="compound">IStyleClass</ref> &gt;</type>
@@ -3343,7 +3361,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/UI/Style.hpp" line="24" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/UI/Style.hpp" bodystart="24" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/UI/Style.hpp" line="23" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/UI/Style.hpp" bodystart="23" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_style_8hpp_1aad8f6dc32c0a1fdfe39bd47b0e9bd4b2" prot="public" static="no">
         <type>std::shared_ptr&lt; <ref refid="class_bvr_1_1_c_button_style" kindref="compound">CButtonStyle</ref> &gt;</type>
@@ -3357,7 +3375,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/UI/Style.hpp" line="78" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/UI/Style.hpp" bodystart="78" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/UI/Style.hpp" line="77" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/Editor/Private/UI/Style.hpp" bodystart="77" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="_archive_8hpp_1ab0f713256b6b69d0dafe9c3640cc1a80" prot="public" static="no">
         <type>bool(*)(<ref refid="class_bvr_1_1_c_archive_base" kindref="compound">CArchiveBase</ref> &amp;, void *)</type>
@@ -3394,6 +3412,23 @@
       </memberdef>
     </sectiondef>
     <sectiondef kind="var">
+      <memberdef kind="variable" id="_entity_duplicator_8hpp_1af90a347c313c083b6b1a87fc6b623422" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>constexpr auto</type>
+        <definition>constexpr auto Bvr::EEntityDumplicateFlagsForceAll</definition>
+        <argsstring></argsstring>
+        <name>EEntityDumplicateFlagsForceAll</name>
+        <qualifiedname>Bvr::EEntityDumplicateFlagsForceAll</qualifiedname>
+        <initializer>=
+    TEntityDuplicateFlags{EEntityDuplicateFlags::ForceAddParents,
+                          EEntityDuplicateFlags::ForceAddChildren}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/EntityDuplicator.hpp" line="21" column="23" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/EntityDuplicator.hpp" bodystart="21" bodyend="23"/>
+      </memberdef>
       <memberdef kind="variable" id="_bvr_editor_8hpp_1a293f23e1319fb3b54e9528310dc4c1ef" prot="public" static="no" extern="yes" mutable="no">
         <type><ref refid="class_bvr_1_1_c_bvr_editor" kindref="compound">CBvrEditor</ref> *</type>
         <definition>CBvrEditor* Bvr::gEditor</definition>
@@ -3702,23 +3737,6 @@
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/WorldArchive.hpp" line="740" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/WorldArchive.hpp" bodystart="740" bodyend="750"/>
       </memberdef>
-      <memberdef kind="function" id="_entity_duplicator_8hpp_1a7018dc3a89c72e783a52f7e13721444f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type></type>
-        <definition>Bvr::BVR_ENUM_OPERATORS</definition>
-        <argsstring>(EEntityDuplicateFlags)</argsstring>
-        <name>BVR_ENUM_OPERATORS</name>
-        <qualifiedname>Bvr::BVR_ENUM_OPERATORS</qualifiedname>
-        <param>
-          <type>EEntityDuplicateFlags</type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/EntityDuplicator.hpp" line="22" column="1" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/EntityDuplicator.hpp" declline="22" declcolumn="1"/>
-      </memberdef>
       <memberdef kind="function" id="_world_8hpp_1a5dbc3a34399005ee1dcbee438eec086f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>BVRWORLD_API std::shared_ptr&lt; <ref refid="class_bvr_1_1_c_archive_base" kindref="compound">CArchiveBase</ref> &gt;</type>
         <definition>BVRWORLD_API std::shared_ptr&lt; CArchiveBase &gt; Bvr::MakeWArchiverForWorld</definition>
@@ -3783,23 +3801,6 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/Scene.hpp" line="21" column="1" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/Scene.hpp" declline="21" declcolumn="1"/>
-      </memberdef>
-      <memberdef kind="function" id="_i_bvr_renderer_8hpp_1a11ecd1cb0eed41195071bbc9ac390d99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type></type>
-        <definition>Bvr::BVR_ENUM_OPERATORS</definition>
-        <argsstring>(EDebugProfilingStats)</argsstring>
-        <name>BVR_ENUM_OPERATORS</name>
-        <qualifiedname>Bvr::BVR_ENUM_OPERATORS</qualifiedname>
-        <param>
-          <type>EDebugProfilingStats</type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="73" column="1" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" declline="73" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="_render_info_8hpp_1a0cf83f83d594f3dfead3ed7036f10541" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -4044,381 +4045,6 @@
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Noise.hpp" line="14" column="7" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrTerrain/Noise.hpp" declline="14" declcolumn="7"/>
       </memberdef>
-      <memberdef kind="function" id="_utils_8hpp_1aba1fddc18cb83a66d6c13c427c5951b4" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>typename T</type>
-          </param>
-          <param>
-            <type>size_t</type>
-            <declname>N</declname>
-            <defname>N</defname>
-          </param>
-        </templateparamlist>
-        <type>constexpr size_t</type>
-        <definition>static constexpr size_t Bvr::ArraySize</definition>
-        <argsstring>(T(&amp;)[N])</argsstring>
-        <name>ArraySize</name>
-        <qualifiedname>Bvr::ArraySize</qualifiedname>
-        <param>
-          <type>T(&amp;)</type>
-          <array>[N]</array>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils.hpp" line="36" column="39" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils.hpp" bodystart="36" bodyend="38"/>
-      </memberdef>
-      <memberdef kind="function" id="_utils_8hpp_1a31fbc1b18595470f2db45061a093f5ed" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>typename T</type>
-          </param>
-        </templateparamlist>
-        <type>constexpr T</type>
-        <definition>constexpr T Bvr::Align</definition>
-        <argsstring>(const T val, const std::size_t alignment) noexcept</argsstring>
-        <name>Align</name>
-        <qualifiedname>Bvr::Align</qualifiedname>
-        <param>
-          <type>const T</type>
-          <declname>val</declname>
-        </param>
-        <param>
-          <type>const std::size_t</type>
-          <declname>alignment</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils.hpp" line="41" column="21" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils.hpp" bodystart="41" bodyend="45"/>
-      </memberdef>
-      <memberdef kind="function" id="_utils_8hpp_1a20928d8e4fc7e94477709b5d1ab653e9" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>typename T</type>
-          </param>
-        </templateparamlist>
-        <type>constexpr T</type>
-        <definition>constexpr T Bvr::Align</definition>
-        <argsstring>(const T val, const std::size_t alignment) noexcept</argsstring>
-        <name>Align</name>
-        <qualifiedname>Bvr::Align</qualifiedname>
-        <param>
-          <type>const T</type>
-          <declname>val</declname>
-        </param>
-        <param>
-          <type>const std::size_t</type>
-          <declname>alignment</declname>
-        </param>
-    <requiresclause>std::is_pointer_v&lt;T&gt;    </requiresclause>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils.hpp" line="49" column="21" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils.hpp" bodystart="49" bodyend="53"/>
-      </memberdef>
-      <memberdef kind="function" id="_utils_8hpp_1a5b5d64252e86e52d48e903f94ab328c4" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>typename T</type>
-          </param>
-        </templateparamlist>
-        <type>constexpr bool</type>
-        <definition>constexpr bool Bvr::IsAligned</definition>
-        <argsstring>(const T val, const std::size_t alignment) noexcept</argsstring>
-        <name>IsAligned</name>
-        <qualifiedname>Bvr::IsAligned</qualifiedname>
-        <param>
-          <type>const T</type>
-          <declname>val</declname>
-        </param>
-        <param>
-          <type>const std::size_t</type>
-          <declname>alignment</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils.hpp" line="57" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils.hpp" bodystart="57" bodyend="59"/>
-      </memberdef>
-      <memberdef kind="function" id="_utils_8hpp_1ae4da0ecc6a1850b7e500f4907f02c9ab" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>typename T</type>
-          </param>
-        </templateparamlist>
-        <type>constexpr bool</type>
-        <definition>constexpr bool Bvr::IsAligned</definition>
-        <argsstring>(const T val, const std::size_t alignment) noexcept</argsstring>
-        <name>IsAligned</name>
-        <qualifiedname>Bvr::IsAligned</qualifiedname>
-        <param>
-          <type>const T</type>
-          <declname>val</declname>
-        </param>
-        <param>
-          <type>const std::size_t</type>
-          <declname>alignment</declname>
-        </param>
-    <requiresclause>std::is_pointer_v&lt;T&gt;    </requiresclause>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils.hpp" line="63" column="24" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils.hpp" bodystart="63" bodyend="66"/>
-      </memberdef>
-      <memberdef kind="function" id="_utils_8hpp_1aadf567cc17cb19f0406b504c8e7274a5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>uint8</type>
-        <definition>uint8 Bvr::Log2</definition>
-        <argsstring>(const uint32 val)</argsstring>
-        <name>Log2</name>
-        <qualifiedname>Bvr::Log2</qualifiedname>
-        <param>
-          <type>const uint32</type>
-          <declname>val</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils.hpp" line="68" column="15" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils.hpp" bodystart="68" bodyend="77"/>
-      </memberdef>
-      <memberdef kind="function" id="_utils_8hpp_1a1b33205d71dfcae14adb070fbcd79993" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>typename T</type>
-          </param>
-        </templateparamlist>
-        <type>T</type>
-        <definition>T Bvr::AlignPowerOf2</definition>
-        <argsstring>(const T val)</argsstring>
-        <name>AlignPowerOf2</name>
-        <qualifiedname>Bvr::AlignPowerOf2</qualifiedname>
-        <param>
-          <type>const T</type>
-          <declname>val</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils.hpp" line="79" column="23" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils.hpp" bodystart="79" bodyend="81"/>
-      </memberdef>
-      <memberdef kind="function" id="_utils_8hpp_1ac531c003713a5831b1542fe23487b050" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>constexpr uint32</type>
-        <definition>constexpr uint32 Bvr::NextPow2</definition>
-        <argsstring>(uint32 v)</argsstring>
-        <name>NextPow2</name>
-        <qualifiedname>Bvr::NextPow2</qualifiedname>
-        <param>
-          <type>uint32</type>
-          <declname>v</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils.hpp" line="83" column="26" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils.hpp" bodystart="83" bodyend="91"/>
-      </memberdef>
-      <memberdef kind="function" id="_utils_8hpp_1a1885330091e7de6038fcbf89c1855add" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>typename T</type>
-          </param>
-        </templateparamlist>
-        <type>void</type>
-        <definition>void Bvr::ForEachBit</definition>
-        <argsstring>(uint32 value, const T &amp;func)</argsstring>
-        <name>ForEachBit</name>
-        <qualifiedname>Bvr::ForEachBit</qualifiedname>
-        <param>
-          <type>uint32</type>
-          <declname>value</declname>
-        </param>
-        <param>
-          <type>const T &amp;</type>
-          <declname>func</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils.hpp" line="93" column="25" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils.hpp" bodystart="93" bodyend="99"/>
-      </memberdef>
-      <memberdef kind="function" id="_utils_8hpp_1a799a0dba9a99cc845774806d27fd9c0b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>typename T</type>
-          </param>
-        </templateparamlist>
-        <type>void</type>
-        <definition>void Bvr::ForEachBitRange</definition>
-        <argsstring>(uint32 value, const T &amp;func)</argsstring>
-        <name>ForEachBitRange</name>
-        <qualifiedname>Bvr::ForEachBitRange</qualifiedname>
-        <param>
-          <type>uint32</type>
-          <declname>value</declname>
-        </param>
-        <param>
-          <type>const T &amp;</type>
-          <declname>func</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils.hpp" line="101" column="25" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils.hpp" bodystart="101" bodyend="116"/>
-      </memberdef>
-      <memberdef kind="function" id="_utils_8hpp_1a363f93394e9bf00a8b293125396e6e85" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>constexpr bool</type>
-        <definition>constexpr bool Bvr::IsBitSet</definition>
-        <argsstring>(uint32 value, int bit)</argsstring>
-        <name>IsBitSet</name>
-        <qualifiedname>Bvr::IsBitSet</qualifiedname>
-        <param>
-          <type>uint32</type>
-          <declname>value</declname>
-        </param>
-        <param>
-          <type>int</type>
-          <declname>bit</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils.hpp" line="118" column="24" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils.hpp" bodystart="118" bodyend="120"/>
-      </memberdef>
-      <memberdef kind="function" id="_utils_8hpp_1ab669f0e0a7c359763fadf987fbfaeb19" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>typename T</type>
-          </param>
-        </templateparamlist>
-        <type>constexpr bool</type>
-        <definition>constexpr bool Bvr::IsFlagSet</definition>
-        <argsstring>(T value, T bit)</argsstring>
-        <name>IsFlagSet</name>
-        <qualifiedname>Bvr::IsFlagSet</qualifiedname>
-        <param>
-          <type>T</type>
-          <declname>value</declname>
-        </param>
-        <param>
-          <type>T</type>
-          <declname>bit</declname>
-        </param>
-    <requiresclause>std::is_enum_v&lt;T&gt;    </requiresclause>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils.hpp" line="124" column="24" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils.hpp" bodystart="124" bodyend="126"/>
-      </memberdef>
-      <memberdef kind="function" id="_utils_8hpp_1a93f9102e69afb58533b160708024dd93" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>typename T</type>
-          </param>
-        </templateparamlist>
-        <type>T</type>
-        <definition>T Bvr::RemoveFlag</definition>
-        <argsstring>(T value, T bit)</argsstring>
-        <name>RemoveFlag</name>
-        <qualifiedname>Bvr::RemoveFlag</qualifiedname>
-        <param>
-          <type>T</type>
-          <declname>value</declname>
-        </param>
-        <param>
-          <type>T</type>
-          <declname>bit</declname>
-        </param>
-    <requiresclause>std::is_enum_v&lt;T&gt;    </requiresclause>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils.hpp" line="130" column="4" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils.hpp" bodystart="130" bodyend="132"/>
-      </memberdef>
-      <memberdef kind="function" id="_utils_8hpp_1a3fbac920fbcaac0bffe980bfcc9db291" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>typename T</type>
-          </param>
-        </templateparamlist>
-        <type>void</type>
-        <definition>void Bvr::ZeroStruct</definition>
-        <argsstring>(T &amp;t)</argsstring>
-        <name>ZeroStruct</name>
-        <qualifiedname>Bvr::ZeroStruct</qualifiedname>
-        <param>
-          <type>T &amp;</type>
-          <declname>t</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils.hpp" line="134" column="25" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils.hpp" bodystart="134" bodyend="136"/>
-      </memberdef>
-      <memberdef kind="function" id="_utils_8hpp_1a8679361ce49ae1de2941f253abcd1125" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>typename T</type>
-          </param>
-        </templateparamlist>
-        <type>void</type>
-        <definition>void Bvr::SAFE_DELETE</definition>
-        <argsstring>(T &amp;obj)</argsstring>
-        <name>SAFE_DELETE</name>
-        <qualifiedname>Bvr::SAFE_DELETE</qualifiedname>
-        <param>
-          <type>T &amp;</type>
-          <declname>obj</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils.hpp" line="158" column="25" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils.hpp" bodystart="158" bodyend="162"/>
-      </memberdef>
       <memberdef kind="function" id="_key_codes_8hpp_1ae500cffb248c2ad0ae6c54c4d5045131" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>Bvr::BVR_ENUM_OPERATORS</definition>
@@ -4507,200 +4133,6 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/KeyCodes.hpp" line="348" column="35" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/KeyCodes.hpp" bodystart="348" bodyend="359"/>
-      </memberdef>
-      <memberdef kind="function" id="_string_helpers_8hpp_1a90121808ac9817a2e1d84896da588b06" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>int</type>
-        <definition>int Bvr::stricmp</definition>
-        <argsstring>(const char *a, const char *b)</argsstring>
-        <name>stricmp</name>
-        <qualifiedname>Bvr::stricmp</qualifiedname>
-        <param>
-          <type>const char *</type>
-          <declname>a</declname>
-        </param>
-        <param>
-          <type>const char *</type>
-          <declname>b</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/StringHelpers.hpp" line="5" column="12" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/StringHelpers.hpp" bodystart="5" bodyend="11"/>
-      </memberdef>
-      <memberdef kind="function" id="_string_helpers_8hpp_1ae1862dd9c2f4de53c51149c572afc13e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>int</type>
-        <definition>int Bvr::strnicmp</definition>
-        <argsstring>(const char *a, const char *b, const size_t count)</argsstring>
-        <name>strnicmp</name>
-        <qualifiedname>Bvr::strnicmp</qualifiedname>
-        <param>
-          <type>const char *</type>
-          <declname>a</declname>
-        </param>
-        <param>
-          <type>const char *</type>
-          <declname>b</declname>
-        </param>
-        <param>
-          <type>const size_t</type>
-          <declname>count</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/StringHelpers.hpp" line="13" column="12" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/StringHelpers.hpp" bodystart="13" bodyend="19"/>
-      </memberdef>
-      <memberdef kind="function" id="_string_helpers_8hpp_1ab882b56a564db1208d60a49e26452fb3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>void Bvr::SplitString</definition>
-        <argsstring>(std::string_view str, std::vector&lt; std::string_view &gt; &amp;out, std::string_view delim)</argsstring>
-        <name>SplitString</name>
-        <qualifiedname>Bvr::SplitString</qualifiedname>
-        <param>
-          <type>std::string_view</type>
-          <declname>str</declname>
-        </param>
-        <param>
-          <type>std::vector&lt; std::string_view &gt; &amp;</type>
-          <declname>out</declname>
-        </param>
-        <param>
-          <type>std::string_view</type>
-          <declname>delim</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/StringHelpers.hpp" line="22" column="13" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/StringHelpers.hpp" bodystart="22" bodyend="34"/>
-      </memberdef>
-      <memberdef kind="function" id="_string_hash_8hpp_1aec4b3ad985d35c99025d4196131df035" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type></type>
-        <definition>Bvr::TBasicHashedString</definition>
-        <argsstring>(const char *) -&gt; TBasicHashedString&lt; char &gt;</argsstring>
-        <name>TBasicHashedString</name>
-        <qualifiedname>Bvr::TBasicHashedString</qualifiedname>
-        <param>
-          <type>const char *</type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/StringHash.hpp" line="131" column="1" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/StringHash.hpp" declline="131" declcolumn="1"/>
-      </memberdef>
-      <memberdef kind="function" id="_string_hash_8hpp_1a49f75f1d81e74361d0aef55008c64c69" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type></type>
-        <definition>Bvr::TBasicHashedString</definition>
-        <argsstring>(const wchar_t *) -&gt; TBasicHashedString&lt; wchar_t &gt;</argsstring>
-        <name>TBasicHashedString</name>
-        <qualifiedname>Bvr::TBasicHashedString</qualifiedname>
-        <param>
-          <type>const wchar_t *</type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/StringHash.hpp" line="132" column="1" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/StringHash.hpp" declline="132" declcolumn="1"/>
-      </memberdef>
-      <memberdef kind="function" id="_string_hash_8hpp_1a0349eda3118342a5c710b65ae0f7acb7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>typename Char</type>
-          </param>
-        </templateparamlist>
-        <type></type>
-        <definition>Bvr::TBasicHashedString</definition>
-        <argsstring>(std::basic_string_view&lt; Char &gt;) -&gt; TBasicHashedString&lt; std::basic_string_view&lt; Char &gt; &gt;</argsstring>
-        <name>TBasicHashedString</name>
-        <qualifiedname>Bvr::TBasicHashedString</qualifiedname>
-        <param>
-          <type>std::basic_string_view&lt; Char &gt;</type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/StringHash.hpp" line="134" column="1" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/StringHash.hpp" declline="134" declcolumn="1"/>
-      </memberdef>
-      <memberdef kind="function" id="_string_hash_8hpp_1a50813f2ddc0d9a6d814c62cab8053fc5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>typename Char</type>
-          </param>
-        </templateparamlist>
-        <type></type>
-        <definition>Bvr::TBasicHashedString</definition>
-        <argsstring>(std::basic_string&lt; Char &gt;) -&gt; TBasicHashedString&lt; std::basic_string_view&lt; Char &gt; &gt;</argsstring>
-        <name>TBasicHashedString</name>
-        <qualifiedname>Bvr::TBasicHashedString</qualifiedname>
-        <param>
-          <type>std::basic_string&lt; Char &gt;</type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/StringHash.hpp" line="137" column="1" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/StringHash.hpp" declline="137" declcolumn="1"/>
-      </memberdef>
-      <memberdef kind="function" id="_string_hash_8hpp_1ad60ecc78d2009481f56b00891a2ce2fb" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
-        <type>constexpr <ref refid="class_bvr_1_1_t_basic_hashed_string" kindref="compound">HashedString</ref></type>
-        <definition>constexpr HashedString Bvr::operator&quot;&quot;_h</definition>
-        <argsstring>(const char *pStr, std::size_t) noexcept</argsstring>
-        <name>operator&quot;&quot;_h</name>
-        <qualifiedname>Bvr::operator&quot;&quot;_h</qualifiedname>
-        <param>
-          <type>const char *</type>
-          <declname>pStr</declname>
-        </param>
-        <param>
-          <type>std::size_t</type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/StringHash.hpp" line="143" column="25" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/StringHash.hpp" bodystart="143" bodyend="146"/>
-      </memberdef>
-      <memberdef kind="function" id="_string_hash_8hpp_1a22a427200a4720ae18a95ebaa4fda6b7" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
-        <type>constexpr <ref refid="class_bvr_1_1_t_basic_hashed_string" kindref="compound">HashedWString</ref></type>
-        <definition>constexpr HashedWString Bvr::operator&quot;&quot;_h</definition>
-        <argsstring>(const wchar_t *pStr, std::size_t) noexcept</argsstring>
-        <name>operator&quot;&quot;_h</name>
-        <qualifiedname>Bvr::operator&quot;&quot;_h</qualifiedname>
-        <param>
-          <type>const wchar_t *</type>
-          <declname>pStr</declname>
-        </param>
-        <param>
-          <type>std::size_t</type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/StringHash.hpp" line="148" column="26" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/StringHash.hpp" bodystart="148" bodyend="151"/>
       </memberdef>
       <memberdef kind="function" id="_dependency_graph_8hpp_1aacd9f99190a0a088ada03b281e89a8b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -4928,6 +4360,575 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/Enums.hpp" line="26" column="25" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Meta/Enums.hpp" bodystart="26" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="_string_helpers_8hpp_1a90121808ac9817a2e1d84896da588b06" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int Bvr::stricmp</definition>
+        <argsstring>(const char *a, const char *b)</argsstring>
+        <name>stricmp</name>
+        <qualifiedname>Bvr::stricmp</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/StringHelpers.hpp" line="5" column="12" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/StringHelpers.hpp" bodystart="5" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="_string_helpers_8hpp_1ae1862dd9c2f4de53c51149c572afc13e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int Bvr::strnicmp</definition>
+        <argsstring>(const char *a, const char *b, const size_t count)</argsstring>
+        <name>strnicmp</name>
+        <qualifiedname>Bvr::strnicmp</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>const size_t</type>
+          <declname>count</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/StringHelpers.hpp" line="13" column="12" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/StringHelpers.hpp" bodystart="13" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="_string_helpers_8hpp_1ab882b56a564db1208d60a49e26452fb3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bvr::SplitString</definition>
+        <argsstring>(std::string_view str, std::vector&lt; std::string_view &gt; &amp;out, std::string_view delim)</argsstring>
+        <name>SplitString</name>
+        <qualifiedname>Bvr::SplitString</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; std::string_view &gt; &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>delim</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/StringHelpers.hpp" line="22" column="13" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/StringHelpers.hpp" bodystart="22" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="_string_hash_8hpp_1aec4b3ad985d35c99025d4196131df035" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Bvr::TBasicHashedString</definition>
+        <argsstring>(const char *) -&gt; TBasicHashedString&lt; char &gt;</argsstring>
+        <name>TBasicHashedString</name>
+        <qualifiedname>Bvr::TBasicHashedString</qualifiedname>
+        <param>
+          <type>const char *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/StringHash.hpp" line="131" column="1" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/StringHash.hpp" declline="131" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_string_hash_8hpp_1a49f75f1d81e74361d0aef55008c64c69" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Bvr::TBasicHashedString</definition>
+        <argsstring>(const wchar_t *) -&gt; TBasicHashedString&lt; wchar_t &gt;</argsstring>
+        <name>TBasicHashedString</name>
+        <qualifiedname>Bvr::TBasicHashedString</qualifiedname>
+        <param>
+          <type>const wchar_t *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/StringHash.hpp" line="132" column="1" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/StringHash.hpp" declline="132" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_string_hash_8hpp_1a0349eda3118342a5c710b65ae0f7acb7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Char</type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>Bvr::TBasicHashedString</definition>
+        <argsstring>(std::basic_string_view&lt; Char &gt;) -&gt; TBasicHashedString&lt; std::basic_string_view&lt; Char &gt; &gt;</argsstring>
+        <name>TBasicHashedString</name>
+        <qualifiedname>Bvr::TBasicHashedString</qualifiedname>
+        <param>
+          <type>std::basic_string_view&lt; Char &gt;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/StringHash.hpp" line="134" column="1" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/StringHash.hpp" declline="134" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_string_hash_8hpp_1a50813f2ddc0d9a6d814c62cab8053fc5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Char</type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>Bvr::TBasicHashedString</definition>
+        <argsstring>(std::basic_string&lt; Char &gt;) -&gt; TBasicHashedString&lt; std::basic_string_view&lt; Char &gt; &gt;</argsstring>
+        <name>TBasicHashedString</name>
+        <qualifiedname>Bvr::TBasicHashedString</qualifiedname>
+        <param>
+          <type>std::basic_string&lt; Char &gt;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/StringHash.hpp" line="137" column="1" declfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/StringHash.hpp" declline="137" declcolumn="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_string_hash_8hpp_1ad60ecc78d2009481f56b00891a2ce2fb" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>constexpr <ref refid="class_bvr_1_1_t_basic_hashed_string" kindref="compound">HashedString</ref></type>
+        <definition>constexpr HashedString Bvr::operator&quot;&quot;_h</definition>
+        <argsstring>(const char *pStr, std::size_t) noexcept</argsstring>
+        <name>operator&quot;&quot;_h</name>
+        <qualifiedname>Bvr::operator&quot;&quot;_h</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>pStr</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/StringHash.hpp" line="143" column="25" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/StringHash.hpp" bodystart="143" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="_string_hash_8hpp_1a22a427200a4720ae18a95ebaa4fda6b7" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>constexpr <ref refid="class_bvr_1_1_t_basic_hashed_string" kindref="compound">HashedWString</ref></type>
+        <definition>constexpr HashedWString Bvr::operator&quot;&quot;_h</definition>
+        <argsstring>(const wchar_t *pStr, std::size_t) noexcept</argsstring>
+        <name>operator&quot;&quot;_h</name>
+        <qualifiedname>Bvr::operator&quot;&quot;_h</qualifiedname>
+        <param>
+          <type>const wchar_t *</type>
+          <declname>pStr</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/StringHash.hpp" line="148" column="26" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/StringHash.hpp" bodystart="148" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="_breadcrumbs_2_utils_8hpp_1aba1fddc18cb83a66d6c13c427c5951b4" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>size_t</type>
+            <declname>N</declname>
+            <defname>N</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr size_t</type>
+        <definition>static constexpr size_t Bvr::ArraySize</definition>
+        <argsstring>(T(&amp;)[N])</argsstring>
+        <name>ArraySize</name>
+        <qualifiedname>Bvr::ArraySize</qualifiedname>
+        <param>
+          <type>T(&amp;)</type>
+          <array>[N]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/Utils.hpp" line="36" column="39" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/Utils.hpp" bodystart="36" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="_breadcrumbs_2_utils_8hpp_1a31fbc1b18595470f2db45061a093f5ed" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>constexpr T</type>
+        <definition>constexpr T Bvr::Align</definition>
+        <argsstring>(const T val, const std::size_t alignment) noexcept</argsstring>
+        <name>Align</name>
+        <qualifiedname>Bvr::Align</qualifiedname>
+        <param>
+          <type>const T</type>
+          <declname>val</declname>
+        </param>
+        <param>
+          <type>const std::size_t</type>
+          <declname>alignment</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/Utils.hpp" line="41" column="21" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/Utils.hpp" bodystart="41" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="_breadcrumbs_2_utils_8hpp_1a20928d8e4fc7e94477709b5d1ab653e9" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>constexpr T</type>
+        <definition>constexpr T Bvr::Align</definition>
+        <argsstring>(const T val, const std::size_t alignment) noexcept</argsstring>
+        <name>Align</name>
+        <qualifiedname>Bvr::Align</qualifiedname>
+        <param>
+          <type>const T</type>
+          <declname>val</declname>
+        </param>
+        <param>
+          <type>const std::size_t</type>
+          <declname>alignment</declname>
+        </param>
+    <requiresclause>std::is_pointer_v&lt;T&gt;    </requiresclause>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/Utils.hpp" line="49" column="21" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/Utils.hpp" bodystart="49" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="_breadcrumbs_2_utils_8hpp_1a5b5d64252e86e52d48e903f94ab328c4" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>constexpr bool</type>
+        <definition>constexpr bool Bvr::IsAligned</definition>
+        <argsstring>(const T val, const std::size_t alignment) noexcept</argsstring>
+        <name>IsAligned</name>
+        <qualifiedname>Bvr::IsAligned</qualifiedname>
+        <param>
+          <type>const T</type>
+          <declname>val</declname>
+        </param>
+        <param>
+          <type>const std::size_t</type>
+          <declname>alignment</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/Utils.hpp" line="57" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/Utils.hpp" bodystart="57" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="_breadcrumbs_2_utils_8hpp_1ae4da0ecc6a1850b7e500f4907f02c9ab" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>constexpr bool</type>
+        <definition>constexpr bool Bvr::IsAligned</definition>
+        <argsstring>(const T val, const std::size_t alignment) noexcept</argsstring>
+        <name>IsAligned</name>
+        <qualifiedname>Bvr::IsAligned</qualifiedname>
+        <param>
+          <type>const T</type>
+          <declname>val</declname>
+        </param>
+        <param>
+          <type>const std::size_t</type>
+          <declname>alignment</declname>
+        </param>
+    <requiresclause>std::is_pointer_v&lt;T&gt;    </requiresclause>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/Utils.hpp" line="63" column="24" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/Utils.hpp" bodystart="63" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="_breadcrumbs_2_utils_8hpp_1aadf567cc17cb19f0406b504c8e7274a5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint8</type>
+        <definition>uint8 Bvr::Log2</definition>
+        <argsstring>(const uint32 val)</argsstring>
+        <name>Log2</name>
+        <qualifiedname>Bvr::Log2</qualifiedname>
+        <param>
+          <type>const uint32</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/Utils.hpp" line="68" column="15" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/Utils.hpp" bodystart="68" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="_breadcrumbs_2_utils_8hpp_1a1b33205d71dfcae14adb070fbcd79993" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T Bvr::AlignPowerOf2</definition>
+        <argsstring>(const T val)</argsstring>
+        <name>AlignPowerOf2</name>
+        <qualifiedname>Bvr::AlignPowerOf2</qualifiedname>
+        <param>
+          <type>const T</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/Utils.hpp" line="79" column="23" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/Utils.hpp" bodystart="79" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="_breadcrumbs_2_utils_8hpp_1ac531c003713a5831b1542fe23487b050" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr uint32</type>
+        <definition>constexpr uint32 Bvr::NextPow2</definition>
+        <argsstring>(uint32 v)</argsstring>
+        <name>NextPow2</name>
+        <qualifiedname>Bvr::NextPow2</qualifiedname>
+        <param>
+          <type>uint32</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/Utils.hpp" line="83" column="26" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/Utils.hpp" bodystart="83" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="_breadcrumbs_2_utils_8hpp_1a1885330091e7de6038fcbf89c1855add" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void Bvr::ForEachBit</definition>
+        <argsstring>(uint32 value, const T &amp;func)</argsstring>
+        <name>ForEachBit</name>
+        <qualifiedname>Bvr::ForEachBit</qualifiedname>
+        <param>
+          <type>uint32</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>const T &amp;</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/Utils.hpp" line="93" column="25" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/Utils.hpp" bodystart="93" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="_breadcrumbs_2_utils_8hpp_1a799a0dba9a99cc845774806d27fd9c0b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void Bvr::ForEachBitRange</definition>
+        <argsstring>(uint32 value, const T &amp;func)</argsstring>
+        <name>ForEachBitRange</name>
+        <qualifiedname>Bvr::ForEachBitRange</qualifiedname>
+        <param>
+          <type>uint32</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>const T &amp;</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/Utils.hpp" line="101" column="25" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/Utils.hpp" bodystart="101" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="_breadcrumbs_2_utils_8hpp_1a363f93394e9bf00a8b293125396e6e85" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool Bvr::IsBitSet</definition>
+        <argsstring>(uint32 value, int bit)</argsstring>
+        <name>IsBitSet</name>
+        <qualifiedname>Bvr::IsBitSet</qualifiedname>
+        <param>
+          <type>uint32</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>bit</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/Utils.hpp" line="118" column="24" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/Utils.hpp" bodystart="118" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="_breadcrumbs_2_utils_8hpp_1ab669f0e0a7c359763fadf987fbfaeb19" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>constexpr bool</type>
+        <definition>constexpr bool Bvr::IsFlagSet</definition>
+        <argsstring>(T value, T bit)</argsstring>
+        <name>IsFlagSet</name>
+        <qualifiedname>Bvr::IsFlagSet</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>bit</declname>
+        </param>
+    <requiresclause>std::is_enum_v&lt;T&gt;    </requiresclause>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/Utils.hpp" line="124" column="24" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/Utils.hpp" bodystart="124" bodyend="126"/>
+      </memberdef>
+      <memberdef kind="function" id="_breadcrumbs_2_utils_8hpp_1a93f9102e69afb58533b160708024dd93" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T Bvr::RemoveFlag</definition>
+        <argsstring>(T value, T bit)</argsstring>
+        <name>RemoveFlag</name>
+        <qualifiedname>Bvr::RemoveFlag</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>bit</declname>
+        </param>
+    <requiresclause>std::is_enum_v&lt;T&gt;    </requiresclause>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/Utils.hpp" line="130" column="4" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/Utils.hpp" bodystart="130" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="_breadcrumbs_2_utils_8hpp_1a3fbac920fbcaac0bffe980bfcc9db291" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void Bvr::ZeroStruct</definition>
+        <argsstring>(T &amp;t)</argsstring>
+        <name>ZeroStruct</name>
+        <qualifiedname>Bvr::ZeroStruct</qualifiedname>
+        <param>
+          <type>T &amp;</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/Utils.hpp" line="134" column="25" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/Utils.hpp" bodystart="134" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="_breadcrumbs_2_utils_8hpp_1a8679361ce49ae1de2941f253abcd1125" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void Bvr::SAFE_DELETE</definition>
+        <argsstring>(T &amp;obj)</argsstring>
+        <name>SAFE_DELETE</name>
+        <qualifiedname>Bvr::SAFE_DELETE</qualifiedname>
+        <param>
+          <type>T &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/Utils.hpp" line="158" column="25" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Breadcrumbs/Utils.hpp" bodystart="158" bodyend="162"/>
       </memberdef>
       <memberdef kind="function" id="_i_editor_command_8hpp_1af85bd3a119492e98d43a040859560835" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::shared_ptr&lt; <ref refid="struct_bvr_1_1_i_undo_transaction" kindref="compound">IUndoTransaction</ref> &gt; BVREDITOR_API</type>

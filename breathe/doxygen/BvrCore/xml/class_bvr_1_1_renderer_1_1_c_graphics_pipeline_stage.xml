@@ -3,6 +3,8 @@
   <compounddef id="class_bvr_1_1_renderer_1_1_c_graphics_pipeline_stage" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>Bvr::Renderer::CGraphicsPipelineStage</compoundname>
     <basecompoundref refid="struct_bvr_1_1_i_graph_node" prot="public" virt="non-virtual">Bvr::IGraphNode&lt; TStageLabel &gt;</basecompoundref>
+    <derivedcompoundref refid="class_bvr_1_1_ocean_1_1_c_ocean_render_stage" prot="public" virt="non-virtual">Bvr::Ocean::COceanRenderStage</derivedcompoundref>
+    <derivedcompoundref refid="class_bvr_1_1_ocean_1_1_c_ocean_simulation_stage" prot="public" virt="non-virtual">Bvr::Ocean::COceanSimulationStage</derivedcompoundref>
     <derivedcompoundref refid="class_bvr_1_1_renderer_1_1_c_bloom_stage" prot="public" virt="non-virtual">Bvr::Renderer::CBloomStage</derivedcompoundref>
     <derivedcompoundref refid="class_bvr_1_1_renderer_1_1_c_cull_pass" prot="public" virt="non-virtual">Bvr::Renderer::CCullPass</derivedcompoundref>
     <derivedcompoundref refid="class_bvr_1_1_renderer_1_1_c_decal_stage" prot="public" virt="non-virtual">Bvr::Renderer::CDecalStage</derivedcompoundref>
@@ -167,6 +169,7 @@
         <name>Init</name>
         <qualifiedname>Bvr::Renderer::CGraphicsPipelineStage::Init</qualifiedname>
         <reimplementedby refid="class_bvr_1_1_renderer_1_1_c_sky_stage_1a7732f2b74d44666e4dbc9c65184eb621">Init</reimplementedby>
+        <reimplementedby refid="class_bvr_1_1_ocean_1_1_c_ocean_render_stage_1a8523cbe13f0f0ce12c871dfeb14c0bfa">Init</reimplementedby>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -184,6 +187,7 @@
         <reimplementedby refid="class_bvr_1_1_renderer_1_1_c_sky_generation_1af04cc814fe083bfecdc097efa2171c01">Update</reimplementedby>
         <reimplementedby refid="class_bvr_1_1_renderer_1_1_c_sky_stage_1a368190d0e1cb180d81b871f5f9d54238">Update</reimplementedby>
         <reimplementedby refid="class_bvr_1_1_renderer_1_1_c_shadow_map_pass_1a6e3f0e135bebe00ed5ae4cc40b79e6bb">Update</reimplementedby>
+        <reimplementedby refid="class_bvr_1_1_ocean_1_1_c_ocean_simulation_stage_1acaede4392c8804dabec08a009d11ab6a">Update</reimplementedby>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -245,6 +249,8 @@
         <reimplementedby refid="class_bvr_1_1_renderer_1_1_c_shadow_map_pass_1aa32b1bb206e181c1f296707bdca5e9a7">IsActive</reimplementedby>
         <reimplementedby refid="class_bvr_1_1_renderer_1_1_c_shadow_mask_stage_1a1be5f09dd4a70a5bf99e4cb8c4952438">IsActive</reimplementedby>
         <reimplementedby refid="class_bvr_1_1_renderer_1_1_c_volumetric_clouds_stage_1a5bc2056638e2328b46cc5b9025e30164">IsActive</reimplementedby>
+        <reimplementedby refid="class_bvr_1_1_ocean_1_1_c_ocean_simulation_stage_1acf39897cd263eb48c1721833012e01c9">IsActive</reimplementedby>
+        <reimplementedby refid="class_bvr_1_1_ocean_1_1_c_ocean_render_stage_1a585c098791f9d7e251990adbb2f809db">IsActive</reimplementedby>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -280,6 +286,8 @@
         <reimplementedby refid="class_bvr_1_1_renderer_1_1_c_restir_g_i_stage_1a1c81c30044a1526271e5fefbf3f96e61">Execute</reimplementedby>
         <reimplementedby refid="class_bvr_1_1_renderer_1_1_c_shadow_map_pass_1a7a4762bcbe6e6757a8fa1fe621296689">Execute</reimplementedby>
         <reimplementedby refid="class_bvr_1_1_renderer_1_1_c_shadow_mask_stage_1a87d19c6386aa437af589a370582d6045">Execute</reimplementedby>
+        <reimplementedby refid="class_bvr_1_1_ocean_1_1_c_ocean_simulation_stage_1a99ea9f96c6ade26ca2278235441be2f1">Execute</reimplementedby>
+        <reimplementedby refid="class_bvr_1_1_ocean_1_1_c_ocean_render_stage_1a3dd258f350b85adbe2d9ed78aff23b54">Execute</reimplementedby>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -473,42 +481,54 @@
     </detaileddescription>
     <inheritancegraph>
       <node id="3">
+        <label>Bvr::Ocean::COceanRenderStage</label>
+        <link refid="class_bvr_1_1_ocean_1_1_c_ocean_render_stage"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Bvr::Ocean::COceanSimulationStage</label>
+        <link refid="class_bvr_1_1_ocean_1_1_c_ocean_simulation_stage"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
         <label>Bvr::Renderer::CBloomStage</label>
         <link refid="class_bvr_1_1_renderer_1_1_c_bloom_stage"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4">
+      <node id="6">
         <label>Bvr::Renderer::CCullPass</label>
         <link refid="class_bvr_1_1_renderer_1_1_c_cull_pass"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5">
+      <node id="7">
         <label>Bvr::Renderer::CDecalStage</label>
         <link refid="class_bvr_1_1_renderer_1_1_c_decal_stage"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6">
+      <node id="8">
         <label>Bvr::Renderer::CDepthStage</label>
         <link refid="class_bvr_1_1_renderer_1_1_c_depth_stage"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="7">
+      <node id="9">
         <label>Bvr::Renderer::CFogStage</label>
         <link refid="class_bvr_1_1_renderer_1_1_c_fog_stage"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="8">
+      <node id="10">
         <label>Bvr::Renderer::CForwardPass</label>
         <link refid="class_bvr_1_1_renderer_1_1_c_forward_pass"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="9">
+      <node id="11">
         <label>Bvr::Renderer::CGBufferPass</label>
         <link refid="class_bvr_1_1_renderer_1_1_c_g_buffer_pass"/>
         <childnode refid="1" relation="public-inheritance">
@@ -520,85 +540,85 @@
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="10">
+      <node id="12">
         <label>Bvr::Renderer::CHUDPass</label>
         <link refid="class_bvr_1_1_renderer_1_1_c_h_u_d_pass"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="11">
+      <node id="13">
         <label>Bvr::Renderer::CLightClusteringStage</label>
         <link refid="class_bvr_1_1_renderer_1_1_c_light_clustering_stage"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="12">
+      <node id="14">
         <label>Bvr::Renderer::CLightingStage</label>
         <link refid="class_bvr_1_1_renderer_1_1_c_lighting_stage"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="13">
+      <node id="15">
         <label>Bvr::Renderer::CListUploadPass</label>
         <link refid="class_bvr_1_1_renderer_1_1_c_list_upload_pass"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="14">
+      <node id="16">
         <label>Bvr::Renderer::CPostEffectsPass</label>
         <link refid="class_bvr_1_1_renderer_1_1_c_post_effects_pass"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="15">
+      <node id="17">
         <label>Bvr::Renderer::CRaytracingStage</label>
         <link refid="class_bvr_1_1_renderer_1_1_c_raytracing_stage"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="16">
+      <node id="18">
         <label>Bvr::Renderer::CRestirGIStage</label>
         <link refid="class_bvr_1_1_renderer_1_1_c_restir_g_i_stage"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="17">
+      <node id="19">
         <label>Bvr::Renderer::CSSAOStage</label>
         <link refid="class_bvr_1_1_renderer_1_1_c_s_s_a_o_stage"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="18">
+      <node id="20">
         <label>Bvr::Renderer::CShadowMapPass</label>
         <link refid="class_bvr_1_1_renderer_1_1_c_shadow_map_pass"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="19">
+      <node id="21">
         <label>Bvr::Renderer::CShadowMaskStage</label>
         <link refid="class_bvr_1_1_renderer_1_1_c_shadow_mask_stage"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="20">
+      <node id="22">
         <label>Bvr::Renderer::CSkyGeneration</label>
         <link refid="class_bvr_1_1_renderer_1_1_c_sky_generation"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="21">
+      <node id="23">
         <label>Bvr::Renderer::CSkyStage</label>
         <link refid="class_bvr_1_1_renderer_1_1_c_sky_stage"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="22">
+      <node id="24">
         <label>Bvr::Renderer::CSortPass</label>
         <link refid="class_bvr_1_1_renderer_1_1_c_sort_pass"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="23">
+      <node id="25">
         <label>Bvr::Renderer::CVolumetricCloudsStage</label>
         <link refid="class_bvr_1_1_renderer_1_1_c_volumetric_clouds_stage"/>
         <childnode refid="1" relation="public-inheritance">

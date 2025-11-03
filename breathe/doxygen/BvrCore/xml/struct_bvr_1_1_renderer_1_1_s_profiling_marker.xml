@@ -2,6 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="struct_bvr_1_1_renderer_1_1_s_profiling_marker" kind="struct" language="C++" prot="public">
     <compoundname>Bvr::Renderer::SProfilingMarker</compoundname>
+    <basecompoundref refid="struct_bvr_1_1_util_1_1_intrusive_list_enabled" prot="public" virt="non-virtual">Bvr::Util::IntrusiveListEnabled&lt; SProfilingMarker &gt;</basecompoundref>
     <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="struct_bvr_1_1_renderer_1_1_s_profiling_marker_1a47fe0b34f389801fc95bb1ab8bee144b" prot="public" static="no" mutable="no">
         <type>std::pair&lt; uint64, uint64 &gt;</type>
@@ -15,11 +16,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/PipelineProfiler.hpp" line="16" column="15" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/PipelineProfiler.hpp" bodystart="16" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/PipelineProfiler.hpp" line="20" column="27" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/PipelineProfiler.hpp" bodystart="20" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="struct_bvr_1_1_renderer_1_1_s_profiling_marker_1a3765fe989cf5152076cf5f44a37e7f40" prot="public" static="no" mutable="no">
-        <type>std::string</type>
-        <definition>std::string Bvr::Renderer::SProfilingMarker::name</definition>
+      <memberdef kind="variable" id="struct_bvr_1_1_renderer_1_1_s_profiling_marker_1a086b7bc4faf83da71a8df3df746901da" prot="public" static="no" mutable="no">
+        <type>std::string_view</type>
+        <definition>std::string_view Bvr::Renderer::SProfilingMarker::name</definition>
         <argsstring></argsstring>
         <name>name</name>
         <qualifiedname>Bvr::Renderer::SProfilingMarker::name</qualifiedname>
@@ -29,27 +30,56 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/PipelineProfiler.hpp" line="17" column="31" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/PipelineProfiler.hpp" bodystart="17" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/PipelineProfiler.hpp" line="21" column="43" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/PipelineProfiler.hpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_bvr_1_1_renderer_1_1_s_profiling_marker_1a73adf09cdd05846b8d180817461c193b" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_bvr_1_1_renderer_1_1_s_profiling_marker" kindref="compound">SProfilingMarker</ref> *</type>
+        <definition>SProfilingMarker* Bvr::Renderer::SProfilingMarker::m_parent</definition>
+        <argsstring></argsstring>
+        <name>m_parent</name>
+        <qualifiedname>Bvr::Renderer::SProfilingMarker::m_parent</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/PipelineProfiler.hpp" line="22" column="42" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/PipelineProfiler.hpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_bvr_1_1_renderer_1_1_s_profiling_marker_1afc9b3428325281340d2100f8c150a431" prot="public" static="no" mutable="no">
+        <type><ref refid="class_bvr_1_1_util_1_1_intrusive_list" kindref="compound">Util::IntrusiveList</ref>&lt; <ref refid="struct_bvr_1_1_renderer_1_1_s_profiling_marker" kindref="compound">SProfilingMarker</ref> &gt;</type>
+        <definition>Util::IntrusiveList&lt;SProfilingMarker&gt; Bvr::Renderer::SProfilingMarker::m_children</definition>
+        <argsstring></argsstring>
+        <name>m_children</name>
+        <qualifiedname>Bvr::Renderer::SProfilingMarker::m_children</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/PipelineProfiler.hpp" line="23" column="25" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/PipelineProfiler.hpp" bodystart="23" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="struct_bvr_1_1_renderer_1_1_s_profiling_marker_1ad138abd5e9335524d638e847a71a2ccd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="struct_bvr_1_1_renderer_1_1_s_profiling_marker_1af6da52bc8d5a25ffedf4a07542426d0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>Bvr::Renderer::SProfilingMarker::SProfilingMarker</definition>
-        <argsstring>(const char *pName, const uint64 startQuery, const uint64 endQuery)</argsstring>
+        <argsstring>(std::string_view n, SProfilingMarker *pParent, const uint64 startQuery)</argsstring>
         <name>SProfilingMarker</name>
         <qualifiedname>Bvr::Renderer::SProfilingMarker::SProfilingMarker</qualifiedname>
         <param>
-          <type>const char *</type>
-          <declname>pName</declname>
+          <type>std::string_view</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_bvr_1_1_renderer_1_1_s_profiling_marker" kindref="compound">SProfilingMarker</ref> *</type>
+          <declname>pParent</declname>
         </param>
         <param>
           <type>const uint64</type>
           <declname>startQuery</declname>
-        </param>
-        <param>
-          <type>const uint64</type>
-          <declname>endQuery</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -57,7 +87,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/PipelineProfiler.hpp" line="12" column="5" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/PipelineProfiler.hpp" bodystart="12" bodyend="14"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/PipelineProfiler.hpp" line="14" column="5"/>
       </memberdef>
       <memberdef kind="function" id="struct_bvr_1_1_renderer_1_1_s_profiling_marker_1ada0b600b4cd96f6ee45bb20f2477e2ca" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -75,7 +105,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/PipelineProfiler.hpp" line="19" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/PipelineProfiler.hpp" bodystart="19" bodyend="19"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/PipelineProfiler.hpp" line="17" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/PipelineProfiler.hpp" bodystart="17" bodyend="17"/>
       </memberdef>
       <memberdef kind="function" id="struct_bvr_1_1_renderer_1_1_s_profiling_marker_1a1c36dfaea7ef99300ece6de8254496f4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -93,20 +123,62 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/PipelineProfiler.hpp" line="20" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/PipelineProfiler.hpp" bodystart="20" bodyend="20"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/PipelineProfiler.hpp" line="18" column="10" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/PipelineProfiler.hpp" bodystart="18" bodyend="18"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/PipelineProfiler.hpp" line="11" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/PipelineProfiler.hpp" bodystart="11" bodyend="21"/>
+    <inheritancegraph>
+      <node id="1">
+        <label>Bvr::Renderer::SProfilingMarker</label>
+        <link refid="struct_bvr_1_1_renderer_1_1_s_profiling_marker"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Bvr::Util::IntrusiveListEnabled&lt; SProfilingMarker &gt;</label>
+        <link refid="struct_bvr_1_1_util_1_1_intrusive_list_enabled"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>Bvr::Renderer::SProfilingMarker</label>
+        <link refid="struct_bvr_1_1_renderer_1_1_s_profiling_marker"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1" relation="usage">
+          <edgelabel>m_parent</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_children</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Bvr::Util::IntrusiveList&lt; Bvr::Renderer::SProfilingMarker &gt;</label>
+        <link refid="class_bvr_1_1_util_1_1_intrusive_list"/>
+      </node>
+      <node id="2">
+        <label>Bvr::Util::IntrusiveListEnabled&lt; SProfilingMarker &gt;</label>
+        <link refid="struct_bvr_1_1_util_1_1_intrusive_list_enabled"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>next</edgelabel>
+          <edgelabel>prev</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/PipelineProfiler.hpp" line="13" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/PipelineProfiler.hpp" bodystart="13" bodyend="24"/>
     <listofallmembers>
-      <member refid="struct_bvr_1_1_renderer_1_1_s_profiling_marker_1a3765fe989cf5152076cf5f44a37e7f40" prot="public" virt="non-virtual"><scope>Bvr::Renderer::SProfilingMarker</scope><name>name</name></member>
+      <member refid="struct_bvr_1_1_renderer_1_1_s_profiling_marker_1afc9b3428325281340d2100f8c150a431" prot="public" virt="non-virtual"><scope>Bvr::Renderer::SProfilingMarker</scope><name>m_children</name></member>
+      <member refid="struct_bvr_1_1_renderer_1_1_s_profiling_marker_1a73adf09cdd05846b8d180817461c193b" prot="public" virt="non-virtual"><scope>Bvr::Renderer::SProfilingMarker</scope><name>m_parent</name></member>
+      <member refid="struct_bvr_1_1_renderer_1_1_s_profiling_marker_1a086b7bc4faf83da71a8df3df746901da" prot="public" virt="non-virtual"><scope>Bvr::Renderer::SProfilingMarker</scope><name>name</name></member>
+      <member refid="struct_bvr_1_1_util_1_1_intrusive_list_enabled_1adc7986119897bb6a87dbf928ee9708de" prot="public" virt="non-virtual"><scope>Bvr::Renderer::SProfilingMarker</scope><name>next</name></member>
       <member refid="struct_bvr_1_1_renderer_1_1_s_profiling_marker_1ada0b600b4cd96f6ee45bb20f2477e2ca" prot="public" virt="non-virtual"><scope>Bvr::Renderer::SProfilingMarker</scope><name>operator==</name></member>
       <member refid="struct_bvr_1_1_renderer_1_1_s_profiling_marker_1a1c36dfaea7ef99300ece6de8254496f4" prot="public" virt="non-virtual"><scope>Bvr::Renderer::SProfilingMarker</scope><name>operator==</name></member>
+      <member refid="struct_bvr_1_1_util_1_1_intrusive_list_enabled_1a2de2b34ab5a35debe72be0374aba7b30" prot="public" virt="non-virtual"><scope>Bvr::Renderer::SProfilingMarker</scope><name>prev</name></member>
       <member refid="struct_bvr_1_1_renderer_1_1_s_profiling_marker_1a47fe0b34f389801fc95bb1ab8bee144b" prot="public" virt="non-virtual"><scope>Bvr::Renderer::SProfilingMarker</scope><name>queries</name></member>
-      <member refid="struct_bvr_1_1_renderer_1_1_s_profiling_marker_1ad138abd5e9335524d638e847a71a2ccd" prot="public" virt="non-virtual"><scope>Bvr::Renderer::SProfilingMarker</scope><name>SProfilingMarker</name></member>
+      <member refid="struct_bvr_1_1_renderer_1_1_s_profiling_marker_1af6da52bc8d5a25ffedf4a07542426d0e" prot="public" virt="non-virtual"><scope>Bvr::Renderer::SProfilingMarker</scope><name>SProfilingMarker</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

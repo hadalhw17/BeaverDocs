@@ -3,23 +3,11 @@
   <compounddef id="_span_8hpp" kind="file" language="C++">
     <compoundname>Span.hpp</compoundname>
     <includes local="no">std</includes>
-    <includes refid="_base_types_8hpp" local="yes">BaseTypes.hpp</includes>
+    <includes local="yes">BreadCrumbs/BaseTypes.hpp</includes>
     <includes refid="_assert_8hpp" local="yes">BvrLog/Assert.hpp</includes>
     <includedby refid="_g_p_u_crash_handler_8hpp" local="no">/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Private/GPUCrashHandler.hpp</includedby>
     <includedby refid="_quad_tree_8hpp" local="no">/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrSVG/QuadTree.hpp</includedby>
     <incdepgraph>
-      <node id="3">
-        <label>BaseTypes.hpp</label>
-        <link refid="_base_types_8hpp_source"/>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="2" relation="include">
-        </childnode>
-      </node>
-      <node id="4">
-        <label>Platform/CompilerSettings.hpp</label>
-        <link refid="_compiler_settings_8hpp_source"/>
-      </node>
       <node id="1">
         <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Span.hpp</label>
         <link refid="_span_8hpp"/>
@@ -27,23 +15,26 @@
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="5" relation="include">
+        <childnode refid="4" relation="include">
         </childnode>
       </node>
-      <node id="5">
+      <node id="4">
         <label>BvrLog/Assert.hpp</label>
         <link refid="_assert_8hpp_source"/>
-        <childnode refid="6" relation="include">
+        <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="7" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="7">
-        <label>BvrLogExport.hpp</label>
+      <node id="3">
+        <label>BreadCrumbs/BaseTypes.hpp</label>
       </node>
       <node id="6">
+        <label>BvrLogExport.hpp</label>
+      </node>
+      <node id="5">
         <label>signal.h</label>
       </node>
       <node id="2">
@@ -81,7 +72,7 @@
 <codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>std;</highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>&quot;BaseTypes.hpp&quot;;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>&quot;BreadCrumbs/BaseTypes.hpp&quot;;</highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>&quot;BvrLog/Assert.hpp&quot;;</highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Bvr::Util<sp/>{</highlight></codeline>
@@ -339,36 +330,41 @@
 <codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">TSpan</ref>{data()<sp/>+<sp/>offset,<sp/>count};</highlight></codeline>
 <codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="261"><highlight class="normal"></highlight></codeline>
-<codeline lineno="262"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/>pointer<sp/><sp/><sp/>m_pData<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/>size_type<sp/>m_size<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="265"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">TSpan&lt;uint8 const&gt;</ref><sp/>AsBytes()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">TSpan&lt;uint8 const&gt;</ref>{</highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="normal">uint8<sp/>const*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(data()),</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>size_bytes()};</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="266"><highlight class="normal"></highlight></codeline>
-<codeline lineno="267"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T,<sp/>std::</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>N&gt;</highlight></codeline>
-<codeline lineno="268"><highlight class="normal"><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">TSpan</ref>(T<sp/>(&amp;)[N])<sp/>-&gt;<sp/><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">TSpan&lt;T&gt;</ref>;</highlight></codeline>
-<codeline lineno="269"><highlight class="normal"></highlight></codeline>
-<codeline lineno="270"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;<sp/><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">TSpan</ref>(T*,<sp/>std::size_t)<sp/>-&gt;<sp/><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">TSpan&lt;T&gt;</ref>;</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/>pointer<sp/><sp/><sp/>m_pData<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/>size_type<sp/>m_size<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="270"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="271"><highlight class="normal"></highlight></codeline>
-<codeline lineno="272"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal">...&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Container,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>U&gt;</highlight></codeline>
-<codeline lineno="273"><highlight class="normal"><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">TSpan</ref>(Container&lt;U&gt;&amp;)<sp/>-&gt;<sp/><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">TSpan&lt;U&gt;</ref>;</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T,<sp/>std::</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>N&gt;</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">TSpan</ref>(T<sp/>(&amp;)[N])<sp/>-&gt;<sp/><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">TSpan&lt;T&gt;</ref>;</highlight></codeline>
 <codeline lineno="274"><highlight class="normal"></highlight></codeline>
-<codeline lineno="275"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal">...&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Container,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>U&gt;</highlight></codeline>
-<codeline lineno="276"><highlight class="normal"><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">TSpan</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Container&lt;U&gt;&amp;)<sp/>-&gt;<sp/><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">TSpan&lt;U const&gt;</ref>;</highlight></codeline>
-<codeline lineno="277"><highlight class="normal"></highlight></codeline>
-<codeline lineno="278"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
-<codeline lineno="279"><highlight class="normal"><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">TSpan</ref>(std::initializer_list&lt;T&gt;)<sp/>-&gt;<sp/><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">TSpan&lt;T const&gt;</ref>;</highlight></codeline>
-<codeline lineno="280"><highlight class="normal"></highlight></codeline>
-<codeline lineno="281"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
-<codeline lineno="282"><highlight class="normal"><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">TSpan</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::initializer_list&lt;T&gt;&amp;)<sp/>-&gt;<sp/><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">TSpan&lt;T const&gt;</ref>;</highlight></codeline>
-<codeline lineno="283"><highlight class="normal"></highlight></codeline>
-<codeline lineno="284"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Bvr::Util</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;<sp/><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">TSpan</ref>(T*,<sp/>std::size_t)<sp/>-&gt;<sp/><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">TSpan&lt;T&gt;</ref>;</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal">...&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Container,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>U&gt;</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">TSpan</ref>(Container&lt;U&gt;&amp;)<sp/>-&gt;<sp/><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">TSpan&lt;U&gt;</ref>;</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal">...&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Container,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>U&gt;</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">TSpan</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Container&lt;U&gt;&amp;)<sp/>-&gt;<sp/><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">TSpan&lt;U const&gt;</ref>;</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">TSpan</ref>(std::initializer_list&lt;T&gt;)<sp/>-&gt;<sp/><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">TSpan&lt;T const&gt;</ref>;</highlight></codeline>
 <codeline lineno="285"><highlight class="normal"></highlight></codeline>
-<codeline lineno="286"><highlight class="normal"></highlight><highlight class="comment">//#include<sp/>&lt;span&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="287"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Bvr<sp/>{</highlight></codeline>
-<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
-<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">Span</ref><sp/>=<sp/><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">Util::TSpan&lt;T&gt;</ref>;</highlight></codeline>
-<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//using<sp/>Span<sp/>=<sp/>std::span&lt;T&gt;;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="291"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">TSpan</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::initializer_list&lt;T&gt;&amp;)<sp/>-&gt;<sp/><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">TSpan&lt;T const&gt;</ref>;</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight></codeline>
+<codeline lineno="289"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Bvr::Util</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight><highlight class="comment">//#include<sp/>&lt;span&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Bvr<sp/>{</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">Span</ref><sp/>=<sp/><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">Util::TSpan&lt;T&gt;</ref>;</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//using<sp/>Span<sp/>=<sp/>std::span&lt;T&gt;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrCommon/Utils/Span.hpp"/>
   </compounddef>

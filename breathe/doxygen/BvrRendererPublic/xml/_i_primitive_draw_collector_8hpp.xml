@@ -3,27 +3,15 @@
   <compounddef id="_i_primitive_draw_collector_8hpp" kind="file" language="C++">
     <compoundname>IPrimitiveDrawCollector.hpp</compoundname>
     <includes local="no">Bvr.Math</includes>
-    <includes local="no">Meta/Enums.hpp</includes>
-    <includes local="no">Utils/Span.hpp</includes>
     <incdepgraph>
       <node id="1">
         <label>/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IPrimitiveDrawCollector.hpp</label>
         <link refid="_i_primitive_draw_collector_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
       </node>
       <node id="2">
         <label>Bvr.Math</label>
-      </node>
-      <node id="3">
-        <label>Meta/Enums.hpp</label>
-      </node>
-      <node id="4">
-        <label>Utils/Span.hpp</label>
       </node>
     </incdepgraph>
     <innerclass refid="struct_bvr_1_1_renderer_1_1_i_primitive_draw_collector" prot="public">Bvr::Renderer::IPrimitiveDrawCollector</innerclass>
@@ -35,9 +23,9 @@
     </detaileddescription>
     <programlisting>
 <codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>&lt;Meta/Enums.hpp&gt;;<sp/></highlight><highlight class="comment">//BVR_ENUM_OPERATORS</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>&lt;Utils/Span.hpp&gt;;</highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>Bvr.Math;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>Bvr.Math;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>Bvr.Core;</highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Bvr<sp/>{</highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">CCamera;</highlight></codeline>
@@ -46,9 +34,9 @@
 <codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Bvr::Renderer<sp/>{</highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/>EDebugRenderFlags<sp/>:<sp/>uint8<sp/>{</highlight></codeline>
 <codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>None<sp/>=<sp/>0,</highlight></codeline>
-<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>Is2D<sp/>=<sp/>Bit32(0),</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>Is2D,</highlight></codeline>
 <codeline lineno="14"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="15"><highlight class="normal">BVR_ENUM_OPERATORS(EDebugRenderFlags);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">TDebugRenderFlags<sp/>=<sp/>TFlag&lt;EDebugRenderFlags&gt;;</highlight></codeline>
 <codeline lineno="16"><highlight class="normal"></highlight></codeline>
 <codeline lineno="17" refid="struct_bvr_1_1_renderer_1_1_i_primitive_draw_collector" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bvr_1_1_renderer_1_1_i_primitive_draw_collector" kindref="compound">IPrimitiveDrawCollector</ref><sp/>{</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="struct_bvr_1_1_renderer_1_1_i_primitive_draw_collector" kindref="compound">~IPrimitiveDrawCollector</ref>()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
@@ -68,7 +56,7 @@
 <codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Lines(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Span&lt;float3<sp/>const&gt;&amp;<sp/>positions,</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Span&lt;float4<sp/>const&gt;&amp;<sp/>colours)<sp/><sp/><sp/><sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>PushFlags(EDebugRenderFlags<sp/>flags)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>PushFlags(TDebugRenderFlags<sp/>flags)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>PopFlags()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="37"><highlight class="normal"></highlight></codeline>
 <codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>DrawFrustum(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>CCamera&amp;<sp/>came,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>float4&amp;<sp/>colour)<sp/>=<sp/>0;</highlight></codeline>

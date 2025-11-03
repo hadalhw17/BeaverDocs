@@ -9,10 +9,24 @@
     <includes refid="_asset_handle_8hpp" local="no">IO/AssetHandle.hpp</includes>
     <incdepgraph>
       <node id="6">
-        <label>BaseTypes.hpp</label>
+        <label>Breadcrumbs/BaseTypes.hpp</label>
         <link refid="_base_types_8hpp_source"/>
         <childnode refid="7" relation="include">
         </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>Breadcrumbs/Hash.hpp</label>
+        <link refid="_hash_8hpp_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>Breadcrumbs/StringHash.hpp</label>
+        <link refid="_string_hash_8hpp_source"/>
         <childnode refid="3" relation="include">
         </childnode>
       </node>
@@ -21,11 +35,11 @@
         <link refid="_asset_handle_8hpp_source"/>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
         <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="12" relation="include">
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
         </childnode>
       </node>
       <node id="8">
@@ -42,14 +56,14 @@
         <childnode refid="3" relation="include">
         </childnode>
       </node>
-      <node id="12">
+      <node id="11">
         <label>Meta/TypeInfo.hpp</label>
         <link refid="_type_info_8hpp_source"/>
-        <childnode refid="13" relation="include">
+        <childnode refid="12" relation="include">
         </childnode>
       </node>
       <node id="7">
-        <label>Platform/CompilerSettings.hpp</label>
+        <label>BvrCommon/Platform/CompilerSettings.hpp</label>
         <link refid="_compiler_settings_8hpp_source"/>
       </node>
       <node id="5">
@@ -58,12 +72,6 @@
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
-        </childnode>
-      </node>
-      <node id="13">
-        <label>Utils/StringHash.hpp</label>
-        <link refid="_string_hash_8hpp_source"/>
-        <childnode refid="3" relation="include">
         </childnode>
       </node>
       <node id="1">
@@ -89,9 +97,6 @@
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
-      </node>
-      <node id="11">
-        <label>BvrCommon/Hash.h</label>
       </node>
       <node id="9">
         <label>BvrWorldExport.hpp</label>
@@ -121,50 +126,51 @@
 <codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">CArchiveBase;</highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">IArchiverStream;</highlight></codeline>
 <codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/>EEntityDuplicateFlags<sp/>{</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>None<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0,</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>KeepUUIDs<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>Bit32(0),</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>ForceAddParents<sp/><sp/>=<sp/>Bit32(1),</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>ForceAddChildren<sp/>=<sp/>Bit32(2),</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>ForceAddAll<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>ForceAddParents<sp/>|<sp/>ForceAddChildren,</highlight></codeline>
-<codeline lineno="21"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="22"><highlight class="normal">BVR_ENUM_OPERATORS(EEntityDuplicateFlags);</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight></codeline>
-<codeline lineno="24" refid="struct_bvr_1_1_entity_duplicator" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">BVRWORLD_API<sp/><ref refid="struct_bvr_1_1_entity_duplicator" kindref="compound">EntityDuplicator</ref><sp/>{</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight></codeline>
-<codeline lineno="33" refid="struct_bvr_1_1_entity_duplicator_1acb253e60c5145e0015d0159884a2dc65" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_entity_duplicator_1acb253e60c5145e0015d0159884a2dc65" kindref="member">EntityDuplicator</ref>(<ref refid="class_bvr_1_1_c_world" kindref="compound">CWorld</ref>*<sp/>pWorld,<sp/><ref refid="class_bvr_1_1_t_entity" kindref="compound">TEntity</ref><sp/>hSrc,</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEntityDuplicateFlags<sp/>flags<sp/>=<sp/>EEntityDuplicateFlags::None)</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="struct_bvr_1_1_entity_duplicator" kindref="compound">EntityDuplicator</ref>(pWorld,<sp/>{&amp;hSrc,<sp/>1},<sp/>flags)<sp/>{}</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"></highlight></codeline>
-<codeline lineno="43" refid="struct_bvr_1_1_entity_duplicator_1a30ce0508bcee0c02b7ff2412d47b18de" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_entity_duplicator_1a30ce0508bcee0c02b7ff2412d47b18de" kindref="member">EntityDuplicator</ref>(<ref refid="class_bvr_1_1_c_world" kindref="compound">CWorld</ref>*<sp/>pWorld,<sp/><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">Span&lt;TEntity const&gt;</ref><sp/>srcEntities,</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEntityDuplicateFlags<sp/>flags<sp/>=<sp/>EEntityDuplicateFlags::None)</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="struct_bvr_1_1_entity_duplicator" kindref="compound">EntityDuplicator</ref>(</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pWorld,</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector(std::begin(srcEntities),<sp/>std::end(srcEntities)),</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flags)<sp/>{}</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"></highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_entity_duplicator" kindref="compound">EntityDuplicator</ref>(<ref refid="class_bvr_1_1_c_world" kindref="compound">CWorld</ref>*<sp/>pWorld,<sp/>std::vector&lt;TEntity&gt;&amp;&amp;<sp/>srcEntities,</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEntityDuplicateFlags<sp/>flags<sp/>=<sp/>EEntityDuplicateFlags::None)</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>m_srcEntites{std::move(srcEntities)},<sp/>m_pSrcWorld{pWorld},</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_flags{flags}<sp/>{</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Prepare();</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"></highlight></codeline>
-<codeline lineno="60" refid="struct_bvr_1_1_entity_duplicator_1a88abe2931a34b30db043cb07a34bf562" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;TEntity,<sp/>TEntity&gt;<sp/><ref refid="struct_bvr_1_1_entity_duplicator_1a88abe2931a34b30db043cb07a34bf562" kindref="member">Duplicate</ref>(<ref refid="class_bvr_1_1_c_world" kindref="compound">CWorld</ref>&amp;<sp/>dstWorld)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"></highlight></codeline>
-<codeline lineno="62"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Prepare();</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"></highlight></codeline>
-<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;TEntity&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_srcEntites;</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bvr_1_1_c_world" kindref="compound">CWorld</ref>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_pSrcWorld;</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>EEntityDuplicateFlags<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_flags;</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"></highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;CArchiveBase&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_writer;</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;IArchiverStream&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_readStream;</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;uint64,<sp/>HandleUntyped&gt;<sp/>m_worldAssets;</highlight></codeline>
-<codeline lineno="73"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="74"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Bvr</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>None<sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>KeepUUIDs,</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>ForceAddParents,</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>ForceAddChildren,</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">TEntityDuplicateFlags<sp/>=<sp/>TFlag&lt;EEntityDuplicateFlags&gt;;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>EEntityDumplicateFlagsForceAll<sp/>=</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>TEntityDuplicateFlags{EEntityDuplicateFlags::ForceAddParents,</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EEntityDuplicateFlags::ForceAddChildren};</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="struct_bvr_1_1_entity_duplicator" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">BVRWORLD_API<sp/><ref refid="struct_bvr_1_1_entity_duplicator" kindref="compound">EntityDuplicator</ref><sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_entity_duplicator" kindref="compound">EntityDuplicator</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="34" refid="struct_bvr_1_1_entity_duplicator_1a90eaebe03fa16f3b3373efa123d92585" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_entity_duplicator_1a90eaebe03fa16f3b3373efa123d92585" kindref="member">EntityDuplicator</ref>(<ref refid="class_bvr_1_1_c_world" kindref="compound">CWorld</ref>*<sp/>pWorld,<sp/><ref refid="class_bvr_1_1_t_entity" kindref="compound">TEntity</ref><sp/>hSrc,</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TEntityDuplicateFlags<sp/>flags<sp/>=<sp/>EEntityDuplicateFlags::None)</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="struct_bvr_1_1_entity_duplicator" kindref="compound">EntityDuplicator</ref>(pWorld,<sp/>{&amp;hSrc,<sp/>1},<sp/>flags)<sp/>{}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="struct_bvr_1_1_entity_duplicator_1abbd83f007f07bf72d5e9911901704ebb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_entity_duplicator_1abbd83f007f07bf72d5e9911901704ebb" kindref="member">EntityDuplicator</ref>(<ref refid="class_bvr_1_1_c_world" kindref="compound">CWorld</ref>*<sp/>pWorld,<sp/><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">Span&lt;TEntity const&gt;</ref><sp/>srcEntities,</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TEntityDuplicateFlags<sp/>flags<sp/>=<sp/>EEntityDuplicateFlags::None)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="struct_bvr_1_1_entity_duplicator" kindref="compound">EntityDuplicator</ref>(</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pWorld,</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector(std::begin(srcEntities),<sp/>std::end(srcEntities)),</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flags)<sp/>{}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bvr_1_1_entity_duplicator" kindref="compound">EntityDuplicator</ref>(<ref refid="class_bvr_1_1_c_world" kindref="compound">CWorld</ref>*<sp/>pWorld,<sp/>std::vector&lt;TEntity&gt;&amp;&amp;<sp/>srcEntities,</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TEntityDuplicateFlags<sp/>flags<sp/>=<sp/>EEntityDuplicateFlags::None)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>m_srcEntites{std::move(srcEntities)},<sp/>m_pSrcWorld{pWorld},</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_flags{flags}<sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Prepare();</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="struct_bvr_1_1_entity_duplicator_1a88abe2931a34b30db043cb07a34bf562" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;TEntity,<sp/>TEntity&gt;<sp/><ref refid="struct_bvr_1_1_entity_duplicator_1a88abe2931a34b30db043cb07a34bf562" kindref="member">Duplicate</ref>(<ref refid="class_bvr_1_1_c_world" kindref="compound">CWorld</ref>&amp;<sp/>dstWorld)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Prepare();</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;TEntity&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_srcEntites;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bvr_1_1_c_world" kindref="compound">CWorld</ref>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_pSrcWorld;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>TEntityDuplicateFlags<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_flags;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;CArchiveBase&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_writer;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;IArchiverStream&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_readStream;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;uint64,<sp/>HandleUntyped&gt;<sp/>m_worldAssets;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Bvr</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrWorld/EntityDuplicator.hpp"/>
   </compounddef>

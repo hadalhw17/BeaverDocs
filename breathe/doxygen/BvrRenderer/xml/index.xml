@@ -292,6 +292,7 @@
     <member refid="class_bvr_1_1_renderer_1_1_c_frame_context_1a665d8768d75db672da021b7c06976896" kind="function"><name>AddRenderMesh</name></member>
     <member refid="class_bvr_1_1_renderer_1_1_c_frame_context_1ab46daa6e828c4da9e065612f8e7473ad" kind="function"><name>AddRenderLight</name></member>
     <member refid="class_bvr_1_1_renderer_1_1_c_frame_context_1a5bd3067ca0ab5e84f12b402b58185eac" kind="function"><name>AllocateListsForShadowFrustums</name></member>
+    <member refid="class_bvr_1_1_renderer_1_1_c_frame_context_1abf9532b637d6a1c3279cb8cd2fde7495" kind="function"><name>AllocateDrawExtraBuffer</name></member>
     <member refid="class_bvr_1_1_renderer_1_1_c_frame_context_1a9889f94f71e0eebaae9a56a7084ecea6" kind="function"><name>GetPreviousViewProjection</name></member>
     <member refid="class_bvr_1_1_renderer_1_1_c_frame_context_1a5e99d0265218711ed83ec8cc6c895ba6" kind="function"><name>Clear</name></member>
     <member refid="class_bvr_1_1_renderer_1_1_c_frame_context_1aa664cec089797425ba318060a76068c3" kind="function"><name>UpdateTime</name></member>
@@ -934,18 +935,18 @@
     <member refid="struct_bvr_1_1_renderer_1_1_s_g_p_u_draw_data_1ae9ad141648ec2f1e912d90a90b62176d" kind="variable"><name>inverseTransposeTransform</name></member>
     <member refid="struct_bvr_1_1_renderer_1_1_s_g_p_u_draw_data_1a5411e469e3e1723396c81243db1a5178" kind="variable"><name>minBounds</name></member>
     <member refid="struct_bvr_1_1_renderer_1_1_s_g_p_u_draw_data_1a79ce25332b4450fb342fc56211c411bc" kind="variable"><name>maxBounds</name></member>
-    <member refid="struct_bvr_1_1_renderer_1_1_s_g_p_u_draw_data_1a62bdfef31b99e6e319585f89783f749f" kind="variable"><name>flags</name></member>
+    <member refid="struct_bvr_1_1_renderer_1_1_s_g_p_u_draw_data_1ac726d6dbe57b9af7930dab01c2c0a2b7" kind="variable"><name>flags</name></member>
     <member refid="struct_bvr_1_1_renderer_1_1_s_g_p_u_draw_data_1a10ce52d65ba12334ba60e5f251bc3b18" kind="variable"><name>modelId</name></member>
     <member refid="struct_bvr_1_1_renderer_1_1_s_g_p_u_draw_data_1ae18eda235a7fe8f681d95b78769c1abd" kind="variable"><name>materialId</name></member>
     <member refid="struct_bvr_1_1_renderer_1_1_s_g_p_u_draw_data_1a4a1b1ca7be9fc85a70493d1986639dc4" kind="variable"><name>skinningId</name></member>
     <member refid="struct_bvr_1_1_renderer_1_1_s_g_p_u_draw_data_1a6c37a958f6ed170ec9c8f8df227cd379" kind="variable"><name>extraBuffer</name></member>
+    <member refid="struct_bvr_1_1_renderer_1_1_s_g_p_u_draw_data_1aedb304f4b3d7d71421d34b10d6b8b7eb" kind="variable"><name>drawCustomBuffer</name></member>
     <member refid="struct_bvr_1_1_renderer_1_1_s_g_p_u_draw_data_1afdba4e378fc59c48e10509e5d38ee5a1" kind="variable"><name>indexCount</name></member>
     <member refid="struct_bvr_1_1_renderer_1_1_s_g_p_u_draw_data_1a3f8893451d9bf0676e7875dbc61f9d23" kind="variable"><name>instanceCount</name></member>
     <member refid="struct_bvr_1_1_renderer_1_1_s_g_p_u_draw_data_1a00d400a06d1e1378d99d2e6260ba344b" kind="variable"><name>firstIndex</name></member>
     <member refid="struct_bvr_1_1_renderer_1_1_s_g_p_u_draw_data_1a9b73fe866339ee6fcbd4cc0fe9fee63a" kind="variable"><name>vertexOffset</name></member>
     <member refid="struct_bvr_1_1_renderer_1_1_s_g_p_u_draw_data_1a699c9346b8e0d5d53e97906590e109e2" kind="variable"><name>firstInstance</name></member>
     <member refid="struct_bvr_1_1_renderer_1_1_s_g_p_u_draw_data_1af0a4a7431ae7a9550e842fc56d62e16d" kind="variable"><name>padding0</name></member>
-    <member refid="struct_bvr_1_1_renderer_1_1_s_g_p_u_draw_data_1a27136c8f53953f1721ca696860df4ab8" kind="variable"><name>padding1</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_renderer_1_1_s_g_p_u_model_data" kind="struct"><name>Bvr::Renderer::SGPUModelData</name>
     <member refid="struct_bvr_1_1_renderer_1_1_s_g_p_u_model_data_1af77f30ad525a7d790aa8ff83e78a60d1" kind="variable"><name>singleBuffer</name></member>
@@ -1069,9 +1070,7 @@
   </compound>
   <compound refid="struct_bvr_1_1_renderer_1_1_s_pipeline_profiler_marker_scope" kind="struct"><name>Bvr::Renderer::SPipelineProfilerMarkerScope</name>
     <member refid="struct_bvr_1_1_renderer_1_1_s_pipeline_profiler_marker_scope_1a8714ebf8cce3b683b87fa52ddf8af212" kind="variable"><name>m_pCommandList</name></member>
-    <member refid="struct_bvr_1_1_renderer_1_1_s_pipeline_profiler_marker_scope_1a03d104149aa8bd2408980f061861637c" kind="variable"><name>m_pName</name></member>
-    <member refid="struct_bvr_1_1_renderer_1_1_s_pipeline_profiler_marker_scope_1aeb6c363f29f94a1b282e62d909af3dab" kind="variable"><name>m_startMarker</name></member>
-    <member refid="struct_bvr_1_1_renderer_1_1_s_pipeline_profiler_marker_scope_1a0785f6a3ec0db5216bc988f5ac49c70c" kind="function"><name>SPipelineProfilerMarkerScope</name></member>
+    <member refid="struct_bvr_1_1_renderer_1_1_s_pipeline_profiler_marker_scope_1adcaa8422bd663c7f986ce3878e6f3b94" kind="function"><name>SPipelineProfilerMarkerScope</name></member>
     <member refid="struct_bvr_1_1_renderer_1_1_s_pipeline_profiler_marker_scope_1ad3f180b0b9cbea99f0d5b3e1fa682f20" kind="function"><name>~SPipelineProfilerMarkerScope</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_renderer_1_1_s_profiling_data" kind="struct"><name>Bvr::Renderer::SProfilingData</name>
@@ -1086,7 +1085,10 @@
     <member refid="struct_bvr_1_1_renderer_1_1_s_profiling_data_1ae3f37bb0bbe4d9e57bf909205858e5a0" kind="variable"><name>numIndexStreamsBound</name></member>
     <member refid="struct_bvr_1_1_renderer_1_1_s_profiling_data_1a13e672eb8ce49f1c9f6934cd68e1b5d7" kind="variable"><name>vkQueryPool</name></member>
     <member refid="struct_bvr_1_1_renderer_1_1_s_profiling_data_1adfbe052398b92e8df4cbceb7dc39340a" kind="variable"><name>queriesLeft</name></member>
-    <member refid="struct_bvr_1_1_renderer_1_1_s_profiling_data_1a98de5101d8be9172776d97c4e5d6bda8" kind="variable"><name>m_profilingMarkers</name></member>
+    <member refid="struct_bvr_1_1_renderer_1_1_s_profiling_data_1a97480e2870bcc39087f26a66c0bcfe89" kind="variable"><name>m_totalSections</name></member>
+    <member refid="struct_bvr_1_1_renderer_1_1_s_profiling_data_1aebf861d1a1191ba13bedf3569d556ea4" kind="variable"><name>m_allocator</name></member>
+    <member refid="struct_bvr_1_1_renderer_1_1_s_profiling_data_1a3dbb0c6e542cc04ecdbbb99055f9ef17" kind="variable"><name>m_markers</name></member>
+    <member refid="struct_bvr_1_1_renderer_1_1_s_profiling_data_1a9d9c0178db714ef52662c97041d52507" kind="variable"><name>m_currentMarker</name></member>
     <member refid="struct_bvr_1_1_renderer_1_1_s_profiling_data_1ad9ae086e84473749e412e33f8f91c0af" kind="variable"><name>m_pDevice</name></member>
     <member refid="struct_bvr_1_1_renderer_1_1_s_profiling_data_1a7fe2f4670f6f5ab46e521dc6db2e073f" kind="function"><name>SProfilingData</name></member>
     <member refid="struct_bvr_1_1_renderer_1_1_s_profiling_data_1af9e74ae3c7bacd4d38246eca39537929" kind="function"><name>~SProfilingData</name></member>
@@ -1097,13 +1099,16 @@
     <member refid="struct_bvr_1_1_renderer_1_1_s_profiling_data_1aecd4f2665fae832a52ffec818e10d20f" kind="function"><name>Init</name></member>
     <member refid="struct_bvr_1_1_renderer_1_1_s_profiling_data_1a73600694793ceb8632ae2aa05a81ee89" kind="function"><name>Reset</name></member>
     <member refid="struct_bvr_1_1_renderer_1_1_s_profiling_data_1adab2d06b5110b1027e8c58c14053672f" kind="function"><name>GetTimestamp</name></member>
-    <member refid="struct_bvr_1_1_renderer_1_1_s_profiling_data_1a89dd96976602e91dc56b5ed5549e2545" kind="function"><name>InsertMarker</name></member>
     <member refid="struct_bvr_1_1_renderer_1_1_s_profiling_data_1a533a5d309c0b55b4ac9dda568dff685a" kind="function"><name>DrawPipelineProfiler</name></member>
+    <member refid="struct_bvr_1_1_renderer_1_1_s_profiling_data_1a0f1e893a3d93d5c56b06e8f6556c10df" kind="function"><name>PushSection</name></member>
+    <member refid="struct_bvr_1_1_renderer_1_1_s_profiling_data_1a47e0ebb5254718e346cc433fddbb9be9" kind="function"><name>PopSection</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_renderer_1_1_s_profiling_marker" kind="struct"><name>Bvr::Renderer::SProfilingMarker</name>
     <member refid="struct_bvr_1_1_renderer_1_1_s_profiling_marker_1a47fe0b34f389801fc95bb1ab8bee144b" kind="variable"><name>queries</name></member>
-    <member refid="struct_bvr_1_1_renderer_1_1_s_profiling_marker_1a3765fe989cf5152076cf5f44a37e7f40" kind="variable"><name>name</name></member>
-    <member refid="struct_bvr_1_1_renderer_1_1_s_profiling_marker_1ad138abd5e9335524d638e847a71a2ccd" kind="function"><name>SProfilingMarker</name></member>
+    <member refid="struct_bvr_1_1_renderer_1_1_s_profiling_marker_1a086b7bc4faf83da71a8df3df746901da" kind="variable"><name>name</name></member>
+    <member refid="struct_bvr_1_1_renderer_1_1_s_profiling_marker_1a73adf09cdd05846b8d180817461c193b" kind="variable"><name>m_parent</name></member>
+    <member refid="struct_bvr_1_1_renderer_1_1_s_profiling_marker_1afc9b3428325281340d2100f8c150a431" kind="variable"><name>m_children</name></member>
+    <member refid="struct_bvr_1_1_renderer_1_1_s_profiling_marker_1af6da52bc8d5a25ffedf4a07542426d0e" kind="function"><name>SProfilingMarker</name></member>
     <member refid="struct_bvr_1_1_renderer_1_1_s_profiling_marker_1ada0b600b4cd96f6ee45bb20f2477e2ca" kind="function"><name>operator==</name></member>
     <member refid="struct_bvr_1_1_renderer_1_1_s_profiling_marker_1a1c36dfaea7ef99300ece6de8254496f4" kind="function"><name>operator==</name></member>
   </compound>
@@ -1256,9 +1261,9 @@
     <member refid="_render_list_8hpp_1a79dd3c4425c21378b489b2a4892c165aacf3fb1ff52ea1eed3347ac5401ee7f0c" kind="enumvalue"><name>Ascending</name></member>
     <member refid="_render_list_8hpp_1a79dd3c4425c21378b489b2a4892c165aae3cf5ac19407b1a62c6fccaff675a53b" kind="enumvalue"><name>Descending</name></member>
     <member refid="_render_list_8hpp_1a79dd3c4425c21378b489b2a4892c165aae93f994f01c537c4e2f7d8528c3eb5e9" kind="enumvalue"><name>Count</name></member>
+    <member refid="_g_p_u_pipeline_defs_8hpp_1a878672b7fb97539fa9efdbf12e121f91" kind="typedef"><name>TGPUNodeFlags</name></member>
     <member refid="_g_p_u_pipeline_defs_8hpp_1a0c0acbafd6e2a24b8be6ff3714db2524" kind="typedef"><name>StreamList</name></member>
     <member refid="_render_list_8hpp_1a71ad54cff84129d758aeb6a95eea8b7c" kind="typedef"><name>SGPUSceneNode</name></member>
-    <member refid="_g_p_u_pipeline_defs_8hpp_1aa6420b1dc4f726eb8aa81b7b9a4f76d7" kind="function"><name>BVR_ENUM_OPERATORS</name></member>
     <member refid="_frame_graph_dependency_graph_8hpp_1ab7a07411d12397cb75582ae3f5894c15" kind="function"><name>CollectGraphNodes</name></member>
     <member refid="_frame_graph_dependency_graph_8hpp_1a3154b0723df02ce5ea2ec8ebd261a512" kind="function"><name>ProcessNodeDeps</name></member>
     <member refid="_vulkan_utils_8hpp_1aaa788d8862e1f7116939c59098263624" kind="function"><name>ALIAS_CONSTANT</name></member>

@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="123" column="29" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" bodystart="123" bodyend="-1"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="125" column="29" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" bodystart="125" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="124" column="13"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="126" column="13"/>
       </memberdef>
       <memberdef kind="function" id="struct_bvr_1_1_i_bvr_renderer_1abdd8321edcb96af40f3969171f4fdfca" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type>uint3</type>
@@ -50,7 +50,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="127" column="5"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="129" column="5"/>
       </memberdef>
       <memberdef kind="function" id="struct_bvr_1_1_i_bvr_renderer_1a0f06de0353ffc6d89fb43c06adc2fba6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type>std::string_view</type>
@@ -68,7 +68,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="129" column="32"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="131" column="32"/>
       </memberdef>
       <memberdef kind="function" id="struct_bvr_1_1_i_bvr_renderer_1ae1d6a9edd60de680e31a43718f90299c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type>bool</type>
@@ -90,7 +90,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="130" column="19"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="132" column="19"/>
       </memberdef>
       <memberdef kind="function" id="struct_bvr_1_1_i_bvr_renderer_1a3cb204510e61a7c755547e3ebd7f7abe" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="struct_bvr_1_1_t_handle" kindref="compound">ITexture</ref></type>
@@ -116,25 +116,34 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="133" column="5"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="135" column="5"/>
       </memberdef>
-      <memberdef kind="function" id="struct_bvr_1_1_i_bvr_renderer_1af3cb308e86d507c9fe6a5e4d45cfa21d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+      <memberdef kind="function" id="struct_bvr_1_1_i_bvr_renderer_1ae0dd01374bae11f02a7bc87abdb90b38" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="struct_bvr_1_1_t_handle" kindref="compound">ITexture</ref></type>
         <definition>virtual ITexture Bvr::IBvrRenderer::Create2DTexture</definition>
-        <argsstring>(const char *pName, const uint32 width, uint32 height)=0</argsstring>
+        <argsstring>(std::string_view name, uint32 width, uint32 height, Bvr::Renderer::STextureFormat format, Span&lt; uint8 const &gt; data={})=0</argsstring>
         <name>Create2DTexture</name>
         <qualifiedname>Bvr::IBvrRenderer::Create2DTexture</qualifiedname>
         <param>
-          <type>const char *</type>
-          <declname>pName</declname>
+          <type>std::string_view</type>
+          <declname>name</declname>
         </param>
         <param>
-          <type>const uint32</type>
+          <type>uint32</type>
           <declname>width</declname>
         </param>
         <param>
           <type>uint32</type>
           <declname>height</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_bvr_1_1_renderer_1_1_s_texture_format" kindref="compound">Bvr::Renderer::STextureFormat</ref></type>
+          <declname>format</declname>
+        </param>
+        <param>
+          <type><ref refid="class_bvr_1_1_util_1_1_t_span" kindref="compound">Span</ref>&lt; uint8 const &gt;</type>
+          <declname>data</declname>
+          <defval>{}</defval>
         </param>
         <briefdescription>
         </briefdescription>
@@ -142,7 +151,25 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="136" column="5"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="138" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_bvr_1_1_i_bvr_renderer_1a08cb36ed53e250959cecf637598bb7cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Bvr::IBvrRenderer::ReleaseTexture</definition>
+        <argsstring>(ITexture &amp;hTexture)=0</argsstring>
+        <name>ReleaseTexture</name>
+        <qualifiedname>Bvr::IBvrRenderer::ReleaseTexture</qualifiedname>
+        <param>
+          <type><ref refid="struct_bvr_1_1_t_handle" kindref="compound">ITexture</ref> &amp;</type>
+          <declname>hTexture</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="141" column="18"/>
       </memberdef>
       <memberdef kind="function" id="struct_bvr_1_1_i_bvr_renderer_1a2420ca3cbb19862698a7cc9145d38b00" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="struct_bvr_1_1_i_g_p_u_buffer" kindref="compound">IGPUBuffer</ref> *</type>
@@ -169,7 +196,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="138" column="18"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="143" column="18"/>
       </memberdef>
       <memberdef kind="function" id="struct_bvr_1_1_i_bvr_renderer_1ab239280626d0e0c50a66e5ca21361383" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
@@ -187,7 +214,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="140" column="18"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="145" column="18"/>
       </memberdef>
       <memberdef kind="function" id="struct_bvr_1_1_i_bvr_renderer_1aebda7c5de0c306a3381c7a58c20d04aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
@@ -214,12 +241,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="141" column="18"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="146" column="18"/>
       </memberdef>
-      <memberdef kind="function" id="struct_bvr_1_1_i_bvr_renderer_1a501eef91a0d47c37294826e491bd0b14" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+      <memberdef kind="function" id="struct_bvr_1_1_i_bvr_renderer_1a6f671a40947e596f152cfa9096044949" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
         <definition>virtual void Bvr::IBvrRenderer::ShowProfilingStats</definition>
-        <argsstring>(bool &amp;bShow, const EDebugProfilingStats eStats) const =0</argsstring>
+        <argsstring>(bool &amp;bShow, const TDebugProfilingStats eStats) const =0</argsstring>
         <name>ShowProfilingStats</name>
         <qualifiedname>Bvr::IBvrRenderer::ShowProfilingStats</qualifiedname>
         <param>
@@ -227,7 +254,7 @@
           <declname>bShow</declname>
         </param>
         <param>
-          <type>const EDebugProfilingStats</type>
+          <type>const TDebugProfilingStats</type>
           <declname>eStats</declname>
         </param>
         <briefdescription>
@@ -236,7 +263,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="144" column="5"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="149" column="5"/>
       </memberdef>
       <memberdef kind="function" id="struct_bvr_1_1_i_bvr_renderer_1ab933805c780ad37badea7e84a86beca3" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="struct_bvr_1_1_i_frame_context" kindref="compound">IFrameContext</ref> *</type>
@@ -266,7 +293,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="148" column="5"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="153" column="5"/>
       </memberdef>
       <memberdef kind="function" id="struct_bvr_1_1_i_bvr_renderer_1afb730d591d8291d905612cadffc99070" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>uint32</type>
@@ -284,7 +311,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="153" column="5"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="158" column="5"/>
       </memberdef>
       <memberdef kind="function" id="struct_bvr_1_1_i_bvr_renderer_1ae1c57d3aa42a58b46c7f61ed8e129340" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="struct_bvr_1_1_t_handle" kindref="compound">THandle</ref>&lt; <ref refid="struct_bvr_1_1_renderer_1_1_texture" kindref="compound">Renderer::Texture</ref> &gt;</type>
@@ -302,7 +329,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="155" column="5"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="160" column="5"/>
       </memberdef>
       <memberdef kind="function" id="struct_bvr_1_1_i_bvr_renderer_1a39df8bf60331a3b45226f1028c56797d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="struct_bvr_1_1_t_handle" kindref="compound">THandle</ref>&lt; <ref refid="struct_bvr_1_1_renderer_1_1_image_view" kindref="compound">Renderer::ImageView</ref> &gt;</type>
@@ -336,17 +363,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="157" column="5"/>
+        <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="162" column="5"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="122" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" bodystart="122" bodyend="160"/>
+    <location file="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" line="124" column="1" bodyfile="/home/runner/work/BeaverEngine/BeaverEngine/Beaver/Code/BvrRenderer/Public/BvrRenderer/IBvrRenderer.hpp" bodystart="124" bodyend="165"/>
     <listofallmembers>
       <member refid="struct_bvr_1_1_i_bvr_renderer_1a3cb204510e61a7c755547e3ebd7f7abe" prot="public" virt="pure-virtual"><scope>Bvr::IBvrRenderer</scope><name>Create2DComputeOutputTarget</name></member>
-      <member refid="struct_bvr_1_1_i_bvr_renderer_1af3cb308e86d507c9fe6a5e4d45cfa21d" prot="public" virt="pure-virtual"><scope>Bvr::IBvrRenderer</scope><name>Create2DTexture</name></member>
+      <member refid="struct_bvr_1_1_i_bvr_renderer_1ae0dd01374bae11f02a7bc87abdb90b38" prot="public" virt="pure-virtual"><scope>Bvr::IBvrRenderer</scope><name>Create2DTexture</name></member>
       <member refid="struct_bvr_1_1_i_bvr_renderer_1a2420ca3cbb19862698a7cc9145d38b00" prot="public" virt="pure-virtual"><scope>Bvr::IBvrRenderer</scope><name>CreateBuffer</name></member>
       <member refid="struct_bvr_1_1_i_bvr_renderer_1a39df8bf60331a3b45226f1028c56797d" prot="public" virt="pure-virtual"><scope>Bvr::IBvrRenderer</scope><name>CreateImageView</name></member>
       <member refid="struct_bvr_1_1_i_bvr_renderer_1ae1d6a9edd60de680e31a43718f90299c" prot="public" virt="pure-virtual"><scope>Bvr::IBvrRenderer</scope><name>DownloadTexture</name></member>
@@ -355,10 +382,11 @@
       <member refid="struct_bvr_1_1_i_bvr_renderer_1a0f06de0353ffc6d89fb43c06adc2fba6" prot="public" virt="pure-virtual"><scope>Bvr::IBvrRenderer</scope><name>GetTextureName</name></member>
       <member refid="struct_bvr_1_1_i_bvr_renderer_1a390ccc5863cf46c6e3394eaad3eb67b1" prot="public" virt="non-virtual"><scope>Bvr::IBvrRenderer</scope><name>MAX_FRAMES_IN_FLIGHT</name></member>
       <member refid="struct_bvr_1_1_i_bvr_renderer_1ab239280626d0e0c50a66e5ca21361383" prot="public" virt="pure-virtual"><scope>Bvr::IBvrRenderer</scope><name>ReleaseBuffer</name></member>
+      <member refid="struct_bvr_1_1_i_bvr_renderer_1a08cb36ed53e250959cecf637598bb7cc" prot="public" virt="pure-virtual"><scope>Bvr::IBvrRenderer</scope><name>ReleaseTexture</name></member>
       <member refid="struct_bvr_1_1_i_bvr_renderer_1aebda7c5de0c306a3381c7a58c20d04aa" prot="public" virt="pure-virtual"><scope>Bvr::IBvrRenderer</scope><name>ResizeBuffer</name></member>
       <member refid="struct_bvr_1_1_i_bvr_renderer_1ae1c57d3aa42a58b46c7f61ed8e129340" prot="public" virt="pure-virtual"><scope>Bvr::IBvrRenderer</scope><name>ResolveImageHandle</name></member>
       <member refid="struct_bvr_1_1_i_bvr_renderer_1ab933805c780ad37badea7e84a86beca3" prot="public" virt="pure-virtual"><scope>Bvr::IBvrRenderer</scope><name>SetUpFrameContext</name></member>
-      <member refid="struct_bvr_1_1_i_bvr_renderer_1a501eef91a0d47c37294826e491bd0b14" prot="public" virt="pure-virtual"><scope>Bvr::IBvrRenderer</scope><name>ShowProfilingStats</name></member>
+      <member refid="struct_bvr_1_1_i_bvr_renderer_1a6f671a40947e596f152cfa9096044949" prot="public" virt="pure-virtual"><scope>Bvr::IBvrRenderer</scope><name>ShowProfilingStats</name></member>
       <member refid="struct_bvr_1_1_i_bvr_renderer_1a1c948ce8b936801d069474d0afee03c4" prot="public" virt="virtual"><scope>Bvr::IBvrRenderer</scope><name>~IBvrRenderer</name></member>
     </listofallmembers>
   </compounddef>

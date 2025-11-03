@@ -6,14 +6,36 @@
     <includes refid="_common_renderer_8hpp" local="yes">CommonRenderer.hpp</includes>
     <incdepgraph>
       <node id="6">
-        <label>BvrCommon/BaseTypes.hpp</label>
+        <label>BvrCommon/Breadcrumbs/BaseTypes.hpp</label>
         <link refid="_base_types_8hpp_source"/>
         <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
       </node>
+      <node id="7">
+        <label>Breadcrumbs/Hash.hpp</label>
+        <link refid="_hash_8hpp_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>Breadcrumbs/StringHash.hpp</label>
+        <link refid="_string_hash_8hpp_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
       <node id="9">
+        <label>Breadcrumbs/Utils.hpp</label>
+        <link refid="_breadcrumbs_2_utils_8hpp_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
         <label>Meta/Enums.hpp</label>
         <link refid="_enums_8hpp_source"/>
         <childnode refid="4" relation="include">
@@ -25,30 +47,22 @@
         <label>Platform/CompilerSettings.hpp</label>
         <link refid="_compiler_settings_8hpp_source"/>
       </node>
-      <node id="8">
-        <label>Utils.hpp</label>
-        <link refid="_utils_8hpp_source"/>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-      </node>
-      <node id="12">
+      <node id="13">
         <label>Assert.hpp</label>
         <link refid="_assert_8hpp_source"/>
-        <childnode refid="13" relation="include">
+        <childnode refid="14" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="14" relation="include">
+        <childnode refid="15" relation="include">
         </childnode>
       </node>
-      <node id="10">
+      <node id="11">
         <label>BvrFormats.hpp</label>
         <link refid="_bvr_formats_8hpp_source"/>
-        <childnode refid="11" relation="include">
+        <childnode refid="12" relation="include">
         </childnode>
-        <childnode refid="9" relation="include">
+        <childnode refid="10" relation="include">
         </childnode>
       </node>
       <node id="3">
@@ -62,11 +76,11 @@
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
         <childnode refid="9" relation="include">
         </childnode>
         <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
         </childnode>
       </node>
       <node id="1">
@@ -77,10 +91,10 @@
         <childnode refid="3" relation="include">
         </childnode>
       </node>
-      <node id="11">
+      <node id="12">
         <label>BvrRenderer/TextureFormats.hpp</label>
         <link refid="_texture_formats_8hpp_source"/>
-        <childnode refid="12" relation="include">
+        <childnode refid="13" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
@@ -88,13 +102,10 @@
       <node id="2">
         <label>Bvr.Core</label>
       </node>
-      <node id="14">
+      <node id="15">
         <label>BvrLogExport.hpp</label>
       </node>
-      <node id="7">
-        <label>Hash.h</label>
-      </node>
-      <node id="13">
+      <node id="14">
         <label>signal.h</label>
       </node>
       <node id="4">
@@ -338,13 +349,13 @@
 <codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>is<sp/>uniquely<sp/>identifying<sp/>the<sp/>pipeline<sp/>layout</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Use<sp/>almost<sp/>always</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>Util::Hash<sp/>Hash()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Util::Hasher().Enum(Stages).u64(MergeHash()).get();</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_bvr_1_1_util_1_1_t_hasher" kindref="compound">Util::Hasher</ref>().Enum(Stages).u64(MergeHash()).get();</highlight></codeline>
 <codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="229"><highlight class="normal"></highlight></codeline>
 <codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>is<sp/>the<sp/>comparison<sp/>for<sp/>layout<sp/>merging</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Only<sp/>use<sp/>when<sp/>you<sp/>want<sp/>to<sp/>merge<sp/>layouts<sp/>for<sp/>stages</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>Util::Hash<sp/>MergeHash()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Util::Hasher()</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_bvr_1_1_util_1_1_t_hasher" kindref="compound">Util::Hasher</ref>()</highlight></codeline>
 <codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.u32(BindingCount)</highlight></codeline>
 <codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.u32(BuffersMask)</highlight></codeline>
 <codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.u32(TexturesMask)</highlight></codeline>
