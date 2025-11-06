@@ -149,6 +149,7 @@
     <member refid="class_bvr_1_1_c_bvr_editor_1ae9b613e163dfb5ea82942831d5af9c06" kind="variable"><name>m_pLevelEditor</name></member>
     <member refid="class_bvr_1_1_c_bvr_editor_1a5f681bb6ae7125dd2eddc3d23c9f1f02" kind="variable"><name>m_pProjectMenu</name></member>
     <member refid="class_bvr_1_1_c_bvr_editor_1a77cb7b658272f5f59fb7767e6e1ae6aa" kind="variable"><name>m_pActiveMaterialEditor</name></member>
+    <member refid="class_bvr_1_1_c_bvr_editor_1a10956a951cdce855f1882187f3dcf940" kind="variable"><name>m_pComponentEditorManager</name></member>
     <member refid="class_bvr_1_1_c_bvr_editor_1a22e22e829e5b5d0c047928ce85d02c06" kind="variable"><name>m_wasMainWindowStarted</name></member>
     <member refid="class_bvr_1_1_c_bvr_editor_1a4e81a40c92f98b7894fb8561e9c7ed3e" kind="variable"><name>m_hEditorWorld</name></member>
     <member refid="class_bvr_1_1_c_bvr_editor_1af05039cf2c0ea1a0596ff5e8b828552e" kind="variable"><name>m_pEditorWorld</name></member>
@@ -176,6 +177,8 @@
     <member refid="class_bvr_1_1_c_bvr_editor_1addb95b4d51cc2e813b078e7d6cab80ff" kind="function"><name>Redo</name></member>
     <member refid="class_bvr_1_1_c_bvr_editor_1aeea16730f847b18d00b3bf8ca2f87a07" kind="function"><name>ExecuteCommand</name></member>
     <member refid="class_bvr_1_1_c_bvr_editor_1af35853697f0e4049452697b70ff5f9d5" kind="function"><name>ExecuteCommand</name></member>
+    <member refid="class_bvr_1_1_c_bvr_editor_1ae184817551127c4dc3944d6afc5ca08e" kind="function"><name>GetEditorForComponent</name></member>
+    <member refid="class_bvr_1_1_c_bvr_editor_1a5a87f55ede7692f59b74de51f9e67726" kind="function"><name>GetVisualiserForComponent</name></member>
     <member refid="class_bvr_1_1_c_bvr_editor_1a3c3a8fad1288ee132d2676968b5652b2" kind="function"><name>BeginEditorMainWindow</name></member>
     <member refid="class_bvr_1_1_c_bvr_editor_1a38b939158be3580656d0669d70140e40" kind="function"><name>EndEditorMainWindow</name></member>
     <member refid="class_bvr_1_1_c_bvr_editor_1af0daf165ab47e4e74b1889800fbadd04" kind="function"><name>MakeMenuBar</name></member>
@@ -190,6 +193,14 @@
     <member refid="class_bvr_1_1_c_command_icon_cache_1a5170e2950d8316b02b71ae9fecc90446" kind="function"><name>GetIcon</name></member>
     <member refid="class_bvr_1_1_c_command_icon_cache_1af76d3ffdcf250a88f441f55b6b057320" kind="function"><name>Get</name></member>
     <member refid="class_bvr_1_1_c_command_icon_cache_1ad7314fd7f877fb879fc8b77f4cc00639" kind="function"><name>GetCommandId</name></member>
+  </compound>
+  <compound refid="class_bvr_1_1_c_component_editor_manager" kind="class"><name>Bvr::CComponentEditorManager</name>
+    <member refid="class_bvr_1_1_c_component_editor_manager_1a07b22c2129c3800e5d4892a201512831" kind="variable"><name>m_registeredEditors</name></member>
+    <member refid="class_bvr_1_1_c_component_editor_manager_1aefaf8e19d0956d5353ab55aea6d13cc0" kind="variable"><name>m_registeredVisualisers</name></member>
+    <member refid="class_bvr_1_1_c_component_editor_manager_1a8f4da3513b4d318a06de1956ad67b727" kind="function"><name>CComponentEditorManager</name></member>
+    <member refid="class_bvr_1_1_c_component_editor_manager_1a8671e6147b52bc5890757000cb3794eb" kind="function"><name>~CComponentEditorManager</name></member>
+    <member refid="class_bvr_1_1_c_component_editor_manager_1a9b123de473a957546604cca079267cb2" kind="function"><name>GetEditorForComponent</name></member>
+    <member refid="class_bvr_1_1_c_component_editor_manager_1af3ec1b0fd8954bf043cb4aaa267040bd" kind="function"><name>GetVisualiserForComponent</name></member>
   </compound>
   <compound refid="class_bvr_1_1_c_compount_editor_tool" kind="class"><name>Bvr::CCompountEditorTool</name>
     <member refid="class_bvr_1_1_c_compount_editor_tool_1a36fc65194ce3426f268c82e8e35eaece" kind="variable"><name>m_menuBarWidget</name></member>
@@ -353,6 +364,10 @@
     <member refid="class_bvr_1_1_c_editor_viewport_consumer_1a00185a2828ee9ee697e90b70e9147817" kind="function"><name>ShouldShowGridHelper</name></member>
     <member refid="class_bvr_1_1_c_editor_viewport_consumer_1a53cca1e94bb3f0907550f3c79a81beaf" kind="function"><name>OnFocusOnSelection</name></member>
     <member refid="class_bvr_1_1_c_editor_viewport_consumer_1a89920cdf655dad5ae706a2adde25b69b" kind="function"><name>GetSceneRoot</name></member>
+    <member refid="class_bvr_1_1_c_editor_viewport_consumer_1a5f9819b2a83b334dbe44a1130b775fb8" kind="function"><name>GetSelectedEntity</name></member>
+    <member refid="class_bvr_1_1_c_editor_viewport_consumer_1aa21a8ad4e896064cc8292ea599272f0b" kind="function"><name>AddToSelection</name></member>
+    <member refid="class_bvr_1_1_c_editor_viewport_consumer_1a19d62a2580cb7da151cd2dc8f72c96b0" kind="function"><name>SelectEntity</name></member>
+    <member refid="class_bvr_1_1_c_editor_viewport_consumer_1adce5bfaebc9c27bd8bd588e4399583b2" kind="function"><name>ClearSelection</name></member>
   </compound>
   <compound refid="class_bvr_1_1_c_entity_added_command" kind="class"><name>Bvr::CEntityAddedCommand</name>
     <member refid="class_bvr_1_1_c_entity_added_command_1a160dff515d173a4d6fb6e2b996f4115e" kind="variable"><name>DstWorld</name></member>
@@ -423,10 +438,10 @@
     <member refid="class_bvr_1_1_c_level_editor_1a1300acafc0c99eaf87629cd34b1d78a6" kind="function"><name>LoadLevel</name></member>
     <member refid="class_bvr_1_1_c_level_editor_1aa7c329f54afad18b146f32f2815b9619" kind="function"><name>EditLevel</name></member>
     <member refid="class_bvr_1_1_c_level_editor_1aca60fc6d5b72cdddf971da7d6a1ced55" kind="function"><name>UnloadLevel</name></member>
-    <member refid="class_bvr_1_1_c_level_editor_1afdea091c83a5a15a62ee2a1fca73c7a8" kind="function"><name>GetSelectedEntity</name></member>
     <member refid="class_bvr_1_1_c_level_editor_1a50694f31b83d3d5b8d91790573bb8c88" kind="function"><name>CreateEntity</name></member>
     <member refid="class_bvr_1_1_c_level_editor_1abcb29f8bf3334308f05f3f87959d9bd5" kind="function"><name>DeleteEntity</name></member>
     <member refid="class_bvr_1_1_c_level_editor_1a52adc77ca3595c64d4c853452b988110" kind="function"><name>SetParent</name></member>
+    <member refid="class_bvr_1_1_c_level_editor_1afdea091c83a5a15a62ee2a1fca73c7a8" kind="function"><name>GetSelectedEntity</name></member>
     <member refid="class_bvr_1_1_c_level_editor_1a86129268fc747846b4f478f4b6e6b1fe" kind="function"><name>AddToSelection</name></member>
     <member refid="class_bvr_1_1_c_level_editor_1a1e8dacc18154e36b989b7fa7537ae366" kind="function"><name>SelectEntity</name></member>
     <member refid="class_bvr_1_1_c_level_editor_1a937a98dd54ad1300764a4296d812962e" kind="function"><name>ClearSelection</name></member>
@@ -435,7 +450,7 @@
     <member refid="class_bvr_1_1_c_level_editor_1a7fda87818d73015bc038b9c5b0d74171" kind="function"><name>GetCurrentLevel</name></member>
     <member refid="class_bvr_1_1_c_level_editor_1a96c13d23818bd38ca1c8ccd2c9c1613d" kind="function"><name>GetCurrentSimulation</name></member>
     <member refid="class_bvr_1_1_c_level_editor_1a68652374f1e7233e0344eaa8aaa61aca" kind="function"><name>GetFocusedViewport</name></member>
-    <member refid="class_bvr_1_1_c_level_editor_1a040aa4926000d2b18f4bac9c6e56f829" kind="function"><name>GetActiveConsumer</name></member>
+    <member refid="class_bvr_1_1_c_level_editor_1a022237e92b293b9d6cd825e1953efe6b" kind="function"><name>GetActiveConsumer</name></member>
     <member refid="class_bvr_1_1_c_level_editor_1a19fcddffed25806edb94be14eae71b99" kind="function"><name>GetTag</name></member>
     <member refid="class_bvr_1_1_c_level_editor_1af2bc26e57c205fa433840d8da51a06bb" kind="function"><name>CanRecieveInput</name></member>
     <member refid="class_bvr_1_1_c_level_editor_1aac55ec61a7c47bf8c0ccf9a9edac46f0" kind="function"><name>FocusOnEntity</name></member>
@@ -679,6 +694,10 @@
     <member refid="struct_bvr_1_1_editor_u_i_1_1_editor_element_1a2246f5ea07f280f0f38d730629dfe6d9" kind="function"><name>EditorElement</name></member>
     <member refid="struct_bvr_1_1_editor_u_i_1_1_editor_element_1aa5fa7b617d71b751d8cfea0ba982b5f8" kind="function"><name>Text</name></member>
     <member refid="struct_bvr_1_1_editor_u_i_1_1_editor_element_1af4b633180b3cf315cc31c1382c856816" kind="function"><name>Button</name></member>
+  </compound>
+  <compound refid="struct_bvr_1_1_editor_entity_proxy" kind="struct"><name>Bvr::EditorEntityProxy</name>
+    <member refid="struct_bvr_1_1_editor_entity_proxy_1add03aa1766784d140e60d9bc3853daa5" kind="variable"><name>ComponentEditors</name></member>
+    <member refid="struct_bvr_1_1_editor_entity_proxy_1a7867b829fab0b2efa3a23addc05a0d2c" kind="variable"><name>ComponentVisualisers</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_editor_u_i_1_1_editor_interaction" kind="struct"><name>Bvr::EditorUI::EditorInteraction</name>
     <member refid="struct_bvr_1_1_editor_u_i_1_1_editor_interaction_1a0a7f53206800df1ab1d1827c35dc34a7" kind="variable"><name>Hovered</name></member>
@@ -1002,9 +1021,6 @@
     <member refid="struct_bvr_1_1_blend_space_editor_1_1_selection_1a0db1810ae8c4c01386a4306d9b8bce21" kind="function"><name>IsSelected</name></member>
     <member refid="struct_bvr_1_1_blend_space_editor_1_1_selection_1ad3057f1962c2cfabad316c260a58eb61" kind="function"><name>Select</name></member>
     <member refid="struct_bvr_1_1_blend_space_editor_1_1_selection_1a042a9c102339ed04c224fc4bc926f425" kind="function"><name>Reset</name></member>
-  </compound>
-  <compound refid="struct_bvr_1_1_selection_1_1_selection_callbacks" kind="struct"><name>Bvr::Selection::SelectionCallbacks</name>
-    <member refid="struct_bvr_1_1_selection_1_1_selection_callbacks_1aedea1d78e8d8792aef742eca4982a5e4" kind="variable"><name>OnSelected</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_selection_1_1_selection_material" kind="struct"><name>Bvr::Selection::SelectionMaterial</name>
     <member refid="struct_bvr_1_1_selection_1_1_selection_material_1a77411b8441fe8c4c17624d14917383fe" kind="variable"><name>Colour</name></member>
@@ -1884,9 +1900,7 @@
   <compound refid="namespace_bvr_1_1_meta" kind="namespace"><name>Bvr::Meta</name>
   </compound>
   <compound refid="namespace_bvr_1_1_selection" kind="namespace"><name>Bvr::Selection</name>
-    <member refid="_selection_8hpp_1a7d6bc6a93578cf069a263fa5b5f1547a" kind="typedef"><name>TOnSelected</name></member>
     <member refid="_selection_8hpp_1a5afb02ca8055d2487e8ff965acaa2d79" kind="function"><name>BuildSelectionPlugin</name></member>
-    <member refid="_selection_8hpp_1a21d9f973da3438481237eb092dcb9900" kind="function"><name>TraceFromCursor</name></member>
   </compound>
   <compound refid="namespace_bvr_1_1_undo_command" kind="namespace"><name>Bvr::UndoCommand</name>
     <member refid="_undoable_commands_8hpp_1a366f083b1646ce0d88a38a0b3a0b7698" kind="function"><name>AddEntity</name></member>
@@ -1925,6 +1939,8 @@
   </compound>
   <compound refid="_component_editor_commands_8hpp" kind="file"><name>ComponentEditorCommands.hpp</name>
   </compound>
+  <compound refid="_component_editor_manager_8hpp" kind="file"><name>ComponentEditorManager.hpp</name>
+  </compound>
   <compound refid="_editor_viewport_8hpp" kind="file"><name>EditorViewport.hpp</name>
   </compound>
   <compound refid="_editor_viewport_commands_8hpp" kind="file"><name>EditorViewportCommands.hpp</name>
@@ -1942,6 +1958,8 @@
   <compound refid="_editor_camera_8hpp" kind="file"><name>EditorCamera.hpp</name>
   </compound>
   <compound refid="_editor_clipboard_8hpp" kind="file"><name>EditorClipboard.hpp</name>
+  </compound>
+  <compound refid="_editor_entity_proxy_8hpp" kind="file"><name>EditorEntityProxy.hpp</name>
   </compound>
   <compound refid="_editor_events_8hpp" kind="file"><name>EditorEvents.hpp</name>
   </compound>
