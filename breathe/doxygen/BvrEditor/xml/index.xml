@@ -179,6 +179,7 @@
     <member refid="class_bvr_1_1_c_bvr_editor_1af35853697f0e4049452697b70ff5f9d5" kind="function"><name>ExecuteCommand</name></member>
     <member refid="class_bvr_1_1_c_bvr_editor_1ae184817551127c4dc3944d6afc5ca08e" kind="function"><name>GetEditorForComponent</name></member>
     <member refid="class_bvr_1_1_c_bvr_editor_1a5a87f55ede7692f59b74de51f9e67726" kind="function"><name>GetVisualiserForComponent</name></member>
+    <member refid="class_bvr_1_1_c_bvr_editor_1ac47c94ec2e7ee08ff7f6255f91c300aa" kind="function"><name>GetComponentEditorManager</name></member>
     <member refid="class_bvr_1_1_c_bvr_editor_1a3c3a8fad1288ee132d2676968b5652b2" kind="function"><name>BeginEditorMainWindow</name></member>
     <member refid="class_bvr_1_1_c_bvr_editor_1a38b939158be3580656d0669d70140e40" kind="function"><name>EndEditorMainWindow</name></member>
     <member refid="class_bvr_1_1_c_bvr_editor_1af0daf165ab47e4e74b1889800fbadd04" kind="function"><name>MakeMenuBar</name></member>
@@ -201,6 +202,8 @@
     <member refid="class_bvr_1_1_c_component_editor_manager_1a8671e6147b52bc5890757000cb3794eb" kind="function"><name>~CComponentEditorManager</name></member>
     <member refid="class_bvr_1_1_c_component_editor_manager_1a9b123de473a957546604cca079267cb2" kind="function"><name>GetEditorForComponent</name></member>
     <member refid="class_bvr_1_1_c_component_editor_manager_1af3ec1b0fd8954bf043cb4aaa267040bd" kind="function"><name>GetVisualiserForComponent</name></member>
+    <member refid="class_bvr_1_1_c_component_editor_manager_1a27efb6e279d8467e2be559ff526fbc61" kind="function"><name>GetAllEditors</name></member>
+    <member refid="class_bvr_1_1_c_component_editor_manager_1a37bb19c018530385f23fde31721b0025" kind="function"><name>GetAllVisualisers</name></member>
   </compound>
   <compound refid="class_bvr_1_1_c_compount_editor_tool" kind="class"><name>Bvr::CCompountEditorTool</name>
     <member refid="class_bvr_1_1_c_compount_editor_tool_1a36fc65194ce3426f268c82e8e35eaece" kind="variable"><name>m_menuBarWidget</name></member>
@@ -326,12 +329,13 @@
     <member refid="class_bvr_1_1_c_editor_viewport_1ac9c06e59ead4e83599bcaa6ca0f1b2d7" kind="function"><name>MakeEditorViewportConsumer</name></member>
     <member refid="class_bvr_1_1_c_editor_viewport_1a01f95647274313f29ef7f410ce280036" kind="function"><name>RebuildDebugVisMenu</name></member>
     <member refid="class_bvr_1_1_c_editor_viewport_1a105555da87ed4de8aa4e6654e95fd9b2" kind="function"><name>CanExecuteActionsDefault</name></member>
-    <member refid="class_bvr_1_1_c_editor_viewport_1a40e07f6001842c6dc1f07bf6ab18cb98" kind="function"><name>MakeDebugVisCommand</name></member>
+    <member refid="class_bvr_1_1_c_editor_viewport_1a3ef3c918f57526817f3a5946a25e9ed8" kind="function"><name>MakeDebugVisCommand</name></member>
   </compound>
   <compound refid="class_bvr_1_1_c_editor_viewport_consumer" kind="class"><name>Bvr::CEditorViewportConsumer</name>
     <member refid="class_bvr_1_1_c_editor_viewport_consumer_1a0566325f4d2b68e2ca1375dcae706f07" kind="variable"><name>m_pWorld</name></member>
     <member refid="class_bvr_1_1_c_editor_viewport_consumer_1ab85b48b4731295243016b832514404d3" kind="variable"><name>m_pEdViewport</name></member>
     <member refid="class_bvr_1_1_c_editor_viewport_consumer_1a655cd717ed164297f7a459811672f9e0" kind="variable"><name>m_resourceDropCallbacks</name></member>
+    <member refid="class_bvr_1_1_c_editor_viewport_consumer_1a1aa6610c00d4e1b3075fd0d41a534361" kind="variable"><name>m_activeVisualisers</name></member>
     <member refid="class_bvr_1_1_c_editor_viewport_consumer_1abb6a0e470f9f7d3c667a0fff42977e86" kind="variable"><name>m_viewportEntity</name></member>
     <member refid="class_bvr_1_1_c_editor_viewport_consumer_1adb43fc2b80dd66f6080ec0a689080245" kind="variable"><name>m_cameraEntity</name></member>
     <member refid="class_bvr_1_1_c_editor_viewport_consumer_1a5dd2e2c8c180d2933afc8bf303c2b58d" kind="variable"><name>m_sceneRoot</name></member>
@@ -368,6 +372,11 @@
     <member refid="class_bvr_1_1_c_editor_viewport_consumer_1aa21a8ad4e896064cc8292ea599272f0b" kind="function"><name>AddToSelection</name></member>
     <member refid="class_bvr_1_1_c_editor_viewport_consumer_1a19d62a2580cb7da151cd2dc8f72c96b0" kind="function"><name>SelectEntity</name></member>
     <member refid="class_bvr_1_1_c_editor_viewport_consumer_1adce5bfaebc9c27bd8bd588e4399583b2" kind="function"><name>ClearSelection</name></member>
+    <member refid="class_bvr_1_1_c_editor_viewport_consumer_1a218b8bf051b59c22cc3cbeed7f28dc2f" kind="function"><name>ToggleVisualiser</name></member>
+    <member refid="class_bvr_1_1_c_editor_viewport_consumer_1a3b350f92908e8810816995a609aeb919" kind="function"><name>EnableVisualiser</name></member>
+    <member refid="class_bvr_1_1_c_editor_viewport_consumer_1a7b1f6b3eeda069e57e79dbe23f382ccf" kind="function"><name>DisableVisualiser</name></member>
+    <member refid="class_bvr_1_1_c_editor_viewport_consumer_1ac0971dcb2969bab1fbfe47da295c1238" kind="function"><name>IsVisualiserEnabled</name></member>
+    <member refid="class_bvr_1_1_c_editor_viewport_consumer_1a8790f1b01af8ee78d2e7f075d68df100" kind="function"><name>GetEnabledVisualisers</name></member>
   </compound>
   <compound refid="class_bvr_1_1_c_entity_added_command" kind="class"><name>Bvr::CEntityAddedCommand</name>
     <member refid="class_bvr_1_1_c_entity_added_command_1a160dff515d173a4d6fb6e2b996f4115e" kind="variable"><name>DstWorld</name></member>
@@ -616,6 +625,7 @@
     <member refid="class_bvr_1_1_c_selection_tool_controller_1ab660146b8be771bb75217d77e5aa1f11" kind="function"><name>HandleClick</name></member>
     <member refid="class_bvr_1_1_c_selection_tool_controller_1ac515383f0df41de832be6f2f92966547" kind="function"><name>BindCommands</name></member>
     <member refid="class_bvr_1_1_c_selection_tool_controller_1a1a18796e6b1d8f7f6cf2c8b4bf42620f" kind="function"><name>GetGizmoEntity</name></member>
+    <member refid="class_bvr_1_1_c_selection_tool_controller_1a65576ce2437b8fa77c25b6edebee35b4" kind="function"><name>OnProxyClick</name></member>
     <member refid="class_bvr_1_1_c_selection_tool_controller_1a8ed4236702055e3e99b01c4f172ed2f9" kind="function"><name>HasSpawnedGizmo</name></member>
   </compound>
   <compound refid="class_bvr_1_1_c_style_sheet" kind="class"><name>Bvr::CStyleSheet</name>
@@ -724,6 +734,8 @@
   </compound>
   <compound refid="struct_bvr_1_1_gizmo_1_1_gizmo_drag" kind="struct"><name>Bvr::Gizmo::GizmoDrag</name>
     <member refid="struct_bvr_1_1_gizmo_1_1_gizmo_drag_1a47828c7ab38cfbff925793cd76d13e04" kind="variable"><name>DragFrom</name></member>
+    <member refid="struct_bvr_1_1_gizmo_1_1_gizmo_drag_1a28a9e165dc9ec276814c121e264a84bc" kind="variable"><name>RayOrigin</name></member>
+    <member refid="struct_bvr_1_1_gizmo_1_1_gizmo_drag_1aaa9edc1fa9f5405b78d3a2d9d0e691f7" kind="variable"><name>RayDirection</name></member>
     <member refid="struct_bvr_1_1_gizmo_1_1_gizmo_drag_1ab3405de7ec74f7e5ac2deef57a7efdcb" kind="variable"><name>WasInitialised</name></member>
     <member refid="struct_bvr_1_1_gizmo_1_1_gizmo_drag_1ada2e565be5ffd8ab3547eaf78f0dc6c0" kind="variable"><name>DragTo</name></member>
     <member refid="struct_bvr_1_1_gizmo_1_1_gizmo_drag_1a3f4af4640b23717a05211de05075ee3e" kind="variable"><name>AxisDrag</name></member>
@@ -732,14 +744,15 @@
     <member refid="struct_bvr_1_1_gizmo_1_1_gizmo_drag_1ad1948cb358eb2808bd4f459706de4eb5" kind="variable"><name>Rotation</name></member>
     <member refid="struct_bvr_1_1_gizmo_1_1_gizmo_drag_1a23969fc91837bdef02eb9e93929a9e1d" kind="variable"><name></name></member>
     <member refid="struct_bvr_1_1_gizmo_1_1_gizmo_drag_1a2b7839e208507a4f424dfbc6f45cef34" kind="variable"><name>Operations</name></member>
-  </compound>
-  <compound refid="struct_bvr_1_1_gizmo_1_1_gizmo_handle" kind="struct"><name>Bvr::Gizmo::GizmoHandle</name>
-    <member refid="struct_bvr_1_1_gizmo_1_1_gizmo_handle_1a2f965095885521d45a68564a8f27ec17" kind="variable"><name>Axis</name></member>
-    <member refid="struct_bvr_1_1_gizmo_1_1_gizmo_handle_1aa2697e1509d5b0b3b03f3aa7d9d21a27" kind="variable"><name>Mode</name></member>
-    <member refid="struct_bvr_1_1_gizmo_1_1_gizmo_handle_1a9ad19aa0d3528c83110c9847235f0634" kind="variable"><name>IsPlane</name></member>
-    <member refid="struct_bvr_1_1_gizmo_1_1_gizmo_handle_1acfe27a0ba7b0150f27b6393530831b84" kind="variable"><name>IsOrigin</name></member>
+    <member refid="struct_bvr_1_1_gizmo_1_1_gizmo_drag_1ae73deaa3597e90b083ad7c669dcffa30" kind="variable"><name>Manipulator</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_handle" kind="struct"><name>Bvr::Handle</name>
+  </compound>
+  <compound refid="struct_bvr_1_1_gizmo_1_1_hit_proxy" kind="struct"><name>Bvr::Gizmo::HitProxy</name>
+    <member refid="struct_bvr_1_1_gizmo_1_1_hit_proxy_1a331fc12ecf1e2ba63d14bd9afdc857cf" kind="variable"><name>m_hGizmo</name></member>
+    <member refid="struct_bvr_1_1_gizmo_1_1_hit_proxy_1ac43aed9a61b32e07c83da663c93fcfe4" kind="variable"><name>m_hoveredOps</name></member>
+    <member refid="struct_bvr_1_1_gizmo_1_1_hit_proxy_1ad7cad8b22a880f9960d06f80584b0984" kind="function"><name>HitProxy</name></member>
+    <member refid="struct_bvr_1_1_gizmo_1_1_hit_proxy_1a5ee322ffdf241c2cce6bcdafa9485ae1" kind="function"><name>GetTypeHash</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_editor_u_i_1_1_i_component_bundle" kind="struct"><name>Bvr::EditorUI::IComponentBundle</name>
     <member refid="struct_bvr_1_1_editor_u_i_1_1_i_component_bundle_1a51afeb7a4c3c645e396bdc2dd20e01f0" kind="function"><name>~IComponentBundle</name></member>
@@ -838,6 +851,8 @@
     <member refid="struct_bvr_1_1_gizmo_1_1_manipulation_config_1a33a0d0f549069ff15a9e058ff871ce90" kind="variable"><name>EnableSnapping</name></member>
     <member refid="struct_bvr_1_1_gizmo_1_1_manipulation_config_1ab845b7f5ddacf50de45fea2c5e1e47b5" kind="variable"><name>TransformMode</name></member>
     <member refid="struct_bvr_1_1_gizmo_1_1_manipulation_config_1adaeccbed137b8d6073cd3b48a9bed951" kind="variable"><name>GizmoFlags</name></member>
+    <member refid="struct_bvr_1_1_gizmo_1_1_manipulation_config_1a0ddcd364e05be8c9da315066589b53a8" kind="function"><name>Activate</name></member>
+    <member refid="struct_bvr_1_1_gizmo_1_1_manipulation_config_1a4c34b545a61da6bb0c5339af017dce58" kind="function"><name>IsActive</name></member>
   </compound>
   <compound refid="struct_bvr_1_1_meta_file_helpers" kind="struct"><name>Bvr::MetaFileHelpers</name>
     <member refid="struct_bvr_1_1_meta_file_helpers_1a53a7cf126415842d4ef152b3cefd4bda" kind="function"><name>LoadFromFile</name></member>
@@ -1570,13 +1585,10 @@
   <compound refid="struct_bvr_1_1_gizmo_1_1_transform_manipulation" kind="struct"><name>Bvr::Gizmo::TransformManipulation</name>
     <member refid="struct_bvr_1_1_gizmo_1_1_transform_manipulation_1a63459c871fdfaa7be84022061b850c43" kind="variable"><name>OnDrag</name></member>
     <member refid="struct_bvr_1_1_gizmo_1_1_transform_manipulation_1a24429ab04db0ac6ee985c29aa88a1095" kind="variable"><name>GetTransform</name></member>
-    <member refid="struct_bvr_1_1_gizmo_1_1_transform_manipulation_1abe43ce9cca2a22d73d2410cf1bfe296b" kind="variable"><name>AxisTransform</name></member>
     <member refid="struct_bvr_1_1_gizmo_1_1_transform_manipulation_1abc084296ebbb0e948b00010311bd4757" kind="variable"><name>PositionSnap</name></member>
     <member refid="struct_bvr_1_1_gizmo_1_1_transform_manipulation_1accead4b1eab0972fbe7e30a0764e5958" kind="variable"><name>ScaleSnap</name></member>
     <member refid="struct_bvr_1_1_gizmo_1_1_transform_manipulation_1a2fbda359c946baaadcfe8b0ebe83de9d" kind="variable"><name>AngleSnap</name></member>
     <member refid="struct_bvr_1_1_gizmo_1_1_transform_manipulation_1a9140846628a93eed3d3aebd40e546630" kind="variable"><name>Flags</name></member>
-    <member refid="struct_bvr_1_1_gizmo_1_1_transform_manipulation_1ad6dfa9011df055ed31bcf5f0f9a03885" kind="variable"><name>HoveredOperations</name></member>
-    <member refid="struct_bvr_1_1_gizmo_1_1_transform_manipulation_1ae9e89009ff9ac1b97dbec51fad34acc3" kind="variable"><name>SpawnedOperations</name></member>
     <member refid="struct_bvr_1_1_gizmo_1_1_transform_manipulation_1a754811b8feb9576b1e8b3543b7d55dd8" kind="function"><name>IsFlagSet</name></member>
     <member refid="struct_bvr_1_1_gizmo_1_1_transform_manipulation_1affaebed92bcc0f73ac29c582d99d6786" kind="function"><name>SetFlag</name></member>
     <member refid="struct_bvr_1_1_gizmo_1_1_transform_manipulation_1a35c33e8afe95caf004b6651aae9dda6a" kind="function"><name>IsLocalSpace</name></member>
@@ -1861,6 +1873,7 @@
     <member refid="_gizmo_transform_manipulation_8hpp_1aed1ba64ecbaa3c1fb3e6d7b68418fde2a7a1920d61156abc05a60135aefe8bc67" kind="enumvalue"><name>Default</name></member>
     <member refid="_gizmo_transform_manipulation_8hpp_1a1b468e23326a910b2ba1121c6e764f5d" kind="enum"><name>EGizmoFlags</name></member>
     <member refid="_gizmo_transform_manipulation_8hpp_1a1b468e23326a910b2ba1121c6e764f5da8d2ed8ae0478604dfa4b84db647d1134" kind="enumvalue"><name>NoAutoReset</name></member>
+    <member refid="_gizmo_transform_manipulation_8hpp_1a1b468e23326a910b2ba1121c6e764f5da4d3d769b812b6faa6b76e1a8abaece2d" kind="enumvalue"><name>Active</name></member>
     <member refid="_gizmo_transform_manipulation_8hpp_1a971114c5d8cb24eff7c45a6d56f2d859" kind="enum"><name>EHoveredOperations</name></member>
     <member refid="_gizmo_transform_manipulation_8hpp_1a971114c5d8cb24eff7c45a6d56f2d859a6adf97f83acf6453d4a6a4b1070f3754" kind="enumvalue"><name>None</name></member>
     <member refid="_gizmo_transform_manipulation_8hpp_1a971114c5d8cb24eff7c45a6d56f2d859a38b0844100a915cd3c87159b391161b9" kind="enumvalue"><name>AxisX</name></member>
